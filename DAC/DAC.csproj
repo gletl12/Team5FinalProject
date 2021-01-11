@@ -43,11 +43,22 @@
   <ItemGroup>
     <Compile Include="CommonDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="MenuDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Team5Connect_DEV.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{7da0a26d-e5f3-4ded-8576-5db25140485c}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{166e3b03-0bd1-4cbb-8752-a446fd88f296}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

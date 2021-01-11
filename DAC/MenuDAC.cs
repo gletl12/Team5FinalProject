@@ -5,10 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VO;
 
 namespace DAC
 {
-    class MenuDAC : CommonDAC
+    public class MenuDAC : CommonDAC
     {
        
         /// <summary>
