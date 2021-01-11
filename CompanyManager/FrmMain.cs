@@ -26,6 +26,10 @@ namespace CompanyManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //메인폼 실행
+            Program.Log.WriteInfo("CompanyManager_FrmMain 시작");
+
+
             MenuService service = new MenuService();
             menuAllList = service.GetMenus();
 
@@ -60,7 +64,20 @@ namespace CompanyManager
         //소메뉴 생성
         private void Btn_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                throw new Exception();
+            }
+            catch 
+            {
+                Program.Log.WriteError("CompanyManager_FrmMain 에러");
+            }
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //메인폼 종료
+            Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
         }
     }
 }

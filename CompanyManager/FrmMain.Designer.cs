@@ -203,6 +203,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
