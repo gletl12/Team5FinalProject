@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class Class1
+    class MenuVO
     {
+        public string INFO { get; set; }
+        public string SortName { get; set; }
+        public string FormName { get; set; }
+
     }
 }
