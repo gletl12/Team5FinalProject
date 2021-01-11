@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.titleBar1 = new CompanyManager.TitleBar();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.titleBar1 = new CompanyManager.TitleBar();
             this.panel1.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +82,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 617);
             this.panel1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 55);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "LOGO";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Open2_16x16.png");
             // 
             // button4
             // 
@@ -128,18 +149,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 55);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "LOGO";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -155,16 +164,6 @@
             this.button1.Text = "추가";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // titleBar1
-            // 
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.titleBar1.HeaderText = "HeaderText";
-            this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1238, 33);
-            this.titleBar1.TabIndex = 13;
             // 
             // grandianPanel1
             // 
@@ -187,6 +186,16 @@
             this.label2.Size = new System.Drawing.Size(100, 39);
             this.label2.TabIndex = 16;
             this.label2.Text = "Logo";
+            // 
+            // titleBar1
+            // 
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.titleBar1.HeaderText = "HeaderText";
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(1238, 33);
+            this.titleBar1.TabIndex = 13;
             // 
             // FrmMain
             // 
@@ -228,6 +237,7 @@
         private TitleBar titleBar1;
         private GrandianPanel grandianPanel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

@@ -109,6 +109,10 @@
       <Project>{fd767a3e-0093-41f4-bfee-23cad25bd0b3}</Project>
       <Name>API</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{ef3f8919-8c06-43da-be2a-6aeac789b627}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{76f4e6aa-7d41-48c6-9a87-0ae14cbc63e4}</Project>
       <Name>Service</Name>
@@ -127,6 +131,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Open2_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

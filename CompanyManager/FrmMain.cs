@@ -5,8 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.WebSockets;
 using System.Windows.Forms;
 using VO;
 
@@ -17,6 +19,9 @@ namespace CompanyManager
         List<MenuVO> menuAllList;
         Color buttonColor = Color.FromArgb(142, 160, 185);
         Color selectedColor = Color.Blue;
+        Button selectedBtn;
+        
+        public string Admin { get; set; }
 
         public FrmMain()
         {
@@ -48,6 +53,7 @@ namespace CompanyManager
                 {
                     Button btn = new Button();
                     btn.Name = p.INFO.Trim().Substring(1);
+                    btn.Tag = p.FormName;
                     btn.Text = btn.Name;
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = buttonColor;
@@ -64,14 +70,30 @@ namespace CompanyManager
         //소메뉴 생성
         private void Btn_Click(object sender, EventArgs e)
         {
-            try
+            //메뉴
+            Button menuBtn = ((Button)sender);
+
+            //트리뷰 생성
+            TreeView tv = new TreeView();
+            tv.Location = new Point(500, 500);
+            tv.Size = new Size(180, 326);
+            tv.ImageList = imageList1;
+            this.Controls.(tv);
+
+            TreeNode tn = new TreeNode(menuBtn.Text);
+            tn.Tag = menuBtn.Tag;
+            tv.Nodes.Add(tn);
+            TreeNode tnc;
+            menuAllList.ForEach(p =>
             {
-                throw new Exception();
-            }
-            catch 
-            {
-                Program.Log.WriteError("CompanyManager_FrmMain 에러");
-            }
+                //현재 메뉴버튼의 소메뉴이면 
+                if (p.INFO.Trim().StartsWith("L") && p.SortName.StartsWith(menuBtn.Text))
+                {
+                    tnc = new TreeNode(p.INFO.Trim().Substring(1));
+                    tnc.Tag = p.FormName;
+                    tn.Nodes.Add(tnc);
+                }
+            });
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
