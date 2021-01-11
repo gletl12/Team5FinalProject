@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <settings>
-    <add key="MyDB"><![CDATA[Server=127.0.0.1;Database=team5;Uid=sa;Pwd=12341234]]></add>
+    <add key="MyDB"><![CDATA[Server=whyfi8888.ddns.net,11433;Database=team5;Uid=team5;Pwd=team5]]></add>
   </settings>
 </configuration>

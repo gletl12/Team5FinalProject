@@ -39,7 +39,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.titleBar1 = new CompanyManager.TitleBar();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.grandianPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -156,7 +158,7 @@
             // 
             // titleBar1
             // 
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(50)))));
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.titleBar1.HeaderText = "HeaderText";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
@@ -166,12 +168,25 @@
             // 
             // grandianPanel1
             // 
-            this.grandianPanel1.ColorBotton = System.Drawing.Color.Empty;
-            this.grandianPanel1.ColorTop = System.Drawing.Color.Empty;
+            this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
+            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
             this.grandianPanel1.Size = new System.Drawing.Size(1238, 121);
             this.grandianPanel1.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Location = new System.Drawing.Point(43, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 39);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Logo";
             // 
             // FrmMain
             // 
@@ -190,6 +205,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.grandianPanel1.ResumeLayout(false);
+            this.grandianPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -209,6 +226,7 @@
         private System.Windows.Forms.Panel panel1;
         private TitleBar titleBar1;
         private GrandianPanel grandianPanel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
