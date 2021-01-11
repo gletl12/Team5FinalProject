@@ -41,9 +41,6 @@ namespace DAC
         }
 
 
-        public void Dispose()
-        {
-            conn.Close();
-        }
+        
     }
 }

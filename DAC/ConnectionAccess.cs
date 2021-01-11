@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace DAC
 {
-    class ConnectionAccess
+    public class ConnectionAccess
     {
         protected string ConnectionString
         {
@@ -17,7 +17,7 @@ namespace DAC
             {
                 string strConn = string.Empty;
                 XmlDocument configXml = new XmlDocument();
-                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase) + "/CarProduction_DEV.xml";
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase) + "/Team5Connect_DEV.xml";
                 configXml.Load(path);
 
                 XmlNodeList addNodes = configXml.SelectNodes("configuration/settings/add");

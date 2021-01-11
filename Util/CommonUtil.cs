@@ -52,33 +52,8 @@ namespace Util
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
         }
-        public static void BindingComboBoxPart1(ComboBox cbo, List<PartVO> vo, string displayMember, bool blankItem = true, string blankText = "")
-        {
-            if (blankItem)
-            {
-                PartVO blank = new PartVO
-                {
-                    Class = blankText
-                };
-                vo.Insert(0, blank);
-            }
-            cbo.DisplayMember = displayMember;
-            cbo.DataSource = vo;
-        }
-        public static void BindingComboBoxPart2(ComboBox cbo, List<ManufacturerVO> vo, string valueMember, string displayMember, bool blankItem = true, string blankText = "")
-        {
-            if (blankItem)
-            {
-                ManufacturerVO blank = new ManufacturerVO
-                {
-                    ManufacturerName = blankText
-                };
-                vo.Insert(0, blank);
-            }
-            cbo.DisplayMember = displayMember;
-            cbo.ValueMember = valueMember;
-            cbo.DataSource = vo;
-        }
+        
+       
         #endregion
         public static void SetInitGridView(DataGridView dgv)
         {
@@ -201,58 +176,7 @@ namespace Util
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }
 
-        //public static T DataGridViewRowToVO<T>(DataGridView dgv, int rowIndex)
-        //{
-        //    try
-        //    {
-        //        T obj = default(T);
-        //        DataGridViewCellCollection cells = dgv.Rows[rowIndex].Cells;
-        //        obj = Activator.CreateInstance<T>();
-        //        for (int i = 0; i < dgv.Columns.Count; i++)
-        //        {
-
-        //        }
-        //    }
-        //    catch(Exception err)
-        //    {
-        //        string msg = err.Message;
-        //        return null;
-        //    }
-
-        //    try
-        //    {
-        //        List<T> list = new List<T>();
-        //        T obj = default(T);
-        //        while (dr.Read())
-        //        {
-        //            obj = Activator.CreateInstance<T>();
-        //            foreach (PropertyInfo prop in obj.GetType().GetProperties())
-        //            {
-        //                try
-        //                {
-        //                    //프로퍼티는 존재하는데, reader안에 조회된 컬럼이 없는 경우
-        //                    //reader에 조회된 컬럼은 있는데, 프로퍼티는 정의되지 않은 경우
-        //                    if (!object.Equals(dr[prop.Name], DBNull.Value))
-        //                    {
-        //                        prop.SetValue(obj, dr[prop.Name], null);
-        //                    }
-        //                }
-        //                catch
-        //                {
-        //                    continue;
-        //                }
-        //            }
-        //            list.Add(obj);
-        //        }
-        //        return list;
-        //    }
-        //    catch (Exception err)
-        //    {
-        //        string msg = err.Message;
-        //        return null;
-        //    }
-        //}
-
+        
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();
