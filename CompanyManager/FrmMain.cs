@@ -78,6 +78,31 @@ namespace CompanyManager
             if (selectedBtn == ((Button)sender))
                 return;
 
+            //메뉴 위치 복구 (이미 선택된 메뉴가 있다면)
+            foreach (Control ctrl in pnlMenu.Controls)
+            {
+                if (ctrl is TreeView)
+                {
+                    pnlMenu.Controls.Remove(ctrl);
+
+                    foreach (Control btn in pnlMenu.Controls)
+                    {
+                        if (btn is Button)
+                        {
+                            if (btn.Location.Y > selectedBtn.Location.Y)
+                            {
+                                btn.Location = new Point(-1, btn.Location.Y - 300);
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+
+            
+
+
+
             selectedBtn = ((Button)sender);
 
             //메뉴 위치 변경
@@ -100,6 +125,7 @@ namespace CompanyManager
             tv.Location = new Point(-1, selectedBtn.Location.Y+48);
             tv.Size = new Size(180, 300);
             tv.ImageList = imageList1;
+            tv.AfterSelect += treeView_AfterSelect;
             pnlMenu.Controls.Add(tv);
 
             TreeNode tn = new TreeNode(selectedBtn.Text);
@@ -125,6 +151,12 @@ namespace CompanyManager
         {
             //메인폼 종료 로그
             Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
+        }
+
+        //폼 열기
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show("Test");
         }
     }
 }
