@@ -41,14 +41,14 @@ namespace CompanyManager
             this.titleBar1.HeaderText = "HeaderText";
             this.titleBar1.Location = new System.Drawing.Point(-1, -1);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1093, 33);
+            this.titleBar1.Size = new System.Drawing.Size(501, 33);
             this.titleBar1.TabIndex = 0;
             // 
             // DialogBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 609);
+            this.ClientSize = new System.Drawing.Size(500, 300);
             this.Controls.Add(this.titleBar1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -60,6 +60,6 @@ namespace CompanyManager
 
         #endregion
 
-        private TitleBar titleBar1;
+        protected TitleBar titleBar1;
     }
 }

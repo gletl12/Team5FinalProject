@@ -16,5 +16,18 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
+
+        protected void PopupBaseForm_Load(object sender, EventArgs e)
+        {
+            //폼 실행
+            Program.Log.WriteInfo("CompanyManager_FrmMain 시작");
+
+        }
+
+        protected void PopupBaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //폼 종료 로그
+            Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
+        }
     }
 }

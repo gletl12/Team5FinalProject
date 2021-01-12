@@ -87,6 +87,12 @@
     <Compile Include="ParentForm\PopupBaseForm.Designer.cs">
       <DependentUpon>PopupBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="popuptest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popuptest.Designer.cs">
+      <DependentUpon>popuptest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
