@@ -151,6 +151,7 @@ namespace CompanyManager
         {
             //메인폼 종료 로그
             Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
+            Program.Log.WriteInfo("프로그램 종료");
         }
 
         //폼 열기

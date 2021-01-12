@@ -18,6 +18,7 @@ namespace CompanyManager
         [STAThread]
         static void Main()
         {
+            Log.WriteInfo("프로그램 시작");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());

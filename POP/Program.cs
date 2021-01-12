@@ -20,9 +20,10 @@ namespace POP
         [STAThread]
         static void Main()
         {
+            Log.WriteInfo("프로그램 실행");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
         }
     }
 }
