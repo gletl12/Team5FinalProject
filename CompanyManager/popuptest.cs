@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class popuptest : CompanyManager.PopupBaseForm
+    public partial class popuptest : PopupBaseForm
     {
         public popuptest()
         {

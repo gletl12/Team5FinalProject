@@ -9,7 +9,7 @@ namespace CompanyManager
 {
     static class Program
     {
-        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Error, 30);
+        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Info, 30);
         public static LoggingUtility Log { get { return _log; } }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace CompanyManager
             Log.WriteInfo("프로그램 시작");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new popuptest());
         }
     }
 }

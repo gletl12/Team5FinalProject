@@ -12,22 +12,24 @@ namespace CompanyManager
 {
     public partial class PopupBaseForm : Form
     {
+        public string FormName { get; }
         public PopupBaseForm()
         {
             InitializeComponent();
+
         }
 
-        protected void PopupBaseForm_Load(object sender, EventArgs e)
+        private void PopupBaseForm_Load(object sender, EventArgs e)
         {
             //폼 실행
-            Program.Log.WriteInfo("CompanyManager_FrmMain 시작");
+            Program.Log.WriteInfo($"CompanyManager_{FormName} 시작");
 
         }
 
-        protected void PopupBaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void PopupBaseForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //폼 종료 로그
-            Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
+            Program.Log.WriteInfo($"CompanyManager_{FormName} 종료");
         }
     }
 }
