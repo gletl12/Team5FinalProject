@@ -123,10 +123,6 @@
     <None Include="Resources\Delete_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\API\API.csproj">
-      <Project>{fd767a3e-0093-41f4-bfee-23cad25bd0b3}</Project>
-      <Name>API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAC\DAC.csproj">
       <Project>{ef3f8919-8c06-43da-be2a-6aeac789b627}</Project>
       <Name>DAC</Name>
