@@ -69,17 +69,29 @@
     <Compile Include="CustomControl\GradianPanel.Designer.cs">
       <DependentUpon>GradianPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="customer.cs">
+    <Compile Include="DialogBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customer.Designer.cs">
-      <DependentUpon>customer.cs</DependentUpon>
+    <Compile Include="DialogBaseForm.Designer.cs">
+      <DependentUpon>DialogBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIBaseForm.Designer.cs">
+      <DependentUpon>MDIBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupBaseForm.Designer.cs">
+      <DependentUpon>PopupBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,9 +100,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="customer.resx">
-      <DependentUpon>customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
