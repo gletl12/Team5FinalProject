@@ -69,10 +69,10 @@
     <Compile Include="CustomControl\GradianPanel.Designer.cs">
       <DependentUpon>GradianPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="DialogBaseForm.cs">
+    <Compile Include="ParentForm\DialogBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DialogBaseForm.Designer.cs">
+    <Compile Include="ParentForm\DialogBaseForm.Designer.cs">
       <DependentUpon>DialogBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
@@ -81,16 +81,16 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDIBaseForm.cs">
+    <Compile Include="ParentForm\MDIBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIBaseForm.Designer.cs">
+    <Compile Include="ParentForm\MDIBaseForm.Designer.cs">
       <DependentUpon>MDIBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupBaseForm.cs">
+    <Compile Include="ParentForm\PopupBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupBaseForm.Designer.cs">
+    <Compile Include="ParentForm\PopupBaseForm.Designer.cs">
       <DependentUpon>PopupBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
