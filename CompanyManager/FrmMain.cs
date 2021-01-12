@@ -34,10 +34,11 @@ namespace CompanyManager
             //메인폼 실행
             Program.Log.WriteInfo("CompanyManager_FrmMain 시작");
 
-
+            //메뉴 리스트 가져오기
             MenuService service = new MenuService();
             menuAllList = service.GetMenus();
 
+            //메뉴 생성
             CreatMenu();
 
         }
@@ -45,6 +46,9 @@ namespace CompanyManager
         //메뉴 생성
         private void CreatMenu()
         {
+            //빈값 생성
+            selectedBtn = new Button(); 
+
             int count = 0;
             menuAllList.ForEach(p =>
             {
@@ -70,35 +74,56 @@ namespace CompanyManager
         //소메뉴 생성
         private void Btn_Click(object sender, EventArgs e)
         {
-            //메뉴
-            Button menuBtn = ((Button)sender);
+            //메뉴 중복선택 확인
+            if (selectedBtn == ((Button)sender))
+                return;
+
+            selectedBtn = ((Button)sender);
+
+            //메뉴 위치 변경
+            foreach (Control btn in pnlMenu.Controls)
+            {
+                if (btn is Button)
+                {
+                    if (btn.Location.Y > selectedBtn.Location.Y)
+                    {
+                        btn.Location = new Point(-1, btn.Location.Y + 300);
+                    }
+                }
+            }
+
+
 
             //트리뷰 생성
             TreeView tv = new TreeView();
-            tv.Location = new Point(500, 500);
-            tv.Size = new Size(180, 326);
+            tv.BorderStyle = BorderStyle.None;
+            tv.Location = new Point(-1, selectedBtn.Location.Y+48);
+            tv.Size = new Size(180, 300);
             tv.ImageList = imageList1;
-            this.Controls.(tv);
+            pnlMenu.Controls.Add(tv);
 
-            TreeNode tn = new TreeNode(menuBtn.Text);
-            tn.Tag = menuBtn.Tag;
+            TreeNode tn = new TreeNode(selectedBtn.Text);
+            tn.Tag = selectedBtn.Tag;
             tv.Nodes.Add(tn);
             TreeNode tnc;
             menuAllList.ForEach(p =>
             {
                 //현재 메뉴버튼의 소메뉴이면 
-                if (p.INFO.Trim().StartsWith("L") && p.SortName.StartsWith(menuBtn.Text))
+                if (p.INFO.Trim().StartsWith("L") && p.SortName.StartsWith(selectedBtn.Text))
                 {
                     tnc = new TreeNode(p.INFO.Trim().Substring(1));
                     tnc.Tag = p.FormName;
                     tn.Nodes.Add(tnc);
                 }
             });
+
+            tv.ExpandAll();
+
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //메인폼 종료
+            //메인폼 종료 로그
             Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
         }
     }

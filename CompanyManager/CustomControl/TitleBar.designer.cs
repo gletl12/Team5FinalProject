@@ -65,7 +65,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Image = global::CompanyManager.Properties.Resources.Delete_32x32;
-            this.btnCancel.Location = new System.Drawing.Point(583, 0);
+            this.btnCancel.Location = new System.Drawing.Point(586, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(33, 33);
             this.btnCancel.TabIndex = 5;

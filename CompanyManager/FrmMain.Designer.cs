@@ -51,17 +51,21 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(178, 767);
+            this.splitter1.Size = new System.Drawing.Size(178, 727);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
             // pnlMenu
             // 
+            this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMenu.Location = new System.Drawing.Point(-1, -1);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(209, 617);
+            this.pnlMenu.Size = new System.Drawing.Size(198, 577);
             this.pnlMenu.TabIndex = 10;
             // 
             // splitter2
@@ -69,18 +73,20 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(178, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(1060, 149);
+            this.splitter2.Size = new System.Drawing.Size(1079, 149);
             this.splitter2.TabIndex = 2;
             this.splitter2.TabStop = false;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pnlMenu);
             this.panel1.Location = new System.Drawing.Point(0, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 617);
+            this.panel1.Size = new System.Drawing.Size(180, 577);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -167,12 +173,14 @@
             // 
             // grandianPanel1
             // 
+            this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
             this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(1238, 121);
+            this.grandianPanel1.Size = new System.Drawing.Size(1257, 121);
             this.grandianPanel1.TabIndex = 14;
             // 
             // label2
@@ -181,7 +189,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(43, 46);
+            this.label2.Location = new System.Drawing.Point(38, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 39);
             this.label2.TabIndex = 16;
@@ -189,25 +197,27 @@
             // 
             // titleBar1
             // 
+            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.titleBar1.HeaderText = "HeaderText";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1238, 33);
+            this.titleBar1.Size = new System.Drawing.Size(1257, 33);
             this.titleBar1.TabIndex = 13;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 767);
+            this.ClientSize = new System.Drawing.Size(1257, 727);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitter1);
-            this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
