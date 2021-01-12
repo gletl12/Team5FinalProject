@@ -54,8 +54,6 @@ namespace CompanyManager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PopupBaseForm";
             this.Text = "PopupBaseForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PopupBaseForm_FormClosed);
-            this.Load += new System.EventHandler(this.PopupBaseForm_Load);
             this.ResumeLayout(false);
 
         }
