@@ -1,6 +1,6 @@
 ﻿namespace POP
 {
-    partial class frmMain
+    partial class frmLogin
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -30,12 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmMain
+            // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmMain";
+            this.ClientSize = new System.Drawing.Size(800, 525);
+            this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmLogin";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.ResumeLayout(false);
