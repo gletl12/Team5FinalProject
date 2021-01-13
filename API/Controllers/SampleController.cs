@@ -33,7 +33,7 @@ namespace API.Controllers
 
 
         // POST: api/Sample
-        //{ name = "" , value1=""}
+        //{sampleID = "", name = "" , value1=""}
         //메시지만 반환
         public HttpResponseMessage Post([FromBody]SampleVO value)
         {
