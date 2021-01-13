@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EncrytLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAC\EncrytLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
@@ -83,15 +87,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DAC\Team5Connect_DEV.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="DAC\CommonDAC.cs" />
+    <Compile Include="DAC\ConnectionAccess.cs" />
+    <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\SampleDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SampleVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,16 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAC\DAC.csproj">
-      <Project>{EF3F8919-8C06-43DA-BE2A-6AEAC789B627}</Project>
-      <Name>DAC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VO\VO.csproj">
-      <Project>{166E3B03-0BD1-4CBB-8752-A446FD88F296}</Project>
-      <Name>VO</Name>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{7DA0A26D-E5F3-4DED-8576-5DB25140485C}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
