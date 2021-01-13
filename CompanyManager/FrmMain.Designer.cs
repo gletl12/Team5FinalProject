@@ -51,7 +51,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(178, 727);
+            this.splitter1.Size = new System.Drawing.Size(178, 800);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -65,7 +65,7 @@
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMenu.Location = new System.Drawing.Point(-1, -1);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(198, 577);
+            this.pnlMenu.Size = new System.Drawing.Size(198, 650);
             this.pnlMenu.TabIndex = 10;
             // 
             // splitter2
@@ -73,7 +73,7 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(178, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(1079, 149);
+            this.splitter2.Size = new System.Drawing.Size(1172, 149);
             this.splitter2.TabIndex = 2;
             this.splitter2.TabStop = false;
             // 
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.pnlMenu);
             this.panel1.Location = new System.Drawing.Point(0, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 577);
+            this.panel1.Size = new System.Drawing.Size(180, 650);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -180,7 +180,7 @@
             this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(1257, 121);
+            this.grandianPanel1.Size = new System.Drawing.Size(1350, 121);
             this.grandianPanel1.TabIndex = 14;
             // 
             // label2
@@ -204,14 +204,14 @@
             this.titleBar1.HeaderText = "HeaderText";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1257, 33);
+            this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 727);
+            this.ClientSize = new System.Drawing.Size(1350, 800);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.panel1);

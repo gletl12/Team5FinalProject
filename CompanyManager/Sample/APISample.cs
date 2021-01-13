@@ -69,7 +69,7 @@ namespace CompanyManager
         }
 
 
-        // url : https://localhost:44384/api/Sample/"SampleID"
+        // url : https://localhost:44384/api/Sample/ + SampleID
         public async Task<List<SampleVO>> Put_API(SampleVO sample)
         {
             //수정할 SampleVO의 ID를 추가로 url에 추가
@@ -94,7 +94,7 @@ namespace CompanyManager
             }
         }
 
-        // url : https://localhost:44384/api/Sample/5 
+        // url : https://localhost:44384/api/Sample/ + SampleID
         public async Task<List<SampleVO>> Delete_API(SampleVO sample)
         {
             //삭제할 SampleVO의 SampleID를 url에 추가

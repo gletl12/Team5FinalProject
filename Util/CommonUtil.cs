@@ -165,13 +165,14 @@ namespace Util
             {
                 if (form.GetType() == type)
                 {
-                    form.Close();
+                    form.Activate();
                     break;
                 }
             }
             Form frm = ((Form)Activator.CreateInstance(type));
             frm.MdiParent = parent;
             frm.Show();
+            frm.Location = new Point(0, 0);
 
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }

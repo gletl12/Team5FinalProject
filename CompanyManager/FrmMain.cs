@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.WebSockets;
@@ -23,6 +24,7 @@ namespace CompanyManager
         
         public string Admin { get; set; }
 
+        
         public FrmMain()
         {
             InitializeComponent();
@@ -57,7 +59,6 @@ namespace CompanyManager
                 {
                     Button btn = new Button();
                     btn.Name = p.INFO.Trim().Substring(1);
-                    btn.Tag = p.FormName;
                     btn.Text = btn.Name;
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = buttonColor;
@@ -74,9 +75,9 @@ namespace CompanyManager
         //소메뉴 생성
         private void Btn_Click(object sender, EventArgs e)
         {
-            //메뉴 중복선택 확인
-            if (selectedBtn == ((Button)sender))
-                return;
+            ////메뉴 중복선택 확인
+            //if (selectedBtn == ((Button)sender))
+            //    return;
 
             //메뉴 위치 복구 (이미 선택된 메뉴가 있다면)
             foreach (Control ctrl in pnlMenu.Controls)
@@ -95,14 +96,15 @@ namespace CompanyManager
                             }
                         }
                     }
+                    //메뉴 중복선택 확인
+                    if (selectedBtn == ((Button)sender))
+                        return;
+
                     break;
                 }
             }
 
             
-
-
-
             selectedBtn = ((Button)sender);
 
             //메뉴 위치 변경
@@ -125,7 +127,7 @@ namespace CompanyManager
             tv.Location = new Point(-1, selectedBtn.Location.Y+48);
             tv.Size = new Size(180, 300);
             tv.ImageList = imageList1;
-            tv.AfterSelect += treeView_AfterSelect;
+            tv.DoubleClick += treeView_Click;
             pnlMenu.Controls.Add(tv);
 
             TreeNode tn = new TreeNode(selectedBtn.Text);
@@ -147,6 +149,7 @@ namespace CompanyManager
 
         }
 
+
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             //메인폼 종료 로그
@@ -155,9 +158,17 @@ namespace CompanyManager
         }
 
         //폼 열기
-        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+       
+        private void treeView_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            if (((TreeView)sender).SelectedNode.Tag != null)
+            {
+                string formName = ((TreeView)sender).SelectedNode.Tag.ToString();
+                string appName = Assembly.GetEntryAssembly().GetName().Name;
+                Type frmType = Type.GetType($"{appName}.{formName}");
+
+                Util.CommonUtil.OpenCreateForm(this, frmType);
+            }
         }
     }
 }
