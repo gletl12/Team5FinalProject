@@ -38,9 +38,9 @@
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.titleBar1.HeaderText = "HeaderText";
-            this.titleBar1.Location = new System.Drawing.Point(-1, 0);
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(801, 33);
+            this.titleBar1.Size = new System.Drawing.Size(800, 33);
             this.titleBar1.TabIndex = 0;
             // 
             // frmLogin
@@ -57,6 +57,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 
