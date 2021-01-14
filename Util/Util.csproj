@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CommonExcel.cs" />
     <Compile Include="CommonUtil.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="LoggingUtility.cs" />
