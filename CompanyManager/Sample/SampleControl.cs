@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CompanyManager.Sample
+namespace CompanyManager
 {
     public partial class SampleControl : CompanyManager.MDIBaseForm
     {

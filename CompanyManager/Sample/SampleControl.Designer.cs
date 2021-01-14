@@ -1,4 +1,4 @@
-﻿namespace CompanyManager.Sample
+﻿namespace CompanyManager
 {
     partial class SampleControl
     {
