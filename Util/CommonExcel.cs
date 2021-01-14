@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Util
 {
-    public class Class1
+    class CommonExcel
     {
     }
 }

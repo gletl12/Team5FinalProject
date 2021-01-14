@@ -43,8 +43,11 @@
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.titleBar1 = new CompanyManager.TitleBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -63,9 +66,9 @@
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMenu.Location = new System.Drawing.Point(-1, -1);
+            this.pnlMenu.Location = new System.Drawing.Point(-1, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(198, 650);
+            this.pnlMenu.Size = new System.Drawing.Size(198, 699);
             this.pnlMenu.TabIndex = 10;
             // 
             // splitter2
@@ -84,9 +87,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pnlMenu);
-            this.panel1.Location = new System.Drawing.Point(0, 151);
+            this.panel1.Location = new System.Drawing.Point(0, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 650);
+            this.panel1.Size = new System.Drawing.Size(180, 699);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -180,7 +183,7 @@
             this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(1350, 121);
+            this.grandianPanel1.Size = new System.Drawing.Size(1350, 72);
             this.grandianPanel1.TabIndex = 14;
             // 
             // label2
@@ -189,7 +192,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(38, 46);
+            this.label2.Location = new System.Drawing.Point(37, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 39);
             this.label2.TabIndex = 16;
@@ -207,11 +210,30 @@
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(180, 102);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1170, 23);
+            this.panel2.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 14);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "label3";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 800);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.panel1);
@@ -227,6 +249,8 @@
             this.panel1.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
             this.grandianPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,6 +272,8 @@
         private GrandianPanel grandianPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
