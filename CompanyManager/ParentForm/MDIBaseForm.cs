@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,8 @@ namespace CompanyManager
         private void MDIBaseForm_Load(object sender, EventArgs e)
         {
             CommonUtil.SetDGVDesign(dataGridView1);
+            MenuService service = new MenuService();
+            dataGridView1.DataSource = service.GetMenus();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
