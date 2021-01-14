@@ -292,7 +292,7 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(11, 156);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 160);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1148, 480);
@@ -312,15 +312,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView2);
             this.Name = "SampleControl";
-            this.Controls.SetChildIndex(this.dataGridView2, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.button13, 0);
-            this.Controls.SetChildIndex(this.button12, 0);
-            this.Controls.SetChildIndex(this.button11, 0);
-            this.Controls.SetChildIndex(this.button10, 0);
-            this.Controls.SetChildIndex(this.button9, 0);
-            this.Controls.SetChildIndex(this.label10, 0);
-            this.Controls.SetChildIndex(this.button8, 0);
+            this.Load += new System.EventHandler(this.SampleControl_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
