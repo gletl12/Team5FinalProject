@@ -21,7 +21,7 @@ namespace CompanyManager
             Log.WriteInfo("프로그램 시작");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIBaseForm());
+            Application.Run(new FrmMain());
         }
     }
 }

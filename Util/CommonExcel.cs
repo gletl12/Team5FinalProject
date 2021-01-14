@@ -20,7 +20,7 @@ namespace Util
         public static List<T> ReadExcelData<T>(string sheetName)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Excel Files(*.xls)|*.xls|Excel Files(*.xlsx)|*.xlsx";
+            dlg.Filter = "Excel Files(*.xls)|*.xls|Excel Files(*.xlsx)|*.xlsx|All Files(*,*)|*.*";
 
             if (dlg.ShowDialog() != DialogResult.OK)
             {
