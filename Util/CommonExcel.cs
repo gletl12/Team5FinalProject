@@ -48,10 +48,10 @@ namespace Util
             List<T> result = new List<T>();
             using (OleDbConnection conn = new OleDbConnection(strConn))
             {
-                string sql = "select * from [" + sheetName + "$]";
+                string sql = "select * from [" + sheetName + "$A8:Z]";
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
                 conn.Open();
-                OleDbDataReader reader = cmd.ExecuteReader();
+                //OleDbDataReader reader = cmd.ExecuteReader();
                 result = Helper.DataReaderMapToList<T>(cmd.ExecuteReader());
             }
 

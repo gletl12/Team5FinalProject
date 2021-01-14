@@ -1,5 +1,5 @@
 ﻿
-namespace CompanyManager.Sample
+namespace CompanyManager
 {
     partial class PopupSample
     {
@@ -35,7 +35,8 @@ namespace CompanyManager.Sample
             // 
             // titleBar1
             // 
-            this.titleBar1.Size = new System.Drawing.Size(747, 33);
+            this.titleBar1.Location = new System.Drawing.Point(-1, -1);
+            this.titleBar1.Size = new System.Drawing.Size(743, 33);
             // 
             // button14
             // 
@@ -60,13 +61,12 @@ namespace CompanyManager.Sample
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(395, 558);
+            this.button1.Location = new System.Drawing.Point(382, 558);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "취소";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PopupSample
             // 
@@ -76,9 +76,9 @@ namespace CompanyManager.Sample
             this.Controls.Add(this.button14);
             this.Name = "PopupSample";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Controls.SetChildIndex(this.titleBar1, 0);
             this.Controls.SetChildIndex(this.button14, 0);
             this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.titleBar1, 0);
             this.ResumeLayout(false);
 
         }

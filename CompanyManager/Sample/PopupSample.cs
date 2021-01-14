@@ -9,16 +9,16 @@ using VO;
 
 namespace CompanyManager
 {
-    public partial class SampleControl : CompanyManager.MDIBaseForm
+    public partial class PopupSample : CompanyManager.PopupBaseForm
     {
-        public SampleControl()
+        public PopupSample()
         {
             InitializeComponent();
         }
 
         private void SampleControl_Load(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = Util.CommonExcel.ReadExcelData<MenuVO>("Sheet1");
+            //dataGridView2.DataSource = Util.CommonExcel.ReadExcelData<MenuVO>("Sheet1");
         }
     }
 }

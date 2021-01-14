@@ -1,5 +1,4 @@
-﻿using CompanyManager.Sample;
-using Service;
+﻿using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +10,9 @@ using Util;
 
 namespace CompanyManager
 {
-    public partial class SampleControl : CompanyManager.MDIBaseForm
+    public partial class MDISampleControl : CompanyManager.MDIBaseForm
     {
-        public SampleControl()
+        public MDISampleControl()
         {
             InitializeComponent();
         }
@@ -29,7 +28,7 @@ namespace CompanyManager
         {
             PopupSample frm = new PopupSample();
             frm.Show();
-
+           
         }
     }
 }
