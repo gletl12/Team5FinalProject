@@ -114,11 +114,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sample\SampleControl.cs">
+    <Compile Include="Sample\PopupSample.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sample\SampleControl.Designer.cs">
-      <DependentUpon>SampleControl.cs</DependentUpon>
+    <Compile Include="Sample\PopupSample.Designer.cs">
+      <DependentUpon>PopupSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\MDISampleControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\MDISampleControl.Designer.cs">
+      <DependentUpon>MDISampleControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
@@ -148,8 +154,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sample\SampleControl.resx">
-      <DependentUpon>SampleControl.cs</DependentUpon>
+    <EmbeddedResource Include="Sample\MDISampleControl.resx">
+      <DependentUpon>MDISampleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\PopupSample.resx">
+      <DependentUpon>PopupSample.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
