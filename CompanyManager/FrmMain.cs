@@ -169,6 +169,8 @@ namespace CompanyManager
 
                 Util.CommonUtil.OpenCreateForm(this, frmType);
             }
+
+            
         }
     }
 }

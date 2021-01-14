@@ -34,6 +34,11 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>E:\다운로드\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,6 +55,7 @@
   <ItemGroup>
     <Compile Include="CommonExcel.cs" />
     <Compile Include="CommonUtil.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="LoggingUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
