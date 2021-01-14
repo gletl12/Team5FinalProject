@@ -61,11 +61,11 @@ namespace API.Controllers
             int a = 1;
             if (a == 1)
             {
-               return Ok(new List<SampleVO>());  //ApiController 에서 redirected()등 여러 반환값 필요한걸로 리턴
+                return Ok(new List<SampleVO>());  //ApiController 에서 redirected()등 여러 반환값 필요한걸로 리턴
             }
             else
             {
-                return NotFound(); 
+                return NotFound();
             }
 
         }
