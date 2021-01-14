@@ -18,7 +18,7 @@ namespace CompanyManager
 
         private void FrmMenuManagement_Load(object sender, EventArgs e)
         {
-           dataGridView1.DataSource = Util.CommonExcel.ReadExcelData<MenuVO>("Sheet1");
+            dataGridView1.DataSource =  Util.CommonExcel.ReadExcelData<MenuVO>("Sheet1");
         }
     }
 }

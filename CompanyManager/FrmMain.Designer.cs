@@ -44,12 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.titleBar1 = new CompanyManager.TitleBar();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblSortName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -215,36 +213,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(180, 102);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblSortName);
+            this.panel2.Location = new System.Drawing.Point(179, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1170, 23);
+            this.panel2.Size = new System.Drawing.Size(1173, 24);
             this.panel2.TabIndex = 16;
             // 
-            // label3
+            // lblSortName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 14);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "label3";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(627, 318);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 18;
+            this.lblSortName.AutoSize = true;
+            this.lblSortName.Location = new System.Drawing.Point(6, 4);
+            this.lblSortName.Name = "lblSortName";
+            this.lblSortName.Size = new System.Drawing.Size(0, 14);
+            this.lblSortName.TabIndex = 17;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 800);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
@@ -258,12 +246,12 @@
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
             this.grandianPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,8 +274,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblSortName;
     }
 }
 

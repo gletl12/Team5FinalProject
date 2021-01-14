@@ -21,7 +21,10 @@ namespace CompanyManager
         Color buttonColor = Color.FromArgb(142, 160, 185);
         Color selectedColor = Color.Blue;
         Button selectedBtn;
-        
+
+
+       
+
         public string Admin { get; set; }
 
         
@@ -140,7 +143,7 @@ namespace CompanyManager
                 if (p.INFO.Trim().StartsWith("L") && p.SortName.StartsWith(selectedBtn.Text))
                 {
                     tnc = new TreeNode(p.INFO.Trim().Substring(1));
-                    tnc.Tag = p.FormName;
+                    tnc.Tag = p.FormName+"@"+p.SortName;
                     tn.Nodes.Add(tnc);
                 }
             });
@@ -161,14 +164,41 @@ namespace CompanyManager
        
         private void treeView_Click(object sender, EventArgs e)
         {
-            if (((TreeView)sender).SelectedNode.Tag != null)
+            if (!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("@"))
             {
-                string formName = ((TreeView)sender).SelectedNode.Tag.ToString();
+                string formName = ((TreeView)sender).SelectedNode.Tag.ToString().Split('@')[0];
                 string appName = Assembly.GetEntryAssembly().GetName().Name;
                 Type frmType = Type.GetType($"{appName}.{formName}");
 
                 Util.CommonUtil.OpenCreateForm(this, frmType);
             }
+
+            
+        }
+
+        private void FrmMain_MdiChildActivate(object sender, EventArgs e)
+        {
+            //MessageBox.Show(this.ActiveMdiChild.GetType().ToString());
+
+            string sortName = menuAllList.Find(p => 
+            {
+                if (p.FormName !=null)
+                {
+                    return p.FormName.Equals(this.ActiveMdiChild.GetType().ToString().Split('.')[1]);
+                }
+                return false;
+                
+            }).SortName;
+
+
+            lblSortName.Text = sortName;
+            //foreach (Form frm in this.MdiChildren)
+            //{
+            //    if (frm.act)
+            //    {
+            //        MessageBox.Show(frm.GetType().ToString());
+            //    }
+            //}
 
             
         }

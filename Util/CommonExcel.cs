@@ -24,7 +24,7 @@ namespace Util
 
             if (dlg.ShowDialog() != DialogResult.OK)
             {
-                MessageBox.Show("파일선택을 하지 않았스빈다");
+                MessageBox.Show("파일선택을 하지 않았습니다.");
                 return null;
             }
 
@@ -51,11 +51,17 @@ namespace Util
                 string sql = "select * from [" + sheetName + "$]";
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
                 conn.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
                 result = Helper.DataReaderMapToList<T>(cmd.ExecuteReader());
             }
 
             return result;
         }
 
+
+        public static void ExportExcelData()
+        {
+
+        }
     }
 }
