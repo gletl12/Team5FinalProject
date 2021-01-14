@@ -176,6 +176,7 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\SeekPng.com_white-magnifying-glass-icon_9209972.png" />
     <None Include="Resources\IMG_0190.PNG" />
     <None Include="Resources\gear-option.png" />
     <None Include="Resources\AlignJustify_16x16.png" />
