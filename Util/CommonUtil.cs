@@ -118,6 +118,33 @@ namespace Util
                 GC.Collect();
             }
         }
+        /// <summary>
+        /// 그리드뷰 디자인 설정
+        /// </summary>
+        public static void SetDGVDesign(DataGridView dgv)
+        {
+            // TODO - 임시 주석 제거 // **// 
+            // **// dgv.AutoGenerateColumns = false;
+            // **// dgv.AllowUserToAddRows = false;
+            dgv.MultiSelect = false; //열하나만선택
+
+            dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o
+            dgv.AllowUserToResizeRows = false; //사용자가임의로 로우의 크기를 변경시킬수 없게     
+
+            dgv.RowHeadersVisible = false; // 맨왼쪽에 있는 컬럼 삭제
+            // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
+
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+
+            dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
+            // dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 175, 175);   // 로우 해더 색설정     
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(243, 228, 231); //홀수 행 색
+            dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+
+            dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+        }
 
         /// <summary>
         /// Form 실행 메서드
