@@ -184,6 +184,23 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\IMG_0190.PNG" />
+    <None Include="Resources\gear-option.png" />
+    <None Include="Resources\AlignJustify_16x16.png" />
+    <None Include="Resources\settings-icon-transparent-13.jpg" />
+    <None Include="Resources\pencil-16.png" />
+    <None Include="Resources\Previous_16x16.png" />
+    <None Include="Resources\Next_16x16.png" />
+    <None Include="Resources\Copy_16x16.png" />
+    <None Include="Resources\New_16x16.png" />
+    <None Include="Resources\Zoom_16x16.png" />
+    <None Include="Resources\TextBox_16x16.png" />
+    <None Include="Resources\Up2_16x16.png" />
+    <None Include="Resources\Download_16x16.png" />
+    <None Include="Resources\Action_Copy.png" />
+    <None Include="Resources\Properties_16x16.png" />
+    <None Include="Resources\PenColor_16x16.png" />
+    <None Include="Resources\GridBandedRows_16x16.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
