@@ -34,6 +34,10 @@ namespace DAC
             catch (Exception err)
             {
                 Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_GetMenus() 오류", err);
+
                 return new List<MenuVO>();
             }
 

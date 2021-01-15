@@ -193,7 +193,7 @@ namespace Util
                 if (form.GetType() == type)
                 {
                     form.Activate();
-                    break;
+                    return;
                 }
             }
             Form frm = ((Form)Activator.CreateInstance(type));

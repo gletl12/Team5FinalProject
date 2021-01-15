@@ -1,5 +1,6 @@
 ﻿using API.DAC;
 using API.Models;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,15 @@ namespace API.Controllers
 
     public class SampleController : ApiController
     {
+        //로그 선언
+        ILog log = log4net.LogManager.GetLogger(typeof(SampleController));
+
+        private void WriteLog()
+        {
+            log.Debug("로그 작성");
+        }
+
+
         // GET: api/Sample
         public List<SampleVO> Get()
         {

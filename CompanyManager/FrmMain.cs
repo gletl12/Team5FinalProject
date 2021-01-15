@@ -63,6 +63,7 @@ namespace CompanyManager
                     Button btn = new Button();
                     btn.Name = p.INFO.Trim().Substring(1);
                     btn.Text = btn.Name;
+                    btn.Tag = "Large";
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = buttonColor;
                     btn.Location = new Point(-1, -1+ (42 * count));
@@ -164,7 +165,7 @@ namespace CompanyManager
        
         private void treeView_Click(object sender, EventArgs e)
         {
-            if (!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("@"))
+            if (!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("@")&&!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("Large"))
             {
                 string formName = ((TreeView)sender).SelectedNode.Tag.ToString().Split('@')[0];
                 string appName = Assembly.GetEntryAssembly().GetName().Name;
@@ -176,6 +177,8 @@ namespace CompanyManager
             
         }
 
+
+        //Mdi폼이 열릴때마다 해당 폼의 SortName을 화면 상단에 표시
         private void FrmMain_MdiChildActivate(object sender, EventArgs e)
         {
             //MessageBox.Show(this.ActiveMdiChild.GetType().ToString());
