@@ -36,7 +36,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -132,13 +132,6 @@
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;
             this.label15.Text = "label2";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(75, 48);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 2;
             // 
             // label16
             // 
@@ -261,13 +254,13 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.label17);
@@ -304,6 +297,14 @@
             this.dataGridView2.Size = new System.Drawing.Size(1148, 480);
             this.dataGridView2.TabIndex = 10;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(75, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 22);
+            this.comboBox1.TabIndex = 4;
+            // 
             // MDISampleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -337,7 +338,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
@@ -351,5 +351,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
