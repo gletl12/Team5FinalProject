@@ -61,11 +61,12 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(788, 131);
+            this.button8.Location = new System.Drawing.Point(807, 131);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(60, 23);
+            this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 3;
             this.button8.Text = "    복사";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = false;
             // 
             // label10
@@ -172,6 +173,7 @@
             this.button10.Size = new System.Drawing.Size(86, 23);
             this.button10.TabIndex = 6;
             this.button10.Text = "    Excel등록";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             // 
             // button11
@@ -181,11 +183,12 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(918, 131);
+            this.button11.Location = new System.Drawing.Point(930, 131);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(114, 23);
+            this.button11.Size = new System.Drawing.Size(102, 23);
             this.button11.TabIndex = 7;
             this.button11.Text = "    양식 다운로드";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = false;
             // 
             // button12
@@ -195,11 +198,12 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(853, 131);
+            this.button12.Location = new System.Drawing.Point(870, 131);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(60, 23);
+            this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 8;
             this.button12.Text = "    엑셀";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             // 
             // textBox7
@@ -243,11 +247,12 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(723, 131);
+            this.button13.Location = new System.Drawing.Point(745, 131);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(60, 23);
+            this.button13.Size = new System.Drawing.Size(56, 23);
             this.button13.TabIndex = 9;
             this.button13.Text = "    등록";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -299,7 +304,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(1148, 480);
             this.dataGridView2.TabIndex = 10;
             // 
-            // SampleControl
+            // MDISampleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
@@ -312,7 +317,7 @@
             this.Controls.Add(this.button13);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView2);
-            this.Name = "SampleControl";
+            this.Name = "MDISampleControl";
             this.Load += new System.EventHandler(this.SampleControl_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
