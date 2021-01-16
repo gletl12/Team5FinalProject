@@ -9,7 +9,7 @@ namespace CompanyManager
 {
     static class Program
     {
-        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Info, 30);
+        private static LoggingUtility _log = new LoggingUtility("Log_Mes", Level.Info, 30);
         public static LoggingUtility Log { get { return _log; } }
 
         /// <summary>

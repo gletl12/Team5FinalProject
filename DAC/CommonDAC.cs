@@ -14,7 +14,7 @@ namespace DAC
 {
     public class CommonDAC : ConnectionAccess, IDisposable
     {
-        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Error, 30);
+        private static LoggingUtility _log = new LoggingUtility("Log_DAC", Level.Error, 30);
         public static LoggingUtility Log { get { return _log; } }
 
         /// <summary>

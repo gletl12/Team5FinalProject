@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl\CustomTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\CustomTabControl.Designer.cs">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Sample\MDISampleControl.Designer.cs">
       <DependentUpon>MDISampleControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>

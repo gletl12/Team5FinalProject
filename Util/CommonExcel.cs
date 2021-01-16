@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Office.Interop;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.OleDb;
 using System.Windows.Forms;
-
 namespace Util
 {
     public static class CommonExcel
@@ -48,7 +47,7 @@ namespace Util
             List<T> result = new List<T>();
             using (OleDbConnection conn = new OleDbConnection(strConn))
             {
-                string sql = "select * from [" + sheetName + "$A8:Z]";
+                string sql = "select * from [" + sheetName + "]";
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
                 conn.Open();
                 //OleDbDataReader reader = cmd.ExecuteReader();
@@ -58,10 +57,41 @@ namespace Util
             return result;
         }
 
-
-        public static void ExportExcelData()
+        /// <summary>
+        /// 엑셀 양식을 다운로드한다.
+        /// </summary>
+        /// <param name="FileName"></param>
+        public static void ExportExcelData(string FileName)
         {
 
+        }
+
+        /// <summary>
+        /// 엑셀 양식에 데이터를 추가해 출력한다.
+        /// </summary>
+        /// <param name="FileName"></param>
+        public static void ExportExcelData<T>(string FileName, T Data)
+        {
+            //저장할 디렉토리 설정
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Excel Files(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(0);
+
+
+
+                xlWorkBook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+
+                MessageBox.Show("Excel Export가 완료되었습니다.");
+            }
         }
     }
 }

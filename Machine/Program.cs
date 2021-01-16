@@ -10,7 +10,7 @@ namespace Machine
 {
     class Program
     {
-        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Error, 30);
+        private static LoggingUtility _log = new LoggingUtility("Log_Machine", Level.Error, 30);
         public static LoggingUtility Log { get { return _log; } }
 
         //시작 Log.

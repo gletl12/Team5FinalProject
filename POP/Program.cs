@@ -10,7 +10,7 @@ namespace POP
 {
     static class Program
     {
-        private static LoggingUtility _log = new LoggingUtility("MyProject", Level.Error, 30);
+        private static LoggingUtility _log = new LoggingUtility("Log_POP", Level.Error, 30);
         public static LoggingUtility Log { get { return _log; } }
 
 
