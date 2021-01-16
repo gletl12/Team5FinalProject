@@ -12,7 +12,6 @@ namespace CompanyManager
 {
     public partial class MDISampleControl : CompanyManager.MDIBaseForm
     {
-        CheckBox headerCheckBox = new CheckBox();
         public MDISampleControl()
         {
             InitializeComponent();
@@ -21,9 +20,6 @@ namespace CompanyManager
         private void SampleControl_Load(object sender, EventArgs e)
         {
             CommonUtil.SetDGVDesign(dataGridView2);
-            CommonUtil.AddGridTextColumn(dataGridView2, "No.", "d",40);
-            CommonUtil.AddGridCheckColumn(dataGridView2, "C");
-            CommonUtil.AddGridButtonColumn(dataGridView2,"Edit","Edit","Edit");
             MenuService service = new MenuService();
             dataGridView2.DataSource = service.GetMenus();
         }
@@ -34,6 +30,5 @@ namespace CompanyManager
             frm.Show();
            
         }
-     
     }
 }
