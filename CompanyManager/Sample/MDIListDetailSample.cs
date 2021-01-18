@@ -10,25 +10,21 @@ using Util;
 
 namespace CompanyManager
 {
-    public partial class MDISampleControl : CompanyManager.MDIBaseForm
+    public partial class MDIListDetailSample : CompanyManager.MDIBaseForm
     {
-        public MDISampleControl()
+        public MDIListDetailSample()
         {
             InitializeComponent();
         }
 
-        private void SampleControl_Load(object sender, EventArgs e)
+        private void MDISampleControl2_Load(object sender, EventArgs e)
         {
             CommonUtil.SetDGVDesign(dataGridView2);
             MenuService service = new MenuService();
             dataGridView2.DataSource = service.GetMenus();
-        }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            PopupSample frm = new PopupSample();
-            frm.Show();
-           
+            CommonUtil.SetDGVDesign(dataGridView1);
+            dataGridView1.DataSource = service.GetMenus();
         }
     }
 }

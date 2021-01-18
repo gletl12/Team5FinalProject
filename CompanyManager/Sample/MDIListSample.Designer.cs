@@ -1,6 +1,6 @@
 ﻿namespace CompanyManager
 {
-    partial class MDISampleControl
+    partial class MDIListSample
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
