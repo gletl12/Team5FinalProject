@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Util;
 
-namespace CompanyManager.Sample
+namespace CompanyManager
 {
     public partial class MDISampleControl2 : CompanyManager.MDIBaseForm
     {
