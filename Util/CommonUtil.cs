@@ -192,7 +192,7 @@ namespace Util
 
             if (parent.WindowState == FormWindowState.Maximized)
             {
-                formSize = new Size(1600,800);
+                formSize = new Size(1738,927);
             }
 
 
