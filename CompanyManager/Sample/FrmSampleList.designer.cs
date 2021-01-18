@@ -1,5 +1,5 @@
-﻿namespace CompanyManager.Sample
-{
+﻿namespace CompanyManager
+{ 
     partial class FrmSampleList
     {
         /// <summary>
