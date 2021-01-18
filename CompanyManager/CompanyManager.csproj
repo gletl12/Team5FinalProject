@@ -75,6 +75,12 @@
     <Compile Include="FrmMenuManagement.Designer.cs">
       <DependentUpon>FrmMenuManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sample\FrmSampleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\FrmSampleList.designer.cs">
+      <DependentUpon>FrmSampleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sample\MDIListDetailSample2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sample\FrmSampleList.resx">
+      <DependentUpon>FrmSampleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\MDIListDetailSample2.resx">
+      <DependentUpon>MDIListDetailSample2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sample\MDIListSample.resx">
       <DependentUpon>MDIListSample.cs</DependentUpon>
     </EmbeddedResource>
