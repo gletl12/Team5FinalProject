@@ -205,5 +205,23 @@ namespace CompanyManager
 
             
         }
+
+        private void FrmMain_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild == null)
+            {
+                return;
+            }
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.ActiveMdiChild.Size = new Size(1738, 927);
+            }
+            else
+            {
+                this.ActiveMdiChild.Size = new Size(1168, 647);
+            }
+            
+        }
     }
 }
