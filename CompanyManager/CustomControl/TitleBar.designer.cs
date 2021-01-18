@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitleBar));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSize = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imageList1
@@ -55,9 +55,23 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
+            this.label1.Size = new System.Drawing.Size(72, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "HeaderText";
+            // 
+            // btnSize
+            // 
+            this.btnSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSize.BackColor = System.Drawing.Color.Transparent;
+            this.btnSize.FlatAppearance.BorderSize = 0;
+            this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSize.Image = global::CompanyManager.Properties.Resources._1;
+            this.btnSize.Location = new System.Drawing.Point(559, 0);
+            this.btnSize.Name = "btnSize";
+            this.btnSize.Size = new System.Drawing.Size(31, 33);
+            this.btnSize.TabIndex = 6;
+            this.btnSize.UseVisualStyleBackColor = false;
+            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
             // 
             // btnCancel
             // 
@@ -72,20 +86,6 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSize
-            // 
-            this.btnSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnSize.FlatAppearance.BorderSize = 0;
-            this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSize.Image = global::CompanyManager.Properties.Resources.Delete_32x32;
-            this.btnSize.Location = new System.Drawing.Point(547, 0);
-            this.btnSize.Name = "btnSize";
-            this.btnSize.Size = new System.Drawing.Size(33, 33);
-            this.btnSize.TabIndex = 6;
-            this.btnSize.UseVisualStyleBackColor = false;
-            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
             // 
             // TitleBar
             // 

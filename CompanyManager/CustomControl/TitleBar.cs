@@ -81,10 +81,13 @@ namespace CompanyManager
             if (((Form)this.Parent).WindowState == FormWindowState.Normal)
             {
                 ((Form)this.Parent).WindowState = FormWindowState.Maximized;
+                btnSize.Image = global::CompanyManager.Properties.Resources._2;
             }
             else if(((Form)this.Parent).WindowState == FormWindowState.Maximized)
             {
                 ((Form)this.Parent).WindowState = FormWindowState.Normal;
+                btnSize.Image = global::CompanyManager.Properties.Resources._1;
+
             }
         }
     }
