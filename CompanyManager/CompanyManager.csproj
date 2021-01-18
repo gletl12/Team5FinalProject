@@ -150,6 +150,12 @@
     <Compile Include="Sample\MDIListSample.Designer.cs">
       <DependentUpon>MDIListSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="testrudgns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testrudgns.Designer.cs">
+      <DependentUpon>testrudgns.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
       <DependentUpon>PopupSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testrudgns.resx">
+      <DependentUpon>testrudgns.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
