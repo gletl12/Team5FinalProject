@@ -75,5 +75,17 @@ namespace CompanyManager
         {
             ((Form)this.Parent).Close();
         }
+
+        private void btnSize_Click(object sender, EventArgs e)
+        {
+            if (((Form)this.Parent).WindowState == FormWindowState.Normal)
+            {
+                ((Form)this.Parent).WindowState = FormWindowState.Maximized;
+            }
+            else if(((Form)this.Parent).WindowState == FormWindowState.Maximized)
+            {
+                ((Form)this.Parent).WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }

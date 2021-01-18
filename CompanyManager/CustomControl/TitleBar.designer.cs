@@ -33,6 +33,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSize = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imageList1
@@ -72,11 +73,26 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnSize
+            // 
+            this.btnSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSize.BackColor = System.Drawing.Color.Transparent;
+            this.btnSize.FlatAppearance.BorderSize = 0;
+            this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSize.Image = global::CompanyManager.Properties.Resources.Delete_32x32;
+            this.btnSize.Location = new System.Drawing.Point(547, 0);
+            this.btnSize.Name = "btnSize";
+            this.btnSize.Size = new System.Drawing.Size(33, 33);
+            this.btnSize.TabIndex = 6;
+            this.btnSize.UseVisualStyleBackColor = false;
+            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
+            // 
             // TitleBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(50)))));
+            this.Controls.Add(this.btnSize);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -96,5 +112,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSize;
     }
 }
