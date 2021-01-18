@@ -41,5 +41,10 @@ namespace CompanyManager
                 splitContainer1.SplitterDistance = splitContainer1.SplitterDistance + 38;
             }
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
