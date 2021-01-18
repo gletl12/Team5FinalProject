@@ -95,7 +95,8 @@ namespace API.Controllers
 
 
         // DELETE: api/Sample/5
-        [HttpDelete]
+        [HttpGet]
+        [Route("api/Sampler/5")] //Get방식으로 받아 Delete매서드 실행
         public void Delete(int id)
         {
             //삭제 매서드 실행 후 반환은 위와동일
