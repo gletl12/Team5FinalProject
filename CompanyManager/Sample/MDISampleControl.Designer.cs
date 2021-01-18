@@ -47,9 +47,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(807, 131);
+            this.button8.Location = new System.Drawing.Point(809, 131);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 3;
@@ -74,7 +74,7 @@
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(10, 134);
+            this.label10.Location = new System.Drawing.Point(11, 140);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 4;
@@ -148,7 +148,7 @@
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1128, 131);
+            this.button9.Location = new System.Drawing.Point(1130, 131);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(29, 23);
             this.button9.TabIndex = 5;
@@ -161,7 +161,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1037, 131);
+            this.button10.Location = new System.Drawing.Point(1039, 131);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(86, 23);
             this.button10.TabIndex = 6;
@@ -176,7 +176,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(930, 131);
+            this.button11.Location = new System.Drawing.Point(932, 131);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(102, 23);
             this.button11.TabIndex = 7;
@@ -191,7 +191,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(870, 131);
+            this.button12.Location = new System.Drawing.Point(872, 131);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 8;
@@ -240,7 +240,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(745, 131);
+            this.button13.Location = new System.Drawing.Point(747, 131);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(56, 23);
             this.button13.TabIndex = 9;
@@ -268,10 +268,18 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.button14);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(11, 11);
+            this.panel2.Location = new System.Drawing.Point(7, 11);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1148, 98);
+            this.panel2.Size = new System.Drawing.Size(1152, 98);
             this.panel2.TabIndex = 11;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(75, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 22);
+            this.comboBox1.TabIndex = 4;
             // 
             // button14
             // 
@@ -294,16 +302,8 @@
             this.dataGridView2.Location = new System.Drawing.Point(7, 160);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1148, 480);
+            this.dataGridView2.Size = new System.Drawing.Size(1152, 480);
             this.dataGridView2.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 4;
             // 
             // MDISampleControl
             // 

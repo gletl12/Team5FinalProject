@@ -244,7 +244,7 @@ namespace CompanyManager
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(3, 7);
+            this.label10.Location = new System.Drawing.Point(3, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 13;
@@ -409,7 +409,7 @@ namespace CompanyManager
             this.label1.AutoSize = true;
             this.label1.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 14);
             this.label1.TabIndex = 13;
