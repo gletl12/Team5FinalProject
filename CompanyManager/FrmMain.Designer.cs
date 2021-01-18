@@ -40,14 +40,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSortName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.titleBar1 = new CompanyManager.TitleBar();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblSortName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.grandianPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.grandianPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitter1
@@ -68,7 +69,7 @@
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMenu.Location = new System.Drawing.Point(-1, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(198, 699);
+            this.pnlMenu.Size = new System.Drawing.Size(198, 706);
             this.pnlMenu.TabIndex = 10;
             // 
             // splitter2
@@ -87,9 +88,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pnlMenu);
-            this.panel1.Location = new System.Drawing.Point(0, 101);
+            this.panel1.Location = new System.Drawing.Point(0, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 699);
+            this.panel1.Size = new System.Drawing.Size(180, 706);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -174,6 +175,32 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblSortName);
+            this.panel2.Location = new System.Drawing.Point(179, 96);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1173, 24);
+            this.panel2.TabIndex = 16;
+            // 
+            // lblSortName
+            // 
+            this.lblSortName.AutoSize = true;
+            this.lblSortName.Location = new System.Drawing.Point(6, 4);
+            this.lblSortName.Name = "lblSortName";
+            this.lblSortName.Size = new System.Drawing.Size(0, 14);
+            this.lblSortName.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.label3.Location = new System.Drawing.Point(180, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1169, 3);
+            this.label3.TabIndex = 18;
+            // 
             // grandianPanel1
             // 
             this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -183,7 +210,7 @@
             this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(1350, 72);
+            this.grandianPanel1.Size = new System.Drawing.Size(1350, 66);
             this.grandianPanel1.TabIndex = 14;
             // 
             // label2
@@ -210,29 +237,12 @@
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblSortName);
-            this.panel2.Location = new System.Drawing.Point(179, 102);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1173, 24);
-            this.panel2.TabIndex = 16;
-            // 
-            // lblSortName
-            // 
-            this.lblSortName.AutoSize = true;
-            this.lblSortName.Location = new System.Drawing.Point(6, 4);
-            this.lblSortName.Name = "lblSortName";
-            this.lblSortName.Size = new System.Drawing.Size(0, 14);
-            this.lblSortName.TabIndex = 17;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 800);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
@@ -248,10 +258,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);
-            this.grandianPanel1.ResumeLayout(false);
-            this.grandianPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.grandianPanel1.ResumeLayout(false);
+            this.grandianPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,6 +285,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSortName;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -12,6 +12,8 @@ namespace CompanyManager.CustomControl
 {
     public partial class CustomTabControl : UserControl
     {
+        public int MyProperty { get; set; }
+
         public CustomTabControl()
         {
             InitializeComponent();
