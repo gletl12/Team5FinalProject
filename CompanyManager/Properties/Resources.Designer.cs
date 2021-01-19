@@ -113,6 +113,16 @@ namespace CompanyManager.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Home_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Home_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Max {
             get {
                 object obj = ResourceManager.GetObject("Max", resourceCulture);
@@ -156,6 +166,16 @@ namespace CompanyManager.Properties {
         internal static System.Drawing.Bitmap pencil_16 {
             get {
                 object obj = ResourceManager.GetObject("pencil_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Prev_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Prev_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -261,6 +261,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Home_16x16.png" />
+    <None Include="Resources\Prev_16x16.png" />
+    <None Include="Resources\Next_16x16.png" />
     <None Include="Resources\Min.png" />
     <None Include="Resources\Max.png" />
     <None Include="Resources\2.png" />
@@ -274,7 +277,6 @@
     <None Include="Resources\settings-icon-transparent-13.jpg" />
     <None Include="Resources\pencil-16.png" />
     <None Include="Resources\Previous_16x16.png" />
-    <None Include="Resources\Next_16x16.png" />
     <None Include="Resources\Copy_16x16.png" />
     <None Include="Resources\New_16x16.png" />
     <None Include="Resources\Zoom_16x16.png" />
