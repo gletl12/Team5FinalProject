@@ -3,14 +3,14 @@
     partial class frmLogin
     {
         /// <summary>
-        /// 필수 디자이너 변수입니다.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// 사용 중인 모든 리소스를 정리합니다.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,49 +20,145 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleBar1 = new POP.TitleBar();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            this.panBarCode = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDirect = new System.Windows.Forms.Button();
+            this.panDirectLogin = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPassWord = new POP.PlaceholderTextBox();
+            this.txtID = new POP.PlaceholderTextBox();
+            this.panBarCode.SuspendLayout();
+            this.panDirectLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // titleBar1
+            // panBarCode
             // 
-            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.titleBar1.HeaderText = "HeaderText";
-            this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(800, 33);
-            this.titleBar1.TabIndex = 0;
+            this.panBarCode.Controls.Add(this.label1);
+            this.panBarCode.Controls.Add(this.btnDirect);
+            this.panBarCode.Location = new System.Drawing.Point(16, 123);
+            this.panBarCode.Name = "panBarCode";
+            this.panBarCode.Size = new System.Drawing.Size(358, 49);
+            this.panBarCode.TabIndex = 19;
+            this.panBarCode.Paint += new System.Windows.Forms.PaintEventHandler(this.panBarCode_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 21);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "바코드를 입력하여 주십시오.";
+            // 
+            // btnDirect
+            // 
+            this.btnDirect.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDirect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnDirect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDirect.Location = new System.Drawing.Point(283, 3);
+            this.btnDirect.Name = "btnDirect";
+            this.btnDirect.Size = new System.Drawing.Size(72, 42);
+            this.btnDirect.TabIndex = 13;
+            this.btnDirect.Text = "직접 입력";
+            this.btnDirect.UseVisualStyleBackColor = false;
+            this.btnDirect.Click += new System.EventHandler(this.btnDirect_Click);
+            // 
+            // panDirectLogin
+            // 
+            this.panDirectLogin.Controls.Add(this.txtPassWord);
+            this.panDirectLogin.Controls.Add(this.txtID);
+            this.panDirectLogin.Controls.Add(this.button1);
+            this.panDirectLogin.Location = new System.Drawing.Point(12, 125);
+            this.panDirectLogin.Name = "panDirectLogin";
+            this.panDirectLogin.Size = new System.Drawing.Size(378, 113);
+            this.panDirectLogin.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(2, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(357, 36);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "로그인";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::POP.Properties.Resources.img_logo;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(361, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // txtPassWord
+            // 
+            this.txtPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.txtPassWord.Location = new System.Drawing.Point(4, 38);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.PlaceholderText = "비밀번호";
+            this.txtPassWord.Size = new System.Drawing.Size(355, 31);
+            this.txtPassWord.TabIndex = 17;
+            this.txtPassWord.UseSystemPasswordChar = true;
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.txtID.Location = new System.Drawing.Point(4, 5);
+            this.txtID.Name = "txtID";
+            this.txtID.PlaceholderText = "ID";
+            this.txtID.Size = new System.Drawing.Size(355, 31);
+            this.txtID.TabIndex = 17;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 525);
-            this.Controls.Add(this.titleBar1);
+            this.ClientSize = new System.Drawing.Size(386, 184);
+            this.Controls.Add(this.panBarCode);
+            this.Controls.Add(this.panDirectLogin);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
-            this.Text = "Form1";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
+            this.Text = "로그인";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.panBarCode.ResumeLayout(false);
+            this.panBarCode.PerformLayout();
+            this.panDirectLogin.ResumeLayout(false);
+            this.panDirectLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
-
-
         #endregion
 
-        private TitleBar titleBar1;
+        private System.Windows.Forms.Panel panBarCode;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDirect;
+        private System.Windows.Forms.Panel panDirectLogin;
+    
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private PlaceholderTextBox txtPassWord;
+        private PlaceholderTextBox txtID;
     }
 }
-
