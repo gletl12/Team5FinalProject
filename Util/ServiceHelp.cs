@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using VO;
 namespace Util
 {
-    public class ServiceHelp : IDisposable
+    public class ServiceHelp : AccessUrl, IDisposable
     {
         HttpClient client = new HttpClient();
 
@@ -17,7 +17,7 @@ namespace Util
 
         public ServiceHelp()
         {
-            BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/";
+            BaseServiceUrl = BaseUrl;
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

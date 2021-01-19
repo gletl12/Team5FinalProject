@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="CommonExcel.cs" />
     <Compile Include="CommonUtil.cs" />
+    <Compile Include="AccessUrl.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="LoggingUtility.cs" />
@@ -75,6 +76,11 @@
       <Project>{166e3b03-0bd1-4cbb-8752-a446fd88f296}</Project>
       <Name>VO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API_Url_DEV.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

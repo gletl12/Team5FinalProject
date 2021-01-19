@@ -20,13 +20,16 @@ namespace DAC
         /// <summary>
         /// ConnectionString
         /// </summary>
-        string strConn;
+        static string strConn;
         protected SqlConnection conn;
 
         public CommonDAC()
         {
-            AES enc = new AES();
-            strConn = enc.AESDecrypt256(this.ConnectionString);
+            if (strConn == null)
+            {
+                AES enc = new AES();
+                strConn = enc.AESDecrypt256(this.ConnectionString);
+            }
             conn = new SqlConnection(strConn);
             conn.Open();
         }
