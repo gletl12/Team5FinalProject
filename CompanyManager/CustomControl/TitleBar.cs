@@ -80,10 +80,12 @@ namespace CompanyManager
         {
             if (((Form)this.Parent).WindowState == FormWindowState.Normal)
             {
+
                 ((Form)this.Parent).WindowState = FormWindowState.Maximized;
             }
             else if(((Form)this.Parent).WindowState == FormWindowState.Maximized)
             {
+
                 ((Form)this.Parent).WindowState = FormWindowState.Normal;
             }
         }

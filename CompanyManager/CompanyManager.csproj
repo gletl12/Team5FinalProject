@@ -69,6 +69,12 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTab.Designer.cs">
+      <DependentUpon>CustomTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +99,6 @@
     <Compile Include="Sample\MDIListSample2.Designer.cs">
       <DependentUpon>MDIListSample2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sample\APISample.cs" />
     <Compile Include="CustomControl\TitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>

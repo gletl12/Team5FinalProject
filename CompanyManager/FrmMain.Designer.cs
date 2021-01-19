@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSortName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.titleBar1 = new CompanyManager.TitleBar();
@@ -205,6 +206,14 @@
             this.label3.Size = new System.Drawing.Size(1169, 3);
             this.label3.TabIndex = 18;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(180, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1172, 29);
+            this.panel3.TabIndex = 20;
+            // 
             // grandianPanel1
             // 
             this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -247,6 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 800);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grandianPanel1);
             this.Controls.Add(this.titleBar1);
@@ -291,6 +301,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSortName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
