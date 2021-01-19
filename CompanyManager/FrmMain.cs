@@ -1,4 +1,5 @@
-﻿using Service;
+﻿//using Microsoft.Office.Interop.Excel;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -171,7 +172,6 @@ namespace CompanyManager
         }
 
         //폼 열기
-       
         private void treeView_Click(object sender, EventArgs e)
         {
             TreeView tv = (TreeView)sender;
@@ -205,17 +205,18 @@ namespace CompanyManager
 
 
             lblSortName.Text = sortName;
-            //foreach (Form frm in this.MdiChildren)
-            //{
-            //    if (frm.act)
-            //    {
-            //        MessageBox.Show(frm.GetType().ToString());
-            //    }
-            //}
+
+            string[] temp1 = sortName.Split('>');
+            string[] temp2 = this.ActiveMdiChild.GetType().ToString().Split('.');
+
+            customTabControl1.InsertTab(temp1[temp1.Length - 1], temp2[temp2.Length-1]);
+
+           
 
             
         }
 
+        //최대화 최소화
         private void FrmMain_SizeChanged(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild == null)

@@ -226,7 +226,7 @@
             this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
             this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.OpenForms = null;
+            
             this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
             this.customTabControl1.TabIndex = 0;
             // 
