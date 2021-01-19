@@ -46,7 +46,7 @@ namespace CompanyManager
             //메뉴 생성
             CreatMenu();
 
-            customTab1.Appearance = TabAppearance.Normal;
+            //customTab1.Appearance = TabAppearance.Normal;
         }
 
         //메뉴 생성
