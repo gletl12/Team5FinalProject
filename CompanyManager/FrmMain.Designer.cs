@@ -44,11 +44,18 @@
             this.lblSortName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.titleBar1 = new CompanyManager.TitleBar();
+            this.customTab1 = new CompanyManager.CustomTab();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.titleBar1 = new CompanyManager.TitleBar();
+            this.grandianPanel2 = new CompanyManager.GrandianPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.customTab1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,10 +216,55 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.customTab1);
             this.panel3.Location = new System.Drawing.Point(180, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1172, 29);
             this.panel3.TabIndex = 20;
+            // 
+            // titleBar1
+            // 
+            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.titleBar1.HeaderText = "HeaderText";
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(1350, 33);
+            this.titleBar1.TabIndex = 13;
+            // 
+            // customTab1
+            // 
+            this.customTab1.Controls.Add(this.tabPage1);
+            this.customTab1.Controls.Add(this.tabPage2);
+            this.customTab1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.customTab1.Location = new System.Drawing.Point(120, 7);
+            this.customTab1.Name = "customTab1";
+            this.customTab1.SelectedIndex = 0;
+            this.customTab1.Size = new System.Drawing.Size(200, 100);
+            this.customTab1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(192, 73);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grandianPanel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 73);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // grandianPanel1
             // 
@@ -238,17 +290,14 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Logo";
             // 
-            // titleBar1
+            // grandianPanel2
             // 
-            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.titleBar1.HeaderText = "HeaderText";
-            this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1350, 33);
-            this.titleBar1.TabIndex = 13;
+            this.grandianPanel2.ColorBotton = System.Drawing.Color.Empty;
+            this.grandianPanel2.ColorTop = System.Drawing.Color.Empty;
+            this.grandianPanel2.Location = new System.Drawing.Point(0, 0);
+            this.grandianPanel2.Name = "grandianPanel2";
+            this.grandianPanel2.Size = new System.Drawing.Size(200, 100);
+            this.grandianPanel2.TabIndex = 0;
             // 
             // FrmMain
             // 
@@ -275,6 +324,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.customTab1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
             this.grandianPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -302,6 +354,10 @@
         private System.Windows.Forms.Label lblSortName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
+        private CustomTab customTab1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private GrandianPanel grandianPanel2;
     }
 }
 
