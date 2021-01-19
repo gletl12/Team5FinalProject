@@ -113,6 +113,9 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInspection.resx">
+      <DependentUpon>FrmInspection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
