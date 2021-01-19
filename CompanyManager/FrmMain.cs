@@ -144,9 +144,17 @@ namespace CompanyManager
                 //현재 메뉴버튼의 소메뉴이면 
                 if (p.INFO.Trim().StartsWith("L") && p.SortName.StartsWith(selectedBtn.Text))
                 {
+                    string[] names = p.SortName.Split('>');
                     tnc = new TreeNode(p.INFO.Trim().Substring(1));
-                    tnc.Tag = p.FormName+"@"+p.SortName;
-                    tn.Nodes.Add(tnc);
+                    tnc.Tag = p.FormName + "@" + p.SortName;
+                    tnc.Name = names[names.Length - 1];
+                    if (names.Length == 2)
+                        tn.Nodes.Add(tnc);
+                    else
+                    {
+                        TreeNode ptn = tv.Nodes.Find(names[names.Length - 2], true)[0];
+                        ptn.Nodes.Add(tnc);
+                    }
                 }
             });
 
@@ -166,7 +174,10 @@ namespace CompanyManager
        
         private void treeView_Click(object sender, EventArgs e)
         {
-            if (!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("@")&&!((TreeView)sender).SelectedNode.Tag.ToString().StartsWith("Large"))
+            TreeView tv = (TreeView)sender;
+            if (tv.SelectedNode == null)
+                return;
+            if (!tv.SelectedNode.Tag.ToString().StartsWith("@") && !tv.SelectedNode.Tag.ToString().StartsWith("Large"))
             {
                 string formName = ((TreeView)sender).SelectedNode.Tag.ToString().Split('@')[0];
                 string appName = Assembly.GetEntryAssembly().GetName().Name;
@@ -174,8 +185,6 @@ namespace CompanyManager
 
                 Util.CommonUtil.OpenCreateForm(this, frmType);
             }
-
-            
         }
 
 
