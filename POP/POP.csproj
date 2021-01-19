@@ -99,6 +99,12 @@
     <Compile Include="FrmMove.Designer.cs">
       <DependentUpon>FrmMove.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerformance.Designer.cs">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseForm.resx">
