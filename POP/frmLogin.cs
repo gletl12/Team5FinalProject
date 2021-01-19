@@ -43,25 +43,11 @@ namespace POP
             panBarCode.Visible = panBarCode.Enabled = !direct;
         }
 
-        // 로그인 버튼 클릭시 발생하는 이벤트 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-          
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panBarCode_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

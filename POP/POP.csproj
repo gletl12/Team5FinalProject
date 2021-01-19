@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -63,14 +69,47 @@
     <Compile Include="CustomControl\TitleBar.designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAction.Designer.cs">
+      <DependentUpon>FrmAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAllStatusBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAllStatusBoard.Designer.cs">
+      <DependentUpon>FrmAllStatusBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInspection.Designer.cs">
+      <DependentUpon>FrmInspection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMove.Designer.cs">
+      <DependentUpon>FrmMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerformance.Designer.cs">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>

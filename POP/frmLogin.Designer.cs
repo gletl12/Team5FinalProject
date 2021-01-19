@@ -50,7 +50,6 @@
             this.panBarCode.Name = "panBarCode";
             this.panBarCode.Size = new System.Drawing.Size(358, 49);
             this.panBarCode.TabIndex = 19;
-            this.panBarCode.Paint += new System.Windows.Forms.PaintEventHandler(this.panBarCode_Paint);
             // 
             // label1
             // 
@@ -89,9 +88,9 @@
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(2, 73);
+            this.button1.Location = new System.Drawing.Point(4, 73);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(357, 36);
+            this.button1.Size = new System.Drawing.Size(355, 36);
             this.button1.TabIndex = 16;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = false;
@@ -107,7 +106,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtPassWord
             // 
