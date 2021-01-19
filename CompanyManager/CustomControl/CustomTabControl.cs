@@ -64,11 +64,12 @@ namespace CompanyManager.CustomControl
             cBtn.BackColor = Color.FromArgb(216, 220, 227);
             cBtn.FlatAppearance.BorderSize = 0;
             cBtn.Cursor = Cursors.Hand;
-            
+            cBtn.ForeColor = Color.Black;
+
             cBtn.Location = new Point(4 + (74 * (OpenForms.Count - 1)) + 51, 3);
             cBtn.Size = new Size(19, 20);
-            cBtn.BringToFront();
             pnlTab.Controls.Add(cBtn);
+            cBtn.BringToFront();
 
         }
 
