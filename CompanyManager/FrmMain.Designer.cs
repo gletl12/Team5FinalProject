@@ -44,8 +44,8 @@
             this.lblSortName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.titleBar1 = new CompanyManager.TitleBar();
             this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
+            this.titleBar1 = new CompanyManager.TitleBar();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -210,12 +210,25 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.customTabControl1);
             this.panel3.Location = new System.Drawing.Point(180, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1172, 29);
             this.panel3.TabIndex = 20;
+            // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.OpenForms = null;
+            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
+            this.customTabControl1.TabIndex = 0;
             // 
             // titleBar1
             // 
@@ -228,15 +241,6 @@
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
-            // 
-            // customTabControl1
-            // 
-            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
-            this.customTabControl1.MyProperty = 0;
-            this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
-            this.customTabControl1.TabIndex = 0;
             // 
             // grandianPanel1
             // 
