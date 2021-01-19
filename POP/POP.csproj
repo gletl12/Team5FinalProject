@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl\PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PlaceHolderTextBox.Designer.cs">
+      <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\TitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
