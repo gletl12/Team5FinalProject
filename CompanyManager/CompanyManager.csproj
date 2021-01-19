@@ -261,6 +261,8 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Min.png" />
+    <None Include="Resources\Max.png" />
     <None Include="Resources\2.png" />
     <None Include="Resources\1.png" />
     <None Include="Resources\8.png" />
