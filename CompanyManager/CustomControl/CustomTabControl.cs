@@ -24,7 +24,7 @@ namespace CompanyManager.CustomControl
             tabList = new Dictionary<string, Button>();
 
             //메인으로 나오는 폼, 버튼 딕셔너리에 추가
-            OpenForms.Add("Home", null);
+            OpenForms.Add("Home", "FrmHome");
             tabList.Add("Home",btnHome);
 
 
@@ -43,10 +43,6 @@ namespace CompanyManager.CustomControl
             
             ((Button)tabList[menuName]).PerformClick();
                 
-
-
-
-
 
         }
 

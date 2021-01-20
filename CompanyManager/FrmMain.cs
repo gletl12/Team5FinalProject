@@ -47,7 +47,13 @@ namespace CompanyManager
             //메뉴 생성
             CreatMenu();
 
-            //customTab1.Appearance = TabAppearance.Normal;
+            //폼(Home)열기
+            string formName = "FrmHome";
+            string appName = Assembly.GetEntryAssembly().GetName().Name;
+            Type frmType = Type.GetType($"{appName}.{formName}");
+
+            
+            Util.CommonUtil.OpenCreateForm(this, frmType);
         }
 
         //메뉴 생성
@@ -192,6 +198,11 @@ namespace CompanyManager
         private void FrmMain_MdiChildActivate(object sender, EventArgs e)
         {
             //MessageBox.Show(this.ActiveMdiChild.GetType().ToString());
+            if (this.ActiveMdiChild.GetType().ToString().Split('.')[1] == "FrmHome")
+            {
+                return;
+            }
+
 
             string sortName = menuAllList.Find(p => 
             {
