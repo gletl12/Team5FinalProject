@@ -76,6 +76,12 @@
     <Compile Include="FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +124,17 @@
     <Compile Include="PopupSalesPrice.Designer.cs">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSoUpload.cs">
+    <Compile Include="PopupSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupSO.Designer.cs">
+      <DependentUpon>PopupSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupSOUpload.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopupSoUpload.Designer.cs">
-      <DependentUpon>PopupSoUpload.cs</DependentUpon>
+      <DependentUpon>PopupSOUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="Sample\FrmSampleList.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,12 @@
     <Compile Include="Sample\MDIListSample3.Designer.cs">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sample\PopupPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\PopupPurchase.Designer.cs">
+      <DependentUpon>PopupPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sample\PopupSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +246,9 @@
     <EmbeddedResource Include="FrmMenuManagement.resx">
       <DependentUpon>FrmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,8 +273,11 @@
     <EmbeddedResource Include="PopupSalesPrice.resx">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopupSO.resx">
+      <DependentUpon>PopupSO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopupSoUpload.resx">
-      <DependentUpon>PopupSoUpload.cs</DependentUpon>
+      <DependentUpon>PopupSOUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -282,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\MDIListSample3.resx">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\PopupPurchase.resx">
+      <DependentUpon>PopupPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
       <DependentUpon>PopupSample.cs</DependentUpon>
@@ -337,6 +364,7 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Delete_16x16.png" />
     <None Include="Resources\Edit_16x16.png" />
     <None Include="Resources\Home_16x16.png" />
     <None Include="Resources\Prev_16x16.png" />
@@ -365,6 +393,8 @@
     <None Include="Resources\PenColor_16x16.png" />
     <None Include="Resources\GridBandedRows_16x16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
