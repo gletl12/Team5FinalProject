@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CompanyManager.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
@@ -69,6 +72,12 @@
     </Compile>
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFactoryList.Designer.cs">
+      <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
@@ -260,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDemandPlan.resx">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFactoryList.resx">
+      <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItemPrice.resx">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
