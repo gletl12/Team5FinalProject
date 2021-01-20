@@ -27,7 +27,7 @@ namespace CompanyManager
 
 
                 pnlSearch.Size = new Size(pnlSearch.Size.Width, 114);
-                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance - 38;
+                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance + 38;
 
             }
             else
@@ -38,7 +38,8 @@ namespace CompanyManager
                 btnSearch.Location = new Point(btnSearch.Location.X, 37);
                 pnlSearch.Size = new Size(pnlSearch.Size.Width, pnlSearch.Size.Height * 2 / 3);
 
-                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance + 38;
+               
+                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance - 38;
             }
         }
 

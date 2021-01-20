@@ -6,18 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace POP
+namespace CompanyManager
 {
-    public partial class FrmInspection : POP.BaseForm
+    public partial class FrmHome : CompanyManager.MDIBaseForm
     {
-        public FrmInspection()
+        public FrmHome()
         {
             InitializeComponent();
-        }
-
-        private void FrmInspection_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

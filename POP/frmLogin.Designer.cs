@@ -33,10 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnDirect = new System.Windows.Forms.Button();
             this.panDirectLogin = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassWord = new POP.PlaceholderTextBox();
             this.txtID = new POP.PlaceholderTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.titleBar1 = new POP.TitleBar();
             this.panBarCode.SuspendLayout();
             this.panDirectLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,7 +47,7 @@
             // 
             this.panBarCode.Controls.Add(this.label1);
             this.panBarCode.Controls.Add(this.btnDirect);
-            this.panBarCode.Location = new System.Drawing.Point(16, 123);
+            this.panBarCode.Location = new System.Drawing.Point(16, 146);
             this.panBarCode.Name = "panBarCode";
             this.panBarCode.Size = new System.Drawing.Size(358, 49);
             this.panBarCode.TabIndex = 19;
@@ -79,33 +80,10 @@
             this.panDirectLogin.Controls.Add(this.txtPassWord);
             this.panDirectLogin.Controls.Add(this.txtID);
             this.panDirectLogin.Controls.Add(this.button1);
-            this.panDirectLogin.Location = new System.Drawing.Point(12, 125);
+            this.panDirectLogin.Location = new System.Drawing.Point(12, 148);
             this.panDirectLogin.Name = "panDirectLogin";
             this.panDirectLogin.Size = new System.Drawing.Size(378, 113);
             this.panDirectLogin.TabIndex = 20;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(4, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(355, 36);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "로그인";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::POP.Properties.Resources.img_logo;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(361, 107);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
             // 
             // txtPassWord
             // 
@@ -126,15 +104,50 @@
             this.txtID.Size = new System.Drawing.Size(355, 31);
             this.txtID.TabIndex = 17;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(4, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(355, 36);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "로그인";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::POP.Properties.Resources.img_logo;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(361, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // titleBar1
+            // 
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.titleBar1.HeaderText = "HeaderText";
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(386, 33);
+            this.titleBar1.TabIndex = 21;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 184);
+            this.ClientSize = new System.Drawing.Size(386, 220);
+            this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.panBarCode);
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.frmLogin_Load);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.Button button1;
         private PlaceholderTextBox txtPassWord;
         private PlaceholderTextBox txtID;
+        private TitleBar titleBar1;
     }
 }
