@@ -139,10 +139,10 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDemandPlan.cs">
+    <Compile Include="OrderManagement\FrmDemandPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDemandPlan.Designer.cs">
+    <Compile Include="OrderManagement\FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="PurchaseManagement\FrmDispend.cs">
@@ -169,10 +169,10 @@
     <Compile Include="FrmMaterialPlan.Designer.cs">
       <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewWorkOrder.cs">
+    <Compile Include="ProductionManagement\FrmNewWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNewWorkOrder.Designer.cs">
+    <Compile Include="ProductionManagement\FrmNewWorkOrder.Designer.cs">
       <DependentUpon>FrmNewWorkOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOutsourcingPlan.cs">
@@ -181,16 +181,16 @@
     <Compile Include="FrmOutsourcingPlan.Designer.cs">
       <DependentUpon>FrmOutsourcingPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProductionPlan.cs">
+    <Compile Include="ProductionManagement\FrmProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProductionPlan.Designer.cs">
+    <Compile Include="ProductionManagement\FrmProductionPlan.Designer.cs">
       <DependentUpon>FrmProductionPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMoveProcess.cs">
+    <Compile Include="ProductionManagement\FrmMoveProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMoveProcess.Designer.cs">
+    <Compile Include="ProductionManagement\FrmMoveProcess.Designer.cs">
       <DependentUpon>FrmMoveProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="PurchaseManagement\FrmPurchaseList.cs">
@@ -217,22 +217,22 @@
     <Compile Include="PurchaseManagement\FrmStock.Designer.cs">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmWorkOrder.cs">
+    <Compile Include="ProductionManagement\FrmWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWorkOrder.Designer.cs">
+    <Compile Include="ProductionManagement\FrmWorkOrder.Designer.cs">
       <DependentUpon>FrmWorkOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupNewWorkOrder.cs">
+    <Compile Include="ProductionManagement\PopupNewWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupNewWorkOrder.Designer.cs">
+    <Compile Include="ProductionManagement\PopupNewWorkOrder.Designer.cs">
       <DependentUpon>PopupNewWorkOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSoUpload.cs">
+    <Compile Include="OrderManagement\PopupSoUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupSoUpload.Designer.cs">
+    <Compile Include="OrderManagement\PopupSoUpload.Designer.cs">
       <DependentUpon>PopupSoUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="PurchaseManagement\PopupPerformance.cs">
@@ -266,16 +266,16 @@
     <Compile Include="PurchaseManagement\FrmPurchase.Designer.cs">
       <DependentUpon>FrmPurchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSO.cs">
+    <Compile Include="OrderManagement\FrmSO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSO.Designer.cs">
+    <Compile Include="OrderManagement\FrmSO.Designer.cs">
       <DependentUpon>FrmSO.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSOUpload.cs">
+    <Compile Include="OrderManagement\FrmSOUpload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSOUpload.Designer.cs">
+    <Compile Include="OrderManagement\FrmSOUpload.Designer.cs">
       <DependentUpon>FrmSOUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmItemPrice.cs">
@@ -314,10 +314,10 @@
     <Compile Include="Shift\PopupShift.Designer.cs">
       <DependentUpon>PopupShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSO.cs">
+    <Compile Include="OrderManagement\PopupSO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupSO.Designer.cs">
+    <Compile Include="OrderManagement\PopupSO.Designer.cs">
       <DependentUpon>PopupSO.cs</DependentUpon>
     </Compile>
     <Compile Include="Sample\FrmSampleList.cs">
@@ -427,8 +427,20 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMoveProcess.resx">
+    <EmbeddedResource Include="ProductionManagement\FrmMoveProcess.resx">
       <DependentUpon>FrmMoveProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentManagement\FrmSalesClose.resx">
+      <DependentUpon>FrmSalesClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentManagement\FrmSalesCloseList.resx">
+      <DependentUpon>FrmSalesCloseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentManagement\FrmShipment.resx">
+      <DependentUpon>FrmShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentManagement\FrmShipmentList.resx">
+      <DependentUpon>FrmShipmentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShipmentManagement\FrmStockByOrder.resx">
       <DependentUpon>FrmStockByOrder.cs</DependentUpon>
@@ -436,7 +448,7 @@
     <EmbeddedResource Include="PurchaseManagement\FrmAwait.resx">
       <DependentUpon>FrmAwait.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDemandPlan.resx">
+    <EmbeddedResource Include="OrderManagement\FrmDemandPlan.resx">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFactoryList.resx">
@@ -460,7 +472,7 @@
     <EmbeddedResource Include="FrmMenuManagement.resx">
       <DependentUpon>FrmMenuManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewWorkOrder.resx">
+    <EmbeddedResource Include="ProductionManagement\FrmNewWorkOrder.resx">
       <DependentUpon>FrmNewWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\FrmItemHistory.resx">
@@ -484,13 +496,13 @@
     <EmbeddedResource Include="PurchaseManagement\FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmWorkOrder.resx">
+    <EmbeddedResource Include="ProductionManagement\FrmWorkOrder.resx">
       <DependentUpon>FrmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupNewWorkOrder.resx">
+    <EmbeddedResource Include="ProductionManagement\PopupNewWorkOrder.resx">
       <DependentUpon>PopupNewWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupSoUpload.resx">
+    <EmbeddedResource Include="OrderManagement\PopupSoUpload.resx">
       <DependentUpon>PopupSoUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupPerformance.resx">
@@ -505,10 +517,10 @@
     <EmbeddedResource Include="Shift\FrmShiftMent.resx">
       <DependentUpon>FrmShiftMent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSO.resx">
+    <EmbeddedResource Include="OrderManagement\FrmSO.resx">
       <DependentUpon>FrmSO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSOUpload.resx">
+    <EmbeddedResource Include="OrderManagement\FrmSOUpload.resx">
       <DependentUpon>FrmSOUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParentForm\DialogBaseForm.resx">
@@ -529,7 +541,7 @@
     <EmbeddedResource Include="Shift\PopupShift.resx">
       <DependentUpon>PopupShift.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupSO.resx">
+    <EmbeddedResource Include="OrderManagement\PopupSO.resx">
       <DependentUpon>PopupSO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -628,7 +640,9 @@
     <None Include="Resources\trash.png" />
     <None Include="Resources\Save_16x16.png" />
     <None Include="Resources\Delete_16x16.png" />
-    <None Include="Resources\Edit_16x16.png" />
+    <None Include="Resources\Edit_16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Home_16x16.png" />
     <None Include="Resources\Prev_16x16.png" />
     <None Include="Resources\Next_16x16.png" />
