@@ -73,6 +73,12 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBOR.Designer.cs">
+      <DependentUpon>FrmBOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFactoryList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,30 @@
     </Compile>
     <Compile Include="FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaterialPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaterialPlan.Designer.cs">
+      <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.Designer.cs">
+      <DependentUpon>FrmOutsourcingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductionPlan.Designer.cs">
+      <DependentUpon>FrmProductionPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseList.Designer.cs">
+      <DependentUpon>FrmPurchaseList.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift\FrmShift.cs">
       <SubType>Form</SubType>
@@ -157,20 +187,11 @@
     <Compile Include="Shift\PopupShift.Designer.cs">
       <DependentUpon>PopupShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSoUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PopupSO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopupSO.Designer.cs">
       <DependentUpon>PopupSO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopupSOUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopupSoUpload.Designer.cs">
-      <DependentUpon>PopupSOUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="Sample\FrmSampleList.cs">
       <SubType>Form</SubType>
@@ -252,6 +273,18 @@
     <Compile Include="Sample\MDIListSample.Designer.cs">
       <DependentUpon>MDIListSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.Designer.cs">
+      <DependentUpon>FrmBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.Designer.cs">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="testrudgns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPurchase.resx">
       <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseList.resx">
+      <DependentUpon>FrmPurchaseList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
@@ -321,9 +357,6 @@
     <EmbeddedResource Include="PopupSO.resx">
       <DependentUpon>PopupSO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupSoUpload.resx">
-      <DependentUpon>PopupSOUpload.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -354,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
       <DependentUpon>PopupSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\FrmSubjectManagement.resx">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testrudgns.resx">
       <DependentUpon>testrudgns.cs</DependentUpon>

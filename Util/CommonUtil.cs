@@ -60,7 +60,10 @@ namespace Util
             dgv.AutoGenerateColumns = false;
             dgv.AllowUserToAddRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+           
         }
+
+       
 
         public static void AddGridTextColumn(
                             DataGridView dgv,
@@ -91,6 +94,18 @@ namespace Util
             btn.UseColumnTextForButtonValue = true;
             dgv.Columns.Add(btn);
         }
+
+        public static void AddGridImageColumn(DataGridView dgv, Image image, string columnName, int width = 50)
+        {
+            DataGridViewImageColumn col = new DataGridViewImageColumn();
+            
+            col.Image = image;
+            col.HeaderText = columnName;
+            
+            col.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dgv.Columns.Add(col);
+        }
+
 
         public static void AddGridCheckColumn(DataGridView dgv, string columnName ,int btnWidth = 20, int padding = 0)
         {
@@ -144,6 +159,53 @@ namespace Util
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+
+        }
+
+        /// <summary>
+        /// 그리드뷰 디자인 설정
+        /// </summary>
+        public static void SetDGVDesign_Num(DataGridView dgv)
+        {
+            // TODO - 임시 주석 제거 // **// 
+            // **// dgv.AutoGenerateColumns = false;
+            // **// dgv.AllowUserToAddRows = false;
+            dgv.MultiSelect = false; //열하나만선택
+
+            dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o
+            dgv.AllowUserToResizeRows = false; //사용자가임의로 로우의 크기를 변경시킬수 없게     
+
+            dgv.RowHeadersVisible = false; // 맨왼쪽에 있는 컬럼 삭제
+            // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
+
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+
+            dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
+            dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
+            //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+
+            dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+
+            dgv.RowPostPaint += Dgv_RowPostPaint;
+        }
+
+        //행번호 추가
+        private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            ((DataGridView)sender).RowHeadersWidth = 50;
+            ((DataGridView)sender).RowHeadersVisible = true;
+            StringFormat drawFormat = new StringFormat();
+            //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
+            drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
+
+            using (Brush brush = new SolidBrush(Color.Black))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font,
+                brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
+            }
         }
 
         /// <summary>

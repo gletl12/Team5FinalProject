@@ -40,14 +40,13 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.titleBar1 = new CompanyManager.PopupTitleBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titleBar1
+            // popupTitleBar1
             // 
-            this.titleBar1.HeaderText = "파일업로드";
-            this.titleBar1.Size = new System.Drawing.Size(342, 33);
+            this.popupTitleBar1.HeaderText = "파일업로드";
+            this.popupTitleBar1.Size = new System.Drawing.Size(341, 33);
             // 
             // panel1
             // 
@@ -172,7 +171,7 @@ namespace CompanyManager
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button14);
             this.Name = "PopupSoUpload";
-            this.Controls.SetChildIndex(this.titleBar1, 0);
+            this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.button14, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -195,7 +194,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button14;
-        private CompanyManager.PopupTitleBar titleBar1;
+        
         
     }
 }
