@@ -1,7 +1,7 @@
 ﻿
-namespace CompanyManager
+namespace CompanyManager.PurchaseManagement
 {
-    partial class FrmPurchase
+    partial class FrmDispend
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -31,13 +31,6 @@ namespace CompanyManager
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +38,7 @@ namespace CompanyManager
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,7 +51,6 @@ namespace CompanyManager
             this.label24 = new System.Windows.Forms.Label();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -67,7 +60,11 @@ namespace CompanyManager
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -90,7 +87,6 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
@@ -108,13 +104,11 @@ namespace CompanyManager
             this.pnlSearch.BackColor = System.Drawing.Color.White;
             this.pnlSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Controls.Add(this.textBox1);
             this.pnlSearch.Controls.Add(this.label1);
             this.pnlSearch.Controls.Add(this.dateTimePicker2);
-            this.pnlSearch.Controls.Add(this.dateTimePicker1);
-            this.pnlSearch.Controls.Add(this.textBox4);
-            this.pnlSearch.Controls.Add(this.comboBox4);
-            this.pnlSearch.Controls.Add(this.label9);
+            this.pnlSearch.Controls.Add(this.dateTimePicker3);
+            this.pnlSearch.Controls.Add(this.textBox1);
+            this.pnlSearch.Controls.Add(this.comboBox1);
             this.pnlSearch.Controls.Add(this.label2);
             this.pnlSearch.Controls.Add(this.comboBox5);
             this.pnlSearch.Controls.Add(this.label3);
@@ -122,6 +116,7 @@ namespace CompanyManager
             this.pnlSearch.Controls.Add(this.comboBox6);
             this.pnlSearch.Controls.Add(this.label5);
             this.pnlSearch.Controls.Add(this.label19);
+            this.pnlSearch.Controls.Add(this.comboBox3);
             this.pnlSearch.Controls.Add(this.label7);
             this.pnlSearch.Controls.Add(this.label8);
             this.pnlSearch.Controls.Add(this.comboBox2);
@@ -134,7 +129,6 @@ namespace CompanyManager
             this.pnlSearch.Controls.Add(this.label24);
             this.pnlSearch.Controls.Add(this.btnDown);
             this.pnlSearch.Controls.Add(this.btnSearch);
-            this.pnlSearch.Controls.Add(this.comboBox7);
             this.pnlSearch.Controls.Add(this.label25);
             this.pnlSearch.Controls.Add(this.label26);
             this.pnlSearch.Controls.Add(this.label27);
@@ -144,67 +138,6 @@ namespace CompanyManager
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(1146, 114);
             this.pnlSearch.TabIndex = 22;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(85, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 21);
-            this.textBox1.TabIndex = 47;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(524, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 14);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "~";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(542, 12);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker2.TabIndex = 45;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(427, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker1.TabIndex = 44;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(773, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 21);
-            this.textBox4.TabIndex = 30;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(773, 78);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(210, 22);
-            this.comboBox4.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(701, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 14);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "* 발주방식";
             // 
             // label2
             // 
@@ -221,9 +154,9 @@ namespace CompanyManager
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(427, 77);
+            this.comboBox5.Location = new System.Drawing.Point(427, 76);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(210, 22);
+            this.comboBox5.Size = new System.Drawing.Size(185, 22);
             this.comboBox5.TabIndex = 26;
             // 
             // label3
@@ -232,9 +165,9 @@ namespace CompanyManager
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(360, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.Size = new System.Drawing.Size(50, 14);
             this.label3.TabIndex = 25;
-            this.label3.Text = "* 계획구분";
+            this.label3.Text = "* 재고량";
             // 
             // label4
             // 
@@ -250,9 +183,9 @@ namespace CompanyManager
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(86, 77);
+            this.comboBox6.Location = new System.Drawing.Point(108, 77);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(210, 22);
+            this.comboBox6.Size = new System.Drawing.Size(185, 22);
             this.comboBox6.TabIndex = 23;
             // 
             // label5
@@ -262,7 +195,7 @@ namespace CompanyManager
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 14);
             this.label5.TabIndex = 22;
-            this.label5.Text = "* 창고";
+            this.label5.Text = "* 상태";
             // 
             // label19
             // 
@@ -274,15 +207,24 @@ namespace CompanyManager
             this.label19.TabIndex = 21;
             this.label19.Text = "label2";
             // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(767, 44);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(185, 22);
+            this.comboBox3.TabIndex = 20;
+            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(700, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 14);
+            this.label7.Size = new System.Drawing.Size(61, 14);
             this.label7.TabIndex = 19;
-            this.label7.Text = "* 담당자";
+            this.label7.Text = "* 품목유형";
             // 
             // label8
             // 
@@ -299,9 +241,9 @@ namespace CompanyManager
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(427, 44);
+            this.comboBox2.Location = new System.Drawing.Point(427, 43);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 22);
+            this.comboBox2.Size = new System.Drawing.Size(185, 22);
             this.comboBox2.TabIndex = 17;
             // 
             // label6
@@ -310,9 +252,9 @@ namespace CompanyManager
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(360, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 14);
+            this.label6.Size = new System.Drawing.Size(39, 14);
             this.label6.TabIndex = 16;
-            this.label6.Text = "* 품목형태";
+            this.label6.Text = "* 설비";
             // 
             // label20
             // 
@@ -331,16 +273,16 @@ namespace CompanyManager
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(701, 16);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 14);
+            this.label21.Size = new System.Drawing.Size(39, 14);
             this.label21.TabIndex = 14;
-            this.label21.Text = "* 자재/규격";
+            this.label21.Text = "* 품목";
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(773, 13);
+            this.textBox2.Location = new System.Drawing.Point(767, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 21);
+            this.textBox2.Size = new System.Drawing.Size(185, 21);
             this.textBox2.TabIndex = 13;
             // 
             // label22
@@ -360,9 +302,9 @@ namespace CompanyManager
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(360, 15);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(44, 14);
+            this.label23.Size = new System.Drawing.Size(61, 14);
             this.label23.TabIndex = 11;
-            this.label23.Text = "* Date";
+            this.label23.Text = "* 불출창고";
             // 
             // label24
             // 
@@ -407,31 +349,23 @@ namespace CompanyManager
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(86, 44);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(210, 22);
-            this.comboBox7.TabIndex = 4;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(19, 47);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 14);
+            this.label25.Size = new System.Drawing.Size(83, 14);
             this.label25.TabIndex = 3;
-            this.label25.Text = "* 업체코드";
+            this.label25.Text = "* 작업지시번호";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(19, 15);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 14);
+            this.label26.Size = new System.Drawing.Size(50, 14);
             this.label26.TabIndex = 3;
-            this.label26.Text = "* Plan ID";
+            this.label26.Text = "* 요청일";
             // 
             // label27
             // 
@@ -458,11 +392,11 @@ namespace CompanyManager
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 18);
+            this.label10.Location = new System.Drawing.Point(12, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 14);
+            this.label10.Size = new System.Drawing.Size(80, 14);
             this.label10.TabIndex = 13;
-            this.label10.Text = "      정규발주";
+            this.label10.Text = "      원자재불출";
             // 
             // button9
             // 
@@ -470,7 +404,7 @@ namespace CompanyManager
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 9);
+            this.button9.Location = new System.Drawing.Point(1127, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(29, 23);
             this.button9.TabIndex = 14;
@@ -483,10 +417,10 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 38);
+            this.dataGridView2.Location = new System.Drawing.Point(10, 32);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1146, 463);
+            this.dataGridView2.Size = new System.Drawing.Size(1146, 469);
             this.dataGridView2.TabIndex = 19;
             // 
             // button13
@@ -495,13 +429,13 @@ namespace CompanyManager
             this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.button13.Image = global::CompanyManager.Properties.Resources.FullShoppingCart_16x16;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(1005, 9);
+            this.button13.Location = new System.Drawing.Point(1005, 3);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(56, 23);
             this.button13.TabIndex = 18;
-            this.button13.Text = "    등록";
+            this.button13.Text = "    출고";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = false;
             // 
@@ -513,7 +447,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1067, 9);
+            this.button12.Location = new System.Drawing.Point(1067, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 17;
@@ -521,28 +455,55 @@ namespace CompanyManager
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // comboBox1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CompanyManager.Properties.Resources.Save_16x16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(938, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "    MRP";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(427, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 22);
+            this.comboBox1.TabIndex = 47;
             // 
-            // FrmPurchase
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(108, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 21);
+            this.textBox1.TabIndex = 48;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(193, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 14);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "~";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(208, 11);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(85, 21);
+            this.dateTimePicker2.TabIndex = 51;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(108, 11);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(85, 21);
+            this.dateTimePicker3.TabIndex = 50;
+            // 
+            // FrmDispend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "FrmPurchase";
+            this.Name = "FrmDispend";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -559,9 +520,14 @@ namespace CompanyManager
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -574,7 +540,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -584,17 +549,10 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }
