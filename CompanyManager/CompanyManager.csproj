@@ -64,6 +64,36 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBOR.Designer.cs">
+      <DependentUpon>FrmBOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaterialPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaterialPlan.Designer.cs">
+      <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.Designer.cs">
+      <DependentUpon>FrmOutsourcingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductionPlan.Designer.cs">
+      <DependentUpon>FrmProductionPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.Designer.cs">
+      <DependentUpon>FrmBOM.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +135,12 @@
     </Compile>
     <Compile Include="FrmSalesPrice.Designer.cs">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.Designer.cs">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupItemPrice.cs">
       <SubType>Form</SubType>
@@ -285,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
       <DependentUpon>PopupSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\FrmSubjectManagement.resx">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testrudgns.resx">
       <DependentUpon>testrudgns.cs</DependentUpon>
