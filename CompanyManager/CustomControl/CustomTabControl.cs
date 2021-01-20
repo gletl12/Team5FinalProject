@@ -15,28 +15,40 @@ namespace CompanyManager.CustomControl
     public partial class CustomTabControl : UserControl
     {
         private Dictionary<string, string> OpenForms; //메뉴이름, 폼이름
-
+        private Dictionary<string, Button> tabList;
         public Button selectedButton;
         public CustomTabControl()
         {
             InitializeComponent();
             OpenForms = new Dictionary<string, string>();
-            //메인으로 나오는 폼 하나 추가
+            tabList = new Dictionary<string, Button>();
+
+            //메인으로 나오는 폼, 버튼 딕셔너리에 추가
             OpenForms.Add("Home", null);
+            tabList.Add("Home",btnHome);
+
+
         }
 
         //새로운 폼 열림
         public void InsertTab(string menuName, string formName)
         {
-            OpenForms.Add(menuName,formName);
 
-            //열리지 않은 폼이면
-            CreateTab(menuName, formName);
+            if (!OpenForms.ContainsKey(menuName))
+            {
+                //열리지 않은 폼이면
+                OpenForms.Add(menuName, formName);
+                CreateTab(menuName, formName);
+            }
+            
+            ((Button)tabList[menuName]).PerformClick();
+                
 
-            //열린폼이면
 
 
-        } 
+
+
+        }
 
         private void CreateTab(string menuName, string formName)
         {
@@ -44,7 +56,6 @@ namespace CompanyManager.CustomControl
             btn.Text = menuName;
             btn.Tag = formName;
 
-            
             btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);
 
 
@@ -57,6 +68,9 @@ namespace CompanyManager.CustomControl
 
             btn.Click += button_Click;
             pnlTab.Controls.Add(btn);
+
+            //텝리스트에 버튼 추가
+            tabList.Add(menuName, btn);
 
             Button cBtn = new Button();
             cBtn.Text = "X";
@@ -76,6 +90,18 @@ namespace CompanyManager.CustomControl
         //텝버튼 클릭시 해당 버튼 화면 활성화
         private void button_Click(object sender, EventArgs e)
         {
+            //열린폼이면
+            foreach (Form child in ParentForm.MdiChildren)
+            {
+                string formName = OpenForms[((Button)sender).Text];
+                if (child.GetType().ToString().Split('.')[1] == formName)
+                {
+                    child.Activate();
+                    break;
+                }
+            }
+
+
             //파란색 위치 조정
             lblSelect.Location = new Point(((Button)sender).Location.X, lblSelect.Location.Y);
             lblSelect.Size = new Size(((Button)sender).Size.Width, lblSelect.Size.Height);
