@@ -63,6 +63,26 @@ namespace CompanyManager.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2 {
+            get {
+                object obj = ResourceManager.GetObject("_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Add_32x32", resourceCulture);
@@ -96,6 +116,16 @@ namespace CompanyManager.Properties {
         internal static System.Drawing.Bitmap Delete_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Delete_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
