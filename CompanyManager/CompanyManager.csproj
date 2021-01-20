@@ -64,6 +64,12 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\PopupTitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PopupTitleBar.designer.cs">
+      <DependentUpon>PopupTitleBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,18 @@
     </Compile>
     <Compile Include="FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shift\FrmShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shift\FrmShift.Designer.cs">
+      <DependentUpon>FrmShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shift\FrmShiftMent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shift\FrmShiftMent.Designer.cs">
+      <DependentUpon>FrmShiftMent.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPurchase.cs">
       <SubType>Form</SubType>
@@ -124,6 +142,13 @@
     <Compile Include="PopupSalesPrice.Designer.cs">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shift\PopupShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shift\PopupShift.Designer.cs">
+      <DependentUpon>PopupShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupSoUpload.cs">
     <Compile Include="PopupSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +256,9 @@
     <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\PopupTitleBar.resx">
+      <DependentUpon>PopupTitleBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +280,12 @@
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shift\FrmShift.resx">
+      <DependentUpon>FrmShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shift\FrmShiftMent.resx">
+      <DependentUpon>FrmShiftMent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSO.resx">
       <DependentUpon>FrmSO.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupSalesPrice.resx">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shift\PopupShift.resx">
+      <DependentUpon>PopupShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupSO.resx">
       <DependentUpon>PopupSO.cs</DependentUpon>
@@ -364,6 +401,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Find_16x16.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\Save_16x16.png" />
     <None Include="Resources\Delete_16x16.png" />
     <None Include="Resources\Edit_16x16.png" />
     <None Include="Resources\Home_16x16.png" />
