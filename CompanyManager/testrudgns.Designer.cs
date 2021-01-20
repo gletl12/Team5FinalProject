@@ -189,13 +189,13 @@ namespace CompanyManager
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.button4.Image = global::CompanyManager.Properties.Resources.Find_16x16;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(576, 45);
+            this.button4.Location = new System.Drawing.Point(585, 45);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 23);
+            this.button4.Size = new System.Drawing.Size(79, 23);
             this.button4.TabIndex = 27;
-            this.button4.Text = "    이력조회";
+            this.button4.Text = "  이력조회";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
             // 
@@ -206,7 +206,7 @@ namespace CompanyManager
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = global::CompanyManager.Properties.Resources.trash;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(455, 45);
+            this.button5.Location = new System.Drawing.Point(461, 45);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(56, 23);
             this.button5.TabIndex = 27;
@@ -221,7 +221,7 @@ namespace CompanyManager
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::CompanyManager.Properties.Resources.Save_16x16;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(515, 45);
+            this.button3.Location = new System.Drawing.Point(523, 45);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 23);
             this.button3.TabIndex = 27;
@@ -251,7 +251,7 @@ namespace CompanyManager
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(130, 45);
+            this.button8.Location = new System.Drawing.Point(131, 45);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 21;
@@ -266,7 +266,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(192, 45);
+            this.button12.Location = new System.Drawing.Point(194, 45);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(55, 23);
             this.button12.TabIndex = 25;
@@ -281,7 +281,7 @@ namespace CompanyManager
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(252, 45);
+            this.button11.Location = new System.Drawing.Point(255, 45);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(102, 23);
             this.button11.TabIndex = 24;
@@ -296,7 +296,7 @@ namespace CompanyManager
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(359, 45);
+            this.button10.Location = new System.Drawing.Point(363, 45);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(92, 23);
             this.button10.TabIndex = 23;
