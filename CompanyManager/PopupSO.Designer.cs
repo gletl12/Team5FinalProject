@@ -60,6 +60,7 @@ namespace CompanyManager
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.titleBar1 = new CompanyManager.PopupTitleBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 

@@ -56,6 +56,7 @@ namespace CompanyManager
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.titleBar1 = new CompanyManager.PopupTitleBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
