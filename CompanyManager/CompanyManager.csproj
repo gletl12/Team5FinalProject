@@ -64,6 +64,12 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\PopupTitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PopupTitleBar.designer.cs">
+      <DependentUpon>PopupTitleBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </Compile>
     <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\PopupTitleBar.resx">
+      <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
