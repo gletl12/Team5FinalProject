@@ -29,26 +29,28 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleBar1 = new CompanyManager.TitleBar();
+            this.popupTitleBar1 = new CompanyManager.PopupTitleBar();
             this.SuspendLayout();
             // 
-            // titleBar1
+            // popupTitleBar1
             // 
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.titleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.titleBar1.HeaderText = "HeaderText";
-            this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1092, 33);
-            this.titleBar1.TabIndex = 0;
+            this.popupTitleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.popupTitleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.popupTitleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.popupTitleBar1.HeaderText = "HeaderText";
+            this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.popupTitleBar1.Name = "popupTitleBar1";
+            this.popupTitleBar1.Size = new System.Drawing.Size(1092, 33);
+            this.popupTitleBar1.TabIndex = 1;
+            this.popupTitleBar1.Load += new System.EventHandler(this.popupTitleBar1_Load);
             // 
             // PopupBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 609);
-            this.Controls.Add(this.titleBar1);
+            this.Controls.Add(this.popupTitleBar1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PopupBaseForm";
@@ -58,7 +60,6 @@ namespace CompanyManager
         }
 
         #endregion
-
-        protected TitleBar titleBar1;
+        private PopupTitleBar popupTitleBar1;
     }
 }
