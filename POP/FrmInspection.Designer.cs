@@ -232,7 +232,7 @@ namespace POP
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(418, 129);
+            this.textBox6.Location = new System.Drawing.Point(418, 123);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(190, 32);
             this.textBox6.TabIndex = 1;
@@ -240,7 +240,7 @@ namespace POP
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(316, 129);
+            this.label7.Location = new System.Drawing.Point(316, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 24);
             this.label7.TabIndex = 0;
@@ -248,7 +248,7 @@ namespace POP
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(418, 82);
+            this.textBox5.Location = new System.Drawing.Point(418, 76);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(190, 32);
             this.textBox5.TabIndex = 1;
@@ -256,7 +256,7 @@ namespace POP
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 82);
+            this.label6.Location = new System.Drawing.Point(316, 76);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 0;
@@ -264,7 +264,7 @@ namespace POP
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(418, 31);
+            this.textBox4.Location = new System.Drawing.Point(418, 25);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(190, 32);
             this.textBox4.TabIndex = 1;
@@ -272,7 +272,7 @@ namespace POP
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(316, 31);
+            this.label5.Location = new System.Drawing.Point(316, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 0;
@@ -280,7 +280,7 @@ namespace POP
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(118, 129);
+            this.textBox3.Location = new System.Drawing.Point(118, 123);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(192, 32);
             this.textBox3.TabIndex = 1;
@@ -288,7 +288,7 @@ namespace POP
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 129);
+            this.label4.Location = new System.Drawing.Point(16, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 24);
             this.label4.TabIndex = 0;
@@ -296,7 +296,7 @@ namespace POP
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 79);
+            this.textBox2.Location = new System.Drawing.Point(118, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(192, 32);
             this.textBox2.TabIndex = 1;
@@ -304,7 +304,7 @@ namespace POP
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 82);
+            this.label3.Location = new System.Drawing.Point(16, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 24);
             this.label3.TabIndex = 0;
@@ -312,7 +312,7 @@ namespace POP
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 31);
+            this.textBox1.Location = new System.Drawing.Point(118, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 32);
             this.textBox1.TabIndex = 1;
@@ -320,7 +320,7 @@ namespace POP
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 34);
+            this.label2.Location = new System.Drawing.Point(16, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 24);
             this.label2.TabIndex = 0;

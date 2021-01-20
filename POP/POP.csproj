@@ -105,6 +105,12 @@
     <Compile Include="FrmInspection.Designer.cs">
       <DependentUpon>FrmInspection.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\MachineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\MachineControl.Designer.cs">
+      <DependentUpon>MachineControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Base\BaseForm.resx">
@@ -116,14 +122,23 @@
     <EmbeddedResource Include="FrmAction.resx">
       <DependentUpon>FrmAction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAllStatusBoard.resx">
+      <DependentUpon>FrmAllStatusBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInspection.resx">
       <DependentUpon>FrmInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMove.resx">
+      <DependentUpon>FrmMove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPerformance.resx">
       <DependentUpon>FrmPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\MachineControl.resx">
+      <DependentUpon>MachineControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
