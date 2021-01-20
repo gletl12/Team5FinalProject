@@ -27,5 +27,10 @@ namespace CompanyManager
         {
 
         }
+
+        private void PopupBaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
