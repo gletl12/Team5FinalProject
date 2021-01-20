@@ -82,6 +82,12 @@
     <Compile Include="FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPurchaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseList.Designer.cs">
+      <DependentUpon>FrmPurchaseList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shift\FrmShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,20 +154,11 @@
     <Compile Include="Shift\PopupShift.Designer.cs">
       <DependentUpon>PopupShift.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSoUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PopupSO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopupSO.Designer.cs">
       <DependentUpon>PopupSO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopupSOUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopupSoUpload.Designer.cs">
-      <DependentUpon>PopupSOUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="Sample\FrmSampleList.cs">
       <SubType>Form</SubType>
@@ -273,6 +270,9 @@
     <EmbeddedResource Include="FrmPurchase.resx">
       <DependentUpon>FrmPurchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseList.resx">
+      <DependentUpon>FrmPurchaseList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupSO.resx">
       <DependentUpon>PopupSO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopupSoUpload.resx">
-      <DependentUpon>PopupSOUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
