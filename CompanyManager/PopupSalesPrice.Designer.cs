@@ -59,10 +59,10 @@ namespace CompanyManager
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titleBar1
+            // popupTitleBar1
             // 
-            this.titleBar1.HeaderText = "영업단가관리";
-            this.titleBar1.Size = new System.Drawing.Size(628, 33);
+            this.popupTitleBar1.HeaderText = "영업단가관리";
+            this.popupTitleBar1.Size = new System.Drawing.Size(627, 33);
             // 
             // comboBox4
             // 
@@ -345,7 +345,7 @@ namespace CompanyManager
             this.Controls.Add(this.button14);
             this.Controls.Add(this.panel1);
             this.Name = "PopupSalesPrice";
-            this.Controls.SetChildIndex(this.titleBar1, 0);
+            this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.button14, 0);
             this.Controls.SetChildIndex(this.button1, 0);
@@ -384,5 +384,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Panel panel1;
+        
     }
 }

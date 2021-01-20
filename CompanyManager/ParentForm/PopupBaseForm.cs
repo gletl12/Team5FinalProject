@@ -17,6 +17,20 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
-      
+
+        private void popupTitleBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PopupBaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

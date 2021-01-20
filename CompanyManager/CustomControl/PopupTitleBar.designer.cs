@@ -1,6 +1,6 @@
 ﻿namespace CompanyManager
 {
-    partial class TitleBar
+    partial class PopupTitleBar
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitleBar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopupTitleBar));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnSize = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             // 
             this.btnSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSize.BackColor = System.Drawing.Color.Transparent;
-            this.btnSize.BackgroundImage = global::CompanyManager.Properties.Resources.Max;
+          
             this.btnSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSize.FlatAppearance.BorderSize = 0;
             this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -78,7 +78,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = global::CompanyManager.Properties.Resources.Delete_16x16;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

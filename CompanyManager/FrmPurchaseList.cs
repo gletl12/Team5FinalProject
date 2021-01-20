@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class PopupSoUpload : CompanyManager.PopupBaseForm
+    public partial class FrmPurchaseList : CompanyManager.MDIBaseForm
     {
-        public PopupSoUpload()
+        public FrmPurchaseList()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void FrmPurchaseList_Load(object sender, EventArgs e)
         {
 
         }
