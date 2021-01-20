@@ -40,6 +40,7 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,5 +195,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button14;
+        private CompanyManager.PopupTitleBar titleBar1;
+        
     }
 }

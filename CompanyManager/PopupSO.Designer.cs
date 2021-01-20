@@ -431,5 +431,6 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
+        private CompanyManager.PopupTitleBar titleBar1;
     }
 }
