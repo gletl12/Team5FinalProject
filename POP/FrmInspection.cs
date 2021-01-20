@@ -15,7 +15,7 @@ namespace POP
             InitializeComponent();
         }
 
-        private void FrmInspection_Load(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
 
         }

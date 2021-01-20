@@ -23,7 +23,7 @@ namespace POP
             Log.WriteInfo("프로그램 실행");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new FrmLogin());
         }
     }
 }
