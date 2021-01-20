@@ -15,7 +15,8 @@ namespace CompanyManager.CustomControl
     public partial class CustomTabControl : UserControl
     {
         private Dictionary<string, string> OpenForms; //메뉴이름, 폼이름
-        private Dictionary<string, Button> tabList;
+        private Dictionary<string, Button> tabList; //메뉴이름, 버튼
+
         public Button selectedButton;
         public CustomTabControl()
         {
