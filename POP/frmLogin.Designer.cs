@@ -120,9 +120,9 @@
             // 
             this.pictureBox1.Image = global::POP.Properties.Resources.img_logo;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(361, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(386, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 220);
+            this.ClientSize = new System.Drawing.Size(386, 198);
             this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.panBarCode);
             this.Controls.Add(this.panDirectLogin);

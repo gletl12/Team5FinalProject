@@ -337,6 +337,8 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\Save_16x16.png" />
     <None Include="Resources\Edit_16x16.png" />
     <None Include="Resources\Home_16x16.png" />
     <None Include="Resources\Prev_16x16.png" />
