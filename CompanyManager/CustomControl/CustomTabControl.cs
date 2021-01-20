@@ -15,28 +15,40 @@ namespace CompanyManager.CustomControl
     public partial class CustomTabControl : UserControl
     {
         private Dictionary<string, string> OpenForms; //메뉴이름, 폼이름
-
+        private Dictionary<string, Button> tabList;
         public Button selectedButton;
         public CustomTabControl()
         {
             InitializeComponent();
             OpenForms = new Dictionary<string, string>();
-            //메인으로 나오는 폼 하나 추가
+            tabList = new Dictionary<string, Button>();
+
+            //메인으로 나오는 폼, 버튼 딕셔너리에 추가
             OpenForms.Add("Home", null);
+            tabList.Add("Home",btnHome);
+
+
         }
 
         //새로운 폼 열림
         public void InsertTab(string menuName, string formName)
         {
-            OpenForms.Add(menuName,formName);
 
-            //열리지 않은 폼이면
-            CreateTab(menuName, formName);
+            if (!OpenForms.ContainsKey(menuName))
+            {
+                //열리지 않은 폼이면
+                OpenForms.Add(menuName, formName);
+                CreateTab(menuName, formName);
+            }
+            
+            ((Button)tabList[menuName]).PerformClick();
+                
 
-            //열린폼이면
 
 
-        } 
+
+
+        }
 
         private void CreateTab(string menuName, string formName)
         {
@@ -44,7 +56,6 @@ namespace CompanyManager.CustomControl
             btn.Text = menuName;
             btn.Tag = formName;
 
-            
             btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);
 
 
@@ -58,8 +69,12 @@ namespace CompanyManager.CustomControl
             btn.Click += button_Click;
             pnlTab.Controls.Add(btn);
 
+            //텝리스트에 버튼 추가
+            tabList.Add(menuName, btn);
+
             Button cBtn = new Button();
             cBtn.Text = "X";
+            cBtn.Tag = menuName;
             cBtn.FlatStyle = FlatStyle.Flat;
             cBtn.BackColor = Color.FromArgb(216, 220, 227);
             cBtn.FlatAppearance.BorderSize = 0;
@@ -68,14 +83,77 @@ namespace CompanyManager.CustomControl
 
             cBtn.Location = new Point(4 + (74 * (OpenForms.Count - 1)) + 51, 3);
             cBtn.Size = new Size(19, 20);
+
+            cBtn.Click += btnClose_Click;
             pnlTab.Controls.Add(cBtn);
             cBtn.BringToFront();
+
+        }
+
+        //텝/폼 종료버튼
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            string menuName = ((Button)sender).Tag.ToString();
+            foreach (Control item in pnlTab.Controls)
+            {
+                //해당 텝버튼 할당해제
+                if (item.Text.ToString() == menuName)
+                {
+                    item.Dispose();
+                    break;
+                }
+            }
+
+            //열려있는 폼 닫기
+            foreach (Form child in ParentForm.MdiChildren)
+            {
+                string formName = OpenForms[menuName];
+                if (child.GetType().ToString().Split('.')[1] == formName)
+                {
+                    child.Close();
+                    break;
+                }
+            }
+
+            //openforms ,tablist에서 제거  
+            OpenForms.Remove(menuName);
+            tabList.Remove(menuName);
+
+
+            //텝 위치조정
+            foreach (Control item in pnlTab.Controls)
+            {
+                if (item.Location.X > ((Button)sender).Location.X)
+                {
+                    item.Location = new Point(item.Location.X-74,item.Location.Y);
+                }
+            }
+            //x버튼 할당 해제
+            ((Button)sender).Dispose();
+
+            
+
+
+            //홈버튼 복귀
+            btnHome.PerformClick();
 
         }
 
         //텝버튼 클릭시 해당 버튼 화면 활성화
         private void button_Click(object sender, EventArgs e)
         {
+            //열린폼이면
+            foreach (Form child in ParentForm.MdiChildren)
+            {
+                string formName = OpenForms[((Button)sender).Text];
+                if (child.GetType().ToString().Split('.')[1] == formName)
+                {
+                    child.Activate();
+                    break;
+                }
+            }
+
+
             //파란색 위치 조정
             lblSelect.Location = new Point(((Button)sender).Location.X, lblSelect.Location.Y);
             lblSelect.Size = new Size(((Button)sender).Size.Width, lblSelect.Size.Height);
