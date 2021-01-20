@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CompanyManager.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
@@ -70,11 +73,17 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAwait.cs">
+    <Compile Include="FrmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAwait.Designer.cs">
-      <DependentUpon>FrmAwait.cs</DependentUpon>
+    <Compile Include="FrmBOR.Designer.cs">
+      <DependentUpon>FrmBOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFactoryList.Designer.cs">
+      <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
@@ -88,23 +97,29 @@
     <Compile Include="FrmDemandPlan.Designer.cs">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInbound.cs">
+    <Compile Include="FrmMaterialPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInbound.Designer.cs">
-      <DependentUpon>FrmInbound.cs</DependentUpon>
+    <Compile Include="FrmMaterialPlan.Designer.cs">
+      <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOutsourcingPlan.Designer.cs">
+      <DependentUpon>FrmOutsourcingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductionPlan.Designer.cs">
+      <DependentUpon>FrmProductionPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPurchaseList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPurchaseList.Designer.cs">
       <DependentUpon>FrmPurchaseList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopupSoUpload.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopupSoUpload.Designer.cs">
-      <DependentUpon>PopupSoUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift\FrmShift.cs">
       <SubType>Form</SubType>
@@ -258,6 +273,18 @@
     <Compile Include="Sample\MDIListSample.Designer.cs">
       <DependentUpon>MDIListSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmBOM.Designer.cs">
+      <DependentUpon>FrmBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\FrmSubjectManagement.Designer.cs">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="testrudgns.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,14 +300,11 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAwait.resx">
-      <DependentUpon>FrmAwait.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDemandPlan.resx">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInbound.resx">
-      <DependentUpon>FrmInbound.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFactoryList.resx">
+      <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItemPrice.resx">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
@@ -299,9 +323,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopupSoUpload.resx">
-      <DependentUpon>PopupSoUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shift\FrmShift.resx">
       <DependentUpon>FrmShift.cs</DependentUpon>
@@ -366,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
       <DependentUpon>PopupSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\FrmSubjectManagement.resx">
+      <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testrudgns.resx">
       <DependentUpon>testrudgns.cs</DependentUpon>
