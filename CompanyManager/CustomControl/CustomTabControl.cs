@@ -74,6 +74,7 @@ namespace CompanyManager.CustomControl
 
             Button cBtn = new Button();
             cBtn.Text = "X";
+            cBtn.Tag = menuName;
             cBtn.FlatStyle = FlatStyle.Flat;
             cBtn.BackColor = Color.FromArgb(216, 220, 227);
             cBtn.FlatAppearance.BorderSize = 0;
@@ -82,8 +83,59 @@ namespace CompanyManager.CustomControl
 
             cBtn.Location = new Point(4 + (74 * (OpenForms.Count - 1)) + 51, 3);
             cBtn.Size = new Size(19, 20);
+
+            cBtn.Click += btnClose_Click;
             pnlTab.Controls.Add(cBtn);
             cBtn.BringToFront();
+
+        }
+
+        //텝/폼 종료버튼
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            string menuName = ((Button)sender).Tag.ToString();
+            foreach (Control item in pnlTab.Controls)
+            {
+                //해당 텝버튼 할당해제
+                if (item.Text.ToString() == menuName)
+                {
+                    item.Dispose();
+                    break;
+                }
+            }
+
+            //열려있는 폼 닫기
+            foreach (Form child in ParentForm.MdiChildren)
+            {
+                string formName = OpenForms[menuName];
+                if (child.GetType().ToString().Split('.')[1] == formName)
+                {
+                    child.Close();
+                    break;
+                }
+            }
+
+            //openforms ,tablist에서 제거  
+            OpenForms.Remove(menuName);
+            tabList.Remove(menuName);
+
+
+            //텝 위치조정
+            foreach (Control item in pnlTab.Controls)
+            {
+                if (item.Location.X > ((Button)sender).Location.X)
+                {
+                    item.Location = new Point(item.Location.X-74,item.Location.Y);
+                }
+            }
+            //x버튼 할당 해제
+            ((Button)sender).Dispose();
+
+            
+
+
+            //홈버튼 복귀
+            btnHome.PerformClick();
 
         }
 
