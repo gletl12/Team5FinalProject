@@ -204,10 +204,10 @@
     <Compile Include="Sample\MDIListSample3.Designer.cs">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sample\PopupPurchase.cs">
+    <Compile Include="PopupPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sample\PopupPurchase.Designer.cs">
+    <Compile Include="PopupPurchase.Designer.cs">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="Sample\PopupSample.cs">
@@ -307,7 +307,7 @@
     <EmbeddedResource Include="Sample\MDIListSample3.resx">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sample\PopupPurchase.resx">
+    <EmbeddedResource Include="PopupPurchase.resx">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
