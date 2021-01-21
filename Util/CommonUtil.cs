@@ -101,7 +101,8 @@ namespace Util
             
             col.Image = image;
             col.HeaderText = columnName;
-            
+            col.Width = width;
+
             col.ImageLayout = DataGridViewImageCellLayout.Normal;
             dgv.Columns.Add(col);
         }

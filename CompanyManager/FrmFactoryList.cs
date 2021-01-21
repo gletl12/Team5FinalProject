@@ -24,9 +24,8 @@ namespace CompanyManager
 
         private void GetdgvColumn()
         {
-            CommonUtil.SetDGVDesign(dgvFactory);
+            CommonUtil.SetDGVDesign_Num(dgvFactory);
 
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no", 50);
             CommonUtil.AddGridCheckColumn(dgvFactory, "");
             CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16,"Edit", 30);
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "factory_grade");

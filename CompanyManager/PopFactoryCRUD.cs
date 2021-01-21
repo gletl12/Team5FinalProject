@@ -8,11 +8,26 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class PopFactoryCRUD : CompanyManager.PopupSample
+    public partial class PopFactoryCRUD : CompanyManager.PopupBaseForm
     {
         public PopFactoryCRUD()
         {
             InitializeComponent();
+        }
+
+        private void PopFactoryCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
