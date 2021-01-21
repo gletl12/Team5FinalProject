@@ -27,7 +27,6 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품명","",300);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"규격","",150);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위","",100);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위수량","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"환산단위","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"환산수량","",100);
