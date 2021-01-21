@@ -121,6 +121,18 @@
     <Compile Include="FrmPurchaseList.Designer.cs">
       <DependentUpon>FrmPurchaseList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopFactoryCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopFactoryCRUD.Designer.cs">
+      <DependentUpon>PopFactoryCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\PopupSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\PopupSample.Designer.cs">
+      <DependentUpon>PopupSample.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shift\FrmShift.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,12 +273,6 @@
     <Compile Include="Sample\MDIListSample3.Designer.cs">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sample\PopupSample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sample\PopupSample.Designer.cs">
-      <DependentUpon>PopupSample.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sample\MDIListSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\PopupSample.resx">
+      <DependentUpon>PopupSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shift\FrmShift.resx">
       <DependentUpon>FrmShift.cs</DependentUpon>
@@ -384,9 +393,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\MDIListSample3.resx">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sample\PopupSample.resx">
-      <DependentUpon>PopupSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\FrmSubjectManagement.resx">
       <DependentUpon>FrmSubjectManagement.cs</DependentUpon>
