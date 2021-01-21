@@ -14,5 +14,10 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
+
+        private void FrmOutsourcingPlan_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("📁");
+        }
     }
 }

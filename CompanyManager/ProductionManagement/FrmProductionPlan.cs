@@ -14,5 +14,10 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
+
+        private void FrmProductionPlan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
