@@ -163,7 +163,7 @@ namespace Util
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
             dgv.AllowUserToAddRows = false;
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            
+            dgv.SelectionChanged += Dgv_SelectionChanged;
         }
 
         /// <summary>
@@ -190,11 +190,17 @@ namespace Util
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
-
+            
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgv.AllowUserToAddRows = false;
             dgv.RowPostPaint += Dgv_RowPostPaint;
+            dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private static void Dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            ((DataGridView)sender).ClearSelection();
         }
 
         //행번호 추가
