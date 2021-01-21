@@ -30,6 +30,7 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -43,15 +44,15 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupTitleBar1
             // 
+            this.popupTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.popupTitleBar1.HeaderText = "설비군";
-            this.popupTitleBar1.Location = new System.Drawing.Point(0, -1);
-            this.popupTitleBar1.Size = new System.Drawing.Size(316, 33);
+            this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.popupTitleBar1.Size = new System.Drawing.Size(315, 33);
             // 
             // panel1
             // 
@@ -68,10 +69,18 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 255);
+            this.panel1.Size = new System.Drawing.Size(316, 247);
             this.panel1.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(107, 74);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(192, 22);
+            this.comboBox1.TabIndex = 5;
             // 
             // textBox8
             // 
@@ -177,12 +186,13 @@ namespace CompanyManager
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(164, 292);
+            this.button1.Location = new System.Drawing.Point(160, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "취소";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button14
             // 
@@ -192,25 +202,18 @@ namespace CompanyManager
             this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(73, 292);
+            this.button14.Location = new System.Drawing.Point(69, 282);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(85, 30);
             this.button14.TabIndex = 6;
             this.button14.Text = "저장";
             this.button14.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 22);
-            this.comboBox1.TabIndex = 5;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // PopMGradeCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(315, 325);
+            this.ClientSize = new System.Drawing.Size(315, 317);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button14);
