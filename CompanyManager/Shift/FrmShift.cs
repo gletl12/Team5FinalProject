@@ -14,5 +14,11 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PopupShift popup = new PopupShift();
+            popup.Show();
+        }
     }
 }

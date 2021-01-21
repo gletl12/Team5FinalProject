@@ -340,6 +340,7 @@ namespace POP
             this.Controls.Add(this.dataGridView2);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmInspection";
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Controls.SetChildIndex(this.dataGridView2, 0);
             this.Controls.SetChildIndex(this.button13, 0);
             this.Controls.SetChildIndex(this.button12, 0);
