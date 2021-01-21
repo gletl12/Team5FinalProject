@@ -74,6 +74,7 @@ namespace Util
                             DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.HeaderText = headerText;
             col.Name = dataPropertyName;
             col.DataPropertyName = dataPropertyName;
@@ -86,6 +87,7 @@ namespace Util
         public static void AddGridButtonColumn(DataGridView dgv, string headerText, string columnName, string buttonText, int btnWidth = 50, int padding = 0)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.SortMode = DataGridViewColumnSortMode.NotSortable;
             btn.HeaderText = headerText;
             btn.Name = columnName;
             btn.Text = buttonText;
@@ -98,7 +100,7 @@ namespace Util
         public static void AddGridImageColumn(DataGridView dgv, Image image, string columnName, int width = 50)
         {
             DataGridViewImageColumn col = new DataGridViewImageColumn();
-            
+            col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.Image = image;
             col.HeaderText = columnName;
             
@@ -110,6 +112,7 @@ namespace Util
         public static void AddGridCheckColumn(DataGridView dgv, string columnName ,int btnWidth = 20, int padding = 0)
         {
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.SortMode = DataGridViewColumnSortMode.NotSortable;
             chk.Name = columnName;
             chk.Width = btnWidth;
           
