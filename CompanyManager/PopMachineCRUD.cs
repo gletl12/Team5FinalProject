@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmProductionPlan : CompanyManager.MDIBaseForm
+    public partial class PopMachineCRUD : CompanyManager.PopupBaseForm
     {
-        public FrmProductionPlan()
+        public PopMachineCRUD()
         {
             InitializeComponent();
-        }
-
-        private void FrmProductionPlan_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

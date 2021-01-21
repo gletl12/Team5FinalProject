@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmOutsourcingPlan : CompanyManager.MDIBaseForm
+    public partial class PopCompanyCRUD : CompanyManager.PopupBaseForm
     {
-        public FrmOutsourcingPlan()
+        public PopCompanyCRUD()
         {
             InitializeComponent();
         }

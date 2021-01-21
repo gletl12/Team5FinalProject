@@ -1,7 +1,7 @@
 ﻿
 namespace CompanyManager
 {
-    partial class FrmProductionPlan
+    partial class FrmOutsourcingPlan
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -41,10 +41,10 @@ namespace CompanyManager
             this.label14 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,12 +56,12 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 145);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 146);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 50;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1152, 490);
-            this.dataGridView2.TabIndex = 30;
+            this.dataGridView2.TabIndex = 35;
             // 
             // comboBox2
             // 
@@ -168,6 +168,45 @@ namespace CompanyManager
             this.button14.Text = "조회";
             this.button14.UseVisualStyleBackColor = false;
             // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
+            this.button9.Location = new System.Drawing.Point(1131, 117);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(29, 23);
+            this.button9.TabIndex = 33;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(1071, 117);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(54, 23);
+            this.button12.TabIndex = 34;
+            this.button12.Text = "    엑셀";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Location = new System.Drawing.Point(12, 126);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 14);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "      생산계획";
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -187,51 +226,12 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.button14);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(8, 9);
+            this.panel2.Location = new System.Drawing.Point(8, 10);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1152, 98);
-            this.panel2.TabIndex = 31;
+            this.panel2.TabIndex = 36;
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 116);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 28;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1071, 116);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 29;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 125);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 14);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "      생산계획";
-            // 
-            // FrmProductionPlan
+            // FrmOutsourcingPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
@@ -240,8 +240,8 @@ namespace CompanyManager
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
-            this.Name = "FrmProductionPlan";
-            this.Load += new System.EventHandler(this.FrmProductionPlan_Load);
+            this.Name = "FrmOutsourcingPlan";
+            this.Load += new System.EventHandler(this.FrmOutsourcingPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -258,14 +258,14 @@ namespace CompanyManager
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
     }

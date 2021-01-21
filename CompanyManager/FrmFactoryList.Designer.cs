@@ -29,7 +29,7 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@ namespace CompanyManager
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).BeginInit();
             this.SuspendLayout();
@@ -148,16 +149,16 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFactory.Location = new System.Drawing.Point(8, 103);
+            this.dgvFactory.Location = new System.Drawing.Point(12, 103);
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.RowHeadersWidth = 50;
             this.dgvFactory.RowTemplate.Height = 23;
@@ -185,7 +186,7 @@ namespace CompanyManager
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(5, 86);
+            this.label10.Location = new System.Drawing.Point(12, 86);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 22;
@@ -267,10 +268,21 @@ namespace CompanyManager
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.FlatAppearance.BorderSize = 0;
+            this.checkBox1.Location = new System.Drawing.Point(66, 109);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmFactoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
@@ -308,5 +320,6 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.DataGridView dgvFactory;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
