@@ -73,10 +73,16 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpSubject.cs">
+    <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpSubject.Designer.cs">
+    <Compile Include="SubjectManagement\PopUpBOM.Designer.cs">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\PopUpSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\PopUpSubject.Designer.cs">
       <DependentUpon>PopUpSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="ShipmentManagement\FrmCompanySalesClose.cs">
@@ -433,7 +439,13 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpSubject.resx">
+    <EmbeddedResource Include="FrmBOR.resx">
+      <DependentUpon>FrmBOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\PopUpSubject.resx">
       <DependentUpon>PopUpSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMoveProcess.resx">

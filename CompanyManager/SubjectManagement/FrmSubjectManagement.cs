@@ -20,13 +20,12 @@ namespace CompanyManager
            
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1,"","",20);
+            Util.CommonUtil.AddGridCheckColumn(dataGridView1, "", 20);
             Util.CommonUtil.AddGridImageColumn(dataGridView1, img, "Edit",40);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품목유형","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품목","",150);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품명","",300);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"규격","",150);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"단위수량","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"환산단위","",100);

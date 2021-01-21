@@ -52,12 +52,13 @@ namespace POP
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::POP.Properties.Resources.Zoom_16x16;
             this.button1.Location = new System.Drawing.Point(256, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 27);
+            this.button1.Size = new System.Drawing.Size(42, 27);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -73,7 +74,7 @@ namespace POP
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(129, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(169, 32);
             this.textBox1.TabIndex = 3;
@@ -93,7 +94,7 @@ namespace POP
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(129, 227);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(169, 32);
             this.textBox2.TabIndex = 3;
@@ -112,7 +113,7 @@ namespace POP
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(129, 261);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(169, 32);
             this.textBox3.TabIndex = 3;
@@ -133,7 +134,7 @@ namespace POP
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(59, 298);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(5);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(94, 32);
             this.textBox4.TabIndex = 3;
@@ -161,9 +162,9 @@ namespace POP
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(6, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(310, 383);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -173,7 +174,7 @@ namespace POP
             // 
             this.textBox7.ForeColor = System.Drawing.Color.Red;
             this.textBox7.Location = new System.Drawing.Point(201, 332);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(5);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(97, 32);
             this.textBox7.TabIndex = 3;
@@ -196,7 +197,7 @@ namespace POP
             // 
             this.textBox6.ForeColor = System.Drawing.Color.Aqua;
             this.textBox6.Location = new System.Drawing.Point(59, 332);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(5);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(94, 32);
             this.textBox6.TabIndex = 3;
@@ -219,7 +220,7 @@ namespace POP
             // 
             this.textBox5.ForeColor = System.Drawing.Color.Lime;
             this.textBox5.Location = new System.Drawing.Point(201, 298);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(97, 32);
             this.textBox5.TabIndex = 3;
@@ -241,7 +242,7 @@ namespace POP
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(9, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(289, 155);
             this.pictureBox1.TabIndex = 1;
@@ -254,7 +255,7 @@ namespace POP
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MachineControl";
             this.Size = new System.Drawing.Size(320, 392);
             this.groupBox1.ResumeLayout(false);

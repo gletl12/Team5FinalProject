@@ -41,21 +41,20 @@ namespace POP
             this.titleBar1.HeaderText = "HeaderText";
             this.titleBar1.Location = new System.Drawing.Point(0, -1);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1494, 33);
+            this.titleBar1.Size = new System.Drawing.Size(1496, 33);
             this.titleBar1.TabIndex = 0;
             // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1494, 900);
+            this.ClientSize = new System.Drawing.Size(1496, 900);
             this.Controls.Add(this.titleBar1);
             this.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "BaseForm";
             this.Text = "BaseForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

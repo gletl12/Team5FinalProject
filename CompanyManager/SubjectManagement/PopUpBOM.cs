@@ -8,17 +8,16 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmShift : CompanyManager.MDIBaseForm
+    public partial class PopUpBOM : CompanyManager.PopupBaseForm
     {
-        public FrmShift()
+        public PopUpBOM()
         {
             InitializeComponent();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void PopUpBOM_Load(object sender, EventArgs e)
         {
-            PopupShift popup = new PopupShift();
-            popup.Show();
+            popupTitleBar1.HeaderText = "BOM";
         }
     }
 }
