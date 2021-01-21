@@ -100,6 +100,7 @@ namespace Util
         public static void AddGridImageColumn(DataGridView dgv, Image image, string columnName, int width = 50)
         {
             DataGridViewImageColumn col = new DataGridViewImageColumn();
+            
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.Image = image;
             col.HeaderText = columnName;
@@ -162,7 +163,7 @@ namespace Util
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-
+            
         }
 
         /// <summary>
@@ -191,8 +192,9 @@ namespace Util
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-
+            dgv.AutoGenerateColumns = false;
             dgv.RowPostPaint += Dgv_RowPostPaint;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         //행번호 추가
