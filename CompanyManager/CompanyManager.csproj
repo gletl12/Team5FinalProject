@@ -659,9 +659,6 @@
     <EmbeddedResource Include="Sample\MDIListSample3.resx">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sample\PopupSample.resx">
-      <DependentUpon>PopupSample.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\FrmBOM.resx">
       <DependentUpon>FrmBOM.cs</DependentUpon>
     </EmbeddedResource>
