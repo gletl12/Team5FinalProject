@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanyManager.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,15 +24,18 @@ namespace CompanyManager
 
         private void GetdgvColumn()
         {
-            CommonUtil.SetDGVDesign(dgvFactory);
+            CommonUtil.SetDGVDesign_Num(dgvFactory);
 
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no");
             CommonUtil.AddGridCheckColumn(dgvFactory, "");
-            CommonUtil.AddGridCheckColumn(dgvFactory, "No.");
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no");
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no");
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no");
-            CommonUtil.AddGridTextColumn(dgvFactory, "No.", "no");
+            CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16,"Edit", 30);
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "factory_grade");
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "factory_type");
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "factory_name", 120);
+            CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "factory_parent", 120);
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "factory_comment", 150);
+            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "factory_use");
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "up_emp", 120);
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date",170);
         }
     }
 }

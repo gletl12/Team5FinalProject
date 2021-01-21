@@ -73,11 +73,41 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCommonCodeManagement.cs">
+    <Compile Include="FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCommonCodeManagement.Designer.cs">
-      <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
+    <Compile Include="FrmCompanyList.Designer.cs">
+      <DependentUpon>FrmCompanyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMachineGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMachineGrade.Designer.cs">
+      <DependentUpon>FrmMachineGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopCompanyCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopCompanyCRUD.Designer.cs">
+      <DependentUpon>PopCompanyCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopFactoryCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopFactoryCRUD.Designer.cs">
+      <DependentUpon>PopFactoryCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopMachineCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopMachineCRUD.Designer.cs">
+      <DependentUpon>PopMachineCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopMGradeCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopMGradeCRUD.Designer.cs">
+      <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
@@ -216,6 +246,12 @@
     </Compile>
     <Compile Include="PurchaseManagement\FrmPurchaseList.Designer.cs">
       <DependentUpon>FrmPurchaseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\PopupSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\PopupSample.Designer.cs">
+      <DependentUpon>PopupSample.cs</DependentUpon>
     </Compile>
     <Compile Include="PurchaseManagement\FrmRegPerformance.cs">
       <SubType>Form</SubType>
@@ -406,12 +442,6 @@
     <Compile Include="Sample\MDIListSample3.Designer.cs">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sample\PopupSample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sample\PopupSample.Designer.cs">
-      <DependentUpon>PopupSample.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sample\MDIListSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,6 +474,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyList.resx">
+      <DependentUpon>FrmCompanyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMachineGrade.resx">
+      <DependentUpon>FrmMachineGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopCompanyCRUD.resx">
+      <DependentUpon>PopCompanyCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopFactoryCRUD.resx">
+      <DependentUpon>PopFactoryCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopMachineCRUD.resx">
+      <DependentUpon>PopMachineCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopMGradeCRUD.resx">
+      <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBOR.resx">
       <DependentUpon>FrmBOR.cs</DependentUpon>
@@ -532,6 +580,9 @@
     <EmbeddedResource Include="FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sample\PopupSample.resx">
+      <DependentUpon>PopupSample.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -610,9 +661,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\MDIListSample3.resx">
       <DependentUpon>MDIListSample3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sample\PopupSample.resx">
-      <DependentUpon>PopupSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\FrmBOM.resx">
       <DependentUpon>FrmBOM.cs</DependentUpon>
@@ -714,6 +762,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NewFolder1\" />
+    <Folder Include="ResourceManagement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
