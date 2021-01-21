@@ -1,5 +1,5 @@
 ﻿
-namespace CompanyManager.PurchaseManagement
+namespace CompanyManager
 {
     partial class FrmDispend
     {

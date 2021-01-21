@@ -20,7 +20,7 @@ namespace CompanyManager
            
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1,"","",20);
+            Util.CommonUtil.AddGridCheckColumn(dataGridView1, "", 20);
             Util.CommonUtil.AddGridImageColumn(dataGridView1, img, "Edit",40);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품목유형","",100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1,"품목","",150);

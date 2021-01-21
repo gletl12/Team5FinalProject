@@ -73,10 +73,16 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpSubject.cs">
+    <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpSubject.Designer.cs">
+    <Compile Include="SubjectManagement\PopUpBOM.Designer.cs">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManagement\PopUpSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManagement\PopUpSubject.Designer.cs">
       <DependentUpon>PopUpSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="ShipmentManagement\FrmCompanySalesClose.cs">
@@ -169,10 +175,10 @@
     <Compile Include="PurchaseManagement\FrmInboundState.Designer.cs">
       <DependentUpon>FrmInboundState.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaterialPlan.cs">
+    <Compile Include="ProductionManagement\FrmMaterialPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMaterialPlan.Designer.cs">
+    <Compile Include="ProductionManagement\FrmMaterialPlan.Designer.cs">
       <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionManagement\FrmNewWorkOrder.cs">
@@ -181,10 +187,10 @@
     <Compile Include="ProductionManagement\FrmNewWorkOrder.Designer.cs">
       <DependentUpon>FrmNewWorkOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOutsourcingPlan.cs">
+    <Compile Include="ProductionManagement\FrmOutsourcingPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOutsourcingPlan.Designer.cs">
+    <Compile Include="ProductionManagement\FrmOutsourcingPlan.Designer.cs">
       <DependentUpon>FrmOutsourcingPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionManagement\FrmProductionPlan.cs">
@@ -433,7 +439,13 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpSubject.resx">
+    <EmbeddedResource Include="FrmBOR.resx">
+      <DependentUpon>FrmBOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManagement\PopUpSubject.resx">
       <DependentUpon>PopUpSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMoveProcess.resx">
