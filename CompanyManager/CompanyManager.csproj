@@ -73,6 +73,12 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCommonCodeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCommonCodeManagement.Designer.cs">
+      <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
