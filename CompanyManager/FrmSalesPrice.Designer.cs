@@ -35,7 +35,7 @@ namespace CompanyManager
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnNewPrice = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -49,6 +49,7 @@ namespace CompanyManager
             this.button14 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -124,21 +125,22 @@ namespace CompanyManager
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnNewPrice
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(748, 95);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(56, 23);
-            this.button13.TabIndex = 27;
-            this.button13.Text = "    등록";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnNewPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnNewPrice.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnNewPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnNewPrice.Image")));
+            this.btnNewPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewPrice.Location = new System.Drawing.Point(748, 95);
+            this.btnNewPrice.Name = "btnNewPrice";
+            this.btnNewPrice.Size = new System.Drawing.Size(56, 23);
+            this.btnNewPrice.TabIndex = 27;
+            this.btnNewPrice.Text = "    등록";
+            this.btnNewPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewPrice.UseVisualStyleBackColor = false;
+            this.btnNewPrice.Click += new System.EventHandler(this.btnNewPrice_Click);
             // 
             // panel2
             // 
@@ -293,20 +295,30 @@ namespace CompanyManager
             this.dataGridView2.Size = new System.Drawing.Size(1152, 512);
             this.dataGridView2.TabIndex = 28;
             // 
-            // frmSalesPrice
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(69, 133);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // FrmSalesPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.btnNewPrice);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.dataGridView2);
-            this.Name = "frmSalesPrice";
+            this.Name = "FrmSalesPrice";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -322,7 +334,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnNewPrice;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -336,5 +348,6 @@ namespace CompanyManager
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

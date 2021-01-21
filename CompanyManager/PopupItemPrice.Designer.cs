@@ -61,6 +61,7 @@ namespace CompanyManager
             // 
             // popupTitleBar1
             // 
+            this.popupTitleBar1.HeaderText = "자재단가관리";
             this.popupTitleBar1.Size = new System.Drawing.Size(627, 33);
             // 
             // panel1
