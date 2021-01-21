@@ -51,10 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm.cs">
+    <Compile Include="Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm.Designer.cs">
+    <Compile Include="Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControl\PlaceHolderTextBox.cs">
@@ -81,17 +81,17 @@
     <Compile Include="FrmAllStatusBoard.Designer.cs">
       <DependentUpon>FrmAllStatusBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInspection.cs">
+    <Compile Include="FrmPerformance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInspection.Designer.cs">
-      <DependentUpon>FrmInspection.cs</DependentUpon>
+    <Compile Include="FrmPerformance.Designer.cs">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMove.cs">
       <SubType>Form</SubType>
@@ -99,25 +99,46 @@
     <Compile Include="FrmMove.Designer.cs">
       <DependentUpon>FrmMove.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPerformance.cs">
+    <Compile Include="FrmInspection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPerformance.Designer.cs">
-      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    <Compile Include="FrmInspection.Designer.cs">
+      <DependentUpon>FrmInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\MachineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\MachineControl.Designer.cs">
+      <DependentUpon>MachineControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BaseForm.resx">
+    <EmbeddedResource Include="Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAction.resx">
+      <DependentUpon>FrmAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAllStatusBoard.resx">
+      <DependentUpon>FrmAllStatusBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInspection.resx">
       <DependentUpon>FrmInspection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMove.resx">
+      <DependentUpon>FrmMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerformance.resx">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\MachineControl.resx">
+      <DependentUpon>MachineControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

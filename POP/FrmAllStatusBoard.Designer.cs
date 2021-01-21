@@ -29,9 +29,134 @@ namespace POP
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.machineControl1 = new POP.MachineControl();
+            this.machineControl2 = new POP.MachineControl();
+            this.machineControl3 = new POP.MachineControl();
+            this.machineControl4 = new POP.MachineControl();
+            this.machineControl5 = new POP.MachineControl();
+            this.machineControl6 = new POP.MachineControl();
+            this.machineControl7 = new POP.MachineControl();
+            this.machineControl8 = new POP.MachineControl();
+            this.SuspendLayout();
+            // 
+            // machineControl1
+            // 
+            this.machineControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl1.Location = new System.Drawing.Point(33, 40);
+            this.machineControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl1.Name = "machineControl1";
+            this.machineControl1.Size = new System.Drawing.Size(320, 392);
+            this.machineControl1.TabIndex = 1;
+            // 
+            // machineControl2
+            // 
+            this.machineControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl2.Location = new System.Drawing.Point(394, 40);
+            this.machineControl2.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl2.Name = "machineControl2";
+            this.machineControl2.Size = new System.Drawing.Size(320, 392);
+            this.machineControl2.TabIndex = 1;
+            // 
+            // machineControl3
+            // 
+            this.machineControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl3.Location = new System.Drawing.Point(794, 40);
+            this.machineControl3.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl3.Name = "machineControl3";
+            this.machineControl3.Size = new System.Drawing.Size(320, 392);
+            this.machineControl3.TabIndex = 1;
+            // 
+            // machineControl4
+            // 
+            this.machineControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl4.Location = new System.Drawing.Point(33, 442);
+            this.machineControl4.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl4.Name = "machineControl4";
+            this.machineControl4.Size = new System.Drawing.Size(320, 392);
+            this.machineControl4.TabIndex = 1;
+            // 
+            // machineControl5
+            // 
+            this.machineControl5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl5.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl5.Location = new System.Drawing.Point(394, 442);
+            this.machineControl5.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl5.Name = "machineControl5";
+            this.machineControl5.Size = new System.Drawing.Size(320, 392);
+            this.machineControl5.TabIndex = 1;
+            // 
+            // machineControl6
+            // 
+            this.machineControl6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl6.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl6.Location = new System.Drawing.Point(1159, 40);
+            this.machineControl6.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl6.Name = "machineControl6";
+            this.machineControl6.Size = new System.Drawing.Size(320, 392);
+            this.machineControl6.TabIndex = 1;
+            // 
+            // machineControl7
+            // 
+            this.machineControl7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl7.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl7.Location = new System.Drawing.Point(794, 442);
+            this.machineControl7.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl7.Name = "machineControl7";
+            this.machineControl7.Size = new System.Drawing.Size(320, 392);
+            this.machineControl7.TabIndex = 1;
+            // 
+            // machineControl8
+            // 
+            this.machineControl8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.machineControl8.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.machineControl8.Location = new System.Drawing.Point(1159, 442);
+            this.machineControl8.Margin = new System.Windows.Forms.Padding(5);
+            this.machineControl8.Name = "machineControl8";
+            this.machineControl8.Size = new System.Drawing.Size(320, 392);
+            this.machineControl8.TabIndex = 1;
+            // 
+            // FrmAllStatusBoard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.ClientSize = new System.Drawing.Size(1493, 900);
+            this.Controls.Add(this.machineControl6);
+            this.Controls.Add(this.machineControl8);
+            this.Controls.Add(this.machineControl7);
+            this.Controls.Add(this.machineControl5);
+            this.Controls.Add(this.machineControl4);
+            this.Controls.Add(this.machineControl3);
+            this.Controls.Add(this.machineControl2);
+            this.Controls.Add(this.machineControl1);
+            this.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "FrmAllStatusBoard";
+            this.Controls.SetChildIndex(this.machineControl1, 0);
+            this.Controls.SetChildIndex(this.machineControl2, 0);
+            this.Controls.SetChildIndex(this.machineControl3, 0);
+            this.Controls.SetChildIndex(this.machineControl4, 0);
+            this.Controls.SetChildIndex(this.machineControl5, 0);
+            this.Controls.SetChildIndex(this.machineControl7, 0);
+            this.Controls.SetChildIndex(this.machineControl8, 0);
+            this.Controls.SetChildIndex(this.machineControl6, 0);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private MachineControl machineControl1;
+        private MachineControl machineControl2;
+        private MachineControl machineControl3;
+        private MachineControl machineControl4;
+        private MachineControl machineControl5;
+        private MachineControl machineControl6;
+        private MachineControl machineControl7;
+        private MachineControl machineControl8;
     }
 }

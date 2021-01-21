@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace POP
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
         // 직접 입력 버튼 클릭 여부
         private bool direct = false;
         // 직접 입력 버튼 클릭시 바뀌는 폼 높이
         private const int D_HEIGHT = 285;
 
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -48,7 +48,32 @@ namespace POP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if(txtID.Text=="1")//검사
+            {
+                FrmInspection frm = new FrmInspection();
+                frm.Show();
+            }
+            if (txtID.Text == "2")//동작
+            {
+                FrmAction frm = new FrmAction();
+                frm.Show();
+            }
+            if (txtID.Text == "3")//이동
+            {
+                FrmMove frm = new FrmMove();
+                frm.Show();
+            }
+            if (txtID.Text == "4")//실적관리
+            {
+                FrmPerformance frm = new FrmPerformance();
+                frm.Show();
+            }
+            if (txtID.Text == "5")//전체현황판
+            {
+                FrmAllStatusBoard frm = new FrmAllStatusBoard();
+                frm.Show();
+            }
+
         }
     }
 }
