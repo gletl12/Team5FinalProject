@@ -73,6 +73,12 @@
     <Compile Include="CustomControl\PopupTitleBar.designer.cs">
       <DependentUpon>PopupTitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCommonCodeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCommonCodeManagement.Designer.cs">
+      <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBOR.resx">
       <DependentUpon>FrmBOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCommonCodeManagement.resx">
+      <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
       <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
