@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmOutsourcingPlan : CompanyManager.MDIBaseForm
+    public partial class PopUpBOM : CompanyManager.PopupBaseForm
     {
-        public FrmOutsourcingPlan()
+        public PopUpBOM()
         {
             InitializeComponent();
+        }
+
+        private void PopUpBOM_Load(object sender, EventArgs e)
+        {
+            popupTitleBar1.HeaderText = "BOM";
         }
     }
 }

@@ -81,10 +81,7 @@ namespace CompanyManager
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // popupTitleBar1
-            // 
-            this.popupTitleBar1.Size = new System.Drawing.Size(671, 33);
-            // 
+           
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -581,7 +578,7 @@ namespace CompanyManager
             this.Controls.Add(this.button14);
             this.Name = "PopupShift";
             this.Load += new System.EventHandler(this.PopupShift_Load);
-            this.Controls.SetChildIndex(this.popupTitleBar1, 0);
+           
             this.Controls.SetChildIndex(this.button14, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -642,6 +639,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboBox3;
-        private CompanyManager.PopupTitleBar popupTitleBar1;
+        
     }
 }

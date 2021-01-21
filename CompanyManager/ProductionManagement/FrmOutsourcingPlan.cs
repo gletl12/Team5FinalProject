@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmDispend : CompanyManager.MDIBaseForm
+    public partial class FrmOutsourcingPlan : CompanyManager.MDIBaseForm
     {
-        public FrmDispend()
+        public FrmOutsourcingPlan()
         {
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        private void FrmOutsourcingPlan_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("📁");
         }
     }
 }

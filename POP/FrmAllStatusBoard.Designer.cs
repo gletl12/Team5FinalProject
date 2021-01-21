@@ -51,6 +51,7 @@ namespace POP
             // 
             // machineControl2
             // 
+            this.machineControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.machineControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl2.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl2.Location = new System.Drawing.Point(394, 40);
@@ -61,6 +62,7 @@ namespace POP
             // 
             // machineControl3
             // 
+            this.machineControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.machineControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl3.Location = new System.Drawing.Point(794, 40);
@@ -71,6 +73,7 @@ namespace POP
             // 
             // machineControl4
             // 
+            this.machineControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.machineControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl4.Location = new System.Drawing.Point(33, 442);
@@ -81,6 +84,7 @@ namespace POP
             // 
             // machineControl5
             // 
+            this.machineControl5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.machineControl5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl5.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl5.Location = new System.Drawing.Point(394, 442);
@@ -91,6 +95,7 @@ namespace POP
             // 
             // machineControl6
             // 
+            this.machineControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.machineControl6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl6.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl6.Location = new System.Drawing.Point(1159, 40);
@@ -101,6 +106,7 @@ namespace POP
             // 
             // machineControl7
             // 
+            this.machineControl7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.machineControl7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl7.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl7.Location = new System.Drawing.Point(794, 442);
@@ -111,6 +117,7 @@ namespace POP
             // 
             // machineControl8
             // 
+            this.machineControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.machineControl8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl8.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.machineControl8.Location = new System.Drawing.Point(1159, 442);
@@ -132,7 +139,6 @@ namespace POP
             this.Controls.Add(this.machineControl3);
             this.Controls.Add(this.machineControl2);
             this.Controls.Add(this.machineControl1);
-            this.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAllStatusBoard";

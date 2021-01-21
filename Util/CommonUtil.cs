@@ -74,6 +74,7 @@ namespace Util
                             DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.HeaderText = headerText;
             col.Name = dataPropertyName;
             col.DataPropertyName = dataPropertyName;
@@ -86,6 +87,7 @@ namespace Util
         public static void AddGridButtonColumn(DataGridView dgv, string headerText, string columnName, string buttonText, int btnWidth = 50, int padding = 0)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.SortMode = DataGridViewColumnSortMode.NotSortable;
             btn.HeaderText = headerText;
             btn.Name = columnName;
             btn.Text = buttonText;
@@ -99,10 +101,10 @@ namespace Util
         {
             DataGridViewImageColumn col = new DataGridViewImageColumn();
             
+            col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.Image = image;
             col.HeaderText = columnName;
             col.Width = width;
-
             col.ImageLayout = DataGridViewImageCellLayout.Normal;
             dgv.Columns.Add(col);
         }
@@ -111,6 +113,7 @@ namespace Util
         public static void AddGridCheckColumn(DataGridView dgv, string columnName ,int btnWidth = 20, int padding = 0)
         {
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.SortMode = DataGridViewColumnSortMode.NotSortable;
             chk.Name = columnName;
             chk.Width = btnWidth;
           
@@ -158,9 +161,9 @@ namespace Util
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
-
+            dgv.AllowUserToAddRows = false;
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-
+            dgv.SelectionChanged += Dgv_SelectionChanged;
         }
 
         /// <summary>
@@ -187,10 +190,17 @@ namespace Util
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
-
+            
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-
+            dgv.AllowUserToAddRows = false;
             dgv.RowPostPaint += Dgv_RowPostPaint;
+            dgv.SelectionChanged += Dgv_SelectionChanged;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private static void Dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            ((DataGridView)sender).ClearSelection();
         }
 
         //행번호 추가

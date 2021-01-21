@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class FrmDispend : CompanyManager.MDIBaseForm
+    public partial class PopUpSubject : CompanyManager.PopupBaseForm
     {
-        public FrmDispend()
+        public PopUpSubject()
         {
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        private void PopUpSubject_Load(object sender, EventArgs e)
         {
-
+            popupTitleBar1.HeaderText = "품목";
         }
     }
 }
