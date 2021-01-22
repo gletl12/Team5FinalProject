@@ -115,11 +115,29 @@
     <Compile Include="PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpBOR.cs">
+    <Compile Include="ProductionManagement\FrmRegPerformance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpBOR.Designer.cs">
-      <DependentUpon>PopUpBOR.cs</DependentUpon>
+    <Compile Include="ProductionManagement\FrmRegPerformance.Designer.cs">
+      <DependentUpon>FrmRegPerformance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionManagement\PopupPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionManagement\PopupPerformance.Designer.cs">
+      <DependentUpon>PopupPerformance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManagement\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManagement\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManagement\PopupPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManagement\PopupPurchase.Designer.cs">
+      <DependentUpon>PopupPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
@@ -265,12 +283,6 @@
     <Compile Include="Sample\PopupSample.Designer.cs">
       <DependentUpon>PopupSample.cs</DependentUpon>
     </Compile>
-    <Compile Include="PurchaseManagement\FrmRegPerformance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurchaseManagement\FrmRegPerformance.Designer.cs">
-      <DependentUpon>FrmRegPerformance.cs</DependentUpon>
-    </Compile>
     <Compile Include="PurchaseManagement\FrmRelease.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,12 +312,6 @@
     </Compile>
     <Compile Include="OrderManagement\PopupSoUpload.Designer.cs">
       <DependentUpon>PopupSoUpload.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurchaseManagement\PopupPerformance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurchaseManagement\PopupPerformance.Designer.cs">
-      <DependentUpon>PopupPerformance.cs</DependentUpon>
     </Compile>
     <Compile Include="PurchaseManagement\PopupStockHistory.cs">
       <SubType>Form</SubType>
@@ -511,9 +517,6 @@
     <EmbeddedResource Include="FrmCommonCodeManagement.resx">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpBOR.resx">
-      <DependentUpon>PopUpBOR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
       <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +525,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmProductionPlan.resx">
       <DependentUpon>FrmProductionPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionManagement\FrmRegPerformance.resx">
+      <DependentUpon>FrmRegPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionManagement\PopupPerformance.resx">
+      <DependentUpon>PopupPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManagement\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManagement\PopupPurchase.resx">
+      <DependentUpon>PopupPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
       <DependentUpon>PopUpBOM.cs</DependentUpon>
@@ -586,9 +601,6 @@
     <EmbeddedResource Include="PurchaseManagement\FrmPurchaseList.resx">
       <DependentUpon>FrmPurchaseList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseManagement\FrmRegPerformance.resx">
-      <DependentUpon>FrmRegPerformance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\FrmRelease.resx">
       <DependentUpon>FrmRelease.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,9 +621,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderManagement\PopupSoUpload.resx">
       <DependentUpon>PopupSoUpload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseManagement\PopupPerformance.resx">
-      <DependentUpon>PopupPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupStockHistory.resx">
       <DependentUpon>PopupStockHistory.cs</DependentUpon>
