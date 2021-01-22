@@ -79,40 +79,40 @@
     <Compile Include="FrmCommonCodeManagement.Designer.cs">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCompanyList.cs">
+    <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCompanyList.Designer.cs">
+    <Compile Include="ResourceManagement\FrmCompanyList.Designer.cs">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMachineGrade.cs">
+    <Compile Include="ResourceManagement\FrmMachineGrade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMachineGrade.Designer.cs">
+    <Compile Include="ResourceManagement\FrmMachineGrade.Designer.cs">
       <DependentUpon>FrmMachineGrade.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopCompanyCRUD.cs">
+    <Compile Include="ResourceManagement\PopCompanyCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopCompanyCRUD.Designer.cs">
+    <Compile Include="ResourceManagement\PopCompanyCRUD.Designer.cs">
       <DependentUpon>PopCompanyCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopFactoryCRUD.cs">
+    <Compile Include="ResourceManagement\PopFactoryCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopFactoryCRUD.Designer.cs">
+    <Compile Include="ResourceManagement\PopFactoryCRUD.Designer.cs">
       <DependentUpon>PopFactoryCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopMachineCRUD.cs">
+    <Compile Include="ResourceManagement\PopMachineCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopMachineCRUD.Designer.cs">
+    <Compile Include="ResourceManagement\PopMachineCRUD.Designer.cs">
       <DependentUpon>PopMachineCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopMGradeCRUD.cs">
+    <Compile Include="ResourceManagement\PopMGradeCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopMGradeCRUD.Designer.cs">
+    <Compile Include="ResourceManagement\PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUpBOR.cs">
@@ -211,10 +211,10 @@
     <Compile Include="FrmBOR.Designer.cs">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFactoryList.cs">
+    <Compile Include="ResourceManagement\FrmFactoryList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFactoryList.Designer.cs">
+    <Compile Include="ResourceManagement\FrmFactoryList.Designer.cs">
       <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHome.cs">
@@ -499,22 +499,22 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCompanyList.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMachineGrade.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmMachineGrade.resx">
       <DependentUpon>FrmMachineGrade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopCompanyCRUD.resx">
+    <EmbeddedResource Include="ResourceManagement\PopCompanyCRUD.resx">
       <DependentUpon>PopCompanyCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopFactoryCRUD.resx">
+    <EmbeddedResource Include="ResourceManagement\PopFactoryCRUD.resx">
       <DependentUpon>PopFactoryCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopMachineCRUD.resx">
+    <EmbeddedResource Include="ResourceManagement\PopMachineCRUD.resx">
       <DependentUpon>PopMachineCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopMGradeCRUD.resx">
+    <EmbeddedResource Include="ResourceManagement\PopMGradeCRUD.resx">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBOR.resx">
@@ -577,7 +577,7 @@
     <EmbeddedResource Include="OrderManagement\FrmDemandPlan.resx">
       <DependentUpon>FrmDemandPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFactoryList.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmFactoryList.resx">
       <DependentUpon>FrmFactoryList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\FrmDispend.resx">
@@ -795,7 +795,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NewFolder1\" />
-    <Folder Include="ResourceManagement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
