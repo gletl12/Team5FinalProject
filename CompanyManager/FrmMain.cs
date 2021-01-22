@@ -234,15 +234,19 @@ namespace CompanyManager
             {
                 return;
             }
-
-            if (this.WindowState == FormWindowState.Maximized)
+            foreach (Form item in this.MdiChildren)
             {
-                this.ActiveMdiChild.Size = new Size(1738, 927);
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    item.Size = new Size(1738, 927);
+                }
+                else
+                {
+                    item.Size = new Size(1168, 647);
+                }
             }
-            else
-            {
-                this.ActiveMdiChild.Size = new Size(1168, 647);
-            }
+            
+            
             
         }
     }
