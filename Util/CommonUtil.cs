@@ -154,7 +154,7 @@ namespace Util
             // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
 
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+            //dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
 
             dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
@@ -183,7 +183,7 @@ namespace Util
             // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
 
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+            //dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
 
             dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
