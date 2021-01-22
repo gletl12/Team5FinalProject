@@ -79,6 +79,12 @@
     <Compile Include="FrmCommonCodeManagement.Designer.cs">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupMenu.Designer.cs">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,10 +121,10 @@
     <Compile Include="ResourceManagement\PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpBOR.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpBOR.Designer.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.Designer.cs">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionManagement\FrmRegPerformance.cs">
@@ -205,10 +211,10 @@
     <Compile Include="PurchaseManagement\FrmAwait.Designer.cs">
       <DependentUpon>FrmAwait.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBOR.cs">
+    <Compile Include="ResourceManagement\FrmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBOR.Designer.cs">
+    <Compile Include="ResourceManagement\FrmBOR.Designer.cs">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ResourceManagement\FrmFactoryList.cs">
@@ -499,6 +505,9 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopupMenu.resx">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,13 +526,13 @@
     <EmbeddedResource Include="ResourceManagement\PopMGradeCRUD.resx">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmBOR.resx">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCommonCodeManagement.resx">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\PopUpBOR.resx">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
@@ -752,6 +761,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\management.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\pngwing.com.png" />
     <None Include="Resources\Add_16x16.png" />
     <None Include="Resources\AddItem_16x16.png" />
     <None Include="Resources\FullShoppingCart_32x32.png" />
