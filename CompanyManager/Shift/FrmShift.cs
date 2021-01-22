@@ -1,4 +1,5 @@
 ﻿using CompanyManager.Properties;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,7 @@ namespace CompanyManager
         {
 
             GetdgvColumn();
+            DataLoad();
         }
 
         private void GetdgvColumn()
@@ -40,31 +42,29 @@ namespace CompanyManager
             col.Width = 30;
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "factory_grade");
-            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "factory_type");
-            CommonUtil.AddGridTextColumn(dgvShift, "Shift", "factory_name", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "factory_parent", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "factory_comment", 150);
-            CommonUtil.AddGridTextColumn(dgvShift, "적용일자", "factory_use");
-            CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "up_emp", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "up_date", 170);
-                        Point heagerCellLocation = dgvShift.GetCellDisplayRectangle(1, -1, true).Location;          
+            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id");
+            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_id");
+            CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 120);
+            CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 120);
+            CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 150);
+            CommonUtil.AddGridTextColumn(dgvShift, "적용일자", "shift_sdate");
+            CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "shift_edate", 120);
+            CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "shift_use", 170);
+
+         
+            Point heagerCellLocation = dgvShift.GetCellDisplayRectangle(1, -1, true).Location;          
             headerCheckBox.Location = new Point(heagerCellLocation.X + 27, heagerCellLocation.Y + 2);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += HeaderCheckBox_Click;
             dgvShift.Controls.Add(headerCheckBox);
-
-            dgvShift.Rows.Add(null, null, "회사", "공장", "(주)Sidiz", "", "", "사용", "관리자", "2021-01-22");
-            dgvShift.Rows.Add(null, null, "회사", "공장", "(주)Sidiz", "", "", "사용", "관리자", "2021-01-22");
-
-            DataLoad();
 
 
         }
 
         private void DataLoad()
         {
-            
+            ShiftService service = new ShiftService();
+            dgvShift.DataSource= service.GetShift();
         }
 
         /// <summary>
