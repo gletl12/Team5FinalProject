@@ -256,6 +256,7 @@ namespace CompanyManager
         {
             PopupMenu frm = new PopupMenu();
             frm.ShowDialog();
+            
             this.Form1_Load(this,null);
         }
     }
