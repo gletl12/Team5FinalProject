@@ -115,6 +115,12 @@
     <Compile Include="PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUpBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpBOR.Designer.cs">
+      <DependentUpon>PopUpBOR.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionManagement\FrmRegPerformance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -516,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCommonCodeManagement.resx">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpBOR.resx">
+      <DependentUpon>PopUpBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
       <DependentUpon>FrmMaterialPlan.cs</DependentUpon>
