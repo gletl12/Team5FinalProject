@@ -23,7 +23,8 @@ namespace CompanyManager
         Color selectedColor = Color.Blue;
         Button selectedBtn;
 
-
+        
+        //VO 형식 관리자 
        
 
         public string Admin { get; set; }

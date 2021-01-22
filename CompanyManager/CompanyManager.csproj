@@ -752,6 +752,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\management.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\pngwing.com.png" />
     <None Include="Resources\Add_16x16.png" />
     <None Include="Resources\AddItem_16x16.png" />
     <None Include="Resources\FullShoppingCart_32x32.png" />
