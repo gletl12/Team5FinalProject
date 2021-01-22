@@ -200,6 +200,7 @@ namespace CompanyManager
             //MessageBox.Show(this.ActiveMdiChild.GetType().ToString());
             if (this.ActiveMdiChild.GetType().ToString().Split('.')[1] == "FrmHome")
             {
+                lblSortName.Text = "Home";
                 return;
             }
 
