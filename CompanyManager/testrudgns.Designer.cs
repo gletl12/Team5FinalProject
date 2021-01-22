@@ -31,15 +31,16 @@ namespace CompanyManager
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace CompanyManager
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,22 @@ namespace CompanyManager
             this.checkBox7.Text = "양식 다운로드";
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(51, 242);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "    등록";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
@@ -109,6 +125,16 @@ namespace CompanyManager
             this.checkBox6.Text = "Excel등록";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(5, 93);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(48, 16);
+            this.checkBox9.TabIndex = 0;
+            this.checkBox9.Text = "삭제";
+            this.checkBox9.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
@@ -174,16 +200,6 @@ namespace CompanyManager
             this.textBox2.TabIndex = 29;
             this.textBox2.Text = "아직 덜 구현-경훈";
             // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(5, 93);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(48, 16);
-            this.checkBox9.TabIndex = 0;
-            this.checkBox9.Text = "삭제";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
@@ -236,7 +252,7 @@ namespace CompanyManager
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(69, 45);
+            this.button2.Location = new System.Drawing.Point(63, 45);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 23);
             this.button2.TabIndex = 26;
@@ -251,7 +267,7 @@ namespace CompanyManager
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(131, 45);
+            this.button8.Location = new System.Drawing.Point(125, 45);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 21;
@@ -266,7 +282,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(194, 45);
+            this.button12.Location = new System.Drawing.Point(188, 45);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(55, 23);
             this.button12.TabIndex = 25;
@@ -281,9 +297,9 @@ namespace CompanyManager
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(255, 45);
+            this.button11.Location = new System.Drawing.Point(249, 45);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(102, 23);
+            this.button11.Size = new System.Drawing.Size(108, 23);
             this.button11.TabIndex = 24;
             this.button11.Text = "    양식 다운로드";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -316,22 +332,6 @@ namespace CompanyManager
             this.button9.TabIndex = 22;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(51, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "    등록";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // testrudgns
             // 
