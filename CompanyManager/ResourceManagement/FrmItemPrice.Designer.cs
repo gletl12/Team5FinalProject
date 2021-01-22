@@ -54,7 +54,6 @@ namespace CompanyManager
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrice)).BeginInit();
             this.SuspendLayout();
@@ -344,17 +343,6 @@ namespace CompanyManager
             this.label5.TabIndex = 26;
             this.label5.Text = "label5";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Location = new System.Drawing.Point(207, 188);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.Visible = false;
-            // 
             // FrmItemPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -364,7 +352,6 @@ namespace CompanyManager
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
@@ -409,6 +396,5 @@ namespace CompanyManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
