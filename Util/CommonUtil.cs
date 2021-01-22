@@ -116,7 +116,7 @@ namespace Util
             chk.SortMode = DataGridViewColumnSortMode.NotSortable;
             chk.Name = columnName;
             chk.Width = btnWidth;
-          
+            chk.HeaderText = string.Empty;
             chk.DefaultCellStyle.Padding = new Padding(padding);
             dgv.Columns.Add(chk);
         }
@@ -204,6 +204,69 @@ namespace Util
             ((DataGridView)sender).ClearSelection();
         }
 
+        public static void SetDGVDesign_CheckBox(DataGridView dgv)
+        {
+            //헤더 체크박스 생성
+            CheckBox checkBox = new CheckBox();
+            checkBox.Text = string.Empty;
+            checkBox.BackColor = dgv.BackgroundColor;
+            checkBox.Size = new Size(15, 15);
+            checkBox.Location = new Point(dgv.Location.X + 54, dgv.Location.Y + 5);
+            dgv.Parent.Controls.Add(checkBox);
+            checkBox.BringToFront();
+            //체크박스 컬럼 추가
+            AddGridCheckColumn(dgv, "checkBox");
+            //스크롤 이벤트 등록
+            dgv.Scroll += dgv_Scroll;
+            void dgv_Scroll(object sender, ScrollEventArgs e)
+            {
+                if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+                {
+                    checkBox.Location = new Point(checkBox.Location.X - (e.NewValue - e.OldValue), checkBox.Location.Y);
+                    checkBox.Visible = checkBox.Location.X > ((DataGridView)sender).Location.X + 50;
+                }
+
+            }
+            //헤더 체크박스 클릭 이벤트 등록
+            checkBox.Click += CheckBox_Click;
+            void CheckBox_Click(object sender, EventArgs e)
+            {
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    ((DataGridViewCheckBoxCell)row.Cells["checkBox"]).Value = checkBox.Checked;
+                }
+            }
+            dgv.CellClick += RowCheckBox_Click;
+            void RowCheckBox_Click(object sender, DataGridViewCellEventArgs e)
+            {
+                if (dgv.Columns[e.ColumnIndex].Name.Equals("checkBox") && e.RowIndex >= 0)
+                {
+                    bool isChecked = true;
+
+                    for (int i = 0; i < dgv.Rows.Count; i++)
+                    {
+                        // 이벤트가 발생한 행은 조건 반대로
+                        if (i == e.RowIndex)
+                        {
+                            if ((Convert.ToBoolean(dgv.Rows[i].Cells["checkBox"].EditedFormattedValue) == true))
+                            {
+                                isChecked = false;
+                                break;
+                            }
+                            continue;
+                        }
+                        // checked가 false면 break
+                        if ((Convert.ToBoolean(dgv.Rows[i].Cells["checkBox"].EditedFormattedValue) == false))
+                        {
+                            isChecked = false;
+                            break;
+                        }
+                    }
+                    checkBox.Checked = false;
+                    checkBox.Checked = isChecked;
+                }
+            }
+        }
         //행번호 추가
         private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
