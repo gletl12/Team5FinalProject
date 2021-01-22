@@ -34,6 +34,13 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "사용유무", "mgrade_use",80);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "수정자", "up_emp", 120);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "수정시간", "up_date",161);
+
+            dgvMachineGrade.Rows.Add(null, null, "ASSEMBLY", "조립", "사용","관리자", "2021-01-22");
+            dgvMachineGrade.Rows.Add(null, null, "PROCESSING", "가공","사용", "관리자", "2021-01-22");
+            dgvMachineGrade.Rows.Add(null, null, "OUTSOURCING", "외주", "사용", "관리자", "2021-01-22");
+
+            dgvMachineGrade.AutoGenerateColumns = false;
+            dgvMachineGrade.AllowUserToAddRows = false;
         }
         private void GetMachine()
         {
@@ -50,6 +57,13 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvMachine, "사용유무", "machine_use");
             CommonUtil.AddGridTextColumn(dgvMachine, "수정자", "up_emp");
             CommonUtil.AddGridTextColumn(dgvMachine, "수정시간", "up_date", 169);
+
+            dgvMachine.Rows.Add(null, null, "F_ASSEMBLY_01", "최종조립 1팀", "자재창고", "제품창고", "", "미사용", "", "사용", "관리자", "2021-01-22");
+            dgvMachine.Rows.Add(null, null, "F_ASSEMBLY_02", "최종조립 2팀", "자재창고", "제품창고", "", "미사용", "", "사용", "관리자", "2021-01-22");
+            dgvMachine.Rows.Add(null, null, "H_ASSEMBLY_04", "의자다리A 조립팀", "자재창고", "제품창고", "", "미사용", "", "사용", "관리자", "2021-01-22");
+
+            dgvMachine.AutoGenerateColumns = false;
+            dgvMachine.AllowUserToAddRows = false;
         }
     }
 }
