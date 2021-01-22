@@ -246,11 +246,6 @@ namespace Util
                     DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     cell.Value = !Convert.ToBoolean(cell.Value);
 
-                    if (((DataGridViewCheckBoxCell)dgv[e.ColumnIndex, e.RowIndex]).EditingCellValueChanged)
-                    {
-                        Console.WriteLine();
-                    }
-
                     bool isChecked = true;
 
                     for (int i = 0; i < dgv.Rows.Count; i++)
