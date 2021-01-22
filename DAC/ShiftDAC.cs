@@ -20,7 +20,6 @@ namespace DAC
                 {
                     cmd.CommandText = @"select shift_id,machine_id,shift_type,shift_stime,shift_etime,shift_sdate,shift_edate,shift_use,shift_comment
                                                             from TBL_SHIFT";
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     List<ShiftVO> temp = Helper.DataReaderMapToList<ShiftVO>(cmd.ExecuteReader());
                     Dispose();

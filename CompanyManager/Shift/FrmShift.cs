@@ -50,8 +50,13 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvShift, "적용일자", "shift_sdate");
             CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "shift_edate", 120);
             CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "shift_use", 170);
+            CommonUtil.AddGridTextColumn(dgvShift, "비고", "shift_comment", 150, false);
+            CommonUtil.AddGridTextColumn(dgvShift, "최초등록일", "ins_date", 150, false);
+            CommonUtil.AddGridTextColumn(dgvShift, "최초등록자", "ins_emp",100, false);
+            CommonUtil.AddGridTextColumn(dgvShift, "최종수정일", "up_date", 120, false);
+            CommonUtil.AddGridTextColumn(dgvShift, "최종수정자", "up_emp", 170,false);
 
-         
+
             Point heagerCellLocation = dgvShift.GetCellDisplayRectangle(1, -1, true).Location;          
             headerCheckBox.Location = new Point(heagerCellLocation.X + 27, heagerCellLocation.Y + 2);
             headerCheckBox.Size = new Size(18, 18);
