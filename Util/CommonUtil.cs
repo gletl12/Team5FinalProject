@@ -212,12 +212,16 @@ namespace Util
             //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
             drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
 
+           
             using (Brush brush = new SolidBrush(Color.Black))
             {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font,
-                brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
+                TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(19,5),Color.Black);
+                //e.Graphics.DrawString("No.", e.InheritedRowStyle.Font,brush,40,5, drawFormat);
+                e.Graphics.DrawString((e.RowIndex+1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
         }
+
+       
 
         /// <summary>
         /// Form 실행 메서드
