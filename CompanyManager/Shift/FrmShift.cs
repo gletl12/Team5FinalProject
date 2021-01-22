@@ -42,15 +42,15 @@ namespace CompanyManager
             col.Width = 30;
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id");
-            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_id");
-            CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 150);
-            CommonUtil.AddGridTextColumn(dgvShift, "적용일자", "shift_sdate");
-            CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "shift_edate", 120);
-            CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "shift_use", 170);
-            CommonUtil.AddGridTextColumn(dgvShift, "비고", "shift_comment", 150, false);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id",57,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_id",97);
+            CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 57, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 57, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "적용시작일자", "shift_sdate",97, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "shift_edate", 97, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "shift_use", 95, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "비고", "shift_comment", 101, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "최초등록일", "ins_date", 150, false);
             CommonUtil.AddGridTextColumn(dgvShift, "최초등록자", "ins_emp",100, false);
             CommonUtil.AddGridTextColumn(dgvShift, "최종수정일", "up_date", 120, false);
@@ -87,6 +87,15 @@ namespace CompanyManager
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
                 chk.Value = headerCheckBox.Checked;
 
+            }
+        }
+
+        private void dgvShift_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+            {
+                headerCheckBox.Location = new Point(headerCheckBox.Location.X - (e.NewValue - e.OldValue), headerCheckBox.Location.Y);
+                headerCheckBox.Visible = headerCheckBox.Location.X > dgvShift.Location.X + 50;
             }
         }
     }
