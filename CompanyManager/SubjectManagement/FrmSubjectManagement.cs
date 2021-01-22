@@ -48,5 +48,11 @@ namespace CompanyManager
         {
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PopUpSubject popup = new PopUpSubject();
+            popup.ShowDialog();
+        }
     }
 }
