@@ -356,10 +356,10 @@
     <Compile Include="OrderManagement\FrmSOUpload.Designer.cs">
       <DependentUpon>FrmSOUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemPrice.cs">
+    <Compile Include="ResourceManagement\FrmItemPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemPrice.Designer.cs">
+    <Compile Include="ResourceManagement\FrmItemPrice.Designer.cs">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenuManagement.cs">
@@ -368,22 +368,22 @@
     <Compile Include="FrmMenuManagement.Designer.cs">
       <DependentUpon>FrmMenuManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSalesPrice.cs">
+    <Compile Include="ResourceManagement\FrmSalesPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSalesPrice.Designer.cs">
+    <Compile Include="ResourceManagement\FrmSalesPrice.Designer.cs">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupItemPrice.cs">
+    <Compile Include="ResourceManagement\PopupItemPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupItemPrice.Designer.cs">
+    <Compile Include="ResourceManagement\PopupItemPrice.Designer.cs">
       <DependentUpon>PopupItemPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSalesPrice.cs">
+    <Compile Include="ResourceManagement\PopupSalesPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupSalesPrice.Designer.cs">
+    <Compile Include="ResourceManagement\PopupSalesPrice.Designer.cs">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift\PopupShift.cs">
@@ -589,7 +589,7 @@
     <EmbeddedResource Include="PurchaseManagement\FrmInboundState.resx">
       <DependentUpon>FrmInboundState.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmItemPrice.resx">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
@@ -613,7 +613,7 @@
     <EmbeddedResource Include="PurchaseManagement\FrmRelease.resx">
       <DependentUpon>FrmRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSalesPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
@@ -655,10 +655,10 @@
     <EmbeddedResource Include="ParentForm\PopupBaseForm.resx">
       <DependentUpon>PopupBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupItemPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\PopupItemPrice.resx">
       <DependentUpon>PopupItemPrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupSalesPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\PopupSalesPrice.resx">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shift\PopupShift.resx">
