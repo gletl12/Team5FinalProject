@@ -33,6 +33,7 @@ namespace CompanyManager
         private void GetdgvColumn()
         {
             CommonUtil.SetDGVDesign_Num(dgvShift);
+
             DataGridViewCheckBoxColumn col = new DataGridViewCheckBoxColumn();
             col.Name = "chk";
             col.HeaderText = "";
@@ -47,8 +48,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvShift, "적용일자", "factory_use");
             CommonUtil.AddGridTextColumn(dgvShift, "적용완료일자", "up_emp", 120);
             CommonUtil.AddGridTextColumn(dgvShift, "사용유무", "up_date", 170);
-            Point heagerCellLocation = dgvShift.GetCellDisplayRectangle(1, -1, true).Location;
-
+                        Point heagerCellLocation = dgvShift.GetCellDisplayRectangle(1, -1, true).Location;          
             headerCheckBox.Location = new Point(heagerCellLocation.X + 27, heagerCellLocation.Y + 2);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Click += HeaderCheckBox_Click;
@@ -57,9 +57,16 @@ namespace CompanyManager
             dgvShift.Rows.Add(null, null, "회사", "공장", "(주)Sidiz", "", "", "사용", "관리자", "2021-01-22");
             dgvShift.Rows.Add(null, null, "회사", "공장", "(주)Sidiz", "", "", "사용", "관리자", "2021-01-22");
 
+            DataLoad();
 
 
         }
+
+        private void DataLoad()
+        {
+            
+        }
+
         /// <summary>
         /// 체크박스
         /// </summary>
