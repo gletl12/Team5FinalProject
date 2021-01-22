@@ -42,5 +42,11 @@ namespace CompanyManager
             dataGridView1.Rows.Add(null, null, "CHAIR_01", "나무 1인용 의자", "B-ASSY", "조립공정", "F_ASSY_01", "최종조립1반", "180", "1", null, null,"사용",null, "관리자","2018-10-28 09:08:16");
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PopUpBOR popup = new PopUpBOR();
+            popup.ShowDialog();
+        }
     }
 }

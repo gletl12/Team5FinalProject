@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CompanyManager
 {
-    public partial class PopupPerformance : CompanyManager.PopupBaseForm
+    public partial class PopUpBOR : CompanyManager.PopupBaseForm
     {
-        public PopupPerformance()
+        public PopUpBOR()
         {
             InitializeComponent();
         }

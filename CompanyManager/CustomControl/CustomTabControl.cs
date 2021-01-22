@@ -140,12 +140,13 @@ namespace CompanyManager.CustomControl
         private void button_Click(object sender, EventArgs e)
         {
             //열린폼이면
+            
             foreach (Form child in ParentForm.MdiChildren)
             {
                 string formName = OpenForms[((Button)sender).Text];
                 if (child.GetType().ToString().Split('.')[1] == formName)
                 {
-                    child.Activate();
+                    Util.CommonUtil.OpenCreateForm(ParentForm, child.GetType());
                     break;
                 }
             }

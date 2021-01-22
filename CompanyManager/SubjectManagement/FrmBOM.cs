@@ -43,5 +43,11 @@ namespace CompanyManager
             dataGridView1.Rows.Add(null, null, "CHAIR2_01", "  └BACK_a02", "  └등받이", "반제품", "갯수", "1", "2", "2018-10-04", "2018-10-04", "사용", "사용", "사용", "OS", "AW 외주 작업장", "5 x 12 inch");
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PopUpBOM popup = new PopUpBOM();
+            popup.ShowDialog();
+        }
     }
 }

@@ -39,9 +39,10 @@ namespace CompanyManager
             this.label16 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace CompanyManager
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.SuspendLayout();
@@ -165,12 +165,36 @@ namespace CompanyManager
             this.label17.TabIndex = 1;
             this.label17.Text = "label2";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(130, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 21);
+            this.textBox1.TabIndex = 2;
+            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(130, 6);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(181, 21);
             this.textBox8.TabIndex = 2;
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
+            this.button14.Location = new System.Drawing.Point(1020, 29);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(116, 28);
+            this.button14.TabIndex = 0;
+            this.button14.Text = "조회";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button14.UseVisualStyleBackColor = false;
             // 
             // dgvCompany
             // 
@@ -185,13 +209,6 @@ namespace CompanyManager
             this.dgvCompany.RowTemplate.Height = 23;
             this.dgvCompany.Size = new System.Drawing.Size(1152, 520);
             this.dgvCompany.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(130, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 21);
-            this.textBox1.TabIndex = 2;
             // 
             // button8
             // 
@@ -218,7 +235,7 @@ namespace CompanyManager
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 13;
-            this.label10.Text = "      업무관리";
+            this.label10.Text = "      업체관리";
             // 
             // button9
             // 
@@ -295,23 +312,6 @@ namespace CompanyManager
             this.button13.Text = "    등록";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
-            this.button14.Location = new System.Drawing.Point(1020, 29);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 28);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "조회";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = false;
             // 
             // FrmCompanyList
             // 
