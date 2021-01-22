@@ -529,6 +529,7 @@ namespace CompanyManager
             this.button13.Text = "    등록";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button11
             // 

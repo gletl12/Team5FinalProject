@@ -31,6 +31,13 @@ namespace CompanyManager
         {
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -60,13 +67,7 @@ namespace CompanyManager
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +124,62 @@ namespace CompanyManager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1148, 126);
             this.panel2.TabIndex = 62;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(97, 49);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(210, 22);
+            this.comboBox5.TabIndex = 70;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(97, 77);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(210, 21);
+            this.textBox4.TabIndex = 69;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(790, 49);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(210, 21);
+            this.textBox3.TabIndex = 68;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(409, 49);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(210, 21);
+            this.textBox2.TabIndex = 67;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(194, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 14);
+            this.label21.TabIndex = 66;
+            this.label21.Text = "~";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(212, 18);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(95, 21);
+            this.dateTimePicker3.TabIndex = 65;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(97, 18);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(95, 21);
+            this.dateTimePicker4.TabIndex = 64;
             // 
             // comboBox4
             // 
@@ -444,66 +501,20 @@ namespace CompanyManager
             this.label10.TabIndex = 58;
             this.label10.Text = "      고객주문";
             // 
-            // label21
+            // checkBox1
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(194, 22);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(15, 14);
-            this.label21.TabIndex = 66;
-            this.label21.Text = "~";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(212, 18);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker3.TabIndex = 65;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(97, 18);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker4.TabIndex = 64;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(409, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 21);
-            this.textBox2.TabIndex = 67;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(790, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 21);
-            this.textBox3.TabIndex = 68;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(97, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 21);
-            this.textBox4.TabIndex = 69;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(97, 49);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(210, 22);
-            this.comboBox5.TabIndex = 70;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(803, 168);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 64;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FrmSalesClose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button12);
@@ -559,5 +570,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

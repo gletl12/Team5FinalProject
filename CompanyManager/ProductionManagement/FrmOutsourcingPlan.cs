@@ -17,7 +17,7 @@ namespace CompanyManager
 
         private void FrmOutsourcingPlan_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("📁");
+            //MessageBox.Show("📁");
         }
     }
 }

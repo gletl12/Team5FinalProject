@@ -30,6 +30,9 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@ namespace CompanyManager
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -92,6 +93,32 @@ namespace CompanyManager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1148, 98);
             this.panel2.TabIndex = 22;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(192, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 14);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "~";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(209, 20);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(104, 21);
+            this.dateTimePicker2.TabIndex = 45;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(86, 20);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(104, 21);
+            this.dateTimePicker1.TabIndex = 44;
             // 
             // comboBox1
             // 
@@ -243,6 +270,7 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
@@ -265,32 +293,6 @@ namespace CompanyManager
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1142, 196);
             this.dataGridView2.TabIndex = 19;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(192, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 14);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "~";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(209, 20);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker2.TabIndex = 45;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(86, 20);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker1.TabIndex = 44;
             // 
             // button12
             // 
@@ -402,6 +404,15 @@ namespace CompanyManager
             this.button5.TabIndex = 14;
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(542, 118);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmRelease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -452,5 +463,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
