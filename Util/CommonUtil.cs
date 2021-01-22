@@ -195,6 +195,7 @@ namespace Util
             dgv.AllowUserToAddRows = false;
             dgv.RowPostPaint += Dgv_RowPostPaint;
             dgv.SelectionChanged += Dgv_SelectionChanged;
+            dgv.Paint += CommonUtil_Paint;
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
@@ -212,16 +213,27 @@ namespace Util
             //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
             drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
 
+
+            
+            
            
             using (Brush brush = new SolidBrush(Color.Black))
             {
-                TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(19,5),Color.Black);
-                //e.Graphics.DrawString("No.", e.InheritedRowStyle.Font,brush,40,5, drawFormat);
+                
+                //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(e.RowBounds.Location.X + 25, 5),Color.Black);
+                //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(19,5),Color.Black);
+
+                //e.Graphics.DrawString("No.", e.InheritedRowStyle.Font,brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y -20, drawFormat);
                 e.Graphics.DrawString((e.RowIndex+1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
         }
 
-       
+        private static void CommonUtil_Paint(object sender, PaintEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, "No.", ((DataGridView)sender).Font, new Point(19,5), Color.Black);
+        }
+
+
 
         /// <summary>
         /// Form 실행 메서드
