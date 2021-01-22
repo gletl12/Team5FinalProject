@@ -165,6 +165,7 @@ namespace CompanyManager
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.Size = new System.Drawing.Size(1152, 529);
             this.dgvShift.TabIndex = 19;
+            this.dgvShift.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvShift_Scroll);
             // 
             // button5
             // 
