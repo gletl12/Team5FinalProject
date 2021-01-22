@@ -49,13 +49,12 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
+            this.label1.Size = new System.Drawing.Size(72, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "HeaderText";
             // 

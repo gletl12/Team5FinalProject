@@ -79,6 +79,12 @@
     <Compile Include="FrmCommonCodeManagement.Designer.cs">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupMenu.Designer.cs">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,10 +121,10 @@
     <Compile Include="ResourceManagement\PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpBOR.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpBOR.Designer.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.Designer.cs">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionManagement\FrmRegPerformance.cs">
@@ -205,10 +211,10 @@
     <Compile Include="PurchaseManagement\FrmAwait.Designer.cs">
       <DependentUpon>FrmAwait.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBOR.cs">
+    <Compile Include="ResourceManagement\FrmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBOR.Designer.cs">
+    <Compile Include="ResourceManagement\FrmBOR.Designer.cs">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ResourceManagement\FrmFactoryList.cs">
@@ -356,10 +362,10 @@
     <Compile Include="OrderManagement\FrmSOUpload.Designer.cs">
       <DependentUpon>FrmSOUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemPrice.cs">
+    <Compile Include="ResourceManagement\FrmItemPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemPrice.Designer.cs">
+    <Compile Include="ResourceManagement\FrmItemPrice.Designer.cs">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMenuManagement.cs">
@@ -368,22 +374,22 @@
     <Compile Include="FrmMenuManagement.Designer.cs">
       <DependentUpon>FrmMenuManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSalesPrice.cs">
+    <Compile Include="ResourceManagement\FrmSalesPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSalesPrice.Designer.cs">
+    <Compile Include="ResourceManagement\FrmSalesPrice.Designer.cs">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupItemPrice.cs">
+    <Compile Include="ResourceManagement\PopupItemPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupItemPrice.Designer.cs">
+    <Compile Include="ResourceManagement\PopupItemPrice.Designer.cs">
       <DependentUpon>PopupItemPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupSalesPrice.cs">
+    <Compile Include="ResourceManagement\PopupSalesPrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupSalesPrice.Designer.cs">
+    <Compile Include="ResourceManagement\PopupSalesPrice.Designer.cs">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift\PopupShift.cs">
@@ -499,6 +505,9 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopupMenu.resx">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,13 +526,13 @@
     <EmbeddedResource Include="ResourceManagement\PopMGradeCRUD.resx">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmBOR.resx">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCommonCodeManagement.resx">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\PopUpBOR.resx">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
@@ -589,7 +598,7 @@
     <EmbeddedResource Include="PurchaseManagement\FrmInboundState.resx">
       <DependentUpon>FrmInboundState.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmItemPrice.resx">
       <DependentUpon>FrmItemPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
@@ -613,7 +622,7 @@
     <EmbeddedResource Include="PurchaseManagement\FrmRelease.resx">
       <DependentUpon>FrmRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSalesPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmSalesPrice.resx">
       <DependentUpon>FrmSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sample\PopupSample.resx">
@@ -655,10 +664,10 @@
     <EmbeddedResource Include="ParentForm\PopupBaseForm.resx">
       <DependentUpon>PopupBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupItemPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\PopupItemPrice.resx">
       <DependentUpon>PopupItemPrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupSalesPrice.resx">
+    <EmbeddedResource Include="ResourceManagement\PopupSalesPrice.resx">
       <DependentUpon>PopupSalesPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shift\PopupShift.resx">
@@ -752,6 +761,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\management.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\pngwing.com.png" />
     <None Include="Resources\Add_16x16.png" />
     <None Include="Resources\AddItem_16x16.png" />
     <None Include="Resources\FullShoppingCart_32x32.png" />
