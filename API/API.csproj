@@ -92,9 +92,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PriceController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="DAC\CommonDAC.cs" />
     <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\PriceDAC.cs" />
     <Compile Include="DAC\SampleDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -118,6 +120,10 @@
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{7DA0A26D-E5F3-4DED-8576-5DB25140485C}</Project>
       <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{166e3b03-0bd1-4cbb-8752-a446fd88f296}</Project>
+      <Name>VO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

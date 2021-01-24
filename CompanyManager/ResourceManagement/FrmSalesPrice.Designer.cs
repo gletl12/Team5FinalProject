@@ -30,45 +30,27 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSalesPrice));
-            this.button8 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.btnNewPrice = new System.Windows.Forms.Button();
+            this.btnRegPrice = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dtpBaseDate = new System.Windows.Forms.DateTimePicker();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtItem = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dgvPrice = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrice)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(810, 95);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "    복사";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -125,22 +107,22 @@ namespace CompanyManager
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // btnNewPrice
+            // btnRegPrice
             // 
-            this.btnNewPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnNewPrice.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnNewPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnNewPrice.Image")));
-            this.btnNewPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewPrice.Location = new System.Drawing.Point(748, 95);
-            this.btnNewPrice.Name = "btnNewPrice";
-            this.btnNewPrice.Size = new System.Drawing.Size(56, 23);
-            this.btnNewPrice.TabIndex = 27;
-            this.btnNewPrice.Text = "    등록";
-            this.btnNewPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewPrice.UseVisualStyleBackColor = false;
-            this.btnNewPrice.Click += new System.EventHandler(this.btnNewPrice_Click);
+            this.btnRegPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnRegPrice.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnRegPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnRegPrice.Image")));
+            this.btnRegPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegPrice.Location = new System.Drawing.Point(811, 95);
+            this.btnRegPrice.Name = "btnRegPrice";
+            this.btnRegPrice.Size = new System.Drawing.Size(56, 23);
+            this.btnRegPrice.TabIndex = 27;
+            this.btnRegPrice.Text = "    등록";
+            this.btnRegPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegPrice.UseVisualStyleBackColor = false;
+            this.btnRegPrice.Click += new System.EventHandler(this.btnNewPrice_Click);
             // 
             // panel2
             // 
@@ -149,38 +131,38 @@ namespace CompanyManager
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.dtpBaseDate);
+            this.panel2.Controls.Add(this.cboCompany);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.txtItem);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.button14);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 10);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1152, 69);
             this.panel2.TabIndex = 29;
             // 
-            // dateTimePicker1
+            // dtpBaseDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(105, 21);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpBaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBaseDate.Location = new System.Drawing.Point(92, 24);
+            this.dtpBaseDate.Name = "dtpBaseDate";
+            this.dtpBaseDate.Size = new System.Drawing.Size(105, 21);
+            this.dtpBaseDate.TabIndex = 22;
             // 
-            // comboBox3
+            // cboCompany
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(779, 24);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(178, 22);
-            this.comboBox3.TabIndex = 21;
+            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(779, 24);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(178, 22);
+            this.cboCompany.TabIndex = 21;
             // 
             // label11
             // 
@@ -221,13 +203,13 @@ namespace CompanyManager
             this.label16.TabIndex = 1;
             this.label16.Text = "label2";
             // 
-            // textBox7
+            // txtItem
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Location = new System.Drawing.Point(378, 24);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(240, 21);
-            this.textBox7.TabIndex = 2;
+            this.txtItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtItem.Location = new System.Drawing.Point(378, 24);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(240, 21);
+            this.txtItem.TabIndex = 2;
             // 
             // label17
             // 
@@ -250,20 +232,21 @@ namespace CompanyManager
             this.label18.TabIndex = 1;
             this.label18.Text = "label18";
             // 
-            // button14
+            // btnSearch
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(1020, 17);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 30);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "조회";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(1020, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 30);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // button12
             // 
@@ -281,73 +264,61 @@ namespace CompanyManager
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // dataGridView2
+            // dgvPrice
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 124);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1152, 512);
-            this.dataGridView2.TabIndex = 28;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(69, 133);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 30;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.dgvPrice.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrice.Location = new System.Drawing.Point(8, 124);
+            this.dgvPrice.Name = "dgvPrice";
+            this.dgvPrice.RowHeadersWidth = 50;
+            this.dgvPrice.RowTemplate.Height = 23;
+            this.dgvPrice.Size = new System.Drawing.Size(1152, 512);
+            this.dgvPrice.TabIndex = 28;
+            this.dgvPrice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrice_CellContentClick);
             // 
             // FrmSalesPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.btnNewPrice);
+            this.Controls.Add(this.btnRegPrice);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvPrice);
             this.Name = "FrmSalesPrice";
+            this.Load += new System.EventHandler(this.FrmSalesPrice_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button btnNewPrice;
+        private System.Windows.Forms.Button btnRegPrice;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DateTimePicker dtpBaseDate;
+        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridView dgvPrice;
     }
 }

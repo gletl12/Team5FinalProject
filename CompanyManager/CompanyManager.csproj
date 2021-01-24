@@ -157,6 +157,12 @@
     <Compile Include="PurchaseManagement\PopupPurchase.Designer.cs">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResourceManagement\PopupPriceExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceManagement\PopupPriceExcel.Designer.cs">
+      <DependentUpon>PopupPriceExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupPurchase.resx">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceManagement\PopupPriceExcel.resx">
+      <DependentUpon>PopupPriceExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
       <DependentUpon>PopUpBOM.cs</DependentUpon>

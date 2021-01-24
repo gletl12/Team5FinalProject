@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiMessage.cs" />
+    <Compile Include="CodeVO.cs" />
+    <Compile Include="CompanyVO.cs" />
     <Compile Include="MenuVO.cs" />
+    <Compile Include="PriceVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="ShiftVO.cs" />
