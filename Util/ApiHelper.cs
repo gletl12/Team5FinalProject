@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using VO;
 namespace Util
 {
-    public class ServiceHelp : AccessUrl, IDisposable
+    public class ApiHelper : AccessUrl, IDisposable
     {
         HttpClient client = new HttpClient();
 
         public string BaseServiceUrl { get; set; }
 
-        public ServiceHelp()
+        public ApiHelper()
         {
             BaseServiceUrl = BaseUrl;
 
@@ -23,7 +23,7 @@ namespace Util
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public ServiceHelp(string routePrefix)
+        public ApiHelper(string routePrefix)
         {
             BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}";
 
@@ -57,7 +57,7 @@ namespace Util
                 }
                 return msg;
             }
-            catch
+            catch(Exception err)
             {
                 return msg;
             }
