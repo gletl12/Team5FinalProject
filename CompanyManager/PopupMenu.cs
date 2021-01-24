@@ -5,56 +5,39 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VO;
 
 namespace CompanyManager
 {
     public partial class PopupMenu : CompanyManager.PopupBaseForm
     {
-
-        List<MenuVO> menuAllList;
+        public string MenuName 
+        {
+            get{ return txtMenuName.Text.Trim(); }
+            set{ txtMenuName.Text = value; }
+        }
 
         public PopupMenu()
         {
             InitializeComponent();
+            popupTitleBar1.HeaderText = "메뉴관리";
         }
 
-        private void PopupMenu_Load(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)
         {
-            Service.MenuService service = new Service.MenuService();
-            menuAllList = service.GetMenus();
-
-            menuAllList.ForEach(p =>
+            //메뉴명 입력 검사
+            if (string.IsNullOrEmpty(txtMenuName.Text))
             {
-                TreeNode tn = null;
-                if (p.INFO.Trim().StartsWith("▶"))
-                {
-                    tn = new TreeNode(p.INFO.Trim().Substring(1));
-                    treeView1.Nodes.Add(tn);
-                }
+                MessageBox.Show("메뉴명을 입력해주세요");
+                return;
+            }
 
-                menuAllList.ForEach(T =>
-                {
-                    //현재 메뉴버튼의 소메뉴이면 
-                    if (T.INFO.Trim().StartsWith("L") && T.SortName.StartsWith(p.INFO.Trim().Substring(1)))
-                    {
-                        TreeNode tnc;
-                        string[] names = T.SortName.Split('>');
-                        tnc = new TreeNode(T.INFO.Trim().Substring(1));
-                        tnc.Name = names[names.Length - 1];
-                        if (names.Length == 2)
-                            tn.Nodes.Add(tnc);
-                        else
-                        {
-                            TreeNode ptn = treeView1.Nodes.Find(names[names.Length - 2], true)[0];
-                            ptn.Nodes.Add(tnc);
-                        }
-                    }
-                });
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
 
-            });
-
-            treeView1.ExpandAll();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
