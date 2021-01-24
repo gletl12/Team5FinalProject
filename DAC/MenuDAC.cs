@@ -60,8 +60,8 @@ namespace DAC
                     cmd.Transaction = trans;
                     cmd.CommandText = "SP_DeleteMenu";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@return", System.Data.SqlDbType.Int);
                     cmd.Parameters.AddWithValue("@MenuName",menuName);
+                    cmd.Parameters.Add("@return", System.Data.SqlDbType.Int);
 
 
                     cmd.Parameters["@return"].Direction = System.Data.ParameterDirection.ReturnValue;

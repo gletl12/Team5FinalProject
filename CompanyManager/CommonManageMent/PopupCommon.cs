@@ -159,7 +159,7 @@ namespace CompanyManager
             if (pop.ShowDialog() == DialogResult.OK)
             {
                 Service.MenuService service = new Service.MenuService();
-                if (service.AddSmallMenu(pop.MenuName, treeView1.SelectedNode.Text))
+                if (service.AddSmallMenu(pop.MenuName, treeView1.SelectedNode.Text.Trim()))
                     MessageBox.Show("메뉴가 등록되었습니다.");
                 else
                     MessageBox.Show("이미 존재하는 메뉴명입니다.");
@@ -179,7 +179,7 @@ namespace CompanyManager
             }
 
             Service.MenuService service = new Service.MenuService();
-            if (service.DeleteMenu(treeView1.SelectedNode.Text))
+            if (service.DeleteMenu(treeView1.SelectedNode.Text.Trim()))
                 MessageBox.Show("메뉴가 삭제되었습니다.");
             else
                 MessageBox.Show("존재하지 않는 메뉴입니다.");
