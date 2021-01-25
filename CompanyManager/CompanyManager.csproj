@@ -79,6 +79,12 @@
     <Compile Include="FrmCommonCodeManagement.Designer.cs">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -499,6 +505,9 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </EmbeddedResource>
@@ -752,6 +761,9 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\team5_Logo 수정.png" />
+    <None Include="Resources\team5_Logo2.png" />
+    <None Include="Resources\team5_Logo1.png" />
     <None Include="Resources\management.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\pngwing.com.png" />
