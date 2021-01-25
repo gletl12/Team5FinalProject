@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using Util;
 using VO;
+using static CompanyManager.PopupShift;
 
 namespace CompanyManager
 {
@@ -33,7 +34,7 @@ namespace CompanyManager
         /// <param name="e"></param>
         private void button13_Click(object sender, EventArgs e)
         {
-            PopupShift popup = new PopupShift();
+            PopupShift popup = new PopupShift(OpenMode.Insert);
             popup.Show();
         }
 
