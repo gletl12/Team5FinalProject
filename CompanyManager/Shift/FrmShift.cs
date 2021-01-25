@@ -35,7 +35,14 @@ namespace CompanyManager
         private void button13_Click(object sender, EventArgs e)
         {
             PopupShift popup = new PopupShift(OpenMode.Insert);
-            popup.Show();
+            
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                GetdgvColumn();
+                DataLoad();
+
+                ComboBoxBinding();
+            }
         }
 
         private void FrmShift_Load(object sender, EventArgs e)
@@ -83,6 +90,7 @@ namespace CompanyManager
             col.Width = 30;
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
+            CommonUtil.AddGridTextColumn(dgvShift, "shift_id", "shift_id", 57, false, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "machine_id", 57,true,DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",97);
             CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
@@ -186,6 +194,28 @@ namespace CompanyManager
                dgvShift.DataSource = null;
                dgvShift.DataSource = (from All in shift where All.machine_name == cboMachine.Text && All.shift_type == cboShift.Text select All).ToList();
            }         
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            int rowIndex = dgvShift.CurrentRow.Index;
+
+            ShiftVO info;
+            
+          
+            
+            // info.PartID = Convert.ToInt32(dgvShift.CurrentRow.Cells[1].Value);
+
+
+            PopupShift popup = new PopupShift(OpenMode.Update);
+
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                GetdgvColumn();
+                DataLoad();
+                ComboBoxBinding();
+            }
         }
     }
 }

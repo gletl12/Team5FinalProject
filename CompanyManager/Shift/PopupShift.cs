@@ -15,7 +15,7 @@ namespace CompanyManager
     public partial class PopupShift : CompanyManager.PopupBaseForm
     {
         public enum OpenMode { Insert, Update }
-        List<ShiftVO> shift;
+        
         List<CodeVO> code;
 
         List<MachineVO> machine;
@@ -140,6 +140,12 @@ namespace CompanyManager
                 MessageBox.Show("날짜를 다시 입력해주세요");
                 return;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

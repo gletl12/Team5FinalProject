@@ -440,6 +440,6 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private CompanyManager.PopupTitleBar popupTitleBar1;
+       
     }
 }
