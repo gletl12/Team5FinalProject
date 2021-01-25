@@ -28,7 +28,7 @@ namespace CompanyManager
         {
             //메뉴관리
             LoadMenuList();
-            
+
 
             LoadFormList();
 
@@ -43,11 +43,14 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드명", "name", 100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "pCode", "pcode", 80);
 
+            LoadCommonCode();
 
+        }
+
+        private void LoadCommonCode()
+        {
             Service.CodeService service = new Service.CodeService();
             dataGridView1.DataSource = service.GetAllCommonCode();
-
-
         }
 
         private void LoadFormList()
@@ -298,7 +301,80 @@ namespace CompanyManager
             PopupCode pop = new PopupCode();
             if (pop.ShowDialog() == DialogResult.OK)
             {
+                Service.CodeService service = new Service.CodeService();
+                if(!service.AddCommonCode(new CodeVO 
+                {
+                    code = pop.Code,
+                    category = pop.Category,
+                    name = pop.CodeName,
+                    pcode = pop.Pcode
+                }))
+                {
+                    MessageBox.Show("코드등록 중 오류가 발생하였습니다.");
+                }
+                else
+                {
+                    LoadCommonCode();
+                }
+                
 
+            }
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                EditCode(e);
+            }
+        }
+
+        private void EditCode(DataGridViewCellEventArgs e)
+        {
+            PopupCode pop = new PopupCode();
+            pop.Code = dataGridView1[2, e.RowIndex].Value.ToString();
+            pop.Category = dataGridView1[3, e.RowIndex].Value.ToString();
+            pop.CodeName = dataGridView1[4, e.RowIndex].Value.ToString();
+            pop.Pcode = dataGridView1[5, e.RowIndex].Value == null ? "": dataGridView1[5, e.RowIndex].Value.ToString();
+
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                Service.CodeService service = new Service.CodeService();
+
+                if (!service.EditCommonCode(new CodeVO
+                {
+                    code = pop.Code,
+                    category = pop.Category,
+                    name = pop.CodeName,
+                    pcode = pop.Pcode
+                }))
+                {
+                    MessageBox.Show("코드수정 중 오류가 발생하였습니다.");
+                }
+                else
+                {
+                    LoadCommonCode();
+                }
+            }
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            List<String> codeList = new List<string>();
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                item.Cells[0].Value = true;
+            }
+           
+            if (MessageBox.Show($"총 {codeList.Count}개의 코드를 삭제하시겠습니까?","메뉴삭제",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Service.CodeService service = new Service.CodeService();
+                //if (!service.DeleteCommonCode(codeList))
+                //{
+
+                //}
             }
 
         }

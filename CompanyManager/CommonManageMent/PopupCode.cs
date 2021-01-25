@@ -13,7 +13,11 @@ namespace CompanyManager
         public string Code 
         {
             get { return txtCode.Text; }
-            set { txtCode.Text = value; }
+            set 
+            {
+                txtCode.ReadOnly = true;
+                txtCode.Text = value; 
+            }
         }
         public string CodeName
         {
@@ -39,7 +43,23 @@ namespace CompanyManager
         private void button14_Click(object sender, EventArgs e)
         {
             //유효성 검사
-            
+            if (string.IsNullOrEmpty(txtCode.Text))
+            {
+                MessageBox.Show("코드를 입력해주세요");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtCodeName.Text))
+            {
+                MessageBox.Show("코드명을 입력해주세요");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtCategory.Text))
+            {
+                MessageBox.Show("카테고리명을 입력해주세요");
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

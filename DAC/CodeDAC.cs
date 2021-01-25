@@ -44,6 +44,66 @@ namespace DAC
             }
         }
 
+        public bool EditCommonCode(CodeVO codeVO)
+        {
+            string sql = @"Update TBL_COMMON_CODE set category = @category, name = @name, pcode = @pcode where code = @code";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@code", codeVO.code);
+                    cmd.Parameters.AddWithValue("@category", codeVO.category);
+                    cmd.Parameters.AddWithValue("@name", codeVO.name);
+                    cmd.Parameters.AddWithValue("@pcode", string.IsNullOrEmpty(codeVO.pcode) ? (object)DBNull.Value : codeVO.pcode);
+
+
+                    int result = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return result > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError("DAC_CodeDAC_EditCommonCode() 오류", err);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 공통코드 등록
+        /// </summary>
+        /// <param name="codeVO"></param>
+        public bool AddCommonCode(CodeVO codeVO)
+        {
+            string sql = @"insert into TBL_COMMON_CODE([code], [category], [name], [pcode]) values (@code,@category,@name,@pcode) ";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@code", codeVO.code);
+                    cmd.Parameters.AddWithValue("@category", codeVO.category);
+                    cmd.Parameters.AddWithValue("@name", codeVO.name);
+                    cmd.Parameters.AddWithValue("@pcode", string.IsNullOrEmpty(codeVO.pcode) ? (object)DBNull.Value: codeVO.pcode);
+                    
+
+                    int result = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return result > 0 ? true : false;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError("DAC_CodeDAC_AddCommonCode() 오류", err);
+                return false;
+            }
+        }
+
+
+
         /// <summary>
         /// 모든 공통코드 리스트를 불러옴
         /// </summary>

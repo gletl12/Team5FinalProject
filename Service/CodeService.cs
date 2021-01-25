@@ -20,5 +20,17 @@ namespace Service
             CodeDAC dac = new CodeDAC();
             return dac.GetAllCommonCode();
         }
+
+        public bool AddCommonCode(CodeVO codeVO)
+        {
+            CodeDAC dac = new CodeDAC();
+            return dac.AddCommonCode(codeVO);
+        }
+
+        public bool EditCommonCode(CodeVO codeVO)
+        {
+            CodeDAC dac = new CodeDAC();
+            return dac.EditCommonCode(codeVO);
+        }
     }
 }
