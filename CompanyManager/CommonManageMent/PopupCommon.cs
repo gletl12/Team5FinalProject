@@ -38,13 +38,14 @@ namespace CompanyManager
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
             Util.CommonUtil.AddGridCheckColumn(dataGridView1, "", 20);
             Util.CommonUtil.AddGridImageColumn(dataGridView1, img, "Edit", 40);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드", "", 80);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "카테고리", "", 100);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드명", "", 100);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "pCode", "", 80);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드", "code", 80);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "카테고리", "category", 100);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드명", "name", 100);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "pCode", "pcode", 80);
 
 
-            dataGridView1.Rows.Add(null, null, "-", "📂CHAIR2_01", "나무 1인용 의자 B타입", "제품", "갯수", "1", "1", "2018-10-04", "2018-10-04", "사용", "사용", "사용", "F_SSY_02", "최종조립2반", "5 x 12 x 14 inch");
+            Service.CodeService service = new Service.CodeService();
+            dataGridView1.DataSource = service.GetAllCommonCode();
 
 
         }
@@ -290,6 +291,16 @@ namespace CompanyManager
             {
                 LoadMenuList();
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            PopupCode pop = new PopupCode();
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
         }
     }
 }

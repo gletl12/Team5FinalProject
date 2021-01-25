@@ -43,5 +43,29 @@ namespace DAC
                 return null;
             }
         }
+
+        /// <summary>
+        /// 모든 공통코드 리스트를 불러옴
+        /// </summary>
+        /// <returns></returns>
+        public List<CodeVO> GetAllCommonCode()
+        {
+            string sql = @"select code, category ,name, pcode  from TBL_COMMON_CODE";
+           
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    List<CodeVO> temp = Helper.DataReaderMapToList<CodeVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return temp;
+                }
+            }
+            catch (Exception err)
+            {
+                Log.WriteError("DAC_CodeDAC_GetAllCommonCode() 오류", err);
+                return new List<CodeVO>();
+            }
+        }
     }
 }

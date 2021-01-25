@@ -85,11 +85,17 @@
     <Compile Include="CommonManageMent\PopupCommon.Designer.cs">
       <DependentUpon>PopupCommon.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupMenu.cs">
+    <Compile Include="CommonManageMent\PopupMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupMenu.Designer.cs">
+    <Compile Include="CommonManageMent\PopupMenu.Designer.cs">
       <DependentUpon>PopupMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonManageMent\PopupCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonManageMent\PopupCode.Designer.cs">
+      <DependentUpon>PopupCode.cs</DependentUpon>
     </Compile>
     <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
@@ -508,6 +514,9 @@
     <Compile Include="testrudgns.Designer.cs">
       <DependentUpon>testrudgns.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CommonManageMent\PopupCode.resx">
+      <DependentUpon>PopupCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,7 +529,7 @@
     <EmbeddedResource Include="CommonManageMent\PopupCommon.resx">
       <DependentUpon>PopupCommon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupMenu.resx">
+    <EmbeddedResource Include="CommonManageMent\PopupMenu.resx">
       <DependentUpon>PopupMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
