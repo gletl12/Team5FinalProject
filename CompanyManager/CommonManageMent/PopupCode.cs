@@ -13,9 +13,13 @@ namespace CompanyManager
         public string Code 
         {
             get { return txtCode.Text; }
-            set { txtCode.Text = value; }
+            set 
+            {
+                txtCode.ReadOnly = true;
+                txtCode.Text = value; 
+            }
         }
-        public string Name
+        public string CodeName
         {
             get { return txtCodeName.Text; }
             set { txtCodeName.Text = value; }
@@ -39,7 +43,23 @@ namespace CompanyManager
         private void button14_Click(object sender, EventArgs e)
         {
             //유효성 검사
-            
+            if (string.IsNullOrEmpty(txtCode.Text))
+            {
+                MessageBox.Show("코드를 입력해주세요");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtCodeName.Text))
+            {
+                MessageBox.Show("코드명을 입력해주세요");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtCategory.Text))
+            {
+                MessageBox.Show("카테고리명을 입력해주세요");
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -50,12 +70,35 @@ namespace CompanyManager
             this.Close();
         }
 
-        private void txtCode_KeyDown(object sender, KeyEventArgs e)
-        {
+       
 
-            if (((TextBox)sender).Text.Length > 10)
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length > 9)
             {
-                e.Handled = true;
+                if(e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtCodeName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length > 19)
+            {
+                if (e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
             }
         }
     }
