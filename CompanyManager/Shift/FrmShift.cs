@@ -34,6 +34,7 @@ namespace CompanyManager
 
             GetdgvColumn();
             DataLoad();
+
             ComboBoxBinding();
         }
 
@@ -46,8 +47,15 @@ namespace CompanyManager
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
 
 
-            shift.Insert(0, new ShiftVO { shift_id = int.Parse("전체") });
-            CommonUtil.BindingComboBoxPart(cboShift, shift, "shift_id");
+            //ShiftVO[] shift1 = new ShiftVO[shift.Count - 1];
+            //shift.CopyTo(shift1);
+
+            //shift1.ToList<ShiftVO>.
+           // List<ShiftVO> shift1 = new List<ShiftVO>();
+            //shift1 = shift;
+
+           // shift1.Insert(0, new ShiftVO { shift_id = 0 });
+            //CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_id");
             
         }
 
