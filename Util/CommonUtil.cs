@@ -52,18 +52,18 @@ namespace Util
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
         }
-        
-       
+
+
         #endregion
         public static void SetInitGridView(DataGridView dgv)
         {
             dgv.AutoGenerateColumns = false;
             dgv.AllowUserToAddRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-           
+
         }
 
-       
+
 
         public static void AddGridTextColumn(
                             DataGridView dgv,
@@ -100,7 +100,7 @@ namespace Util
         public static void AddGridImageColumn(DataGridView dgv, Image image, string columnName, int width = 50)
         {
             DataGridViewImageColumn col = new DataGridViewImageColumn();
-            
+
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.Image = image;
             col.HeaderText = columnName;
@@ -110,13 +110,13 @@ namespace Util
         }
 
 
-        public static void AddGridCheckColumn(DataGridView dgv, string columnName ,int btnWidth = 20, int padding = 0)
+        public static void AddGridCheckColumn(DataGridView dgv, string columnName, int btnWidth = 20, int padding = 0, bool enable = true)
         {
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.SortMode = DataGridViewColumnSortMode.NotSortable;
             chk.Name = columnName;
             chk.Width = btnWidth;
-          
+            chk.HeaderText = string.Empty;
             chk.DefaultCellStyle.Padding = new Padding(padding);
             dgv.Columns.Add(chk);
         }
@@ -154,7 +154,7 @@ namespace Util
             // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
 
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+            //dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
 
             dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
@@ -183,18 +183,19 @@ namespace Util
             // dgv.RowHeadersWidth = 20;     // 맨왼쪽에 있는 컬럼 사이즈 변경   
 
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 한줄전체선택
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
+            //dgv.CellBorderStyle = DataGridViewCellBorderStyle.None; //테두리삭제
 
             dgv.BackgroundColor = Color.White; // Color.FromArgb(248, 241, 233); //그리드뷰 배경색
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
-            
+
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgv.AllowUserToAddRows = false;
             dgv.RowPostPaint += Dgv_RowPostPaint;
             dgv.SelectionChanged += Dgv_SelectionChanged;
+            dgv.Paint += CommonUtil_Paint;
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
@@ -203,6 +204,65 @@ namespace Util
             ((DataGridView)sender).ClearSelection();
         }
 
+        public static void SetDGVDesign_CheckBox(DataGridView dgv)
+        {
+            //헤더 체크박스 생성
+            CheckBox checkBox = new CheckBox();
+            checkBox.Text = string.Empty;
+            checkBox.BackColor = dgv.BackgroundColor;
+            checkBox.Size = new Size(15, 15);
+            checkBox.Location = new Point(dgv.Location.X + 54, dgv.Location.Y + 5);
+
+            dgv.Parent.Controls.Add(checkBox);
+            checkBox.BringToFront();
+            //체크박스 컬럼 추가
+            AddGridCheckColumn(dgv, "checkBox");
+            dgv.Columns["checkBox"].ReadOnly = true;
+            //스크롤 이벤트 등록
+            dgv.Scroll += dgv_Scroll;
+            void dgv_Scroll(object sender, ScrollEventArgs e)
+            {
+                if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+                {
+                    checkBox.Location = new Point(checkBox.Location.X - (e.NewValue - e.OldValue), checkBox.Location.Y);
+                    checkBox.Visible = checkBox.Location.X > ((DataGridView)sender).Location.X + 50;
+                }
+
+            }
+            //헤더 체크박스 클릭 이벤트 등록
+            checkBox.Click += CheckBox_Click;
+            void CheckBox_Click(object sender, EventArgs e)
+            {
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    ((DataGridViewCheckBoxCell)row.Cells["checkBox"]).Value = checkBox.Checked;
+                }
+            }
+            dgv.CellClick += RowCheckBox_Click;
+            void RowCheckBox_Click(object sender, DataGridViewCellEventArgs e)
+            {
+                if (dgv.Columns[e.ColumnIndex].Name.Equals("checkBox") && e.RowIndex >= 0)
+                {
+                    DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    cell.Value = !Convert.ToBoolean(cell.Value);
+
+                    bool isChecked = true;
+
+                    for (int i = 0; i < dgv.Rows.Count; i++)
+                    {
+                        DataGridViewCheckBoxCell cell2 = (DataGridViewCheckBoxCell)dgv.Rows[i].Cells["checkBox"];
+                        if (Convert.ToBoolean(cell2.EditedFormattedValue) == false)
+                        {
+                            isChecked = false;
+                            break;
+                        }
+                    }
+
+                    checkBox.Checked = false;
+                    checkBox.Checked = isChecked;
+                }
+            }
+        }
         //행번호 추가
         private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -212,12 +272,27 @@ namespace Util
             //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
             drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
 
+
+
+
+
             using (Brush brush = new SolidBrush(Color.Black))
             {
-                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font,
-                brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
+
+                //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(e.RowBounds.Location.X + 25, 5),Color.Black);
+                //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(19,5),Color.Black);
+
+                //e.Graphics.DrawString("No.", e.InheritedRowStyle.Font,brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y -20, drawFormat);
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
         }
+
+        private static void CommonUtil_Paint(object sender, PaintEventArgs e)
+        {
+            TextRenderer.DrawText(e.Graphics, "No.", ((DataGridView)sender).Font, new Point(19, 5), Color.Black);
+        }
+
+
 
         /// <summary>
         /// Form 실행 메서드
@@ -265,7 +340,7 @@ namespace Util
 
             if (parent.WindowState == FormWindowState.Maximized)
             {
-                formSize = new Size(1738,927);
+                formSize = new Size(1738, 927);
             }
 
 
@@ -287,7 +362,7 @@ namespace Util
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }
 
-        
+
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();
@@ -433,7 +508,7 @@ namespace Util
 
         }
 
-        public static void AddGridComboBoxColumn(DataGridView dgv, string headerText, string columnName,string displayMember, string valueMember,int cboWidth = 50)
+        public static void AddGridComboBoxColumn(DataGridView dgv, string headerText, string columnName, string displayMember, string valueMember, int cboWidth = 50)
         {
             DataGridViewComboBoxColumn cbo = new DataGridViewComboBoxColumn();
             cbo.HeaderText = headerText;

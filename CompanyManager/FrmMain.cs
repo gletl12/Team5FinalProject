@@ -251,5 +251,13 @@ namespace CompanyManager
             
             
         }
+
+        private void btnCommonM_Click(object sender, EventArgs e)
+        {
+            PopupCommon frm = new PopupCommon();
+            frm.ShowDialog();
+            
+            this.Form1_Load(this,null);
+        }
     }
 }

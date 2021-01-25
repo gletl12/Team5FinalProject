@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Data;
+
 namespace Util
 {
     public static class CommonExcel
@@ -33,7 +35,7 @@ namespace Util
             string fileName = dlg.FileName;
             string fileExtension = System.IO.Path.GetExtension(fileName);
             string strConn = string.Empty;
-           
+
 
             switch (fileExtension)
             {
@@ -55,6 +57,51 @@ namespace Util
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// 엑셀파일 읽어 DataTable형식으로 반환
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sheetName">시트 명</param>
+        /// <returns></returns>
+        public static (DataTable,string) ReadExcelData(string sheetName)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Excel Files(*.xls)|*.xls|Excel Files(*.xlsx)|*.xlsx|All Files(*,*)|*.*";
+
+            if (dlg.ShowDialog() != DialogResult.OK)
+            {
+                MessageBox.Show("파일선택을 하지 않았습니다.");
+                return (null,null);
+            }
+
+            string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+            string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+
+            string fileName = dlg.FileName;
+            string fileExtension = System.IO.Path.GetExtension(fileName);
+            string strConn = string.Empty;
+
+
+            switch (fileExtension)
+            {
+                case ".xls":
+                    strConn = string.Format(Excel03ConString, fileName, "Yes");
+                    break;
+                case ".xlsx":
+                    strConn = string.Format(Excel07ConString, fileName, "Yes");
+                    break;
+            }
+            DataTable dt = new DataTable();
+            using (OleDbConnection conn = new OleDbConnection(strConn))
+            {
+                string sql = "select * from [" + sheetName + "]";
+                OleDbDataAdapter da = new OleDbDataAdapter(sql, conn);
+                conn.Open();
+                da.Fill(dt);
+            }
+            return (dt,fileName);
         }
 
         /// <summary>

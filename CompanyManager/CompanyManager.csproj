@@ -79,6 +79,18 @@
     <Compile Include="FrmCommonCodeManagement.Designer.cs">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonManageMent\PopupCommon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonManageMent\PopupCommon.Designer.cs">
+      <DependentUpon>PopupCommon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupMenu.Designer.cs">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,10 +133,10 @@
     <Compile Include="ResourceManagement\PopMGradeCRUD.Designer.cs">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUpBOR.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUpBOR.Designer.cs">
+    <Compile Include="ResourceManagement\PopUpBOR.Designer.cs">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductionManagement\FrmRegPerformance.cs">
@@ -150,6 +162,12 @@
     </Compile>
     <Compile Include="PurchaseManagement\PopupPurchase.Designer.cs">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceManagement\PopupPriceExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceManagement\PopupPriceExcel.Designer.cs">
+      <DependentUpon>PopupPriceExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectManagement\PopUpBOM.cs">
       <SubType>Form</SubType>
@@ -211,10 +229,10 @@
     <Compile Include="PurchaseManagement\FrmAwait.Designer.cs">
       <DependentUpon>FrmAwait.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBOR.cs">
+    <Compile Include="ResourceManagement\FrmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBOR.Designer.cs">
+    <Compile Include="ResourceManagement\FrmBOR.Designer.cs">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </Compile>
     <Compile Include="ResourceManagement\FrmFactoryList.cs">
@@ -505,6 +523,12 @@
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonManageMent\PopupCommon.resx">
+      <DependentUpon>PopupCommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupMenu.resx">
+      <DependentUpon>PopupMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,13 +550,13 @@
     <EmbeddedResource Include="ResourceManagement\PopMGradeCRUD.resx">
       <DependentUpon>PopMGradeCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\FrmBOR.resx">
       <DependentUpon>FrmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCommonCodeManagement.resx">
       <DependentUpon>FrmCommonCodeManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUpBOR.resx">
+    <EmbeddedResource Include="ResourceManagement\PopUpBOR.resx">
       <DependentUpon>PopUpBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionManagement\FrmMaterialPlan.resx">
@@ -555,6 +579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupPurchase.resx">
       <DependentUpon>PopupPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceManagement\PopupPriceExcel.resx">
+      <DependentUpon>PopupPriceExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
       <DependentUpon>PopUpBOM.cs</DependentUpon>
@@ -761,6 +788,7 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\in.png" />
     <None Include="Resources\team5_Logo 수정.png" />
     <None Include="Resources\team5_Logo2.png" />
     <None Include="Resources\team5_Logo1.png" />
@@ -772,6 +800,8 @@
     <None Include="Resources\FullShoppingCart_32x32.png" />
     <None Include="Resources\FullShoppingCart_16x16.png" />
     <None Include="Resources\Cancel_16x16.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\ex.png" />
     <Content Include="Resources\GridBandedRows_32x32.png" />
     <None Include="Resources\Undo_16x16.png" />
     <None Include="Resources\Find_16x16.png" />

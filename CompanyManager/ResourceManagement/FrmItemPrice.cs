@@ -1,42 +1,101 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Util;
-
+using VO;
+using System.Linq;
 namespace CompanyManager
 {
     public partial class FrmItemPrice : CompanyManager.MDIBaseForm
     {
+        HttpClient client = new HttpClient();
+        List<PriceVO> priceList = new List<PriceVO>();
+        ApiHelper service = new ApiHelper();
+        List<CompanyCodeVO> companyLsit = new List<CompanyCodeVO>();
+        string url = "/api/price/";
         public FrmItemPrice()
         {
             InitializeComponent();
-            CommonUtil.SetInitGridView(dataGridView2);
-            CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridCheckColumn(dataGridView2,"");
-            CommonUtil.AddGridImageColumn(dataGridView2, Properties.Resources.Edit_16x16, "Edit",40);
-            CommonUtil.AddGridTextColumn(dataGridView2, "업체", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "업체명", "CompanyName",100);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "CompanyName",100);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품명", "CompanyName",120);
-            CommonUtil.AddGridTextColumn(dataGridView2, "규격", "CompanyName",100);
-            CommonUtil.AddGridTextColumn(dataGridView2, "단위", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "Market", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "환종", "CompanyName",60);
-            CommonUtil.AddGridTextColumn(dataGridView2, "현재단가", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "이전단가", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "시작일", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "종료일", "CompanyName",80);
-            CommonUtil.AddGridTextColumn(dataGridView2, "비고", "CompanyName",120);
-            CommonUtil.AddGridTextColumn(dataGridView2, "사용유무", "CompanyName",80);
+        }
 
-            checkBox1.Location = new Point(dataGridView2.Location.X + 54, dataGridView2.Location.Y + 5);
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var sResult = (from price
+                           in priceList
+                           where
+                           (price.price_edate > dtpBaseDate.Value && price.price_sdate < dtpBaseDate.Value) &&
+                           (txtItem.Text.Trim().Length < 0 || price.item_name.Contains(txtItem.Text))
+                           && price.company_id.Equals(cboCompany.SelectedValue)
+                           select price).ToList();
+            dgvPrice.DataSource = null;
+            dgvPrice.DataSource = sResult;
 
-            dataGridView2.Rows.Add(null, null, "GD", "구디", "L_WOOD_04", "의자 다리 원목", "500 * 200", "갯수", "내수", "KRW", "700.00", "650.00", "2021-01-01", "9999-01-01");
-            dataGridView2.Rows.Add(null, null, "OS", "(주)에이더블유", "BACK_A_02", "등받이", "5 * 12 inch", "갯수", "내수", "KRW", "200.00", "0", "2021-01-01", "9999-01-01");
+        }
+
+        private void FrmItemPrice_Load(object sender, EventArgs e)
+        {
+            //그리드뷰 초기화
+            CommonUtil.SetInitGridView(dgvPrice);
+            CommonUtil.SetDGVDesign_Num(dgvPrice);
+            CommonUtil.AddGridImageColumn(dgvPrice, Properties.Resources.Edit_16x16, "Edit", 40);
+            CommonUtil.AddGridTextColumn(dgvPrice, "업체", "company_id", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "업체명", "company_name", 100);
+            CommonUtil.AddGridTextColumn(dgvPrice, "품목", "item_id", 100);
+            CommonUtil.AddGridTextColumn(dgvPrice, "품명", "item_name", 120);
+            CommonUtil.AddGridTextColumn(dgvPrice, "규격", "item_unit", 100);
+            CommonUtil.AddGridTextColumn(dgvPrice, "단위", "item_unit_qty", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "Market", "CompanyName", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "환종", "price_currency", 60);
+            CommonUtil.AddGridTextColumn(dgvPrice, "현재단가", "now", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "이전단가", "before", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "시작일", "price_sdate", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "종료일", "price_edate", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "비고", "price_comment", 120);
+
+            //자재단가 불러오기 , 그리드뷰에 바인딩
+            GetPriceList();
+            //콤보박스 바인딩
+            ApiMessage<List<CompanyCodeVO>> company = service.GetApiCaller<List<CompanyCodeVO>>($"{url}companyList");
+            companyLsit = company.Data;
+            CommonUtil.BindingComboBox(cboCompany, companyLsit, "company_id", "company_name");
+        }
+
+        private void GetPriceList()
+        {
+            ApiMessage<List<PriceVO>> pirce = service.GetApiCaller<List<PriceVO>>($"{url}B");
+            dgvPrice.DataSource = priceList = pirce.Data;
+        }
+
+        private void btnRegPrice_Click(object sender, EventArgs e)
+        {
+            PopupItemPrice popup = new PopupItemPrice(priceList, companyLsit);
+            if(popup.ShowDialog() == DialogResult.OK)
+            {
+                GetPriceList();
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void dgvPrice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                return;
+            PriceVO price = priceList[e.RowIndex];
+            PopupItemPrice popup = new PopupItemPrice(price.company_name,price.item_name,price.price_currency,price.before);
+            popup.ItemID = price.item_id;
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                GetPriceList();
+                btnSearch.PerformClick();
+            }
         }
     }
 }
