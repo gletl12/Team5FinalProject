@@ -799,6 +799,8 @@
     <None Include="Resources\Cancel_16x16.png" />
     <None Include="Resources\Cancel.png" />
     <None Include="Resources\ex.png" />
+    <None Include="Resources\Apply_16x16.png" />
+    <None Include="Resources\del.png" />
     <Content Include="Resources\GridBandedRows_32x32.png" />
     <None Include="Resources\Undo_16x16.png" />
     <None Include="Resources\Find_16x16.png" />

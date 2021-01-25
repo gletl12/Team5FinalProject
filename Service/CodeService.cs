@@ -32,5 +32,11 @@ namespace Service
             CodeDAC dac = new CodeDAC();
             return dac.EditCommonCode(codeVO);
         }
+
+        public bool DeleteCommonCode(List<string> codeList)
+        {
+            CodeDAC dac = new CodeDAC();
+            return dac.DeleteCommonCode(codeList);
+        }
     }
 }
