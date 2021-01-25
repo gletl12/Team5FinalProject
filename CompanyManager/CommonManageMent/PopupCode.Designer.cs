@@ -60,7 +60,7 @@ namespace CompanyManager
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label8.Location = new System.Drawing.Point(30, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 14);
@@ -144,7 +144,7 @@ namespace CompanyManager
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(30, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 14);
@@ -162,7 +162,7 @@ namespace CompanyManager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(29, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 14);

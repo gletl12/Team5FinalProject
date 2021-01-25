@@ -10,6 +10,8 @@ namespace VO
     {
      public int  shift_id                                     {get; set;}
      public int  machine_id                                   {get; set;}
+
+     public string  machine_name                              { get; set; }
      public string  shift_type                                {get; set;}
      public string shift_stime                                {get; set;}
      public string shift_etime                                {get; set;}

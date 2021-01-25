@@ -29,17 +29,17 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpEday = new System.Windows.Forms.DateTimePicker();
+            this.dtpSday = new System.Windows.Forms.DateTimePicker();
+            this.cboShift = new System.Windows.Forms.ComboBox();
+            this.cboUse = new System.Windows.Forms.ComboBox();
+            this.cboMachine = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEtime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -73,55 +73,55 @@ namespace CompanyManager
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(338, 598);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "취소";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(338, 598);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 30);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button14
+            // btnSave
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(247, 598);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 30);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "저장";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(247, 598);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 30);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.dateTimePicker3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.dtpEday);
+            this.panel1.Controls.Add(this.dtpSday);
+            this.panel1.Controls.Add(this.cboShift);
+            this.panel1.Controls.Add(this.cboUse);
+            this.panel1.Controls.Add(this.cboMachine);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txtEtime);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.textBox14);
@@ -155,7 +155,7 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtStime);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 44);
@@ -171,43 +171,48 @@ namespace CompanyManager
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
-            // dateTimePicker3
+            // dtpEday
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(485, 84);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(169, 21);
-            this.dateTimePicker3.TabIndex = 7;
+            this.dtpEday.Location = new System.Drawing.Point(485, 84);
+            this.dtpEday.Name = "dtpEday";
+            this.dtpEday.Size = new System.Drawing.Size(169, 21);
+            this.dtpEday.TabIndex = 7;
+            this.dtpEday.ValueChanged += new System.EventHandler(this.dtpEday_ValueChanged);
             // 
-            // dateTimePicker2
+            // dtpSday
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(156, 84);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(169, 21);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dtpSday.Location = new System.Drawing.Point(156, 84);
+            this.dtpSday.Name = "dtpSday";
+            this.dtpSday.Size = new System.Drawing.Size(169, 21);
+            this.dtpSday.TabIndex = 7;
+            this.dtpSday.ValueChanged += new System.EventHandler(this.dtpEday_ValueChanged);
             // 
-            // comboBox2
+            // cboShift
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(485, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(169, 22);
-            this.comboBox2.TabIndex = 5;
+            this.cboShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboShift.FormattingEnabled = true;
+            this.cboShift.Location = new System.Drawing.Point(485, 20);
+            this.cboShift.Name = "cboShift";
+            this.cboShift.Size = new System.Drawing.Size(169, 22);
+            this.cboShift.TabIndex = 5;
             // 
-            // comboBox3
+            // cboUse
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(156, 335);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(169, 22);
-            this.comboBox3.TabIndex = 5;
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUse.FormattingEnabled = true;
+            this.cboUse.Location = new System.Drawing.Point(156, 335);
+            this.cboUse.Name = "cboUse";
+            this.cboUse.Size = new System.Drawing.Size(169, 22);
+            this.cboUse.TabIndex = 5;
             // 
-            // comboBox1
+            // cboMachine
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(156, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 22);
-            this.comboBox1.TabIndex = 5;
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMachine.FormattingEnabled = true;
+            this.cboMachine.Location = new System.Drawing.Point(156, 20);
+            this.cboMachine.Name = "cboMachine";
+            this.cboMachine.Size = new System.Drawing.Size(169, 22);
+            this.cboMachine.TabIndex = 5;
             // 
             // label6
             // 
@@ -219,12 +224,13 @@ namespace CompanyManager
             this.label6.TabIndex = 3;
             this.label6.Text = "* 적용완료일자";
             // 
-            // textBox5
+            // txtEtime
             // 
-            this.textBox5.Location = new System.Drawing.Point(485, 53);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(169, 21);
-            this.textBox5.TabIndex = 4;
+            this.txtEtime.Location = new System.Drawing.Point(485, 53);
+            this.txtEtime.Name = "txtEtime";
+            this.txtEtime.Size = new System.Drawing.Size(169, 21);
+            this.txtEtime.TabIndex = 4;
+            this.txtEtime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label5
             // 
@@ -302,11 +308,11 @@ namespace CompanyManager
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(485, 363);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(169, 21);
             this.textBox3.TabIndex = 4;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox17
             // 
@@ -321,7 +327,6 @@ namespace CompanyManager
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(169, 21);
             this.textBox13.TabIndex = 4;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // label8
             // 
@@ -335,6 +340,7 @@ namespace CompanyManager
             // 
             // textBox19
             // 
+            this.textBox19.Enabled = false;
             this.textBox19.Location = new System.Drawing.Point(156, 363);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(169, 21);
@@ -394,7 +400,6 @@ namespace CompanyManager
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(169, 21);
             this.textBox15.TabIndex = 4;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // textBox9
             // 
@@ -429,7 +434,6 @@ namespace CompanyManager
             this.label9.Size = new System.Drawing.Size(105, 14);
             this.label9.TabIndex = 3;
             this.label9.Text = "* 정상간접작업시간";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label16
             // 
@@ -450,7 +454,6 @@ namespace CompanyManager
             this.label20.Size = new System.Drawing.Size(50, 14);
             this.label20.TabIndex = 3;
             this.label20.Text = "* 수정일";
-            this.label20.Click += new System.EventHandler(this.label18_Click);
             // 
             // label18
             // 
@@ -461,7 +464,6 @@ namespace CompanyManager
             this.label18.Size = new System.Drawing.Size(105, 14);
             this.label18.TabIndex = 3;
             this.label18.Text = "* 잔업직접사고시간";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label15
             // 
@@ -520,12 +522,13 @@ namespace CompanyManager
             this.label3.TabIndex = 3;
             this.label3.Text = "* 적용시작일자";
             // 
-            // textBox2
+            // txtStime
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 21);
-            this.textBox2.TabIndex = 4;
+            this.txtStime.Location = new System.Drawing.Point(156, 53);
+            this.txtStime.Name = "txtStime";
+            this.txtStime.Size = new System.Drawing.Size(169, 21);
+            this.txtStime.TabIndex = 4;
+            this.txtStime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 
@@ -552,13 +555,13 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(671, 636);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Name = "PopupShift";
             this.Load += new System.EventHandler(this.PopupShift_Load);
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
-            this.Controls.SetChildIndex(this.button14, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btnSave, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -568,11 +571,11 @@ namespace CompanyManager
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtEtime;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox14;
@@ -592,7 +595,7 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
@@ -600,10 +603,10 @@ namespace CompanyManager
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtpEday;
+        private System.Windows.Forms.DateTimePicker dtpSday;
+        private System.Windows.Forms.ComboBox cboShift;
+        private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox17;
@@ -614,7 +617,7 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboUse;
         
     }
 }
