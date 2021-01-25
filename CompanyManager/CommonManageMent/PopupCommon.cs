@@ -20,6 +20,8 @@ namespace CompanyManager
         {
             InitializeComponent();
             popupTitleBar1.HeaderText = "공통관리";
+            listBox1.Enabled = false;
+            btnLink.Enabled = false;
         }
 
         private void PopupCommon_Load(object sender, EventArgs e)
@@ -59,11 +61,15 @@ namespace CompanyManager
                 }
             }
             listBox1.DataSource = temp;
+            listBox1.SelectedItem = null;
         }
 
         //메뉴리스트 불러오기
         private void LoadMenuList()
         {
+            listBox1.Enabled = false;
+            btnLink.Enabled = false;
+
             treeView1.Nodes.Clear();
 
             Service.MenuService service = new Service.MenuService();
@@ -77,6 +83,7 @@ namespace CompanyManager
                     tn = new TreeNode(p.INFO.Trim().Substring(1));
                     treeView1.Nodes.Add(tn);
                 }
+
 
                 menuAllList.ForEach(T =>
                 {
@@ -94,11 +101,28 @@ namespace CompanyManager
                             TreeNode ptn = treeView1.Nodes.Find(names[names.Length - 2], true)[0];
                             ptn.Nodes.Add(tnc);
                         }
+
+
+                        if (selectedNdoe != null)
+                        {
+                            if (tn.Text.Trim() == selectedNdoe.Text.Trim())
+                            {
+                                selectedNdoe = tn;
+                            }
+                            if (tnc.Text.Trim() == selectedNdoe.Text.Trim())
+                            {
+                                selectedNdoe = tnc;
+                            }
+                            selectedNdoe.BackColor = SystemColors.MenuHighlight;
+                            selectedNdoe.ForeColor = Color.White;
+                        }
                     }
                 });
             });
 
             treeView1.ExpandAll();
+            treeView1.SelectedNode = selectedNdoe;
+            
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,7 +139,9 @@ namespace CompanyManager
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            
+            listBox1.Enabled = true;
+            btnLink.Enabled = true;
+
             //이전 노드 색상 원래대로
             if (selectedNdoe != null)
             {
@@ -195,6 +221,12 @@ namespace CompanyManager
         //메뉴 삭제
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("메뉴를 선택해주세요");
+                return;
+            }
+
             //대메뉴 삭제시도시 소메뉴가 있으면 못하게 막아야함
             if (treeView1.SelectedNode.Nodes.Count > 0)
             {
@@ -222,6 +254,12 @@ namespace CompanyManager
 
         private void btnUp_Click(object sender, EventArgs e)
         {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("메뉴를 선택해주세요");
+                return;
+            }
+
             Service.MenuService service = new Service.MenuService();
             if (!service.MenuUpOrder(treeView1.SelectedNode.Text.Trim()))
             {
@@ -237,6 +275,12 @@ namespace CompanyManager
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("메뉴를 선택해주세요");
+                return;
+            }
+
             Service.MenuService service = new Service.MenuService();
             if (!service.MenuDownOrder(treeView1.SelectedNode.Text.Trim()))
             {
