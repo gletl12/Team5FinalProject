@@ -19,7 +19,8 @@ namespace CompanyManager
     {
         CheckBox headerCheckBox = new CheckBox();
         List<ShiftVO> shift;
-     
+        List<CodeVO> code;
+
         List<MachineVO> machine;
         public FrmShift()
         {
@@ -54,9 +55,16 @@ namespace CompanyManager
             machine.Insert(0, new MachineVO { machine_name ="전체"})   ;           
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
 
-            var shift1 = shift.ConvertAll(o => o);
-            shift1.Insert(0, new ShiftVO { shift_id = 0 });
-            CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_id");
+            //var shift1 = shift.ConvertAll(o => o);
+            //shift1.Insert(0, new ShiftVO { shift_type = "전체" });
+            //CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_type");
+
+
+            CodeService service1 = new CodeService();
+            code= service1.GetAllCommonCode();
+            var code1 = (from All in code where All.category == "shift_type" select All).ToList();
+            CommonUtil.BindingComboBox(cboShift, code1, "code", "name");
+
 
         }
       
