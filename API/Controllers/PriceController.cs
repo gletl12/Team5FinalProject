@@ -54,5 +54,16 @@ namespace API.Controllers
             msg.ResultMessage = result ? "성공적으로 등록되었습니다." : "단가 정보 등록에 실패하였습니다.";
             return Ok(msg);
         }
+        [HttpPost]
+        [Route("api/price/ImportExcel")]
+        public IHttpActionResult ImportExcel(List<PriceVO> priceList)
+        {
+            ApiMessage msg = new ApiMessage();
+            bool result = dac.ImportExcel(priceList);
+            msg.ResultCode = result ? "S" : "F";
+            msg.ResultMessage = result ? "성공적으로 등록되었습니다." : "단가 정보 등록에 실패하였습니다.";
+            return Ok(msg);
+        }
+        
     }
 }

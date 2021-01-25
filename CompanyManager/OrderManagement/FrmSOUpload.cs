@@ -14,24 +14,35 @@ namespace CompanyManager
         public FrmSOUpload()
         {
             InitializeComponent();
-            CommonUtil.SetInitGridView(dataGridView2);
-            CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridTextColumn(dataGridView2, "planDate", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "WORK_ORDER_ID", "CompanyName", 150, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "업체", "CompanyName", 60, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "업체명", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "MKT", "CompanyName", 60, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "발주구분", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "구분", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "입고P/NO", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품명", "CompanyName", 120, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "수량", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "납기일", "CompanyName", 80,true,DataGridViewContentAlignment.MiddleCenter);
+            
+        }
+
+        private void btnNewSO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void FrmSOUpload_Load(object sender, EventArgs e)
+        {
+            CommonUtil.SetInitGridView(dgvSO);
+            CommonUtil.SetDGVDesign_Num(dgvSO);
+            CommonUtil.AddGridTextColumn(dgvSO, "planDate", "plan_date", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "WORK_ORDER_ID", "order_id", 150, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "업체", "company_id", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "업체명", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "품목", "item_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "품명", "item_name", 120, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "MKT", "mkt", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "환종", "currency", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "수량", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvSO, "납기일", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
 
-            dataGridView2.Rows.Add("2020-01-01","CU1234L-1234A-12350","CU","의자상사","2","양산","P/O","CHAIR_01", "CHAIR_01","1인용 원목 의자","100","2020-05-21");
-            dataGridView2.Rows.Add("2020-01-01","CU1234L-1234A-12351","CU","의자상사","2", "양산","P/O","CHAIR_01", "CHAIR_01","1인용 원목 의자","100","2020-05-26");
         }
     }
 }

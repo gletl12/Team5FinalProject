@@ -38,4 +38,11 @@ namespace VO
         public string item_name { get; set; }
         public int supply_company { get; set; }
     }
+
+    public class PriceExcelVO
+    {
+        public int item_id { get; set; }
+        public string item_name { get; set; }
+        public decimal Price { get; set; }
+    }
 }

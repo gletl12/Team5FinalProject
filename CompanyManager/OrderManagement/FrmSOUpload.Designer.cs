@@ -30,28 +30,28 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSOUpload));
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvSO = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnDownload = new System.Windows.Forms.Button();
+            this.btnNewSO = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView2
+            // dgvSO
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 43);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1152, 592);
-            this.dataGridView2.TabIndex = 27;
+            this.dgvSO.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSO.Location = new System.Drawing.Point(7, 43);
+            this.dgvSO.Name = "dgvSO";
+            this.dgvSO.RowHeadersWidth = 50;
+            this.dgvSO.RowTemplate.Height = 23;
+            this.dgvSO.Size = new System.Drawing.Size(1152, 592);
+            this.dgvSO.TabIndex = 27;
             // 
             // label10
             // 
@@ -76,53 +76,55 @@ namespace CompanyManager
             this.button9.TabIndex = 22;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnUpload
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1039, 14);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 23);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "    Excel등록";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnUpload.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload.Image = ((System.Drawing.Image)(resources.GetObject("btnUpload.Image")));
+            this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpload.Location = new System.Drawing.Point(1039, 14);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(86, 23);
+            this.btnUpload.TabIndex = 23;
+            this.btnUpload.Text = "    Excel등록";
+            this.btnUpload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
+            // btnDownload
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(932, 14);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(102, 23);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "    양식 다운로드";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDownload.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
+            this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDownload.Location = new System.Drawing.Point(932, 14);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(102, 23);
+            this.btnDownload.TabIndex = 24;
+            this.btnDownload.Text = "    양식 다운로드";
+            this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDownload.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnNewSO
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(814, 14);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(112, 23);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "    영업마스터생성";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnNewSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewSO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnNewSO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnNewSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSO.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSO.Image")));
+            this.btnNewSO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewSO.Location = new System.Drawing.Point(814, 14);
+            this.btnNewSO.Name = "btnNewSO";
+            this.btnNewSO.Size = new System.Drawing.Size(112, 23);
+            this.btnNewSO.TabIndex = 26;
+            this.btnNewSO.Text = "    영업마스터생성";
+            this.btnNewSO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewSO.UseVisualStyleBackColor = false;
+            this.btnNewSO.Click += new System.EventHandler(this.btnNewSO_Click);
             // 
             // FrmSOUpload
             // 
@@ -130,12 +132,13 @@ namespace CompanyManager
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.btnDownload);
+            this.Controls.Add(this.btnNewSO);
+            this.Controls.Add(this.dgvSO);
             this.Name = "FrmSOUpload";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.FrmSOUpload_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +147,9 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnDownload;
+        private System.Windows.Forms.Button btnNewSO;
+        private System.Windows.Forms.DataGridView dgvSO;
     }
 }

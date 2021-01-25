@@ -65,7 +65,7 @@ namespace Util
         /// <typeparam name="T"></typeparam>
         /// <param name="sheetName">시트 명</param>
         /// <returns></returns>
-        public static (DataTable,string) ReadExcelData(string sheetName)
+        public static (DataTable, string) ReadExcelData()
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "Excel Files(*.xls)|*.xls|Excel Files(*.xlsx)|*.xlsx|All Files(*,*)|*.*";
@@ -73,16 +73,16 @@ namespace Util
             if (dlg.ShowDialog() != DialogResult.OK)
             {
                 MessageBox.Show("파일선택을 하지 않았습니다.");
-                return (null,null);
+                return (null, null);
             }
 
-            string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
-            string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
 
             string fileName = dlg.FileName;
             string fileExtension = System.IO.Path.GetExtension(fileName);
             string strConn = string.Empty;
-
+            string sheetName = string.Empty;
+            string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+            string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
 
             switch (fileExtension)
             {
@@ -93,15 +93,22 @@ namespace Util
                     strConn = string.Format(Excel07ConString, fileName, "Yes");
                     break;
             }
-            DataTable dt = new DataTable();
             using (OleDbConnection conn = new OleDbConnection(strConn))
             {
-                string sql = "select * from [" + sheetName + "]";
-                OleDbDataAdapter da = new OleDbDataAdapter(sql, conn);
                 conn.Open();
-                da.Fill(dt);
+                DataTable dtSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                sheetName = dtSchema.Rows[0]["TABLE_NAME"].ToString();
+                conn.Close();
+
+                conn.Open();
+                string sql = "select * from [" + sheetName + "]";
+                OleDbDataAdapter oda = new OleDbDataAdapter(sql, conn);
+                //OleDbDataReader reader = cmd.ExecuteReader();
+                oda.Fill(dtSchema);
+                conn.Close();
+                return (dtSchema, fileName);
             }
-            return (dt,fileName);
+
         }
 
         /// <summary>
