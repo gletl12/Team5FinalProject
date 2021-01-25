@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
 using Util;
@@ -17,6 +19,7 @@ namespace CompanyManager
     {
         CheckBox headerCheckBox = new CheckBox();
         List<ShiftVO> shift;
+       // List<ShiftVO> shift1;
         List<MachineVO> machine;
         public FrmShift()
         {
@@ -42,22 +45,15 @@ namespace CompanyManager
         {
             MachineService service = new MachineService();
             machine = service.GetMachine();
-            machine.Insert(0, new MachineVO { machine_name ="전체"})   ;
-            
+            machine.Insert(0, new MachineVO { machine_name ="전체"})   ;           
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
 
+            var shift1 = shift.ConvertAll(o => o);
+            shift1.Insert(0, new ShiftVO { shift_id = 0 });
+            CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_id");
 
-            //ShiftVO[] shift1 = new ShiftVO[shift.Count - 1];
-            //shift.CopyTo(shift1);
-
-            //shift1.ToList<ShiftVO>.
-           // List<ShiftVO> shift1 = new List<ShiftVO>();
-            //shift1 = shift;
-
-           // shift1.Insert(0, new ShiftVO { shift_id = 0 });
-            //CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_id");
-            
         }
+      
 
         private void GetdgvColumn()
         {
@@ -70,7 +66,7 @@ namespace CompanyManager
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
             CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id",57,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_id",97);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",97);
             CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 57, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 57, true, DataGridViewContentAlignment.MiddleCenter);
