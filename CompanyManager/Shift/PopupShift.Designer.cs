@@ -108,6 +108,7 @@ namespace CompanyManager
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
@@ -175,6 +176,7 @@ namespace CompanyManager
             this.dtpEday.Name = "dtpEday";
             this.dtpEday.Size = new System.Drawing.Size(169, 21);
             this.dtpEday.TabIndex = 7;
+            this.dtpEday.ValueChanged += new System.EventHandler(this.dtpEday_ValueChanged);
             // 
             // dtpSday
             // 
@@ -182,9 +184,11 @@ namespace CompanyManager
             this.dtpSday.Name = "dtpSday";
             this.dtpSday.Size = new System.Drawing.Size(169, 21);
             this.dtpSday.TabIndex = 7;
+            this.dtpSday.ValueChanged += new System.EventHandler(this.dtpEday_ValueChanged);
             // 
             // cboShift
             // 
+            this.cboShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboShift.FormattingEnabled = true;
             this.cboShift.Location = new System.Drawing.Point(485, 20);
             this.cboShift.Name = "cboShift";
@@ -193,6 +197,7 @@ namespace CompanyManager
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(156, 335);
             this.cboUse.Name = "cboUse";
@@ -201,6 +206,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(156, 20);
             this.cboMachine.Name = "cboMachine";
@@ -223,7 +229,7 @@ namespace CompanyManager
             this.txtEtime.Name = "txtEtime";
             this.txtEtime.Size = new System.Drawing.Size(169, 21);
             this.txtEtime.TabIndex = 4;
-            this.txtEtime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStime_KeyPress);
+            this.txtEtime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label5
             // 
@@ -521,7 +527,7 @@ namespace CompanyManager
             this.txtStime.Name = "txtStime";
             this.txtStime.Size = new System.Drawing.Size(169, 21);
             this.txtStime.TabIndex = 4;
-            this.txtStime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStime_KeyPress);
+            this.txtStime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 
