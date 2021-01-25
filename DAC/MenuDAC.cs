@@ -44,6 +44,12 @@ namespace DAC
 
         }
 
+        /// <summary>
+        /// 추가한 메뉴에 폼을 링크한다
+        /// </summary>
+        /// <param name="menuName"></param>
+        /// <param name="formName"></param>
+        /// <returns></returns>
         public bool LinkMenuToForm(string menuName, string formName)
         {
             SqlTransaction trans = conn.BeginTransaction();
