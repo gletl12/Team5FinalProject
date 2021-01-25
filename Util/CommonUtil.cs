@@ -145,6 +145,8 @@ namespace Util
             // TODO - 임시 주석 제거 // **// 
             // **// dgv.AutoGenerateColumns = false;
             // **// dgv.AllowUserToAddRows = false;
+
+            dgv.AutoGenerateColumns = false;
             dgv.MultiSelect = false; //열하나만선택
 
             dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o
@@ -174,6 +176,9 @@ namespace Util
             // TODO - 임시 주석 제거 // **// 
             // **// dgv.AutoGenerateColumns = false;
             // **// dgv.AllowUserToAddRows = false;
+
+            dgv.AutoGenerateColumns = false;
+           
             dgv.MultiSelect = false; //열하나만선택
 
             dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o
@@ -519,5 +524,6 @@ namespace Util
             cbo.ValueMember = valueMember;
             dgv.Columns.Add(cbo);
         }
+      
     }
 }
