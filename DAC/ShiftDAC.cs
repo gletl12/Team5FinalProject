@@ -18,8 +18,29 @@ namespace DAC
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = @"select shift_id,machine_id,shift_type,shift_stime,shift_etime,shift_sdate,shift_edate,shift_use,shift_comment
-                                                            from TBL_SHIFT";
+                    cmd.CommandText = @"select 
+                                        shift_id,
+                                        machine_id,
+                                        shift_type,
+                                        shift_stime,
+                                        shift_etime,
+                                        shift_sdate,
+                                        shift_edate,
+                                        shift_use,
+                                        shift_comment,
+                                        Directly_Input_Person,
+                                        Indirect_Input_Person,
+                                        Nomal_Direct_WorkTime,
+                                        Nomal_indirect_WorkTime,
+                                        Overtime_Directly_WorkTime,
+                                        Overtime_Indirect_WorkTime,
+                                        Overtime_Directly_Input_Person,
+                                        Overtime_Indirect_Input_Person,
+                                        Directly_Accident_WorkTime,
+                                        Indirect_Accident_WorkTime,
+                                        Overtime_Directly_Accident_Time,
+                                        Overtime_Indirect_Accident_Time
+                                        from TBL_SHIFT";
                     cmd.Connection = conn;
                     List<ShiftVO> temp = Helper.DataReaderMapToList<ShiftVO>(cmd.ExecuteReader());
                     Dispose();

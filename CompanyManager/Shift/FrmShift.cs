@@ -30,6 +30,12 @@ namespace CompanyManager
 
             GetdgvColumn();
             DataLoad();
+            ComboBoxBinding();
+        }
+
+        private void ComboBoxBinding()
+        {
+           
         }
 
         private void GetdgvColumn()

@@ -21,17 +21,17 @@ namespace VO
      public string ins_emp                                    {get; set;}
      public DateTime up_date                                  {get; set;}
      public string up_emp                                     {get; set;}
-     public int Directly_Input_Person                         {get; set;}
-     public int Indirect_Input_Person                         {get; set;}
-     public int Nomal_Direct_WorkTime                         {get; set;}
-     public int Nomal_indirect_WorkTime                       {get; set;}
-     public int Overtime_Directly_WorkTime                    {get; set;}
-     public int Overtime_Indirect_WorkTime                    {get; set;}
-     public int Overtime_Directly_Input_Person                {get; set;}
-     public int Overtime_Indirect_Input_Person                {get; set;}
-     public int Directly_Accident_WorkTime                    {get; set;}
-     public int Indirect_Accident_WorkTime                    {get; set;}
-     public int Overtime_Directly_Accident_Time               {get; set;}
-     public int Overtime_Indirect_Accident_Time               {get; set;}
+     public string Directly_Input_Person                         {get; set;}
+     public string Indirect_Input_Person                         {get; set;}
+     public string Nomal_Direct_WorkTime                         {get; set;}
+     public string Nomal_indirect_WorkTime                       {get; set;}
+     public string Overtime_Directly_WorkTime                    {get; set;}
+     public string Overtime_Indirect_WorkTime                    {get; set;}
+     public string Overtime_Directly_Input_Person                {get; set;}
+     public string Overtime_Indirect_Input_Person                {get; set;}
+     public string Directly_Accident_WorkTime                    {get; set;}
+     public string Indirect_Accident_WorkTime                    {get; set;}
+     public string Overtime_Directly_Accident_Time               {get; set;}
+     public string Overtime_Indirect_Accident_Time               {get; set;}
     }
 }
