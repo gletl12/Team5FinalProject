@@ -14,6 +14,7 @@ namespace CompanyManager
     {
 
         List<MenuVO> menuAllList;
+        List<CodeVO> codeAllList;
 
         TreeNode selectedNdoe = null;
         public PopupCommon()
@@ -33,6 +34,7 @@ namespace CompanyManager
             LoadFormList();
 
             //공통코드관리
+            dataGridView1.AutoGenerateColumns = false;
 
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
@@ -43,14 +45,22 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "코드명", "name", 100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "pCode", "pcode", 80);
 
-            LoadCommonCode();
+
+
+
 
         }
 
         private void LoadCommonCode()
         {
             Service.CodeService service = new Service.CodeService();
-            dataGridView1.DataSource = service.GetAllCommonCode();
+            codeAllList = service.GetAllCommonCode();
+            dataGridView1.DataSource = codeAllList;
+            //체크박스 초기값
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                item.Cells[0].Value = false;
+            }
         }
 
         private void LoadFormList()
@@ -138,6 +148,7 @@ namespace CompanyManager
             else if(tabControl1.SelectedIndex == 1)
             {
                 this.Size = new Size(594, 608);
+                LoadCommonCode();
             }
         }
 
@@ -365,18 +376,52 @@ namespace CompanyManager
             List<String> codeList = new List<string>();
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                item.Cells[0].Value = true;
+                if ((bool)item.Cells[0].Value)
+                {
+                    codeList.Add(item.Cells[2].Value.ToString());
+                }
             }
-           
+
+            if (codeList.Count < 1)
+            {
+                MessageBox.Show("삭제할 공통코드를 선택해주세요");
+                return;
+            }
+
             if (MessageBox.Show($"총 {codeList.Count}개의 코드를 삭제하시겠습니까?","메뉴삭제",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Service.CodeService service = new Service.CodeService();
-                //if (!service.DeleteCommonCode(codeList))
-                //{
-
-                //}
+                if (!service.DeleteCommonCode(codeList))
+                {
+                    MessageBox.Show("코드삭제 중 오류가 발생하였습니다.");
+                }
+                else
+                {
+                    LoadCommonCode();
+                }
             }
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var result = from code in codeAllList
+                         where code.code.ToLower().Contains(txtSearch.Text.Trim().ToLower()) ||
+                                code.category.ToLower().Contains(txtSearch.Text.Trim().ToLower()) ||
+                                code.name.ToLower().Contains(txtSearch.Text.Trim().ToLower()) ||
+                                code.pcode != null && code.pcode.ToLower().Contains(txtSearch.Text.Trim().ToLower())
+                         select code;
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = result.ToList();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSearch.PerformClick();
+            }
         }
     }
 }
