@@ -42,5 +42,17 @@ namespace Service
             MenuDAC dac = new MenuDAC();
             return dac.LinkMenuToForm(menuName, formName);
         }
+
+        public bool MenuUpOrder(string menuName)
+        {
+            MenuDAC dac = new MenuDAC();
+            return dac.MenuUpOrder(menuName);
+        }
+
+        public bool MenuDownOrder(string menuName)
+        {
+            MenuDAC dac = new MenuDAC();
+            return dac.MenuDownOrder(menuName);
+        }
     }
 }

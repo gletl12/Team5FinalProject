@@ -219,5 +219,33 @@ namespace CompanyManager
             else
                 MessageBox.Show("적용중 오류가 발생하였습니다.");
         }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            Service.MenuService service = new Service.MenuService();
+            if (!service.MenuUpOrder(treeView1.SelectedNode.Text.Trim()))
+            {
+                MessageBox.Show("순서를 변경하지 못했습니다.");
+            }
+            else
+            {
+                LoadMenuList();
+            }
+
+
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            Service.MenuService service = new Service.MenuService();
+            if (!service.MenuDownOrder(treeView1.SelectedNode.Text.Trim()))
+            {
+                MessageBox.Show("순서를 변경하지 못했습니다.");
+            }
+            else
+            {
+                LoadMenuList();
+            }
+        }
     }
 }

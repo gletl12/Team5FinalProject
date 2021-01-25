@@ -44,8 +44,84 @@ namespace DAC
 
         }
 
+        public bool MenuUpOrder(string menuName)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Transaction = trans;
+                    cmd.CommandText = "SP_MenuUpOrder";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MenuName", menuName);
+                    cmd.Parameters.Add("@return", System.Data.SqlDbType.Int);
+
+
+                    cmd.Parameters["@return"].Direction = System.Data.ParameterDirection.ReturnValue;
+                    cmd.Connection = conn;
+
+                    int result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    trans.Commit();
+                    Dispose();
+
+
+                    return Convert.ToInt32(cmd.Parameters["@return"].Value) > 0 ? true : false;
+
+                }
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_GetMenus() 오류", err);
+
+                return false;
+            }
+        }
+        public bool MenuDownOrder(string menuName)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Transaction = trans;
+                    cmd.CommandText = "SP_MenuDownOrder";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MenuName", menuName);
+                    cmd.Parameters.Add("@return", System.Data.SqlDbType.Int);
+
+
+                    cmd.Parameters["@return"].Direction = System.Data.ParameterDirection.ReturnValue;
+                    cmd.Connection = conn;
+
+                    int result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    trans.Commit();
+                    Dispose();
+
+
+                    return Convert.ToInt32(cmd.Parameters["@return"].Value) > 0 ? true : false;
+
+                }
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_GetMenus() 오류", err);
+
+                return false;
+            }
+        }
         /// <summary>
-        /// 추가한 메뉴에 폼을 링크한다
+        /// 추가한 메뉴에 폼을 링크
         /// </summary>
         /// <param name="menuName"></param>
         /// <param name="formName"></param>
