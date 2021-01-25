@@ -44,6 +44,11 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 선택한 공통코드 삭제
+        /// </summary>
+        /// <param name="codeList">삭제할 코드 목록</param>
+        /// <returns></returns>
         public bool DeleteCommonCode(List<string> codeList)
         {
             string sql = @"delete from TBL_COMMON_CODE where code = @code";
@@ -75,6 +80,11 @@ namespace DAC
             }
         }
 
+        /// <summary>
+        /// 공통코드 수정
+        /// </summary>
+        /// <param name="codeVO">수정할 공통코드 정보</param>
+        /// <returns></returns>
         public bool EditCommonCode(CodeVO codeVO)
         {
             string sql = @"Update TBL_COMMON_CODE set category = @category, name = @name, pcode = @pcode where code = @code";
