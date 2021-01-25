@@ -34,12 +34,12 @@ namespace CompanyManager
             this.button14 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCodeName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtpCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCodeName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace CompanyManager
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(169, 21);
             this.txtCode.TabIndex = 127;
-            this.txtCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyDown);
+            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label8
             // 
@@ -115,22 +115,23 @@ namespace CompanyManager
             this.panel1.Size = new System.Drawing.Size(317, 238);
             this.panel1.TabIndex = 14;
             // 
-            // txtCategory
+            // txtpCode
             // 
-            this.txtCategory.Location = new System.Drawing.Point(115, 76);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(169, 21);
-            this.txtCategory.TabIndex = 129;
+            this.txtpCode.Location = new System.Drawing.Point(115, 182);
+            this.txtpCode.Name = "txtpCode";
+            this.txtpCode.Size = new System.Drawing.Size(169, 21);
+            this.txtpCode.TabIndex = 133;
+            this.txtpCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(29, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 14);
-            this.label1.TabIndex = 128;
-            this.label1.Text = "* 카테고리";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(30, 185);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 14);
+            this.label3.TabIndex = 132;
+            this.label3.Text = "* pCode";
             // 
             // txtCodeName
             // 
@@ -138,6 +139,7 @@ namespace CompanyManager
             this.txtCodeName.Name = "txtCodeName";
             this.txtCodeName.Size = new System.Drawing.Size(169, 21);
             this.txtCodeName.TabIndex = 131;
+            this.txtCodeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeName_KeyPress);
             // 
             // label2
             // 
@@ -149,22 +151,23 @@ namespace CompanyManager
             this.label2.TabIndex = 130;
             this.label2.Text = "* 코드명";
             // 
-            // txtpCode
+            // txtCategory
             // 
-            this.txtpCode.Location = new System.Drawing.Point(115, 182);
-            this.txtpCode.Name = "txtpCode";
-            this.txtpCode.Size = new System.Drawing.Size(169, 21);
-            this.txtpCode.TabIndex = 133;
+            this.txtCategory.Location = new System.Drawing.Point(115, 76);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(169, 21);
+            this.txtCategory.TabIndex = 129;
+            this.txtCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(30, 185);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 14);
-            this.label3.TabIndex = 132;
-            this.label3.Text = "* pCode";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(29, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 14);
+            this.label1.TabIndex = 128;
+            this.label1.Text = "* 카테고리";
             // 
             // PopupCode
             // 

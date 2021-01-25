@@ -15,7 +15,7 @@ namespace CompanyManager
             get { return txtCode.Text; }
             set { txtCode.Text = value; }
         }
-        public string Name
+        public string CodeName
         {
             get { return txtCodeName.Text; }
             set { txtCodeName.Text = value; }
@@ -50,12 +50,35 @@ namespace CompanyManager
             this.Close();
         }
 
-        private void txtCode_KeyDown(object sender, KeyEventArgs e)
-        {
+       
 
-            if (((TextBox)sender).Text.Length > 10)
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length > 9)
             {
-                e.Handled = true;
+                if(e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtCodeName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length > 19)
+            {
+                if (e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
             }
         }
     }
