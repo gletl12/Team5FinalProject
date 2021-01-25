@@ -20,6 +20,7 @@ namespace DAC
                 {
                     cmd.CommandText = @"select 
                                         shift_id,
+										S.machine_id,
                                         machine_name,
                                         shift_type,
                                         shift_stime,
@@ -40,7 +41,7 @@ namespace DAC
                                         Indirect_Accident_WorkTime,
                                         Overtime_Directly_Accident_Time,
                                         Overtime_Indirect_Accident_Time
-                            from TBL_SHIFT S inner join TBL_MACHINE M on S.machine_id=M.machine_id";
+                        from TBL_SHIFT S inner join TBL_MACHINE M on S.machine_id=M.machine_id";
                     cmd.Connection = conn;
                     List<ShiftVO> temp = Helper.DataReaderMapToList<ShiftVO>(cmd.ExecuteReader());
                     Dispose();

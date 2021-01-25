@@ -19,13 +19,17 @@ namespace CompanyManager
     {
         CheckBox headerCheckBox = new CheckBox();
         List<ShiftVO> shift;
-       // List<ShiftVO> shift1;
+     
         List<MachineVO> machine;
         public FrmShift()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 등록버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button13_Click(object sender, EventArgs e)
         {
             PopupShift popup = new PopupShift();
@@ -40,7 +44,9 @@ namespace CompanyManager
 
             ComboBoxBinding();
         }
-
+        /// <summary>
+        /// 콤보박스 바인딩
+        /// </summary>
         private void ComboBoxBinding()
         {
             MachineService service = new MachineService();
@@ -54,7 +60,9 @@ namespace CompanyManager
 
         }
       
-
+        /// <summary>
+        /// 그리드뷰 디자인
+        /// </summary>
         private void GetdgvColumn()
         {
             CommonUtil.SetDGVDesign_Num(dgvShift);
@@ -65,7 +73,7 @@ namespace CompanyManager
             col.Width = 30;
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id",57,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "machine_id", 57,true,DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",97);
             CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 57, true, DataGridViewContentAlignment.MiddleCenter);
@@ -100,7 +108,9 @@ namespace CompanyManager
 
 
         }
-        
+        /// <summary>
+        /// 데이터로드
+        /// </summary>
         private void DataLoad()
         {
             ShiftService service = new ShiftService();
@@ -125,7 +135,11 @@ namespace CompanyManager
 
             }
         }
-
+        /// <summary>
+        /// 그리드뷰 체크박스 위치 조정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvShift_Scroll(object sender, ScrollEventArgs e)
         {
             if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
@@ -134,7 +148,11 @@ namespace CompanyManager
                 headerCheckBox.Visible = headerCheckBox.Location.X > dgvShift.Location.X + 50;
             }
         }
-
+        /// <summary>
+        /// 조회 버튼 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbSearch_Click(object sender, EventArgs e)
         {
            
