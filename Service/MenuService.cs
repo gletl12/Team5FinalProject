@@ -36,5 +36,11 @@ namespace Service
             MenuDAC dac = new MenuDAC();
             return dac.DeleteMenu(menuName);
         }
+
+        public bool LinkMenuToForm(string menuName, string formName)
+        {
+            MenuDAC dac = new MenuDAC();
+            return dac.LinkMenuToForm(menuName, formName);
+        }
     }
 }

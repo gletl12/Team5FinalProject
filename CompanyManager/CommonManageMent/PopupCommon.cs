@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using VO;
 
 namespace CompanyManager
@@ -123,8 +124,31 @@ namespace CompanyManager
             }
 
             selectedNdoe = e.Node;
+            treeView1.SelectedNode = e.Node;
             e.Node.BackColor = SystemColors.MenuHighlight;
             e.Node.ForeColor = Color.White;
+
+
+            //폼 연결되있으면 리스트박스에서 선택
+            MenuVO menu = menuAllList.Find(p => p.SortName.Split('>')[p.SortName.Split('>').Length - 1].Equals(treeView1.SelectedNode.Text.Trim()));
+            if (menu == null||menu.FormName == null)
+            {
+                listBox1.SelectedItem = null;
+                return;
+            }
+            
+            foreach (var item in listBox1.Items)
+            {
+                if (item.ToString() == menu.FormName)
+                {
+                    listBox1.SelectedItem = item;
+                    return;
+                }
+            }
+
+
+            listBox1.SelectedItem = null;
+
         }
 
         //대메뉴 추가
@@ -185,6 +209,15 @@ namespace CompanyManager
                 MessageBox.Show("존재하지 않는 메뉴입니다.");
 
             LoadMenuList();
+        }
+
+        private void btnLink_Click(object sender, EventArgs e)
+        {
+            Service.MenuService service = new Service.MenuService();
+            if (service.LinkMenuToForm(treeView1.SelectedNode.Text.Trim(),listBox1.SelectedItem.ToString()))
+                MessageBox.Show("적용되었습니다.");
+            else
+                MessageBox.Show("적용중 오류가 발생하였습니다.");
         }
     }
 }

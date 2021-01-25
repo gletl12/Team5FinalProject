@@ -44,6 +44,44 @@ namespace DAC
 
         }
 
+        public bool LinkMenuToForm(string menuName, string formName)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    
+                    cmd.CommandText = "update menu set FormName = @formName where Name = @MenuName";
+                    cmd.Transaction = trans;
+                    cmd.Parameters.AddWithValue("@MenuName", menuName);
+                    cmd.Parameters.AddWithValue("@formName", formName);
+                   
+                    cmd.Connection = conn;
+
+                    int result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    trans.Commit();
+                    Dispose();
+
+
+                    return result > 0 ? true : false;
+
+                }
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_GetMenus() 오류", err);
+
+                return false;
+            }
+
+        }
+
         /// <summary>
         /// 메뉴 삭제
         /// </summary>
