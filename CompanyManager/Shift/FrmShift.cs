@@ -63,6 +63,7 @@ namespace CompanyManager
             CodeService service1 = new CodeService();
             code= service1.GetAllCommonCode();
             var code1 = (from All in code where All.category == "shift_type" select All).ToList();
+            code1.Insert(0, new CodeVO { name = "전체" });
             CommonUtil.BindingComboBox(cboShift, code1, "code", "name");
 
 
@@ -164,25 +165,25 @@ namespace CompanyManager
         private void btbSearch_Click(object sender, EventArgs e)
         {
            
-           if (cboShift.SelectedItem.ToString() == "전체" && cboMachine.SelectedItem.ToString() == "전체")
+           if (cboShift.Text == "전체" && cboMachine.Text == "전체")
            {
                dgvShift.DataSource = null;
                dgvShift.DataSource = shift;
            }
-           else if (cboShift.SelectedItem.ToString() != "전체" && cboMachine.SelectedItem.ToString() == "전체")
+           else if (cboShift.Text != "전체" && cboMachine.Text == "전체")
            {
                dgvShift.DataSource = null;
-               dgvShift.DataSource = (from All in shift where All.shift_id == (Convert.ToInt32(cboShift.Text)) select All).ToList();
+               dgvShift.DataSource = (from All in shift where All.shift_type == cboShift.Text select All).ToList();
            }
-           else if (cboMachine.SelectedItem.ToString() != "전체" && cboShift.SelectedItem.ToString() == "전체")
+           else if (cboMachine.Text != "전체" && cboShift.Text == "전체")
            {
                dgvShift.DataSource = null;
-               dgvShift.DataSource = (from All in shift where All.machine_id == (Convert.ToInt32(cboMachine.Text)) select All).ToList();
+               dgvShift.DataSource = (from All in shift where All.machine_name == cboMachine.Text select All).ToList();
            }
            else
            {
                dgvShift.DataSource = null;
-               dgvShift.DataSource = (from All in shift where All.machine_id == (Convert.ToInt32(cboMachine.Text)) && All.shift_id == (Convert.ToInt32(cboShift.Text)) select All).ToList();
+               dgvShift.DataSource = (from All in shift where All.machine_name == cboMachine.Text && All.shift_type == cboShift.Text select All).ToList();
            }         
         }
     }
