@@ -5,15 +5,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
     public partial class FrmShift : CompanyManager.MDIBaseForm
     {
         CheckBox headerCheckBox = new CheckBox();
+        List<ShiftVO> shift;
+        List<MachineVO> machine;
         public FrmShift()
         {
             InitializeComponent();
@@ -35,7 +39,16 @@ namespace CompanyManager
 
         private void ComboBoxBinding()
         {
-           
+            MachineService service = new MachineService();
+            machine = service.GetMachine();
+            machine.Insert(0, new MachineVO { machine_name ="전체"})   ;
+            
+            CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
+
+
+            shift.Insert(0, new ShiftVO { shift_id = int.Parse("전체") });
+            CommonUtil.BindingComboBoxPart(cboShift, shift, "shift_id");
+            
         }
 
         private void GetdgvColumn()
@@ -83,11 +96,12 @@ namespace CompanyManager
 
 
         }
-
+        
         private void DataLoad()
         {
             ShiftService service = new ShiftService();
-            dgvShift.DataSource= service.GetShift();
+            shift =  service.GetShift();
+            dgvShift.DataSource = shift;
         }
 
         /// <summary>
@@ -115,6 +129,31 @@ namespace CompanyManager
                 headerCheckBox.Location = new Point(headerCheckBox.Location.X - (e.NewValue - e.OldValue), headerCheckBox.Location.Y);
                 headerCheckBox.Visible = headerCheckBox.Location.X > dgvShift.Location.X + 50;
             }
+        }
+
+        private void btbSearch_Click(object sender, EventArgs e)
+        {
+           
+           if (cboShift.SelectedItem.ToString() == "전체" && cboMachine.SelectedItem.ToString() == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = shift;
+           }
+           else if (cboShift.SelectedItem.ToString() != "전체" && cboMachine.SelectedItem.ToString() == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.shift_id == (Convert.ToInt32(cboShift.Text)) select All).ToList();
+           }
+           else if (cboMachine.SelectedItem.ToString() != "전체" && cboShift.SelectedItem.ToString() == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.machine_id == (Convert.ToInt32(cboMachine.Text)) select All).ToList();
+           }
+           else
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.machine_id == (Convert.ToInt32(cboMachine.Text)) && All.shift_id == (Convert.ToInt32(cboShift.Text)) select All).ToList();
+           }         
         }
     }
 }

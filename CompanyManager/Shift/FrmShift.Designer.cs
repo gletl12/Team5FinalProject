@@ -151,6 +151,7 @@ namespace CompanyManager
             this.btbSearch.TabIndex = 0;
             this.btbSearch.Text = "조회";
             this.btbSearch.UseVisualStyleBackColor = false;
+            this.btbSearch.Click += new System.EventHandler(this.btbSearch_Click);
             // 
             // dgvShift
             // 

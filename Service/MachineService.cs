@@ -10,13 +10,11 @@ namespace Service
 {
    public class MachineService
     {
-        public class ShiftService
-        {
-            public List<MachineVO> GetMachine()
-            {
-                MachineDAC dac = new MachineDAC();
-                return dac.GetMachine();
-            }
-        }
-    }
+       
+       public List<MachineVO> GetMachine()
+       {
+           MachineDAC dac = new MachineDAC();
+           return dac.GetMachine();
+       }
+   }
 }
