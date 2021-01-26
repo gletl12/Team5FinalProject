@@ -26,6 +26,12 @@ namespace Service
             ShiftDAC dac = new ShiftDAC();
             return dac.DeleteShift(id);
         }
-        
+
+        public bool Update(ShiftVO item)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.UpdateShift(item);
+        }
+
     }
 }

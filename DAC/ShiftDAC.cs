@@ -154,5 +154,34 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
             }
         }
 
+        public bool UpdateShift(ShiftVO item)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"delete from TBL_SHIFT where shift_id=@shift_id";
+
+                    cmd.Parameters.AddWithValue("@shift_id", item.shift_id);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return iRowAffect > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+                //로그 오류
+                Log.WriteError("DAC_ShiftDAC_UpdateShift() 오류", err);
+
+                return false;
+            }
+        }
+
+        
+
     }
 }

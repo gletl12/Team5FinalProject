@@ -215,13 +215,13 @@ namespace CompanyManager
                     rowIndex = row.Index;
 
                     name = dgvShift[4, rowIndex].Value.ToString();
-                    MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
+                   // MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
 
                     ShiftVO vo = new ShiftVO();
 
                     vo.machine_name = dgvShift[4, rowIndex].Value.ToString();
                     vo.shift_type= dgvShift[5, rowIndex].Value.ToString();
-                   // vo.shift_id = Convert.ToInt32(dgvShift[2, rowIndex].Value);
+                    vo.shift_id = Convert.ToInt32(dgvShift[2, rowIndex].Value);
                     vo.shift_stime = dgvShift[6, rowIndex].Value.ToString();
                     vo.shift_etime = dgvShift[7, rowIndex].Value.ToString();
                     vo.shift_sdate = Convert.ToDateTime(dgvShift[8, rowIndex].Value);
@@ -246,7 +246,7 @@ namespace CompanyManager
                    // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
                    // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
                    // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
-                    PopupShift popup = new PopupShift(OpenMode.Update);
+                    PopupShift popup = new PopupShift(OpenMode.Copy);
                     popup.list = vo;
                     if (popup.ShowDialog() == DialogResult.OK)
                     {
@@ -299,6 +299,21 @@ namespace CompanyManager
                     if (name.Length > 0)
                         break; ;
                 }
+            }
+        }
+        /// <summary>
+        /// 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvShift_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==1)
+            {
+              
+                PopupShift frm = new PopupShift(OpenMode.Update);
+
+                frm.Show();
             }
         }
     }
