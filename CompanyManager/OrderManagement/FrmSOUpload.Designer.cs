@@ -35,7 +35,7 @@ namespace CompanyManager
             this.button9 = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
-            this.btnNewSO = new System.Windows.Forms.Button();
+            this.btnCommit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,21 +109,22 @@ namespace CompanyManager
             this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDownload.UseVisualStyleBackColor = false;
             // 
-            // btnNewSO
+            // btnCommit
             // 
-            this.btnNewSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewSO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnNewSO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnNewSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewSO.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSO.Image")));
-            this.btnNewSO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewSO.Location = new System.Drawing.Point(814, 14);
-            this.btnNewSO.Name = "btnNewSO";
-            this.btnNewSO.Size = new System.Drawing.Size(112, 23);
-            this.btnNewSO.TabIndex = 26;
-            this.btnNewSO.Text = "    영업마스터생성";
-            this.btnNewSO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNewSO.UseVisualStyleBackColor = false;
+            this.btnCommit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
+            this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCommit.Location = new System.Drawing.Point(814, 14);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(112, 23);
+            this.btnCommit.TabIndex = 26;
+            this.btnCommit.Text = "    영업마스터생성";
+            this.btnCommit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // FrmSOUpload
             // 
@@ -133,7 +134,7 @@ namespace CompanyManager
             this.Controls.Add(this.button9);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnDownload);
-            this.Controls.Add(this.btnNewSO);
+            this.Controls.Add(this.btnCommit);
             this.Controls.Add(this.dgvSO);
             this.Name = "FrmSOUpload";
             this.Load += new System.EventHandler(this.FrmSOUpload_Load);
@@ -148,7 +149,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnDownload;
-        private System.Windows.Forms.Button btnNewSO;
+        private System.Windows.Forms.Button btnCommit;
         private System.Windows.Forms.DataGridView dgvSO;
     }
 }
