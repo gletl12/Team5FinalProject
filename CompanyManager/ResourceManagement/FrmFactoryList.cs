@@ -49,7 +49,7 @@ namespace CompanyManager
 
         private void ComboBoxBinding()
         {
-            CommonUtil.BindingComboBox
+            //CommonUtil.BindingComboBox
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
