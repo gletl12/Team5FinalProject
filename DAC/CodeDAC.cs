@@ -151,7 +151,7 @@ namespace DAC
         /// <returns></returns>
         public List<CodeVO> GetAllCommonCode()
         {
-            string sql = @"select code, category ,name, pcode  from TBL_COMMON_CODE";
+            string sql = @"select code, category ,name, pcode  from TBL_COMMON_CODE order by category, code";
            
             try
             {

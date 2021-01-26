@@ -26,7 +26,7 @@ namespace CompanyManager
         {
             CommonUtil.SetDGVDesign_Num(dgvFactory);
 
-            CommonUtil.AddGridCheckColumn(dgvFactory, "", 20);
+            CommonUtil.SetDGVDesign_CheckBox(dgvFactory);
             CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16,"Edit", 30);
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "factory_grade");
             CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "factory_type");
@@ -45,6 +45,22 @@ namespace CompanyManager
 
             dgvFactory.AutoGenerateColumns = false;
             dgvFactory.AllowUserToAddRows = false;
+        }
+
+        private void ComboBoxBinding()
+        {
+            CommonUtil.BindingComboBox
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            PopFactoryCRUD pop = new PopFactoryCRUD();
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("정상적으로 처리되었습니다.");
+            }
+            else
+                MessageBox.Show("오류가 발생했습니다.");
         }
     }
 }
