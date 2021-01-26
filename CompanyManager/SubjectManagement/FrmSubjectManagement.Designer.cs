@@ -33,7 +33,7 @@ namespace CompanyManager
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtEmployee = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboOrderC = new System.Windows.Forms.ComboBox();
             this.cboDeliveryC = new System.Windows.Forms.ComboBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.cboSubjectType = new System.Windows.Forms.ComboBox();
@@ -114,7 +114,7 @@ namespace CompanyManager
             this.pnlSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSearch.Controls.Add(this.txtEmployee);
-            this.pnlSearch.Controls.Add(this.comboBox7);
+            this.pnlSearch.Controls.Add(this.cboOrderC);
             this.pnlSearch.Controls.Add(this.cboDeliveryC);
             this.pnlSearch.Controls.Add(this.txtSubject);
             this.pnlSearch.Controls.Add(this.cboSubjectType);
@@ -155,14 +155,14 @@ namespace CompanyManager
             this.txtEmployee.Size = new System.Drawing.Size(183, 21);
             this.txtEmployee.TabIndex = 37;
             // 
-            // comboBox7
+            // cboOrderC
             // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(775, 12);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(183, 22);
-            this.comboBox7.TabIndex = 36;
+            this.cboOrderC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboOrderC.FormattingEnabled = true;
+            this.cboOrderC.Location = new System.Drawing.Point(775, 12);
+            this.cboOrderC.Name = "cboOrderC";
+            this.cboOrderC.Size = new System.Drawing.Size(183, 22);
+            this.cboOrderC.TabIndex = 36;
             // 
             // cboDeliveryC
             // 
@@ -458,7 +458,7 @@ namespace CompanyManager
             this.dataGridView1.Location = new System.Drawing.Point(10, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 472);
             this.dataGridView1.TabIndex = 20;
             // 
             // button8
@@ -617,7 +617,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cboOrderC;
         private System.Windows.Forms.ComboBox cboDeliveryC;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.ComboBox cboSubjectType;

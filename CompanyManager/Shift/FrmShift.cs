@@ -14,6 +14,7 @@ using Util;
 using VO;
 using static CompanyManager.PopupShift;
 
+
 namespace CompanyManager
 {
     public partial class FrmShift : CompanyManager.MDIBaseForm
@@ -341,9 +342,26 @@ namespace CompanyManager
                 // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
                 // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
                 // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
-                PopupShift frm = new PopupShift(OpenMode.Update);
-                frm.list = vo;
-                frm.Show();
+                PopupShift popup = new PopupShift(OpenMode.Update);
+                popup.list = vo;
+                
+                if (popup.ShowDialog() == DialogResult.OK)
+                {
+                    GetdgvColumn();
+                    DataLoad();
+                    ComboBoxBinding();
+                }
+            }
+        }
+
+        private void btbExcel_Click(object sender, EventArgs e)
+        {
+            
+            
+            string sResult = CommonExcel.ExportToDataGridView<ShiftVO>((List<ShiftVO>)dgvShift.DataSource, "");
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
             }
         }
     }

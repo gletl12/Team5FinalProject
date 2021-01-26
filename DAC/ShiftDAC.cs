@@ -161,7 +161,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update TBL_SHIFT set (
+                    cmd.CommandText = @"update TBL_SHIFT set 
 					                                        	machine_id=@machine_id,
 					                                        	shift_type=@shift_type,
 					                                        	shift_stime=@shift_stime,
@@ -186,7 +186,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
 					                                        	Indirect_Accident_WorkTime=@Indirect_Accident_WorkTime,
 					                                        	Overtime_Directly_Accident_Time=@Overtime_Directly_Accident_Time,
 					                                        	Overtime_Indirect_Accident_Time=@Overtime_Indirect_Accident_Time
-                                                              )
+                                                              
                                                 where shift_id=@shift_id";
 
                     cmd.Parameters.AddWithValue("@shift_id", item.shift_id);

@@ -218,6 +218,7 @@ namespace CompanyManager
             this.btbExcel.Text = "    엑셀";
             this.btbExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btbExcel.UseVisualStyleBackColor = false;
+            this.btbExcel.Click += new System.EventHandler(this.btbExcel_Click);
             // 
             // label10
             // 

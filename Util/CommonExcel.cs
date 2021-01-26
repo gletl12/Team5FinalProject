@@ -7,6 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Data;
+using System.Reflection;
 
 namespace Util
 {
@@ -204,5 +205,60 @@ namespace Util
                 MessageBox.Show("Excel Export가 완료되었습니다.");
             }
         }
+        /// <summary>
+        /// 액셀익스포트
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dataList"></param>
+        /// <param name="exceptColumns"></param>
+        /// <returns></returns>
+        public static string ExportToDataGridView<T>(List<T> dataList, string exceptColumns) //exceptColumns : 제외하고 싶은 컬럼
+        {
+            try
+            {
+                Excel.Application excel = new Excel.Application();
+                excel.Application.Workbooks.Add(true);
+
+                int columnIndex = 0;
+
+                foreach (PropertyInfo prop in typeof(T).GetProperties())
+                {
+                    if (!exceptColumns.Contains(prop.Name))
+                    {
+                        columnIndex++;
+                        excel.Cells[1, columnIndex] = prop.Name;
+                    }
+                }
+
+                int rowIndex = 0;
+
+                foreach (T data in dataList)
+                {
+                    rowIndex++;
+                    columnIndex = 0;
+                    foreach (PropertyInfo prop in typeof(T).GetProperties())
+                    {
+                        if (!exceptColumns.Contains(prop.Name))
+                        {
+                            columnIndex++;
+                            if (prop.GetValue(data, null) != null)
+                            {
+                                excel.Cells[rowIndex + 1, columnIndex] = prop.GetValue(data, null).ToString();
+                            }
+                        }
+                    }
+                }
+                excel.Columns.AutoFit();
+                excel.Visible = true;
+                Excel.Worksheet worksheet = (Excel.Worksheet)excel.ActiveSheet;
+                worksheet.Activate();
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
     }
 }

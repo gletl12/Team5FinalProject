@@ -154,6 +154,8 @@ namespace CompanyManager
                 if (bFlag)
                 {
                     MessageBox.Show("저장되었습니다.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                     MessageBox.Show("저장 중 오류가 발생하였습니다.");
@@ -200,6 +202,8 @@ namespace CompanyManager
                 if (bFlag)
                 {
                     MessageBox.Show("수정되었습니다.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                     MessageBox.Show("수정 중 오류가 발생하였습니다.");

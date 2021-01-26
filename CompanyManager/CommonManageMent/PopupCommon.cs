@@ -206,7 +206,6 @@ namespace CompanyManager
             }
 
             LoadMenuList();
-            
         }
 
         //소메뉴 추가
