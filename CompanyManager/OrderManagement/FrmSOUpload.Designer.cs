@@ -91,7 +91,7 @@ namespace CompanyManager
             this.btnUpload.Text = "    Excel등록";
             this.btnUpload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.button10_Click);
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnDownload
             // 
@@ -124,7 +124,6 @@ namespace CompanyManager
             this.btnNewSO.Text = "    영업마스터생성";
             this.btnNewSO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewSO.UseVisualStyleBackColor = false;
-            this.btnNewSO.Click += new System.EventHandler(this.btnNewSO_Click);
             // 
             // FrmSOUpload
             // 
