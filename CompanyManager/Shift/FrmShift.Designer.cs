@@ -200,6 +200,7 @@ namespace CompanyManager
             this.btnCopy.Text = "    복사";
             this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btbExcel
             // 

@@ -196,33 +196,75 @@ namespace CompanyManager
            }         
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
-           
-        }
-
+       /// <summary>
+       /// 복사
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            int rowIndex = dgvShift.CurrentRow.Index;
+            int rowIndex;
+            string name;
 
-            ShiftVO info;
-
-
-
-            // info.PartID = Convert.ToInt32(dgvShift.CurrentRow.Cells[1].Value);
-
-
-            PopupShift popup = new PopupShift(OpenMode.Update);
-
-            if (popup.ShowDialog() == DialogResult.OK)
+            System.Collections.IList list = dgvShift.Rows;
+            for (int i = 0; i < list.Count; i++)
             {
-                GetdgvColumn();
-                DataLoad();
-                ComboBoxBinding();
+                DataGridViewRow row = (DataGridViewRow)list[i];
+                if (Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue) == true)
+                {
+                    rowIndex = row.Index;
+
+                    name = dgvShift[4, rowIndex].Value.ToString();
+                    MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
+
+                    ShiftVO vo = new ShiftVO();
+
+                    vo.machine_name = dgvShift[4, rowIndex].Value.ToString();
+                    vo.shift_type= dgvShift[5, rowIndex].Value.ToString();
+                   // vo.shift_id = Convert.ToInt32(dgvShift[2, rowIndex].Value);
+                    vo.shift_stime = dgvShift[6, rowIndex].Value.ToString();
+                    vo.shift_etime = dgvShift[7, rowIndex].Value.ToString();
+                    vo.shift_sdate = Convert.ToDateTime(dgvShift[8, rowIndex].Value);
+                    vo.shift_edate = Convert.ToDateTime(dgvShift[9, rowIndex].Value);
+
+                    vo.shift_use = dgvShift[23, rowIndex].Value.ToString();
+                   // vo.shift_comment = dgvShift[22, rowIndex].Value.ToString();
+
+                    //vo.ins_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                    //vo.ins_emp = dgvShift[2, rowIndex].Value.ToString();
+                    //vo.up_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                    //vo.up_emp = dgvShift[2, rowIndex].Value.ToString();
+                   // vo.Directly_Input_Person = dgvShift[10, rowIndex].Value.ToString();
+                   // vo.Indirect_Input_Person = dgvShift[11, rowIndex].Value.ToString();
+                   // vo.Nomal_Direct_WorkTime = dgvShift[12, rowIndex].Value.ToString();
+                   // vo.Nomal_indirect_WorkTime = dgvShift[13, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_WorkTime = dgvShift[14, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_WorkTime = dgvShift[15, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_Input_Person = dgvShift[16, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_Input_Person = dgvShift[17, rowIndex].Value.ToString();
+                   // vo.Directly_Accident_WorkTime = dgvShift[18, rowIndex].Value.ToString();
+                   // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
+                    PopupShift popup = new PopupShift(OpenMode.Update);
+                    popup.list = vo;
+                    if (popup.ShowDialog() == DialogResult.OK)
+                    {
+                        GetdgvColumn();
+                        DataLoad();
+                        ComboBoxBinding();
+                    }
+                    if (rowIndex < 0)
+                        MessageBox.Show("복사할 정보를 선택하여 주세요");
+                }
+                
             }
         }
-
+        /// <summary>
+        /// Shift삭제
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDel_Click(object sender, EventArgs e)
         {
            
