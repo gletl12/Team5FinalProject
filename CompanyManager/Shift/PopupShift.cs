@@ -14,25 +14,28 @@ namespace CompanyManager
 {
     public partial class PopupShift : CompanyManager.PopupBaseForm
     {
-        public enum OpenMode { Insert, Update }
+        public enum OpenMode { Insert, Update,Copy }
         
         List<CodeVO> code;
 
         List<MachineVO> machine;
 
-        bool open=true;
+        string openmode="";
         public ShiftVO list { get; set; }
         public PopupShift(OpenMode mode)
         {
             InitializeComponent();
             if (mode == OpenMode.Insert)
             {
-                
+                openmode = "Insert";
+            }
+            else if (mode==OpenMode.Copy)
+            {
+                openmode = "Copy";
             }
             else
             {
-                open = false;
-                
+                openmode = "Update";
             }
         }
 
@@ -84,92 +87,130 @@ namespace CompanyManager
             code2.Insert(0, new CodeVO { name = "" });
             CommonUtil.BindingComboBox(cboUse, code2, "code", "name");
 
-            if (!open)
+            if (openmode != "Insert")
                 DataLoad();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+      
+        /// <summary>
+        /// 숫자만 입력
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
 
-           
-            //if (e.KeyChar == Convert.ToChar(Keys.Back))
-            //{
-            //    e.Handled = true;
-                
-            //}
-            //if (((TextBox)sender).Text.Length == 7)
-            //{
-            //    e.Handled = false;
-            //}
-            //else
-            //{
-            //    if (!(char.IsDigit(e.KeyChar)))//숫자만 입력
-            //    {
-            //        e.Handled = true;
-
-            //    }
-            //    else
-            //    {
-            //        e.Handled = false;
-            //    }
-            //}
-
-          
         }
-
+        /// <summary>
+        /// 저장버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(cboMachine.SelectedIndex <0|| cboShift.SelectedIndex<0||txtStime.Text.Length<0||txtEtime.Text.Length<0||dtpEday.Value==null||dtpSday.Value==null)
+            if (openmode != "Update")
             {
-                MessageBox.Show("주황글씨는 필수입력입니다.");
-                return;
-            }
-            ShiftVO emp = new ShiftVO();
-            emp.machine_id = cboMachine.SelectedIndex;
-            emp.shift_type = cboShift.Text;
-            emp.shift_stime = txtStime.Text;
-            emp.shift_etime = txtEtime.Text;
-            emp.shift_sdate = dtpSday.Value;
-            emp.shift_edate = dtpEday.Value;
-            emp.shift_use = cboUse.Text;
+                if (cboMachine.SelectedIndex < 0 || cboShift.SelectedIndex < 0 || txtStime.Text.Length < 0 || txtEtime.Text.Length < 0 || dtpEday.Value == null || dtpSday.Value == null)
+                {
+                    MessageBox.Show("주황글씨는 필수입력입니다.");
+                    return;
+                }
+                ShiftVO emp = new ShiftVO();
+                emp.machine_id = cboMachine.SelectedIndex;
+                emp.shift_type = cboShift.Text;
+                emp.shift_stime = txtStime.Text;
+                emp.shift_etime = txtEtime.Text;
+                emp.shift_sdate = dtpSday.Value;
+                emp.shift_edate = dtpEday.Value;
+                emp.shift_use = cboUse.Text;
 
-            emp.Directly_Input_Person = "DDDD";
-            emp.Indirect_Input_Person = "DDDD";
-            emp.Nomal_Direct_WorkTime = "DDDD";
-            emp.Nomal_indirect_WorkTime = "DDDD";
-            emp.Overtime_Directly_WorkTime = "DDDD";
-            emp.Overtime_Indirect_WorkTime = "DDDD";
-            emp.Overtime_Directly_Input_Person = "DDDD";
-            emp.Overtime_Indirect_Input_Person = "DDDD";
-            emp.Directly_Accident_WorkTime = "DDDD";
-            emp.Indirect_Accident_WorkTime = "DDDD";
-            emp.Overtime_Directly_Accident_Time = "DDDD";
-            emp.Overtime_Indirect_Accident_Time = "DDDD";
+                emp.Directly_Input_Person = "DDDD";
+                emp.Indirect_Input_Person = "DDDD";
+                emp.Nomal_Direct_WorkTime = "DDDD";
+                emp.Nomal_indirect_WorkTime = "DDDD";
+                emp.Overtime_Directly_WorkTime = "DDDD";
+                emp.Overtime_Indirect_WorkTime = "DDDD";
+                emp.Overtime_Directly_Input_Person = "DDDD";
+                emp.Overtime_Indirect_Input_Person = "DDDD";
+                emp.Directly_Accident_WorkTime = "DDDD";
+                emp.Indirect_Accident_WorkTime = "DDDD";
+                emp.Overtime_Directly_Accident_Time = "DDDD";
+                emp.Overtime_Indirect_Accident_Time = "DDDD";
 
-            emp.shift_comment =                                    "DDDD";
-                                                                 
-            emp.ins_date =                                         dtpSday.Value;
-            emp.ins_emp = "DDDD";
-            emp.up_date =                                          dtpSday.Value;
-            emp.up_emp = "DDDD";
+                emp.shift_comment = "DDDD";
 
-            ShiftService service = new ShiftService();
-            bool bFlag = service.AddShift(emp);
+                emp.ins_date = dtpSday.Value;
+                emp.ins_emp = "DDDD";
+                emp.up_date = dtpSday.Value;
+                emp.up_emp = "DDDD";
 
-            if(bFlag)
-            {
-                MessageBox.Show("저장되었습니다.");
+                ShiftService service = new ShiftService();
+                bool bFlag = service.AddShift(emp);
+
+                if (bFlag)
+                {
+                    MessageBox.Show("저장되었습니다.");
+                }
+                else
+                    MessageBox.Show("저장 중 오류가 발생하였습니다.");
             }
             else
-                MessageBox.Show("저장 중 오류가 발생하였습니다.");
+            {
+                if (cboMachine.SelectedIndex < 0 || cboShift.SelectedIndex < 0 || txtStime.Text.Length < 0 || txtEtime.Text.Length < 0 || dtpEday.Value == null || dtpSday.Value == null)
+                {
+                    MessageBox.Show("주황글씨는 필수입력입니다.");
+                    return;
+                }
+                ShiftVO emp = new ShiftVO();
+                emp.shift_id = list.shift_id;
+                emp.machine_id = cboMachine.SelectedIndex;
+                emp.shift_type = cboShift.Text;
+                emp.shift_stime = txtStime.Text;
+                emp.shift_etime = txtEtime.Text;
+                emp.shift_sdate = dtpSday.Value;
+                emp.shift_edate = dtpEday.Value;
+                emp.shift_use = cboUse.Text;
+
+                emp.Directly_Input_Person = "ccccD";
+                emp.Indirect_Input_Person = "DDcccDD";
+                emp.Nomal_Direct_WorkTime = "DDcccDD";
+                emp.Nomal_indirect_WorkTime = "DDDcccD";
+                emp.Overtime_Directly_WorkTime = "DDcccDD";
+                emp.Overtime_Indirect_WorkTime = "DDDD";
+                emp.Overtime_Directly_Input_Person = "DDDD";
+                emp.Overtime_Indirect_Input_Person = "DDDD";
+                emp.Directly_Accident_WorkTime = "DDDD";
+                emp.Indirect_Accident_WorkTime = "DDDD";
+                emp.Overtime_Directly_Accident_Time = "DDDD";
+                emp.Overtime_Indirect_Accident_Time = "DDDD";
+
+                emp.shift_comment = "DDDD";
+
+                emp.ins_date = dtpSday.Value;
+                emp.ins_emp = "DDDD";
+                emp.up_date = dtpSday.Value;
+                emp.up_emp = "DDDD";
+                ShiftService service = new ShiftService();
+                bool bFlag = service.Update(emp);
+
+                if (bFlag)
+                {
+                    MessageBox.Show("수정되었습니다.");
+                }
+                else
+                    MessageBox.Show("수정 중 오류가 발생하였습니다.");
+            }
 
         }
-
+        /// <summary>
+        /// 데이트타임피커 설정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtpEday_ValueChanged(object sender, EventArgs e)
         {
             if (dtpSday.Value > dtpEday.Value)
@@ -178,7 +219,11 @@ namespace CompanyManager
                 return;
             }
         }
-
+        /// <summary>
+        /// 취소버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

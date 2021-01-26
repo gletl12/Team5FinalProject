@@ -160,12 +160,13 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShift.Location = new System.Drawing.Point(8, 109);
+            this.dgvShift.Location = new System.Drawing.Point(8, 112);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersWidth = 50;
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.Size = new System.Drawing.Size(1152, 529);
             this.dgvShift.TabIndex = 19;
+            this.dgvShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShift_CellClick);
             this.dgvShift.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvShift_Scroll);
             // 
             // btnDel
