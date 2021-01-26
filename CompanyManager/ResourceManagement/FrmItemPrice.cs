@@ -88,9 +88,20 @@ namespace CompanyManager
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 0)
                 return;
-            PriceVO price = priceList[e.RowIndex];
-            PopupItemPrice popup = new PopupItemPrice(price.company_name,price.item_name,price.price_currency,price.before);
+            PriceVO price = priceList.Find((elem) => elem.item_id == Convert.ToInt32(dgvPrice.Rows[e.RowIndex].Cells[3].Value) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
+                //priceList[e.RowIndex];
+            PopupItemPrice popup = new PopupItemPrice(price.company_name,price.item_name,price.price_currency,price.now);
             popup.ItemID = price.item_id;
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                GetPriceList();
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            PopupPriceExcel popup = new PopupPriceExcel("PT001");
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 GetPriceList();

@@ -5,24 +5,44 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
+using static CompanyManager.PopupShift;
 
 namespace CompanyManager
 {
     public partial class FrmShift : CompanyManager.MDIBaseForm
     {
         CheckBox headerCheckBox = new CheckBox();
+        List<ShiftVO> shift;
+        List<CodeVO> code;
+
+        List<MachineVO> machine;
         public FrmShift()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 등록버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button13_Click(object sender, EventArgs e)
         {
-            PopupShift popup = new PopupShift();
-            popup.Show();
+            PopupShift popup = new PopupShift(OpenMode.Insert);
+            
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                GetdgvColumn();
+                DataLoad();
+
+                ComboBoxBinding();
+            }
         }
 
         private void FrmShift_Load(object sender, EventArgs e)
@@ -30,8 +50,36 @@ namespace CompanyManager
 
             GetdgvColumn();
             DataLoad();
-        }
 
+            ComboBoxBinding();
+        }
+        /// <summary>
+        /// 콤보박스 바인딩
+        /// </summary>
+        private void ComboBoxBinding()
+        {
+            MachineService service = new MachineService();
+            machine = service.GetMachine();
+            machine.Insert(0, new MachineVO { machine_name ="전체"})   ;           
+            CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
+
+            //var shift1 = shift.ConvertAll(o => o);
+            //shift1.Insert(0, new ShiftVO { shift_type = "전체" });
+            //CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_type");
+
+
+            CodeService service1 = new CodeService();
+            code= service1.GetAllCommonCode();
+            var code1 = (from All in code where All.category == "shift_type" select All).ToList();
+            code1.Insert(0, new CodeVO { name = "전체" });
+            CommonUtil.BindingComboBox(cboShift, code1, "code", "name");
+
+
+        }
+      
+        /// <summary>
+        /// 그리드뷰 디자인
+        /// </summary>
         private void GetdgvColumn()
         {
             CommonUtil.SetDGVDesign_Num(dgvShift);
@@ -42,8 +90,9 @@ namespace CompanyManager
             col.Width = 30;
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "shift_id",57,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_id",97);
+            CommonUtil.AddGridTextColumn(dgvShift, "shift_id", "shift_id", 57, false, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "machine_id", 57,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",97);
             CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 57, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 57, true, DataGridViewContentAlignment.MiddleCenter);
@@ -77,11 +126,14 @@ namespace CompanyManager
 
 
         }
-
+        /// <summary>
+        /// 데이터로드
+        /// </summary>
         private void DataLoad()
         {
             ShiftService service = new ShiftService();
-            dgvShift.DataSource= service.GetShift();
+            shift =  service.GetShift();
+            dgvShift.DataSource = shift;
         }
 
         /// <summary>
@@ -101,13 +153,152 @@ namespace CompanyManager
 
             }
         }
-
+        /// <summary>
+        /// 그리드뷰 체크박스 위치 조정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvShift_Scroll(object sender, ScrollEventArgs e)
         {
             if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
             {
                 headerCheckBox.Location = new Point(headerCheckBox.Location.X - (e.NewValue - e.OldValue), headerCheckBox.Location.Y);
                 headerCheckBox.Visible = headerCheckBox.Location.X > dgvShift.Location.X + 50;
+            }
+        }
+        /// <summary>
+        /// 조회 버튼 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btbSearch_Click(object sender, EventArgs e)
+        {
+           
+           if (cboShift.Text == "전체" && cboMachine.Text == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = shift;
+           }
+           else if (cboShift.Text != "전체" && cboMachine.Text == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.shift_type == cboShift.Text select All).ToList();
+           }
+           else if (cboMachine.Text != "전체" && cboShift.Text == "전체")
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.machine_name == cboMachine.Text select All).ToList();
+           }
+           else
+           {
+               dgvShift.DataSource = null;
+               dgvShift.DataSource = (from All in shift where All.machine_name == cboMachine.Text && All.shift_type == cboShift.Text select All).ToList();
+           }         
+        }
+
+       /// <summary>
+       /// 복사
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            int rowIndex;
+            string name;
+
+            System.Collections.IList list = dgvShift.Rows;
+            for (int i = 0; i < list.Count; i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)list[i];
+                if (Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue) == true)
+                {
+                    rowIndex = row.Index;
+
+                    name = dgvShift[4, rowIndex].Value.ToString();
+                    MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
+
+                    ShiftVO vo = new ShiftVO();
+
+                    vo.machine_name = dgvShift[4, rowIndex].Value.ToString();
+                    vo.shift_type= dgvShift[5, rowIndex].Value.ToString();
+                   // vo.shift_id = Convert.ToInt32(dgvShift[2, rowIndex].Value);
+                    vo.shift_stime = dgvShift[6, rowIndex].Value.ToString();
+                    vo.shift_etime = dgvShift[7, rowIndex].Value.ToString();
+                    vo.shift_sdate = Convert.ToDateTime(dgvShift[8, rowIndex].Value);
+                    vo.shift_edate = Convert.ToDateTime(dgvShift[9, rowIndex].Value);
+
+                    vo.shift_use = dgvShift[23, rowIndex].Value.ToString();
+                   // vo.shift_comment = dgvShift[22, rowIndex].Value.ToString();
+
+                    //vo.ins_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                    //vo.ins_emp = dgvShift[2, rowIndex].Value.ToString();
+                    //vo.up_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                    //vo.up_emp = dgvShift[2, rowIndex].Value.ToString();
+                   // vo.Directly_Input_Person = dgvShift[10, rowIndex].Value.ToString();
+                   // vo.Indirect_Input_Person = dgvShift[11, rowIndex].Value.ToString();
+                   // vo.Nomal_Direct_WorkTime = dgvShift[12, rowIndex].Value.ToString();
+                   // vo.Nomal_indirect_WorkTime = dgvShift[13, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_WorkTime = dgvShift[14, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_WorkTime = dgvShift[15, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_Input_Person = dgvShift[16, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_Input_Person = dgvShift[17, rowIndex].Value.ToString();
+                   // vo.Directly_Accident_WorkTime = dgvShift[18, rowIndex].Value.ToString();
+                   // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
+                   // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
+                   // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
+                    PopupShift popup = new PopupShift(OpenMode.Update);
+                    popup.list = vo;
+                    if (popup.ShowDialog() == DialogResult.OK)
+                    {
+                        GetdgvColumn();
+                        DataLoad();
+                        ComboBoxBinding();
+                    }
+                    if (rowIndex < 0)
+                        MessageBox.Show("복사할 정보를 선택하여 주세요");
+                }
+                
+            }
+        }
+        /// <summary>
+        /// Shift삭제
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+           
+            int rowIndex;
+            string name;
+
+            System.Collections.IList list = dgvShift.Rows;
+            for (int i = 0; i < list.Count; i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)list[i];
+                if (Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue) == true)
+                {
+                    rowIndex = row.Index;
+                  
+                    name = dgvShift[4, rowIndex].Value.ToString();
+                    MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
+                    if (MessageBox.Show($"{name}설비의 Shift를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        ShiftService service = new ShiftService();
+                        if (service.Delete(Convert.ToInt32(dgvShift[2, rowIndex].Value)))
+                        {
+                            MessageBox.Show("삭제되었습니다.");
+                            DataLoad();
+                            ComboBoxBinding();
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제 중 오류가 발생했습니다.");
+                        }
+                    }
+                    
+                    if (name.Length > 0)
+                        break; ;
+                }
             }
         }
     }

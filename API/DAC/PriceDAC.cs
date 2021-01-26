@@ -47,7 +47,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("업체 목록을 불러오는중 오류 발생"+err.Message);
+                    Log.WriteError("업체 목록을 불러오는중 오류 발생" + err.Message);
                     return null;
                 }
             }
@@ -77,6 +77,49 @@ namespace API.DAC
                 catch (Exception err)
                 {
                     Log.WriteError("신규 단가 정보를 저장하는중 오류 발생" + err.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool ImportExcel(List<PriceVO> priceList)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                SqlTransaction trans = conn.BeginTransaction();
+                try
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SP_InsUpPrice ";
+                    cmd.Transaction = trans;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@item_id", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@comment", System.Data.SqlDbType.Text);
+                    cmd.Parameters.Add("@start_date", System.Data.SqlDbType.Date);
+                    cmd.Parameters.Add("@price_type", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
+                    cmd.Parameters.Add("@currency", System.Data.SqlDbType.NVarChar);
+                    foreach (PriceVO price in priceList)
+                    {
+                        cmd.Parameters["@item_id"].Value = price.item_id;
+                        cmd.Parameters["@comment"].Value = price.price_comment;
+                        cmd.Parameters["@start_date"].Value = price.price_sdate;
+                        cmd.Parameters["@price_type"].Value = price.price_type;
+                        cmd.Parameters["@price"].Value = price.now;
+                        cmd.Parameters["@currency"].Value = price.price_currency;
+                        cmd.ExecuteNonQuery();
+                    }
+
+
+                    trans.Commit();
+                    cmd.Connection.Close();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("단가 정보를 저장하는중 오류 발생" + err.Message);
+                    trans.Rollback();
+                    cmd.Connection.Close();
                     return false;
                 }
             }

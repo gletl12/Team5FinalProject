@@ -49,16 +49,18 @@ namespace CompanyManager
             this.txtMenuName.Name = "txtMenuName";
             this.txtMenuName.Size = new System.Drawing.Size(169, 21);
             this.txtMenuName.TabIndex = 127;
+            this.txtMenuName.TextChanged += new System.EventHandler(this.txtMenuName_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label8.Location = new System.Drawing.Point(29, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 14);
             this.label8.TabIndex = 98;
             this.label8.Text = "* 메뉴이름";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button14
             // 
@@ -101,6 +103,7 @@ namespace CompanyManager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 68);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // PopupMenu
             // 

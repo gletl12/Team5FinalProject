@@ -270,6 +270,8 @@ namespace CompanyManager
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(185, 21);
             this.textBox7.TabIndex = 2;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // label17
             // 
