@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeDAC.cs" />
+    <Compile Include="EmployeeDAC.cs" />
+    <Compile Include="FactoryDAC.cs" />
     <Compile Include="Log4NetSampleCode.cs" />
     <Compile Include="CommonDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
