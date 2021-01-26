@@ -23,9 +23,16 @@ namespace CompanyManager
         Color selectedColor = Color.Blue;
         Button selectedBtn;
 
-        
+
         //VO 형식 관리자 
-       
+        private EmployeeVO loginInfo = new EmployeeVO { emp_id = 4 ,emp_name = "직원1" };
+
+        public EmployeeVO LoginInfo
+        {
+            get { return loginInfo; }
+           
+        }
+
 
         public string Admin { get; set; }
 
