@@ -175,11 +175,11 @@ namespace CompanyManager
                 emp.shift_edate = dtpEday.Value;
                 emp.shift_use = cboUse.Text;
 
-                emp.Directly_Input_Person = "DDDD";
-                emp.Indirect_Input_Person = "DDDD";
-                emp.Nomal_Direct_WorkTime = "DDDD";
-                emp.Nomal_indirect_WorkTime = "DDDD";
-                emp.Overtime_Directly_WorkTime = "DDDD";
+                emp.Directly_Input_Person = "ccccD";
+                emp.Indirect_Input_Person = "DDcccDD";
+                emp.Nomal_Direct_WorkTime = "DDcccDD";
+                emp.Nomal_indirect_WorkTime = "DDDcccD";
+                emp.Overtime_Directly_WorkTime = "DDcccDD";
                 emp.Overtime_Indirect_WorkTime = "DDDD";
                 emp.Overtime_Directly_Input_Person = "DDDD";
                 emp.Overtime_Indirect_Input_Person = "DDDD";

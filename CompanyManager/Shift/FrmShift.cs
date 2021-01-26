@@ -310,9 +310,39 @@ namespace CompanyManager
         {
             if(e.ColumnIndex==1)
             {
-              
-                PopupShift frm = new PopupShift(OpenMode.Update);
+                int rowIndex = dgvShift.CurrentCell.RowIndex;
 
+                ShiftVO vo = new ShiftVO();
+
+                vo.machine_name = dgvShift[4, rowIndex].Value.ToString();
+                vo.shift_type = dgvShift[5, rowIndex].Value.ToString();
+                vo.shift_id = Convert.ToInt32(dgvShift[2, rowIndex].Value);
+                vo.shift_stime = dgvShift[6, rowIndex].Value.ToString();
+                vo.shift_etime = dgvShift[7, rowIndex].Value.ToString();
+                vo.shift_sdate = Convert.ToDateTime(dgvShift[8, rowIndex].Value);
+                vo.shift_edate = Convert.ToDateTime(dgvShift[9, rowIndex].Value);
+
+                vo.shift_use = dgvShift[23, rowIndex].Value.ToString();
+                // vo.shift_comment = dgvShift[22, rowIndex].Value.ToString();
+
+                //vo.ins_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                //vo.ins_emp = dgvShift[2, rowIndex].Value.ToString();
+                //vo.up_date = Convert.ToDateTime(dgvShift[2, rowIndex].Value);
+                //vo.up_emp = dgvShift[2, rowIndex].Value.ToString();
+                // vo.Directly_Input_Person = dgvShift[10, rowIndex].Value.ToString();
+                // vo.Indirect_Input_Person = dgvShift[11, rowIndex].Value.ToString();
+                // vo.Nomal_Direct_WorkTime = dgvShift[12, rowIndex].Value.ToString();
+                // vo.Nomal_indirect_WorkTime = dgvShift[13, rowIndex].Value.ToString();
+                // vo.Overtime_Directly_WorkTime = dgvShift[14, rowIndex].Value.ToString();
+                // vo.Overtime_Indirect_WorkTime = dgvShift[15, rowIndex].Value.ToString();
+                // vo.Overtime_Directly_Input_Person = dgvShift[16, rowIndex].Value.ToString();
+                // vo.Overtime_Indirect_Input_Person = dgvShift[17, rowIndex].Value.ToString();
+                // vo.Directly_Accident_WorkTime = dgvShift[18, rowIndex].Value.ToString();
+                // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
+                // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
+                // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
+                PopupShift frm = new PopupShift(OpenMode.Update);
+                frm.list = vo;
                 frm.Show();
             }
         }
