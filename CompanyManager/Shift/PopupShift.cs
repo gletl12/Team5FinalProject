@@ -19,6 +19,9 @@ namespace CompanyManager
         List<CodeVO> code;
 
         List<MachineVO> machine;
+
+        bool open=true;
+        public ShiftVO list { get; set; }
         public PopupShift(OpenMode mode)
         {
             InitializeComponent();
@@ -28,11 +31,44 @@ namespace CompanyManager
             }
             else
             {
+                open = false;
                 
             }
         }
+
+        private void DataLoad()
+        {
+       // textBox1.Text=  list.shift_id.ToString();
+        cboMachine.Text=  list.machine_name;
+        cboShift.Text=  list.shift_type;
+        txtStime.Text=  list.shift_stime;
+        txtEtime.Text=  list.shift_etime;
+        dtpSday.Text=  list.shift_sdate.ToString();
+        dtpEday.Text=  list.shift_edate.ToString();
+        cboUse.Text=  list.shift_use;
+        richTextBox1.Text=  list.shift_comment;
+        //textBox1.Text=  list.ins_date.ToString();
+        //textBox1.Text=  list.ins_emp;
+        //textBox1.Text=  list.up_date.ToString();
+        //textBox1.Text=  list.up_emp;
+       //textBox8.Text=  list.Directly_Input_Person;
+       //textBox10.Text=  list.Indirect_Input_Person;
+       //textBox7.Text=  list.Nomal_Direct_WorkTime;
+       //textBox9.Text=  list.Nomal_indirect_WorkTime;
+       //textBox14.Text=  list.Overtime_Directly_WorkTime;
+       //textBox13.Text=  list.Overtime_Indirect_WorkTime;
+       //textBox11.Text=  list.Overtime_Directly_Input_Person;
+       //textBox12.Text=  list.Overtime_Indirect_Input_Person;
+       //textBox18.Text=  list.Directly_Accident_WorkTime;
+       //textBox15.Text=  list.Indirect_Accident_WorkTime;
+       //textBox1.Text=  list.Overtime_Directly_Accident_Time;
+       //textBox17.Text=  list.Overtime_Indirect_Accident_Time;
+        }
+
         private void PopupShift_Load(object sender, EventArgs e)
         {
+
+            
             MachineService service = new MachineService();
             machine = service.GetMachine();
             machine.Insert(0, new MachineVO { machine_name = "" });
@@ -48,7 +84,8 @@ namespace CompanyManager
             code2.Insert(0, new CodeVO { name = "" });
             CommonUtil.BindingComboBox(cboUse, code2, "code", "name");
 
-
+            if (!open)
+                DataLoad();
         }
 
         private void button1_Click(object sender, EventArgs e)
