@@ -31,13 +31,13 @@ namespace CompanyManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panDirectLogin = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.Loginbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panDirectLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,54 +52,35 @@ namespace CompanyManager
             // 
             // panDirectLogin
             // 
+            this.panDirectLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.panDirectLogin.Controls.Add(this.label4);
             this.panDirectLogin.Controls.Add(this.label3);
             this.panDirectLogin.Controls.Add(this.label2);
             this.panDirectLogin.Controls.Add(this.label1);
-            this.panDirectLogin.Controls.Add(this.textBox2);
-            this.panDirectLogin.Controls.Add(this.textBox1);
-            this.panDirectLogin.Controls.Add(this.button1);
+            this.panDirectLogin.Controls.Add(this.txtPassword);
+            this.panDirectLogin.Controls.Add(this.txtID);
+            this.panDirectLogin.Controls.Add(this.Loginbtn);
             this.panDirectLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panDirectLogin.Location = new System.Drawing.Point(0, 135);
             this.panDirectLogin.Name = "panDirectLogin";
-            this.panDirectLogin.Size = new System.Drawing.Size(383, 143);
+            this.panDirectLogin.Size = new System.Drawing.Size(383, 142);
             this.panDirectLogin.TabIndex = 23;
             // 
-            // button1
+            // label4
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(359, 26);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "로그인";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 14);
+            this.label4.TabIndex = 19;
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(130, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 21);
-            this.textBox1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(130, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 21);
-            this.textBox2.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "아이디";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 14);
+            this.label3.TabIndex = 19;
             // 
             // label2
             // 
@@ -110,21 +91,43 @@ namespace CompanyManager
             this.label2.TabIndex = 18;
             this.label2.Text = "비밀번호";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 14);
-            this.label3.TabIndex = 19;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "아이디";
             // 
-            // label4
+            // txtPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 14);
-            this.label4.TabIndex = 19;
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPassword.Location = new System.Drawing.Point(130, 58);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(178, 21);
+            this.txtPassword.TabIndex = 17;
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtID.Location = new System.Drawing.Point(130, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(178, 21);
+            this.txtID.TabIndex = 17;
+            // 
+            // Loginbtn
+            // 
+            this.Loginbtn.BackColor = System.Drawing.Color.White;
+            this.Loginbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Loginbtn.Location = new System.Drawing.Point(12, 104);
+            this.Loginbtn.Name = "Loginbtn";
+            this.Loginbtn.Size = new System.Drawing.Size(359, 26);
+            this.Loginbtn.TabIndex = 16;
+            this.Loginbtn.Text = "로그인";
+            this.Loginbtn.UseVisualStyleBackColor = false;
+            this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
             // pictureBox1
             // 
@@ -145,6 +148,7 @@ namespace CompanyManager
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.panDirectLogin, 0);
@@ -157,13 +161,13 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Panel panDirectLogin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Loginbtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
