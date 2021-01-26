@@ -14,6 +14,7 @@ using Util;
 using VO;
 using static CompanyManager.PopupShift;
 
+
 namespace CompanyManager
 {
     public partial class FrmShift : CompanyManager.MDIBaseForm
@@ -350,6 +351,17 @@ namespace CompanyManager
                     DataLoad();
                     ComboBoxBinding();
                 }
+            }
+        }
+
+        private void btbExcel_Click(object sender, EventArgs e)
+        {
+            
+            
+            string sResult = CommonExcel.ExportToDataGridView<ShiftVO>((List<ShiftVO>)dgvShift.DataSource, "");
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
             }
         }
     }
