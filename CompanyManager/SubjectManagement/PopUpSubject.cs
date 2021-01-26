@@ -105,13 +105,19 @@ namespace CompanyManager
                     where code.category.Equals("USE_FLAG")
                     select code).ToList();
             temp.Insert(0, co);
-            cboimport.DataSource = temp;
+            cboimport.DataSource = temp.ConvertAll(p => p);
             cboprocess.DataSource = temp.ConvertAll(p => p);
             cboshipment.DataSource = temp.ConvertAll(p => p);
             cbofreecharge.DataSource = temp.ConvertAll(p => p);
             cbouse.DataSource = temp.ConvertAll(p => p);
-            cboextinction.DataSource = temp.ConvertAll(p => p);
-            
+            temp.ForEach(p => 
+            {
+                if (p.name == "사용") p.name = "Y";
+                else if (p.name == "미사용") p.name = "N";
+            });
+            temp.RemoveAt(0);
+            cboextinction.DataSource = temp;
+            cboextinction.SelectedIndex = 1;
         }
 
         private void button14_Click(object sender, EventArgs e)
