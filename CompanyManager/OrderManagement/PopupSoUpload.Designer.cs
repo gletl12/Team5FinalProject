@@ -35,11 +35,9 @@ namespace CompanyManager
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanDate = new System.Windows.Forms.DateTimePicker();
+            this.btnOpenFile = new System.Windows.Forms.Button();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +55,7 @@ namespace CompanyManager
             this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(58, 256);
+            this.button14.Location = new System.Drawing.Point(58, 208);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(85, 30);
             this.button14.TabIndex = 9;
@@ -92,7 +90,7 @@ namespace CompanyManager
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(149, 256);
+            this.button1.Location = new System.Drawing.Point(149, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
             this.button1.TabIndex = 8;
@@ -112,72 +110,55 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.dtpPlanDate);
+            this.panel1.Controls.Add(this.btnOpenFile);
+            this.panel1.Controls.Add(this.txtFileName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 193);
+            this.panel1.Size = new System.Drawing.Size(296, 143);
             this.panel1.TabIndex = 10;
             // 
-            // label8
+            // dtpPlanDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(9, 146);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 14);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "* 계획기준버전";
+            this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPlanDate.Location = new System.Drawing.Point(98, 100);
+            this.dtpPlanDate.Name = "dtpPlanDate";
+            this.dtpPlanDate.Size = new System.Drawing.Size(185, 21);
+            this.dtpPlanDate.TabIndex = 34;
             // 
-            // textBox8
+            // btnOpenFile
             // 
-            this.textBox8.Location = new System.Drawing.Point(98, 143);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(185, 21);
-            this.textBox8.TabIndex = 4;
+            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.btnOpenFile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFile.ForeColor = System.Drawing.Color.White;
+            this.btnOpenFile.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
+            this.btnOpenFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenFile.Location = new System.Drawing.Point(98, 19);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(80, 23);
+            this.btnOpenFile.TabIndex = 33;
+            this.btnOpenFile.Text = "파일선택";
+            this.btnOpenFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOpenFile.UseVisualStyleBackColor = false;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
-            // textBox1
+            // txtFileName
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 21);
-            this.textBox1.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(98, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 23);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "파일선택";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(98, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 21);
-            this.dateTimePicker1.TabIndex = 34;
+            this.txtFileName.Enabled = false;
+            this.txtFileName.Location = new System.Drawing.Point(98, 61);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(185, 21);
+            this.txtFileName.TabIndex = 5;
             // 
             // PopupSoUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(296, 298);
+            this.ClientSize = new System.Drawing.Size(296, 250);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -199,10 +180,8 @@ namespace CompanyManager
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.DateTimePicker dtpPlanDate;
+        private System.Windows.Forms.Button btnOpenFile;
     }
 }

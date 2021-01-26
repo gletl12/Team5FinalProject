@@ -199,12 +199,17 @@ namespace CompanyManager
         private void button5_Click(object sender, EventArgs e)
         {
             
+           
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
             int rowIndex = dgvShift.CurrentRow.Index;
 
             ShiftVO info;
-            
-          
-            
+
+
+
             // info.PartID = Convert.ToInt32(dgvShift.CurrentRow.Cells[1].Value);
 
 
@@ -215,6 +220,43 @@ namespace CompanyManager
                 GetdgvColumn();
                 DataLoad();
                 ComboBoxBinding();
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+           
+            int rowIndex;
+            string name;
+
+            System.Collections.IList list = dgvShift.Rows;
+            for (int i = 0; i < list.Count; i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)list[i];
+                if (Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue) == true)
+                {
+                    rowIndex = row.Index;
+                  
+                    name = dgvShift[4, rowIndex].Value.ToString();
+                    MessageBox.Show($"{name}, {dgvShift[2, rowIndex].Value.ToString()}");
+                    if (MessageBox.Show($"{name}설비의 Shift를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        ShiftService service = new ShiftService();
+                        if (service.Delete(Convert.ToInt32(dgvShift[2, rowIndex].Value)))
+                        {
+                            MessageBox.Show("삭제되었습니다.");
+                            DataLoad();
+                            ComboBoxBinding();
+                        }
+                        else
+                        {
+                            MessageBox.Show("삭제 중 오류가 발생했습니다.");
+                        }
+                    }
+                    
+                    if (name.Length > 0)
+                        break; ;
+                }
             }
         }
     }

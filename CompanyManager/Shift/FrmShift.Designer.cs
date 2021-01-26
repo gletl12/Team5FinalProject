@@ -183,7 +183,7 @@ namespace CompanyManager
             this.btnDel.Text = "    삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.button5_Click);
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnCopy
             // 

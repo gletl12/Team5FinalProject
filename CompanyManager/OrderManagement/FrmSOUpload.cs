@@ -17,15 +17,7 @@ namespace CompanyManager
             
         }
 
-        private void btnNewSO_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
         
         private void FrmSOUpload_Load(object sender, EventArgs e)
         {
@@ -43,6 +35,15 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvSO, "납기일", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
 
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            PopupSoUpload popup = new PopupSoUpload();
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }
