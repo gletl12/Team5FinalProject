@@ -25,7 +25,7 @@ namespace CompanyManager
 
 
         //VO 형식 관리자 
-        private EmployeeVO loginInfo = new EmployeeVO { emp_id = 4 ,emp_name = "직원1" };
+        private EmployeeVO loginInfo = new EmployeeVO { emp_id = 10 ,emp_name = "직원1" };
 
         public EmployeeVO LoginInfo
         {
