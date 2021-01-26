@@ -139,7 +139,7 @@ namespace CompanyManager
             this.txtCodeName.Name = "txtCodeName";
             this.txtCodeName.Size = new System.Drawing.Size(169, 21);
             this.txtCodeName.TabIndex = 131;
-            this.txtCodeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeName_KeyPress);
+            this.txtCodeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 

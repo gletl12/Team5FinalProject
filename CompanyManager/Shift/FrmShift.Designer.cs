@@ -160,12 +160,13 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
             this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShift.Location = new System.Drawing.Point(8, 109);
+            this.dgvShift.Location = new System.Drawing.Point(8, 112);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersWidth = 50;
             this.dgvShift.RowTemplate.Height = 23;
             this.dgvShift.Size = new System.Drawing.Size(1152, 529);
             this.dgvShift.TabIndex = 19;
+            this.dgvShift.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShift_CellClick);
             this.dgvShift.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvShift_Scroll);
             // 
             // btnDel
@@ -183,7 +184,7 @@ namespace CompanyManager
             this.btnDel.Text = "    삭제";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.button5_Click);
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnCopy
             // 
@@ -200,6 +201,7 @@ namespace CompanyManager
             this.btnCopy.Text = "    복사";
             this.btnCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btbExcel
             // 
@@ -216,6 +218,7 @@ namespace CompanyManager
             this.btbExcel.Text = "    엑셀";
             this.btbExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btbExcel.UseVisualStyleBackColor = false;
+            this.btbExcel.Click += new System.EventHandler(this.btbExcel_Click);
             // 
             // label10
             // 
