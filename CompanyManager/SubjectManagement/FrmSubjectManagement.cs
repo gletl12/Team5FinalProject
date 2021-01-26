@@ -126,8 +126,16 @@ namespace CompanyManager
         {
             PopUpSubject popup = new PopUpSubject();
             popup.CodeAllList = codeAllList;
+            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
             if (popup.ShowDialog() == DialogResult.OK)
             {
+                Service.SubjectService service = new Service.SubjectService();
+                List<SubjectVO> temp = new List<SubjectVO>();
+                temp.Add(popup.InsertInfo);
+                if (!service.AddSubject(temp))
+                {
+
+                }
                 
             }
            
