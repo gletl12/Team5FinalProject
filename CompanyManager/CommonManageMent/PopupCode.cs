@@ -74,7 +74,7 @@ namespace CompanyManager
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((TextBox)sender).Text.Length > 9)
+            if (((TextBox)sender).Text.Length > 19)
             {
                 if(e.KeyChar == 8)
                 {
@@ -87,19 +87,6 @@ namespace CompanyManager
             }
         }
 
-        private void txtCodeName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((TextBox)sender).Text.Length > 19)
-            {
-                if (e.KeyChar == 8)
-                {
-
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-        }
+        
     }
 }
