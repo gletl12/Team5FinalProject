@@ -21,7 +21,7 @@ namespace CompanyManager
         {
             InitializeComponent();
             popupTitleBar1.HeaderText = "공통관리";
-            listBox1.Enabled = false;
+            lbForm.Enabled = false;
             btnLink.Enabled = false;
         }
 
@@ -74,14 +74,14 @@ namespace CompanyManager
                     temp.Add(formName);
                 }
             }
-            listBox1.DataSource = temp;
-            listBox1.SelectedItem = null;
+            lbForm.DataSource = temp;
+            lbForm.SelectedItem = null;
         }
 
         //메뉴리스트 불러오기
         private void LoadMenuList()
         {
-            listBox1.Enabled = false;
+            lbForm.Enabled = false;
             btnLink.Enabled = false;
 
             treeView1.Nodes.Clear();
@@ -154,7 +154,7 @@ namespace CompanyManager
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            listBox1.Enabled = true;
+            lbForm.Enabled = true;
             btnLink.Enabled = true;
 
             //이전 노드 색상 원래대로
@@ -174,21 +174,21 @@ namespace CompanyManager
             MenuVO menu = menuAllList.Find(p => p.SortName.Split('>')[p.SortName.Split('>').Length - 1].Equals(treeView1.SelectedNode.Text.Trim()));
             if (menu == null||menu.FormName == null)
             {
-                listBox1.SelectedItem = null;
+                lbForm.SelectedItem = null;
                 return;
             }
             
-            foreach (var item in listBox1.Items)
+            foreach (var item in lbForm.Items)
             {
                 if (item.ToString() == menu.FormName)
                 {
-                    listBox1.SelectedItem = item;
+                    lbForm.SelectedItem = item;
                     return;
                 }
             }
 
 
-            listBox1.SelectedItem = null;
+            lbForm.SelectedItem = null;
 
         }
 
@@ -261,7 +261,7 @@ namespace CompanyManager
         private void btnLink_Click(object sender, EventArgs e)
         {
             Service.MenuService service = new Service.MenuService();
-            if (service.LinkMenuToForm(treeView1.SelectedNode.Text.Trim(),listBox1.SelectedItem.ToString()))
+            if (service.LinkMenuToForm(treeView1.SelectedNode.Text.Trim(),lbForm.SelectedItem.ToString()))
                 MessageBox.Show("적용되었습니다.");
             else
                 MessageBox.Show("적용중 오류가 발생하였습니다.");

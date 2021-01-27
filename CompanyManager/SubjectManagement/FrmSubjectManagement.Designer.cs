@@ -458,8 +458,9 @@ namespace CompanyManager
             this.dataGridView1.Location = new System.Drawing.Point(10, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 472);
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 475);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button8
             // 
@@ -486,7 +487,7 @@ namespace CompanyManager
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 13;
-            this.label10.Text = "      품목관리";
+            this.label10.Text = "      품목정보";
             // 
             // button9
             // 
