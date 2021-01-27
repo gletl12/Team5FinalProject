@@ -10,7 +10,7 @@ namespace DAC
 {
     public class EmployeeDAC : CommonDAC
     {
-        public bool GetLogin(string id, string pwd)
+        public List<EmployeeVO> GetLogin(string id, string pwd)
         {
             try
             {
@@ -23,13 +23,11 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@pwd", pwd);
 
-                    int iRowEffect = cmd.ExecuteNonQuery();
                     cmd.Connection = conn;
+                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
+                    Dispose();
 
-                    if (iRowEffect >= 1)
-                        return true;
-                    else
-                        return false;
+                    return list;
                 }
             }
             catch (Exception err)
