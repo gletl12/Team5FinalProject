@@ -1,19 +1,19 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VO;
-using DAC;
 
 namespace Service
 {
-    public class FactoryService
+    public class EmployeeService
     {
-        public List<FactoryVO> GetFactory()
+        public List<EmployeeVO> GetLogin(string id, string pwd)
         {
-            FactoryDAC dac = new FactoryDAC();
-            return dac.GetFactory();
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetLogin(id,pwd);
         }
 
         //public List<CodeVO> GetAllCommonCode()

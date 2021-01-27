@@ -15,6 +15,7 @@ namespace CompanyManager
 
         public SubjectVO InsertInfo { get; set; } //등록 할 정보 
 
+        public EmployeeVO LoginInfo { get; set; } //로그인정보
 
         public PopUpSubject()
         {
@@ -40,6 +41,7 @@ namespace CompanyManager
             cbouse.DisplayMember = "name";
             cboextinction.DisplayMember = "name";
             cbomanager.DisplayMember = "name";
+            cbograde.DisplayMember = "name";
 
             cbotype.ValueMember = "code";
             cbounit.ValueMember = "code";
@@ -54,6 +56,11 @@ namespace CompanyManager
             cbouse.ValueMember = "code";
             cboextinction.ValueMember = "code";
             cbomanager.ValueMember = "code";
+            cbograde.ValueMember = "code";
+
+            txtupemployee.Text = LoginInfo.emp_name;
+            txtupemployee.Tag = LoginInfo.emp_id;
+            txtupdate.Text = DateTime.Now.ToString();
         }
 
         //콤보박스 바인딩
@@ -99,6 +106,19 @@ namespace CompanyManager
             cboorder.DataSource = temp;
             cbosupply.DataSource = temp.ConvertAll(p => p);
 
+            //관리등급
+            temp = (from code in CodeAllList
+                    where code.category.Equals("ITEM_GRADE")
+                    select code).ToList();
+            temp.Insert(0, co);
+            cbograde.DataSource = temp;
+
+            //유무상 구분
+            temp = (from code in CodeAllList
+                    where code.category.Equals("FREE_OFFER")
+                    select code).ToList();
+            temp.Insert(0, co);
+            cbofreecharge.DataSource = temp;
 
             //수입검사여부, 공정검사 여부 출하검사여부, 유무상구분, 사용유무, 단종유무
             temp = (from code in CodeAllList
@@ -108,7 +128,6 @@ namespace CompanyManager
             cboimport.DataSource = temp.ConvertAll(p => p);
             cboprocess.DataSource = temp.ConvertAll(p => p);
             cboshipment.DataSource = temp.ConvertAll(p => p);
-            cbofreecharge.DataSource = temp.ConvertAll(p => p);
             cbouse.DataSource = temp.ConvertAll(p => p);
             temp.ForEach(p => 
             {
@@ -123,43 +142,6 @@ namespace CompanyManager
         private void button14_Click(object sender, EventArgs e)
         {
             //유효성 검사
-            Validation();
-
-
-            //입력정보 저장
-            SubjectVO vo = new SubjectVO
-            {
-                Item_id = txtID.Text,
-                Item_type = cbotype.SelectedValue.ToString(),
-                Item_name = txtname.Text,
-                Item_unit = cbounit.SelectedValue.ToString(),
-                Item_unit_qty = Convert.ToInt32(txtunitqty.Text),
-                Import_inspection = cboimport.SelectedValue.ToString(),
-                Process_inspection = cboprocess.SelectedValue.ToString(),
-                Shipment_inspection = cboshipment.SelectedValue.ToString(),
-                Free_of_charge = cbofreecharge.SelectedValue.ToString(),
-                Order_company = cboorder.SelectedValue.ToString(),
-                Supply_company = cbosupply.SelectedValue.ToString(),
-                Item_leadtime = Convert.ToInt32(txtleadtime.Text),
-                Item_lorder_qty = Convert.ToInt32(txtlorder.Text),
-                Item_safety_qty = Convert.ToInt32(txtsaftyqty.Text),
-                Item_delivery_qty = Convert.ToInt32(txtdeliveryqty.Text),
-                Item_grade = cbograde.SelectedValue.ToString(),
-                Item_manager = cbomanager.SelectedValue.ToString(),
-                Item_use = cbouse.SelectedValue.ToString(),
-                Item_comment = txtComment.Text,
-                Up_date = Convert.ToDateTime(txtupdate.Text),
-                Up_emp = txtupemployee.Text,
-                In_warehouse = cboinware.SelectedValue.ToString(),
-                Out_warehouse = cbooutware.SelectedValue.ToString(),
-                Extinction = cboextinction.SelectedValue.ToString()
-            };
-            
-        }
-
-        //유효성 검사 필수 입력값에 대해서만
-        private void Validation()
-        {
             //유효성 검사
             if (string.IsNullOrEmpty(txtID.Text))
             {
@@ -206,7 +188,69 @@ namespace CompanyManager
                 MessageBox.Show("단종유무를 선택해주세요");
                 return;
             }
+
+
+            //입력정보 저장
+            //SubjectVO vo = new SubjectVO
+            //{
+            //    Item_id = txtID.Text,
+            //    Item_type = cbotype.SelectedValue.ToString(),
+            //    Item_name = txtname.Text,
+            //    Item_unit = cbounit.SelectedValue.ToString(),
+            //    Item_unit_qty = Convert.ToInt32(txtunitqty.Text),
+            //    Import_inspection = cboimport.SelectedValue.ToString(),
+            //    Process_inspection = cboprocess.SelectedValue.ToString(),
+            //    Shipment_inspection = cboshipment.SelectedValue.ToString(),
+            //    Free_of_charge = cbofreecharge.SelectedValue.ToString(),
+            //    Order_company = cboorder.SelectedValue.ToString(),
+            //    Supply_company = cbosupply.SelectedValue.ToString(),
+            //    Item_leadtime = Convert.ToInt32(txtleadtime.Text),
+            //    Item_lorder_qty = Convert.ToInt32(txtlorder.Text),
+            //    Item_safety_qty = Convert.ToInt32(txtsaftyqty.Text),
+            //    Item_delivery_qty = Convert.ToInt32(txtdeliveryqty.Text),
+            //    Item_grade = cbograde.SelectedValue.ToString(),
+            //    Item_manager = cbomanager.SelectedValue.ToString(),
+            //    Item_use = cbouse.SelectedValue.ToString(),
+            //    Item_comment = txtComment.Text,
+            //    Up_date = Convert.ToDateTime(txtupdate.Text),
+            //    Up_emp = txtupemployee.Text,
+            //    In_warehouse = cboinware.SelectedValue.ToString(),
+            //    Out_warehouse = cbooutware.SelectedValue.ToString(),
+            //    Extinction = cboextinction.SelectedValue.ToString()
+            //};
+            SubjectVO vo = new SubjectVO();
+            vo.Item_id = txtID.Text;
+            vo.Item_type = cbotype.SelectedValue.ToString();
+            vo.Item_name = txtname.Text;
+            vo.Item_unit = cbounit.SelectedValue.ToString();
+            vo.Item_unit_qty = txtunitqty.Text == "" ? 0 : Convert.ToInt32(txtunitqty.Text);
+            vo.Import_inspection = cboimport.SelectedValue.ToString();
+            vo.Process_inspection = cboprocess.SelectedValue.ToString();
+            vo.Shipment_inspection = cboshipment.SelectedValue.ToString();
+            vo.Free_of_charge = cbofreecharge.SelectedValue.ToString();
+            vo.Order_company = cboorder.SelectedValue.ToString();
+            vo.Supply_company = cbosupply.SelectedValue.ToString();
+            vo.Item_leadtime = txtleadtime.Text == "" ? 0 : Convert.ToInt32(txtleadtime.Text);
+            vo.Item_lorder_qty =txtlorder.Text == "" ? 0 : Convert.ToInt32(txtlorder.Text);
+            vo.Item_safety_qty = txtsaftyqty.Text == "" ? 0 : Convert.ToInt32(txtsaftyqty.Text);
+            vo.Item_delivery_qty = txtdeliveryqty.Text == "" ? 0 : Convert.ToInt32(txtdeliveryqty.Text);
+            vo.Item_grade = cbograde.SelectedValue.ToString();
+            vo.Item_manager = cbomanager.SelectedValue.ToString();
+            vo.Item_use = cbouse.SelectedValue.ToString();
+            vo.Item_comment = txtComment.Text;
+            vo.Up_date = Convert.ToDateTime(txtupdate.Text);
+            vo.Up_emp = txtupemployee.Tag.ToString();
+            vo.In_warehouse = cboinware.SelectedValue.ToString();
+            vo.Out_warehouse = cbooutware.SelectedValue.ToString();
+            vo.Extinction = cboextinction.SelectedValue.ToString();
+
+            InsertInfo = vo;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
+
+        
 
         private void limit20_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -251,6 +295,11 @@ namespace CompanyManager
                     e.Handled = true;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
