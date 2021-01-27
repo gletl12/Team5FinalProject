@@ -30,6 +30,7 @@ namespace DAC
             }
             catch (Exception err)
             {
+                conn.Close();
                 Log.WriteError("DAC_SubjectDAC_GetSubjectCod() 오류", err);
                 return new List<CodeVO>();
             }
@@ -39,7 +40,22 @@ namespace DAC
 
         public bool AddSubject(List<SubjectVO> insertInfo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string sql = "";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    List<SubjectVO> temp = Helper.DataReaderMapToList<SubjectVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                conn.Close();
+                Log.WriteError("DAC_SubjectDAC_GetSubjectList() 오류", err);
+                return false;
+            }
         }
 
         /// <summary>
@@ -85,6 +101,7 @@ namespace DAC
             }
             catch (Exception err)
             {
+                conn.Close();
                 Log.WriteError("DAC_SubjectDAC_GetSubjectList() 오류", err);
                 return new List<SubjectVO>();
             }
