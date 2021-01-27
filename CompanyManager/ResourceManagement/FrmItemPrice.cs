@@ -71,6 +71,8 @@ namespace CompanyManager
         private void GetPriceList()
         {
             ApiMessage<List<PriceVO>> pirce = service.GetApiCaller<List<PriceVO>>($"{url}B");
+            if (pirce == null)
+                return;
             dgvPrice.DataSource = priceList = pirce.Data;
         }
 
