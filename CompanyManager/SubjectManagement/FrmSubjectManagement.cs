@@ -212,5 +212,29 @@ namespace CompanyManager
             }
 
         }
+
+       
+        //엑셀 등록
+        private void btnExcelInsert_Click(object sender, EventArgs e)
+        {
+            (DataTable, string) temp = Util.CommonExcel.ReadExcelData();
+            //if (temp)
+            //{
+
+            //}
+            //Service.SubjectService service = new Service.SubjectService();
+            //List<SubjectVO> temp = new List<SubjectVO>();
+            //temp.Add(popup.InsertInfo);
+            //if (!service.AddSubject(temp))
+            //{
+            //    MessageBox.Show("품목등록 중 오류가 발생하였습니다.");
+            //}
+            //else
+            //{
+            //    LoadSubjectList();
+            //}
+
+
+        }
     }
 }
