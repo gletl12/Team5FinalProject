@@ -293,44 +293,35 @@ namespace DAC
         public List<SubjectVO> GetSubjectList()
         {
             string sql = @"select item_id,
-                                  A.name item_type,
+                                  dbo.GetCodeName(item_type) item_type,
                                   item_name,
-                                  B.name item_unit,
+                                  dbo.GetCodeName(item_unit) item_unit,
                                   item_unit_qty,
-                                  C.name import_inspection,
-                                  D.name process_inspection,
-                                  E.name shipment_inspection,
-                                  F.name free_of_charge,
+                                  dbo.GetCodeName(import_inspection) import_inspection,
+                                  dbo.GetCodeName(process_inspection) process_inspection,
+                                  dbo.GetCodeName(shipment_inspection) shipment_inspection,
+                                  dbo.GetCodeName(free_of_charge) free_of_charge,
                                   Ca.company_name order_company,
                                   Cb.company_name supply_company,
                                   item_leadtime,
                                   item_lorder_qty,
                                   item_delivery_qty,
                                   item_safety_qty,
-                                  G.name item_grade,
+                                  dbo.GetCodeName(item_grade) item_grade,
                                   Ea.emp_name item_manager,
-                                  H.name item_use,
+                                  dbo.GetCodeName(item_use) item_use,
                                   item_comment,
                                   I.up_date,
                                   Eb.emp_name up_emp,
                                   Wa.warehouse_name in_warehouse,
                                   Wb.warehouse_name out_warehouse,
-                                  J.name extinction
-                             from TBL_ITEM I join TBL_COMMON_CODE A on I.item_type = A.code
-				                             join TBL_COMMON_CODE B on I.item_unit = B.code  
-				                             join TBL_COMMON_CODE C on I.import_inspection = C.code 
-				                             join TBL_COMMON_CODE D on I.process_inspection = D.code 
-				                             join TBL_COMMON_CODE E on I.shipment_inspection = E.code 
-				                             left outer join TBL_COMMON_CODE F on I.free_of_charge = F.code 
-				                             left outer join TBL_COMMON_CODE G on I.item_grade = G.code 
-				                             join TBL_COMMON_CODE H on I.item_use = H.code
-				                             join TBL_COMMON_CODE J on I.extinction = J.code
-				                             left outer join TBL_COMPANY Ca on I.order_company = Ca.company_id
-				                             left outer join TBL_COMPANY Cb on I.supply_company = Cb.company_id
-				                             join TBL_Employee Ea on I.item_manager = Ea.emp_id
-				                             join TBL_Employee Eb on I.up_emp = Eb.emp_id
-				                             left outer join TBL_WAREHOUSE Wa on I.in_warehouse = Wa.warehouse_id
-				                             left outer join TBL_WAREHOUSE Wb on I.in_warehouse = Wb.warehouse_id";
+                                  dbo.GetCodeName(extinction) extinction
+                             from TBL_ITEM I left outer join TBL_COMPANY Ca on I.order_company = Ca.company_id
+                                             left outer join TBL_COMPANY Cb on I.supply_company = Cb.company_id
+                                             left outer join TBL_Employee Ea on I.item_manager = Ea.emp_id
+                                             join TBL_Employee Eb on I.up_emp = Eb.emp_id
+                                             left outer join TBL_WAREHOUSE Wa on I.in_warehouse = Wa.warehouse_id
+                                             left outer join TBL_WAREHOUSE Wb on I.in_warehouse = Wb.warehouse_id";
 
             try
             {
