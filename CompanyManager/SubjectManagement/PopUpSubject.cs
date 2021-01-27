@@ -186,7 +186,7 @@ namespace CompanyManager
 
         private void button14_Click(object sender, EventArgs e)
         {
-            //유효성 검사
+            
             //유효성 검사
             if (string.IsNullOrEmpty(txtID.Text))
             {
