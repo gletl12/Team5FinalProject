@@ -20,7 +20,7 @@ namespace CompanyManager
         {
 
         }
-
+        #region 그리드뷰 컬럼2개
         private void dataGridView2_Paint(object sender, PaintEventArgs e)
         {
             DataGridView gv = (DataGridView)sender;
@@ -176,6 +176,7 @@ namespace CompanyManager
 
        
         }
+        #endregion
 
         private void FrmShiftMent_Load(object sender, EventArgs e)
         {
