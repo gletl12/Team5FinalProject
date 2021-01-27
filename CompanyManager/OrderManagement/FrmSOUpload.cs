@@ -27,6 +27,7 @@ namespace CompanyManager
         {
             CommonUtil.SetInitGridView(dgvSO);
             CommonUtil.SetDGVDesign_Num(dgvSO);
+            dgvSO.RowHeadersVisible = true;
             CommonUtil.AddGridTextColumn(dgvSO, "planDate", "planDate", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvSO, "WORK_ORDER_ID", "고객 주문번호", 150, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvSO, "업체", "업체 ID", 60);
@@ -72,11 +73,11 @@ namespace CompanyManager
                     order_id = row.Cells["고객 주문번호"].Value.ToString(),
                     company_id = Convert.ToInt32(row.Cells["업체 ID"].Value),
                     mkt = row.Cells["MKT"].Value.ToString(),
-                    item_id = Convert.ToInt32(row.Cells["품목"].Value),
+                    item_id = row.Cells["품목"].Value.ToString(),
                     currency = row.Cells["환종"].Value.ToString(),
-                    so_qty = Convert.ToInt32(row.Cells["수량"].Value),
+                    so_o_qty = Convert.ToInt32(row.Cells["수량"].Value),
                     due_date = Convert.ToDateTime(row.Cells["납기일"].Value),
-                    so_comment = row.Cells["비고"].Value.ToString(),
+                    so_comment = row.Cells["비고"].Value==null?string.Empty:row.Cells["비고"].Value.ToString(),
                 };
                 list.Add(sales);
             }

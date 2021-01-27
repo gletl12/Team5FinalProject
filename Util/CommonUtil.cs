@@ -44,6 +44,7 @@ namespace Util
             cbo.ValueMember = valueMember;
             cbo.DataSource = vo;
         }
+        
         #region 콤보
         public static void BindingComboBoxPart<T>(ComboBox cbo, List<T> vo, string displayMember)
         {

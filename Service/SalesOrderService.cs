@@ -21,5 +21,17 @@ namespace Service
             SalesOrderDAC dac = new SalesOrderDAC();
             return dac.GetAllCodes();
         }
+
+        public List<SalesOrderVO> GetAllSO()
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.GetAllSO();
+        }
+
+        public bool InsertSO(SalesOrderVO so)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.InsertSO(so);
+        }
     }
 }
