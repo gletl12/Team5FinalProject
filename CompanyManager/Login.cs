@@ -28,10 +28,11 @@ namespace CompanyManager
                 MessageBox.Show("아이디 또는 비밀번호를 확인해주세요.");
                 return;
             }
-            EmployeesDB epDB = new EmployeesDB();
-            Employees member = epDB.Login(idtxt.Text.Trim(), pwdtxt.Text.Trim());
-            epDB.Dispose();
-            if (member == null)
+            //EmployeesDB epDB = new EmployeesDB();
+            //Employees member = epDB.Login(idtxt.Text.Trim(), pwdtxt.Text.Trim());
+            //epDB.Dispose();
+            //if (member == null)
+            if(true)
             {
                 MessageBox.Show("아이디 또는 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.");
                 this.Cursor = Cursors.Default;
@@ -39,11 +40,11 @@ namespace CompanyManager
             }
             else
             {
-                if ()
-                {
-                    MessageBox.Show($"{member.Name}님 로그인");
+                //if ()
+                //{
+                //    MessageBox.Show($"{member.Name}님 로그인");
 
-                }
+                //}
             }
 
 

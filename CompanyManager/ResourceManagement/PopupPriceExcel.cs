@@ -42,7 +42,7 @@ namespace CompanyManager
             {
                 PriceVO price = new PriceVO
                 {
-                    item_id = Convert.ToInt32(dt.Rows[i]["품목번호"]),
+                    item_id = dt.Rows[i]["품목번호"].ToString(),
                     item_name = dt.Rows[i]["품목명"].ToString(),
                     now = Convert.ToDecimal(dt.Rows[i]["단가"]),
                     price_comment = dt.Rows[i]["비고"].ToString(),
