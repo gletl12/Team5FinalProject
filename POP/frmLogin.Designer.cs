@@ -36,8 +36,8 @@
             this.txtPassWord = new POP.PlaceholderTextBox();
             this.txtID = new POP.PlaceholderTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titleBar1 = new POP.TitleBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panBarCode.SuspendLayout();
             this.panDirectLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,17 +116,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::POP.Properties.Resources.img_logo;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(386, 107);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // titleBar1
             // 
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
@@ -136,6 +125,17 @@
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(386, 33);
             this.titleBar1.TabIndex = 21;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::POP.Properties.Resources.team5_Logo_수정;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(386, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -166,11 +166,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDirect;
         private System.Windows.Forms.Panel panDirectLogin;
-    
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private PlaceholderTextBox txtPassWord;
         private PlaceholderTextBox txtID;
         private TitleBar titleBar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
