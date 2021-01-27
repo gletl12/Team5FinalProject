@@ -199,18 +199,15 @@ namespace CompanyManager
             //수정할 값 가져ㅑ와서 수정
             if (pop.ShowDialog() == DialogResult.OK)
             {
-                Service.CodeService service = new Service.CodeService();
+                Service.SubjectService service = new Service.SubjectService();
 
-                if (!service.EditCommonCode(new CodeVO
-                {
-                    
-                }))
+                if (!service.EditSubject(pop.InsertInfo))
                 {
                     MessageBox.Show("코드수정 중 오류가 발생하였습니다.");
                 }
                 else
                 {
-                   
+                    LoadSubjectList();
                 }
             }
 

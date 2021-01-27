@@ -25,5 +25,11 @@ namespace Service
             DAC.SubjectDAC dac = new DAC.SubjectDAC();
             return dac.AddSubject(insertInfo);
         }
+
+        public bool EditSubject(SubjectVO insertInfo)
+        {
+            DAC.SubjectDAC dac = new DAC.SubjectDAC();
+            return dac.EditSubject(insertInfo);
+        }
     }
 }

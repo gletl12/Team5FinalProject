@@ -65,6 +65,7 @@ namespace CompanyManager
             //수정버튼 눌러서 폼 로드시 정보 화면에 출력
             if (InsertInfo != null)
             {
+                txtID.ReadOnly = true;
                 txtID.Text = InsertInfo.Item_id;
                 txtname.Text = InsertInfo.Item_name;
                 cbotype.SelectedIndex = FindSelectedIndex(cbotype,InsertInfo.Item_type);
@@ -79,10 +80,15 @@ namespace CompanyManager
                 cboorder.SelectedIndex = FindSelectedIndex(cboorder, InsertInfo.Order_company == null ? "" : InsertInfo.Order_company);
                 cboinware.SelectedIndex = FindSelectedIndex(cboinware, InsertInfo.In_warehouse == null ? "" : InsertInfo.In_warehouse);
                 cbooutware.SelectedIndex = FindSelectedIndex(cbooutware, InsertInfo.Out_warehouse == null ? "" : InsertInfo.Out_warehouse);
+                txtlorder.Text = InsertInfo.Item_lorder_qty == 0 ? "" : InsertInfo.Item_lorder_qty.ToString();
+                txtdeliveryqty.Text = InsertInfo.Item_delivery_qty == 0 ? "" : InsertInfo.Item_delivery_qty.ToString();
+                txtsaftyqty.Text = InsertInfo.Item_safety_qty == 0 ? "" : InsertInfo.Item_safety_qty.ToString();
+
                 cbograde.SelectedIndex = FindSelectedIndex(cbograde, InsertInfo.Item_grade == null ? "" : InsertInfo.Item_grade);
                 cbomanager.SelectedIndex = FindSelectedIndex(cbomanager, InsertInfo.Item_manager == null ? "" : InsertInfo.Item_manager);
                 cbouse.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
                 cboextinction.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
+                txtComment.Text = InsertInfo.Item_comment == null ? "" : InsertInfo.Item_comment;
             }
         }
 
