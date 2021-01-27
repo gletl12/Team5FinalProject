@@ -37,7 +37,7 @@ namespace DAC
                 //로그 오류
                 Log.WriteError("DAC_FactoryVO_GetMachine() 오류", err);
 
-                return new List<FactoryVO>();
+                return new List<EmployeeVO>();
             }
 
 

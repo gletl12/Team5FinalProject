@@ -37,6 +37,11 @@ namespace DAC
 
         }
 
+        public bool AddSubject(List<SubjectVO> insertInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 품목 데이터 리스트를 불러옵니다.
         /// </summary>
