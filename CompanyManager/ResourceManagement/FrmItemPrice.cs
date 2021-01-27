@@ -20,6 +20,7 @@ namespace CompanyManager
         List<PriceVO> priceList = new List<PriceVO>();
         ApiHelper service = new ApiHelper();
         List<CompanyCodeVO> companyLsit = new List<CompanyCodeVO>();
+        ApiMessage<List<CompanyCodeVO>> company;
         string url = "/api/price/";
         public FrmItemPrice()
         {
@@ -32,8 +33,8 @@ namespace CompanyManager
                            in priceList
                            where
                            (price.price_edate > dtpBaseDate.Value && price.price_sdate < dtpBaseDate.Value) &&
-                           (txtItem.Text.Trim().Length < 0 || price.item_name.Contains(txtItem.Text))
-                           && price.company_id.Equals(cboCompany.SelectedValue)
+                           (txtItem.Text.Trim().Length < 0 || price.item_name.Contains(txtItem.Text))&&
+                           (Convert.ToInt32(cboCompany.SelectedValue)==-1|| price.company_id.Equals(cboCompany.SelectedValue))
                            select price).ToList();
             dgvPrice.DataSource = null;
             dgvPrice.DataSource = sResult;
@@ -46,6 +47,8 @@ namespace CompanyManager
             CommonUtil.SetInitGridView(dgvPrice);
             CommonUtil.SetDGVDesign_Num(dgvPrice);
             CommonUtil.AddGridImageColumn(dgvPrice, Properties.Resources.Edit_16x16, "Edit", 40);
+            dgvPrice.ColumnHeadersVisible = true;
+            dgvPrice.RowHeadersVisible = true;
             CommonUtil.AddGridTextColumn(dgvPrice, "업체", "company_id", 80);
             CommonUtil.AddGridTextColumn(dgvPrice, "업체명", "company_name", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "품목", "item_id", 100);
@@ -63,8 +66,9 @@ namespace CompanyManager
             //자재단가 불러오기 , 그리드뷰에 바인딩
             GetPriceList();
             //콤보박스 바인딩
-            ApiMessage<List<CompanyCodeVO>> company = service.GetApiCaller<List<CompanyCodeVO>>($"{url}companyList");
+            company = service.GetApiCaller<List<CompanyCodeVO>>($"{url}companyList");
             companyLsit = company.Data;
+            companyLsit.Insert(0, new CompanyCodeVO() { company_id = -1,company_name = "전체"});
             CommonUtil.BindingComboBox(cboCompany, companyLsit, "company_id", "company_name");
         }
 
@@ -78,7 +82,7 @@ namespace CompanyManager
 
         private void btnRegPrice_Click(object sender, EventArgs e)
         {
-            PopupItemPrice popup = new PopupItemPrice(priceList, companyLsit);
+            PopupItemPrice popup = new PopupItemPrice(priceList, company.Data);
             if(popup.ShowDialog() == DialogResult.OK)
             {
                 GetPriceList();
@@ -90,7 +94,7 @@ namespace CompanyManager
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 0)
                 return;
-            PriceVO price = priceList.Find((elem) => elem.item_id == Convert.ToInt32(dgvPrice.Rows[e.RowIndex].Cells[3].Value) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
+            PriceVO price = priceList.Find((elem) => elem.item_id.Equals(dgvPrice.Rows[e.RowIndex].Cells[3].Value.ToString()) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
                 //priceList[e.RowIndex];
             PopupItemPrice popup = new PopupItemPrice(price.company_name,price.item_name,price.price_currency,price.now);
             popup.ItemID = price.item_id;

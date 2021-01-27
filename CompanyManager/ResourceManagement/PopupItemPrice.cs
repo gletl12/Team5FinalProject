@@ -20,7 +20,7 @@ namespace CompanyManager
         List<ItemCodeVO> items = new List<ItemCodeVO>();
         List<CompanyCodeVO> companys = new List<CompanyCodeVO>();
         List<PriceVO> price = new List<PriceVO>();
-        public int ItemID = -1;
+        public string ItemID = string.Empty;
 
         public PopupItemPrice(List<PriceVO> price, List<CompanyCodeVO> company)
         {
@@ -41,7 +41,7 @@ namespace CompanyManager
 
         private void PopupItemPrice_Load(object sender, EventArgs e)
         {
-            if (ItemID != -1)
+            if (ItemID.Length >0)
                 return;
             //콤보박스 바인딩
             CommonUtil.BindingComboBox(cboCompany, companys, "company_id", "company_name");
@@ -59,7 +59,8 @@ namespace CompanyManager
 
         private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ItemID != -1)
+            cboItem.DataSource = null;
+            if (ItemID.Length>0)
                 return;
             if (string.IsNullOrEmpty(cboCompany.Text))
                 return;
@@ -74,7 +75,7 @@ namespace CompanyManager
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ItemID != -1)
+            if (ItemID.Length >0)
                 return;
             decimal before = 0;
             try
@@ -103,7 +104,7 @@ namespace CompanyManager
             PriceVO newPrice = new PriceVO
             {
                 now = Convert.ToDecimal(txtNowPrice.Text),
-                item_id = ItemID<0?Convert.ToInt32(cboItem.SelectedValue):ItemID,
+                item_id = ItemID.Length < 1 ?cboItem.SelectedValue.ToString():ItemID,
                 price_sdate = dtpStartDate.Value,
                 price_comment = txtComment.Text,
                 price_type = "PT001",

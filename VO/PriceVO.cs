@@ -10,7 +10,7 @@ namespace VO
     {
         public int company_id { get; set; }
         public string company_name { get; set; }
-        public int item_id { get; set; }
+        public string item_id { get; set; }
         public string item_name { get; set; }
         public string item_unit { get; set; }
         public int item_unit_qty { get; set; }
@@ -34,14 +34,14 @@ namespace VO
     }
     public class ItemCodeVO
     {
-        public int item_id { get; set; }
+        public string item_id { get; set; }
         public string item_name { get; set; }
         public int supply_company { get; set; }
     }
 
     public class PriceExcelVO
     {
-        public int item_id { get; set; }
+        public string item_id { get; set; }
         public string item_name { get; set; }
         public decimal Price { get; set; }
     }

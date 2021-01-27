@@ -22,6 +22,10 @@ namespace CompanyManager
 
         string openmode="";
         public ShiftVO list { get; set; }
+        /// <summary>
+        /// 오픈모드 설정
+        /// </summary>
+        /// <param name="mode"></param>
         public PopupShift(OpenMode mode)
         {
             InitializeComponent();
@@ -38,7 +42,9 @@ namespace CompanyManager
                 openmode = "Update";
             }
         }
-
+        /// <summary>
+        /// 데이터 로드
+        /// </summary>
         private void DataLoad()
         {
        // textBox1.Text=  list.shift_id.ToString();
@@ -67,7 +73,11 @@ namespace CompanyManager
        //textBox1.Text=  list.Overtime_Directly_Accident_Time;
        //textBox17.Text=  list.Overtime_Indirect_Accident_Time;
         }
-
+        /// <summary>
+        /// 폼로드 시 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PopupShift_Load(object sender, EventArgs e)
         {
 
