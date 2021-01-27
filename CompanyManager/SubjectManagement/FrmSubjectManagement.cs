@@ -60,15 +60,19 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "유무상구분", "Free_of_charge", 120);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "납품업체", "Supply_company", 150);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "발주업체", "Order_company", 150);
-
-            Service.SubjectService service = new Service.SubjectService();
-            subjectAllList = service.GetSubjectList();
-
-            dataGridView1.DataSource = subjectAllList;
+            LoadSubjectList();
 
             //dataGridView1.Rows.Add(null, null, "반제품", "BACK_a02", "등받이", "5 x 12 inch", "EA", "0", null, null, "미사용", "미사용", "미사용", "미사용", null, "(주)에이더블유", "(주)에이더블유");
 
 
+        }
+
+        private void LoadSubjectList()
+        {
+            Service.SubjectService service = new Service.SubjectService();
+            subjectAllList = service.GetSubjectList();
+
+            dataGridView1.DataSource = subjectAllList;
         }
 
         //콤보박스 바인딩
@@ -134,7 +138,11 @@ namespace CompanyManager
                 temp.Add(popup.InsertInfo);
                 if (!service.AddSubject(temp))
                 {
-
+                    MessageBox.Show("품목등록 중 오류가 발생하였습니다.");
+                }
+                else
+                {
+                    LoadSubjectList();
                 }
                 
             }
@@ -167,6 +175,66 @@ namespace CompanyManager
 
                 splitContainer1.SplitterDistance = splitContainer1.SplitterDistance - 38;
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                EditCode(e);
+            }
+        }
+        private void EditCode(DataGridViewCellEventArgs e)
+        {
+            //수정할 코드 정보 팝업창에 로드
+
+
+            //해당 행의 정보를찾아서 팝업창에 등록
+            var temp = subjectAllList.Find(p => p.Item_id == dataGridView1[3, e.RowIndex].Value.ToString());
+            PopUpSubject pop = new PopUpSubject();
+            pop.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
+            pop.CodeAllList = codeAllList;
+            pop.InsertInfo = temp;
+
+            //수정할 값 가져ㅑ와서 수정
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                Service.SubjectService service = new Service.SubjectService();
+
+                if (!service.EditSubject(pop.InsertInfo))
+                {
+                    MessageBox.Show("코드수정 중 오류가 발생하였습니다.");
+                }
+                else
+                {
+                    LoadSubjectList();
+                }
+            }
+
+        }
+
+       
+        //엑셀 등록
+        private void btnExcelInsert_Click(object sender, EventArgs e)
+        {
+            (DataTable, string) temp = Util.CommonExcel.ReadExcelData();
+            //if (temp)
+            //{
+
+            //}
+            //Service.SubjectService service = new Service.SubjectService();
+            //List<SubjectVO> temp = new List<SubjectVO>();
+            //temp.Add(popup.InsertInfo);
+            //if (!service.AddSubject(temp))
+            //{
+            //    MessageBox.Show("품목등록 중 오류가 발생하였습니다.");
+            //}
+            //else
+            //{
+            //    LoadSubjectList();
+            //}
+
+
         }
     }
 }

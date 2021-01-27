@@ -45,7 +45,11 @@ namespace CompanyManager
                 ComboBoxBinding();
             }
         }
-
+        /// <summary>
+        /// 폼로드 시 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmShift_Load(object sender, EventArgs e)
         {
 
@@ -354,6 +358,11 @@ namespace CompanyManager
             }
         }
 
+        /// <summary>
+        /// 엑셀저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbExcel_Click(object sender, EventArgs e)
         {
             

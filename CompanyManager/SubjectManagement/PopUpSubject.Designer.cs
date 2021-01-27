@@ -158,7 +158,7 @@ namespace CompanyManager
             // 
             this.cbounit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbounit.FormattingEnabled = true;
-            this.cbounit.Location = new System.Drawing.Point(364, 62);
+            this.cbounit.Location = new System.Drawing.Point(110, 62);
             this.cbounit.Name = "cbounit";
             this.cbounit.Size = new System.Drawing.Size(126, 22);
             this.cbounit.TabIndex = 110;
@@ -167,7 +167,7 @@ namespace CompanyManager
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(275, 66);
+            this.label2.Location = new System.Drawing.Point(21, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 14);
             this.label2.TabIndex = 109;
@@ -471,7 +471,7 @@ namespace CompanyManager
             // 
             // txtunitqty
             // 
-            this.txtunitqty.Location = new System.Drawing.Point(110, 63);
+            this.txtunitqty.Location = new System.Drawing.Point(364, 63);
             this.txtunitqty.Name = "txtunitqty";
             this.txtunitqty.Size = new System.Drawing.Size(126, 21);
             this.txtunitqty.TabIndex = 51;
@@ -481,7 +481,7 @@ namespace CompanyManager
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(21, 66);
+            this.label16.Location = new System.Drawing.Point(275, 66);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 14);
             this.label16.TabIndex = 40;

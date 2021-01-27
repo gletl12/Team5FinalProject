@@ -35,20 +35,22 @@ namespace CompanyManager
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSmallMenu = new System.Windows.Forms.Button();
+            this.btnLink = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnLargeMenu = new System.Windows.Forms.Button();
+            this.lbForm = new System.Windows.Forms.ListBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSmallMenu = new System.Windows.Forms.Button();
-            this.btnLink = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnLargeMenu = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbxgrade = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -82,13 +84,15 @@ namespace CompanyManager
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.lbxgrade);
             this.tabPage1.Controls.Add(this.btnSmallMenu);
             this.tabPage1.Controls.Add(this.btnLink);
             this.tabPage1.Controls.Add(this.btnDown);
             this.tabPage1.Controls.Add(this.btnUp);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnLargeMenu);
-            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.lbForm);
             this.tabPage1.Controls.Add(this.treeView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
@@ -97,13 +101,45 @@ namespace CompanyManager
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "메뉴관리";
             // 
+            // btnSmallMenu
+            // 
+            this.btnSmallMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnSmallMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnSmallMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSmallMenu.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnSmallMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSmallMenu.Location = new System.Drawing.Point(123, 31);
+            this.btnSmallMenu.Name = "btnSmallMenu";
+            this.btnSmallMenu.Size = new System.Drawing.Size(92, 23);
+            this.btnSmallMenu.TabIndex = 33;
+            this.btnSmallMenu.Text = "소메뉴 추가";
+            this.btnSmallMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSmallMenu.UseVisualStyleBackColor = false;
+            this.btnSmallMenu.Click += new System.EventHandler(this.btnSmallMenu_Click);
+            // 
+            // btnLink
+            // 
+            this.btnLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnLink.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLink.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
+            this.btnLink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLink.Location = new System.Drawing.Point(556, 33);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(56, 23);
+            this.btnLink.TabIndex = 32;
+            this.btnLink.Text = "적용";
+            this.btnLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLink.UseVisualStyleBackColor = false;
+            this.btnLink.Click += new System.EventHandler(this.btnLink_Click);
+            // 
             // btnDown
             // 
             this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
             this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDown.Location = new System.Drawing.Point(382, 93);
+            this.btnDown.Location = new System.Drawing.Point(321, 91);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(25, 23);
             this.btnDown.TabIndex = 31;
@@ -117,7 +153,7 @@ namespace CompanyManager
             this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUp.Location = new System.Drawing.Point(382, 64);
+            this.btnUp.Location = new System.Drawing.Point(321, 62);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(25, 23);
             this.btnUp.TabIndex = 29;
@@ -125,16 +161,48 @@ namespace CompanyManager
             this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
-            // listBox1
+            // btnDelete
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(259, 31);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(56, 23);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnLargeMenu
+            // 
+            this.btnLargeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnLargeMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnLargeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLargeMenu.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnLargeMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLargeMenu.Location = new System.Drawing.Point(25, 31);
+            this.btnLargeMenu.Name = "btnLargeMenu";
+            this.btnLargeMenu.Size = new System.Drawing.Size(92, 23);
+            this.btnLargeMenu.TabIndex = 28;
+            this.btnLargeMenu.Text = "대메뉴 추가";
+            this.btnLargeMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLargeMenu.UseVisualStyleBackColor = false;
+            this.btnLargeMenu.Click += new System.EventHandler(this.btnLargeMenu_Click);
+            // 
+            // lbForm
+            // 
+            this.lbForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(478, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(311, 452);
-            this.listBox1.TabIndex = 26;
+            this.lbForm.FormattingEnabled = true;
+            this.lbForm.ItemHeight = 14;
+            this.lbForm.Location = new System.Drawing.Point(371, 60);
+            this.lbForm.Name = "lbForm";
+            this.lbForm.Size = new System.Drawing.Size(241, 452);
+            this.lbForm.TabIndex = 26;
             // 
             // treeView1
             // 
@@ -142,7 +210,7 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(86, 62);
+            this.treeView1.Location = new System.Drawing.Point(25, 60);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(290, 450);
@@ -163,6 +231,38 @@ namespace CompanyManager
             this.tabPage2.Size = new System.Drawing.Size(874, 548);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "공통코드관리";
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.Transparent;
+            this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDel.Image = global::CompanyManager.Properties.Resources.del;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(78, 34);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(27, 28);
+            this.btnDel.TabIndex = 32;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.Image = global::CompanyManager.Properties.Resources.Add_16x16;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(48, 34);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(27, 28);
+            this.btnAdd.TabIndex = 31;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -205,101 +305,31 @@ namespace CompanyManager
             this.dataGridView1.TabIndex = 30;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnSmallMenu
+            // button1
             // 
-            this.btnSmallMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnSmallMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnSmallMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSmallMenu.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.btnSmallMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSmallMenu.Location = new System.Drawing.Point(184, 33);
-            this.btnSmallMenu.Name = "btnSmallMenu";
-            this.btnSmallMenu.Size = new System.Drawing.Size(92, 23);
-            this.btnSmallMenu.TabIndex = 33;
-            this.btnSmallMenu.Text = "소메뉴 추가";
-            this.btnSmallMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSmallMenu.UseVisualStyleBackColor = false;
-            this.btnSmallMenu.Click += new System.EventHandler(this.btnSmallMenu_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(799, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "적용";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnLink
+            // lbxgrade
             // 
-            this.btnLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnLink.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLink.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
-            this.btnLink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLink.Location = new System.Drawing.Point(733, 35);
-            this.btnLink.Name = "btnLink";
-            this.btnLink.Size = new System.Drawing.Size(56, 23);
-            this.btnLink.TabIndex = 32;
-            this.btnLink.Text = "적용";
-            this.btnLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLink.UseVisualStyleBackColor = false;
-            this.btnLink.Click += new System.EventHandler(this.btnLink_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(320, 33);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(56, 23);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "삭제";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnLargeMenu
-            // 
-            this.btnLargeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnLargeMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnLargeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLargeMenu.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.btnLargeMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLargeMenu.Location = new System.Drawing.Point(86, 33);
-            this.btnLargeMenu.Name = "btnLargeMenu";
-            this.btnLargeMenu.Size = new System.Drawing.Size(92, 23);
-            this.btnLargeMenu.TabIndex = 28;
-            this.btnLargeMenu.Text = "대메뉴 추가";
-            this.btnLargeMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLargeMenu.UseVisualStyleBackColor = false;
-            this.btnLargeMenu.Click += new System.EventHandler(this.btnLargeMenu_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackColor = System.Drawing.Color.Transparent;
-            this.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnDel.FlatAppearance.BorderSize = 0;
-            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDel.Image = global::CompanyManager.Properties.Resources.del;
-            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(78, 34);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(27, 28);
-            this.btnDel.TabIndex = 32;
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnAdd.Image = global::CompanyManager.Properties.Resources.Add_16x16;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(48, 34);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(27, 28);
-            this.btnAdd.TabIndex = 31;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.lbxgrade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxgrade.FormattingEnabled = true;
+            this.lbxgrade.ItemHeight = 14;
+            this.lbxgrade.Location = new System.Drawing.Point(644, 62);
+            this.lbxgrade.Name = "lbxgrade";
+            this.lbxgrade.Size = new System.Drawing.Size(211, 452);
+            this.lbxgrade.TabIndex = 34;
             // 
             // PopupCommon
             // 
@@ -329,7 +359,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLargeMenu;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbForm;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSmallMenu;
@@ -338,5 +368,7 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lbxgrade;
     }
 }
