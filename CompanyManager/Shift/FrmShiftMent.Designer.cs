@@ -194,6 +194,7 @@ namespace CompanyManager
             this.button14.TabIndex = 0;
             this.button14.Text = "조회";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // dataGridView2
             // 
