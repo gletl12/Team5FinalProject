@@ -95,7 +95,6 @@ namespace CompanyManager
             this.splitContainer1.Panel2.Controls.Add(this.dgvSO);
             this.splitContainer1.Panel2.Controls.Add(this.btnDemandPlan);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
             this.splitContainer1.SplitterDistance = 130;
             this.splitContainer1.TabIndex = 24;
@@ -144,7 +143,7 @@ namespace CompanyManager
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(199, 24);
             this.label20.Name = "label20";
@@ -154,6 +153,7 @@ namespace CompanyManager
             // 
             // dtpRegDate
             // 
+            this.dtpRegDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpRegDate.CustomFormat = " ";
             this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpRegDate.Location = new System.Drawing.Point(106, 76);
@@ -164,6 +164,7 @@ namespace CompanyManager
             // 
             // dtpTo
             // 
+            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(220, 19);
             this.dtpTo.Name = "dtpTo";
@@ -172,6 +173,7 @@ namespace CompanyManager
             // 
             // dtpFrom
             // 
+            this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(106, 19);
             this.dtpFrom.Name = "dtpFrom";
@@ -180,6 +182,7 @@ namespace CompanyManager
             // 
             // txtOrderID
             // 
+            this.txtOrderID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtOrderID.Location = new System.Drawing.Point(787, 18);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.Size = new System.Drawing.Size(200, 21);
@@ -187,6 +190,7 @@ namespace CompanyManager
             // 
             // txtItem
             // 
+            this.txtItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtItem.Location = new System.Drawing.Point(424, 46);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(200, 21);
@@ -194,7 +198,8 @@ namespace CompanyManager
             // 
             // cboCompany
             // 
-            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(424, 18);
             this.cboCompany.Name = "cboCompany";
@@ -203,6 +208,8 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(106, 45);
             this.cboState.Name = "cboState";
@@ -230,7 +237,7 @@ namespace CompanyManager
             // 
             // cboRQty
             // 
-            this.cboRQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboRQty.FormattingEnabled = true;
             this.cboRQty.Location = new System.Drawing.Point(424, 76);
             this.cboRQty.Name = "cboRQty";
@@ -239,7 +246,7 @@ namespace CompanyManager
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(357, 79);
             this.label9.Name = "label9";
@@ -260,7 +267,6 @@ namespace CompanyManager
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(17, 79);
             this.label13.Name = "label13";
@@ -270,7 +276,6 @@ namespace CompanyManager
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.label15.Location = new System.Drawing.Point(17, 76);
@@ -281,7 +286,8 @@ namespace CompanyManager
             // 
             // cboDest
             // 
-            this.cboDest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDest.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboDest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDest.FormattingEnabled = true;
             this.cboDest.Location = new System.Drawing.Point(787, 45);
             this.cboDest.Name = "cboDest";
@@ -290,7 +296,7 @@ namespace CompanyManager
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(698, 48);
             this.label7.Name = "label7";
@@ -332,7 +338,7 @@ namespace CompanyManager
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(698, 22);
             this.label3.Name = "label3";
@@ -504,6 +510,7 @@ namespace CompanyManager
             this.btnDemandPlan.Text = "    수요계획생성";
             this.btnDemandPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDemandPlan.UseVisualStyleBackColor = false;
+            this.btnDemandPlan.Click += new System.EventHandler(this.btnDemandPlan_Click);
             // 
             // btnExcel
             // 

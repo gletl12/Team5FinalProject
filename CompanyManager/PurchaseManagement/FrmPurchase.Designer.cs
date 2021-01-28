@@ -31,33 +31,30 @@ namespace CompanyManager
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboPlanID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dtTO = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.txtEmp = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cboWarehouse = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboItemCategory = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtItemUnit = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -108,33 +105,30 @@ namespace CompanyManager
             this.pnlSearch.BackColor = System.Drawing.Color.White;
             this.pnlSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Controls.Add(this.textBox1);
+            this.pnlSearch.Controls.Add(this.cboPlanID);
             this.pnlSearch.Controls.Add(this.label1);
-            this.pnlSearch.Controls.Add(this.dateTimePicker2);
-            this.pnlSearch.Controls.Add(this.dateTimePicker1);
-            this.pnlSearch.Controls.Add(this.textBox4);
-            this.pnlSearch.Controls.Add(this.comboBox4);
-            this.pnlSearch.Controls.Add(this.label9);
-            this.pnlSearch.Controls.Add(this.label2);
+            this.pnlSearch.Controls.Add(this.dtTO);
+            this.pnlSearch.Controls.Add(this.dtpFrom);
+            this.pnlSearch.Controls.Add(this.txtEmp);
             this.pnlSearch.Controls.Add(this.comboBox5);
             this.pnlSearch.Controls.Add(this.label3);
             this.pnlSearch.Controls.Add(this.label4);
-            this.pnlSearch.Controls.Add(this.comboBox6);
+            this.pnlSearch.Controls.Add(this.cboWarehouse);
             this.pnlSearch.Controls.Add(this.label5);
             this.pnlSearch.Controls.Add(this.label19);
             this.pnlSearch.Controls.Add(this.label7);
             this.pnlSearch.Controls.Add(this.label8);
-            this.pnlSearch.Controls.Add(this.comboBox2);
+            this.pnlSearch.Controls.Add(this.cboItemCategory);
             this.pnlSearch.Controls.Add(this.label6);
             this.pnlSearch.Controls.Add(this.label20);
             this.pnlSearch.Controls.Add(this.label21);
-            this.pnlSearch.Controls.Add(this.textBox2);
+            this.pnlSearch.Controls.Add(this.txtItemUnit);
             this.pnlSearch.Controls.Add(this.label22);
             this.pnlSearch.Controls.Add(this.label23);
             this.pnlSearch.Controls.Add(this.label24);
             this.pnlSearch.Controls.Add(this.btnDown);
             this.pnlSearch.Controls.Add(this.btnSearch);
-            this.pnlSearch.Controls.Add(this.comboBox7);
+            this.pnlSearch.Controls.Add(this.cboCompany);
             this.pnlSearch.Controls.Add(this.label25);
             this.pnlSearch.Controls.Add(this.label26);
             this.pnlSearch.Controls.Add(this.label27);
@@ -145,13 +139,13 @@ namespace CompanyManager
             this.pnlSearch.Size = new System.Drawing.Size(1146, 114);
             this.pnlSearch.TabIndex = 22;
             // 
-            // textBox1
+            // cboPlanID
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(85, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 21);
-            this.textBox1.TabIndex = 47;
+            this.cboPlanID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboPlanID.Location = new System.Drawing.Point(85, 12);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(210, 21);
+            this.cboPlanID.TabIndex = 47;
             // 
             // label1
             // 
@@ -163,59 +157,29 @@ namespace CompanyManager
             this.label1.TabIndex = 46;
             this.label1.Text = "~";
             // 
-            // dateTimePicker2
+            // dtTO
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(542, 12);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker2.TabIndex = 45;
+            this.dtTO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtTO.Location = new System.Drawing.Point(542, 12);
+            this.dtTO.Name = "dtTO";
+            this.dtTO.Size = new System.Drawing.Size(95, 21);
+            this.dtTO.TabIndex = 45;
             // 
-            // dateTimePicker1
+            // dtpFrom
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(427, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(427, 12);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(95, 21);
+            this.dtpFrom.TabIndex = 44;
             // 
-            // textBox4
+            // txtEmp
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(773, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 21);
-            this.textBox4.TabIndex = 30;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(773, 78);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(210, 22);
-            this.comboBox4.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(701, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 14);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "* 발주방식";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label2.Location = new System.Drawing.Point(701, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 14);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "label2";
+            this.txtEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmp.Location = new System.Drawing.Point(773, 45);
+            this.txtEmp.Name = "txtEmp";
+            this.txtEmp.Size = new System.Drawing.Size(210, 21);
+            this.txtEmp.TabIndex = 30;
             // 
             // comboBox5
             // 
@@ -247,13 +211,13 @@ namespace CompanyManager
             this.label4.TabIndex = 24;
             this.label4.Text = "label2";
             // 
-            // comboBox6
+            // cboWarehouse
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(86, 77);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(210, 22);
-            this.comboBox6.TabIndex = 23;
+            this.cboWarehouse.FormattingEnabled = true;
+            this.cboWarehouse.Location = new System.Drawing.Point(86, 77);
+            this.cboWarehouse.Name = "cboWarehouse";
+            this.cboWarehouse.Size = new System.Drawing.Size(210, 22);
+            this.cboWarehouse.TabIndex = 23;
             // 
             // label5
             // 
@@ -295,14 +259,14 @@ namespace CompanyManager
             this.label8.TabIndex = 18;
             this.label8.Text = "label2";
             // 
-            // comboBox2
+            // cboItemCategory
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(427, 44);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 22);
-            this.comboBox2.TabIndex = 17;
+            this.cboItemCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboItemCategory.FormattingEnabled = true;
+            this.cboItemCategory.Location = new System.Drawing.Point(427, 44);
+            this.cboItemCategory.Name = "cboItemCategory";
+            this.cboItemCategory.Size = new System.Drawing.Size(210, 22);
+            this.cboItemCategory.TabIndex = 17;
             // 
             // label6
             // 
@@ -335,13 +299,13 @@ namespace CompanyManager
             this.label21.TabIndex = 14;
             this.label21.Text = "* 자재/규격";
             // 
-            // textBox2
+            // txtItemUnit
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(773, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 21);
-            this.textBox2.TabIndex = 13;
+            this.txtItemUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtItemUnit.Location = new System.Drawing.Point(773, 13);
+            this.txtItemUnit.Name = "txtItemUnit";
+            this.txtItemUnit.Size = new System.Drawing.Size(210, 21);
+            this.txtItemUnit.TabIndex = 13;
             // 
             // label22
             // 
@@ -407,13 +371,13 @@ namespace CompanyManager
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // comboBox7
+            // cboCompany
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(86, 44);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(210, 22);
-            this.comboBox7.TabIndex = 4;
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(86, 44);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(210, 22);
+            this.cboCompany.TabIndex = 4;
             // 
             // label25
             // 
@@ -560,22 +524,19 @@ namespace CompanyManager
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboItemCategory;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtItemUnit;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -585,17 +546,17 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtTO;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cboWarehouse;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cboPlanID;
         private System.Windows.Forms.Button button1;
     }
 }

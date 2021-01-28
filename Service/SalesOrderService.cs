@@ -22,16 +22,28 @@ namespace Service
             return dac.GetAllCodes();
         }
 
-        public List<SalesOrderVO> GetAllSO()
+        public List<SalesOrderVO> GetAllSO(DateTime from, DateTime to)
         {
             SalesOrderDAC dac = new SalesOrderDAC();
-            return dac.GetAllSO();
+            return dac.GetAllSO(from,to);
         }
 
         public bool InsertSO(SalesOrderVO so)
         {
             SalesOrderDAC dac = new SalesOrderDAC();
             return dac.InsertSO(so);
+        }
+
+        public bool UpdateSO(SalesOrderVO so)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.UpdateSO(so);
+        }
+
+        public bool RegDemandPlan(List<SalesOrderVO> demandList)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.RegDemandPlan(demandList);
         }
     }
 }
