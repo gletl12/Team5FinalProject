@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -180,6 +181,7 @@ namespace CompanyManager
 
         private void FrmShiftMent_Load(object sender, EventArgs e)
         {
+            #region 그리드뷰 컬럼2개
             for (int i = 0; i < 5; i++)
             {
 
@@ -199,7 +201,14 @@ namespace CompanyManager
 
             dataGridView2.Rows.Add("1", "1-1", "1-2", "1-3", "1-4");
             dataGridView2.Rows.Add("2", "2-2", "2-3", "2-5", "2");
+            #endregion
 
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            ShiftService service = new ShiftService();
 
 
         }
