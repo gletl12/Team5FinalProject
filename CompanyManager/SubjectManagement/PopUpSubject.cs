@@ -21,7 +21,42 @@ namespace CompanyManager
         {
             InitializeComponent();
         }
-       
+
+        //복사버튼 눌렀을때 호출
+        public PopUpSubject(bool flag)
+        {
+            InitializeComponent();
+
+            cbotype.Enabled = flag;
+            cbounit.Enabled = flag;
+            cboinware.Enabled = flag;
+            cbooutware.Enabled = flag;
+            cboorder.Enabled = flag;
+            cbosupply.Enabled = flag;
+            cboimport.Enabled = flag;
+            cboprocess.Enabled = flag;
+            cboshipment.Enabled = flag;
+            cbofreecharge.Enabled = flag;
+            cbouse.Enabled = flag;
+            cboextinction.Enabled = flag;
+            cbomanager.Enabled = flag;
+            cbograde.Enabled = flag;
+            txtComment.ReadOnly = true;
+            txtdeliveryqty.ReadOnly = true;
+            txtID.ReadOnly = true;
+            txtleadtime.ReadOnly = true;
+            txtlorder.ReadOnly = true;
+            txtname.ReadOnly = true;
+            txtsaftyqty.ReadOnly = true;
+            txtunitqty.ReadOnly = true;
+            txtupdate.ReadOnly = true;
+            txtupemployee.ReadOnly = true;
+
+            btnEdit.Visible = false;
+            btnCancel.Location = new Point(365, 526);
+            btnCancel.Text = "닫기";
+
+        }
         private void PopUpSubject_Load(object sender, EventArgs e)
         {
             popupTitleBar1.HeaderText = "품목";
@@ -58,9 +93,21 @@ namespace CompanyManager
             cbomanager.ValueMember = "code";
             cbograde.ValueMember = "code";
 
-            txtupemployee.Text = LoginInfo.emp_name;
-            txtupemployee.Tag = LoginInfo.emp_id;
-            txtupdate.Text = DateTime.Now.ToString();
+            
+            if (btnEdit.Visible)
+            {
+                //수정버튼,등록버튼을 눌러 들어오면
+                txtupemployee.Text = LoginInfo.emp_name;
+                txtupemployee.Tag = LoginInfo.emp_id;
+                txtupdate.Text = DateTime.Now.ToString();
+            }
+            else
+            {
+                //복사버튼을 눌러 들어오면
+                txtupemployee.Text = InsertInfo.Up_emp;
+                txtupdate.Text = InsertInfo.Up_date.ToString();
+            }
+            
 
             //수정버튼 눌러서 폼 로드시 정보 화면에 출력
             if (InsertInfo != null)
@@ -184,7 +231,7 @@ namespace CompanyManager
             cboextinction.SelectedIndex = 1;
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             
             //유효성 검사
@@ -342,7 +389,7 @@ namespace CompanyManager
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

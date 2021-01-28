@@ -269,6 +269,7 @@ namespace Util
                 }
             }
         }
+
         //행번호 추가
         private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -277,10 +278,6 @@ namespace Util
             StringFormat drawFormat = new StringFormat();
             //drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
             drawFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
-
-
-
-
 
             using (Brush brush = new SolidBrush(Color.Black))
             {
