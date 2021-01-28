@@ -169,7 +169,7 @@ namespace Util
                     return (dtSchema, fileName);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
                 return (new DataTable(), string.Empty);
             }
