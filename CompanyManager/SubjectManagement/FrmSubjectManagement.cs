@@ -43,7 +43,7 @@ namespace CompanyManager
             // 그리드 뷰 설정
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
-            Util.CommonUtil.AddGridCheckColumn(dataGridView1, "", 20);
+            Util.CommonUtil.SetDGVDesign_CheckBox(dataGridView1);
             Util.CommonUtil.AddGridImageColumn(dataGridView1, img, "Edit", 40);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "품목유형", "Item_type", 100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "품목", "Item_id", 150);
@@ -347,7 +347,45 @@ namespace CompanyManager
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            ////해당 행의 정보를찾아서 팝업창에 등록
+            int count = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value!= null && ((bool)row.Cells[0].Value))
+                {
+                    count++;
+                }
+            }
+
+            if (count > 1)
+            {
+                MessageBox.Show("한개의 항목만 선택해주세요");
+                return;
+            }
+            else if (count == 0)
+            {
+                MessageBox.Show("항목을 선택해주세요");
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null && ((bool)row.Cells[0].Value))
+                {
+                    var temp = subjectAllList.Find(p => p.Item_id == row.Cells[3].Value.ToString());
+
+                    PopUpSubject pop = new PopUpSubject(false);
+                    pop.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
+                    pop.CodeAllList = codeAllList;
+                    pop.InsertInfo = temp;
+
+                    pop.Show();
+
+                }
+            }
+
+
+
+            //해당 행의 정보를찾아서 팝업창에 등록
             //var temp = subjectAllList.Find(p => p.Item_id == dataGridView1[3, e.RowIndex].Value.ToString());
             //PopUpSubject pop = new PopUpSubject(true);
             //pop.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
@@ -356,7 +394,7 @@ namespace CompanyManager
 
             ////수정할 값 가져ㅑ와서 수정
             //pop.ShowDialog();
-            
+
         }
     }
 }
