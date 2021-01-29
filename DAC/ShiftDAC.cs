@@ -234,7 +234,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
             }
         }
 
-        public DataTable GetShiftInfo(DateTime sday, DateTime eday)
+        public DataTable GetShiftInfo(string sday, string eday)
         {
            
                 string sql = "SP_Shift";
