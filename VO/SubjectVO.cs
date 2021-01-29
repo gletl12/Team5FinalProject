@@ -28,7 +28,7 @@ namespace VO
         public string Item_use { get; set; }  //사용유무
         public string Item_comment { get; set; } //비고
         public DateTime Up_date { get; set; } //최종 수정일
-        public string Up_emp { get; set; } //최종 수정자
+        public int Up_emp { get; set; } //최종 수정자
         public string In_warehouse { get; set; } //입고창고
         public string Out_warehouse { get; set; } //출고창고
         public string Extinction { get; set; } //단종유무

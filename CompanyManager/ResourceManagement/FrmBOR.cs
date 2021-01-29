@@ -5,11 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+using VO;
 
 namespace CompanyManager
 {
     public partial class FrmBOR : CompanyManager.MDIBaseForm
     {
+
+        List<CodeVO> codeAllList;
         public FrmBOR()
         {
             InitializeComponent();
@@ -37,16 +41,40 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "수정일", "", 300);
             
 
-
+            
 
             dataGridView1.Rows.Add(null, null, "CHAIR_01", "나무 1인용 의자", "B-ASSY", "조립공정", "F_ASSY_01", "최종조립1반", "180", "1", null, null,"사용",null, "관리자","2018-10-28 09:08:16");
 
+            //품목리스트, 공정리스트, 설비리스트, 공통코드
+
+            Service.BORService service = new Service.BORService();
+            codeAllList = service.GetBORCode();
+
+            cboRoute.DisplayMember = "name";
+            cboRoute.ValueMember = "code";
+            List < CodeVO > temp = (from code in codeAllList
+                                   where code.category == "machine"
+                                   select code).ToList();
+            temp.Insert(0, new CodeVO { code = "", name = "" });
+            cboRoute.DataSource = temp;
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             PopUpBOR popup = new PopUpBOR();
-            popup.ShowDialog();
+            popup.CodeAllList = codeAllList;
+            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                Service.BORService service = new Service.BORService();
+                if (service.AddBORList())
+                {
+
+                }
+
+
+            }
+            
         }
     }
 }
