@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -233,7 +234,22 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
             }
         }
 
-        
+        public DataTable GetShiftInfo(DateTime sday, DateTime eday)
+        {
+           
+                string sql = "SP_Shift";
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Start_DT", sday);
+                da.SelectCommand.Parameters.AddWithValue("@End_DT",eday);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+
+            
+
+        }
 
     }
 }

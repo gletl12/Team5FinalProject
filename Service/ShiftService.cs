@@ -1,6 +1,7 @@
 ﻿using DAC;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,12 @@ namespace Service
             ShiftDAC dac = new ShiftDAC();
             return dac.UpdateShift(item);
         }
+        public DataTable GetShiftInfo(DateTime sday, DateTime eday)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.GetShiftInfo(sday,eday);
 
-    }
+        }
+
+        }
 }
