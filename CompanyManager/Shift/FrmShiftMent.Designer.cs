@@ -34,8 +34,8 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboMachine = new System.Windows.Forms.ComboBox();
+            this.cboShift = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,8 +62,8 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboMachine);
+            this.panel2.Controls.Add(this.cboShift);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label14);
@@ -105,23 +105,23 @@ namespace CompanyManager
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2020, 1, 14, 0, 0, 0, 0);
             // 
-            // comboBox2
+            // cboMachine
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(793, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(206, 22);
-            this.comboBox2.TabIndex = 4;
+            this.cboMachine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboMachine.FormattingEnabled = true;
+            this.cboMachine.Location = new System.Drawing.Point(793, 17);
+            this.cboMachine.Name = "cboMachine";
+            this.cboMachine.Size = new System.Drawing.Size(206, 22);
+            this.cboMachine.TabIndex = 4;
             // 
-            // comboBox1
+            // cboShift
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(464, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 22);
-            this.comboBox1.TabIndex = 4;
+            this.cboShift.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboShift.FormattingEnabled = true;
+            this.cboShift.Location = new System.Drawing.Point(464, 17);
+            this.cboShift.Name = "cboShift";
+            this.cboShift.Size = new System.Drawing.Size(210, 22);
+            this.cboShift.TabIndex = 4;
             // 
             // label13
             // 
@@ -303,8 +303,8 @@ namespace CompanyManager
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboMachine;
+        private System.Windows.Forms.ComboBox cboShift;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
