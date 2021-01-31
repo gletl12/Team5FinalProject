@@ -44,7 +44,7 @@ namespace Util
             cbo.ValueMember = valueMember;
             cbo.DataSource = vo;
         }
-        
+
         #region 콤보
         public static void BindingComboBoxPart<T>(ComboBox cbo, List<T> vo, string displayMember)
         {
@@ -179,7 +179,7 @@ namespace Util
             // **// dgv.AllowUserToAddRows = false;
 
             dgv.AutoGenerateColumns = false;
-           
+
             dgv.MultiSelect = false; //열하나만선택
 
             dgv.AllowUserToResizeColumns = true; // 칼럼 사용자 변경 o
@@ -239,15 +239,17 @@ namespace Util
             checkBox.Click += CheckBox_Click;
             void CheckBox_Click(object sender, EventArgs e)
             {
+                dgv.CellValueChanged -= Dgv_CellValueChanged;
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
                     ((DataGridViewCheckBoxCell)row.Cells["checkBox"]).Value = checkBox.Checked;
                 }
+                dgv.CellValueChanged += Dgv_CellValueChanged;
             }
             dgv.CellClick += RowCheckBox_Click;
             void RowCheckBox_Click(object sender, DataGridViewCellEventArgs e)
             {
-                if (dgv.Columns[e.ColumnIndex].Name.Equals("checkBox") && e.RowIndex >= -1)
+                if (dgv.Columns[e.ColumnIndex].Name.Equals("checkBox") && e.RowIndex >= 0)
                 {
                     DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     cell.Value = !Convert.ToBoolean(cell.Value);
@@ -268,7 +270,25 @@ namespace Util
                     checkBox.Checked = isChecked;
                 }
             }
+            dgv.CellValueChanged += Dgv_CellValueChanged;
+
+            void Dgv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+            {
+                if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                    return;
+                bool IsAllChecked = true;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value) == false)
+                    {
+                        IsAllChecked = false;
+                        break;
+                    }
+                }
+                checkBox.Checked = IsAllChecked;
+            }
         }
+
 
         //행번호 추가
         private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -522,6 +542,6 @@ namespace Util
             cbo.ValueMember = valueMember;
             dgv.Columns.Add(cbo);
         }
-      
+
     }
 }
