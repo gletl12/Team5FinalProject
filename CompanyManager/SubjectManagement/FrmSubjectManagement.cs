@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 using VO;
-using System.Linq;
+
 namespace CompanyManager
 {
     public partial class FrmSubjectManagement : CompanyManager.MDIBaseForm
@@ -290,7 +290,7 @@ namespace CompanyManager
                             Item_comment = row["비고"].ToString(),
                             Item_use = row["사용유무"].ToString() == "Y" ? "U0001" : "U0002",
                             Extinction = row["단종유무"].ToString() == "Y" ? "U0001" : "U0002",
-                            Up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString(),
+                            Up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id,
                             Up_date = DateTime.Now
                         };
                         temp.Add(vo);
@@ -330,7 +330,7 @@ namespace CompanyManager
             
 
             //모든컬럼에 or로 검색
-            var result = from subject in subjectAllList
+            var result = from  subject in subjectAllList
                          where subject.Item_id.ToLower().Contains(txtSubject.Text.Trim().ToLower()) &&
                                (subject.Order_company == null ? "": subject.Order_company.ToLower()).Contains(cboOrderC.Text.Trim().ToLower()) &&
                                (subject.Supply_company == null ? "" : subject.Supply_company).ToLower().Contains(cboSupplyC.Text.Trim().ToLower()) &&

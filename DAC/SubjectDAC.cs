@@ -92,7 +92,7 @@ namespace DAC
                     cmd.Parameters.Add("@item_use", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@item_comment", System.Data.SqlDbType.Text);
                     cmd.Parameters.Add("@up_date", System.Data.SqlDbType.DateTime);
-                    cmd.Parameters.Add("@up_emp", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@up_emp", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@in_warehouse", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@out_warehouse", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@extinction", System.Data.SqlDbType.NVarChar);
@@ -225,7 +225,7 @@ namespace DAC
                     cmd.Parameters.Add("@item_use", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@item_comment", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@up_date", System.Data.SqlDbType.DateTime);
-                    cmd.Parameters.Add("@up_emp", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@up_emp", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@in_warehouse", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@out_warehouse", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@extinction", System.Data.SqlDbType.NVarChar);

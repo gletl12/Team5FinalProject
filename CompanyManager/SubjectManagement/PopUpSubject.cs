@@ -104,7 +104,7 @@ namespace CompanyManager
             else
             {
                 //복사버튼을 눌러 들어오면
-                txtupemployee.Text = InsertInfo.Up_emp;
+                txtupemployee.Text = InsertInfo.Up_emp.ToString();
                 txtupdate.Text = InsertInfo.Up_date.ToString();
             }
             
@@ -121,7 +121,7 @@ namespace CompanyManager
                 cboimport.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Import_inspection);
                 cboprocess.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Process_inspection);
                 cboshipment.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Shipment_inspection);
-                cbofreecharge.SelectedIndex = FindSelectedIndex(cboimport, InsertInfo.Free_of_charge == null? "" : InsertInfo.Free_of_charge);
+                cbofreecharge.SelectedIndex = FindSelectedIndex(cbofreecharge, InsertInfo.Free_of_charge == null? "" : InsertInfo.Free_of_charge);
                 txtleadtime.Text = InsertInfo.Item_leadtime == 0 ? "" : InsertInfo.Item_leadtime.ToString();
                 cbosupply.SelectedIndex = FindSelectedIndex(cbosupply, InsertInfo.Supply_company == null ? "" : InsertInfo.Supply_company);
                 cboorder.SelectedIndex = FindSelectedIndex(cboorder, InsertInfo.Order_company == null ? "" : InsertInfo.Order_company);
@@ -331,7 +331,7 @@ namespace CompanyManager
             vo.Item_use = cbouse.SelectedValue.ToString();
             vo.Item_comment = txtComment.Text;
             vo.Up_date = Convert.ToDateTime(txtupdate.Text);
-            vo.Up_emp = txtupemployee.Tag.ToString();
+            vo.Up_emp = Convert.ToInt32(txtupemployee.Tag);
             vo.In_warehouse = cboinware.SelectedValue.ToString();
             vo.Out_warehouse = cbooutware.SelectedValue.ToString();
             vo.Extinction = cboextinction.SelectedValue.ToString();
