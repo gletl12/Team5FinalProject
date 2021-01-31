@@ -14,7 +14,9 @@ namespace CompanyManager
     {
         List<Control> validation = new List<Control>(); //유효성 검사할 컨트롤
 
-        public List<BORVO> InsertInfoList { get; set; }  //등록할 정보 리스트
+        
+
+        public BORVO InsertInfo { get; set; } //팝업창에 표시할 vo
         public List<CodeVO> CodeAllList { get; set; } //콤보박스에 바인딩할 코드리스트
 
         public EmployeeVO LoginInfo { get; set; } //로그인 정보
@@ -28,10 +30,48 @@ namespace CompanyManager
             validation.Add(cboMacine);
             validation.Add(cboRoute);
             validation.Add(cboUse);
-            validation.Add(txtCompletion);
             validation.Add(txtPriority);
-            validation.Add(txtTact);
+            validation.Add(txtTack);
+
+            
         }
+        public PopUpBOR(bool copy)
+        {
+            InitializeComponent();
+            popupTitleBar1.HeaderText = "BOR";
+
+            cboItem.Enabled = !copy;
+            cboRoute.Enabled = !copy;
+            cboMacine.Enabled = !copy;
+            txtTack.ReadOnly = copy;
+            txtpreceding.ReadOnly = copy;
+            txtPriority.ReadOnly = copy;
+            txtCompletion.ReadOnly = copy;
+            cboUse.Enabled = !copy;
+            txtComment.ReadOnly = copy;
+
+
+        }
+
+        private int FindSelectedIndex(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((CodeVO)cbo.Items[result]).name == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
+        }
+
         private void PopUpBOR_Load(object sender, EventArgs e)
         {
             //콤보박스 설정
@@ -46,6 +86,21 @@ namespace CompanyManager
             cboUse.ValueMember = "code";
 
             BindCbo();
+
+
+            if (InsertInfo != null)
+            {
+                cboItem.SelectedIndex = FindSelectedIndex(cboItem, InsertInfo.Item_name.ToString());
+                cboRoute.SelectedIndex = FindSelectedIndex(cboRoute, InsertInfo.Bor_route_name.ToString());
+                cboMacine.SelectedIndex = FindSelectedIndex(cboMacine, InsertInfo.Machine_name.ToString());
+                txtTack.Text = InsertInfo.Tacktime.ToString();
+                txtpreceding.Text = InsertInfo.preceding_days == 0 ? "" : InsertInfo.preceding_days.ToString();
+                txtPriority.Text = InsertInfo.Priority.ToString();
+                txtCompletion.Text = InsertInfo.Completion_rate == 0 ? "" : InsertInfo.Completion_rate.ToString();
+                cboUse.SelectedIndex = FindSelectedIndex(cboUse, InsertInfo.Bor_use.ToString());
+                txtComment.Text = InsertInfo.Bor_comment;
+
+            }
         }
 
         private void BindCbo()
@@ -92,25 +147,30 @@ namespace CompanyManager
             {
                 //유효성 검사;
                 Validation();
-                List<BORVO> list = new List<BORVO>();
+                
 
                 BORVO vo = new BORVO();
-                vo.Item_id = Convert.ToInt32(cboItem.SelectedValue.ToString());
+                vo.Item_id = cboItem.SelectedValue.ToString();
                 vo.Bor_route = cboRoute.SelectedValue.ToString();
-                vo.Machine_id = Convert.ToInt32(cboMacine.SelectedValue.ToString());
-                vo.Tacktime = Convert.ToInt32(txtTact.Text);
+                vo.Machine_id = cboMacine.SelectedValue.ToString();
+                vo.Tacktime = Convert.ToInt32(txtTack.Text);
                 vo.preceding_days = txtpreceding.Text == "" ? 0 : Convert.ToInt32(txtpreceding.Text);
                 vo.Priority = Convert.ToInt32(txtPriority.Text);
-                vo.Completion_rate = Convert.ToDecimal(txtCompletion.Text);
+                vo.Completion_rate = txtCompletion.Text == "" ? 0 : Convert.ToDecimal(txtCompletion.Text);
                 vo.Bor_use = cboUse.SelectedValue.ToString();
                 vo.Bor_comment = txtComment.Text;
 
                 vo.Ins_date = DateTime.Now;
                 vo.Ins_emp = Convert.ToInt32(LoginInfo.emp_id);
 
-                list.Add(vo);
+                //수정일 경우 borid 추가로 등록
+                if(InsertInfo != null)
+                {
+                    vo.Bor_id = InsertInfo.Bor_id;
+                }
 
-                InsertInfoList = list;
+
+                InsertInfo = vo;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

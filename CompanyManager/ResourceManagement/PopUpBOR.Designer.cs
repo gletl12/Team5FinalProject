@@ -41,7 +41,7 @@ namespace CompanyManager
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTact = new System.Windows.Forms.TextBox();
+            this.txtTack = new System.Windows.Forms.TextBox();
             this.txtPriority = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtpreceding = new System.Windows.Forms.TextBox();
@@ -147,7 +147,7 @@ namespace CompanyManager
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label13.ForeColor = System.Drawing.Color.Gray;
             this.label13.Location = new System.Drawing.Point(9, 146);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 14);
@@ -160,9 +160,9 @@ namespace CompanyManager
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label10.Location = new System.Drawing.Point(324, 64);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 14);
+            this.label10.Size = new System.Drawing.Size(102, 14);
             this.label10.TabIndex = 3;
-            this.label10.Text = "* Tact Time(Sec)";
+            this.label10.Text = "* Tack Time(Sec)";
             // 
             // label8
             // 
@@ -174,13 +174,13 @@ namespace CompanyManager
             this.label8.TabIndex = 3;
             this.label8.Text = "* 설비";
             // 
-            // txtTact
+            // txtTack
             // 
-            this.txtTact.Location = new System.Drawing.Point(430, 61);
-            this.txtTact.Name = "txtTact";
-            this.txtTact.Size = new System.Drawing.Size(184, 21);
-            this.txtTact.TabIndex = 4;
-            this.txtTact.Tag = "Tact Time";
+            this.txtTack.Location = new System.Drawing.Point(430, 61);
+            this.txtTack.Name = "txtTack";
+            this.txtTack.Size = new System.Drawing.Size(184, 21);
+            this.txtTack.TabIndex = 4;
+            this.txtTack.Tag = "Tact Time";
             // 
             // txtPriority
             // 
@@ -275,7 +275,7 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtTact);
+            this.panel1.Controls.Add(this.txtTack);
             this.panel1.Controls.Add(this.txtPriority);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtpreceding);
@@ -319,7 +319,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTact;
+        private System.Windows.Forms.TextBox txtTack;
         private System.Windows.Forms.TextBox txtPriority;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtpreceding;

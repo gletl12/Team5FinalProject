@@ -749,6 +749,7 @@
     <EmbeddedResource Include="testrudgns.resx">
       <DependentUpon>testrudgns.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ExcelForm\BOR등록양식.xlsx" />
     <None Include="ExcelForm\품목등록양식.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
