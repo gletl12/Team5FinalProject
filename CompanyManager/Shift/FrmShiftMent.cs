@@ -43,7 +43,14 @@ namespace CompanyManager
             dataGridView2.DataSource = null;
 
             ShiftService service = new ShiftService();
-            dataGridView2.DataSource= service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
+            dataGridView2.DataSource= service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString(),cboShift.Text);
+            DataTable dt= (DataTable)dataGridView2.DataSource;
+            DataView dv= dt.DefaultView;
+            dv.RowFilter = $"machine_id='{cboMachine.SelectedValue}'";
+            //var l=(from all in dv
+            //       where all.Rowfilte )
+
+
             dataGridView2.Columns[2].Visible = false;
             dataGridView2.Columns[1].HeaderText = "Shift";
             dataGridView2.Columns[4].Visible = false;

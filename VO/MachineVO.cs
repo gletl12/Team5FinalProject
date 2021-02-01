@@ -8,7 +8,7 @@ namespace VO
 {
     public class MachineVO
     {
-            public int machine_id                   {get; set;}
+            public string machine_id                   {get; set;}
             public int machine_grade                {get; set;}
             public string machine_name                 {get; set;}
             public string use_warehouse_id             {get; set;}
