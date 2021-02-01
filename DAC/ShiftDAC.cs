@@ -234,7 +234,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
             }
         }
 
-        public DataTable GetShiftInfo(string sday, string eday)
+        public DataTable GetShiftInfo(string sday, string eday,string shift)
         {
            
                 string sql = "SP_Shift";
@@ -242,6 +242,8 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Start_DT", sday);
                 da.SelectCommand.Parameters.AddWithValue("@End_DT",eday);
+                da.SelectCommand.Parameters.AddWithValue("@Shift_type", ((shift == "전체")) ? DBNull.Value : (object)shift);
+                
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);

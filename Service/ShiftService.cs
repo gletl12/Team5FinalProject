@@ -33,10 +33,10 @@ namespace Service
             ShiftDAC dac = new ShiftDAC();
             return dac.UpdateShift(item);
         }
-        public DataTable GetShiftInfo(string sday, string eday)
+        public DataTable GetShiftInfo(string sday, string eday, string shift)
         {
             ShiftDAC dac = new ShiftDAC();
-            return dac.GetShiftInfo(sday,eday);
+            return dac.GetShiftInfo(sday,eday,shift);
 
         }
 
