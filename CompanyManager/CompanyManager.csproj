@@ -109,6 +109,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseManagement\PopupDueDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManagement\PopupDueDate.Designer.cs">
+      <DependentUpon>PopupDueDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResourceManagement\FrmCompanyList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -550,6 +556,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManagement\PopupDueDate.resx">
+      <DependentUpon>PopupDueDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResourceManagement\FrmCompanyList.resx">
       <DependentUpon>FrmCompanyList.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,6 +767,8 @@
     <EmbeddedResource Include="testrudgns.resx">
       <DependentUpon>testrudgns.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ExcelForm\BOR등록양식.xlsx" />
+    <None Include="ExcelForm\품목등록양식.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

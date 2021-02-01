@@ -38,5 +38,10 @@ namespace Service
             CodeDAC dac = new CodeDAC();
             return dac.DeleteCommonCode(codeList);
         }
+
+        public List<CodeVO> GetAllCodes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

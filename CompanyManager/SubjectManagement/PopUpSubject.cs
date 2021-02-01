@@ -22,6 +22,41 @@ namespace CompanyManager
             InitializeComponent();
         }
 
+        //복사버튼 눌렀을때 호출
+        public PopUpSubject(bool flag)
+        {
+            InitializeComponent();
+
+            cbotype.Enabled = flag;
+            cbounit.Enabled = flag;
+            cboinware.Enabled = flag;
+            cbooutware.Enabled = flag;
+            cboorder.Enabled = flag;
+            cbosupply.Enabled = flag;
+            cboimport.Enabled = flag;
+            cboprocess.Enabled = flag;
+            cboshipment.Enabled = flag;
+            cbofreecharge.Enabled = flag;
+            cbouse.Enabled = flag;
+            cboextinction.Enabled = flag;
+            cbomanager.Enabled = flag;
+            cbograde.Enabled = flag;
+            txtComment.ReadOnly = true;
+            txtdeliveryqty.ReadOnly = true;
+            txtID.ReadOnly = true;
+            txtleadtime.ReadOnly = true;
+            txtlorder.ReadOnly = true;
+            txtname.ReadOnly = true;
+            txtsaftyqty.ReadOnly = true;
+            txtunitqty.ReadOnly = true;
+            txtupdate.ReadOnly = true;
+            txtupemployee.ReadOnly = true;
+
+            btnEdit.Visible = false;
+            btnCancel.Location = new Point(365, 526);
+            btnCancel.Text = "닫기";
+
+        }
         private void PopUpSubject_Load(object sender, EventArgs e)
         {
             popupTitleBar1.HeaderText = "품목";
@@ -58,9 +93,70 @@ namespace CompanyManager
             cbomanager.ValueMember = "code";
             cbograde.ValueMember = "code";
 
-            txtupemployee.Text = LoginInfo.emp_name;
-            txtupemployee.Tag = LoginInfo.emp_id;
-            txtupdate.Text = DateTime.Now.ToString();
+            
+            if (btnEdit.Visible)
+            {
+                //수정버튼,등록버튼을 눌러 들어오면
+                txtupemployee.Text = LoginInfo.emp_name;
+                txtupemployee.Tag = LoginInfo.emp_id;
+                txtupdate.Text = DateTime.Now.ToString();
+            }
+            else
+            {
+                //복사버튼을 눌러 들어오면
+                txtupemployee.Text = InsertInfo.Up_emp.ToString();
+                txtupdate.Text = InsertInfo.Up_date.ToString();
+            }
+            
+
+            //수정버튼 눌러서 폼 로드시 정보 화면에 출력
+            if (InsertInfo != null)
+            {
+                txtID.ReadOnly = true;
+                txtID.Text = InsertInfo.Item_id;
+                txtname.Text = InsertInfo.Item_name;
+                cbotype.SelectedIndex = FindSelectedIndex(cbotype,InsertInfo.Item_type);
+                cbounit.SelectedIndex = FindSelectedIndex(cbounit, InsertInfo.Item_unit);
+                txtunitqty.Text = InsertInfo.Item_unit_qty == 0 ? "" : InsertInfo.Item_unit_qty.ToString();
+                cboimport.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Import_inspection);
+                cboprocess.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Process_inspection);
+                cboshipment.SelectedIndex = FindSelectedIndex(cboimport,InsertInfo.Shipment_inspection);
+                cbofreecharge.SelectedIndex = FindSelectedIndex(cbofreecharge, InsertInfo.Free_of_charge == null? "" : InsertInfo.Free_of_charge);
+                txtleadtime.Text = InsertInfo.Item_leadtime == 0 ? "" : InsertInfo.Item_leadtime.ToString();
+                cbosupply.SelectedIndex = FindSelectedIndex(cbosupply, InsertInfo.Supply_company == null ? "" : InsertInfo.Supply_company);
+                cboorder.SelectedIndex = FindSelectedIndex(cboorder, InsertInfo.Order_company == null ? "" : InsertInfo.Order_company);
+                cboinware.SelectedIndex = FindSelectedIndex(cboinware, InsertInfo.In_warehouse == null ? "" : InsertInfo.In_warehouse);
+                cbooutware.SelectedIndex = FindSelectedIndex(cbooutware, InsertInfo.Out_warehouse == null ? "" : InsertInfo.Out_warehouse);
+                txtlorder.Text = InsertInfo.Item_lorder_qty == 0 ? "" : InsertInfo.Item_lorder_qty.ToString();
+                txtdeliveryqty.Text = InsertInfo.Item_delivery_qty == 0 ? "" : InsertInfo.Item_delivery_qty.ToString();
+                txtsaftyqty.Text = InsertInfo.Item_safety_qty == 0 ? "" : InsertInfo.Item_safety_qty.ToString();
+
+                cbograde.SelectedIndex = FindSelectedIndex(cbograde, InsertInfo.Item_grade == null ? "" : InsertInfo.Item_grade);
+                cbomanager.SelectedIndex = FindSelectedIndex(cbomanager, InsertInfo.Item_manager == null ? "" : InsertInfo.Item_manager);
+                cbouse.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
+                cboextinction.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
+                txtComment.Text = InsertInfo.Item_comment == null ? "" : InsertInfo.Item_comment;
+            }
+        }
+
+        //정보에 맞는 selectedindex 찾기
+        private int FindSelectedIndex(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((CodeVO)cbo.Items[result]).name == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
         }
 
         //콤보박스 바인딩
@@ -129,19 +225,15 @@ namespace CompanyManager
             cboprocess.DataSource = temp.ConvertAll(p => p);
             cboshipment.DataSource = temp.ConvertAll(p => p);
             cbouse.DataSource = temp.ConvertAll(p => p);
-            temp.ForEach(p => 
-            {
-                if (p.name == "사용") p.name = "Y";
-                else if (p.name == "미사용") p.name = "N";
-            });
-            temp.RemoveAt(0);
-            cboextinction.DataSource = temp;
+            cboextinction.DataSource = temp.ConvertAll(p => p);
+            ((List<CodeVO>)cboextinction.DataSource).RemoveAt(0);
+            
             cboextinction.SelectedIndex = 1;
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            //유효성 검사
+            
             //유효성 검사
             if (string.IsNullOrEmpty(txtID.Text))
             {
@@ -239,7 +331,7 @@ namespace CompanyManager
             vo.Item_use = cbouse.SelectedValue.ToString();
             vo.Item_comment = txtComment.Text;
             vo.Up_date = Convert.ToDateTime(txtupdate.Text);
-            vo.Up_emp = txtupemployee.Tag.ToString();
+            vo.Up_emp = Convert.ToInt32(txtupemployee.Tag);
             vo.In_warehouse = cboinware.SelectedValue.ToString();
             vo.Out_warehouse = cbooutware.SelectedValue.ToString();
             vo.Extinction = cboextinction.SelectedValue.ToString();
@@ -297,7 +389,7 @@ namespace CompanyManager
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

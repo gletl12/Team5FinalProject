@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
@@ -20,186 +23,60 @@ namespace CompanyManager
         {
 
         }
-
-        private void dataGridView2_Paint(object sender, PaintEventArgs e)
-        {
-            DataGridView gv = (DataGridView)sender;
-
-            string[] strHeaders = { "헤더1", "헤더2" };
-
-            StringFormat format = new StringFormat();
-
-            format.Alignment = StringAlignment.Center;
-
-            format.LineAlignment = StringAlignment.Center;
-
-
-
-            // Category Painting
-
-            {
-
-                Rectangle r1 = gv.GetCellDisplayRectangle(0, -1, false);
-
-                int width1 = gv.GetCellDisplayRectangle(1, -1, false).Width;
-
-                int width2 = gv.GetCellDisplayRectangle(2, -1, false).Width;
-
-
-
-                r1.X += 1;
-
-                r1.Y += 1;
-
-                r1.Width = r1.Width + width1 + width2 - 2;
-
-                r1.Height = (r1.Height / 2) - 2;
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r1);
-
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor),
-
-                    r1);
-
-
-
-                e.Graphics.DrawString(strHeaders[0],
-
-                    gv.ColumnHeadersDefaultCellStyle.Font,
-
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor),
-
-                    r1,
-
-                    format);
-
-            }
-
-
-
-            // Projection Painting
-
-            {
-
-                Rectangle r2 = gv.GetCellDisplayRectangle(3, -1, false);
-
-                int width = gv.GetCellDisplayRectangle(4, -1, false).Width;
-
-                r2.X += 1;
-
-                r2.Y += 1;
-
-                r2.Width = r2.Width + width - 2;
-
-                r2.Height = (r2.Height / 2) - 2;
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
-
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor),
-
-                    r2);
-
-
-
-                e.Graphics.DrawString(strHeaders[1],
-
-                    gv.ColumnHeadersDefaultCellStyle.Font,
-
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor),
-
-                    r2,
-
-                    format);
-
-            }
-
-
-
-
-        }
-
-        private void dataGridView2_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {
-            DataGridView gv = (DataGridView)sender;
-
-            Rectangle rtHeader = gv.DisplayRectangle;
-
-            rtHeader.Height = gv.ColumnHeadersHeight / 2;
-
-            gv.Invalidate(rtHeader);
-
-
-
-      
-        }
-
-        private void dataGridView2_Scroll(object sender, ScrollEventArgs e)
-        {
-            DataGridView gv = (DataGridView)sender;
-
-            Rectangle rtHeader = gv.DisplayRectangle;
-
-            rtHeader.Height = gv.ColumnHeadersHeight / 2;
-
-            gv.Invalidate(rtHeader);
-
-
-
        
-        }
-
-        private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex == -1 && e.ColumnIndex > -1)
-
-            {
-
-                Rectangle r = e.CellBounds;
-
-                r.Y += e.CellBounds.Height / 2;
-
-                r.Height = e.CellBounds.Height / 2;
-
-
-
-                e.PaintBackground(r, true);
-
-
-
-                e.PaintContent(r);
-
-                e.Handled = true;
-
-            }
-
-
-
-       
-        }
 
         private void FrmShiftMent_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
-            {
+
+            DataLoad();
+            ComboBoxBinding();
+        }
+
+        private void DataLoad()
+        {
+            CommonUtil.SetDGVDesign(dataGridView2);
+            dataGridView2.AutoGenerateColumns = true;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = null;
+
+            ShiftService service = new ShiftService();
+            dataGridView2.DataSource= service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
+            dataGridView2.Columns[2].Visible = false;
+            dataGridView2.Columns[1].HeaderText = "Shift";
+            dataGridView2.Columns[4].Visible = false;
+            dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+        
+        List<CodeVO> code;
+        List<MachineVO> machine;
+
+        private void ComboBoxBinding()
+        {
+            MachineService service = new MachineService();
+            machine = service.GetMachine();
+            machine.Insert(0, new MachineVO { machine_name = "전체" });
+            CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
+
+            //var shift1 = shift.ConvertAll(o => o);
+            //shift1.Insert(0, new ShiftVO { shift_type = "전체" });
+            //CommonUtil.BindingComboBoxPart(cboShift, shift1, "shift_type");
 
 
-                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-                col.SortMode = DataGridViewColumnSortMode.NotSortable;
-                col.HeaderText = $"헤더{i}";
-                col.Name = $"헤더{i}";
-                col.DataPropertyName = $"헤더{i}";
-                col.Width = 150;
-              
-                
-                dataGridView2.Columns.Add(col);
-            }
+            CodeService service1 = new CodeService();
+            code = service1.GetAllCommonCode();
+            var code1 = (from All in code where All.category == "shift_type" select All).ToList();
+            code1.Insert(0, new CodeVO { name = "전체" });
+            CommonUtil.BindingComboBox(cboShift, code1, "code", "name");
 
 
+        }
 
-            dataGridView2.Rows.Add("1", "1-1", "1-2", "1-3", "1-4");
-            dataGridView2.Rows.Add("2", "2-2", "2-3", "2-5", "2");
-
-
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

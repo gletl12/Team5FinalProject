@@ -31,20 +31,12 @@ namespace CompanyManager
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.dtpRegDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.cboItem = new System.Windows.Forms.TextBox();
+            this.txtItem = new System.Windows.Forms.TextBox();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -66,12 +58,20 @@ namespace CompanyManager
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnNewSO = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dgvSO = new System.Windows.Forms.DataGridView();
+            this.btnDemandPlan = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -89,12 +89,12 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button8);
+            this.splitContainer1.Panel2.Controls.Add(this.btnNewSO);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer1.Panel2.Controls.Add(this.button13);
-            this.splitContainer1.Panel2.Controls.Add(this.button12);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvSO);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDemandPlan);
+            this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
             this.splitContainer1.SplitterDistance = 130;
             this.splitContainer1.TabIndex = 24;
@@ -111,7 +111,7 @@ namespace CompanyManager
             this.pnlSearch.Controls.Add(this.dtpTo);
             this.pnlSearch.Controls.Add(this.dtpFrom);
             this.pnlSearch.Controls.Add(this.txtOrderID);
-            this.pnlSearch.Controls.Add(this.cboItem);
+            this.pnlSearch.Controls.Add(this.txtItem);
             this.pnlSearch.Controls.Add(this.cboCompany);
             this.pnlSearch.Controls.Add(this.cboState);
             this.pnlSearch.Controls.Add(this.label24);
@@ -141,126 +141,9 @@ namespace CompanyManager
             this.pnlSearch.Size = new System.Drawing.Size(1146, 114);
             this.pnlSearch.TabIndex = 22;
             // 
-            // btnDown
-            // 
-            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDown.BackColor = System.Drawing.Color.White;
-            this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnDown.FlatAppearance.BorderSize = 2;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDown.Location = new System.Drawing.Point(1111, 71);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(28, 28);
-            this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "ᐱ";
-            this.btnDown.UseVisualStyleBackColor = false;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(997, 70);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(116, 30);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "조회";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(1004, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "    등록";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 14);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "      영업마스터";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 32);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1146, 469);
-            this.dataGridView2.TabIndex = 19;
-            // 
-            // button13
-            // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(896, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(102, 23);
-            this.button13.TabIndex = 18;
-            this.button13.Text = "    수요계획생성";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1067, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 17;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(199, 24);
             this.label20.Name = "label20";
@@ -270,15 +153,18 @@ namespace CompanyManager
             // 
             // dtpRegDate
             // 
+            this.dtpRegDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpRegDate.CustomFormat = " ";
             this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpRegDate.Location = new System.Drawing.Point(106, 76);
             this.dtpRegDate.Name = "dtpRegDate";
             this.dtpRegDate.Size = new System.Drawing.Size(200, 21);
             this.dtpRegDate.TabIndex = 69;
+            this.dtpRegDate.ValueChanged += new System.EventHandler(this.dtpRegDate_ValueChanged_1);
             // 
             // dtpTo
             // 
+            this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(220, 19);
             this.dtpTo.Name = "dtpTo";
@@ -287,6 +173,7 @@ namespace CompanyManager
             // 
             // dtpFrom
             // 
+            this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(106, 19);
             this.dtpFrom.Name = "dtpFrom";
@@ -295,21 +182,24 @@ namespace CompanyManager
             // 
             // txtOrderID
             // 
+            this.txtOrderID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtOrderID.Location = new System.Drawing.Point(787, 18);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.Size = new System.Drawing.Size(200, 21);
             this.txtOrderID.TabIndex = 66;
             // 
-            // cboItem
+            // txtItem
             // 
-            this.cboItem.Location = new System.Drawing.Point(424, 46);
-            this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(200, 21);
-            this.cboItem.TabIndex = 65;
+            this.txtItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtItem.Location = new System.Drawing.Point(424, 46);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(200, 21);
+            this.txtItem.TabIndex = 65;
             // 
             // cboCompany
             // 
-            this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(424, 18);
             this.cboCompany.Name = "cboCompany";
@@ -318,6 +208,8 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(106, 45);
             this.cboState.Name = "cboState";
@@ -345,7 +237,7 @@ namespace CompanyManager
             // 
             // cboRQty
             // 
-            this.cboRQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboRQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboRQty.FormattingEnabled = true;
             this.cboRQty.Location = new System.Drawing.Point(424, 76);
             this.cboRQty.Name = "cboRQty";
@@ -354,7 +246,7 @@ namespace CompanyManager
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(357, 79);
             this.label9.Name = "label9";
@@ -375,7 +267,6 @@ namespace CompanyManager
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(17, 79);
             this.label13.Name = "label13";
@@ -385,7 +276,6 @@ namespace CompanyManager
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.label15.Location = new System.Drawing.Point(17, 76);
@@ -396,7 +286,8 @@ namespace CompanyManager
             // 
             // cboDest
             // 
-            this.cboDest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboDest.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboDest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDest.FormattingEnabled = true;
             this.cboDest.Location = new System.Drawing.Point(787, 45);
             this.cboDest.Name = "cboDest";
@@ -405,7 +296,7 @@ namespace CompanyManager
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(698, 48);
             this.label7.Name = "label7";
@@ -447,7 +338,7 @@ namespace CompanyManager
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(698, 22);
             this.label3.Name = "label3";
@@ -516,6 +407,127 @@ namespace CompanyManager
             this.label18.TabIndex = 44;
             this.label18.Text = "label18";
             // 
+            // btnDown
+            // 
+            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDown.BackColor = System.Drawing.Color.White;
+            this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnDown.FlatAppearance.BorderSize = 2;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDown.Location = new System.Drawing.Point(1111, 71);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(28, 28);
+            this.btnDown.TabIndex = 8;
+            this.btnDown.Text = "ᐱ";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(997, 70);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 30);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnNewSO
+            // 
+            this.btnNewSO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewSO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnNewSO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnNewSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSO.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnNewSO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewSO.Location = new System.Drawing.Point(1004, 3);
+            this.btnNewSO.Name = "btnNewSO";
+            this.btnNewSO.Size = new System.Drawing.Size(57, 23);
+            this.btnNewSO.TabIndex = 12;
+            this.btnNewSO.Text = "    등록";
+            this.btnNewSO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewSO.UseVisualStyleBackColor = false;
+            this.btnNewSO.Click += new System.EventHandler(this.btnNewSO_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Location = new System.Drawing.Point(12, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 14);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "      영업마스터";
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
+            this.button9.Location = new System.Drawing.Point(1127, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(29, 23);
+            this.button9.TabIndex = 14;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // dgvSO
+            // 
+            this.dgvSO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSO.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSO.Location = new System.Drawing.Point(10, 32);
+            this.dgvSO.Name = "dgvSO";
+            this.dgvSO.RowTemplate.Height = 23;
+            this.dgvSO.Size = new System.Drawing.Size(1146, 469);
+            this.dgvSO.TabIndex = 19;
+            this.dgvSO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSO_CellContentClick);
+            // 
+            // btnDemandPlan
+            // 
+            this.btnDemandPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDemandPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDemandPlan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDemandPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemandPlan.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
+            this.btnDemandPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDemandPlan.Location = new System.Drawing.Point(896, 3);
+            this.btnDemandPlan.Name = "btnDemandPlan";
+            this.btnDemandPlan.Size = new System.Drawing.Size(102, 23);
+            this.btnDemandPlan.TabIndex = 18;
+            this.btnDemandPlan.Text = "    수요계획생성";
+            this.btnDemandPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDemandPlan.UseVisualStyleBackColor = false;
+            this.btnDemandPlan.Click += new System.EventHandler(this.btnDemandPlan_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(1067, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(54, 23);
+            this.btnExcel.TabIndex = 17;
+            this.btnExcel.Text = "    엑셀";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            // 
             // FrmSO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -530,7 +542,7 @@ namespace CompanyManager
             this.splitContainer1.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,18 +553,18 @@ namespace CompanyManager
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnNewSO;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.DataGridView dgvSO;
+        private System.Windows.Forms.Button btnDemandPlan;
+        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dtpRegDate;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.TextBox txtOrderID;
-        private System.Windows.Forms.TextBox cboItem;
+        private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.ComboBox cboCompany;
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label24;

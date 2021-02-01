@@ -151,20 +151,27 @@ namespace Util
                     strConn = string.Format(Excel07ConString, fileName, "Yes");
                     break;
             }
-            using (OleDbConnection conn = new OleDbConnection(strConn))
+            try
             {
-                conn.Open();
-                DataTable dtSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-                sheetName = dtSchema.Rows[0]["TABLE_NAME"].ToString();
-                conn.Close();
+                using (OleDbConnection conn = new OleDbConnection(strConn))
+                {
+                    conn.Open();
+                    DataTable dtSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    sheetName = dtSchema.Rows[0]["TABLE_NAME"].ToString();
+                    conn.Close();
 
-                conn.Open();
-                string sql = "select * from [" + sheetName + "]";
-                OleDbDataAdapter oda = new OleDbDataAdapter(sql, conn);
-                //OleDbDataReader reader = cmd.ExecuteReader();
-                oda.Fill(dtSchema);
-                conn.Close();
-                return (dtSchema, fileName);
+                    conn.Open();
+                    string sql = "select * from [" + sheetName + "]";
+                    OleDbDataAdapter oda = new OleDbDataAdapter(sql, conn);
+                    //OleDbDataReader reader = cmd.ExecuteReader();
+                    oda.Fill(dtSchema);
+                    conn.Close();
+                    return (dtSchema, fileName);
+                }
+            }
+            catch (Exception err)
+            {
+                return (new DataTable(), string.Empty);
             }
 
         }
