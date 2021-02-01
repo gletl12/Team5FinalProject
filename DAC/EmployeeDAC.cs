@@ -10,24 +10,25 @@ namespace DAC
 {
     public class EmployeeDAC : CommonDAC
     {
-        public List<EmployeeVO> GetLogin(string id, string pwd)
+        public (bool, EmployeeVO) GetLogin(string id, string pwd)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.CommandText = @"SELECT emp_no, emp_password, emp_name, dept_no, hire_date, up_date, up_emp
+                string sql = @"SELECT emp_id, emp_password, emp_name, dept_no, hire_date, up_date, up_emp
                                         FROM TBL_Employee
-                                        where emp_no = @id and emp_password = @pwd";
-
+                                        where emp_id = @id and emp_password = @pwd";
+                using (SqlCommand cmd = new SqlCommand(sql,conn))
+                {
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@pwd", pwd);
+                    
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    EmployeeVO emp = Helper.DataReaderMapToList<EmployeeVO>(reader)[0];
 
-                    cmd.Connection = conn;
-                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
                     Dispose();
 
-                    return list;
+                    return emp == null ? (false, null) : (true, emp);
+
                 }
             }
             catch (Exception err)
@@ -35,9 +36,9 @@ namespace DAC
                 Dispose();
 
                 //로그 오류
-                Log.WriteError("DAC_FactoryVO_GetMachine() 오류", err);
+                Log.WriteError("FrmLogin : 로그인 실패", err);
 
-                return new List<EmployeeVO>();
+                return (false, null);
             }
 
 

@@ -30,26 +30,22 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboFUse = new System.Windows.Forms.ComboBox();
+            this.cboFType = new System.Windows.Forms.ComboBox();
+            this.cboFGrade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.txtUpEmp = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
+            this.txtFParent = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnCRU = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,29 +59,53 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cboFUse);
+            this.panel1.Controls.Add(this.cboFType);
+            this.panel1.Controls.Add(this.cboFGrade);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox16);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox18);
-            this.panel1.Controls.Add(this.textBox17);
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox15);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtComment);
+            this.panel1.Controls.Add(this.txtUpEmp);
+            this.panel1.Controls.Add(this.txtFName);
+            this.panel1.Controls.Add(this.txtFParent);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(574, 279);
+            this.panel1.Size = new System.Drawing.Size(574, 249);
             this.panel1.TabIndex = 7;
+            // 
+            // cboFUse
+            // 
+            this.cboFUse.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFUse.FormattingEnabled = true;
+            this.cboFUse.Location = new System.Drawing.Point(79, 69);
+            this.cboFUse.Name = "cboFUse";
+            this.cboFUse.Size = new System.Drawing.Size(181, 22);
+            this.cboFUse.TabIndex = 5;
+            // 
+            // cboFType
+            // 
+            this.cboFType.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFType.FormattingEnabled = true;
+            this.cboFType.Location = new System.Drawing.Point(79, 42);
+            this.cboFType.Name = "cboFType";
+            this.cboFType.Size = new System.Drawing.Size(181, 22);
+            this.cboFType.TabIndex = 5;
+            // 
+            // cboFGrade
+            // 
+            this.cboFGrade.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFGrade.FormattingEnabled = true;
+            this.cboFGrade.Location = new System.Drawing.Point(79, 15);
+            this.cboFGrade.Name = "cboFGrade";
+            this.cboFGrade.Size = new System.Drawing.Size(181, 22);
+            this.cboFGrade.TabIndex = 5;
+            this.cboFGrade.SelectedIndexChanged += new System.EventHandler(this.cboFGrade_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -121,48 +141,21 @@ namespace CompanyManager
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(10, 126);
+            this.label3.Location = new System.Drawing.Point(10, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 14);
             this.label3.TabIndex = 3;
-            this.label3.Text = "* 순서";
+            this.label3.Text = "* 설명";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Gray;
-            this.label18.Location = new System.Drawing.Point(10, 99);
+            this.label18.Location = new System.Drawing.Point(284, 72);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 14);
             this.label18.TabIndex = 3;
             this.label18.Text = "* 수정자";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(284, 99);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 14);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "* 수정시간";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(284, 72);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 14);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "* 유무상구분";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(79, 42);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(181, 21);
-            this.textBox16.TabIndex = 4;
             // 
             // label16
             // 
@@ -174,62 +167,37 @@ namespace CompanyManager
             this.label16.TabIndex = 3;
             this.label16.Text = "* 시설구분";
             // 
-            // textBox3
+            // txtComment
             // 
-            this.textBox3.Location = new System.Drawing.Point(79, 123);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(464, 139);
-            this.textBox3.TabIndex = 4;
+            this.txtComment.Location = new System.Drawing.Point(79, 97);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(464, 139);
+            this.txtComment.TabIndex = 4;
             // 
-            // textBox18
+            // txtUpEmp
             // 
-            this.textBox18.Location = new System.Drawing.Point(79, 96);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(181, 21);
-            this.textBox18.TabIndex = 4;
+            this.txtUpEmp.Location = new System.Drawing.Point(371, 69);
+            this.txtUpEmp.Name = "txtUpEmp";
+            this.txtUpEmp.ReadOnly = true;
+            this.txtUpEmp.Size = new System.Drawing.Size(172, 21);
+            this.txtUpEmp.TabIndex = 4;
             // 
-            // textBox17
+            // txtFName
             // 
-            this.textBox17.Location = new System.Drawing.Point(371, 96);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(172, 21);
-            this.textBox17.TabIndex = 4;
+            this.txtFName.BackColor = System.Drawing.Color.NavajoWhite;
+            this.txtFName.Location = new System.Drawing.Point(371, 42);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(172, 21);
+            this.txtFName.TabIndex = 4;
             // 
-            // textBox10
+            // txtFParent
             // 
-            this.textBox10.Location = new System.Drawing.Point(371, 69);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(172, 21);
-            this.textBox10.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(79, 69);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(181, 21);
-            this.textBox5.TabIndex = 4;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(371, 42);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(172, 21);
-            this.textBox15.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(371, 15);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 21);
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(79, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 21);
-            this.textBox1.TabIndex = 4;
+            this.txtFParent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.txtFParent.Location = new System.Drawing.Point(371, 15);
+            this.txtFParent.Name = "txtFParent";
+            this.txtFParent.Size = new System.Drawing.Size(172, 21);
+            this.txtFParent.TabIndex = 4;
             // 
             // label1
             // 
@@ -241,50 +209,50 @@ namespace CompanyManager
             this.label1.TabIndex = 3;
             this.label1.Text = "* 시설군";
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(301, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "취소";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(142)))), ((int)(((byte)(150)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(301, 290);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 30);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button14
+            // btnCRU
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(189, 317);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 30);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "저장";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.btnCRU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCRU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.btnCRU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCRU.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCRU.ForeColor = System.Drawing.Color.White;
+            this.btnCRU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCRU.Location = new System.Drawing.Point(189, 290);
+            this.btnCRU.Name = "btnCRU";
+            this.btnCRU.Size = new System.Drawing.Size(85, 30);
+            this.btnCRU.TabIndex = 6;
+            this.btnCRU.Text = "저장";
+            this.btnCRU.UseVisualStyleBackColor = false;
+            this.btnCRU.Click += new System.EventHandler(this.btnCRU_Click);
             // 
             // PopFactoryCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(574, 354);
+            this.ClientSize = new System.Drawing.Size(574, 327);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnCRU);
             this.Name = "PopFactoryCRUD";
             this.Load += new System.EventHandler(this.PopFactoryCRUD_Load);
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
-            this.Controls.SetChildIndex(this.button14, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btnCRU, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -296,24 +264,20 @@ namespace CompanyManager
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnCRU;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtComment;
+        private System.Windows.Forms.TextBox txtUpEmp;
+        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.TextBox txtFParent;
+        private System.Windows.Forms.ComboBox cboFUse;
+        private System.Windows.Forms.ComboBox cboFType;
+        private System.Windows.Forms.ComboBox cboFGrade;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
     }
 }

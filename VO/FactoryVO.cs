@@ -13,9 +13,9 @@ namespace VO
         public string factory_name { get; set; }
         public string factory_parent { get; set; }
         public string factory_comment { get; set; }
-        public string factory_use { get; set; }
-        public string up_emp { get; set; }
-        public string up_date { get; set; }
+        public bool factory_use { get; set; }
+        public int up_emp { get; set; }
+        public DateTime up_date { get; set; }
 
     }
 }

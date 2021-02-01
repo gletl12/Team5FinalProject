@@ -1,7 +1,7 @@
 ﻿
 namespace CompanyManager
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panDirectLogin = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -141,14 +141,13 @@ namespace CompanyManager
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // Login
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(383, 277);
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Name = "FrmLogin";
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.panDirectLogin, 0);

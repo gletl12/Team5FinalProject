@@ -10,7 +10,7 @@ namespace Service
 {
     public class EmployeeService
     {
-        public List<EmployeeVO> GetLogin(string id, string pwd)
+        public (bool, EmployeeVO) GetLogin(string id, string pwd)
         {
             EmployeeDAC dac = new EmployeeDAC();
             return dac.GetLogin(id,pwd);

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VO;
 using DAC;
+using System.Data;
 
 namespace Service
 {
@@ -16,23 +17,13 @@ namespace Service
             return dac.GetFactory();
         }
 
-        //public List<CodeVO> GetAllCommonCode()
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.GetAllCommonCode();
-        //}
+        public bool AddFactory(FactoryVO vo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.AddFactory(vo);
+        }
 
-        //public bool AddCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.AddCommonCode(codeVO);
-        //}
 
-        //public bool EditCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.EditCommonCode(codeVO);
-        //}
 
         //public bool DeleteCommonCode(List<string> codeList)
         //{
