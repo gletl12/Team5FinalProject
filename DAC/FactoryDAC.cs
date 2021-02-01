@@ -41,9 +41,9 @@ namespace DAC
             try
             {
                 string sql = @"insert into TBL_FACTORY (factory_grade, factory_type, factory_name, factory_parent, factory_use,
-                                                        @factory_comment, @ins_date, @ins_emp, @up_date, @up_emp)
+                                                        factory_comment,  ins_emp,  up_emp)
                                values(@factory_grade, @factory_type, @factory_name, @factory_parent, 
-                                      @factory_use, @factory_comment, @ins_date, @ins_emp, @up_date, @up_emp)";
+                                      @factory_use, @factory_comment, @ins_emp, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@factory_grade", vo.factory_grade);
@@ -52,9 +52,7 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@factory_parent", vo.factory_parent);
                     cmd.Parameters.AddWithValue("@factory_use", vo.factory_use);
                     cmd.Parameters.AddWithValue("@factory_comment", vo.factory_comment);
-                    cmd.Parameters.AddWithValue("@ins_date", vo.up_date.ToString("G"));
                     cmd.Parameters.AddWithValue("@ins_emp", vo.up_emp);
-                    cmd.Parameters.AddWithValue("@up_date", vo.up_date.ToString("G"));
                     cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
 
                     int iRows = cmd.ExecuteNonQuery();
