@@ -51,5 +51,10 @@ namespace CompanyManager
             dgvCompany.AllowUserToAddRows = false;
 
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

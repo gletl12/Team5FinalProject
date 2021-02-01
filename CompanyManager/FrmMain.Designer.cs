@@ -42,12 +42,12 @@ namespace CompanyManager
             this.lblSortName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.titleBar1 = new CompanyManager.TitleBar();
+            this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
             this.btnCommonM = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -160,16 +160,6 @@ namespace CompanyManager
             this.panel3.Size = new System.Drawing.Size(1172, 29);
             this.panel3.TabIndex = 20;
             // 
-            // customTabControl1
-            // 
-            this.customTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
-            this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
-            this.customTabControl1.TabIndex = 0;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
@@ -246,6 +236,16 @@ namespace CompanyManager
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
             // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
+            this.customTabControl1.TabIndex = 0;
+            // 
             // grandianPanel1
             // 
             this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -278,6 +278,7 @@ namespace CompanyManager
             this.btnCommonM.Text = "공통관리";
             this.btnCommonM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCommonM.UseVisualStyleBackColor = false;
+            this.btnCommonM.Visible = false;
             this.btnCommonM.Click += new System.EventHandler(this.btnCommonM_Click);
             // 
             // btnLogout
@@ -297,6 +298,7 @@ namespace CompanyManager
             this.btnLogout.Text = "로그아웃";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnEmployeeM
             // 
@@ -315,6 +317,7 @@ namespace CompanyManager
             this.btnEmployeeM.Text = "직원관리";
             this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmployeeM.UseVisualStyleBackColor = false;
+            this.btnEmployeeM.Visible = false;
             // 
             // label2
             // 
@@ -346,6 +349,7 @@ namespace CompanyManager
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);

@@ -1,7 +1,7 @@
 ﻿
 namespace CompanyManager
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panDirectLogin = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@ namespace CompanyManager
             this.popupTitleBar1.HeaderText = "로그인";
             this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.popupTitleBar1.Size = new System.Drawing.Size(383, 33);
+            this.popupTitleBar1.TabStop = false;
             // 
             // panDirectLogin
             // 
@@ -88,7 +89,7 @@ namespace CompanyManager
             this.label2.Location = new System.Drawing.Point(54, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 14);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 99;
             this.label2.Text = "비밀번호";
             // 
             // label1
@@ -97,7 +98,7 @@ namespace CompanyManager
             this.label1.Location = new System.Drawing.Point(54, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 18;
+            this.label1.TabIndex = 99;
             this.label1.Text = "아이디";
             // 
             // txtPassword
@@ -105,8 +106,10 @@ namespace CompanyManager
             this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
             this.txtPassword.Location = new System.Drawing.Point(130, 58);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(178, 21);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtID
             // 
@@ -114,7 +117,7 @@ namespace CompanyManager
             this.txtID.Location = new System.Drawing.Point(130, 20);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(178, 21);
-            this.txtID.TabIndex = 17;
+            this.txtID.TabIndex = 0;
             // 
             // Loginbtn
             // 
@@ -124,7 +127,7 @@ namespace CompanyManager
             this.Loginbtn.Location = new System.Drawing.Point(12, 104);
             this.Loginbtn.Name = "Loginbtn";
             this.Loginbtn.Size = new System.Drawing.Size(359, 26);
-            this.Loginbtn.TabIndex = 16;
+            this.Loginbtn.TabIndex = 2;
             this.Loginbtn.Text = "로그인";
             this.Loginbtn.UseVisualStyleBackColor = false;
             this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
@@ -141,14 +144,13 @@ namespace CompanyManager
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // Login
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(383, 277);
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Name = "FrmLogin";
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.panDirectLogin, 0);

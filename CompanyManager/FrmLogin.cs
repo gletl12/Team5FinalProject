@@ -10,18 +10,17 @@ using VO;
 
 namespace CompanyManager
 {
-    public partial class Login : CompanyManager.PopupBaseForm
+    public partial class FrmLogin : CompanyManager.PopupBaseForm
     {
-        List<EmployeeVO> employee = new List<EmployeeVO>();
-        public Login()
+        
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtID.Text = "";
-            txtPassword.Text = "";
+            
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
@@ -32,16 +31,33 @@ namespace CompanyManager
                 return;
             }
             EmployeeService emp = new EmployeeService();
-            employee = emp.GetLogin(txtID.Text, txtPassword.Text);
+            (bool result, EmployeeVO employee) = emp.GetLogin(txtID.Text, txtPassword.Text);
             
-            if (employee.Count < 1)
+            if (!result)
             {
+
                 MessageBox.Show("아이디 또는 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.");
                 return;
+            }
+            else
+            {
+                txtID.Text = "";
+                txtPassword.Text = "";
+                this.Hide();
+                FrmMain main = new FrmMain(employee, this);
+                main.Show();
             }
             
 
 
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Loginbtn.PerformClick();
+            }
         }
     }
 }

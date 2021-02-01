@@ -1,17 +1,21 @@
 ﻿using CompanyManager.Properties;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
     public partial class FrmFactoryList : CompanyManager.MDIBaseForm
     {
+        List<FactoryVO> list = new List<FactoryVO>();
         public FrmFactoryList()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace CompanyManager
             CommonUtil.SetDGVDesign_Num(dgvFactory);
 
             CommonUtil.SetDGVDesign_CheckBox(dgvFactory);
-            CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16,"Edit", 30);
+            CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16, "Edit", 30);
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "factory_grade");
             CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "factory_type");
             CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "factory_name", 120);
@@ -35,32 +39,84 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "factory_comment", 150);
             CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "factory_use");
             CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "up_emp", 120);
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date",170);
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date", 170);
 
-            dgvFactory.Rows.Add(null, null, "회사", "공장", "(주)Sidiz", "", "", "사용", "관리자", "2021-01-22");
-            dgvFactory.Rows.Add(null, null, "공장", "공장", "인천 제1 공장", "(주)Sidiz", "", "사용", "관리자", "2021-01-22");
-            dgvFactory.Rows.Add(null, null, "창고", "자재창고", "자재창고1", "(주)Sidiz", "", "사용", "관리자", "2021-01-22");
-            dgvFactory.Rows.Add(null, null, "창고", "생산창고", "생산창고5", "(주)Sidiz", "", "사용", "관리자", "2021-01-22");
-            dgvFactory.Rows.Add(null, null, "창고", "영업창고", "제품창고", "(주)Sidiz", "", "사용", "관리자", "2021-01-22");
-
+            DataRoad();
+            LoadCombobox();
             dgvFactory.AutoGenerateColumns = false;
             dgvFactory.AllowUserToAddRows = false;
         }
 
-        private void ComboBoxBinding()
+        private void DataRoad()
         {
-            //CommonUtil.BindingComboBox
+            FactoryService service = new FactoryService();
+
+            list = service.GetFactory();
+
+            dgvFactory.DataSource = list;
+            dgvFactory.ClearSelection();
+        }
+
+        private void LoadCombobox()
+        {
+            CodeService service = new CodeService();
+            List<CodeVO> combobox = service.GetAllCommonCode();
+
+            cboFGrade.DisplayMember = "name";
+            cboFGrade.ValueMember = "name";
+            List<CodeVO> temp = (from code in combobox
+                                 where code.category == "FACTORY_GRADE"
+                                 select code).ToList();
+            temp.Insert(0, new CodeVO { code = "", name = "" });
+            cboFGrade.DataSource = temp;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            PopFactoryCRUD pop = new PopFactoryCRUD();
+            PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id);
             if (pop.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("정상적으로 처리되었습니다.");
+                DataRoad();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtCodeName.Text.Length < 1 && cboFGrade.SelectedIndex == 0)
+            {
+                DataRoad();
+            }
+            else if (txtCodeName.Text.Length > 0 && cboFGrade.SelectedIndex != 0)
+            {
+                var sResult = (from factory_grade
+                               in list
+                               where
+                               factory_grade.factory_name.Contains(txtCodeName.Text) && factory_grade.factory_grade.Equals(cboFGrade.SelectedValue)
+                               select factory_grade).ToList();
+                dgvFactory.DataSource = null;
+                dgvFactory.DataSource = sResult;
+            }
+            else if(txtCodeName.Text.Length > 0 && cboFGrade.SelectedIndex == 0)
+            {
+                var sResult = (from factory_grade
+                            in list
+                                where
+                                factory_grade.factory_name.Contains(txtCodeName.Text)
+                                select factory_grade).ToList();
+                dgvFactory.DataSource = null;
+                dgvFactory.DataSource = sResult;
             }
             else
-                MessageBox.Show("오류가 발생했습니다.");
+            {
+                var sResult = (from factory_grade
+                               in list
+                               where
+                               factory_grade.factory_grade.Equals(cboFGrade.SelectedValue)
+                               select factory_grade).ToList();
+                dgvFactory.DataSource = null;
+                dgvFactory.DataSource = sResult;
+            }
+
         }
     }
 }

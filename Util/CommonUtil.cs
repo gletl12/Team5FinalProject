@@ -64,8 +64,6 @@ namespace Util
 
         }
 
-
-
         public static void AddGridTextColumn(
                             DataGridView dgv,
                             string headerText,
