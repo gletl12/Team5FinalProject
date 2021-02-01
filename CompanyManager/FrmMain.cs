@@ -66,7 +66,11 @@ namespace CompanyManager
 
 
             Util.CommonUtil.OpenCreateForm(this, frmType);
-            
+            if(loginInfo.dept_no == "9")
+            {
+                btnCommonM.Visible = true;
+                btnEmployeeM.Visible = true;
+            }
         }
 
         //메뉴 생성
@@ -185,9 +189,11 @@ namespace CompanyManager
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
             //메인폼 종료 로그
             Program.Log.WriteInfo("CompanyManager_FrmMain 종료");
             Program.Log.WriteInfo("프로그램 종료");
+            
         }
 
         //폼 열기
@@ -274,12 +280,17 @@ namespace CompanyManager
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
             if (MessageBox.Show("로그아웃 하시겠습니까?", "로그아웃 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                this.Close();
                 login.Show();
             }
-
+            else
+                e.Cancel = true;
         }
     }
 }

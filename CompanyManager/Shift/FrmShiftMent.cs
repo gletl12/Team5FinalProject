@@ -30,20 +30,31 @@ namespace CompanyManager
 
             DataLoad();
             ComboBoxBinding();
+           
         }
 
         private void DataLoad()
         {
             CommonUtil.SetDGVDesign(dataGridView2);
             dataGridView2.AutoGenerateColumns = true;
+
+           
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
-
             ShiftService service = new ShiftService();
-            dataGridView2.DataSource= service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
+            DataTable dt = service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString(), cboShift.Text,cboMachine.Text);
+            dataGridView2.DataSource = dt;
+            //DataView dv= dt.DefaultView;
+
+            //if (cboMachine.Text != "전체")
+            //    dv.RowFilter = $"machine_id='{cboMachine.SelectedValue}'";
+            //else
+            //    dataGridView2.DataSource = dt;
+
+
             dataGridView2.Columns[2].Visible = false;
             dataGridView2.Columns[1].HeaderText = "Shift";
             dataGridView2.Columns[4].Visible = false;
@@ -53,6 +64,7 @@ namespace CompanyManager
         
         List<CodeVO> code;
         List<MachineVO> machine;
+         
 
         private void ComboBoxBinding()
         {
@@ -69,7 +81,7 @@ namespace CompanyManager
             CodeService service1 = new CodeService();
             code = service1.GetAllCommonCode();
             var code1 = (from All in code where All.category == "shift_type" select All).ToList();
-            code1.Insert(0, new CodeVO { name = "전체" });
+            //code1.Insert(0, new CodeVO { name = "전체" });
             CommonUtil.BindingComboBox(cboShift, code1, "code", "name");
 
 

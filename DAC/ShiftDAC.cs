@@ -234,16 +234,19 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
             }
         }
 
-        public DataTable GetShiftInfo(string sday, string eday)
+        public DataTable GetShiftInfo(string sday, string eday,string shift, string machine)
         {
            
-                string sql = "SP_Shift";
+                string sql = "SP_Shift_TEST2";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Start_DT", sday);
                 da.SelectCommand.Parameters.AddWithValue("@End_DT",eday);
+                da.SelectCommand.Parameters.AddWithValue("@Shift_type", shift);
+                da.SelectCommand.Parameters.AddWithValue("@Machine_name", machine);
 
-                DataTable dt = new DataTable();
+
+            DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
 

@@ -41,8 +41,6 @@ namespace CompanyManager
             }
             else
             {
-
-                MessageBox.Show("로그인 성공");
                 txtID.Text = "";
                 txtPassword.Text = "";
                 this.Hide();
@@ -52,6 +50,14 @@ namespace CompanyManager
             
 
 
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Loginbtn.PerformClick();
+            }
         }
     }
 }
