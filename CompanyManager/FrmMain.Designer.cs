@@ -278,6 +278,7 @@ namespace CompanyManager
             this.btnCommonM.Text = "공통관리";
             this.btnCommonM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCommonM.UseVisualStyleBackColor = false;
+            this.btnCommonM.Visible = false;
             this.btnCommonM.Click += new System.EventHandler(this.btnCommonM_Click);
             // 
             // btnLogout
@@ -316,6 +317,7 @@ namespace CompanyManager
             this.btnEmployeeM.Text = "직원관리";
             this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmployeeM.UseVisualStyleBackColor = false;
+            this.btnEmployeeM.Visible = false;
             // 
             // label2
             // 
@@ -347,6 +349,7 @@ namespace CompanyManager
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);

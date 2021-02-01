@@ -40,7 +40,8 @@ namespace DAC
         {
             try
             {
-                string sql = @"insert into TBL_FACTORY 
+                string sql = @"insert into TBL_FACTORY (factory_grade, factory_type, factory_name, factory_parent, factory_use,
+                                                        @factory_comment, @ins_date, @ins_emp, @up_date, @up_emp)
                                values(@factory_grade, @factory_type, @factory_name, @factory_parent, 
                                       @factory_use, @factory_comment, @ins_date, @ins_emp, @up_date, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
