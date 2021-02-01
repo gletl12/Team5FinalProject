@@ -51,6 +51,7 @@
     <Compile Include="CodeService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="FactoryService.cs" />
+    <Compile Include="InboundService.cs" />
     <Compile Include="MachineService.cs" />
     <Compile Include="MenuService.cs" />
     <Compile Include="PriceService.cs" />
