@@ -280,12 +280,7 @@ namespace CompanyManager
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("로그아웃 하시겠습니까?", "로그아웃 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                this.Close();
-                login.Show();
-            }
-
+            this.Close();
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
