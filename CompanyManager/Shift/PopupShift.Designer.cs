@@ -48,14 +48,11 @@ namespace CompanyManager
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -65,7 +62,6 @@ namespace CompanyManager
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -130,14 +126,11 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox17);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox19);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.textBox18);
@@ -147,7 +140,6 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label11);
@@ -165,9 +157,9 @@ namespace CompanyManager
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(91, 390);
+            this.richTextBox1.Location = new System.Drawing.Point(91, 369);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(563, 142);
+            this.richTextBox1.Size = new System.Drawing.Size(563, 163);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
@@ -306,14 +298,6 @@ namespace CompanyManager
             this.label10.TabIndex = 3;
             this.label10.Text = "* 간접투입인원";
             // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(485, 363);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 21);
-            this.textBox3.TabIndex = 4;
-            // 
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(485, 276);
@@ -338,14 +322,6 @@ namespace CompanyManager
             this.label8.TabIndex = 3;
             this.label8.Text = "* 직접투입인원";
             // 
-            // textBox19
-            // 
-            this.textBox19.Enabled = false;
-            this.textBox19.Location = new System.Drawing.Point(156, 363);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(169, 21);
-            this.textBox19.TabIndex = 4;
-            // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(485, 210);
@@ -359,16 +335,6 @@ namespace CompanyManager
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(169, 21);
             this.textBox10.TabIndex = 4;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Gray;
-            this.label22.Location = new System.Drawing.Point(348, 366);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(50, 14);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "* 수정자";
             // 
             // label12
             // 
@@ -439,21 +405,11 @@ namespace CompanyManager
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(16, 390);
+            this.label16.Location = new System.Drawing.Point(16, 369);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(39, 14);
             this.label16.TabIndex = 3;
             this.label16.Text = "* 비고";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(16, 366);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 14);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "* 수정일";
             // 
             // label18
             // 
@@ -608,15 +564,11 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox cboShift;
         private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboUse;
         
     }

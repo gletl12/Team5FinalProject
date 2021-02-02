@@ -71,11 +71,11 @@ namespace DAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into TBL_SHIFT (
-machine_id,shift_type,shift_stime,shift_etime,shift_sdate,shift_edate,shift_use,shift_comment,ins_date,ins_emp,up_date,up_emp,
+machine_id,shift_type,shift_stime,shift_etime,shift_sdate,shift_edate,shift_use,shift_comment,ins_date,ins_emp,
 Directly_Input_Person,Indirect_Input_Person,Nomal_Direct_WorkTime,Nomal_indirect_WorkTime,Overtime_Directly_WorkTime,Overtime_Indirect_WorkTime,
 Overtime_Directly_Input_Person,Overtime_Indirect_Input_Person,Directly_Accident_WorkTime,Indirect_Accident_WorkTime,Overtime_Directly_Accident_Time,Overtime_Indirect_Accident_Time)
 
-values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_edate,@shift_use,@shift_comment,@ins_date,@ins_emp,@up_date,@up_emp,@Directly_Input_Person,@Indirect_Input_Person,@Nomal_Direct_WorkTime,
+values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_edate,@shift_use,@shift_comment,@ins_date,@ins_emp,@Directly_Input_Person,@Indirect_Input_Person,@Nomal_Direct_WorkTime,
 @Nomal_indirect_WorkTime,@Overtime_Directly_WorkTime,@Overtime_Indirect_WorkTime,@Overtime_Directly_Input_Person,@Overtime_Indirect_Input_Person,@Directly_Accident_WorkTime,@Indirect_Accident_WorkTime,
 @Overtime_Directly_Accident_Time,@Overtime_Indirect_Accident_Time)";
                   
@@ -91,10 +91,9 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                     cmd.Parameters.AddWithValue("@shift_use", item.shift_use);
                     cmd.Parameters.AddWithValue("@shift_comment", item.shift_comment);
 
-                    cmd.Parameters.AddWithValue("@ins_date", item.ins_date);
+                    cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@ins_emp", item.ins_emp);
-                    cmd.Parameters.AddWithValue("@up_date", item.up_date);
-                    cmd.Parameters.AddWithValue("@up_emp", item.up_emp);
+                   
 
                     cmd.Parameters.AddWithValue("@Directly_Input_Person", item.Directly_Input_Person);
                     cmd.Parameters.AddWithValue("@Indirect_Input_Person", item.Indirect_Input_Person);
@@ -171,9 +170,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
 					                                        	shift_edate=@shift_edate,
 					                                        	shift_use=@shift_use,
 					                                        	shift_comment=@shift_comment,
-					                                        	ins_date=@ins_date,
-					                                        	ins_emp=@ins_emp,
-					                                        	up_date=@up_date,
+					                                            up_date=@up_date,
 					                                        	up_emp=@up_emp,
 					                                        	Directly_Input_Person=@Directly_Input_Person,
 					                                        	Indirect_Input_Person=@Indirect_Input_Person,
@@ -200,9 +197,7 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                     cmd.Parameters.AddWithValue("@shift_use", item.shift_use);
                     cmd.Parameters.AddWithValue("@shift_comment", item.shift_comment);
 
-                    cmd.Parameters.AddWithValue("@ins_date", item.ins_date);
-                    cmd.Parameters.AddWithValue("@ins_emp", item.ins_emp);
-                    cmd.Parameters.AddWithValue("@up_date", item.up_date);
+                    cmd.Parameters.AddWithValue("@up_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@up_emp", item.up_emp);
 
                     cmd.Parameters.AddWithValue("@Directly_Input_Person", item.Directly_Input_Person);
