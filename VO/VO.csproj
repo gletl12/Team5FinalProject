@@ -53,6 +53,7 @@
     <Compile Include="CompanyVO.cs" />
     <Compile Include="EmployeeVO.cs" />
     <Compile Include="FactoryVO.cs" />
+    <Compile Include="InboundVO.cs" />
     <Compile Include="MachineVO.cs" />
     <Compile Include="MenuVO.cs" />
     <Compile Include="PriceVO.cs" />

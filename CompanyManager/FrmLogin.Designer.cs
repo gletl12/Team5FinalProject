@@ -109,6 +109,7 @@ namespace CompanyManager
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(178, 21);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "1234";
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtID
@@ -118,6 +119,7 @@ namespace CompanyManager
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(178, 21);
             this.txtID.TabIndex = 0;
+            this.txtID.Text = "1";
             // 
             // Loginbtn
             // 

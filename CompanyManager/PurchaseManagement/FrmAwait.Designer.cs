@@ -47,19 +47,17 @@ namespace CompanyManager
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
-            this.dgvWait = new System.Windows.Forms.DataGridView();
+            this.dgvPurchases = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.dgvInbound = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNewInbound = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -260,18 +258,19 @@ namespace CompanyManager
             this.button14.Text = "조회";
             this.button14.UseVisualStyleBackColor = false;
             // 
-            // dgvWait
+            // dgvPurchases
             // 
-            this.dgvWait.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPurchases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvWait.BackgroundColor = System.Drawing.Color.White;
-            this.dgvWait.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWait.Location = new System.Drawing.Point(3, 29);
-            this.dgvWait.Name = "dgvWait";
-            this.dgvWait.RowTemplate.Height = 23;
-            this.dgvWait.Size = new System.Drawing.Size(1142, 196);
-            this.dgvWait.TabIndex = 19;
+            this.dgvPurchases.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPurchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPurchases.Location = new System.Drawing.Point(3, 29);
+            this.dgvPurchases.Name = "dgvPurchases";
+            this.dgvPurchases.RowTemplate.Height = 23;
+            this.dgvPurchases.Size = new System.Drawing.Size(1142, 196);
+            this.dgvPurchases.TabIndex = 19;
+            this.dgvPurchases.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchases_CellContentClick);
             // 
             // splitContainer1
             // 
@@ -284,31 +283,20 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.dgvWait);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvPurchases);
             this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.button9);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.checkBox2);
             this.splitContainer1.Panel2.Controls.Add(this.dgvInbound);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
+            this.splitContainer1.Panel2.Controls.Add(this.btnNewInbound);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Size = new System.Drawing.Size(1148, 522);
             this.splitContainer1.SplitterDistance = 228;
             this.splitContainer1.TabIndex = 25;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(146, 77);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
@@ -349,15 +337,6 @@ namespace CompanyManager
             this.button9.TabIndex = 14;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(62, 57);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 27;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // dgvInbound
             // 
             this.dgvInbound.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -370,6 +349,7 @@ namespace CompanyManager
             this.dgvInbound.RowTemplate.Height = 23;
             this.dgvInbound.Size = new System.Drawing.Size(1141, 258);
             this.dgvInbound.TabIndex = 19;
+            this.dgvInbound.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInbound_CellContentClick);
             // 
             // label1
             // 
@@ -382,21 +362,22 @@ namespace CompanyManager
             this.label1.TabIndex = 13;
             this.label1.Text = "      자재입고처리";
             // 
-            // button2
+            // btnNewInbound
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1013, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "    입고대기처리";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNewInbound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewInbound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnNewInbound.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnNewInbound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewInbound.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
+            this.btnNewInbound.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewInbound.Location = new System.Drawing.Point(1013, 3);
+            this.btnNewInbound.Name = "btnNewInbound";
+            this.btnNewInbound.Size = new System.Drawing.Size(97, 23);
+            this.btnNewInbound.TabIndex = 17;
+            this.btnNewInbound.Text = "    입고대기처리";
+            this.btnNewInbound.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNewInbound.UseVisualStyleBackColor = false;
+            this.btnNewInbound.Click += new System.EventHandler(this.btnNewInbound_Click);
             // 
             // button5
             // 
@@ -417,9 +398,10 @@ namespace CompanyManager
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel2);
             this.Name = "FrmAwait";
+            this.Load += new System.EventHandler(this.FrmAwait_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvWait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchases)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -451,16 +433,14 @@ namespace CompanyManager
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNewInbound;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dgvWait;
+        private System.Windows.Forms.DataGridView dgvPurchases;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvInbound;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
