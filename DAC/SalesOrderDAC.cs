@@ -169,12 +169,12 @@ namespace DAC
 
         public List<SalesOrderVO> GetAllSO(DateTime from,DateTime to)
         {
-            string sql = @"select * from VW_SOLIST between @from and @to";
+            string sql = @"select * from VW_SOLIST where due_date between @from and @to";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try
                 {
-                    cmd.Parameters.AddWithValue("@from",from);
+                    cmd.Parameters.AddWithValue("@from",from.AddDays(-1));
                     cmd.Parameters.AddWithValue("@to",to);
                     List<SalesOrderVO> list = Helper.DataReaderMapToList<SalesOrderVO>(cmd.ExecuteReader());
                     conn.Close();

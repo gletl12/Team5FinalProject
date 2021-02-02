@@ -195,12 +195,12 @@ namespace DAC
             string sql = @"
                            select supply_company,company_name,I.item_id,item_name,P.prod_id,
                             case isnull(sign(sum(P2.prod_qty)),0)
-                            	when 0 then P.prod_qty*B.bom_use_qty-(isnull(sum(pd_qty),0)  + isnull(sum(in_rqty),0)) + item_safety_qty
-                            	when 1 then P.prod_qty*B.bom_use_qty-item_safety_qty
+                            	when 0 then P.prod_qty*B.bom_use_qty-(isnull(sum(pd_qty),0)  + isnull(sum(in_rqty),0)) + isnull(item_safety_qty,0)
+                            	when 1 then P.prod_qty*B.bom_use_qty-isnull(item_safety_qty,0)
                             end as p_qty,in_warehouse,warehouse_name,P.start_date DueDate
 							from TBL_PRODUCTION_PLAN P JOIN  TBL_BOM B ON P.item_id = B.bom_parent_id
-													   JOIN TBL_ITEM I ON B.item = I.item_id
-													   JOIN TBL_COMPANY C ON C.company_id = I.supply_company
+													    JOIN TBL_ITEM I ON B.item = I.item_id
+													   LEFT JOIN TBL_COMPANY C ON C.company_id = I.supply_company
 													   JOIN TBL_WAREHOUSE W ON W.warehouse_id = I.in_warehouse
 													   LEFT JOIN TBL_PRODUCTION_PLAN P2 ON P2.start_date<P.start_date and P2.item_id = P.item_id
 													   LEFT JOIN TBL_INBOUND N ON N.item_id = I.item_id and I.in_warehouse = N.wh_id

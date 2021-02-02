@@ -76,7 +76,7 @@ namespace CompanyManager
             dgvPurchases.DataSource = service.GetDGVInfo(dtpFrom.Value, dtpTO.Value);
             dgvPurchases.Columns[0].Visible = false;
             dgvPurchases.Columns["item_id"].HeaderText = "품목";
-            dgvPurchases.Columns["item_id"].Width = 80;
+            dgvPurchases.Columns["item_id"].Width = 100;
             dgvPurchases.Columns["item_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchases.Columns["item_name"].HeaderText = "품명";
             dgvPurchases.Columns["item_name"].Width = 120;

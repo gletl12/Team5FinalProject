@@ -33,13 +33,17 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvInbound, "입고일자", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
 
-            checkBox1.Location = new Point(dgvInbound.Location.X + 54, dgvInbound.Location.Y + 5);
 
             dgvInbound.Rows.Add(null, "202101251025", "다리상사", "L_WOOD_03", "의자 다리 원목", "12 * 20 inch", "갯수", "사용", "400", "0","400", "정규발주", "2021-01-25", "2021-01-26");
             dgvInbound.Rows.Add(null, "202101251025", "(주)시트", "SHEET_02", "의자 다리 원목", "12 * 20 inch", "갯수", "사용", "100", "0","100", "외주발주", "2021-01-25", "2021-01-26");
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmInboundState_Load(object sender, EventArgs e)
         {
 
         }
