@@ -106,7 +106,11 @@ namespace CompanyManager
 
         private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
         {
-
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("검색기간의 설정이 잘못되었습니다.");
+                return;
+            }
         }
        
     }
