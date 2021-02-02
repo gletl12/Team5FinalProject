@@ -46,6 +46,7 @@ namespace CompanyManager
             dataGridView2.DataSource = null;
             ShiftService service = new ShiftService();
             DataTable dt = service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString(), cboShift.Text,cboMachine.Text);
+            CommonUtil.AddGridTextColumn(dataGridView2, "설비명", "설비명", 130);
             dataGridView2.DataSource = dt;
             //DataView dv= dt.DefaultView;
 
