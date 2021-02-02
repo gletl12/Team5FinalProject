@@ -78,7 +78,6 @@ namespace CompanyManager
 
 
         }
-      
         /// <summary>
         /// 그리드뷰 디자인
         /// </summary>
@@ -93,8 +92,8 @@ namespace CompanyManager
             dgvShift.Columns.Add(col);
             CommonUtil.AddGridImageColumn(dgvShift, Resources.Edit_16x16, "Edit", 30);
             CommonUtil.AddGridTextColumn(dgvShift, "shift_id", "shift_id", 57, false, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "machine_id", 57,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",97);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비코드", "machine_id", 85,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvShift, "설비명", "machine_name",130);
             CommonUtil.AddGridTextColumn(dgvShift, "Shift", "shift_type", 40, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "시작시간", "shift_stime", 57, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvShift, "완료시간", "shift_etime", 57, true, DataGridViewContentAlignment.MiddleCenter);
@@ -133,7 +132,6 @@ namespace CompanyManager
         /// </summary>
         private void DataLoad()
         {
-            
             ShiftService service = new ShiftService();
             shift =  service.GetShift();
             dgvShift.DataSource = shift;

@@ -9,7 +9,7 @@ namespace VO
     public class ShiftVO
     {
      public int  shift_id                                     {get; set;}
-     public int  machine_id                                   {get; set;}
+     public string  machine_id                                   {get; set;}
 
      public string  machine_name                              { get; set; }
      public string  shift_type                                {get; set;}

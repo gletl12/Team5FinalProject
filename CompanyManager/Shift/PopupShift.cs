@@ -130,7 +130,7 @@ namespace CompanyManager
                     return;
                 }
                 ShiftVO emp = new ShiftVO();
-                emp.machine_id = cboMachine.SelectedIndex;
+                emp.machine_id = cboMachine.Text;
                 emp.shift_type = cboShift.Text;
                 emp.shift_stime = txtStime.Text;
                 emp.shift_etime = txtEtime.Text;
@@ -175,7 +175,7 @@ namespace CompanyManager
                 }
                 ShiftVO emp = new ShiftVO();
                 emp.shift_id = list.shift_id;
-                emp.machine_id = cboMachine.SelectedIndex;
+                emp.machine_id = cboMachine.Text;
                 emp.shift_type = cboShift.Text;
                 emp.shift_stime = txtStime.Text;
                 emp.shift_etime = txtEtime.Text;
