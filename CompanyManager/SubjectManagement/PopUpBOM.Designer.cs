@@ -34,6 +34,15 @@ namespace CompanyManager
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -44,16 +53,7 @@ namespace CompanyManager
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +114,7 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.dateTimePicker2);
@@ -123,7 +124,6 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBox5);
             this.panel1.Controls.Add(this.comboBox7);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.comboBox4);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label14);
@@ -141,8 +141,85 @@ namespace CompanyManager
             this.panel1.Size = new System.Drawing.Size(626, 377);
             this.panel1.TabIndex = 8;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(130, 138);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(169, 21);
+            this.textBox4.TabIndex = 127;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(424, 138);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(169, 21);
+            this.textBox2.TabIndex = 126;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(421, 58);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(172, 21);
+            this.dateTimePicker2.TabIndex = 125;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(127, 97);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(172, 21);
+            this.dateTimePicker1.TabIndex = 124;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(130, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(169, 21);
+            this.textBox1.TabIndex = 123;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(130, 22);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(169, 22);
+            this.comboBox9.TabIndex = 122;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(333, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 14);
+            this.label4.TabIndex = 121;
+            this.label4.Text = "* 시작일";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(424, 177);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(169, 22);
+            this.comboBox5.TabIndex = 120;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(424, 99);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(169, 22);
+            this.comboBox7.TabIndex = 118;
+            // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(130, 177);
             this.comboBox4.Name = "comboBox4";
@@ -162,7 +239,7 @@ namespace CompanyManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Gray;
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label14.Location = new System.Drawing.Point(333, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 14);
@@ -202,7 +279,7 @@ namespace CompanyManager
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label7.Location = new System.Drawing.Point(31, 180);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 14);
@@ -239,83 +316,14 @@ namespace CompanyManager
             this.label1.TabIndex = 94;
             this.label1.Text = "* 상위품목";
             // 
-            // comboBox5
+            // comboBox1
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(424, 177);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(169, 22);
-            this.comboBox5.TabIndex = 120;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(424, 99);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(169, 22);
-            this.comboBox7.TabIndex = 118;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(424, 21);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 21);
-            this.textBox3.TabIndex = 116;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(333, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 14);
-            this.label4.TabIndex = 121;
-            this.label4.Text = "* 시작일";
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(130, 22);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(169, 22);
-            this.comboBox9.TabIndex = 122;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(130, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 21);
-            this.textBox1.TabIndex = 123;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(127, 97);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 21);
-            this.dateTimePicker1.TabIndex = 124;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(421, 58);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(172, 21);
-            this.dateTimePicker2.TabIndex = 125;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(424, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 21);
-            this.textBox2.TabIndex = 126;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(130, 138);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(169, 21);
-            this.textBox4.TabIndex = 127;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(421, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 22);
+            this.comboBox1.TabIndex = 128;
             // 
             // PopUpBOM
             // 
@@ -352,7 +360,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label14;
@@ -363,5 +370,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
