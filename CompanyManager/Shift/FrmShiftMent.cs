@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -40,12 +41,12 @@ namespace CompanyManager
 
            
         }
-
+        DataTable dt;
         private void button14_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
             ShiftService service = new ShiftService();
-            DataTable dt = service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString(), cboShift.Text,cboMachine.Text);
+            dt = service.GetShiftInfo(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString(), cboShift.Text,cboMachine.Text);
             CommonUtil.AddGridTextColumn(dataGridView2, "설비명", "설비명", 130);
             dataGridView2.DataSource = dt;
             //DataView dv= dt.DefaultView;
@@ -88,9 +89,25 @@ namespace CompanyManager
 
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+               CommonExcel.dataGridView_ExportToExcel(sfd.FileName, dataGridView2);
+            }
+
+   
+        }
+
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
         {
 
         }
+       
     }
 }
