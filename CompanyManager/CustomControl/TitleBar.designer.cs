@@ -66,9 +66,9 @@
             this.btnSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSize.FlatAppearance.BorderSize = 0;
             this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSize.Location = new System.Drawing.Point(549, 0);
+            this.btnSize.Location = new System.Drawing.Point(569, 7);
             this.btnSize.Name = "btnSize";
-            this.btnSize.Size = new System.Drawing.Size(31, 33);
+            this.btnSize.Size = new System.Drawing.Size(19, 19);
             this.btnSize.TabIndex = 6;
             this.btnSize.UseVisualStyleBackColor = false;
             this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
@@ -81,9 +81,9 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(586, 0);
+            this.btnCancel.Location = new System.Drawing.Point(594, 7);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(33, 33);
+            this.btnCancel.Size = new System.Drawing.Size(20, 20);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);

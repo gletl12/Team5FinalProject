@@ -12,7 +12,7 @@ namespace VO
         public string Item_type { get; set; } //품목 유형
         public string Item_name { get; set; } //품명
         public string Item_unit { get; set; } //단위
-        public int Item_unit_qty { get; set; } //단위수량
+        public int? Item_unit_qty { get; set; } //단위수량
         public string Import_inspection { get; set; } //수입검사 여부
         public string Process_inspection { get; set; } //공정검사 여부
         public string Shipment_inspection { get; set; } //출하검사 여부
