@@ -54,7 +54,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
+            this.label1.Size = new System.Drawing.Size(72, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "HeaderText";
             // 
@@ -66,7 +66,7 @@
             this.btnSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSize.FlatAppearance.BorderSize = 0;
             this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSize.Location = new System.Drawing.Point(576, 0);
+            this.btnSize.Location = new System.Drawing.Point(569, 7);
             this.btnSize.Name = "btnSize";
             this.btnSize.Size = new System.Drawing.Size(19, 19);
             this.btnSize.TabIndex = 6;
@@ -81,7 +81,7 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(597, 0);
+            this.btnCancel.Location = new System.Drawing.Point(594, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(20, 20);
             this.btnCancel.TabIndex = 5;

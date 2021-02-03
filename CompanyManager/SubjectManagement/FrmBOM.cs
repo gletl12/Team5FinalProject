@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using VO;
 
 namespace CompanyManager
@@ -31,8 +32,19 @@ namespace CompanyManager
             Service.BOMService service = new Service.BOMService();
             codeAllList = service.GetBOMCode();
 
+            CodeVO co = new CodeVO { code = "", name = ""};
+            List<CodeVO> temp = (from code in codeAllList
+                                 where code.category.Equals("item")
+                                 select code).ToList();
+            temp.Insert(0, co);
+            cboSubject.DataSource = temp.ConvertAll(p => p);
 
-
+            temp = (from code in codeAllList
+                                 where code.category.Equals("USE_FLAG")
+                                 select code).ToList();
+            temp.Insert(0, co);
+            cboUse.DataSource = temp.ConvertAll(p => p);
+            
 
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);

@@ -39,6 +39,7 @@ namespace CompanyManager
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.cbodeployment = new System.Windows.Forms.ComboBox();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,13 +52,13 @@ namespace CompanyManager
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(94, 51);
             this.cboUse.Name = "cboUse";
@@ -166,10 +167,23 @@ namespace CompanyManager
             this.panel2.Size = new System.Drawing.Size(1152, 98);
             this.panel2.TabIndex = 20;
             // 
+            // cboSubject
+            // 
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(423, 21);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(186, 22);
+            this.cboSubject.TabIndex = 7;
+            // 
             // cbodeployment
             // 
             this.cbodeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbodeployment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbodeployment.FormattingEnabled = true;
+            this.cbodeployment.Items.AddRange(new object[] {
+            "전체",
+            "정전개",
+            "역전개"});
             this.cbodeployment.Location = new System.Drawing.Point(769, 21);
             this.cbodeployment.Name = "cbodeployment";
             this.cbodeployment.Size = new System.Drawing.Size(183, 22);
@@ -327,14 +341,6 @@ namespace CompanyManager
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1146, 488);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(423, 21);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(186, 22);
-            this.cboSubject.TabIndex = 7;
             // 
             // FrmBOM
             // 
