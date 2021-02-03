@@ -75,7 +75,7 @@ namespace POP
             }
             if (txtID.Text == "6")//전체현황판
             {
-                FrmMain frm = new FrmMain();
+                FrmMain2 frm = new FrmMain2();
                 frm.Show();
             }
 
