@@ -55,12 +55,19 @@ namespace CompanyManager
             cboplan.ValueMember = "code";
 
             CodeVO co = new CodeVO { code = "", name = "" };
+            CodeVO co2 = new CodeVO { code = "-", name = "-" };
             List<CodeVO> temp = (from code in codeAllList
                                  where code.category.Equals("item")
                                  select code).ToList();
             temp.Insert(0, co);
-            cboParentsubject.DataSource = temp.ConvertAll(p => p);
             cbosubject.DataSource = temp.ConvertAll(p => p);
+
+            temp = (from code in codeAllList
+                    where code.category.Equals("BOM_Item")
+                    select code).ToList();
+            temp.Insert(0, co);
+            temp.Insert(1, co2);
+            cboParentsubject.DataSource = temp.ConvertAll(p => p);
 
             temp = (from code in codeAllList
                                  where code.category.Equals("USE_FLAG")
@@ -102,12 +109,19 @@ namespace CompanyManager
             vo.bom_use = cbouse.SelectedValue.ToString();
             vo.auto_deduction = cboauto.SelectedValue.ToString();
             vo.plan_use = cboplan.SelectedValue.ToString();
+            vo.bom_comment = txtcomment.Text.ToString();
             vo.ins_emp = LoginInfo.emp_id;
             vo.ins_date = DateTime.Now;
 
-            InsertList.Add(vo);
+            List<BOMVO> temp = new List<BOMVO>();
+            temp.Add(vo);
+            InsertList = temp;
+
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
-       
+        
     }
 }

@@ -80,8 +80,16 @@ namespace CompanyManager
         {
             PopUpBOM popup = new PopUpBOM();
             popup.codeAllList = codeAllList;
-            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
-            popup.ShowDialog();
+            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo; //로그인정보 전달
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                Service.BOMService service = new Service.BOMService();
+                if (service.AddBOM(popup.InsertList))
+                {
+
+                }
+            }
+            
         }
     }
 }
