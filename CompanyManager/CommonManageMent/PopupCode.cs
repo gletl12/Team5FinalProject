@@ -12,7 +12,7 @@ namespace CompanyManager
     {
         public string Code 
         {
-            get { return txtCode.Text; }
+            get { return txtCode.Text.Trim(); }
             set 
             {
                 txtCode.ReadOnly = true;
@@ -21,17 +21,17 @@ namespace CompanyManager
         }
         public string CodeName
         {
-            get { return txtCodeName.Text; }
+            get { return txtCodeName.Text.Trim(); }
             set { txtCodeName.Text = value; }
         }
         public string Category
         {
-            get { return txtCategory.Text; }
+            get { return txtCategory.Text.Trim(); }
             set { txtCategory.Text = value; }
         }
         public string Pcode
         {
-            get { return txtpCode.Text; }
+            get { return txtpCode.Text.Trim(); }
             set { txtpCode.Text = value; }
         }
         public PopupCode()
