@@ -44,7 +44,7 @@ namespace CompanyManager
                                  select code).ToList();
             temp.Insert(0, co);
             cboUse.DataSource = temp.ConvertAll(p => p);
-            
+            cbodeployment.SelectedIndex = 0;
 
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
