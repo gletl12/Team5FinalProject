@@ -79,6 +79,8 @@ namespace CompanyManager
         private void button13_Click(object sender, EventArgs e)
         {
             PopUpBOM popup = new PopUpBOM();
+            popup.codeAllList = codeAllList;
+            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo;
             popup.ShowDialog();
         }
     }
