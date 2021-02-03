@@ -95,7 +95,14 @@ namespace CompanyManager
             for (int i = 0; i < dgvPurchases.Rows.Count; i++)
             {
                 if (Convert.ToBoolean(dgvPurchases[0, i].Value))
-                    selectedRows.Add(Convert.ToInt32(dgvPurchases["pd_id",i].Value));
+                {
+                    selectedRows.Add(Convert.ToInt32(dgvPurchases["pd_id", i].Value));
+                    if (Convert.ToInt32(dgvPurchases[9, i].Value) > 0)
+                    {
+                        MessageBox.Show("입고가 진행된 발주는 취소할 수 없습니다.");
+                        return;
+                    }
+                }
             }
             if (selectedRows.Count < 1)
             {
@@ -142,6 +149,11 @@ namespace CompanyManager
                 return;
             }
                 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

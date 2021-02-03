@@ -1,38 +1,67 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
     public partial class FrmCheck : CompanyManager.MDIBaseForm
     {
+    CheckService service = new CheckService();
+        List<CheckVO> list = new List<CheckVO>();
         public FrmCheck()
         {
             InitializeComponent();
 
-            CommonUtil.SetInitGridView(dataGridView2);
-            CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridTextColumn(dataGridView2, "검사번호", "CompanyName", 100,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "검사일", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "업체명", "CompanyName",120, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "CompanyName", 100);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품명", "CompanyName", 120);
-            CommonUtil.AddGridTextColumn(dataGridView2, "규격", "CompanyName", 120);
-            CommonUtil.AddGridTextColumn(dataGridView2, "결과", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "입고수량", "CompanyName", 70, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dataGridView2, "불량수량", "CompanyName", 70, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dataGridView2, "불량사유", "CompanyName", 150);
+            CommonUtil.SetInitGridView(dgvCheck);
+            CommonUtil.SetDGVDesign_Num(dgvCheck);
+            CommonUtil.AddGridTextColumn(dgvCheck, "검사번호", "ch_id", 60,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvCheck, "검사일", "ins_date", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvCheck, "업체명", "company_name",120);
+            CommonUtil.AddGridTextColumn(dgvCheck, "품목", "item_id", 120);
+            CommonUtil.AddGridTextColumn(dgvCheck, "품명", "item_name", 120);
+            CommonUtil.AddGridTextColumn(dgvCheck, "단위", "unit", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvCheck, "검사수량", "ch_qty", 70, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvCheck, "양품수량", "good_qty", 70, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvCheck, "불량수량", "bad_qty", 70, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvCheck, "불량사유", "bad_comment", 200);
 
-
-            dataGridView2.Rows.Add("1001", "2021-01-25", "(주)에이더블유", "L_WOOD_03", "의자 다리 원목", "12 * 20 inch", "합격", "200", "0");
-            dataGridView2.Rows.Add("1002", "2021-01-25", "(주)시트", "WOOD_01", "시트", "200 * 200", "합격", "100", "0");
         }
 
+        private void FrmCheck_Load(object sender, EventArgs e)
+        {
+            dtpFrom.Value = DateTime.Now.AddDays(-30);
+            dtpTo.Value = DateTime.Now;
+            List<CodeVO> companys = service.GetCompanyList();
+            companys.Insert(0, new CodeVO() { name = "전체", code = "" });
+            CommonUtil.BindingComboBox(cboCompany, companys, "code", "name");
+            GetCheckList();
+        }
 
+        private void GetCheckList()
+        {
+            list = service.GetCheckList(dtpFrom.Value, dtpTo.Value);
+            dgvCheck.DataSource = null;
+            dgvCheck.DataSource = list;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetCheckList();
+            var searchResult = (from check in list
+                                where
+                                (cboCompany.Text.Equals("전체") || cboCompany.Text.Equals(check.company_name)) &&
+                                (txtID.Text.Length < 1 || check.item_id.Equals(txtID.Text) || check.item_name.Contains(txtID.Text))
+                                select check).ToList();
+            dgvCheck.DataSource = null;
+            dgvCheck.DataSource = searchResult;
+        }
     }
 }

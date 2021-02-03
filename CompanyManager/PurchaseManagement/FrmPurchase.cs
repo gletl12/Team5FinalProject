@@ -66,7 +66,7 @@ namespace CompanyManager
             CommonUtil.BindingComboBox(cboWarehouse, warehouses, "code", "name");
 
             dtpFrom.Value = DateTime.Now;
-            dtpTO.Value = dtpFrom.Value.AddDays(10);
+            dtpTO.Value = dtpFrom.Value.AddDays(15);
 
             CommonUtil.SetInitGridView(dgvPurchases);
             CommonUtil.SetDGVDesign(dgvPurchases);
@@ -100,6 +100,11 @@ namespace CompanyManager
         {
             dgvPurchases.DataSource = service.GetDGVInfo(dtpFrom.Value, dtpTO.Value);
 
+
+        }
+
+        private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

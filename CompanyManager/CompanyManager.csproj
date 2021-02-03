@@ -115,6 +115,12 @@
     <Compile Include="PurchaseManagement\PopupDueDate.Designer.cs">
       <DependentUpon>PopupDueDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseManagement\PopupInboundCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManagement\PopupInboundCancel.Designer.cs">
+      <DependentUpon>PopupInboundCancel.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseManagement\PopupInboundQty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupDueDate.resx">
       <DependentUpon>PopupDueDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManagement\PopupInboundCancel.resx">
+      <DependentUpon>PopupInboundCancel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupInboundQty.resx">
       <DependentUpon>PopupInboundQty.cs</DependentUpon>

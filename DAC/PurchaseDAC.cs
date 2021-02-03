@@ -41,11 +41,13 @@ namespace DAC
             try
             {
                 List<PurchasesListVO> list = new List<PurchasesListVO>();
-                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,due_date,pd_qty,in_qty,in_cqty,pd_qty-isnull(in_cqty,0)-isnull(in_qty,0) Cancellable,
+                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,due_date,pd_qty,isnull(in_qty,0) in_qty,isnull(in_cqty,0) in_cqty,pd_qty-isnull(in_cqty,0)-isnull(in_qty,0) Cancellable,
                                	   PD.ins_date,emp_name
                                from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                                						    JOIN TBL_COMPANY C ON C.company_id = I.supply_company
-                               							LEFT JOIN TBL_INBOUND B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
+                               							LEFT JOIN (select sum(in_qty) in_qty ,prod_id,item_id,sum(in_cqty) in_cqty 
+																   from TBL_INBOUND
+																   group by prod_id,item_id) B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
                                							LEFT JOIN TBL_Employee E ON E.emp_id = PD.ins_emp
                                							JOIN TBL_COMMON_CODE CD ON CD.code = item_unit
                                							left JOIN TBL_COMMON_CODE CD2 ON CD2.code = purchase_state
