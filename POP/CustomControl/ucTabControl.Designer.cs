@@ -1,7 +1,6 @@
-﻿
-namespace POP
+﻿namespace POP
 {
-    partial class FrmMain
+    partial class ucTabControl
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -21,7 +20,7 @@ namespace POP
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region 구성 요소 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
@@ -29,17 +28,7 @@ namespace POP
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1496, 900);
-            this.IsMdiContainer = true;
-            this.Name = "FrmMain";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
