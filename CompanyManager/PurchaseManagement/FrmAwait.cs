@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
@@ -64,14 +65,26 @@ namespace CompanyManager
 
         private void FrmAwait_Load(object sender, EventArgs e)
         {
+            List<CodeVO> codes = service.GetAllCodes();
+            var companys = (from company in codes where company.category.Equals("COMPANY") select company).ToList();
+            companys.Insert(0, new CodeVO() { name = "전체", code = "", category = "COMPANY" });
+            var prodIDs = (from prodID in codes where prodID.category.Equals("PROD_ID") select prodID).ToList();
+            prodIDs.Insert(0, new CodeVO() { name = "전체", code = "", category = "PROD_ID" });
+
+            CommonUtil.BindingComboBox(cboCompany, companys, "code", "name");
+            CommonUtil.BindingComboBox(cboProductionID, prodIDs, "code", "name");
+
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now.AddDays(14);
             GetPurchaseList();
         }
 
         private void GetPurchaseList()
         {
-            purchasesList = service.GetPurchasesList();
+            purchasesList = service.GetPurchasesList(dtpFrom.Value, dtpTo.Value);
             dgvPurchases.DataSource = purchasesList;
             dgvInbound.DataSource = null;
+            selectedList.Clear();
         }
 
         private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,7 +94,7 @@ namespace CompanyManager
             if (Convert.ToBoolean(((DataGridViewCheckBoxCell)dgvPurchases[0, e.RowIndex]).Value))
             {
                 int pdID = Convert.ToInt32(dgvPurchases["pd_id", e.RowIndex].Value);
-                PopupInboundQty popup = new PopupInboundQty(Convert.ToInt32(dgvPurchases["pd_qty", e.RowIndex].Value));
+                PopupInboundQty popup = new PopupInboundQty(Convert.ToInt32(dgvPurchases["RQty", e.RowIndex].Value));
                 if (popup.ShowDialog() == DialogResult.OK)
                 {
                     InboundVO newInbound = new InboundVO()
@@ -136,11 +149,26 @@ namespace CompanyManager
             {
                 MessageBox.Show("등록 성공");
                 GetPurchaseList();
+
             }
             else
             {
                 MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오");
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetPurchaseList();
+            purchasesList = (from purchases in purchasesList
+                             where
+                             (txtItem.Text.Length < 1 || purchases.item_id.Equals(txtItem.Text) || purchases.item_name.Contains(txtItem.Text)) &&
+                             (cboCompany.Text.Equals("전체") || purchases.company_name.Equals(cboCompany.Text)) &&
+                             (cboProductionID.Text.Equals("전체") || purchases.prod_id.Equals(Convert.ToInt32(cboProductionID.SelectedValue)))
+                             select purchases).ToList();
+            dgvPurchases.DataSource = null;
+            dgvPurchases.DataSource = purchasesList;
+
         }
     }
 }

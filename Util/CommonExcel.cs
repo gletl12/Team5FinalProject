@@ -266,6 +266,82 @@ namespace Util
                 return ex.Message;
             }
         }
+       /// <summary>
+       /// 그리드뷰엑셀익스포트
+       /// </summary>
+       /// <param name="fileName"></param>
+       /// <param name="dgv"></param>
+        public static void dataGridView_ExportToExcel(string fileName, DataGridView dgv)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            if (excelApp == null)
+            {
+                MessageBox.Show("엑셀이 설치되지 않았습니다");
+                return;
+            }
+            Excel.Workbook wb = excelApp.Workbooks.Add(true);
+            Excel._Worksheet workSheet = wb.Worksheets.get_Item(1) as Excel._Worksheet;
+            workSheet.Name = "C#";
+
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("출력할 데이터가 없습니다");
+                return;
+            }
+
+            // 헤더 출력
+            for (int i = 0; i < dgv.Columns.Count - 1; i++)
+            {
+                workSheet.Cells[1, i + 1] = dgv.Columns[i].HeaderText;
+            }
+
+            //내용 출력
+            for (int r = 0; r < dgv.Rows.Count; r++)
+            {
+                for (int i = 0; i < dgv.Columns.Count - 1; i++)
+                {
+                    workSheet.Cells[r + 2, i + 1] = dgv.Rows[r].Cells[i].Value;
+                }
+            }
+
+
+
+            workSheet.Columns.AutoFit(); // 글자 크기에 맞게 셀 크기를 자동으로 조절
+
+
+
+
+
+            // 엑셀 2003 으로만 저장이 됨
+            wb.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            wb.Close(Type.Missing, Type.Missing, Type.Missing);
+            excelApp.Quit();
+            releaseObject(excelApp);
+            releaseObject(workSheet);
+            releaseObject(wb);
+        }
+
+        #region 메모리해제
+        private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception e)
+            {
+                obj = null;
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+        #endregion
+
 
     }
 }
