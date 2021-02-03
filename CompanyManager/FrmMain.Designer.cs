@@ -293,7 +293,7 @@ namespace CompanyManager
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLogout.Location = new System.Drawing.Point(1263, 7);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(60, 57);
+            this.btnLogout.Size = new System.Drawing.Size(64, 57);
             this.btnLogout.TabIndex = 19;
             this.btnLogout.Text = "로그아웃";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
