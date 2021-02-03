@@ -33,14 +33,14 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "공정명", "Bor_route_name", 120);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "설비", "Machine_id", 100);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "설비명", "Machine_name", 120);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "Tack Time(Sec)", "Tacktime", 110);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "우선순위", "Priority", 110);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "공정선행일(Day)", "preceding_days", 110);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "Tack Time(Sec)", "Tacktime", 110,true, DataGridViewContentAlignment.MiddleRight);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "우선순위", "Priority", 110, true, DataGridViewContentAlignment.MiddleRight);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "공정선행일(Day)", "preceding_days", 110, true, DataGridViewContentAlignment.MiddleRight);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "수율", "Completion_rate", 80);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "사용유무", "Bor_use", 100);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "사용유무", "Bor_use", 100, true, DataGridViewContentAlignment.MiddleCenter);
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "비고", "Bor_comment", 100);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "등록자", "emp_name", 110);
-            Util.CommonUtil.AddGridTextColumn(dataGridView1, "등록일", "Ins_date", 300);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "수정자", "emp_name", 110, true, DataGridViewContentAlignment.MiddleCenter);
+            Util.CommonUtil.AddGridTextColumn(dataGridView1, "수정일", "Ins_date", 300, true, DataGridViewContentAlignment.MiddleCenter);
 
 
             LoadBORList();
