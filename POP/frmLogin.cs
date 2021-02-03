@@ -73,6 +73,11 @@ namespace POP
                 FrmAllStatusBoard frm = new FrmAllStatusBoard();
                 frm.Show();
             }
+            if (txtID.Text == "6")//전체현황판
+            {
+                FrmMain frm = new FrmMain();
+                frm.Show();
+            }
 
         }
     }

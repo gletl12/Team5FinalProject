@@ -81,6 +81,12 @@
     <Compile Include="FrmAllStatusBoard.Designer.cs">
       <DependentUpon>FrmAllStatusBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPerformance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInspection.resx">
       <DependentUpon>FrmInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMove.resx">
       <DependentUpon>FrmMove.cs</DependentUpon>
