@@ -29,7 +29,7 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@ namespace CompanyManager
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.cbodeployment = new System.Windows.Forms.ComboBox();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,13 +52,13 @@ namespace CompanyManager
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cboSubject = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(94, 51);
             this.cboUse.Name = "cboUse";
@@ -166,10 +167,23 @@ namespace CompanyManager
             this.panel2.Size = new System.Drawing.Size(1152, 98);
             this.panel2.TabIndex = 20;
             // 
+            // cboSubject
+            // 
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Location = new System.Drawing.Point(423, 21);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(186, 22);
+            this.cboSubject.TabIndex = 7;
+            // 
             // cbodeployment
             // 
             this.cbodeployment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbodeployment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbodeployment.FormattingEnabled = true;
+            this.cbodeployment.Items.AddRange(new object[] {
+            "전체",
+            "정전개",
+            "역전개"});
             this.cbodeployment.Location = new System.Drawing.Point(769, 21);
             this.cbodeployment.Name = "cbodeployment";
             this.cbodeployment.Size = new System.Drawing.Size(183, 22);
@@ -313,28 +327,20 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 147);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1146, 488);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(423, 21);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.Size = new System.Drawing.Size(186, 22);
-            this.cboSubject.TabIndex = 7;
             // 
             // FrmBOM
             // 

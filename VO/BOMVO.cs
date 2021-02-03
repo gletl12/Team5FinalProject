@@ -11,7 +11,7 @@ namespace VO
         public int bom_id { get; set; } //bomid
         public string bom_parent_id { get; set; } // 상위품목아이디
         public string bom_parent_name { get; set; } //상위품목이름
-        public string item { get; set; } //품목아이디
+        public string item_id { get; set; } //품목아이디
         public string item_name { get; set; } //품명
         public string item_type { get; set; } //품목타입
         public string item_unit { get; set; } //품목단위
@@ -28,9 +28,9 @@ namespace VO
 
 
         public DateTime ins_date { get; set; } //등록일
-        public string ins_emp { get; set; } //등록자
+        public int ins_emp { get; set; } //등록자
         public DateTime up_date { get; set; } //수정일
-        public string up_emp { get; set; } //수정자
+        public int up_emp { get; set; } //수정자
 
     }
 }

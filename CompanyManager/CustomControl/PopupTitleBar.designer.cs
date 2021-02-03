@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopupTitleBar));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -55,50 +54,34 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
+            this.label1.Size = new System.Drawing.Size(72, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "HeaderText";
-            // 
-            // btnSize
-            // 
-            this.btnSize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSize.BackColor = System.Drawing.Color.Transparent;
-          
-            this.btnSize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSize.FlatAppearance.BorderSize = 0;
-            this.btnSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSize.Location = new System.Drawing.Point(549, 0);
-            this.btnSize.Name = "btnSize";
-            this.btnSize.Size = new System.Drawing.Size(31, 33);
-            this.btnSize.TabIndex = 6;
-            this.btnSize.UseVisualStyleBackColor = false;
-            this.btnSize.Click += new System.EventHandler(this.btnSize_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImage = global::CompanyManager.Properties.Resources.Delete_16x16;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(586, 0);
+            this.btnCancel.Location = new System.Drawing.Point(590, 7);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(33, 33);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Size = new System.Drawing.Size(20, 20);
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TitleBar
+            // PopupTitleBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(50)))));
-            this.Controls.Add(this.btnSize);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Name = "TitleBar";
+            this.Name = "PopupTitleBar";
             this.Size = new System.Drawing.Size(619, 33);
             this.Load += new System.EventHandler(this.TitleBar_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
@@ -114,6 +97,5 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSize;
     }
 }

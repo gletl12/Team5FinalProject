@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using VO;
 
 namespace CompanyManager
@@ -31,8 +32,19 @@ namespace CompanyManager
             Service.BOMService service = new Service.BOMService();
             codeAllList = service.GetBOMCode();
 
+            CodeVO co = new CodeVO { code = "", name = ""};
+            List<CodeVO> temp = (from code in codeAllList
+                                 where code.category.Equals("item")
+                                 select code).ToList();
+            temp.Insert(0, co);
+            cboSubject.DataSource = temp.ConvertAll(p => p);
 
-
+            temp = (from code in codeAllList
+                                 where code.category.Equals("USE_FLAG")
+                                 select code).ToList();
+            temp.Insert(0, co);
+            cboUse.DataSource = temp.ConvertAll(p => p);
+            cbodeployment.SelectedIndex = 0;
 
             Image img = Properties.Resources.Edit_16x16;
             Util.CommonUtil.SetDGVDesign_Num(dataGridView1);
@@ -67,7 +79,17 @@ namespace CompanyManager
         private void button13_Click(object sender, EventArgs e)
         {
             PopUpBOM popup = new PopUpBOM();
-            popup.ShowDialog();
+            popup.codeAllList = codeAllList;
+            popup.LoginInfo = ((FrmMain)this.MdiParent).LoginInfo; //로그인정보 전달
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                Service.BOMService service = new Service.BOMService();
+                if (service.AddBOM(popup.InsertList))
+                {
+
+                }
+            }
+            
         }
     }
 }
