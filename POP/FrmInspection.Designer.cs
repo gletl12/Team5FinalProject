@@ -78,7 +78,7 @@ namespace POP
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1008, 777);
+            this.button12.Location = new System.Drawing.Point(1007, 777);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(474, 121);
             this.button12.TabIndex = 26;
@@ -92,7 +92,7 @@ namespace POP
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(513, 777);
+            this.button13.Location = new System.Drawing.Point(512, 777);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(474, 121);
             this.button13.TabIndex = 27;
@@ -109,7 +109,7 @@ namespace POP
             this.dataGridView2.Location = new System.Drawing.Point(16, 230);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1466, 541);
+            this.dataGridView2.Size = new System.Drawing.Size(1465, 541);
             this.dataGridView2.TabIndex = 28;
             // 
             // groupBox2
@@ -196,7 +196,7 @@ namespace POP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1494, 900);
+            this.ClientSize = new System.Drawing.Size(1493, 900);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button11);
@@ -204,12 +204,7 @@ namespace POP
             this.Controls.Add(this.button13);
             this.Controls.Add(this.dataGridView2);
             this.Name = "FrmInspection";
-            this.Controls.SetChildIndex(this.dataGridView2, 0);
-            this.Controls.SetChildIndex(this.button13, 0);
-            this.Controls.SetChildIndex(this.button12, 0);
-            this.Controls.SetChildIndex(this.button11, 0);
-            this.Controls.SetChildIndex(this.label10, 0);
-            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

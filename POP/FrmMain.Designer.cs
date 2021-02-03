@@ -29,47 +29,45 @@ namespace POP
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabcontrol = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabcontrol.SuspendLayout();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.titleBar1 = new POP.TitleBar();
             this.SuspendLayout();
             // 
-            // tabcontrol
+            // splitter1
             // 
-            this.tabcontrol.Controls.Add(this.tabPage1);
-            this.tabcontrol.Location = new System.Drawing.Point(0, 28);
-            this.tabcontrol.Name = "tabcontrol";
-            this.tabcontrol.SelectedIndex = 0;
-            this.tabcontrol.Size = new System.Drawing.Size(1496, 870);
-            this.tabcontrol.TabIndex = 2;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(1496, 61);
+            this.splitter1.TabIndex = 2;
+            this.splitter1.TabStop = false;
             // 
-            // tabPage1
+            // titleBar1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 33);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1488, 833);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "메인화면";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.titleBar1.HeaderText = "HeaderText";
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(1496, 33);
+            this.titleBar1.TabIndex = 4;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.ClientSize = new System.Drawing.Size(1496, 900);
-            this.Controls.Add(this.tabcontrol);
+            this.Controls.Add(this.titleBar1);
+            this.Controls.Add(this.splitter1);
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Load += new System.EventHandler(this.FrmMain_Load);
-            this.Controls.SetChildIndex(this.tabcontrol, 0);
-            this.tabcontrol.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabcontrol;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Splitter splitter1;
+        private TitleBar titleBar1;
     }
 }
