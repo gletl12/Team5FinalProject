@@ -86,7 +86,7 @@ namespace CompanyManager
             this.cboFUse.Location = new System.Drawing.Point(79, 69);
             this.cboFUse.Name = "cboFUse";
             this.cboFUse.Size = new System.Drawing.Size(181, 22);
-            this.cboFUse.TabIndex = 5;
+            this.cboFUse.TabIndex = 4;
             // 
             // cboFType
             // 
@@ -95,7 +95,7 @@ namespace CompanyManager
             this.cboFType.Location = new System.Drawing.Point(79, 42);
             this.cboFType.Name = "cboFType";
             this.cboFType.Size = new System.Drawing.Size(181, 22);
-            this.cboFType.TabIndex = 5;
+            this.cboFType.TabIndex = 2;
             // 
             // cboFGrade
             // 
@@ -104,7 +104,7 @@ namespace CompanyManager
             this.cboFGrade.Location = new System.Drawing.Point(79, 15);
             this.cboFGrade.Name = "cboFGrade";
             this.cboFGrade.Size = new System.Drawing.Size(181, 22);
-            this.cboFGrade.TabIndex = 5;
+            this.cboFGrade.TabIndex = 0;
             this.cboFGrade.SelectedIndexChanged += new System.EventHandler(this.cboFGrade_SelectedIndexChanged);
             // 
             // label5
@@ -173,7 +173,7 @@ namespace CompanyManager
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(464, 139);
-            this.txtComment.TabIndex = 4;
+            this.txtComment.TabIndex = 5;
             // 
             // txtUpEmp
             // 
@@ -189,7 +189,7 @@ namespace CompanyManager
             this.txtFName.Location = new System.Drawing.Point(371, 42);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(172, 21);
-            this.txtFName.TabIndex = 4;
+            this.txtFName.TabIndex = 3;
             // 
             // txtFParent
             // 
@@ -197,7 +197,7 @@ namespace CompanyManager
             this.txtFParent.Location = new System.Drawing.Point(371, 15);
             this.txtFParent.Name = "txtFParent";
             this.txtFParent.Size = new System.Drawing.Size(172, 21);
-            this.txtFParent.TabIndex = 4;
+            this.txtFParent.TabIndex = 1;
             // 
             // label1
             // 
@@ -220,7 +220,7 @@ namespace CompanyManager
             this.btnCancel.Location = new System.Drawing.Point(301, 290);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
