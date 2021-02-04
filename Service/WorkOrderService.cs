@@ -16,5 +16,11 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetWorkOrder();
         }
+
+        public List<NewWorkOrderVO> GetNewWorkOrderList(string dateType, DateTime from, DateTime to)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetNewWorkOrderList(dateType, from,  to);
+        }
     }
 }

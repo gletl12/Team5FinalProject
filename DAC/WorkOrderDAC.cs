@@ -8,7 +8,7 @@ using VO;
 
 namespace DAC
 {
-   public class WorkOrderDAC : CommonDAC
+    public class WorkOrderDAC : CommonDAC
     {
         public List<WorkOrderVO> GetWorkOrder()
         {
@@ -48,6 +48,29 @@ namespace DAC
             }
         }
 
-        
+        public List<NewWorkOrderVO> GetNewWorkOrderList(string dateType, DateTime from, DateTime to)
+        {
+            List<NewWorkOrderVO> list = new List<NewWorkOrderVO>();
+            string sql = "SP_GetWorkOrderList";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@date_type", dateType);
+                    cmd.Parameters.AddWithValue("@from", from);
+                    cmd.Parameters.AddWithValue("@to", to);
+                    list = Helper.DataReaderMapToList<NewWorkOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+                catch (Exception err)
+                {
+                    conn.Close();
+                    Log.WriteError("DAC_WorkOrderDAC_GetWorkOrderList() 오류", err);
+                    return list;
+                }
+            }
+        }
     }
 }
