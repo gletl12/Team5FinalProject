@@ -74,7 +74,7 @@ namespace POP
             this.machineControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.machineControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.machineControl4.Location = new System.Drawing.Point(33, 442);
+            this.machineControl4.Location = new System.Drawing.Point(33, 494);
             this.machineControl4.Margin = new System.Windows.Forms.Padding(5);
             this.machineControl4.Name = "machineControl4";
             this.machineControl4.Size = new System.Drawing.Size(320, 392);
@@ -85,7 +85,7 @@ namespace POP
             this.machineControl5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.machineControl5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.machineControl5.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.machineControl5.Location = new System.Drawing.Point(394, 442);
+            this.machineControl5.Location = new System.Drawing.Point(394, 494);
             this.machineControl5.Margin = new System.Windows.Forms.Padding(5);
             this.machineControl5.Name = "machineControl5";
             this.machineControl5.Size = new System.Drawing.Size(320, 392);
