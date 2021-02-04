@@ -23,6 +23,8 @@ namespace VO
             public string            up_emp          { get; set; }
 
         public string wo_state { get; set; }
+        public string machine_id { get; set; }
+        public string machine_name { get; set; }
 
     }
 }

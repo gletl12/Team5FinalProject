@@ -12,8 +12,24 @@ namespace DAC
     {
         public List<WorkOrderVO> GetWorkOrder()
         {
-            string sql = @"SELECT wo_id, item_id, prod_id, wo_qty, wo_sdate, wo_people, wo_start, wo_end, ins_date, ins_emp, up_date, up_emp,wo_state
-                            FROM TBL_WORK_ORDER";
+            string sql = @"SELECT wo_id,
+                                    W.item_id,
+                                    B.machine_id,
+                                    machine_name,
+                                    prod_id,
+                                    wo_qty,
+                                    wo_sdate,
+                                    wo_people,
+                                    wo_start,
+                                    wo_end,
+                                    W.ins_date,
+                                    W.ins_emp,
+                                    W.up_date,
+                                    W.up_emp,
+                                    wo_state
+                                    
+                    FROM TBL_WORK_ORDER W inner join TBL_BOR B on B.item_id=W.item_id
+						inner join TBL_MACHINE M on M.machine_id=B.machine_id";
 
             try
             {
