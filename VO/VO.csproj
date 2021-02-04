@@ -64,6 +64,7 @@
     <Compile Include="SampleVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="SubjectVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

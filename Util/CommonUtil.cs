@@ -291,6 +291,8 @@ namespace Util
         //행번호 추가
         private static void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
+            
+
             ((DataGridView)sender).RowHeadersWidth = 50;
             ((DataGridView)sender).RowHeadersVisible = true;
             StringFormat drawFormat = new StringFormat();
@@ -310,6 +312,10 @@ namespace Util
 
         private static void CommonUtil_Paint(object sender, PaintEventArgs e)
         {
+            //데이터 바인딩이 ㅇ되지않으면 no출력 X
+            if (((DataGridView)sender).DataSource == null)
+                return;
+
             TextRenderer.DrawText(e.Graphics, "No.", ((DataGridView)sender).Font, new Point(19, 5), Color.Black);
         }
 

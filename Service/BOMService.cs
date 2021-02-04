@@ -20,5 +20,23 @@ namespace Service
             DAC.BOMDAC dac = new DAC.BOMDAC();
             return dac.AddBOM(insertList);
         }
+
+        public List<BOMVO> GetBOMForward(string itemid, DateTime date)
+        {
+            DAC.BOMDAC dac = new DAC.BOMDAC();
+            return dac.GetBOMForward(itemid, date);
+        }
+
+        public bool EditBOM(List<BOMVO> insertInfo)
+        {
+            DAC.BOMDAC dac = new DAC.BOMDAC();
+            return dac.EditBOM(insertInfo);
+        }
+
+        public List<BOMVO> GetBOMReverse(string itemid, DateTime date)
+        {
+            DAC.BOMDAC dac = new DAC.BOMDAC();
+            return dac.GetBOMReverse(itemid, date);
+        }
     }
 }

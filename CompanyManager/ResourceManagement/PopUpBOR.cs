@@ -50,7 +50,9 @@ namespace CompanyManager
             cboUse.Enabled = !copy;
             txtComment.ReadOnly = copy;
 
-
+            btnAdd.Visible = !copy;
+            btnCancel.Location = new Point(291, 397);
+            btnCancel.Text = "닫기";
         }
 
         private int FindSelectedIndex(ComboBox cbo, string item)
