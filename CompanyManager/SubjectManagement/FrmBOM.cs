@@ -54,8 +54,9 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "비고", "bom_comment", 220);
 
 
-            dataGridView1.Rows.Add(null, null, null, null, "정보를 조회해 주세요", null, null, null, null, null, null, null, null, null, null, null);
+            //dataGridView1.Rows.Add(null,null,null);
 
+            //dataGridView1.RowHeadersWidth = 100;
             //MessageBox.Show(dataGridView1.Columns[0].Index.ToString()); 
         }
 
@@ -212,17 +213,24 @@ namespace CompanyManager
             Service.BOMService service = new Service.BOMService();
             if (cbodeployment.Text == "역전개")
             {
-                //service.Get
+                bomAllList = service.GetBOMReverse(txtSubject.Text, dtpdate.Value);
+                //정전개 조회
+                var temp = from bom in bomAllList
+                           where bom.bom_use.Contains(cboUse.Text)
+                           select bom;
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = temp.ToList();
 
             }
             else
             {
+               
                 bomAllList = service.GetBOMForward(txtSubject.Text, dtpdate.Value);
                 //정전개 조회
                 var temp = from bom in bomAllList
                            where bom.bom_use.Contains(cboUse.Text)
                            select bom;
-
+                dataGridView1.DataSource = null;
                 dataGridView1.DataSource = temp.ToList();
             }
         }

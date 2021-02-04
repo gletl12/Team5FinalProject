@@ -97,8 +97,39 @@ namespace DAC
             catch (Exception err)
              {
                 conn.Close();
-                Log.WriteError("DAC_BOMDAC_GetBOMForward() 오류", err);
+                Log.WriteError("DAC_BOMDAC_EditBOM() 오류", err);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// BOM 역전개 정보를 가져옵니다.
+        /// </summary>
+        /// <param name="itemid"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<BOMVO> GetBOMReverse(object itemid, object date)
+        {
+            string sql = @"SP_Reverse";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Item_id", itemid);
+                    cmd.Parameters.AddWithValue("@standarddate", date);
+
+                    List<BOMVO> temp = Helper.DataReaderMapToList<BOMVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return temp;
+                }
+            }
+            catch (Exception err)
+            {
+                conn.Close();
+                Log.WriteError("DAC_BOMDAC_ GetBOMReverse() 오류", err);
+                return new List<BOMVO>();
             }
         }
 
