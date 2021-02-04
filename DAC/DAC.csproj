@@ -68,6 +68,7 @@
     <Compile Include="SalesOrderDAC.cs" />
     <Compile Include="ShiftDAC.cs" />
     <Compile Include="SubjectDAC.cs" />
+    <Compile Include="WorkOrderDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EncrytLibrary.dll">
