@@ -12,7 +12,7 @@ namespace DAC
     {
         public List<WorkOrderVO> GetWorkOrder()
         {
-            string sql = @"SELECT wo_id, item_id, prod_id, wo_qty, wo_sdate, wo_people, wo_start, wo_end, ins_date, ins_emp, up_date, up_emp
+            string sql = @"SELECT wo_id, item_id, prod_id, wo_qty, wo_sdate, wo_people, wo_start, wo_end, ins_date, ins_emp, up_date, up_emp,wo_state
                             FROM TBL_WORK_ORDER";
 
             try
