@@ -212,7 +212,13 @@ namespace CompanyManager
             Service.BOMService service = new Service.BOMService();
             if (cbodeployment.Text == "역전개")
             {
-                //service.Get
+                bomAllList = service.GetBOMReverse(txtSubject.Text, dtpdate.Value);
+                //정전개 조회
+                var temp = from bom in bomAllList
+                           where bom.bom_use.Contains(cboUse.Text)
+                           select bom;
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = temp.ToList();
 
             }
             else
@@ -222,7 +228,7 @@ namespace CompanyManager
                 var temp = from bom in bomAllList
                            where bom.bom_use.Contains(cboUse.Text)
                            select bom;
-
+                dataGridView1.DataSource = null;
                 dataGridView1.DataSource = temp.ToList();
             }
         }
