@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BOMService.cs" />
     <Compile Include="BORService.cs" />
+    <Compile Include="CheckService.cs" />
     <Compile Include="CodeService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="FactoryService.cs" />

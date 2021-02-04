@@ -57,6 +57,12 @@
     <Compile Include="Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\CustomTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\CustomTabControl.Designer.cs">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain2.Designer.cs">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPerformance.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,9 @@
     <EmbeddedResource Include="Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain2.resx">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMove.resx">
       <DependentUpon>FrmMove.cs</DependentUpon>

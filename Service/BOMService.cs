@@ -14,5 +14,11 @@ namespace Service
             DAC.BOMDAC dac = new DAC.BOMDAC();
             return dac.GetBOMCode();
         }
+
+        public bool AddBOM(List<BOMVO> insertList)
+        {
+            DAC.BOMDAC dac = new DAC.BOMDAC();
+            return dac.AddBOM(insertList);
+        }
     }
 }

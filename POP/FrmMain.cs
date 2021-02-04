@@ -19,8 +19,13 @@ namespace POP
         {
             FrmPerformance frm = new FrmPerformance();
             frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

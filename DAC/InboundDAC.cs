@@ -41,6 +41,109 @@ namespace DAC
             }
         }
 
+        public bool GetInboundList(List<InboundVO> changedList)
+        {
+            string sql = @"
+                           update TBL_INBOUND set in_cqty = @in_cqty,
+                           					      up_emp = @up_emp,
+                           					      up_date = getdate()
+                           where in_id = @in_id";
+            SqlTransaction trans = conn.BeginTransaction();
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.Transaction = trans;
+                    cmd.Parameters.AddWithValue("@up_emp", 1);
+                    cmd.Parameters.AddWithValue("@in_id", SqlDbType.Int);
+                    cmd.Parameters.AddWithValue("@in_cqty", SqlDbType.Int);
+
+                    foreach (InboundVO item in changedList)
+                    {
+                        cmd.Parameters["@in_id"].Value = item.in_id;
+                        cmd.Parameters["@in_cqty"].Value = item.CQty;
+                        cmd.ExecuteNonQuery();
+                    }
+                    trans.Commit();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_InboundDAC_GetInboundList() 오류", err);
+                    trans.Rollback();
+                    return false;
+                }
+            }
+        }
+
+        public (List<InboundVO>,List<CodeVO>) GetInboundList(DateTime from, DateTime to)
+        {
+            List<InboundVO> list = new List<InboundVO>();
+            List<CodeVO> codes = new List<CodeVO>();
+            string sql = @"select purchase_id,pd_id,cast(PD.ins_date as date) PurchasesDate,PD.prod_id,item_unit,company_name,PD.item_id,item_name,CD.name unit,CD2.name UseCheck,pd_qty,isnull(in_qty,0) InQty,
+                           pd_qty-isnull(rqty,0) RQty, due_date, B.ins_date,in_id,in_cqty Cqty,warehouse_name in_warehouse
+                           from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
+                           							   JOIN TBL_COMPANY C ON I.supply_company = C.company_id
+                           							   JOIN TBL_COMMON_CODE CD ON CD.code = I.item_unit
+                           							   LEFT JOIN TBL_COMMON_CODE CD2 ON CD2.code = I.import_inspection
+                           							   JOIN (select sum(rqty) rqty,in_qty ,I.prod_id,I.item_id,I.ins_date,in_id,I.in_cqty
+                           							   	     from TBL_INBOUND I JOIN (select in_rqty rqty,ins_date,prod_id,item_id
+																					  from TBL_INBOUND) I2 ON I.item_id = I2.item_id and I.prod_id = I2.prod_id and I.ins_date >= I2.ins_date
+															 group by I.prod_id,I.item_id,I.ins_date,in_qty,in_id,I.in_cqty
+															 ) B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
+													   JOIN TBL_WAREHOUSE W ON PD.warehouse_id = W.warehouse_id
+where B.ins_date<=@to and B.ins_date>=@from
+order by pd_id,B.ins_date desc
+";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@from", from);
+                    cmd.Parameters.AddWithValue("@to", to);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    list = Helper.DataReaderMapToList<InboundVO>(dr);
+                    dr.Close();
+                    cmd.CommandText = @"SELECT  cast(company_id AS varchar) code, cast(company_name AS varchar) name, 'COMPANY' AS category
+                                        FROM TBL_COMPANY C JOIN TBL_ITEM I ON I.supply_company = C.company_id
+                                        				   JOIN TBL_INBOUND B ON B.item_id = I.item_id
+                                        where B.ins_date <@to and B.ins_date>@from
+                                        group by company_id,company_name
+                                        union all 
+                                        select cast(warehouse_id as varchar) code, warehouse_name, 'WAREHOUSE' as category
+                                        from TBL_WAREHOUSE W JOIN TBL_INBOUND B ON W.warehouse_id = B.wh_id
+                                        where B.ins_date <@to and B.ins_date>@from
+                                        group by warehouse_id,warehouse_name";
+                    codes = Helper.DataReaderMapToList<CodeVO>(cmd.ExecuteReader());
+                    return (list,codes);
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_InboundDAC_GetPurchasesList() 오류", err);
+                    return (null,null);
+                }
+            }
+        }
+
+        public List<CodeVO> GetInboundCodes()
+        {
+            string sql = @"select * from VW_INBOUND_CODE";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    List<CodeVO> list = Helper.DataReaderMapToList<CodeVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_InboundDAC_GetInboundCodes() 오류", err);
+                    return null;
+                }
+            }
+        }
+
         public bool InboundCommit(List<int> selectedRows)
         {
             string sql = @"SP_INBOUND_COMMIT";
@@ -153,8 +256,8 @@ group by in_id,PD.purchase_id,PD.ins_date,B.prod_id,PD.pd_id,C.company_name,B.it
 
         public bool NewInbound(List<InboundVO> selectedRows)
         {
-            string sql = @"insert into TBL_INBOUND(prod_id, in_state, item_id, in_qty,in_rqty, wh_id, ins_emp)
-				                             values(@prod_id, @in_state, @item_id, @in_qty,@in_rqty, @wh_id, @ins_emp)";
+            string sql = @"insert into TBL_INBOUND(prod_id, in_state,in_type, item_id, in_qty,in_rqty, wh_id, ins_emp)
+				                             values(@prod_id, @in_state,'IN001', @item_id, @in_qty,@in_rqty, @wh_id, @ins_emp)";
             SqlTransaction trans = conn.BeginTransaction();
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
@@ -173,11 +276,11 @@ group by in_id,PD.purchase_id,PD.ins_date,B.prod_id,PD.pd_id,C.company_name,B.it
 
                     foreach (InboundVO item in selectedRows)
                     {
-                        cmd.Parameters["@prod_id"].Value =  item.prod_id;
-                        cmd.Parameters["@in_state"].Value =  false;
-                        cmd.Parameters["@item_id"].Value =  item.item_id;
-                        cmd.Parameters["@in_qty"].Value =   item.InQty;
-                        cmd.Parameters["@in_rqty"].Value =   item.InQty;
+                        cmd.Parameters["@prod_id"].Value = item.prod_id;
+                        cmd.Parameters["@in_state"].Value = false;
+                        cmd.Parameters["@item_id"].Value = item.item_id;
+                        cmd.Parameters["@in_qty"].Value = item.InQty;
+                        cmd.Parameters["@in_rqty"].Value = item.InQty;
                         cmd.Parameters["@wh_id"].Value = item.warehouse_id;
                         cmd.ExecuteNonQuery();
                     }
