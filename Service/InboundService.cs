@@ -45,5 +45,23 @@ namespace Service
             InboundDAC dac = new InboundDAC();
             return dac.InboundCommit(selectedRows);
         }
+
+        public List<CodeVO> GetInboundCodes()
+        {
+            InboundDAC dac = new InboundDAC();
+            return dac.GetInboundCodes();
+        }
+
+        public (List<InboundVO>, List<CodeVO>) GetInboundList(DateTime from, DateTime to)
+        {
+            InboundDAC dac = new InboundDAC();
+            return dac.GetInboundList(from, to);
+        }
+
+        public bool InboundCancel(List<InboundVO> changedList)
+        {
+            InboundDAC dac = new InboundDAC();
+            return dac.GetInboundList(changedList);
+        }
     }
 }

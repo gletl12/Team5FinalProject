@@ -382,6 +382,7 @@ namespace CompanyManager
             this.dgvPurchases.Size = new System.Drawing.Size(1146, 489);
             this.dgvPurchases.TabIndex = 19;
             this.dgvPurchases.DataSourceChanged += new System.EventHandler(this.dgvPurchases_DataSourceChanged);
+            this.dgvPurchases.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchases_CellContentClick);
             this.dgvPurchases.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPurchases_CellPainting);
             this.dgvPurchases.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvPurchases_ColumnWidthChanged);
             this.dgvPurchases.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvPurchases_Scroll);

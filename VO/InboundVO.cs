@@ -20,7 +20,9 @@ namespace VO
         public string UseCheck { get; set; }
         public int pd_qty { get; set; }
         public int InQty { get; set; }
+        public int CQty { get; set; }
         public int RQty { get; set; }
+        public string in_warehouse { get; set; }
         public int warehouse_id { get; set; }
         public DateTime due_date { get; set; }
         public DateTime ins_date { get=>DateTime.Now;}

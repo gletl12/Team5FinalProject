@@ -341,6 +341,7 @@ namespace CompanyManager
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel2
             // 

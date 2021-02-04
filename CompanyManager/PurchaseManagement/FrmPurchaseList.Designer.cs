@@ -90,6 +90,7 @@ namespace CompanyManager
             this.btnPrint.Text = "발주서출력";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnDueChange
             // 

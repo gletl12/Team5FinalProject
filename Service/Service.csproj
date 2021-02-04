@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BOMService.cs" />
     <Compile Include="BORService.cs" />
+    <Compile Include="CheckService.cs" />
     <Compile Include="CodeService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="FactoryService.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="ServiceHelp.cs" />
     <Compile Include="ShiftService.cs" />
     <Compile Include="SubjectService.cs" />
+    <Compile Include="WorkOrderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAC\DAC.csproj">

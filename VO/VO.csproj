@@ -49,6 +49,7 @@
     <Compile Include="ApiMessage.cs" />
     <Compile Include="BOMVO.cs" />
     <Compile Include="BORVO.cs" />
+    <Compile Include="CheckVO.cs" />
     <Compile Include="CodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="EmployeeVO.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="SampleVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="SubjectVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
