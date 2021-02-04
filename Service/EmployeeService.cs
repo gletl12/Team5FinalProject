@@ -16,11 +16,11 @@ namespace Service
             return dac.GetLogin(id,pwd);
         }
 
-        //public List<CodeVO> GetAllCommonCode()
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.GetAllCommonCode();
-        //}
+        public List<EmployeeVO> GetAllEmployee()
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetAllEmployee();
+        }
 
         //public bool AddCommonCode(CodeVO codeVO)
         //{

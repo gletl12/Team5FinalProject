@@ -318,6 +318,7 @@ namespace CompanyManager
             this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmployeeM.UseVisualStyleBackColor = false;
             this.btnEmployeeM.Visible = false;
+            this.btnEmployeeM.Click += new System.EventHandler(this.btnEmployeeM_Click);
             // 
             // label2
             // 

@@ -43,5 +43,33 @@ namespace DAC
 
 
         }
+
+        public List<EmployeeVO> GetAllEmployee()
+        {
+            try
+            {
+                string sql = @"SELECT emp_id, emp_password, emp_name, dept_name, hire_date, up_date, up_emp
+                               FROM VW_EMPLOYEE";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    List<EmployeeVO> list = Helper.DataReaderMapToList<EmployeeVO>(cmd.ExecuteReader());
+                    Dispose();
+
+                    return list;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC : GetAllEmployee", err);
+
+                return new List<EmployeeVO>();
+            }
+
+        }
     }
 }

@@ -25,6 +25,8 @@ namespace CompanyManager
         private void FrmFactoryList_Load(object sender, EventArgs e)
         {
             GetdgvColumn();
+            DataRoad();
+            LoadCombobox();
         }
 
         private void GetdgvColumn()
@@ -43,8 +45,6 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date", 170);
             CommonUtil.AddGridTextColumn(dgvFactory, "id", "factory_id", 100, false);
 
-            DataRoad();
-            LoadCombobox();
             dgvFactory.AutoGenerateColumns = false;
             dgvFactory.AllowUserToAddRows = false;
         }
