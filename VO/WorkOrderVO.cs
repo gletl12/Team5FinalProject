@@ -22,5 +22,7 @@ namespace VO
             public DateTime           up_date          {get;set;}
             public string            up_emp          { get; set; }
 
+        public string wo_state { get; set; }
+
     }
 }
