@@ -35,8 +35,6 @@ namespace POP
             this.machineControl4 = new POP.MachineControl();
             this.machineControl5 = new POP.MachineControl();
             this.machineControl6 = new POP.MachineControl();
-            this.machineControl7 = new POP.MachineControl();
-            this.machineControl8 = new POP.MachineControl();
             this.SuspendLayout();
             // 
             // machineControl1
@@ -104,52 +102,19 @@ namespace POP
             this.machineControl6.Size = new System.Drawing.Size(320, 392);
             this.machineControl6.TabIndex = 1;
             // 
-            // machineControl7
-            // 
-            this.machineControl7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.machineControl7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.machineControl7.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.machineControl7.Location = new System.Drawing.Point(794, 442);
-            this.machineControl7.Margin = new System.Windows.Forms.Padding(5);
-            this.machineControl7.Name = "machineControl7";
-            this.machineControl7.Size = new System.Drawing.Size(320, 392);
-            this.machineControl7.TabIndex = 1;
-            // 
-            // machineControl8
-            // 
-            this.machineControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.machineControl8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.machineControl8.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.machineControl8.Location = new System.Drawing.Point(1159, 442);
-            this.machineControl8.Margin = new System.Windows.Forms.Padding(5);
-            this.machineControl8.Name = "machineControl8";
-            this.machineControl8.Size = new System.Drawing.Size(320, 392);
-            this.machineControl8.TabIndex = 1;
-            // 
             // FrmAllStatusBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1493, 900);
             this.Controls.Add(this.machineControl6);
-            this.Controls.Add(this.machineControl8);
-            this.Controls.Add(this.machineControl7);
             this.Controls.Add(this.machineControl5);
             this.Controls.Add(this.machineControl4);
             this.Controls.Add(this.machineControl3);
             this.Controls.Add(this.machineControl2);
             this.Controls.Add(this.machineControl1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAllStatusBoard";
-            this.Controls.SetChildIndex(this.machineControl1, 0);
-            this.Controls.SetChildIndex(this.machineControl2, 0);
-            this.Controls.SetChildIndex(this.machineControl3, 0);
-            this.Controls.SetChildIndex(this.machineControl4, 0);
-            this.Controls.SetChildIndex(this.machineControl5, 0);
-            this.Controls.SetChildIndex(this.machineControl7, 0);
-            this.Controls.SetChildIndex(this.machineControl8, 0);
-            this.Controls.SetChildIndex(this.machineControl6, 0);
             this.ResumeLayout(false);
 
         }
@@ -162,7 +127,5 @@ namespace POP
         private MachineControl machineControl4;
         private MachineControl machineControl5;
         private MachineControl machineControl6;
-        private MachineControl machineControl7;
-        private MachineControl machineControl8;
     }
 }
