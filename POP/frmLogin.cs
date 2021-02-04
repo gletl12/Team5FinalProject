@@ -27,6 +27,7 @@ namespace POP
         {
             UpdateControls();
             titleBar1.HeaderText = "로그인";
+            txtID.Text = "6";
         }
 
         // 직접 입력 버튼 클릭시 발생하는 이벤트 컨트롤 상태 변경, 폼 크기 조정

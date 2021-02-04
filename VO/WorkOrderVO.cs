@@ -15,8 +15,8 @@ namespace VO
             public int               wo_qty           {get;set;}
             public DateTime          wo_sdate         {get;set;}
             public int               wo_people        {get;set;}
-            public DateTime          wo_start         {get;set;}
-            public DateTime         wo_end           {get;set;}
+            public string          wo_start         {get;set;}
+            public string           wo_end           {get;set;}
             public DateTime         ins_date         {get;set;}
             public string           ins_emp          {get;set;}
             public DateTime           up_date          {get;set;}

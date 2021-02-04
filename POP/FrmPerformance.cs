@@ -98,14 +98,14 @@ namespace POP
             if (cboMachine.Text == "전체")
             {
                 var list1 = (from all in list
-                             where all.wo_sdate>dateTimePicker1.Value&&all.wo_sdate<dateTimePicker2.Value select all).ToList();
+                             where all.wo_sdate>=dateTimePicker1.Value.AddDays(-1)&&all.wo_sdate<=dateTimePicker2.Value select all).ToList();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = list1;
             }
             else
             {
                 var list1 = (from all in list
-                             where all.wo_sdate > dateTimePicker1.Value && all.wo_sdate < dateTimePicker2.Value && all.machine_name==cboMachine.Text
+                             where all.wo_sdate >= dateTimePicker1.Value.AddDays(-1) && all.wo_sdate <=dateTimePicker2.Value && all.machine_name==cboMachine.Text
                              select all).ToList();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = list1;
