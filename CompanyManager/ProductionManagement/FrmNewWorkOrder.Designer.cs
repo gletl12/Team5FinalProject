@@ -29,18 +29,18 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboOrderType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dgvWorkOrder = new System.Windows.Forms.DataGridView();
+            this.cboState = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.cboMachine = new System.Windows.Forms.ComboBox();
+            this.cboID = new System.Windows.Forms.ComboBox();
+            this.cboDate = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,24 +52,22 @@ namespace CompanyManager
             this.label18 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.btnRegWO = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCommit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkOrder)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // cboOrderType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(451, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 22);
-            this.comboBox2.TabIndex = 7;
+            this.cboOrderType.FormattingEnabled = true;
+            this.cboOrderType.Location = new System.Drawing.Point(451, 51);
+            this.cboOrderType.Name = "cboOrderType";
+            this.cboOrderType.Size = new System.Drawing.Size(185, 22);
+            this.cboOrderType.TabIndex = 7;
             // 
             // label1
             // 
@@ -90,27 +88,27 @@ namespace CompanyManager
             this.label2.TabIndex = 5;
             this.label2.Text = "label2";
             // 
-            // dataGridView2
+            // dgvWorkOrder
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvWorkOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 158);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1152, 480);
-            this.dataGridView2.TabIndex = 25;
+            this.dgvWorkOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dgvWorkOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorkOrder.Location = new System.Drawing.Point(8, 158);
+            this.dgvWorkOrder.Name = "dgvWorkOrder";
+            this.dgvWorkOrder.RowHeadersWidth = 50;
+            this.dgvWorkOrder.RowTemplate.Height = 23;
+            this.dgvWorkOrder.Size = new System.Drawing.Size(1152, 480);
+            this.dgvWorkOrder.TabIndex = 25;
             // 
-            // comboBox1
+            // cboState
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 22);
-            this.comboBox1.TabIndex = 4;
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(113, 51);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(185, 22);
+            this.cboState.TabIndex = 4;
             // 
             // panel2
             // 
@@ -120,15 +118,15 @@ namespace CompanyManager
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker3);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox5);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.dtpTo);
+            this.panel2.Controls.Add(this.dtpFrom);
+            this.panel2.Controls.Add(this.cboMachine);
+            this.panel2.Controls.Add(this.cboID);
+            this.panel2.Controls.Add(this.cboDate);
+            this.panel2.Controls.Add(this.cboOrderType);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboState);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
@@ -155,54 +153,54 @@ namespace CompanyManager
             this.label20.TabIndex = 49;
             this.label20.Text = "~";
             // 
-            // dateTimePicker2
+            // dtpTo
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(213, 20);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(85, 21);
-            this.dateTimePicker2.TabIndex = 48;
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(213, 20);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(85, 21);
+            this.dtpTo.TabIndex = 48;
             // 
-            // dateTimePicker3
+            // dtpFrom
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(113, 20);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(85, 21);
-            this.dateTimePicker3.TabIndex = 47;
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(113, 20);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(85, 21);
+            this.dtpFrom.TabIndex = 47;
             // 
-            // comboBox3
+            // cboMachine
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(732, 23);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(185, 22);
-            this.comboBox3.TabIndex = 14;
+            this.cboMachine.FormattingEnabled = true;
+            this.cboMachine.Location = new System.Drawing.Point(732, 23);
+            this.cboMachine.Name = "cboMachine";
+            this.cboMachine.Size = new System.Drawing.Size(185, 22);
+            this.cboMachine.TabIndex = 14;
             // 
-            // comboBox5
+            // cboID
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cboID.FormattingEnabled = true;
+            this.cboID.Items.AddRange(new object[] {
             "WO/PO",
             "아이템ID"});
-            this.comboBox5.Location = new System.Drawing.Point(379, 22);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(66, 22);
-            this.comboBox5.TabIndex = 13;
-            this.comboBox5.Text = "WO/PO";
+            this.cboID.Location = new System.Drawing.Point(379, 22);
+            this.cboID.Name = "cboID";
+            this.cboID.Size = new System.Drawing.Size(66, 22);
+            this.cboID.TabIndex = 13;
+            this.cboID.Text = "WO/PO";
             // 
-            // comboBox4
+            // cboDate
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cboDate.FormattingEnabled = true;
+            this.cboDate.Items.AddRange(new object[] {
             "계획시작",
             "납기일자",
             "등록시간"});
-            this.comboBox4.Location = new System.Drawing.Point(32, 20);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(74, 22);
-            this.comboBox4.TabIndex = 12;
-            this.comboBox4.Text = "계획시작";
+            this.cboDate.Location = new System.Drawing.Point(32, 20);
+            this.cboDate.Name = "cboDate";
+            this.cboDate.Size = new System.Drawing.Size(74, 22);
+            this.cboDate.TabIndex = 12;
+            this.cboDate.Text = "계획시작";
             // 
             // label11
             // 
@@ -320,21 +318,21 @@ namespace CompanyManager
             this.label10.TabIndex = 22;
             this.label10.Text = "      작업지시생성";
             // 
-            // button12
+            // btnExcel
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1071, 129);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 24;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(1071, 129);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(54, 23);
+            this.btnExcel.TabIndex = 24;
+            this.btnExcel.Text = "    엑셀";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcel.UseVisualStyleBackColor = false;
             // 
             // button9
             // 
@@ -348,95 +346,69 @@ namespace CompanyManager
             this.button9.TabIndex = 23;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegWO
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(913, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "수작업등록";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRegWO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegWO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnRegWO.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnRegWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegWO.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
+            this.btnRegWO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegWO.Location = new System.Drawing.Point(976, 129);
+            this.btnRegWO.Name = "btnRegWO";
+            this.btnRegWO.Size = new System.Drawing.Size(89, 23);
+            this.btnRegWO.TabIndex = 32;
+            this.btnRegWO.Text = "수작업등록";
+            this.btnRegWO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegWO.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnDelete
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(1008, 129);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 33;
-            this.button8.Text = "    복사";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::CompanyManager.Properties.Resources.trash;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(848, 129);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(122, 23);
+            this.btnDelete.TabIndex = 34;
+            this.btnDelete.Text = "작업지시계획삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCommit
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::CompanyManager.Properties.Resources.trash;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(785, 129);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 23);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "작업지시계획삭제";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(678, 129);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "작업지시확정";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(562, 343);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnCommit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCommit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnCommit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommit.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCommit.Location = new System.Drawing.Point(741, 129);
+            this.btnCommit.Name = "btnCommit";
+            this.btnCommit.Size = new System.Drawing.Size(101, 23);
+            this.btnCommit.TabIndex = 35;
+            this.btnCommit.Text = "작업지시확정";
+            this.btnCommit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCommit.UseVisualStyleBackColor = false;
             // 
             // FrmNewWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCommit);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRegWO);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvWorkOrder);
             this.Controls.Add(this.panel2);
             this.Name = "FrmNewWorkOrder";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.FrmNewWorkOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkOrder)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -446,13 +418,13 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.ComboBox cboOrderType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dgvWorkOrder;
+        private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -464,16 +436,14 @@ namespace CompanyManager
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboDate;
+        private System.Windows.Forms.ComboBox cboID;
+        private System.Windows.Forms.Button btnRegWO;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCommit;
+        private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
     }
 }
