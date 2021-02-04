@@ -48,7 +48,7 @@ namespace CompanyManager
 
         private void GetdgvColumn()
         {
-            CommonUtil.SetDGVDesign_Num(dgvEmployee);.
+            CommonUtil.SetDGVDesign_Num(dgvEmployee);
 
             CommonUtil.SetDGVDesign_CheckBox(dgvEmployee);
             CommonUtil.AddGridImageColumn(dgvEmployee, Resources.Edit_16x16, "Edit", 30);
