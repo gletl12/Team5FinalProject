@@ -29,6 +29,7 @@ namespace POP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -91,6 +92,13 @@ namespace POP
             this.panel10 = new System.Windows.Forms.Panel();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
+            this.timer_Connects = new System.Windows.Forms.Timer(this.components);
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.txtReadPLC = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,9 +118,9 @@ namespace POP
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(1131, 38);
+            this.listBox1.Location = new System.Drawing.Point(1302, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 698);
+            this.listBox1.Size = new System.Drawing.Size(286, 746);
             this.listBox1.TabIndex = 1;
             // 
             // panel1
@@ -127,7 +135,7 @@ namespace POP
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Location = new System.Drawing.Point(12, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 100);
+            this.panel1.Size = new System.Drawing.Size(1284, 100);
             this.panel1.TabIndex = 2;
             // 
             // textBox7
@@ -136,7 +144,7 @@ namespace POP
             this.textBox7.BackColor = System.Drawing.Color.Gray;
             this.textBox7.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(790, 36);
+            this.textBox7.Location = new System.Drawing.Point(876, 36);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(298, 39);
             this.textBox7.TabIndex = 1;
@@ -149,7 +157,7 @@ namespace POP
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox6.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(566, 36);
+            this.textBox6.Location = new System.Drawing.Point(652, 36);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(224, 39);
             this.textBox6.TabIndex = 1;
@@ -202,6 +210,7 @@ namespace POP
             this.button5.TabIndex = 3;
             this.button5.Text = "취소";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -386,7 +395,7 @@ namespace POP
             this.panel4.Controls.Add(this.textBox14);
             this.panel4.Location = new System.Drawing.Point(12, 441);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(558, 316);
+            this.panel4.Size = new System.Drawing.Size(558, 376);
             this.panel4.TabIndex = 2;
             // 
             // textBox20
@@ -395,7 +404,7 @@ namespace POP
             this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox20.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox20.ForeColor = System.Drawing.Color.White;
-            this.textBox20.Location = new System.Drawing.Point(301, 359);
+            this.textBox20.Location = new System.Drawing.Point(301, 419);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(239, 39);
             this.textBox20.TabIndex = 1;
@@ -408,7 +417,7 @@ namespace POP
             this.textBox19.BackColor = System.Drawing.Color.Gray;
             this.textBox19.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox19.ForeColor = System.Drawing.Color.Red;
-            this.textBox19.Location = new System.Drawing.Point(301, 410);
+            this.textBox19.Location = new System.Drawing.Point(301, 470);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(239, 64);
             this.textBox19.TabIndex = 1;
@@ -473,7 +482,7 @@ namespace POP
             this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox16.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox16.ForeColor = System.Drawing.Color.White;
-            this.textBox16.Location = new System.Drawing.Point(14, 359);
+            this.textBox16.Location = new System.Drawing.Point(14, 419);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(239, 39);
             this.textBox16.TabIndex = 1;
@@ -486,7 +495,7 @@ namespace POP
             this.textBox15.BackColor = System.Drawing.Color.Gray;
             this.textBox15.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox15.Location = new System.Drawing.Point(14, 410);
+            this.textBox15.Location = new System.Drawing.Point(14, 470);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(239, 64);
             this.textBox15.TabIndex = 1;
@@ -758,7 +767,7 @@ namespace POP
             this.panel8.Controls.Add(this.button6);
             this.panel8.Controls.Add(this.textBox26);
             this.panel8.Controls.Add(this.textBox25);
-            this.panel8.Location = new System.Drawing.Point(577, 526);
+            this.panel8.Location = new System.Drawing.Point(577, 556);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(547, 74);
             this.panel8.TabIndex = 2;
@@ -805,7 +814,7 @@ namespace POP
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.progressBar1);
             this.panel9.Controls.Add(this.textBox28);
-            this.panel9.Location = new System.Drawing.Point(577, 608);
+            this.panel9.Location = new System.Drawing.Point(577, 638);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(547, 79);
             this.panel9.TabIndex = 2;
@@ -837,7 +846,7 @@ namespace POP
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.textBox30);
             this.panel10.Controls.Add(this.textBox29);
-            this.panel10.Location = new System.Drawing.Point(576, 693);
+            this.panel10.Location = new System.Drawing.Point(576, 753);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(547, 64);
             this.panel10.TabIndex = 2;
@@ -867,11 +876,79 @@ namespace POP
             this.textBox29.Text = "00 분";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // lblState
+            // 
+            this.lblState.BackColor = System.Drawing.Color.Yellow;
+            this.lblState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblState.Location = new System.Drawing.Point(94, 9);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(20, 23);
+            this.lblState.TabIndex = 8;
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblIP.Location = new System.Drawing.Point(163, 9);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(103, 14);
+            this.lblIP.TabIndex = 11;
+            this.lblIP.Text = "999.999.999.999";
+            // 
+            // lblPort
+            // 
+            this.lblPort.AutoSize = true;
+            this.lblPort.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblPort.Location = new System.Drawing.Point(309, 9);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(35, 14);
+            this.lblPort.TabIndex = 12;
+            this.lblPort.Text = "9999";
+            // 
+            // txtReadPLC
+            // 
+            this.txtReadPLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtReadPLC.Location = new System.Drawing.Point(404, 7);
+            this.txtReadPLC.Name = "txtReadPLC";
+            this.txtReadPLC.Size = new System.Drawing.Size(190, 32);
+            this.txtReadPLC.TabIndex = 13;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(623, 7);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(117, 61);
+            this.lblTitle.TabIndex = 14;
+            this.lblTitle.Text = "label1";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.BackColor = System.Drawing.Color.DimGray;
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(763, 9);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(227, 26);
+            this.lblVersion.TabIndex = 15;
+            this.lblVersion.Text = "Version";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1429, 940);
+            this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.txtReadPLC);
+            this.Controls.Add(this.lblPort);
+            this.Controls.Add(this.lblIP);
+            this.Controls.Add(this.lblState);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel10);
@@ -883,21 +960,10 @@ namespace POP
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBox1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmAction";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAction_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAction_FormClosed);
             this.Load += new System.EventHandler(this.FrmAction_Load);
-            this.Controls.SetChildIndex(this.listBox1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.panel4, 0);
-            this.Controls.SetChildIndex(this.panel5, 0);
-            this.Controls.SetChildIndex(this.panel6, 0);
-            this.Controls.SetChildIndex(this.panel8, 0);
-            this.Controls.SetChildIndex(this.panel9, 0);
-            this.Controls.SetChildIndex(this.panel10, 0);
-            this.Controls.SetChildIndex(this.panel7, 0);
-            this.Controls.SetChildIndex(this.panel2, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -918,6 +984,7 @@ namespace POP
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -985,5 +1052,12 @@ namespace POP
         private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.Timer timer_Connects;
+        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Label lblPort;
+        private System.Windows.Forms.TextBox txtReadPLC;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblVersion;
     }
 }

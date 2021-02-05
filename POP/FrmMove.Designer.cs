@@ -35,8 +35,7 @@ namespace POP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1494, 900);
-            this.Location = new System.Drawing.Point(0, 0);
+            this.ClientSize = new System.Drawing.Size(1600, 1000);
             this.Name = "FrmMove";
             this.ResumeLayout(false);
 

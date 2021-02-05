@@ -56,8 +56,8 @@ namespace POP
             }
             if (txtID.Text == "2")//동작
             {
-                FrmAction frm = new FrmAction();
-                frm.Show();
+                //FrmAction frm = new FrmAction();
+                //frm.Show();
             }
             if (txtID.Text == "3")//이동
             {

@@ -86,5 +86,10 @@ namespace POP
                 }
             }
         }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

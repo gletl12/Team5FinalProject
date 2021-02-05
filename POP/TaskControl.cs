@@ -52,7 +52,7 @@ namespace POP
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string server = @"C:\Users\HB\Downloads\PLCTask_server 포함\PLCTask\OutputTcpServer\bin\Debug\OutputTcpServer.exe";
+            string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
             Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
             process_id = pro.Id;
 

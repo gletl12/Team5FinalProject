@@ -50,7 +50,7 @@ namespace POP
 
             hostIP = ip;
             hostPort = int.Parse(port);
-            taskID = int.Parse(taskid.Replace("PLC_", ""));
+            //taskID = int.Parse(taskid.Replace("PLC_", ""));
             pgmID = taskid;
 
             _logging = new LoggingUtility(pgmID, Level.Debug, 30);
@@ -61,7 +61,7 @@ namespace POP
 
             lblIP.Text = hostIP;
             lblPort.Text = hostPort.ToString();
-            this.Text = lblTitle.Text = $"PLC_{taskID}";
+            this.Text = lblTitle.Text = taskid;
 
             Assembly assembly = Assembly.GetExecutingAssembly();
             lblVersion.Text = File.GetLastWriteTime(assembly.Location).ToString("yyyy.MM.dd");

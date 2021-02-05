@@ -9,28 +9,34 @@ using System.Windows.Forms;
 using Util;
 using VO;
 using System.Linq;
+using System.Diagnostics;
+using System.Configuration;
 
 namespace POP
 {
     public partial class FrmPerformance : POP.BaseForm
     {
+        FrmAction frm;
+
+        public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
+        public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
+        public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
+        public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
+
+        int process_id = 0;
         public FrmPerformance()
         {
             InitializeComponent();
         }
 
+        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
         private void FrmInspection_Load(object sender, EventArgs e)
         {
+            
             GetdgvColumn();
             DataLoad();
             ComboBoxBinding();
-
-            
-
-
-       
-
-           
+          
         }
 
         private void ComboBoxBinding()
@@ -91,6 +97,17 @@ namespace POP
             textBox4.Text = dataGridView1[1,rowIndex].Value.ToString();//1
             textBox5.Text = dataGridView1[13,rowIndex].Value.ToString();//13
             textBox6.Text = dataGridView1[7,rowIndex].Value.ToString();//7
+            for (int i = 0; i < tasks.Count; i++)
+            { 
+                if(tasks[i].taskID==dataGridView1[12,rowIndex].Value.ToString())
+                {
+                   lblTaskID.Text= tasks[i].taskID;
+                   lblIP.Text= tasks[i].hostIP;
+                   lblPort.Text = tasks[i].hostPort;
+                   lblRemark.Text = tasks[i].remark;
+                }
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -116,6 +133,51 @@ namespace POP
         {
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = DateTime.Now;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmLogViewer log = new frmLogViewer();
+            log.OpenFileName = $"Logs\\{Task_ID}.log";
+            log.ShowDialog();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
+            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
+            process_id = pro.Id;
+
+            frm = new FrmAction(Task_ID, Task_IP, Task_Port);
+            frm.Show();
+            frm.Hide();
+
+           // IsTaskEnable = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frm.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            frm.bExit = true;
+            frm.Close();
+            //IsTaskEnable = false;
+
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.Id.Equals(process_id))
+                {
+                    process.Kill();
+                }
+            }
         }
     }
 }

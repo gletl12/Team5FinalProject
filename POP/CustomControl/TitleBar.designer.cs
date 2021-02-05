@@ -54,7 +54,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(27, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 14);
+            this.label1.Size = new System.Drawing.Size(72, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "HeaderText";
             // 
@@ -65,7 +65,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Image = global::POP.Properties.Resources.Delete_32x32;
-            this.btnCancel.Location = new System.Drawing.Point(586, 0);
+            this.btnCancel.Location = new System.Drawing.Point(1567, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(33, 33);
             this.btnCancel.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "TitleBar";
-            this.Size = new System.Drawing.Size(619, 33);
+            this.Size = new System.Drawing.Size(1600, 33);
             this.Load += new System.EventHandler(this.TitleBar_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);

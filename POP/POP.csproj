@@ -263,6 +263,20 @@
   <ItemGroup>
     <None Include="Resources\team5_Logo 수정.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\외주 작업장.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEGS_홀 가공.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEA_T가공.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_조립반.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\최종조립반.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -117,6 +117,7 @@ namespace POP
             this.Controls.Add(this.panel2);
             this.Name = "frmMain";
             this.Text = "구디 MES PLC";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
