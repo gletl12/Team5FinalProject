@@ -139,14 +139,22 @@ namespace POP
         {
 
         }
-
+        /// <summary>
+        /// 로그보기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             frmLogViewer log = new frmLogViewer();
             log.OpenFileName = $"Logs\\{Task_ID}.log";
             log.ShowDialog();
         }
-
+        /// <summary>
+        /// 공정가동
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click_1(object sender, EventArgs e)
         {
             string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
@@ -159,12 +167,20 @@ namespace POP
 
            // IsTaskEnable = true;
         }
-
+        /// <summary>
+        /// 화면보이기
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button8_Click(object sender, EventArgs e)
         {
             frm.Show();
         }
-
+        /// <summary>
+        /// 설비중지
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button10_Click(object sender, EventArgs e)
         {
             frm.bExit = true;
