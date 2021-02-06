@@ -17,4 +17,10 @@ namespace VO
         public string up_emp { get; set; }
         public string dept_name { get; set; }
     }
+
+    public class DeptVO
+    {
+        public int dept_id { get; set; }
+        public string dept_name { get; set; }
+    }
 }

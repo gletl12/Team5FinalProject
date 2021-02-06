@@ -22,11 +22,29 @@ namespace Service
             return dac.GetAllEmployee();
         }
 
-        //public bool AddCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.AddCommonCode(codeVO);
-        //}
+        public List<DeptVO> GetDept()
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetDept();
+        }
+
+        public bool AddEmployee(EmployeeVO evo)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.AddEmployee(evo);
+        }
+
+        public bool UpdateEmployee(EmployeeVO evo)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.UpdateEmployee(evo);
+        }
+
+        public bool DeleteEmployee(int emp_id)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.DeleteEmployee(emp_id);
+        }
 
         //public bool EditCommonCode(CodeVO codeVO)
         //{

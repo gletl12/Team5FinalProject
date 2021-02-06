@@ -109,6 +109,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopEmployeeCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopEmployeeCRUD.Designer.cs">
+      <DependentUpon>PopEmployeeCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseManagement\PopupDueDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopEmployeeCRUD.resx">
+      <DependentUpon>PopEmployeeCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupDueDate.resx">
       <DependentUpon>PopupDueDate.cs</DependentUpon>

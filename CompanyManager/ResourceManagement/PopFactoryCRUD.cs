@@ -90,7 +90,7 @@ namespace CompanyManager
         {
             if(cboFGrade.SelectedIndex < 1 || cboFType.SelectedIndex < 1 || cboFUse.SelectedIndex < 1 || txtFParent.Text.Length < 1 || txtFName.Text.Length < 1)
             {
-                MessageBox.Show("필수 입력 데이터를 다시 확인해주세요.");
+                MessageBox.Show("필수 입력 정보를 확인해주세요.");
                 return;
             }
             FactoryVO fvo = new FactoryVO
@@ -139,13 +139,13 @@ namespace CompanyManager
                 FactoryService service = new FactoryService();
                 if (service.AddFactory(fvo))
                 {
-                    MessageBox.Show("저장에 성공하였습니다.");
+                    MessageBox.Show("등록이 성공하였습니다.");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("저장에 실패하였습니다.");
+                    MessageBox.Show("등록이 실패하였습니다.");
                 }
             }
 

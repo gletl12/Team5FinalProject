@@ -153,6 +153,7 @@ namespace CompanyManager
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.panDirectLogin, 0);
