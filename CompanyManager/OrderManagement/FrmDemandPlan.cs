@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using Util;
 
 namespace CompanyManager
@@ -16,23 +17,56 @@ namespace CompanyManager
             InitializeComponent();
             CommonUtil.SetInitGridView(dataGridView2);
             CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객사코드", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객사명", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객주문번호", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/25(Mon)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/26(tue)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/27(wed)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/28(thu)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/29(fri)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/30(sat)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "01/31(son)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "02/01(Mon)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "02/02(tue)", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridCheckColumn(dataGridView2, "");
+            CommonUtil.AddGridTextColumn(dataGridView2, "plan_id", "plan_id", 80,false, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "고객사코드", "company_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "고객사명", "company_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "고객주문번호", "order_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "item_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.AutoGenerateColumns = true;
+            dtpend.Value = dtpstart.Value.AddDays(30);
+            
+        }
+
+        private void FrmDemandPlan_Load(object sender, EventArgs e)
+        {
+            //먼저 세팅된 정보로 조회
+            btnSearch.PerformClick();
 
 
-            dataGridView2.Rows.Add(  "CU", "의자상사","CU1234L-1234A-12350","CHAIR_01","0","0","0","0","100","0","0","0","0");
-            dataGridView2.Rows.Add(  "CU", "의자상사","CU1234L-1234A-12351","CHAIR_01","0","0","0","0","0","0","0","100","0");
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dtpstart.Value, dtpend.Value) > 0)
+            {
+                MessageBox.Show("종료일자는 시작일자보다 커야합니다.");
+                return;
+            }
+
+
+            Service.DemandService service = new Service.DemandService();
+            DataTable dt = service.GetDemandPlan(dtpstart.Value,dtpend.Value);
+
+            var temp = from plan in dt.AsEnumerable()
+                              where (plan.Field<int>("company_id").ToString().Contains(txtcompany.Text) || plan.Field<string>("company_name").ToString().Contains(txtcompany.Text))&&
+                                    plan.Field<int>("plan_id").ToString().Contains(txtpaneid.Text) &&
+                                    plan.Field<string>("item_id").ToString().Contains(txtSubject.Text)
+                              select plan;
+            //temp.AsDataView();
+
+            //DataView dv = dt.DefaultView;
+
+            //dv.RowFilter = $"company_id.ToString() = '{txtcompany.Text}'";
+
+            dataGridView2.DataSource = temp.AsDataView();
+        }
+
+        private void btnPlan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,38 +29,30 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSubject = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtcompany = new System.Windows.Forms.TextBox();
+            this.txtpaneid = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dtpend = new System.Windows.Forms.DateTimePicker();
+            this.dtpstart = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnPlan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(223, 22);
-            this.comboBox1.TabIndex = 4;
             // 
             // label17
             // 
@@ -83,20 +75,21 @@ namespace CompanyManager
             this.label18.TabIndex = 1;
             this.label18.Text = "label18";
             // 
-            // button14
+            // btnSearch
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(1027, 61);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 30);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "조회";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(1027, 61);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 30);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label15
             // 
@@ -137,13 +130,13 @@ namespace CompanyManager
             this.label14.TabIndex = 3;
             this.label14.Text = "* PlanID";
             // 
-            // textBox5
+            // txtSubject
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(783, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 21);
-            this.textBox5.TabIndex = 2;
+            this.txtSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSubject.Location = new System.Drawing.Point(783, 22);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(223, 21);
+            this.txtSubject.TabIndex = 2;
             // 
             // panel2
             // 
@@ -152,26 +145,66 @@ namespace CompanyManager
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.txtcompany);
+            this.panel2.Controls.Add(this.txtpaneid);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.dtpend);
+            this.panel2.Controls.Add(this.dtpstart);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtSubject);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.button14);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1152, 98);
             this.panel2.TabIndex = 20;
+            // 
+            // txtcompany
+            // 
+            this.txtcompany.Location = new System.Drawing.Point(78, 51);
+            this.txtcompany.Name = "txtcompany";
+            this.txtcompany.Size = new System.Drawing.Size(198, 21);
+            this.txtcompany.TabIndex = 48;
+            // 
+            // txtpaneid
+            // 
+            this.txtpaneid.Location = new System.Drawing.Point(78, 21);
+            this.txtpaneid.Name = "txtpaneid";
+            this.txtpaneid.Size = new System.Drawing.Size(198, 21);
+            this.txtpaneid.TabIndex = 47;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(536, 26);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 14);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "~";
+            // 
+            // dtpend
+            // 
+            this.dtpend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpend.Location = new System.Drawing.Point(553, 22);
+            this.dtpend.Name = "dtpend";
+            this.dtpend.Size = new System.Drawing.Size(104, 21);
+            this.dtpend.TabIndex = 45;
+            // 
+            // dtpstart
+            // 
+            this.dtpstart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpstart.Location = new System.Drawing.Point(430, 22);
+            this.dtpstart.Name = "dtpstart";
+            this.dtpstart.Size = new System.Drawing.Size(104, 21);
+            this.dtpstart.TabIndex = 44;
             // 
             // label11
             // 
@@ -246,55 +279,22 @@ namespace CompanyManager
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnPlan
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(961, 129);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(104, 23);
-            this.button13.TabIndex = 18;
-            this.button13.Text = "    생산계획생성";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(536, 26);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 14);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "~";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(553, 22);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker2.TabIndex = 45;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(430, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker1.TabIndex = 44;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(78, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(223, 22);
-            this.comboBox2.TabIndex = 47;
+            this.btnPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnPlan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlan.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlan.Location = new System.Drawing.Point(961, 129);
+            this.btnPlan.Name = "btnPlan";
+            this.btnPlan.Size = new System.Drawing.Size(104, 23);
+            this.btnPlan.TabIndex = 18;
+            this.btnPlan.Text = "    생산계획생성";
+            this.btnPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPlan.UseVisualStyleBackColor = false;
+            this.btnPlan.Click += new System.EventHandler(this.btnPlan_Click);
             // 
             // FrmDemandPlan
             // 
@@ -303,10 +303,11 @@ namespace CompanyManager
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.btnPlan);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView2);
             this.Name = "FrmDemandPlan";
+            this.Load += new System.EventHandler(this.FrmDemandPlan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -317,25 +318,25 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnPlan;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpend;
+        private System.Windows.Forms.DateTimePicker dtpstart;
+        private System.Windows.Forms.TextBox txtcompany;
+        private System.Windows.Forms.TextBox txtpaneid;
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="CheckVO.cs" />
     <Compile Include="CodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="DemandVO.cs" />
     <Compile Include="EmployeeVO.cs" />
     <Compile Include="FactoryVO.cs" />
     <Compile Include="InboundVO.cs" />
