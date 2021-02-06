@@ -20,5 +20,10 @@ namespace Service
             DispendDAC dac = new DispendDAC();
             return dac.GetWorkOrderList(from,to);
         }
+
+        public bool GetDispendInfo(List<int> selectedRows)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

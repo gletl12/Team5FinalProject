@@ -855,6 +855,7 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\team5_Logo.png" />
     <None Include="Resources\in.png" />
     <None Include="Resources\team5_Logo 수정.png" />
     <None Include="Resources\team5_Logo2.png" />
