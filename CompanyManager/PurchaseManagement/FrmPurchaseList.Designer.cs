@@ -358,6 +358,7 @@ namespace CompanyManager
             this.dgvPurchases.RowTemplate.Height = 23;
             this.dgvPurchases.Size = new System.Drawing.Size(1152, 480);
             this.dgvPurchases.TabIndex = 19;
+            this.dgvPurchases.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchases_CellContentClick);
             // 
             // FrmPurchaseList
             // 

@@ -51,6 +51,7 @@
     <Compile Include="BORService.cs" />
     <Compile Include="CheckService.cs" />
     <Compile Include="CodeService.cs" />
+    <Compile Include="DispendService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="FactoryService.cs" />
     <Compile Include="InboundService.cs" />

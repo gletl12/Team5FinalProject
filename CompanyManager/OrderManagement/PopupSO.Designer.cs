@@ -169,6 +169,7 @@ namespace CompanyManager
             // 
             this.txtSQty.Location = new System.Drawing.Point(77, 141);
             this.txtSQty.Name = "txtSQty";
+            this.txtSQty.ReadOnly = true;
             this.txtSQty.Size = new System.Drawing.Size(185, 21);
             this.txtSQty.TabIndex = 4;
             this.txtSQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericTextBox_KeyPress);

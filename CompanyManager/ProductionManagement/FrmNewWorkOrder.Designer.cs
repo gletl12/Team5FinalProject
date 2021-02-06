@@ -29,9 +29,6 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboOrderType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvWorkOrder = new System.Windows.Forms.DataGridView();
             this.cboState = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,7 +44,7 @@ namespace CompanyManager
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -60,33 +57,6 @@ namespace CompanyManager
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkOrder)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cboOrderType
-            // 
-            this.cboOrderType.FormattingEnabled = true;
-            this.cboOrderType.Location = new System.Drawing.Point(451, 51);
-            this.cboOrderType.Name = "cboOrderType";
-            this.cboOrderType.Size = new System.Drawing.Size(185, 22);
-            this.cboOrderType.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(366, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 14);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "* OrderType";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label2.Location = new System.Drawing.Point(366, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
             // 
             // dgvWorkOrder
             // 
@@ -101,6 +71,7 @@ namespace CompanyManager
             this.dgvWorkOrder.RowTemplate.Height = 23;
             this.dgvWorkOrder.Size = new System.Drawing.Size(1152, 480);
             this.dgvWorkOrder.TabIndex = 25;
+            this.dgvWorkOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkOrder_CellContentClick);
             // 
             // cboState
             // 
@@ -123,9 +94,6 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.cboMachine);
             this.panel2.Controls.Add(this.cboID);
             this.panel2.Controls.Add(this.cboDate);
-            this.panel2.Controls.Add(this.cboOrderType);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cboState);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
@@ -133,7 +101,7 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.txtID);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.btnSearch);
@@ -181,13 +149,13 @@ namespace CompanyManager
             // 
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
-            "WO/PO",
-            "아이템ID"});
+            "작업/생산 ID",
+            "품목 ID"});
             this.cboID.Location = new System.Drawing.Point(379, 22);
             this.cboID.Name = "cboID";
             this.cboID.Size = new System.Drawing.Size(66, 22);
             this.cboID.TabIndex = 13;
-            this.cboID.Text = "WO/PO";
+            this.cboID.Text = "작업/생산 ID";
             // 
             // cboDate
             // 
@@ -261,15 +229,15 @@ namespace CompanyManager
             this.label16.TabIndex = 1;
             this.label16.Text = "label16";
             // 
-            // textBox7
+            // txtID
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Location = new System.Drawing.Point(451, 22);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(185, 21);
-            this.textBox7.TabIndex = 2;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtID.Location = new System.Drawing.Point(451, 22);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(185, 21);
+            this.txtID.TabIndex = 2;
+            this.txtID.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // label17
             // 
@@ -306,6 +274,7 @@ namespace CompanyManager
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label10
             // 
@@ -361,6 +330,7 @@ namespace CompanyManager
             this.btnRegWO.Text = "수작업등록";
             this.btnRegWO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegWO.UseVisualStyleBackColor = false;
+            this.btnRegWO.Click += new System.EventHandler(this.btnRegWO_Click);
             // 
             // btnDelete
             // 
@@ -377,6 +347,7 @@ namespace CompanyManager
             this.btnDelete.Text = "작업지시계획삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCommit
             // 
@@ -393,6 +364,7 @@ namespace CompanyManager
             this.btnCommit.Text = "작업지시확정";
             this.btnCommit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCommit.UseVisualStyleBackColor = false;
+            this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
             // 
             // FrmNewWorkOrder
             // 
@@ -419,9 +391,6 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.ComboBox cboOrderType;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvWorkOrder;
         private System.Windows.Forms.ComboBox cboState;
@@ -432,7 +401,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;

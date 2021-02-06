@@ -33,10 +33,6 @@ namespace VO
         public string Out_warehouse { get; set; } //출고창고
         public string Extinction { get; set; } //단종유무
 
-        
-
-
     }
-
     
 }
