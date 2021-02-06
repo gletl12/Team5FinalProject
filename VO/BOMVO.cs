@@ -16,7 +16,7 @@ namespace VO
         public string item_type { get; set; } //품목타입
         public string item_unit { get; set; } //품목단위
         public int bom_use_qty { get; set; } //소요량
-        public int bom_level { get; set; } //단계
+        public int level { get; set; } //단계
         public DateTime start_date { get; set; } //시작일
         public DateTime end_date { get; set; } //종료일
         public string bom_use { get; set; } //사용유무
@@ -31,6 +31,8 @@ namespace VO
         public int ins_emp { get; set; } //등록자
         public DateTime up_date { get; set; } //수정일
         public int up_emp { get; set; } //수정자
+        public string emp_name { get; set; } //수정자
+
 
     }
 }

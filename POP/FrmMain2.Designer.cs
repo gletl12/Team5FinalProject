@@ -44,7 +44,7 @@ namespace POP
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1496, 64);
+            this.splitter1.Size = new System.Drawing.Size(1600, 64);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -55,7 +55,7 @@ namespace POP
             this.titleBar1.HeaderText = "POP";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1496, 33);
+            this.titleBar1.Size = new System.Drawing.Size(1600, 33);
             this.titleBar1.TabIndex = 2;
             // 
             // lblSelect3
@@ -135,7 +135,7 @@ namespace POP
             // FrmMain2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1496, 900);
+            this.ClientSize = new System.Drawing.Size(1600, 1000);
             this.Controls.Add(this.lblSelect3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblSelect2);

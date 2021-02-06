@@ -88,6 +88,7 @@ namespace CompanyManager
                 GetPriceList();
                 btnSearch.PerformClick();
             }
+            
         }
 
         private void dgvPrice_CellContentClick(object sender, DataGridViewCellEventArgs e)

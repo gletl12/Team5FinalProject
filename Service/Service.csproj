@@ -63,6 +63,7 @@
     <Compile Include="ServiceHelp.cs" />
     <Compile Include="ShiftService.cs" />
     <Compile Include="SubjectService.cs" />
+    <Compile Include="WorkOrderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAC\DAC.csproj">

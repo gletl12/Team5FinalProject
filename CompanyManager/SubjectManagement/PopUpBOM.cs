@@ -17,8 +17,9 @@ namespace CompanyManager
         public List<CodeVO> codeAllList { get; set; } //콤보박스 바인딩 데이터
         public EmployeeVO LoginInfo { get; set; }
         public List<BOMVO> InsertList { get; set; } 
+        public BOMVO InsertInfo { get; set; } 
 
-        public PopUpBOM()
+        public PopUpBOM(bool copy = false)
         {
             InitializeComponent();
             validation.Add(cboParentsubject);
@@ -27,6 +28,27 @@ namespace CompanyManager
             validation.Add(cbouse);
             validation.Add(cboauto);
             validation.Add(cboplan);
+
+            if (copy)
+            {
+                btnSave.Visible = !copy;
+                btnCancel.Location = new Point(287, 432);
+                btnCancel.Text = "닫기";
+
+                cboauto.Enabled = !copy;
+                cboParentsubject.Enabled = !copy;
+                cboplan.Enabled = !copy;
+                cbosubject.Enabled = !copy;
+                cbouse.Enabled = !copy;
+
+                dtpstart.Enabled = !copy;
+                dtpend.Enabled = !copy;
+                txtcomment.ReadOnly = copy;
+                txtupdate.ReadOnly = copy;
+                txtupemp.ReadOnly = copy;
+                txtuseqty.ReadOnly = copy;
+            }
+
         }
         //유효성 검사
         private void Validation()
@@ -80,8 +102,52 @@ namespace CompanyManager
             dtpend.Value = dtpstart.Value.AddYears(2);
             txtupemp.Text = LoginInfo.emp_name;
             txtupdate.Text = DateTime.Now.ToString();
-        }
 
+
+            if (InsertInfo != null)
+            {
+                cboParentsubject.SelectedIndex = FindSelectedIndex(cboParentsubject, InsertInfo.bom_parent_id);
+                cbosubject.SelectedIndex = FindSelectedIndex(cbosubject, InsertInfo.item_id.Trim().StartsWith("└") ?  InsertInfo.item_id.Trim().Substring(1).Trim() : InsertInfo.item_id.Trim());
+                txtuseqty.Text = InsertInfo.bom_use_qty.ToString();
+                dtpstart.Value = InsertInfo.start_date;
+                dtpend.Value = InsertInfo.end_date;
+                cbouse.SelectedIndex = FindSelectedIndex(cbouse,InsertInfo.bom_use);
+                cboauto.SelectedIndex = FindSelectedIndex(cboauto, InsertInfo.auto_deduction);
+                cboplan.SelectedIndex = FindSelectedIndex(cboplan, InsertInfo.plan_use);
+                txtcomment.Text = InsertInfo.bom_comment;
+
+                txtupemp.Text = InsertInfo.emp_name;
+                txtupdate.Text = InsertInfo.up_date.ToString();
+            }
+
+
+
+        }
+        private int FindSelectedIndex(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((CodeVO)cbo.Items[result]).name == item)
+                {
+                    return result;
+                }
+            }
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((CodeVO)cbo.Items[result]).code == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             //유효성 검사
@@ -113,6 +179,12 @@ namespace CompanyManager
             vo.ins_emp = LoginInfo.emp_id;
             vo.ins_date = DateTime.Now;
 
+
+            if (InsertInfo != null)
+            {
+                vo.bom_id = InsertInfo.bom_id;
+            }
+
             List<BOMVO> temp = new List<BOMVO>();
             temp.Add(vo);
             InsertList = temp;
@@ -122,6 +194,9 @@ namespace CompanyManager
             this.Close();
         }
 
-        
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

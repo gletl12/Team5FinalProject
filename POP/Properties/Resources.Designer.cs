@@ -83,9 +83,29 @@ namespace POP.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap img_logo {
+        internal static System.Drawing.Bitmap Leg_조립반 {
             get {
-                object obj = ResourceManager.GetObject("img_logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Leg_조립반", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap LEGS_홀_가공 {
+            get {
+                object obj = ResourceManager.GetObject("LEGS_홀_가공", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEA_T가공 {
+            get {
+                object obj = ResourceManager.GetObject("SEA_T가공", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,26 @@ namespace POP.Properties {
         internal static System.Drawing.Bitmap Zoom_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Zoom_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 외주_작업장 {
+            get {
+                object obj = ResourceManager.GetObject("외주_작업장", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 최종조립반 {
+            get {
+                object obj = ResourceManager.GetObject("최종조립반", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

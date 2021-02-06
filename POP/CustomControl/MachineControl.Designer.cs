@@ -258,6 +258,7 @@ namespace POP
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MachineControl";
             this.Size = new System.Drawing.Size(320, 392);
+            this.Load += new System.EventHandler(this.MachineControl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
