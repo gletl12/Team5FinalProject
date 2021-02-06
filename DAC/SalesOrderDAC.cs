@@ -99,6 +99,7 @@ namespace DAC
 
         public bool UpdateSO(SalesOrderVO so)
         {
+            SqlTransaction trans = conn.BeginTransaction();
             string sql = @"update TBL_SO_MASTER set order_id	 =@order_id		,
                             						 due_date	 =@due_date		,
                             						 so_comment	 =@so_comment	,
@@ -108,9 +109,19 @@ namespace DAC
                             						 so_c_qty	 =@so_c_qty		,
                             						 up_date	 =@up_date		,
                             						 up_emp		 =@up_emp		
-                           where so_id = @so_id";
+                           where so_id = @so_id;
+
+                           -- 수요계획에 납품수량 변경  @so_c_qty은 @so_o_qty  보다 클 수 없음
+                            
+
+                           -- 일단 수요계획과 영업마스터는 1대1관계라서 where절을 so_id로 설정했지만 후에 수요계획 취소시 데이터 삭제냐 아니면 deleted 컬럼을 추가하냐에 따라 수정필요!
+                           update TBL_DEMAND_PLAN 
+                              set plan_qty = @so_o_qty - @so_c_qty 
+                            where so_id = @so_id;
+";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
+                cmd.Transaction = trans;
                 try
                 {
                     cmd.Parameters.AddWithValue("@so_id", so.so_id);
@@ -124,10 +135,15 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@up_emp", so.up_emp);
                     cmd.Parameters.AddWithValue("@up_date", so.up_date);
                     cmd.ExecuteNonQuery();
+
+                    trans.Commit();
+                    Dispose();
                     return true;
                 }
                 catch (Exception err)
                 {
+                    trans.Rollback();
+                    Dispose();
                     Log.WriteError("DAC_SalesOrderDAC_UpdateSO 오류", err);
                     return false;
                 }
