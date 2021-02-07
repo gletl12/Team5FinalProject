@@ -398,7 +398,7 @@ namespace CompanyManager
             this.dgvSO.Location = new System.Drawing.Point(10, 32);
             this.dgvSO.Name = "dgvSO";
             this.dgvSO.RowTemplate.Height = 23;
-            this.dgvSO.Size = new System.Drawing.Size(1146, 490);
+            this.dgvSO.Size = new System.Drawing.Size(1146, 499);
             this.dgvSO.TabIndex = 19;
             this.dgvSO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSO_CellContentClick);
             // 
