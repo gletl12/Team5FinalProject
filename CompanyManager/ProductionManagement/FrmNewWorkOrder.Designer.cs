@@ -75,6 +75,7 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(113, 51);
             this.cboState.Name = "cboState";
@@ -139,6 +140,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(732, 23);
             this.cboMachine.Name = "cboMachine";
@@ -147,6 +149,7 @@ namespace CompanyManager
             // 
             // cboID
             // 
+            this.cboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
             "작업/생산 ID",
@@ -155,10 +158,10 @@ namespace CompanyManager
             this.cboID.Name = "cboID";
             this.cboID.Size = new System.Drawing.Size(66, 22);
             this.cboID.TabIndex = 13;
-            this.cboID.Text = "작업/생산 ID";
             // 
             // cboDate
             // 
+            this.cboDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDate.FormattingEnabled = true;
             this.cboDate.Items.AddRange(new object[] {
             "계획시작",
@@ -168,7 +171,6 @@ namespace CompanyManager
             this.cboDate.Name = "cboDate";
             this.cboDate.Size = new System.Drawing.Size(74, 22);
             this.cboDate.TabIndex = 12;
-            this.cboDate.Text = "계획시작";
             // 
             // label11
             // 

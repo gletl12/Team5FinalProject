@@ -15,6 +15,7 @@ namespace CompanyManager
     {
         DispendService service = new DispendService();
         List<DispendWOVO> wos = new List<DispendWOVO>();
+        List<DispendVO> list = new List<DispendVO>();
         public FrmRelease()
         {
             InitializeComponent();
@@ -37,18 +38,19 @@ namespace CompanyManager
 
             CommonUtil.SetInitGridView(dgvDispend);
             CommonUtil.SetDGVDesign_Num(dgvDispend);
-            CommonUtil.AddGridTextColumn(dgvDispend, "계획시작일자", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvDispend, "작업지시ID", "CompanyName", 130, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvDispend, "설비명", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvDispend, "소진창고", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvDispend, "품목", "CompanyName", 100, true, DataGridViewContentAlignment.MiddleLeft);
-            CommonUtil.AddGridTextColumn(dgvDispend, "품명", "CompanyName", 130, true, DataGridViewContentAlignment.MiddleLeft);
-            CommonUtil.AddGridTextColumn(dgvDispend, "재고량", "CompanyName", 130, true, DataGridViewContentAlignment.MiddleLeft);
-            CommonUtil.AddGridTextColumn(dgvDispend, "요청수량", "CompanyName", 60, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvDispend, "단위", "CompanyName", 60, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvDispend, "상태", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvDispend, "계획시작일자", "wo_sdate", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvDispend, "작업지시ID", "wo_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvDispend, "설비명", "machine_name", 130, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dgvDispend, "요청창고", "in_warehouse", 110, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dgvDispend, "불출창고", "use_warehouse_id", 110, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dgvDispend, "품목", "item_id", 100, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dgvDispend, "품명", "item_name", 130, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dgvDispend, "재고량", "stock", 80, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvDispend, "요청수량", "required_qty", 80, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvDispend, "단위", "item_unit", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvDispend, "상태", "wo_state", 60, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvDispend, "요청일", "requestDate", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
-            dgvDispend.Rows.Add("2021-01-25", "WO2020012510", "최종조립반", "H_01(Halb 창고_01)", "CHAIR_01", "1인용 의자", "100", "갯수", "작업지시");
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -82,9 +84,6 @@ namespace CompanyManager
 
 
 
-        /// <summary>
-        /// 여기부터
-        /// </summary>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             BindingWorkOrder();
@@ -99,31 +98,82 @@ namespace CompanyManager
             dgvWorkOrder.DataSource = null;
             dgvWorkOrder.DataSource = searchResult;
         }
-
+        /// <summary>
+        /// 여기부터
+        /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            List<int> selectedRows = new List<int>();
-            for (int i = 0; i < dgvWorkOrder.Rows.Count; i++)
+            //List<int> selectedRows = new List<int>();
+            //for (int i = 0; i < dgvWorkOrder.Rows.Count; i++)
+            //{
+            //    if (Convert.ToBoolean(dgvWorkOrder[0, i].Value))
+            //    {
+            //        selectedRows.Add(Convert.ToInt32(dgvWorkOrder["wo_id", i].Value));
+            //    }
+            //}
+            //if (selectedRows.Count < 1)
+            //{
+            //    MessageBox.Show("자재를 불출할 작업을 선택해 주십시오.");
+            //    return;
+            //}
+            //bool result = service.GetDispendInfo(selectedRows);
+
+            //if (result)
+            //{
+            //    MessageBox.Show("등록 성공");
+            //    btnSearch.PerformClick();
+            //}
+            //else
+            //    MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오");
+        }
+
+        private void dgvWorkOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                return;
+            DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvWorkOrder[0, e.RowIndex];
+            int woID = Convert.ToInt32(dgvWorkOrder["wo_id", e.RowIndex].Value);
+            if (Convert.ToBoolean(chk.EditedFormattedValue))
             {
-                if (Convert.ToBoolean(dgvWorkOrder[0, i].Value))
+                List<DispendVO> details = service.GetDispendInfo(woID);
+                if (details.Count > 0)
                 {
-                    selectedRows.Add(Convert.ToInt32(dgvWorkOrder["wo_id", i].Value));
+                    foreach (DispendVO dispendVO in details)
+                    {
+                        if (list.Exists(elem => elem.wo_id == dispendVO.wo_id && elem.item_id == dispendVO.item_id))
+                            continue;
+                        list.Add(dispendVO);
+                    }
                 }
             }
-            if (selectedRows.Count < 1)
+            else
             {
-                MessageBox.Show("자재를 불출할 작업을 선택해 주십시오.");
-                return;
+                list.RemoveAll(elem => elem.wo_id.Equals(woID));
             }
-            bool result = service.GetDispendInfo(selectedRows);
 
+            dgvDispend.DataSource = null;
+            dgvDispend.DataSource = list;
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (list.Count < 1)
+            {
+                MessageBox.Show("자재불출을 요청할 작업지시를 선택해주십시오.");
+            }
+            bool result = service.InsertMetarialRelease(list,((FrmMain)this.MdiParent).LoginInfo.emp_id);
             if (result)
             {
                 MessageBox.Show("등록 성공");
-                btnSearch.PerformClick();
+                BindingWorkOrder();
+                dgvDispend.DataSource = null;
+                list.Clear();
             }
             else
-                MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오");
+                MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오.");
         }
+
+
     }
 }

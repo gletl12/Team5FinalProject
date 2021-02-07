@@ -199,6 +199,7 @@ namespace CompanyManager
             // 
             // cboProdID
             // 
+            this.cboProdID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProdID.FormattingEnabled = true;
             this.cboProdID.Location = new System.Drawing.Point(86, 52);
             this.cboProdID.Name = "cboProdID";
@@ -207,6 +208,7 @@ namespace CompanyManager
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(423, 22);
             this.cboCompany.Name = "cboCompany";
@@ -375,6 +377,7 @@ namespace CompanyManager
             // 
             // cboPurchasesID
             // 
+            this.cboPurchasesID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPurchasesID.FormattingEnabled = true;
             this.cboPurchasesID.Location = new System.Drawing.Point(423, 52);
             this.cboPurchasesID.Name = "cboPurchasesID";

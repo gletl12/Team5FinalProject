@@ -32,7 +32,6 @@ namespace CompanyManager
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.dtpRegDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.txtOrderID = new System.Windows.Forms.TextBox();
@@ -41,11 +40,6 @@ namespace CompanyManager
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.cboRQty = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.cboDest = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,7 +52,6 @@ namespace CompanyManager
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnDown = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewSO = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,7 +71,6 @@ namespace CompanyManager
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -96,7 +88,7 @@ namespace CompanyManager
             this.splitContainer1.Panel2.Controls.Add(this.btnDemandPlan);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
-            this.splitContainer1.SplitterDistance = 130;
+            this.splitContainer1.SplitterDistance = 109;
             this.splitContainer1.TabIndex = 24;
             // 
             // pnlSearch
@@ -107,7 +99,6 @@ namespace CompanyManager
             this.pnlSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSearch.Controls.Add(this.label20);
-            this.pnlSearch.Controls.Add(this.dtpRegDate);
             this.pnlSearch.Controls.Add(this.dtpTo);
             this.pnlSearch.Controls.Add(this.dtpFrom);
             this.pnlSearch.Controls.Add(this.txtOrderID);
@@ -116,11 +107,6 @@ namespace CompanyManager
             this.pnlSearch.Controls.Add(this.cboState);
             this.pnlSearch.Controls.Add(this.label24);
             this.pnlSearch.Controls.Add(this.label25);
-            this.pnlSearch.Controls.Add(this.cboRQty);
-            this.pnlSearch.Controls.Add(this.label9);
-            this.pnlSearch.Controls.Add(this.label11);
-            this.pnlSearch.Controls.Add(this.label13);
-            this.pnlSearch.Controls.Add(this.label15);
             this.pnlSearch.Controls.Add(this.cboDest);
             this.pnlSearch.Controls.Add(this.label7);
             this.pnlSearch.Controls.Add(this.label8);
@@ -133,40 +119,28 @@ namespace CompanyManager
             this.pnlSearch.Controls.Add(this.label14);
             this.pnlSearch.Controls.Add(this.label16);
             this.pnlSearch.Controls.Add(this.label18);
-            this.pnlSearch.Controls.Add(this.btnDown);
             this.pnlSearch.Controls.Add(this.btnSearch);
             this.pnlSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pnlSearch.Location = new System.Drawing.Point(10, 12);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1146, 114);
+            this.pnlSearch.Size = new System.Drawing.Size(1146, 86);
             this.pnlSearch.TabIndex = 22;
             // 
             // label20
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(199, 24);
+            this.label20.Location = new System.Drawing.Point(197, 23);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(15, 14);
             this.label20.TabIndex = 70;
             this.label20.Text = "~";
             // 
-            // dtpRegDate
-            // 
-            this.dtpRegDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpRegDate.CustomFormat = " ";
-            this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRegDate.Location = new System.Drawing.Point(106, 76);
-            this.dtpRegDate.Name = "dtpRegDate";
-            this.dtpRegDate.Size = new System.Drawing.Size(200, 21);
-            this.dtpRegDate.TabIndex = 69;
-            this.dtpRegDate.ValueChanged += new System.EventHandler(this.dtpRegDate_ValueChanged_1);
-            // 
             // dtpTo
             // 
             this.dtpTo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(220, 19);
+            this.dtpTo.Location = new System.Drawing.Point(218, 18);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(86, 21);
             this.dtpTo.TabIndex = 68;
@@ -175,7 +149,7 @@ namespace CompanyManager
             // 
             this.dtpFrom.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(106, 19);
+            this.dtpFrom.Location = new System.Drawing.Point(104, 18);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(86, 21);
             this.dtpFrom.TabIndex = 67;
@@ -211,7 +185,7 @@ namespace CompanyManager
             this.cboState.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(106, 45);
+            this.cboState.Location = new System.Drawing.Point(104, 44);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(200, 22);
             this.cboState.TabIndex = 63;
@@ -234,55 +208,6 @@ namespace CompanyManager
             this.label25.Size = new System.Drawing.Size(41, 14);
             this.label25.TabIndex = 61;
             this.label25.Text = "label2";
-            // 
-            // cboRQty
-            // 
-            this.cboRQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboRQty.FormattingEnabled = true;
-            this.cboRQty.Location = new System.Drawing.Point(424, 76);
-            this.cboRQty.Name = "cboRQty";
-            this.cboRQty.Size = new System.Drawing.Size(200, 22);
-            this.cboRQty.TabIndex = 60;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(357, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 14);
-            this.label9.TabIndex = 59;
-            this.label9.Text = "* 잔량";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label11.Location = new System.Drawing.Point(357, 76);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 14);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "label2";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 14);
-            this.label13.TabIndex = 57;
-            this.label13.Text = "* 등록일";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(17, 76);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 14);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "label2";
             // 
             // cboDest
             // 
@@ -407,24 +332,6 @@ namespace CompanyManager
             this.label18.TabIndex = 44;
             this.label18.Text = "label18";
             // 
-            // btnDown
-            // 
-            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDown.BackColor = System.Drawing.Color.White;
-            this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnDown.FlatAppearance.BorderSize = 2;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.btnDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDown.Location = new System.Drawing.Point(1111, 71);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(28, 28);
-            this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "ᐱ";
-            this.btnDown.UseVisualStyleBackColor = false;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -433,7 +340,7 @@ namespace CompanyManager
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(997, 70);
+            this.btnSearch.Location = new System.Drawing.Point(1015, 39);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 30);
             this.btnSearch.TabIndex = 7;
@@ -491,7 +398,7 @@ namespace CompanyManager
             this.dgvSO.Location = new System.Drawing.Point(10, 32);
             this.dgvSO.Name = "dgvSO";
             this.dgvSO.RowTemplate.Height = 23;
-            this.dgvSO.Size = new System.Drawing.Size(1146, 469);
+            this.dgvSO.Size = new System.Drawing.Size(1146, 490);
             this.dgvSO.TabIndex = 19;
             this.dgvSO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSO_CellContentClick);
             // 
@@ -551,7 +458,6 @@ namespace CompanyManager
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnlSearch;
-        private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewSO;
         private System.Windows.Forms.Label label10;
@@ -560,7 +466,6 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnDemandPlan;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dtpRegDate;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.TextBox txtOrderID;
@@ -569,11 +474,6 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cboRQty;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cboDest;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

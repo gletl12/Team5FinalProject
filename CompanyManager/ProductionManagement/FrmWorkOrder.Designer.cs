@@ -136,6 +136,7 @@ namespace CompanyManager
             // 
             // cboDate
             // 
+            this.cboDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDate.FormattingEnabled = true;
             this.cboDate.Items.AddRange(new object[] {
             "계획시작",
@@ -145,7 +146,6 @@ namespace CompanyManager
             this.cboDate.Name = "cboDate";
             this.cboDate.Size = new System.Drawing.Size(75, 22);
             this.cboDate.TabIndex = 12;
-            this.cboDate.Text = "계획시작";
             // 
             // btnExcel
             // 
@@ -165,6 +165,7 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(770, 22);
             this.cboState.Name = "cboState";
@@ -284,6 +285,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(113, 51);
             this.cboMachine.Name = "cboMachine";

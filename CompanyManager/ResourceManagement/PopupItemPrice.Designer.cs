@@ -86,6 +86,7 @@ namespace CompanyManager
             // 
             // cboCurrency
             // 
+            this.cboCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCurrency.FormattingEnabled = true;
             this.cboCurrency.Location = new System.Drawing.Point(409, 64);
             this.cboCurrency.Name = "cboCurrency";
@@ -95,6 +96,7 @@ namespace CompanyManager
             // 
             // cboItem
             // 
+            this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItem.FormattingEnabled = true;
             this.cboItem.Location = new System.Drawing.Point(409, 20);
             this.cboItem.Name = "cboItem";
@@ -112,6 +114,7 @@ namespace CompanyManager
             // 
             // cboMarket
             // 
+            this.cboMarket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarket.FormattingEnabled = true;
             this.cboMarket.Location = new System.Drawing.Point(99, 64);
             this.cboMarket.Name = "cboMarket";
@@ -120,6 +123,7 @@ namespace CompanyManager
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(99, 20);
             this.cboCompany.Name = "cboCompany";

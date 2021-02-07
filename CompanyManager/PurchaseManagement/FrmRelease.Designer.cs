@@ -50,12 +50,11 @@ namespace CompanyManager
             this.btnWorkOrderExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
+            this.dgvDispend = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDispendExcel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dgvDispend = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -121,6 +120,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(86, 54);
             this.cboMachine.Name = "cboMachine";
@@ -252,7 +252,6 @@ namespace CompanyManager
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dgvWorkOrder);
             this.splitContainer1.Panel1.Controls.Add(this.btnWorkOrderExcel);
-            this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.button9);
             // 
@@ -280,6 +279,7 @@ namespace CompanyManager
             this.dgvWorkOrder.RowTemplate.Height = 23;
             this.dgvWorkOrder.Size = new System.Drawing.Size(1142, 196);
             this.dgvWorkOrder.TabIndex = 19;
+            this.dgvWorkOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkOrder_CellContentClick);
             // 
             // btnWorkOrderExcel
             // 
@@ -320,6 +320,19 @@ namespace CompanyManager
             this.button9.TabIndex = 14;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // dgvDispend
+            // 
+            this.dgvDispend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDispend.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDispend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDispend.Location = new System.Drawing.Point(3, 29);
+            this.dgvDispend.Name = "dgvDispend";
+            this.dgvDispend.RowTemplate.Height = 23;
+            this.dgvDispend.Size = new System.Drawing.Size(1141, 258);
+            this.dgvDispend.TabIndex = 19;
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -335,23 +348,7 @@ namespace CompanyManager
             this.btnSave.Text = "    저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::CompanyManager.Properties.Resources.Add_16x16;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(995, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 23);
-            this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "    추가";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label1
             // 
@@ -391,19 +388,6 @@ namespace CompanyManager
             this.button5.Size = new System.Drawing.Size(29, 23);
             this.button5.TabIndex = 14;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // dgvDispend
-            // 
-            this.dgvDispend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDispend.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDispend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDispend.Location = new System.Drawing.Point(3, 29);
-            this.dgvDispend.Name = "dgvDispend";
-            this.dgvDispend.RowTemplate.Height = 23;
-            this.dgvDispend.Size = new System.Drawing.Size(1141, 258);
-            this.dgvDispend.TabIndex = 19;
             // 
             // FrmRelease
             // 
@@ -448,7 +432,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDispendExcel;
         private System.Windows.Forms.Button button5;
