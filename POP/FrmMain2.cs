@@ -28,6 +28,7 @@ namespace POP
             lblSelect2.Visible = false;
             lblSelect3.Visible = false;
             button4.Visible = false;
+            lblSelect4.Visible = false;
 
 
         }
@@ -41,6 +42,7 @@ namespace POP
             lblSelect1.Visible = true;
             lblSelect2.Visible = false;
             lblSelect3.Visible = false;
+            lblSelect4.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -53,6 +55,24 @@ namespace POP
             lblSelect1.Visible = false;
             lblSelect2.Visible = true;
             lblSelect3.Visible = false;
+            lblSelect4.Visible = false;
+        }
+
+        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmInspection frm = new FrmInspection();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            lblSelect1.Visible = false;
+            lblSelect2.Visible = false;
+            lblSelect3.Visible = false;
+            lblSelect4.Visible = true;
         }
     }
 }

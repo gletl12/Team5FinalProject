@@ -14,7 +14,7 @@ namespace POP
     public partial class UserControl1 : UserControl
     {
         FrmAction frm;
-
+        public FrmAction Frm { get; set; }
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
@@ -65,7 +65,10 @@ namespace POP
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            //Frm.MdiParent = this;
+            //Frm.Dock = DockStyle.Fill;
             frm.Show();
+           
         }
 
         private void btnStop_Click(object sender, EventArgs e)
