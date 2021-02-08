@@ -28,42 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            POP.TitleBar titleBar1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
+            POP.TitleBar titleBar1;
+            this.grandianPanel1 = new POP.GrandianPanel();
             this.panBarCode = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDirect = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panDirectLogin = new System.Windows.Forms.Panel();
             this.txtPassWord = new POP.PlaceholderTextBox();
             this.txtID = new POP.PlaceholderTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.grandianPanel1 = new POP.GrandianPanel();
             titleBar1 = new POP.TitleBar();
-            this.panBarCode.SuspendLayout();
-            this.panDirectLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grandianPanel1.SuspendLayout();
+            this.panBarCode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panDirectLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titleBar1
+            // grandianPanel1
             // 
-            titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            titleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            titleBar1.HeaderText = "Login";
-            titleBar1.Location = new System.Drawing.Point(0, 0);
-            titleBar1.Name = "titleBar1";
-            titleBar1.Size = new System.Drawing.Size(339, 33);
-            titleBar1.TabIndex = 21;
-            titleBar1.Load += new System.EventHandler(this.titleBar1_Load);
+            this.grandianPanel1.ColorBotton = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
+            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.panBarCode);
+            this.grandianPanel1.Controls.Add(this.pictureBox1);
+            this.grandianPanel1.Controls.Add(this.panDirectLogin);
+            this.grandianPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grandianPanel1.Location = new System.Drawing.Point(0, 33);
+            this.grandianPanel1.Name = "grandianPanel1";
+            this.grandianPanel1.Size = new System.Drawing.Size(339, 252);
+            this.grandianPanel1.TabIndex = 22;
+            this.grandianPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.grandianPanel1_Paint);
             // 
             // panBarCode
             // 
             this.panBarCode.BackColor = System.Drawing.Color.Transparent;
             this.panBarCode.Controls.Add(this.label1);
             this.panBarCode.Controls.Add(this.btnDirect);
-            this.panBarCode.Location = new System.Drawing.Point(27, 175);
+            this.panBarCode.Location = new System.Drawing.Point(27, 139);
             this.panBarCode.Name = "panBarCode";
             this.panBarCode.Size = new System.Drawing.Size(285, 49);
             this.panBarCode.TabIndex = 19;
@@ -93,13 +95,25 @@
             this.btnDirect.UseVisualStyleBackColor = false;
             this.btnDirect.Click += new System.EventHandler(this.btnDirect_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::POP.Properties.Resources.LOGO_T;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(285, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // panDirectLogin
             // 
             this.panDirectLogin.BackColor = System.Drawing.Color.Transparent;
             this.panDirectLogin.Controls.Add(this.txtPassWord);
             this.panDirectLogin.Controls.Add(this.txtID);
             this.panDirectLogin.Controls.Add(this.button1);
-            this.panDirectLogin.Location = new System.Drawing.Point(27, 147);
+            this.panDirectLogin.Location = new System.Drawing.Point(27, 115);
             this.panDirectLogin.Name = "panDirectLogin";
             this.panDirectLogin.Size = new System.Drawing.Size(285, 131);
             this.panDirectLogin.TabIndex = 20;
@@ -140,32 +154,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // titleBar1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::POP.Properties.Resources.LOGO_T;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(285, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
-            // grandianPanel1
-            // 
-            this.grandianPanel1.ColorBotton = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
-            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.grandianPanel1.Controls.Add(this.panBarCode);
-            this.grandianPanel1.Controls.Add(titleBar1);
-            this.grandianPanel1.Controls.Add(this.pictureBox1);
-            this.grandianPanel1.Controls.Add(this.panDirectLogin);
-            this.grandianPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grandianPanel1.Location = new System.Drawing.Point(0, 0);
-            this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(339, 285);
-            this.grandianPanel1.TabIndex = 22;
-            this.grandianPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.grandianPanel1_Paint);
+            titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            titleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            titleBar1.HeaderText = "Login";
+            titleBar1.Location = new System.Drawing.Point(0, 0);
+            titleBar1.Name = "titleBar1";
+            titleBar1.Size = new System.Drawing.Size(339, 33);
+            titleBar1.TabIndex = 21;
+            titleBar1.Load += new System.EventHandler(this.titleBar1_Load);
             // 
             // FrmLogin
             // 
@@ -174,17 +173,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(339, 285);
             this.Controls.Add(this.grandianPanel1);
+            this.Controls.Add(titleBar1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.grandianPanel1.ResumeLayout(false);
             this.panBarCode.ResumeLayout(false);
             this.panBarCode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panDirectLogin.ResumeLayout(false);
             this.panDirectLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.grandianPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
