@@ -60,6 +60,7 @@
     <Compile Include="Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contacts.cs" />
     <Compile Include="CustomControl\CustomTabControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

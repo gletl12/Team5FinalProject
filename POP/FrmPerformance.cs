@@ -17,7 +17,14 @@ namespace POP
     public partial class FrmPerformance : POP.BaseForm
     {
         FrmAction frm;
+        #region Initialize fields
+        private int CurrentPage = 1;
+        int PagesCount = 1;
+        int PageRows = 20;
 
+        BindingList<Contacts> Baselist = null;
+        BindingList<Contacts> Templist = null;
+        #endregion
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
