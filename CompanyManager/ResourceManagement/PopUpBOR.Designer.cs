@@ -181,6 +181,7 @@ namespace CompanyManager
             this.txtTack.Size = new System.Drawing.Size(184, 21);
             this.txtTack.TabIndex = 4;
             this.txtTack.Tag = "Tact Time";
+            this.txtTack.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // txtPriority
             // 
@@ -189,6 +190,7 @@ namespace CompanyManager
             this.txtPriority.Size = new System.Drawing.Size(184, 21);
             this.txtPriority.TabIndex = 4;
             this.txtPriority.Tag = "우선순위";
+            this.txtPriority.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // label9
             // 
@@ -207,6 +209,7 @@ namespace CompanyManager
             this.txtpreceding.Size = new System.Drawing.Size(185, 21);
             this.txtpreceding.TabIndex = 4;
             this.txtpreceding.Tag = "";
+            this.txtpreceding.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // btnAdd
             // 
