@@ -432,6 +432,7 @@ namespace CompanyManager
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView2);
             this.Name = "FrmRegPerformance";
+            this.Load += new System.EventHandler(this.FrmRegPerformance_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
