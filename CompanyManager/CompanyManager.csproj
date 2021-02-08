@@ -75,6 +75,12 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PlaceHolderTextBox.Designer.cs">
+      <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\PopupTitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
