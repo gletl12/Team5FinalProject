@@ -36,7 +36,9 @@ namespace POP
             GetdgvColumn();
             DataLoad();
             ComboBoxBinding();
-          
+
+         
+
         }
 
         private void ComboBoxBinding()
@@ -86,28 +88,50 @@ namespace POP
                 return;
             }
         }
-
+        int i = 0;
+         
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             int rowIndex = dataGridView1.CurrentRow.Index;
 
-            textBox1.Text = dataGridView1[0,rowIndex].Value.ToString();
-            textBox2.Text = dataGridView1[4,rowIndex].Value.ToString();//4
-            textBox3.Text = dataGridView1[6,rowIndex].Value.ToString();//6
-            textBox4.Text = dataGridView1[1,rowIndex].Value.ToString();//1
-            textBox5.Text = dataGridView1[13,rowIndex].Value.ToString();//13
-            textBox6.Text = dataGridView1[7,rowIndex].Value.ToString();//7
+            textBox1.Text = dataGridView1[0, rowIndex].Value.ToString();
+            textBox2.Text = dataGridView1[4, rowIndex].Value.ToString();//4
+            textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
+            textBox4.Text = dataGridView1[1, rowIndex].Value.ToString();//1
+            textBox5.Text = dataGridView1[13, rowIndex].Value.ToString();//13
+            textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//7
             for (int i = 0; i < tasks.Count; i++)
-            { 
-                if(tasks[i].taskID==dataGridView1[12,rowIndex].Value.ToString())
+            {
+                if (tasks[i].taskID == dataGridView1[12, rowIndex].Value.ToString())
                 {
-                   lblTaskID.Text= tasks[i].taskID;
-                   lblIP.Text= tasks[i].hostIP;
-                   lblPort.Text = tasks[i].hostPort;
-                   lblRemark.Text = tasks[i].remark;
+                    lblTaskID.Text = tasks[i].taskID;
+                    lblIP.Text = tasks[i].hostIP;
+                    lblPort.Text = tasks[i].hostPort;
+                    lblRemark.Text = tasks[i].remark;
                 }
 
             }
+
+
+
+                UserControl1 ctrl = new UserControl1();
+
+                ctrl.Name = $"taskControl{i}";
+                ctrl.Location = new Point(0, 0); //(23,2) (23, 35)
+                ctrl.Size = new Size(112, 292);
+
+                ctrl.Task_ID = lblTaskID.Text;
+                ctrl.Task_IP = lblIP.Text;
+                ctrl.Task_Port = lblPort.Text;
+                ctrl.Task_Remark = lblRemark.Text;
+
+                ctrl.IsTaskEnable = false;
+
+                panel1.Controls.Add(ctrl);
+                i++;
+            
+           
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
