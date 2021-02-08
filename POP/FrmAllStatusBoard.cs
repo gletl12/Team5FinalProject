@@ -38,7 +38,7 @@ namespace POP
                     control.Location = new Point(30 , 440); //생성위치
                 control.Size = new Size(310, 383); //버튼 사이즈 
                 control.MachinName = list[i];
-                control.image = Resources.LEGS_홀_가공;
+                control.image = Resources.Leg_조립반;
 
 
 

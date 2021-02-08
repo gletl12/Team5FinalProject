@@ -16,23 +16,41 @@ namespace Service
             return dac.GetLogin(id,pwd);
         }
 
-        //public List<CodeVO> GetAllCommonCode()
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.GetAllCommonCode();
-        //}
+        public List<EmployeeVO> GetAllEmployee()
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetAllEmployee();
+        }
 
-        //public bool AddCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.AddCommonCode(codeVO);
-        //}
+        public List<DeptVO> GetDept()
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.GetDept();
+        }
 
-        //public bool EditCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.EditCommonCode(codeVO);
-        //}
+        public bool AddEmployee(EmployeeVO evo)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.AddEmployee(evo);
+        }
+
+        public bool UpdateEmployee(EmployeeVO evo)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.UpdateEmployee(evo);
+        }
+
+        public bool DeleteEmployee(int emp_id)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.DeleteEmployee(emp_id);
+        }
+
+        public bool UpdateDept(List<DeptVO> list)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.UpdateDept(list);
+        }
 
         //public bool DeleteCommonCode(List<string> codeList)
         //{

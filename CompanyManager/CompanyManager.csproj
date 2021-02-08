@@ -123,6 +123,12 @@
     <Compile Include="ProductionManagement\PopupUseHistory.Designer.cs">
       <DependentUpon>PopupUseHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopEmployeeCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopEmployeeCRUD.Designer.cs">
+      <DependentUpon>PopEmployeeCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseManagement\PopupDueDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -585,6 +591,9 @@
     <EmbeddedResource Include="ProductionManagement\PopupUseHistory.resx">
       <DependentUpon>PopupUseHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopEmployeeCRUD.resx">
+      <DependentUpon>PopEmployeeCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PurchaseManagement\PopupDueDate.resx">
       <DependentUpon>PopupDueDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -872,6 +881,7 @@
     <None Include="Resources\ex.png" />
     <None Include="Resources\Apply_16x16.png" />
     <None Include="Resources\del.png" />
+    <None Include="Resources\CJCL_Logo.png" />
     <Content Include="Resources\GridBandedRows_32x32.png" />
     <None Include="Resources\Undo_16x16.png" />
     <None Include="Resources\Find_16x16.png" />
