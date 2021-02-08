@@ -870,6 +870,8 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\2.png" />
+    <None Include="Resources\LOGO_T.png" />
     <Content Include="Resources\team5_Logo.png" />
     <None Include="Resources\in.png" />
     <None Include="Resources\team5_Logo 수정.png" />
@@ -902,7 +904,6 @@
     <None Include="Resources\Next_16x16.png" />
     <None Include="Resources\Min.png" />
     <None Include="Resources\Max.png" />
-    <None Include="Resources\2.png" />
     <None Include="Resources\1.png" />
     <None Include="Resources\8.png" />
     <None Include="Resources\7.png" />
