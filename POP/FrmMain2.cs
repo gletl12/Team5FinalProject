@@ -26,9 +26,16 @@ namespace POP
 
             lblSelect1.Visible = false;
             lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            button4.Visible = false;
+            
+            
             lblSelect4.Visible = false;
+
+            lblSelect3.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+
 
 
         }
@@ -75,9 +82,49 @@ namespace POP
             lblSelect4.Visible = true;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lblSelect3.Visible = false;
+            label1.Visible = true;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
+            lblSelect3.Visible = true;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            lblSelect3.Visible = false;
+            label1.Visible = false;
+            label2.Visible = true;
+            label3.Visible = false;
+            label4.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            lblSelect3.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = true;
+            label4.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            lblSelect3.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = true;
         }
     }
 }
