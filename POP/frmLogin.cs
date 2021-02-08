@@ -26,7 +26,7 @@ namespace POP
         private void frmLogin_Load(object sender, EventArgs e)
         {
             UpdateControls();
-            titleBar1.HeaderText = "로그인";
+            //titleBar1.HeaderText = "로그인";
             txtID.Text = "6";
         }
 
@@ -83,6 +83,11 @@ namespace POP
         }
 
         private void titleBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grandianPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
