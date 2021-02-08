@@ -29,16 +29,40 @@ namespace POP
             InitializeComponent();
         }
 
-        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
+        
         private void FrmInspection_Load(object sender, EventArgs e)
         {
             
             GetdgvColumn();
             DataLoad();
             ComboBoxBinding();
-
+            Control();
          
 
+        }
+        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
+        UserControl1 ctrl;
+        private void Control()
+        {
+            
+
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                ctrl = new UserControl1();
+
+                ctrl.Name = $"taskControl{i}";
+                ctrl.Location = new Point(0,0); //(23,2) (23, 35)
+                ctrl.Size = new Size(112, 292);
+
+                ctrl.Task_ID = tasks[i].taskID;
+                ctrl.Task_IP = tasks[i].hostIP;
+                ctrl.Task_Port = tasks[i].hostPort;
+                ctrl.Task_Remark = tasks[i].remark;
+
+                ctrl.IsTaskEnable = false;
+                ctrl.Visible = false;
+                panel1.Controls.Add(ctrl);
+            }
         }
 
         private void ComboBoxBinding()
@@ -88,7 +112,7 @@ namespace POP
                 return;
             }
         }
-        int i = 0;
+        //int i = 0;
          
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -109,29 +133,42 @@ namespace POP
                     lblIP.Text = tasks[i].hostIP;
                     lblPort.Text = tasks[i].hostPort;
                     lblRemark.Text = tasks[i].remark;
+
+                    foreach (var ctrl in panel1.Controls)
+                    {
+                        if (ctrl is  UserControl1 taskCtrl)
+                        {
+                            taskCtrl.Visible = false;
+
+                            if (taskCtrl.Task_ID.Equals(tasks[i].taskID))
+                            {
+                                taskCtrl.Visible = true;
+                            }
+                        }
+                    }
                 }
 
             }
-
-
-
-                UserControl1 ctrl = new UserControl1();
-
-                ctrl.Name = $"taskControl{i}";
-                ctrl.Location = new Point(0, 0); //(23,2) (23, 35)
-                ctrl.Size = new Size(112, 292);
-
-                ctrl.Task_ID = lblTaskID.Text;
-                ctrl.Task_IP = lblIP.Text;
-                ctrl.Task_Port = lblPort.Text;
-                ctrl.Task_Remark = lblRemark.Text;
-
-                ctrl.IsTaskEnable = false;
-
-                panel1.Controls.Add(ctrl);
-                i++;
-            
            
+
+
+            //    UserControl1 ctrl = new UserControl1();
+
+            //    ctrl.Name = $"taskControl{i}";
+            //    ctrl.Location = new Point(0, 0); //(23,2) (23, 35)
+            //    ctrl.Size = new Size(112, 292);
+
+            //    ctrl.Task_ID = lblTaskID.Text;
+            //    ctrl.Task_IP = lblIP.Text;
+            //    ctrl.Task_Port = lblPort.Text;
+            //    ctrl.Task_Remark = lblRemark.Text;
+
+            //    ctrl.IsTaskEnable = false;
+
+            //    panel1.Controls.Add(ctrl);
+            //    i++;
+
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
