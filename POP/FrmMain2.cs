@@ -24,17 +24,14 @@ namespace POP
         private void FrmMain2_Load(object sender, EventArgs e)
         {
 
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = false;
-            
-            
-            lblSelect4.Visible = false;
-
-            lblSelect3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = false;            
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
 
 
 
@@ -46,10 +43,14 @@ namespace POP
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            lblSelect1.Visible = true;
-            lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = false;
+            lbl1.Visible = true;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,10 +60,14 @@ namespace POP
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = true;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = true;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -76,55 +81,74 @@ namespace POP
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = true;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = true;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            lblSelect3.Visible = false;
-            label1.Visible = true;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = true;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            lblSelect3.Visible = true;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = true;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            lblSelect3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = true;
-            label3.Visible = false;
-            label4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = true;
+            lbl7.Visible = false;
+            lbl8.Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            lblSelect3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = true;
-            label4.Visible = false;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = true;
+            lbl8.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            lblSelect3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = true;
+            lbl1.Visible = false;
+            lbl2.Visible = false;
+            lbl3.Visible = false;
+            lbl4.Visible = false;
+            lbl5.Visible = false;
+            lbl6.Visible = false;
+            lbl7.Visible = false;
+            lbl8.Visible = true;
         }
     }
 }

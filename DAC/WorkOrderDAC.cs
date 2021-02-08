@@ -27,10 +27,11 @@ namespace DAC
                                     W.ins_emp,
                                     W.up_date,
                                     W.up_emp,
-                                    wo_state
+                                    c.name as wo_state
                                     
                     FROM TBL_WORK_ORDER W inner join TBL_BOR B on B.item_id=W.item_id
-						inner join TBL_MACHINE M on M.machine_id=B.machine_id";
+						inner join TBL_MACHINE M on M.machine_id=B.machine_id
+                        inner join TBL_COMMON_CODE C on W.wo_state=C.code";
 
             try
             {

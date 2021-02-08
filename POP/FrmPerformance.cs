@@ -21,7 +21,7 @@ namespace POP
         #region Initialize fields
         private int CurrentPage = 1;
         int PagesCount = 1;
-        int PageRows = 6;
+        int PageRows = 5;
 
         
         
@@ -98,10 +98,10 @@ namespace POP
             CommonUtil.SetDGVDesign_Num(dataGridView1);
             dataGridView1.ColumnHeadersHeight = 50;
 
-            CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_id", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "품목 코드", "item_id", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "계획수량", "wo_qty", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "작업지시상태", "wo_state", 350);
+            CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목 코드", "item_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "계획수량", "wo_qty", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "작업지시상태", "wo_state", 445);
 
             CommonUtil.AddGridTextColumn(dataGridView1, "계획번호", "prod_id", 130, false);
             CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_people", 130, false);

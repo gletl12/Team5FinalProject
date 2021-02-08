@@ -138,9 +138,9 @@ namespace POP
             this.toolStripButton5,
             this.btnForward,
             this.btnLast});
-            this.toolStripPaging.Location = new System.Drawing.Point(3, 686);
+            this.toolStripPaging.Location = new System.Drawing.Point(3, 636);
             this.toolStripPaging.Name = "toolStripPaging";
-            this.toolStripPaging.Size = new System.Drawing.Size(1569, 79);
+            this.toolStripPaging.Size = new System.Drawing.Size(1569, 129);
             this.toolStripPaging.TabIndex = 27;
             this.toolStripPaging.Text = "toolStrip1";
             // 
@@ -149,6 +149,7 @@ namespace POP
             this.btnFirst.AutoSize = false;
             this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
+            this.btnFirst.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(235, 70);
@@ -160,6 +161,7 @@ namespace POP
             this.btnBackward.AutoSize = false;
             this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
+            this.btnBackward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(235, 70);
@@ -224,8 +226,10 @@ namespace POP
             // btnForward
             // 
             this.btnForward.AutoSize = false;
+            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnForward.Image = global::POP.Properties.Resources.Forward;
+            this.btnForward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(235, 70);
@@ -235,8 +239,10 @@ namespace POP
             // btnLast
             // 
             this.btnLast.AutoSize = false;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnLast.Image = global::POP.Properties.Resources.fastforward;
+            this.btnLast.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(235, 70);
@@ -250,7 +256,7 @@ namespace POP
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.RowTemplate.Height = 70;
+            this.dataGridView1.RowTemplate.Height = 95;
             this.dataGridView1.Size = new System.Drawing.Size(1569, 762);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);

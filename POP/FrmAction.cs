@@ -185,5 +185,15 @@ namespace POP
             button3.Enabled = true;
             timer_Connects.Start();
         }
+
+        private void lblVersion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
