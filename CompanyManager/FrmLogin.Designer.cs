@@ -46,7 +46,8 @@ namespace CompanyManager
             // popupTitleBar1
             // 
             this.popupTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.popupTitleBar1.HeaderText = "로그인";
+            this.popupTitleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.popupTitleBar1.HeaderText = "Login";
             this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
             this.popupTitleBar1.Size = new System.Drawing.Size(339, 33);
             this.popupTitleBar1.TabStop = false;
