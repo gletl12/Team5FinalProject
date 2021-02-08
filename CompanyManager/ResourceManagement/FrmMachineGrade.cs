@@ -1,17 +1,21 @@
 ﻿using CompanyManager.Properties;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
     public partial class FrmMachineGrade : CompanyManager.MDIBaseForm
     {
+        List<MGradeVO> list = new List<MGradeVO>();
         public FrmMachineGrade()
         {
             InitializeComponent();
@@ -21,6 +25,7 @@ namespace CompanyManager
         {
             GetMachine();
             GetMachineGrade();
+            RoadCombobox();
             txtUpEmp.Text = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString();
         }
 
@@ -35,12 +40,10 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "수정자", "up_emp", 80);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "수정시간", "up_date",181);
 
-            dgvMachineGrade.Rows.Add(null, "ASSEMBLY", "조립", "사용","관리자", "2021-01-22");
-            dgvMachineGrade.Rows.Add(null, "PROCESSING", "가공","사용", "관리자", "2021-01-22");
-            dgvMachineGrade.Rows.Add(null, "OUTSOURCING", "외주", "사용", "관리자", "2021-01-22");
-
             dgvMachineGrade.AutoGenerateColumns = false;
             dgvMachineGrade.AllowUserToAddRows = false;
+
+            MGradeRoad();
         }
         private void GetMachine()
         {
@@ -66,19 +69,19 @@ namespace CompanyManager
             dgvMachine.AllowUserToAddRows = false;
         }
 
-        //private void LoadCombobox()
-        //{
-        //    CodeService service = new CodeService();
-        //    List<CodeVO> combobox = service.GetAllCommonCode();
+        private void RoadCombobox()
+        {
+            CodeService service = new CodeService();
+            List<CodeVO> combobox = service.GetAllCommonCode();
 
-        //    cboFGrade.DisplayMember = "name";
-        //    cboFGrade.ValueMember = "name";
-        //    List<CodeVO> temp = (from code in combobox
-        //                         where code.category == "FACTORY_GRADE"
-        //                         select code).ToList();
-        //    temp.Insert(0, new CodeVO { code = "", name = "" });
-        //    cboFGrade.DataSource = temp;
-        //}
+            cboUse.DisplayMember = "name";
+            cboUse.ValueMember = "name";
+            List<CodeVO> temp = (from code in combobox
+                                 where code.category == "USE_FLAG"
+                                 select code).ToList();
+            temp.Insert(0, new CodeVO { code = "", name = "" });
+            cboUse.DataSource = temp;
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -90,6 +93,24 @@ namespace CompanyManager
             txtMGCode.Text = txtMGName.Text = txtComment.Text = "";
             cboUse.SelectedIndex = 0;
             pnlMGrade.Visible = false;
+        }
+
+        private void MGradeRoad()
+        {
+            MGradeService service = new MGradeService();
+            list = service.GetMGrade();
+
+            dgvMachineGrade.DataSource = list;
+            dgvMachineGrade.ClearSelection();
+        }
+
+        private void dgvMachineGrade_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                pnlMGrade.Visible = true;
+                
+            }
         }
     }
 }

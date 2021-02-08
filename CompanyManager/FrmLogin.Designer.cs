@@ -136,8 +136,9 @@ namespace CompanyManager
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.team5_Logo_수정;
+            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.로고_배경투명__3213;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 33);
             this.pictureBox1.Name = "pictureBox1";

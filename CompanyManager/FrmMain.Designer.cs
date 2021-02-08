@@ -52,11 +52,12 @@ namespace CompanyManager
             this.btnCommonM = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnEmployeeM = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -240,7 +241,7 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBar1.HeaderText = "C J C L";
+            this.titleBar1.HeaderText = "C F P";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
@@ -252,10 +253,10 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
             this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.pictureBox1);
             this.grandianPanel1.Controls.Add(this.btnCommonM);
             this.grandianPanel1.Controls.Add(this.btnLogout);
             this.grandianPanel1.Controls.Add(this.btnEmployeeM);
-            this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
             this.grandianPanel1.Size = new System.Drawing.Size(1350, 66);
@@ -320,17 +321,15 @@ namespace CompanyManager
             this.btnEmployeeM.Visible = false;
             this.btnEmployeeM.Click += new System.EventHandler(this.btnEmployeeM_Click);
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(37, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 39);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Logo";
+            this.pictureBox1.BackgroundImage = global::CompanyManager.Properties.Resources.로고완성;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 66);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMain
             // 
@@ -360,7 +359,7 @@ namespace CompanyManager
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
-            this.grandianPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,7 +379,6 @@ namespace CompanyManager
         private System.Windows.Forms.Panel panel1;
         private TitleBar titleBar1;
         private GrandianPanel grandianPanel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSortName;
@@ -390,6 +388,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnEmployeeM;
         private System.Windows.Forms.Button btnCommonM;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

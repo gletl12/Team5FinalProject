@@ -26,7 +26,7 @@ namespace CompanyManager
         {
             GetdgvColumn();
             DataRoad();
-            LoadCombobox();
+            RoadCombobox();
         }
 
         private void GetdgvColumn()
@@ -59,7 +59,7 @@ namespace CompanyManager
             dgvFactory.ClearSelection();
         }
 
-        private void LoadCombobox()
+        private void RoadCombobox()
         {
             CodeService service = new CodeService();
             List<CodeVO> combobox = service.GetAllCommonCode();

@@ -32,26 +32,27 @@ namespace CompanyManager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.cboUse = new System.Windows.Forms.ComboBox();
             this.dgvMachineGrade = new System.Windows.Forms.DataGridView();
-            this.txtUpEmp = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
-            this.txtComment = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.txtMGName = new System.Windows.Forms.TextBox();
-            this.txtMGCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.btnCencel = new System.Windows.Forms.Button();
+            this.pnlMGrade = new System.Windows.Forms.Panel();
+            this.cboUse = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCencel = new System.Windows.Forms.Button();
+            this.txtUpEmp = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMGCode = new System.Windows.Forms.TextBox();
+            this.txtMGName = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dgvMachine = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,12 +61,12 @@ namespace CompanyManager
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.pnlMGrade = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineGrade)).BeginInit();
+            this.pnlMGrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachine)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,26 +81,14 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.cboUse);
             this.splitContainer1.Panel1.Controls.Add(this.dgvMachineGrade);
-            this.splitContainer1.Panel1.Controls.Add(this.txtUpEmp);
             this.splitContainer1.Panel1.Controls.Add(this.btnRegister);
-            this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.button8);
-            this.splitContainer1.Panel1.Controls.Add(this.txtComment);
             this.splitContainer1.Panel1.Controls.Add(this.button12);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.button11);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.button10);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.button9);
-            this.splitContainer1.Panel1.Controls.Add(this.txtMGName);
-            this.splitContainer1.Panel1.Controls.Add(this.txtMGCode);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.button14);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCencel);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.pnlMGrade);
             // 
             // splitContainer1.Panel2
@@ -115,14 +104,6 @@ namespace CompanyManager
             this.splitContainer1.Size = new System.Drawing.Size(1148, 623);
             this.splitContainer1.SplitterDistance = 253;
             this.splitContainer1.TabIndex = 25;
-            // 
-            // cboUse
-            // 
-            this.cboUse.FormattingEnabled = true;
-            this.cboUse.Location = new System.Drawing.Point(720, 40);
-            this.cboUse.Name = "cboUse";
-            this.cboUse.Size = new System.Drawing.Size(140, 22);
-            this.cboUse.TabIndex = 3;
             // 
             // dgvMachineGrade
             // 
@@ -144,14 +125,7 @@ namespace CompanyManager
             this.dgvMachineGrade.RowTemplate.Height = 23;
             this.dgvMachineGrade.Size = new System.Drawing.Size(623, 221);
             this.dgvMachineGrade.TabIndex = 19;
-            // 
-            // txtUpEmp
-            // 
-            this.txtUpEmp.Location = new System.Drawing.Point(956, 40);
-            this.txtUpEmp.Name = "txtUpEmp";
-            this.txtUpEmp.ReadOnly = true;
-            this.txtUpEmp.Size = new System.Drawing.Size(176, 21);
-            this.txtUpEmp.TabIndex = 4;
+            this.dgvMachineGrade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachineGrade_CellClick);
             // 
             // btnRegister
             // 
@@ -170,16 +144,6 @@ namespace CompanyManager
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(879, 43);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 14);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "* 수정자";
-            // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,14 +160,6 @@ namespace CompanyManager
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // txtComment
-            // 
-            this.txtComment.Location = new System.Drawing.Point(642, 88);
-            this.txtComment.Multiline = true;
-            this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(490, 72);
-            this.txtComment.TabIndex = 5;
-            // 
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -219,16 +175,6 @@ namespace CompanyManager
             this.button12.Text = "    엑셀";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button12.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(639, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 14);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "* 시설설명";
             // 
             // button11
             // 
@@ -273,16 +219,6 @@ namespace CompanyManager
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(639, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 14);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "* 사용유무";
-            // 
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -295,44 +231,45 @@ namespace CompanyManager
             this.button9.TabIndex = 14;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // txtMGName
+            // pnlMGrade
             // 
-            this.txtMGName.Location = new System.Drawing.Point(956, 12);
-            this.txtMGName.Name = "txtMGName";
-            this.txtMGName.Size = new System.Drawing.Size(176, 21);
-            this.txtMGName.TabIndex = 2;
+            this.pnlMGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.pnlMGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMGrade.Controls.Add(this.cboUse);
+            this.pnlMGrade.Controls.Add(this.label5);
+            this.pnlMGrade.Controls.Add(this.btnCencel);
+            this.pnlMGrade.Controls.Add(this.txtUpEmp);
+            this.pnlMGrade.Controls.Add(this.button14);
+            this.pnlMGrade.Controls.Add(this.label2);
+            this.pnlMGrade.Controls.Add(this.label8);
+            this.pnlMGrade.Controls.Add(this.txtMGCode);
+            this.pnlMGrade.Controls.Add(this.txtMGName);
+            this.pnlMGrade.Controls.Add(this.txtComment);
+            this.pnlMGrade.Controls.Add(this.label3);
+            this.pnlMGrade.Controls.Add(this.label4);
+            this.pnlMGrade.Location = new System.Drawing.Point(632, 3);
+            this.pnlMGrade.Name = "pnlMGrade";
+            this.pnlMGrade.Size = new System.Drawing.Size(516, 247);
+            this.pnlMGrade.TabIndex = 40;
+            this.pnlMGrade.Visible = false;
             // 
-            // txtMGCode
+            // cboUse
             // 
-            this.txtMGCode.Location = new System.Drawing.Point(720, 12);
-            this.txtMGCode.Name = "txtMGCode";
-            this.txtMGCode.Size = new System.Drawing.Size(140, 21);
-            this.txtMGCode.TabIndex = 1;
+            this.cboUse.FormattingEnabled = true;
+            this.cboUse.Location = new System.Drawing.Point(94, 39);
+            this.cboUse.Name = "cboUse";
+            this.cboUse.Size = new System.Drawing.Size(140, 22);
+            this.cboUse.TabIndex = 3;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(879, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 14);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "* 설비군 명";
-            // 
-            // button14
-            // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(956, 215);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 30);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "저장";
-            this.button14.UseVisualStyleBackColor = false;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(13, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 14);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "* 설비군 코드";
             // 
             // btnCencel
             // 
@@ -342,7 +279,7 @@ namespace CompanyManager
             this.btnCencel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCencel.ForeColor = System.Drawing.Color.White;
             this.btnCencel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCencel.Location = new System.Drawing.Point(1047, 215);
+            this.btnCencel.Location = new System.Drawing.Point(415, 207);
             this.btnCencel.Name = "btnCencel";
             this.btnCencel.Size = new System.Drawing.Size(85, 30);
             this.btnCencel.TabIndex = 7;
@@ -350,15 +287,90 @@ namespace CompanyManager
             this.btnCencel.UseVisualStyleBackColor = false;
             this.btnCencel.Click += new System.EventHandler(this.btnCencel_Click);
             // 
-            // label5
+            // txtUpEmp
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(639, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 14);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "* 설비군 코드";
+            this.txtUpEmp.Location = new System.Drawing.Point(324, 39);
+            this.txtUpEmp.Name = "txtUpEmp";
+            this.txtUpEmp.ReadOnly = true;
+            this.txtUpEmp.Size = new System.Drawing.Size(176, 21);
+            this.txtUpEmp.TabIndex = 4;
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(147)))), ((int)(((byte)(211)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.Location = new System.Drawing.Point(324, 207);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(85, 30);
+            this.button14.TabIndex = 6;
+            this.button14.Text = "저장";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(247, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 14);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "* 설비군 명";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(247, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 14);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "* 수정자";
+            // 
+            // txtMGCode
+            // 
+            this.txtMGCode.Location = new System.Drawing.Point(94, 11);
+            this.txtMGCode.Name = "txtMGCode";
+            this.txtMGCode.Size = new System.Drawing.Size(140, 21);
+            this.txtMGCode.TabIndex = 1;
+            // 
+            // txtMGName
+            // 
+            this.txtMGName.Location = new System.Drawing.Point(324, 11);
+            this.txtMGName.Name = "txtMGName";
+            this.txtMGName.Size = new System.Drawing.Size(176, 21);
+            this.txtMGName.TabIndex = 2;
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(16, 87);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(484, 104);
+            this.txtComment.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(13, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "* 사용유무";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(13, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 14);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "* 시설설명";
             // 
             // dgvMachine
             // 
@@ -484,16 +496,6 @@ namespace CompanyManager
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // pnlMGrade
-            // 
-            this.pnlMGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.pnlMGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMGrade.Location = new System.Drawing.Point(632, 3);
-            this.pnlMGrade.Name = "pnlMGrade";
-            this.pnlMGrade.Size = new System.Drawing.Size(516, 247);
-            this.pnlMGrade.TabIndex = 40;
-            this.pnlMGrade.Visible = false;
-            // 
             // FrmMachineGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -508,6 +510,8 @@ namespace CompanyManager
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineGrade)).EndInit();
+            this.pnlMGrade.ResumeLayout(false);
+            this.pnlMGrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachine)).EndInit();
             this.ResumeLayout(false);
 

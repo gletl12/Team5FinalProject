@@ -865,6 +865,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\team5_Logo.png" />
+    <None Include="Resources\로고 배경투명 %283213.png" />
+    <None Include="Resources\로고 배경투명 %282%29.png" />
+    <None Include="Resources\로고 배경투명 %281%29.png" />
+    <None Include="Resources\로고 최정.png" />
+    <None Include="Resources\로고완성22.png" />
+    <None Include="Resources\로고완성.png" />
     <None Include="Resources\in.png" />
     <None Include="Resources\team5_Logo 수정.png" />
     <None Include="Resources\team5_Logo2.png" />
