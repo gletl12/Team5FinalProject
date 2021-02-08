@@ -314,7 +314,7 @@ namespace Util
         private static void CommonUtil_Paint(object sender, PaintEventArgs e)
         {
             //데이터 바인딩이 ㅇ되지않으면 no출력 X
-            if (((DataGridView)sender).DataSource == null)
+            if (((DataGridView)sender).Rows.Count < 1)
                 return;
 
             TextRenderer.DrawText(e.Graphics, "No.", ((DataGridView)sender).Font, new Point(19, 5), Color.Black);

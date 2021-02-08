@@ -15,18 +15,23 @@ namespace CompanyManager
         public FrmDemandPlan()
         {
             InitializeComponent();
+            SetDGV();
+            dtpend.Value = dtpstart.Value.AddDays(30);
+
+        }
+
+        private void SetDGV()
+        {
             CommonUtil.SetInitGridView(dataGridView2);
             CommonUtil.SetDGVDesign_Num(dataGridView2);
             CommonUtil.AddGridCheckColumn(dataGridView2, "");
-            CommonUtil.AddGridTextColumn(dataGridView2, "plan_id", "plan_id", 80,false, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객사코드", "company_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "plan_id", "plan_id", 80, false, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView2, "고객사코드", "company_id", 90, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView2, "고객사명", "company_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView2, "고객주문번호", "order_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView2, "품목", "item_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
             dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView2.AutoGenerateColumns = true;
-            dtpend.Value = dtpstart.Value.AddDays(30);
-            
         }
 
         private void FrmDemandPlan_Load(object sender, EventArgs e)
@@ -55,13 +60,26 @@ namespace CompanyManager
                                     plan.Field<int>("plan_id").ToString().Contains(txtpaneid.Text) &&
                                     plan.Field<string>("item_id").ToString().Contains(txtSubject.Text)
                               select plan;
-            //temp.AsDataView();
+         
 
-            //DataView dv = dt.DefaultView;
-
-            //dv.RowFilter = $"company_id.ToString() = '{txtcompany.Text}'";
+            
+            
+            dataGridView2.DataSource = null;
+            dataGridView2.Columns.Clear();
+            SetDGV();
 
             dataGridView2.DataSource = temp.AsDataView();
+
+           
+            
+
+
+            //dataGridView2.Columns[1].Visible = false;
+        }
+
+        private void ClearAutodgvColumns(int count)
+        {
+           
         }
 
         private void btnPlan_Click(object sender, EventArgs e)
