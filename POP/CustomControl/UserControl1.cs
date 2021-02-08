@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -52,7 +53,9 @@ namespace POP
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
+            //string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
+            string server = ConfigurationManager.AppSettings["MachineEXE"];
+            
             Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
             process_id = pro.Id;
 

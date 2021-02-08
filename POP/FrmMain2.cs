@@ -74,5 +74,10 @@ namespace POP
             lblSelect3.Visible = false;
             lblSelect4.Visible = true;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
