@@ -46,5 +46,10 @@ namespace CompanyManager
         {
             CommonUtil.OpenCreateForm<PopupPerformance>();
         }
+
+        private void FrmRegPerformance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
