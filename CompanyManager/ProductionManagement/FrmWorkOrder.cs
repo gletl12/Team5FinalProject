@@ -97,6 +97,7 @@ namespace CompanyManager
             }
 
             PopupUseHistory popup = new PopupUseHistory(idx);
+            popup.StartPosition = FormStartPosition.CenterParent;
             popup.ShowDialog();
         }
 
@@ -110,6 +111,11 @@ namespace CompanyManager
                     continue;
                 ((DataGridViewCheckBoxCell)dgvWorkOrder.Rows[i].Cells["chk"]).Value = false;
             }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvWorkOrder);
         }
     }
 }

@@ -170,5 +170,10 @@ namespace CompanyManager
             dgvPurchases.DataSource = purchasesList;
 
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvPurchases);
+        }
     }
 }

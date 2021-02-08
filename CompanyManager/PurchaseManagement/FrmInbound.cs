@@ -65,13 +65,13 @@ namespace CompanyManager
 
             List<CodeVO> codes = service.GetInboundCodes();
             var companys = (from company in codes where company.category.Equals("COMPANY") select company).ToList();
-            companys.Add(new CodeVO() { code = "", name = "전체" });
+            companys.Insert(0,new CodeVO() { code = "", name = "전체" });
             CommonUtil.BindingComboBox(cboCompany, companys, "code", "name");
             var prodIDs = (from prodID in codes where prodID.category.Equals("PROD_ID") select prodID).ToList();
-            prodIDs.Add(new CodeVO() { code = "", name = "전체" });
+            prodIDs.Insert(0,new CodeVO() { code = "", name = "전체" });
             CommonUtil.BindingComboBox(cboProdID, prodIDs, "code", "name");
             var purchasesIDs = (from purchasesID in codes where purchasesID.category.Equals("PURCHASES_ID") select purchasesID).ToList();
-            purchasesIDs.Add(new CodeVO() { code = "", name = "전체" });
+            purchasesIDs.Insert(0,new CodeVO() { code = "", name = "전체" });
             CommonUtil.BindingComboBox(cboPurchasesID, purchasesIDs, "code", "name");
         }
 
@@ -135,6 +135,11 @@ namespace CompanyManager
                                       ).ToList();
             dgvWait.DataSource = null;
             dgvWait.DataSource = searchResult;
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvWait);
         }
     }
 }

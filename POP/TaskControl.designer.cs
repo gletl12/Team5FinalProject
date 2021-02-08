@@ -58,15 +58,15 @@ namespace POP
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.Controls.Add(this.lblRemark, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblPort, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblIP, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblTaskID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnStart, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnStop, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnShow, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnLog, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.chkEnable, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblRemark, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnStart, 5, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";

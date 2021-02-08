@@ -46,6 +46,7 @@ namespace CompanyManager
         private void btnUpload_Click(object sender, EventArgs e)
         {
             PopupSoUpload popup = new PopupSoUpload();
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 if (popup.DT == null)

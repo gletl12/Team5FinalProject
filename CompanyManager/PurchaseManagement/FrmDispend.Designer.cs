@@ -473,6 +473,7 @@ namespace CompanyManager
             this.btxExcel.Text = "    엑셀";
             this.btxExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btxExcel.UseVisualStyleBackColor = false;
+            this.btxExcel.Click += new System.EventHandler(this.btxExcel_Click);
             // 
             // FrmDispend
             // 

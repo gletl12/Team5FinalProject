@@ -145,5 +145,10 @@ namespace CompanyManager
                 MessageBox.Show("취소중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오");
             }
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvInbound);
+        }
     }
 }

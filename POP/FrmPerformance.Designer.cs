@@ -29,10 +29,6 @@ namespace POP
         /// </summary>
         private void InitializeComponent()
         {
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -81,6 +77,7 @@ namespace POP
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,46 +88,6 @@ namespace POP
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(1485, 234);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(103, 64);
-            this.button9.TabIndex = 30;
-            this.button9.Text = "로그";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(1485, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 64);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "공정가동";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1485, 93);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(103, 64);
-            this.button10.TabIndex = 30;
-            this.button10.Text = "설비중지";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1485, 163);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 64);
-            this.button8.TabIndex = 30;
-            this.button8.Text = "화면보기";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button1
             // 
@@ -674,15 +631,19 @@ namespace POP
             this.label8.TabIndex = 0;
             this.label8.Text = "지시 수량";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(1485, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(112, 292);
+            this.panel1.TabIndex = 31;
+            // 
             // FrmPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1600, 1102);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
@@ -764,13 +725,10 @@ namespace POP
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label lblRemark;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Label lblTaskID;
+        private System.Windows.Forms.Panel panel1;
     }
 }

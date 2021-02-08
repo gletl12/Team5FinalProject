@@ -103,6 +103,7 @@ namespace Util
             col.SortMode = DataGridViewColumnSortMode.NotSortable;
             col.Image = image;
             col.HeaderText = columnName;
+            col.Name = columnName;
             col.Width = width;
             col.ImageLayout = DataGridViewImageCellLayout.Normal;
             dgv.Columns.Add(col);
@@ -546,6 +547,8 @@ namespace Util
             cbo.ValueMember = valueMember;
             dgv.Columns.Add(cbo);
         }
+
+        
 
     }
 }
