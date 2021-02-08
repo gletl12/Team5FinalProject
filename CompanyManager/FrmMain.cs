@@ -293,5 +293,11 @@ namespace CompanyManager
             else
                 e.Cancel = true;
         }
+
+        private void btnEmployeeM_Click(object sender, EventArgs e)
+        {
+            FrmEmployee frm = new FrmEmployee(loginInfo.emp_id);
+            frm.ShowDialog();
+        }
     }
 }

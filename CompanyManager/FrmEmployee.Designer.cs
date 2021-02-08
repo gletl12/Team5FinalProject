@@ -29,34 +29,41 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cboDept = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtEmpName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lbDept = new System.Windows.Forms.ListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEmpRegister = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pnlDept = new System.Windows.Forms.Panel();
+            this.lblchk = new System.Windows.Forms.Label();
+            this.btnCencel = new System.Windows.Forms.Button();
+            this.btnListAdd = new System.Windows.Forms.Button();
+            this.txtDeptName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDeptNo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSub = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pnlDept.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupTitleBar1
@@ -64,77 +71,73 @@ namespace CompanyManager
             this.popupTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.popupTitleBar1.HeaderText = "직원관리";
             this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
-            this.popupTitleBar1.Size = new System.Drawing.Size(1112, 33);
+            this.popupTitleBar1.Size = new System.Drawing.Size(944, 33);
             // 
-            // button1
+            // dgvEmployee
             // 
-            this.button1.Location = new System.Drawing.Point(188, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 54);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 14);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "      직원관리";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 71);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(741, 267);
-            this.dataGridView2.TabIndex = 12;
+            this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.Location = new System.Drawing.Point(15, 71);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.RowHeadersWidth = 50;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.dgvEmployee.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvEmployee.RowTemplate.Height = 23;
+            this.dgvEmployee.Size = new System.Drawing.Size(746, 267);
+            this.dgvEmployee.TabIndex = 12;
+            this.dgvEmployee.TabStop = false;
+            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboDept);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Controls.Add(this.txtEmpName);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(15, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 39);
+            this.panel2.Size = new System.Drawing.Size(746, 39);
             this.panel2.TabIndex = 21;
             // 
-            // label3
+            // cboDept
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(195, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 14);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "* 업체명";
+            this.cboDept.FormattingEnabled = true;
+            this.cboDept.Location = new System.Drawing.Point(197, 8);
+            this.cboDept.Name = "cboDept";
+            this.cboDept.Size = new System.Drawing.Size(96, 22);
+            this.cboDept.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(323, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 14);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "* 직원명";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 11);
+            this.label4.Location = new System.Drawing.Point(120, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 14);
             this.label4.TabIndex = 3;
@@ -150,110 +153,38 @@ namespace CompanyManager
             this.label16.TabIndex = 1;
             this.label16.Text = "label2";
             // 
-            // textBox4
+            // txtEmpName
             // 
-            this.textBox4.Location = new System.Drawing.Point(468, 8);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 21);
-            this.textBox4.TabIndex = 2;
+            this.txtEmpName.Location = new System.Drawing.Point(419, 8);
+            this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Size = new System.Drawing.Size(129, 21);
+            this.txtEmpName.TabIndex = 1;
             // 
-            // label18
+            // btnSearch
             // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label18.Location = new System.Drawing.Point(20, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 14);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "label18";
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(614, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 32);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // lbDept
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(642, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 32);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "조회";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(268, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 22);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(74, 8);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(96, 22);
-            this.comboBox2.TabIndex = 4;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(26, 54);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(125, 242);
-            this.listBox1.TabIndex = 22;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(23, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 14);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "      부서관리";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 14;
-            this.listBox2.Location = new System.Drawing.Point(188, 54);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(125, 242);
-            this.listBox2.TabIndex = 22;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::CompanyManager.Properties.Resources.Next_16x16;
-            this.button3.Location = new System.Drawing.Point(157, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 18);
-            this.button3.TabIndex = 23;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::CompanyManager.Properties.Resources.Prev_16x16;
-            this.button4.Location = new System.Drawing.Point(157, 169);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 18);
-            this.button4.TabIndex = 23;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(395, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 14);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "* 직원명";
+            this.lbDept.FormattingEnabled = true;
+            this.lbDept.ItemHeight = 14;
+            this.lbDept.Location = new System.Drawing.Point(29, 29);
+            this.lbDept.Name = "lbDept";
+            this.lbDept.Size = new System.Drawing.Size(121, 172);
+            this.lbDept.TabIndex = 22;
+            this.lbDept.TabStop = false;
             // 
             // splitContainer1
             // 
@@ -262,75 +193,254 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button8);
-            this.splitContainer1.Panel1.Controls.Add(this.button13);
+            this.splitContainer1.Panel1.AccessibleDescription = "btnDelete";
+            this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
+            this.splitContainer1.Panel1.Controls.Add(this.btnEmpRegister);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.panel2);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvEmployee);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.pnlDept);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
+            this.splitContainer1.Panel2.Controls.Add(this.btnSub);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
-            this.splitContainer1.Panel2.Controls.Add(this.listBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Panel2.Controls.Add(this.listBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(1112, 348);
-            this.splitContainer1.SplitterDistance = 762;
+            this.splitContainer1.Panel2.Controls.Add(this.lbDept);
+            this.splitContainer1.Panel2.Controls.Add(this.btnReset);
+            this.splitContainer1.Panel2.Controls.Add(this.btnSave);
+            this.splitContainer1.Size = new System.Drawing.Size(944, 348);
+            this.splitContainer1.SplitterDistance = 761;
             this.splitContainer1.TabIndex = 24;
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.Location = new System.Drawing.Point(66, 306);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 31);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "원래대로";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(704, 45);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(57, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "    삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button8
+            // btnEmpRegister
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(699, 45);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "    삭제";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnEmpRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmpRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnEmpRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnEmpRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnEmpRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpRegister.Location = new System.Drawing.Point(642, 45);
+            this.btnEmpRegister.Name = "btnEmpRegister";
+            this.btnEmpRegister.Size = new System.Drawing.Size(56, 23);
+            this.btnEmpRegister.TabIndex = 3;
+            this.btnEmpRegister.Text = "    등록";
+            this.btnEmpRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEmpRegister.UseVisualStyleBackColor = false;
+            this.btnEmpRegister.Click += new System.EventHandler(this.btnEmpRegister_Click);
             // 
-            // button13
+            // label10
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(637, 45);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(56, 23);
-            this.button13.TabIndex = 24;
-            this.button13.Text = "    등록";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.UseVisualStyleBackColor = false;
+            this.label10.AutoSize = true;
+            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Location = new System.Drawing.Point(12, 54);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 14);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "      직원관리";
+            // 
+            // pnlDept
+            // 
+            this.pnlDept.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlDept.Controls.Add(this.lblchk);
+            this.pnlDept.Controls.Add(this.btnCencel);
+            this.pnlDept.Controls.Add(this.btnListAdd);
+            this.pnlDept.Controls.Add(this.txtDeptName);
+            this.pnlDept.Controls.Add(this.label1);
+            this.pnlDept.Controls.Add(this.txtDeptNo);
+            this.pnlDept.Controls.Add(this.label3);
+            this.pnlDept.Location = new System.Drawing.Point(1, 179);
+            this.pnlDept.Name = "pnlDept";
+            this.pnlDept.Size = new System.Drawing.Size(178, 116);
+            this.pnlDept.TabIndex = 22;
+            this.pnlDept.Visible = false;
+            // 
+            // lblchk
+            // 
+            this.lblchk.AutoSize = true;
+            this.lblchk.Location = new System.Drawing.Point(79, 34);
+            this.lblchk.Name = "lblchk";
+            this.lblchk.Size = new System.Drawing.Size(0, 14);
+            this.lblchk.TabIndex = 15;
+            // 
+            // btnCencel
+            // 
+            this.btnCencel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCencel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnCencel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnCencel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCencel.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
+            this.btnCencel.Location = new System.Drawing.Point(89, 86);
+            this.btnCencel.Name = "btnCencel";
+            this.btnCencel.Size = new System.Drawing.Size(73, 24);
+            this.btnCencel.TabIndex = 12;
+            this.btnCencel.Text = "취소";
+            this.btnCencel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCencel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCencel.UseVisualStyleBackColor = false;
+            this.btnCencel.Click += new System.EventHandler(this.btnCencel_Click);
+            // 
+            // btnListAdd
+            // 
+            this.btnListAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnListAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListAdd.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnListAdd.Location = new System.Drawing.Point(17, 86);
+            this.btnListAdd.Name = "btnListAdd";
+            this.btnListAdd.Size = new System.Drawing.Size(73, 24);
+            this.btnListAdd.TabIndex = 11;
+            this.btnListAdd.Text = "추가";
+            this.btnListAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnListAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListAdd.UseVisualStyleBackColor = false;
+            this.btnListAdd.Click += new System.EventHandler(this.btnListAdd_Click);
+            // 
+            // txtDeptName
+            // 
+            this.txtDeptName.Location = new System.Drawing.Point(79, 52);
+            this.txtDeptName.Name = "txtDeptName";
+            this.txtDeptName.Size = new System.Drawing.Size(89, 21);
+            this.txtDeptName.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(9, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 14);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "* 부서명";
+            // 
+            // txtDeptNo
+            // 
+            this.txtDeptNo.Location = new System.Drawing.Point(79, 9);
+            this.txtDeptNo.Name = "txtDeptNo";
+            this.txtDeptNo.Size = new System.Drawing.Size(89, 21);
+            this.txtDeptNo.TabIndex = 9;
+            this.txtDeptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeptNo_KeyPress);
+            this.txtDeptNo.Leave += new System.EventHandler(this.txtDeptNo_Leave_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(9, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "* 부서번호";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnAdd.Location = new System.Drawing.Point(29, 256);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(61, 30);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSub
+            // 
+            this.btnSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnSub.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSub.Image = global::CompanyManager.Properties.Resources.del;
+            this.btnSub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSub.Location = new System.Drawing.Point(89, 256);
+            this.btnSub.Name = "btnSub";
+            this.btnSub.Size = new System.Drawing.Size(61, 30);
+            this.btnSub.TabIndex = 6;
+            this.btnSub.Text = "    제거";
+            this.btnSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSub.UseVisualStyleBackColor = false;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(26, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 14);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "      부서관리";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::CompanyManager.Properties.Resources.Undo_16x16;
+            this.btnReset.Location = new System.Drawing.Point(29, 301);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(61, 32);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "리셋";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Image = global::CompanyManager.Properties.Resources.Save_16x16;
+            this.btnSave.Location = new System.Drawing.Point(89, 301);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(61, 32);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "저장";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(1112, 382);
+            this.ClientSize = new System.Drawing.Size(944, 382);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmEmployee";
+            this.Load += new System.EventHandler(this.FrmEmployee_Load);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -339,32 +449,38 @@ namespace CompanyManager
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pnlDept.ResumeLayout(false);
+            this.pnlDept.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboDept;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtEmpName;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox lbDept;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEmpRegister;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSub;
+        private System.Windows.Forms.Panel pnlDept;
+        private System.Windows.Forms.TextBox txtDeptName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDeptNo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCencel;
+        private System.Windows.Forms.Button btnListAdd;
+        private System.Windows.Forms.Label lblchk;
     }
 }
