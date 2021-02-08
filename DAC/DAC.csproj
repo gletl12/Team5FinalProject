@@ -65,6 +65,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MachineDAC.cs" />
     <Compile Include="MenuDAC.cs" />
+    <Compile Include="PerformanceDAC.cs" />
     <Compile Include="MGradeDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseDAC.cs" />

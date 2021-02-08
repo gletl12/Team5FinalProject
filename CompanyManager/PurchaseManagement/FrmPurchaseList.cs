@@ -136,6 +136,7 @@ namespace CompanyManager
             }
             bool result = false;
             PopupDueDate popup = new PopupDueDate();
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
                 result = service.UpdateDueDate(selectedRows[0], popup.DueDate);
             if (result)
@@ -159,6 +160,11 @@ namespace CompanyManager
         private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvPurchases);
         }
     }
 }

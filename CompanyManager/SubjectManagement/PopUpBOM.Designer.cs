@@ -193,6 +193,7 @@ namespace CompanyManager
             this.txtuseqty.Size = new System.Drawing.Size(169, 21);
             this.txtuseqty.TabIndex = 123;
             this.txtuseqty.Tag = "소요량";
+            this.txtuseqty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // cboParentsubject
             // 

@@ -137,6 +137,7 @@ namespace CompanyManager
         private void btnRegWO_Click(object sender, EventArgs e)
         {
             PopupNewWorkOrder popup = new PopupNewWorkOrder(((FrmMain)this.MdiParent).LoginInfo.emp_id);
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 BindingDGV();
@@ -176,6 +177,11 @@ namespace CompanyManager
             }
             else
                 MessageBox.Show("삭제중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오");
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvWorkOrder);
         }
     }
 }

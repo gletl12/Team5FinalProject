@@ -158,5 +158,10 @@ namespace CompanyManager
                 ((DataGridViewCheckBoxCell)dgvDispend[0, e.RowIndex]).Value = false;
             }
         }
+
+        private void btxExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvDispend);
+        }
     }
 }

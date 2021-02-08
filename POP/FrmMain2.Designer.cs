@@ -37,6 +37,8 @@ namespace POP
             this.button3 = new System.Windows.Forms.Button();
             this.lblSelect1 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblSelect4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // splitter1
@@ -47,6 +49,7 @@ namespace POP
             this.splitter1.Size = new System.Drawing.Size(1600, 64);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
+            this.splitter1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitter1_SplitterMoved);
             // 
             // titleBar1
             // 
@@ -132,11 +135,38 @@ namespace POP
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(220, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 25);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "검   사";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblSelect4
+            // 
+            this.lblSelect4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
+            this.lblSelect4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSelect4.Location = new System.Drawing.Point(220, 38);
+            this.lblSelect4.Name = "lblSelect4";
+            this.lblSelect4.Size = new System.Drawing.Size(49, 2);
+            this.lblSelect4.TabIndex = 15;
+            // 
             // FrmMain2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.lblSelect4);
             this.Controls.Add(this.lblSelect3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lblSelect2);
             this.Controls.Add(this.button3);
@@ -161,5 +191,7 @@ namespace POP
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblSelect1;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblSelect4;
     }
 }

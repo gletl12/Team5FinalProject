@@ -51,26 +51,28 @@ namespace CompanyManager
             InitializeComponent();
             this.codes = codes;
             BindingComboBox(codes);
+            txtCQty.Enabled = false;
         }
 
         private void TxtOQty_LostFocus(object sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
             int qty = Convert.ToInt32(((TextBox)sender).Text);
-            bool IsVaild = true;
             if ((txt.Equals(txtOQty) && so.so_o_qty > qty))
             {
-                IsVaild = false;
                 txt.Text = so.so_o_qty.ToString();
+                MessageBox.Show("기존 수량보다 적은 값은 입력할 수 없습니다.");
             }
             if ((txt.Equals(txtCQty) && so.so_c_qty > qty))
             {
-                IsVaild = false;
                 txt.Text = so.so_c_qty.ToString();
-            }
-
-            if (!IsVaild)
                 MessageBox.Show("기존 수량보다 적은 값은 입력할 수 없습니다.");
+            }
+            else if (txt.Equals(txtCQty) && so.so_o_qty < qty)
+            {
+                txt.Text = so.so_c_qty.ToString();
+                MessageBox.Show("취소량은 주문량보다 적어야합니다.");
+            }
         }
 
         private void BindingComboBox(List<CodeVO> codes)

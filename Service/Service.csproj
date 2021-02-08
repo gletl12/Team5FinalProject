@@ -58,6 +58,7 @@
     <Compile Include="InboundService.cs" />
     <Compile Include="MachineService.cs" />
     <Compile Include="MenuService.cs" />
+    <Compile Include="PerformanceService.cs" />
     <Compile Include="MGradeService.cs" />
     <Compile Include="PriceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

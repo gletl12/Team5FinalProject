@@ -87,6 +87,8 @@ namespace CompanyManager
             // Edit 클릭
             if (e.RowIndex < 0 || e.ColumnIndex != 0)
                 return;
+            if (dgvSO["so_state", e.RowIndex].Value.ToString().Equals("취소"))
+                return;
             PopupSO popup = new PopupSO(codes, ((List<SalesOrderVO>)dgvSO.DataSource)[e.RowIndex]);
             if (popup.ShowDialog() == DialogResult.OK)
                 GetAllSO();
@@ -130,6 +132,7 @@ namespace CompanyManager
         private void btnNewSO_Click(object sender, EventArgs e)
         {
             PopupSO popup = new PopupSO(codes);
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 GetAllSO();
@@ -155,6 +158,11 @@ namespace CompanyManager
             MessageBox.Show("수요계획이 생성되었습니다.");
             GetAllSO();
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvSO);
         }
     }
 }

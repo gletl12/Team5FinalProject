@@ -60,6 +60,7 @@
     <Compile Include="Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contacts.cs" />
     <Compile Include="CustomControl\CustomTabControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +78,18 @@
     </Compile>
     <Compile Include="CustomControl\TitleBar.designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAction.cs">
       <SubType>Form</SubType>
@@ -164,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAction.resx">
       <DependentUpon>FrmAction.cs</DependentUpon>
@@ -277,6 +293,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\최종조립반.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastforward.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastreverse.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

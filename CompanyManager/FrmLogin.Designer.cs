@@ -31,14 +31,14 @@ namespace CompanyManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panDirectLogin = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.Loginbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panDirectLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,9 +46,10 @@ namespace CompanyManager
             // popupTitleBar1
             // 
             this.popupTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.popupTitleBar1.HeaderText = "로그인";
+            this.popupTitleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.popupTitleBar1.HeaderText = "Login";
             this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
-            this.popupTitleBar1.Size = new System.Drawing.Size(383, 33);
+            this.popupTitleBar1.Size = new System.Drawing.Size(339, 33);
             this.popupTitleBar1.TabStop = false;
             // 
             // panDirectLogin
@@ -61,19 +62,34 @@ namespace CompanyManager
             this.panDirectLogin.Controls.Add(this.txtPassword);
             this.panDirectLogin.Controls.Add(this.txtID);
             this.panDirectLogin.Controls.Add(this.Loginbtn);
-            this.panDirectLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panDirectLogin.Location = new System.Drawing.Point(0, 135);
+            this.panDirectLogin.Location = new System.Drawing.Point(24, 173);
             this.panDirectLogin.Name = "panDirectLogin";
-            this.panDirectLogin.Size = new System.Drawing.Size(383, 142);
+            this.panDirectLogin.Size = new System.Drawing.Size(285, 179);
             this.panDirectLogin.TabIndex = 23;
             // 
-            // label4
+            // Loginbtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 14);
-            this.label4.TabIndex = 19;
+            this.Loginbtn.BackColor = System.Drawing.Color.White;
+            this.Loginbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Loginbtn.Location = new System.Drawing.Point(12, 115);
+            this.Loginbtn.Name = "Loginbtn";
+            this.Loginbtn.Size = new System.Drawing.Size(264, 41);
+            this.Loginbtn.TabIndex = 2;
+            this.Loginbtn.Text = "로그인";
+            this.Loginbtn.UseVisualStyleBackColor = false;
+            this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.LOGO_T;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(339, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -83,28 +99,27 @@ namespace CompanyManager
             this.label3.Size = new System.Drawing.Size(0, 14);
             this.label3.TabIndex = 19;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 14);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "비밀번호";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 14);
+            this.label4.TabIndex = 19;
             // 
-            // label1
+            // txtID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 99;
-            this.label1.Text = "아이디";
+            this.txtID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtID.Location = new System.Drawing.Point(77, 19);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(178, 21);
+            this.txtID.TabIndex = 0;
+            this.txtID.Text = "1";
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
-            this.txtPassword.Location = new System.Drawing.Point(130, 58);
+            this.txtPassword.Location = new System.Drawing.Point(77, 57);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(178, 21);
@@ -112,45 +127,29 @@ namespace CompanyManager
             this.txtPassword.Text = "1234";
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
-            // txtID
+            // label1
             // 
-            this.txtID.BackColor = System.Drawing.SystemColors.Info;
-            this.txtID.Location = new System.Drawing.Point(130, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(178, 21);
-            this.txtID.TabIndex = 0;
-            this.txtID.Text = "1";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "아이디";
             // 
-            // Loginbtn
+            // label2
             // 
-            this.Loginbtn.BackColor = System.Drawing.Color.White;
-            this.Loginbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Loginbtn.Location = new System.Drawing.Point(12, 104);
-            this.Loginbtn.Name = "Loginbtn";
-            this.Loginbtn.Size = new System.Drawing.Size(359, 26);
-            this.Loginbtn.TabIndex = 2;
-            this.Loginbtn.Text = "로그인";
-            this.Loginbtn.UseVisualStyleBackColor = false;
-            this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.로고_배경투명__3213;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(383, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 14);
+            this.label2.TabIndex = 99;
+            this.label2.Text = "비밀번호";
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(383, 277);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.ClientSize = new System.Drawing.Size(339, 377);
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmLogin";
