@@ -48,30 +48,7 @@ namespace CompanyManager
         /// </summary>
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (btnDown.Text == "V")
-            {
-                btnDown.Text = "ᐱ";
-                int size = this.Size.Height;
-                btnDown.Location = new Point(btnDown.Location.X, 71);
-                btnSearch.Location = new Point(btnSearch.Location.X, 70);
 
-
-
-                pnlSearch.Size = new Size(pnlSearch.Size.Width, 114);
-                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance + 38;
-
-            }
-            else
-            {
-                btnDown.Text = "V";
-
-                btnDown.Location = new Point(btnDown.Location.X, 38);
-                btnSearch.Location = new Point(btnSearch.Location.X, 37);
-                pnlSearch.Size = new Size(pnlSearch.Size.Width, pnlSearch.Size.Height * 2 / 3);
-
-
-                splitContainer1.SplitterDistance = splitContainer1.SplitterDistance - 38;
-            }
         }
         /// <summary>
         /// 컨트롤들의 초기값 설정, 그리드뷰 바인딩
@@ -128,8 +105,7 @@ namespace CompanyManager
                            so.order_id.Contains(txtOrderID.Text) &&
                            (cboState.SelectedValue.ToString().Length < 1 || so.so_state.Equals(cboState.Text)) &&
                            (txtItem.Text.Length < 1 || so.item_id.Equals(txtItem.Text) || so.item_name.Contains(txtItem.Text)) &&
-                           (cboDest.SelectedValue.ToString().Length < 1 || so.warehouse_id.Equals(cboDest.SelectedValue.ToString())) &&
-                           (dtpRegDate.Format != DateTimePickerFormat.Short || so.ins_date.ToShortDateString().Equals(dtpRegDate.Value.ToShortDateString()))
+                           (cboDest.SelectedValue.ToString().Length < 1 || so.warehouse_id.Equals(cboDest.SelectedValue.ToString()))
                            select so
            ).ToList();
             if (sResult.Count < 1)

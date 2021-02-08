@@ -163,6 +163,7 @@ namespace CompanyManager
             // 
             // cboWarehouse
             // 
+            this.cboWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWarehouse.FormattingEnabled = true;
             this.cboWarehouse.Location = new System.Drawing.Point(748, 44);
             this.cboWarehouse.Name = "cboWarehouse";
@@ -191,6 +192,7 @@ namespace CompanyManager
             // cboItemCategory
             // 
             this.cboItemCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemCategory.FormattingEnabled = true;
             this.cboItemCategory.Location = new System.Drawing.Point(427, 44);
             this.cboItemCategory.Name = "cboItemCategory";
@@ -286,6 +288,7 @@ namespace CompanyManager
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(86, 44);
             this.cboCompany.Name = "cboCompany";

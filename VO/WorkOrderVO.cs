@@ -37,10 +37,21 @@ namespace VO
         public string machine_name { get; set; }
         public int plan_qty { get; set; }
         public int wo_qty { get; set; }
+        public int good_qty { get; set; }
+        public int bad_qty { get; set; }
         public DateTime wo_sdate { get; set; }
         public string wo_comment { get; set; }
         public int taketime { get; set; }
         public DateTime wo_edate { get; set; }
         public int wo_id { get; set; }
+        public DateTime ins_date { get; set; }
+    }
+    public class ItemTimeVO
+    {
+        public string item_id { get; set; }
+        public string item_name { get; set; }
+        public int tacktime{ get; set; }
+        public string shift_stime { get; set; }
+        public string shift_etime { get; set; }
     }
 }

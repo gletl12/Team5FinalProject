@@ -155,5 +155,10 @@ namespace CompanyManager
         {
 
         }
+
+        private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

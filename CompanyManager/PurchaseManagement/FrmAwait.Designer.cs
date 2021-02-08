@@ -65,6 +65,7 @@ namespace CompanyManager
             // 
             // cboProductionID
             // 
+            this.cboProductionID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProductionID.FormattingEnabled = true;
             this.cboProductionID.Location = new System.Drawing.Point(86, 52);
             this.cboProductionID.Name = "cboProductionID";
@@ -127,6 +128,7 @@ namespace CompanyManager
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(423, 22);
             this.cboCompany.Name = "cboCompany";

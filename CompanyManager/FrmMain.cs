@@ -274,7 +274,8 @@ namespace CompanyManager
         {
             PopupCommon frm = new PopupCommon();
             frm.ShowDialog();
-            
+
+            pnlMenu.Controls.Clear();
             this.Form1_Load(this,null);
         }
 

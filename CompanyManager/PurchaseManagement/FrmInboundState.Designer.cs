@@ -126,6 +126,7 @@ namespace CompanyManager
             // cboCompany
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(427, 12);
             this.cboCompany.Name = "cboCompany";
@@ -233,6 +234,7 @@ namespace CompanyManager
             // cboWareHouse
             // 
             this.cboWareHouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboWareHouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboWareHouse.FormattingEnabled = true;
             this.cboWareHouse.Location = new System.Drawing.Point(427, 44);
             this.cboWareHouse.Name = "cboWareHouse";
