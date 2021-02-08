@@ -266,6 +266,7 @@ namespace DAC
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
+                    cmd.Transaction = trans;
                     cmd.CommandText = "SP_AddLargeMenu";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MenuName", menuName);
