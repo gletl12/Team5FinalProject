@@ -43,20 +43,21 @@ namespace CompanyManager
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
+            this.titleBar1 = new CompanyManager.TitleBar();
+            this.grandianPanel1 = new CompanyManager.GrandianPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCommonM = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnEmployeeM = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.titleBar1 = new CompanyManager.TitleBar();
-            this.grandianPanel1 = new CompanyManager.GrandianPanel();
-            this.btnCommonM = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnEmployeeM = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -170,6 +171,102 @@ namespace CompanyManager
             this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
             this.customTabControl1.TabIndex = 0;
             // 
+            // titleBar1
+            // 
+            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.titleBar1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBar1.HeaderText = "";
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(1350, 33);
+            this.titleBar1.TabIndex = 13;
+            // 
+            // grandianPanel1
+            // 
+            this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
+            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.pictureBox1);
+            this.grandianPanel1.Controls.Add(this.btnCommonM);
+            this.grandianPanel1.Controls.Add(this.btnLogout);
+            this.grandianPanel1.Controls.Add(this.btnEmployeeM);
+            this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
+            this.grandianPanel1.Name = "grandianPanel1";
+            this.grandianPanel1.Size = new System.Drawing.Size(1350, 66);
+            this.grandianPanel1.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.CJCL_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 54);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnCommonM
+            // 
+            this.btnCommonM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCommonM.BackColor = System.Drawing.Color.Transparent;
+            this.btnCommonM.FlatAppearance.BorderSize = 0;
+            this.btnCommonM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnCommonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommonM.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCommonM.Image = ((System.Drawing.Image)(resources.GetObject("btnCommonM.Image")));
+            this.btnCommonM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCommonM.Location = new System.Drawing.Point(1185, 7);
+            this.btnCommonM.Name = "btnCommonM";
+            this.btnCommonM.Size = new System.Drawing.Size(64, 55);
+            this.btnCommonM.TabIndex = 20;
+            this.btnCommonM.Text = "공통관리";
+            this.btnCommonM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCommonM.UseVisualStyleBackColor = false;
+            this.btnCommonM.Visible = false;
+            this.btnCommonM.Click += new System.EventHandler(this.btnCommonM_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLogout.Location = new System.Drawing.Point(1263, 7);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(64, 57);
+            this.btnLogout.TabIndex = 19;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnEmployeeM
+            // 
+            this.btnEmployeeM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmployeeM.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployeeM.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnEmployeeM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeM.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEmployeeM.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployeeM.Image")));
+            this.btnEmployeeM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEmployeeM.Location = new System.Drawing.Point(1107, 7);
+            this.btnEmployeeM.Name = "btnEmployeeM";
+            this.btnEmployeeM.Size = new System.Drawing.Size(64, 55);
+            this.btnEmployeeM.TabIndex = 18;
+            this.btnEmployeeM.Text = "직원관리";
+            this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmployeeM.UseVisualStyleBackColor = false;
+            this.btnEmployeeM.Visible = false;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
@@ -234,103 +331,6 @@ namespace CompanyManager
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // titleBar1
-            // 
-            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.titleBar1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBar1.HeaderText = "C J C L";
-            this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(1350, 33);
-            this.titleBar1.TabIndex = 13;
-            // 
-            // grandianPanel1
-            // 
-            this.grandianPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
-            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.grandianPanel1.Controls.Add(this.btnCommonM);
-            this.grandianPanel1.Controls.Add(this.btnLogout);
-            this.grandianPanel1.Controls.Add(this.btnEmployeeM);
-            this.grandianPanel1.Controls.Add(this.label2);
-            this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
-            this.grandianPanel1.Name = "grandianPanel1";
-            this.grandianPanel1.Size = new System.Drawing.Size(1350, 66);
-            this.grandianPanel1.TabIndex = 14;
-            // 
-            // btnCommonM
-            // 
-            this.btnCommonM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCommonM.BackColor = System.Drawing.Color.Transparent;
-            this.btnCommonM.FlatAppearance.BorderSize = 0;
-            this.btnCommonM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnCommonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommonM.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCommonM.Image = ((System.Drawing.Image)(resources.GetObject("btnCommonM.Image")));
-            this.btnCommonM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCommonM.Location = new System.Drawing.Point(1185, 7);
-            this.btnCommonM.Name = "btnCommonM";
-            this.btnCommonM.Size = new System.Drawing.Size(64, 55);
-            this.btnCommonM.TabIndex = 20;
-            this.btnCommonM.Text = "공통관리";
-            this.btnCommonM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCommonM.UseVisualStyleBackColor = false;
-            this.btnCommonM.Visible = false;
-            this.btnCommonM.Click += new System.EventHandler(this.btnCommonM_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogout.Location = new System.Drawing.Point(1263, 7);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(64, 57);
-            this.btnLogout.TabIndex = 19;
-            this.btnLogout.Text = "로그아웃";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnEmployeeM
-            // 
-            this.btnEmployeeM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEmployeeM.BackColor = System.Drawing.Color.Transparent;
-            this.btnEmployeeM.FlatAppearance.BorderSize = 0;
-            this.btnEmployeeM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnEmployeeM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployeeM.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEmployeeM.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployeeM.Image")));
-            this.btnEmployeeM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEmployeeM.Location = new System.Drawing.Point(1107, 7);
-            this.btnEmployeeM.Name = "btnEmployeeM";
-            this.btnEmployeeM.Size = new System.Drawing.Size(64, 55);
-            this.btnEmployeeM.TabIndex = 18;
-            this.btnEmployeeM.Text = "직원관리";
-            this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmployeeM.UseVisualStyleBackColor = false;
-            this.btnEmployeeM.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(37, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 39);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Logo";
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -359,7 +359,7 @@ namespace CompanyManager
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
-            this.grandianPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,7 +379,6 @@ namespace CompanyManager
         private System.Windows.Forms.Panel panel1;
         private TitleBar titleBar1;
         private GrandianPanel grandianPanel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSortName;
@@ -389,6 +388,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnEmployeeM;
         private System.Windows.Forms.Button btnCommonM;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
