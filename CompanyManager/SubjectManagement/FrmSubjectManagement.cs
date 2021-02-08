@@ -156,7 +156,7 @@ namespace CompanyManager
                 btnDown.Text = "V";
                 int size = this.Size.Height;
                 btnDown.Location = new Point(btnDown.Location.X, 71);
-                btnSearch.Location = new Point(btnSearch.Location.X, 70);
+                btnSearch.Location = new Point(btnSearch.Location.X, 71);
 
 
 
@@ -169,7 +169,7 @@ namespace CompanyManager
                 btnDown.Text = "ᐱ";
 
                 btnDown.Location = new Point(btnDown.Location.X, 38);
-                btnSearch.Location = new Point(btnSearch.Location.X, 37);
+                btnSearch.Location = new Point(btnSearch.Location.X, 38);
                 pnlSearch.Size = new Size(pnlSearch.Size.Width, pnlSearch.Size.Height * 2 / 3);
 
 

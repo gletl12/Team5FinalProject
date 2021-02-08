@@ -201,7 +201,7 @@ namespace DAC
                             	when 1 then P.prod_qty*B.bom_use_qty-isnull(item_safety_qty,0)
                             end as p_qty,in_warehouse,warehouse_name,P.start_date DueDate
 							from TBL_PRODUCTION_PLAN P JOIN  TBL_BOM B ON P.item_id = B.bom_parent_id
-													    JOIN TBL_ITEM I ON B.item = I.item_id
+													    JOIN TBL_ITEM I ON B.item_id = I.item_id
 													   LEFT JOIN TBL_COMPANY C ON C.company_id = I.supply_company
 													   JOIN TBL_WAREHOUSE W ON W.warehouse_id = I.in_warehouse
 													   LEFT JOIN TBL_PRODUCTION_PLAN P2 ON P2.start_date<P.start_date and P2.item_id = P.item_id
@@ -209,7 +209,7 @@ namespace DAC
 													   LEFT JOIN (select item_id,pd_qty,due_date,prod_id
 																  from TBL_PURCHASE_DETAIL where purchase_state='PUR01') PD ON PD.item_id = I.item_id and PD.prod_id =P.prod_id
 													   where p.prod_id NOT IN (select prod_id
-																  from TBL_PURCHASE_DETAIL where item_id = I.item_id)
+																  from TBL_PURCHASE_DETAIL where item_id = I.item_id) and I.item_type ='RM'
                             group by supply_company,company_name,I.item_id,item_name,P.prod_id,P.prod_qty,bom_use_qty,item_safety_qty,P.prod_qty,in_warehouse,warehouse_name,P.start_date
                             order by prod_id";
             List<PurchasesVO> list = new List<PurchasesVO>();

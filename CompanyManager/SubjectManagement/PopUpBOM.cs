@@ -198,5 +198,36 @@ namespace CompanyManager
         {
             this.Close();
         }
+
+        //글자 수 제한
+        private void limit20_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((TextBox)sender).Text.Length > 19)
+            {
+                if (e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+        //숫자만 칠수있게
+        private void OnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!int.TryParse(e.KeyChar.ToString(), out int temp))
+            {
+                if (e.KeyChar == 8)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

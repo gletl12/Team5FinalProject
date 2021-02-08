@@ -130,6 +130,7 @@ namespace CompanyManager
         private void btnNewSO_Click(object sender, EventArgs e)
         {
             PopupSO popup = new PopupSO(codes);
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 GetAllSO();
@@ -155,6 +156,11 @@ namespace CompanyManager
             MessageBox.Show("수요계획이 생성되었습니다.");
             GetAllSO();
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvSO);
         }
     }
 }

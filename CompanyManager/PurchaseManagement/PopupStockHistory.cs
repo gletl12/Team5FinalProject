@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Util;
 
 namespace CompanyManager
 {
@@ -13,6 +14,11 @@ namespace CompanyManager
         public PopupStockHistory()
         {
             InitializeComponent();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dataGridView2);
         }
     }
 }

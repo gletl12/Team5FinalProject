@@ -28,7 +28,9 @@ namespace CompanyManager
 
         private void button13_Click(object sender, EventArgs e)
         {
-            CommonUtil.OpenCreateForm<PopupPurchase>();
+            PopupPurchase popup = new PopupPurchase();
+            popup.StartPosition = FormStartPosition.CenterParent;
+            popup.ShowDialog();
         }
         #region // dgv muiltiline header
         private void dgvPurchases_Paint(object sender, PaintEventArgs e)
@@ -106,6 +108,11 @@ namespace CompanyManager
         private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvPurchases);
         }
     }
 }
