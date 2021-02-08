@@ -66,19 +66,19 @@ namespace CompanyManager
             dgvMachine.AllowUserToAddRows = false;
         }
 
-        private void LoadCombobox()
-        {
-            CodeService service = new CodeService();
-            List<CodeVO> combobox = service.GetAllCommonCode();
+        //private void LoadCombobox()
+        //{
+        //    CodeService service = new CodeService();
+        //    List<CodeVO> combobox = service.GetAllCommonCode();
 
-            cboFGrade.DisplayMember = "name";
-            cboFGrade.ValueMember = "name";
-            List<CodeVO> temp = (from code in combobox
-                                 where code.category == "FACTORY_GRADE"
-                                 select code).ToList();
-            temp.Insert(0, new CodeVO { code = "", name = "" });
-            cboFGrade.DataSource = temp;
-        }
+        //    cboFGrade.DisplayMember = "name";
+        //    cboFGrade.ValueMember = "name";
+        //    List<CodeVO> temp = (from code in combobox
+        //                         where code.category == "FACTORY_GRADE"
+        //                         select code).ToList();
+        //    temp.Insert(0, new CodeVO { code = "", name = "" });
+        //    cboFGrade.DataSource = temp;
+        //}
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
