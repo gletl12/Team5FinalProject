@@ -87,6 +87,8 @@ namespace CompanyManager
             // Edit 클릭
             if (e.RowIndex < 0 || e.ColumnIndex != 0)
                 return;
+            if (dgvSO["wo_state", e.RowIndex].Value.ToString().Equals("취소"))
+                return;
             PopupSO popup = new PopupSO(codes, ((List<SalesOrderVO>)dgvSO.DataSource)[e.RowIndex]);
             if (popup.ShowDialog() == DialogResult.OK)
                 GetAllSO();
