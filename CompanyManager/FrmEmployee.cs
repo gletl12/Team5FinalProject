@@ -19,6 +19,8 @@ namespace CompanyManager
         EmployeeVO evo = new EmployeeVO();
         List<DeptVO> combobox;
         int id;
+        int listbox;
+        bool chk;
         public FrmEmployee(int id)
         {
             InitializeComponent();
@@ -32,7 +34,11 @@ namespace CompanyManager
             GetdgvColumn();
             DataRoad();
             RoadCombobox();
+            RoadDept();
+
         }
+
+
 
         private void RoadCombobox()
         {
@@ -49,9 +55,18 @@ namespace CompanyManager
 
         private void RoadDept()
         {
-            for(int i = 0; i < combobox.Count; i++)
+            lbDept.Items.Clear();
+            for (int i = 0; i < combobox.Count; i++)
             {
-
+                lbDept.DisplayMember = "DeptName";
+                for (int j = 0; j < combobox.Count; j++)
+                {
+                    if (i+1 == combobox[j].dept_id)
+                    {
+                        lbDept.Items.Add(string.Concat(combobox[j].dept_id, "#", combobox[j].dept_name));
+                        break;
+                    }
+                }
             }
         }
 
@@ -171,6 +186,117 @@ namespace CompanyManager
                 {
                     MessageBox.Show("직원 정보 삭제에 실패하였습니다.");
                 }
+            }
+        }
+
+        private void lbDept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listbox = lbDept.SelectedIndex;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int no = Convert.ToInt32(lbDept.Items[lbDept.Items.Count - 1].ToString().Substring(0, lbDept.Items[lbDept.Items.Count - 1].ToString().IndexOf("#"))) + 1;
+            pnlDept.Visible = true;
+            txtDeptNo.Text = no.ToString();
+            txtDeptNo.Focus();
+        }
+
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            lbDept.Items.RemoveAt(listbox);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            RoadDept();
+        }
+
+        private void btnCencel_Click(object sender, EventArgs e)
+        {
+            txtDeptName.Text = "";
+            txtDeptNo.Text = "";
+            pnlDept.Visible = false;
+            lblchk.Text = "";
+            btnAdd.Focus();
+        }
+
+        private void txtDeptNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            bool bCheck = char.IsNumber(e.KeyChar) || e.KeyChar == 13 || e.KeyChar == '\b';
+            TextBox temp = (TextBox)sender;
+            int length = txtDeptNo.Text.Length;
+            if (!bCheck)
+            {
+                lblchk.Text = "숫자만 입력하세요";
+                lblchk.ForeColor = Color.Red;
+                temp.Select(length, temp.Text.Length);
+                chk = false;
+            }
+            else
+            {
+                lblchk.Text = "";
+                chk = true;
+            }
+        }
+
+        private void txtDeptNo_Leave_1(object sender, EventArgs e)
+        {
+            if (txtDeptNo.Text.Length > 0)
+            {
+                if (!int.TryParse(txtDeptNo.Text, out int i))
+                {
+                    lblchk.Text = "숫자만 입력하세요";
+                    lblchk.ForeColor = Color.Red;
+                    chk = false;
+                }
+                else
+                {
+                    lblchk.Text = "";
+                    chk = true;
+                }
+            }
+        }
+
+        private void btnListAdd_Click(object sender, EventArgs e)
+        {
+            if (!chk || txtDeptName.Text.Length < 1)
+            {
+                MessageBox.Show("입력한 정보를 확인해주세요.");
+                return;
+            }
+
+            lbDept.Items.Add(string.Concat(txtDeptNo.Text, "#", txtDeptName.Text));
+            btnCencel.PerformClick();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("저장하시겠습니까?", "확인",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                List<DeptVO> list = new List<DeptVO>();
+                for (int i = 0; i < lbDept.Items.Count; i++)
+                {
+                    DeptVO vo = new DeptVO();
+                    string dept = lbDept.Items[i].ToString();
+                    vo.dept_id = Convert.ToInt32(dept.Substring(0, dept.IndexOf("#")));
+                    vo.dept_name = dept.Substring(dept.IndexOf("#") + 1);
+                    list.Add(vo);
+                }
+
+                EmployeeService service = new EmployeeService();
+                if(service.UpdateDept(list))
+                {
+                    combobox = service.GetDept();
+                    MessageBox.Show("저장이 완료되었습니다.");
+                    RoadDept();
+                }
+                else
+                {
+                    MessageBox.Show("저장에 실패하였습니다.");
+                }
+                
             }
         }
     }

@@ -46,11 +46,11 @@ namespace Service
             return dac.DeleteEmployee(emp_id);
         }
 
-        //public bool EditCommonCode(CodeVO codeVO)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.EditCommonCode(codeVO);
-        //}
+        public bool UpdateDept(List<DeptVO> list)
+        {
+            EmployeeDAC dac = new EmployeeDAC();
+            return dac.UpdateDept(list);
+        }
 
         //public bool DeleteCommonCode(List<string> codeList)
         //{

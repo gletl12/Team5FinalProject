@@ -29,8 +29,8 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboDept = new System.Windows.Forms.ComboBox();
@@ -38,13 +38,20 @@ namespace CompanyManager
             this.label4 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtEmpName = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lbDept = new System.Windows.Forms.ListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEmpRegister = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.pnlDept = new System.Windows.Forms.Panel();
+            this.lblchk = new System.Windows.Forms.Label();
+            this.btnCencel = new System.Windows.Forms.Button();
+            this.btnListAdd = new System.Windows.Forms.Button();
+            this.txtDeptName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDeptNo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSub = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +63,7 @@ namespace CompanyManager
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pnlDept.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupTitleBar1
@@ -71,20 +79,20 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployee.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.Location = new System.Drawing.Point(15, 71);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersWidth = 50;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.dgvEmployee.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.dgvEmployee.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvEmployee.RowTemplate.Height = 23;
             this.dgvEmployee.Size = new System.Drawing.Size(746, 267);
             this.dgvEmployee.TabIndex = 12;
@@ -101,13 +109,11 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.txtEmpName);
-            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(15, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(761, 39);
+            this.panel2.Size = new System.Drawing.Size(746, 39);
             this.panel2.TabIndex = 21;
             // 
             // cboDept
@@ -122,7 +128,7 @@ namespace CompanyManager
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 11);
+            this.label5.Location = new System.Drawing.Point(323, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 14);
             this.label5.TabIndex = 3;
@@ -152,17 +158,7 @@ namespace CompanyManager
             this.txtEmpName.Location = new System.Drawing.Point(419, 8);
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(129, 21);
-            this.txtEmpName.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label18.Location = new System.Drawing.Point(20, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 14);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "label18";
+            this.txtEmpName.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -172,10 +168,10 @@ namespace CompanyManager
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(629, 2);
+            this.btnSearch.Location = new System.Drawing.Point(614, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 32);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -186,7 +182,7 @@ namespace CompanyManager
             this.lbDept.ItemHeight = 14;
             this.lbDept.Location = new System.Drawing.Point(29, 29);
             this.lbDept.Name = "lbDept";
-            this.lbDept.Size = new System.Drawing.Size(121, 228);
+            this.lbDept.Size = new System.Drawing.Size(121, 172);
             this.lbDept.TabIndex = 22;
             this.lbDept.TabStop = false;
             // 
@@ -206,6 +202,7 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.pnlDept);
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel2.Controls.Add(this.btnSub);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
@@ -227,7 +224,7 @@ namespace CompanyManager
             this.btnDelete.Location = new System.Drawing.Point(704, 45);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(57, 23);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "    삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -244,7 +241,7 @@ namespace CompanyManager
             this.btnEmpRegister.Location = new System.Drawing.Point(642, 45);
             this.btnEmpRegister.Name = "btnEmpRegister";
             this.btnEmpRegister.Size = new System.Drawing.Size(56, 23);
-            this.btnEmpRegister.TabIndex = 4;
+            this.btnEmpRegister.TabIndex = 3;
             this.btnEmpRegister.Text = "    등록";
             this.btnEmpRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpRegister.UseVisualStyleBackColor = false;
@@ -261,6 +258,100 @@ namespace CompanyManager
             this.label10.TabIndex = 11;
             this.label10.Text = "      직원관리";
             // 
+            // pnlDept
+            // 
+            this.pnlDept.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlDept.Controls.Add(this.lblchk);
+            this.pnlDept.Controls.Add(this.btnCencel);
+            this.pnlDept.Controls.Add(this.btnListAdd);
+            this.pnlDept.Controls.Add(this.txtDeptName);
+            this.pnlDept.Controls.Add(this.label1);
+            this.pnlDept.Controls.Add(this.txtDeptNo);
+            this.pnlDept.Controls.Add(this.label3);
+            this.pnlDept.Location = new System.Drawing.Point(1, 179);
+            this.pnlDept.Name = "pnlDept";
+            this.pnlDept.Size = new System.Drawing.Size(178, 116);
+            this.pnlDept.TabIndex = 22;
+            this.pnlDept.Visible = false;
+            // 
+            // lblchk
+            // 
+            this.lblchk.AutoSize = true;
+            this.lblchk.Location = new System.Drawing.Point(79, 34);
+            this.lblchk.Name = "lblchk";
+            this.lblchk.Size = new System.Drawing.Size(0, 14);
+            this.lblchk.TabIndex = 15;
+            // 
+            // btnCencel
+            // 
+            this.btnCencel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCencel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnCencel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnCencel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCencel.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
+            this.btnCencel.Location = new System.Drawing.Point(89, 86);
+            this.btnCencel.Name = "btnCencel";
+            this.btnCencel.Size = new System.Drawing.Size(73, 24);
+            this.btnCencel.TabIndex = 12;
+            this.btnCencel.Text = "취소";
+            this.btnCencel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCencel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCencel.UseVisualStyleBackColor = false;
+            this.btnCencel.Click += new System.EventHandler(this.btnCencel_Click);
+            // 
+            // btnListAdd
+            // 
+            this.btnListAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnListAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListAdd.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnListAdd.Location = new System.Drawing.Point(17, 86);
+            this.btnListAdd.Name = "btnListAdd";
+            this.btnListAdd.Size = new System.Drawing.Size(73, 24);
+            this.btnListAdd.TabIndex = 11;
+            this.btnListAdd.Text = "추가";
+            this.btnListAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnListAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListAdd.UseVisualStyleBackColor = false;
+            this.btnListAdd.Click += new System.EventHandler(this.btnListAdd_Click);
+            // 
+            // txtDeptName
+            // 
+            this.txtDeptName.Location = new System.Drawing.Point(79, 52);
+            this.txtDeptName.Name = "txtDeptName";
+            this.txtDeptName.Size = new System.Drawing.Size(89, 21);
+            this.txtDeptName.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(9, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 14);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "* 부서명";
+            // 
+            // txtDeptNo
+            // 
+            this.txtDeptNo.Location = new System.Drawing.Point(79, 9);
+            this.txtDeptNo.Name = "txtDeptNo";
+            this.txtDeptNo.Size = new System.Drawing.Size(89, 21);
+            this.txtDeptNo.TabIndex = 9;
+            this.txtDeptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeptNo_KeyPress);
+            this.txtDeptNo.Leave += new System.EventHandler(this.txtDeptNo_Leave_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(9, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "* 부서번호";
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -268,14 +359,15 @@ namespace CompanyManager
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.btnAdd.Location = new System.Drawing.Point(29, 254);
+            this.btnAdd.Location = new System.Drawing.Point(29, 256);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(61, 30);
-            this.btnAdd.TabIndex = 22;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "추가";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSub
             // 
@@ -285,14 +377,14 @@ namespace CompanyManager
             this.btnSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSub.Image = global::CompanyManager.Properties.Resources.del;
             this.btnSub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSub.Location = new System.Drawing.Point(89, 254);
+            this.btnSub.Location = new System.Drawing.Point(89, 256);
             this.btnSub.Name = "btnSub";
             this.btnSub.Size = new System.Drawing.Size(61, 30);
-            this.btnSub.TabIndex = 5;
+            this.btnSub.TabIndex = 6;
             this.btnSub.Text = "    제거";
             this.btnSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSub.UseVisualStyleBackColor = false;
-            this.btnSub.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
             // 
             // label2
             // 
@@ -315,11 +407,12 @@ namespace CompanyManager
             this.btnReset.Location = new System.Drawing.Point(29, 301);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(61, 32);
-            this.btnReset.TabIndex = 23;
+            this.btnReset.TabIndex = 7;
             this.btnReset.Text = "리셋";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSave
             // 
@@ -331,11 +424,12 @@ namespace CompanyManager
             this.btnSave.Location = new System.Drawing.Point(89, 301);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 32);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmEmployee
             // 
@@ -355,6 +449,8 @@ namespace CompanyManager
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pnlDept.ResumeLayout(false);
+            this.pnlDept.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -367,7 +463,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtEmpName;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lbDept;
@@ -379,5 +474,13 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSub;
+        private System.Windows.Forms.Panel pnlDept;
+        private System.Windows.Forms.TextBox txtDeptName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDeptNo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCencel;
+        private System.Windows.Forms.Button btnListAdd;
+        private System.Windows.Forms.Label lblchk;
     }
 }

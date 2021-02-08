@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -101,6 +102,54 @@ namespace DAC
                 return new List<DeptVO>();
             }
 
+        }
+
+        public bool UpdateDept(List<DeptVO> list)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+                int cnt = 0;
+
+                using(SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Transaction = trans;
+                    cmd.CommandText = "delete from TBL_DEPT";
+                    cmd.Connection = conn;
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "insert into TBL_DEPT values(@dept_id, @dept_name)";
+                    cmd.Parameters.Add("@dept_id", SqlDbType.Int);
+                    cmd.Parameters.Add("@dept_name", SqlDbType.NVarChar);
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        cmd.Parameters["@dept_id"].Value = list[i].dept_id;
+                        cmd.Parameters["@dept_name"].Value = list[i].dept_name;
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+                    trans.Commit();
+
+                    Dispose();
+                    if (cnt == list.Count)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Dispose();
+                //로그 오류
+                Log.WriteError("EmployeeDAC : UpdateDept", err);
+
+                return false;
+            }
         }
 
         public bool AddEmployee(EmployeeVO evo)
