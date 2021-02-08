@@ -14,17 +14,46 @@ namespace CompanyManager
     public partial class PopFactoryCRUD : CompanyManager.PopupBaseForm
     {
         int id;
-        bool useFlag;
+        FactoryVO vo = new FactoryVO();
+        bool upflag = false;
+
         public PopFactoryCRUD(int id)
         {
             InitializeComponent();
             this.id = id;
         }
+        public PopFactoryCRUD(int id, FactoryVO vo, bool flag)
+        {
+            InitializeComponent();
+            this.id = id;
+            this.vo = vo;
+            upflag = flag;
+        }
 
         private void PopFactoryCRUD_Load(object sender, EventArgs e)
         {
+            
             txtUpEmp.Text = id.ToString();
             LoadCombobox();
+            if (upflag)
+            {
+                SetUpdateData();           
+            }
+        }
+
+        private void SetUpdateData()
+        {
+            cboFGrade.SelectedValue = vo.factory_grade;
+            txtFParent.Text = vo.factory_parent;
+            cboFType.SelectedValue = vo.factory_type;
+            txtFName.Text = vo.factory_name;
+            if (vo.factory_use == "U0001")
+            {
+                cboFUse.SelectedValue = "사용";
+            }
+            else
+                cboFUse.SelectedValue = "미사용";
+            txtComment.Text = vo.factory_comment;
         }
 
         private void LoadCombobox()
@@ -61,47 +90,63 @@ namespace CompanyManager
         {
             if(cboFGrade.SelectedIndex < 1 || cboFType.SelectedIndex < 1 || cboFUse.SelectedIndex < 1 || txtFParent.Text.Length < 1 || txtFName.Text.Length < 1)
             {
-                MessageBox.Show("필수 입력 데이터를 다시 확인해주세요.");
+                MessageBox.Show("필수 입력 정보를 확인해주세요.");
                 return;
             }
-            FactoryVO vo = new FactoryVO
+            FactoryVO fvo = new FactoryVO
             {
                 factory_grade = cboFGrade.SelectedValue.ToString(),
                 factory_parent = txtFParent.Text,
                 factory_name = txtFName.Text,
                 up_emp = id,
-                up_date = DateTime.Now
+                up_date = DateTime.Now,
+                factory_id = vo.factory_id
             };
             if (txtComment.Text.Length < 1)
-                vo.factory_comment = "";
+                fvo.factory_comment = "";
             else
-                vo.factory_comment = txtComment.Text;
+                fvo.factory_comment = txtComment.Text;
 
             if (cboFUse.SelectedValue.ToString() == "사용")
             {
-                vo.factory_use = true;
+                fvo.factory_use = "U0001";
             }
             else
-                vo.factory_use = false;
+                fvo.factory_use = "U0002";
 
             if (cboFType.Enabled)
-                vo.factory_type = cboFType.SelectedValue.ToString();
+                fvo.factory_type = cboFType.SelectedValue.ToString();
             else
-                vo.factory_type = "";
+                fvo.factory_type = "";
 
-            
-                
-            FactoryService service = new FactoryService();
-            if(service.AddFactory(vo))
+
+            if (upflag)
             {
-                MessageBox.Show("저장에 성공하였습니다.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                FactoryService service = new FactoryService();
+                if(service.UpdateFactory(fvo))
+                {
+                    MessageBox.Show("수정에 성공하였습니다.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("수정에 실패하였습니다.");
+                }
             }
             else
             {
-                
-                MessageBox.Show("저장에 실패하였습니다.");
+                FactoryService service = new FactoryService();
+                if (service.AddFactory(fvo))
+                {
+                    MessageBox.Show("등록이 성공하였습니다.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("등록이 실패하였습니다.");
+                }
             }
 
     }

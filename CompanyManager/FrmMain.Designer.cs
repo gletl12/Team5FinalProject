@@ -42,21 +42,22 @@ namespace CompanyManager
             this.lblSortName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.titleBar1 = new CompanyManager.TitleBar();
+            this.customTabControl1 = new CompanyManager.CustomControl.CustomTabControl();
             this.grandianPanel1 = new CompanyManager.GrandianPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCommonM = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnEmployeeM = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grandianPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -160,16 +161,6 @@ namespace CompanyManager
             this.panel3.Size = new System.Drawing.Size(1172, 29);
             this.panel3.TabIndex = 20;
             // 
-            // customTabControl1
-            // 
-            this.customTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
-            this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
-            this.customTabControl1.TabIndex = 0;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
@@ -240,11 +231,21 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBar1.HeaderText = "C J C L";
+            this.titleBar1.HeaderText = "";
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(1350, 33);
             this.titleBar1.TabIndex = 13;
+            // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.customTabControl1.Location = new System.Drawing.Point(-1, 4);
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.Size = new System.Drawing.Size(1171, 25);
+            this.customTabControl1.TabIndex = 0;
             // 
             // grandianPanel1
             // 
@@ -252,14 +253,25 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grandianPanel1.ColorBotton = System.Drawing.Color.White;
             this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.pictureBox1);
             this.grandianPanel1.Controls.Add(this.btnCommonM);
             this.grandianPanel1.Controls.Add(this.btnLogout);
             this.grandianPanel1.Controls.Add(this.btnEmployeeM);
-            this.grandianPanel1.Controls.Add(this.label2);
             this.grandianPanel1.Location = new System.Drawing.Point(0, 30);
             this.grandianPanel1.Name = "grandianPanel1";
             this.grandianPanel1.Size = new System.Drawing.Size(1350, 66);
             this.grandianPanel1.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.CJCL_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // btnCommonM
             // 
@@ -318,18 +330,7 @@ namespace CompanyManager
             this.btnEmployeeM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmployeeM.UseVisualStyleBackColor = false;
             this.btnEmployeeM.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("휴먼옛체", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(37, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 39);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Logo";
+            this.btnEmployeeM.Click += new System.EventHandler(this.btnEmployeeM_Click);
             // 
             // FrmMain
             // 
@@ -359,7 +360,7 @@ namespace CompanyManager
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.grandianPanel1.ResumeLayout(false);
-            this.grandianPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,7 +380,6 @@ namespace CompanyManager
         private System.Windows.Forms.Panel panel1;
         private TitleBar titleBar1;
         private GrandianPanel grandianPanel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSortName;
@@ -389,6 +389,7 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnEmployeeM;
         private System.Windows.Forms.Button btnCommonM;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

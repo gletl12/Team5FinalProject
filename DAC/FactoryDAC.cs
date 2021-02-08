@@ -16,7 +16,7 @@ namespace DAC
             try
             {
                 string sql = @"select factory_grade, factory_type, factory_name, factory_parent, factory_use, 
-                                      factory_comment, up_date, up_emp
+                                      factory_comment, up_date, up_emp, factory_id
                                from TBL_FACTORY";
                 using (SqlCommand cmd = new SqlCommand(sql,conn))
                 {
@@ -36,6 +36,75 @@ namespace DAC
                 return new List<FactoryVO>();
             }
         }
+
+        public bool DeleteFactory(int fid)
+        {
+            try
+            {
+                string sql = @"delete from TBL_FACTORY
+                               where factory_id = @factory_id";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@factory_id", fid);
+
+                    int iRows = cmd.ExecuteNonQuery();
+                    Dispose();
+                    if (iRows > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_UpdateFactory 오류", err);
+
+                return false;
+            }
+        }
+
+        public bool UpdateFactory(FactoryVO vo)
+        {
+            try
+            {
+                string sql = @"update TBL_FACTORY set factory_grade = @factory_grade, factory_type = @factory_type, 
+                                                      factory_name = @factory_name, factory_parent = @factory_parent, factory_use = @factory_use, 
+                                                      factory_comment = @factory_comment, up_date = @up_date, up_emp = @up_emp
+                               where factory_id = @factory_id";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@factory_grade", vo.factory_grade);
+                    cmd.Parameters.AddWithValue("@factory_type", vo.factory_type);
+                    cmd.Parameters.AddWithValue("@factory_name", vo.factory_name);
+                    cmd.Parameters.AddWithValue("@factory_parent", vo.factory_parent);
+                    cmd.Parameters.AddWithValue("@factory_use", vo.factory_use);
+                    cmd.Parameters.AddWithValue("@factory_comment", vo.factory_comment);
+                    cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
+                    cmd.Parameters.AddWithValue("@up_date", vo.up_date);
+                    cmd.Parameters.AddWithValue("@factory_id", vo.factory_id);
+
+                    int iRows = cmd.ExecuteNonQuery();
+                    Dispose();
+                    if (iRows > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch(Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_UpdateFactory 오류", err);
+
+                return false;
+            }
+        }
+
         public bool AddFactory(FactoryVO vo)
         {
             try

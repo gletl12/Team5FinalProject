@@ -16,6 +16,7 @@ namespace CompanyManager
     public partial class FrmFactoryList : CompanyManager.MDIBaseForm
     {
         List<FactoryVO> list = new List<FactoryVO>();
+        FactoryVO fvo = new FactoryVO();
         public FrmFactoryList()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace CompanyManager
         private void FrmFactoryList_Load(object sender, EventArgs e)
         {
             GetdgvColumn();
+            DataRoad();
+            LoadCombobox();
         }
 
         private void GetdgvColumn()
@@ -40,9 +43,8 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "factory_use");
             CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "up_emp", 120);
             CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date", 170);
+            CommonUtil.AddGridTextColumn(dgvFactory, "id", "factory_id", 100, false);
 
-            DataRoad();
-            LoadCombobox();
             dgvFactory.AutoGenerateColumns = false;
             dgvFactory.AllowUserToAddRows = false;
         }
@@ -117,6 +119,48 @@ namespace CompanyManager
                 dgvFactory.DataSource = sResult;
             }
 
+        }
+
+        private void dgvFactory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                fvo.factory_id = list[e.RowIndex].factory_id;
+                fvo.factory_grade = list[e.RowIndex].factory_grade;
+                fvo.factory_type = list[e.RowIndex].factory_type;
+                fvo.factory_name = list[e.RowIndex].factory_name;
+                fvo.factory_parent = list[e.RowIndex].factory_parent;
+                fvo.factory_comment = list[e.RowIndex].factory_comment;
+                fvo.factory_use = list[e.RowIndex].factory_use;
+                if (e.ColumnIndex == 1)
+                {
+                    PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true);
+                    if (pop.ShowDialog() == DialogResult.OK)
+                    {
+                        DataRoad();
+                    }
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(fvo.factory_grade))
+            {
+                MessageBox.Show("삭제할 데이터를 선택해주세요");
+                return;
+            }
+            if (MessageBox.Show($"정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                FactoryService service = new FactoryService();
+                if (service.DeleteFactory(fvo.factory_id))
+                {
+                    MessageBox.Show("삭제되었습니다.");
+                    DataRoad();
+                }
+                else
+                    MessageBox.Show("삭제에 실패하였습니다.");
+            }
         }
     }
 }

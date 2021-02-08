@@ -23,6 +23,17 @@ namespace Service
             return dac.AddFactory(vo);
         }
 
+        public bool UpdateFactory(FactoryVO vo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.UpdateFactory(vo);
+        }
+
+        public bool DeleteFactory(int fid)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.DeleteFactory(fid);
+        }
 
 
         //public bool DeleteCommonCode(List<string> codeList)
