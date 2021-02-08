@@ -137,7 +137,7 @@ namespace CompanyManager
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.team5_Logo_수정;
+            this.pictureBox1.Image = global::CompanyManager.Properties.Resources.LOGO_T;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 33);
             this.pictureBox1.Name = "pictureBox1";
@@ -149,6 +149,7 @@ namespace CompanyManager
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(383, 277);
             this.Controls.Add(this.panDirectLogin);
             this.Controls.Add(this.pictureBox1);
