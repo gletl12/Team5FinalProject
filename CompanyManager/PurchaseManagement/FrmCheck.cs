@@ -63,5 +63,10 @@ namespace CompanyManager
             dgvCheck.DataSource = null;
             dgvCheck.DataSource = searchResult;
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvCheck);
+        }
     }
 }

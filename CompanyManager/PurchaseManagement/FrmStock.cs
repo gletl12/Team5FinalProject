@@ -36,5 +36,15 @@ namespace CompanyManager
             dataGridView2.Rows.Add(null,"R_01","자재창고_01","L_WOOD_04","의자 다리 원목","원자재","500 * 200","800","EA");
             dataGridView2.Rows.Add(null,"R_01","자재창고_01","S_WOOD_03","SEAT 원판","원자재","12 x 12inch","200","EA");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dataGridView2);
+        }
     }
 }

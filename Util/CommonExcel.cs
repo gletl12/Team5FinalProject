@@ -70,7 +70,7 @@ namespace Util
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static (List<T>,string) ReadExcelAndReturnPath<T>()
+        public static (List<T>, string) ReadExcelAndReturnPath<T>()
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "Excel Files(*.xls)|*.xls|Excel Files(*.xlsx)|*.xlsx|All Files(*,*)|*.*";
@@ -78,7 +78,7 @@ namespace Util
             if (dlg.ShowDialog() != DialogResult.OK)
             {
                 MessageBox.Show("파일선택을 하지 않았습니다.");
-                return (null,null);
+                return (null, null);
             }
 
             string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
@@ -114,7 +114,7 @@ namespace Util
                 result = Helper.DataReaderMapToList<T>(cmd.ExecuteReader());
             }
 
-            return (result,fileName);
+            return (result, fileName);
         }
 
         /// <summary>
@@ -266,11 +266,11 @@ namespace Util
                 return ex.Message;
             }
         }
-       /// <summary>
-       /// 그리드뷰엑셀익스포트
-       /// </summary>
-       /// <param name="fileName"></param>
-       /// <param name="dgv"></param>
+        /// <summary>
+        /// 그리드뷰엑셀익스포트
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="dgv"></param>
         public static void dataGridView_ExportToExcel(string fileName, DataGridView dgv)
         {
             Excel.Application excelApp = new Excel.Application();
@@ -321,6 +321,66 @@ namespace Util
             releaseObject(excelApp);
             releaseObject(workSheet);
             releaseObject(wb);
+        }
+
+        public static void ExportExcel(DataGridView dgv)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                Excel.Application excelApp = new Excel.Application();
+                if (excelApp == null)
+                {
+                    MessageBox.Show("엑셀이 설치되지 않았습니다");
+                    return;
+                }
+                Excel.Workbook wb = excelApp.Workbooks.Add(true);
+                Excel._Worksheet workSheet = wb.Worksheets.get_Item(1) as Excel._Worksheet;
+                workSheet.Name = "C#";
+
+                if (dgv.Rows.Count == 0)
+                {
+                    MessageBox.Show("출력할 데이터가 없습니다");
+                    return;
+                }
+
+                int k = 0;
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    if (item.Name.Equals("checkBox")) { k++; continue; }
+                    if (item.Name.Equals("Edit")) k++;
+                }
+
+                // 헤더 출력
+                for (int i = 0; i < dgv.Columns.Count - 1 - k; i++)
+                {
+                    workSheet.Cells[1, i + 1] = dgv.Columns[i + k].HeaderText;
+                }
+
+                //내용 출력
+                for (int r = 0; r < dgv.Rows.Count; r++)
+                {
+                    for (int i = k; i < dgv.Columns.Count - 1 - k; i++)
+                    {
+                        workSheet.Cells[r + 2, i + 1] = dgv.Rows[r].Cells[i + k].Value;
+                    }
+                }
+
+                workSheet.Columns.AutoFit(); // 글자 크기에 맞게 셀 크기를 자동으로 조절
+
+                // 엑셀 2003 으로만 저장이 됨
+                wb.SaveAs(sfd.FileName, Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                    Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                wb.Close(Type.Missing, Type.Missing, Type.Missing);
+                excelApp.Quit();
+                releaseObject(excelApp);
+                releaseObject(workSheet);
+                releaseObject(wb);
+            }
         }
 
         #region 메모리해제

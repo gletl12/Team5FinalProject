@@ -66,6 +66,7 @@ namespace CompanyManager
         private void btnNewPrice_Click(object sender, EventArgs e)
         {
             PopupSalesPrice popup = new PopupSalesPrice(priceList, companyLsit);
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 GetPriceList();
@@ -80,6 +81,7 @@ namespace CompanyManager
             PriceVO price = priceList.Find((elem) => elem.item_id.Equals(dgvPrice.Rows[e.RowIndex].Cells[3].Value.ToString()) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
             //priceList[e.RowIndex];
             PopupSalesPrice popup = new PopupSalesPrice(price.company_name, price.item_name, price.price_currency, price.now);
+            popup.StartPosition = FormStartPosition.CenterParent;
             popup.ItemID = price.item_id;
             if (popup.ShowDialog() == DialogResult.OK)
             {
@@ -104,11 +106,17 @@ namespace CompanyManager
         private void btnImport_Click(object sender, EventArgs e)
         {
             PopupPriceExcel popup = new PopupPriceExcel("PT002");
+            popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 GetPriceList();
                 btnSearch.PerformClick();
             }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvPrice);
         }
     }
 }

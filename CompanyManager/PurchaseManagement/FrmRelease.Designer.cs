@@ -296,6 +296,7 @@ namespace CompanyManager
             this.btnWorkOrderExcel.Text = "    엑셀";
             this.btnWorkOrderExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnWorkOrderExcel.UseVisualStyleBackColor = false;
+            this.btnWorkOrderExcel.Click += new System.EventHandler(this.btnWorkOrderExcel_Click);
             // 
             // label10
             // 
@@ -376,6 +377,7 @@ namespace CompanyManager
             this.btnDispendExcel.Text = "    엑셀";
             this.btnDispendExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDispendExcel.UseVisualStyleBackColor = false;
+            this.btnDispendExcel.Click += new System.EventHandler(this.btnDispendExcel_Click);
             // 
             // button5
             // 

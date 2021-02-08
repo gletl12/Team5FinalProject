@@ -38,6 +38,7 @@ namespace VO
         public string from_warehouse_id { get; set; }
         public int mr_qty { get; set; }
         public string mr_state { get; set; }
+        public int mr_id { get; set; }
 
     }
 }
