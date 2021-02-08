@@ -11,26 +11,30 @@ using VO;
 using System.Linq;
 using System.Diagnostics;
 using System.Configuration;
+using System.Globalization;
 
 namespace POP
 {
     public partial class FrmPerformance : POP.BaseForm
     {
-        FrmAction frm;
+        
         #region Initialize fields
         private int CurrentPage = 1;
         int PagesCount = 1;
         int PageRows = 20;
 
-        BindingList<Contacts> Baselist = null;
-        BindingList<Contacts> Templist = null;
+        
+        
+
+        List<WorkOrderVO> list;
+        List<WorkOrderVO> Templist;
         #endregion
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
 
-        int process_id = 0;
+        
         public FrmPerformance()
         {
             InitializeComponent();
@@ -39,27 +43,26 @@ namespace POP
         
         private void FrmInspection_Load(object sender, EventArgs e)
         {
-            
             GetdgvColumn();
             DataLoad();
             ComboBoxBinding();
             Control();
-         
+            PagesCount = Convert.ToInt32(Math.Ceiling(list.Count * 1.0 / PageRows));
 
+            CurrentPage = 1;
+            RefreshPagination();
+            RebindGridForPageChange();
         }
-        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
-        UserControl1 ctrl;
+
         private void Control()
         {
-            
-
             for (int i = 0; i < tasks.Count; i++)
             {
-                ctrl = new UserControl1();
+                UserControl1 ctrl = new UserControl1();
 
                 ctrl.Name = $"taskControl{i}";
-                ctrl.Location = new Point(0,0); //(23,2) (23, 35)
-                ctrl.Size = new Size(112, 292);
+                ctrl.Location = new Point(0,0); 
+                ctrl.Size = new Size(300, 200);
 
                 ctrl.Task_ID = tasks[i].taskID;
                 ctrl.Task_IP = tasks[i].hostIP;
@@ -67,11 +70,14 @@ namespace POP
                 ctrl.Task_Remark = tasks[i].remark;
 
                 ctrl.IsTaskEnable = false;
-                ctrl.Visible = false;
+
                 panel1.Controls.Add(ctrl);
             }
         }
 
+        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
+        //UserControl1 ctrl;
+       
         private void ComboBoxBinding()
         {
             MachineService service = new MachineService();
@@ -79,7 +85,7 @@ namespace POP
             machine.Insert(0, new MachineVO { machine_name = "전체" });
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
         }
-        List<WorkOrderVO> list;
+        //List<WorkOrderVO> list;
         private void DataLoad()
         {
             WorkOrderService service1 = new WorkOrderService();
@@ -156,28 +162,12 @@ namespace POP
                 }
 
             }
-           
-
-
-            //    UserControl1 ctrl = new UserControl1();
-
-            //    ctrl.Name = $"taskControl{i}";
-            //    ctrl.Location = new Point(0, 0); //(23,2) (23, 35)
-            //    ctrl.Size = new Size(112, 292);
-
-            //    ctrl.Task_ID = lblTaskID.Text;
-            //    ctrl.Task_IP = lblIP.Text;
-            //    ctrl.Task_Port = lblPort.Text;
-            //    ctrl.Task_Remark = lblRemark.Text;
-
-            //    ctrl.IsTaskEnable = false;
-
-            //    panel1.Controls.Add(ctrl);
-            //    i++;
-
-
-        }
-
+         }
+        /// <summary>
+        /// 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (cboMachine.Text == "전체")
@@ -196,82 +186,118 @@ namespace POP
                 dataGridView1.DataSource = list1;
             }
         }
-
+        /// <summary>
+        /// 오늘날짜
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = DateTime.Now;
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
+     
+       
 
-        }
-        /// <summary>
-        /// 로그보기
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button7_Click(object sender, EventArgs e)
-        {
-            frmLogViewer log = new frmLogViewer();
-            log.OpenFileName = $"Logs\\{Task_ID}.log";
-            log.ShowDialog();
-        }
-        /// <summary>
-        /// 공정가동
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
-            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
-            process_id = pro.Id;
+       
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port);
-            frm.Show();
-            frm.Hide();
-
-           // IsTaskEnable = true;
-        }
-        /// <summary>
-        /// 화면보이기
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button8_Click(object sender, EventArgs e)
+        private void FrmPerformance_Click(object sender, EventArgs e)
         {
-            frm.Show();
-        }
-        /// <summary>
-        /// 설비중지
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button10_Click(object sender, EventArgs e)
-        {
-            frm.bExit = true;
-            frm.Close();
-            //IsTaskEnable = false;
-
-            foreach (Process process in Process.GetProcesses())
+            try
             {
-                if (process.Id.Equals(process_id))
+                ToolStripButton ToolStripButton = ((ToolStripButton)sender);
+
+                //Determining the current page
+                if (ToolStripButton == btnBackward)
+                    CurrentPage--;
+                else if (ToolStripButton == btnForward)
+                    CurrentPage++;
+                else if (ToolStripButton == btnLast)
+                    CurrentPage = PagesCount;
+                else if (ToolStripButton == btnFirst)
+                    CurrentPage = 1;
+                else
+                    CurrentPage = Convert.ToInt32(ToolStripButton.Text, CultureInfo.InvariantCulture);
+
+                if (CurrentPage < 1)
+                    CurrentPage = 1;
+                else if (CurrentPage > PagesCount)
+                    CurrentPage = PagesCount;
+
+                //Rebind the Datagridview with the data.
+                RebindGridForPageChange();
+
+                //Change the pagiantions buttons according to page number
+                RefreshPagination();
+            }
+            catch (Exception) { }
+        }
+        private void RefreshPagination()
+        {
+            ToolStripButton[] items = new ToolStripButton[] { toolStripButton1, toolStripButton2, toolStripButton3, toolStripButton4, toolStripButton5 };
+
+            //pageStartIndex contains the first button number of pagination.
+            int pageStartIndex = 1;
+
+            if (PagesCount > 5 && CurrentPage > 2)
+                pageStartIndex = CurrentPage - 2;
+
+            if (PagesCount > 5 && CurrentPage > PagesCount - 2)
+                pageStartIndex = PagesCount - 4;
+
+            for (int i = pageStartIndex; i < pageStartIndex + 5; i++)
+            {
+                if (i > PagesCount)
                 {
-                    process.Kill();
+                    items[i - pageStartIndex].Visible = false;
+                }
+                else
+                {
+                    //Changing the page numbers
+                    items[i - pageStartIndex].Text = i.ToString(CultureInfo.InvariantCulture);
+
+                    //Setting the Appearance of the page number buttons
+                    if (i == CurrentPage)
+                    {
+                        items[i - pageStartIndex].BackColor = Color.Black;
+                        items[i - pageStartIndex].ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        items[i - pageStartIndex].BackColor = Color.White;
+                        items[i - pageStartIndex].ForeColor = Color.Black;
+                    }
                 }
             }
+
+            //Enabling or Disalbing pagination first, last, previous , next buttons
+            if (CurrentPage == 1)
+                btnBackward.Enabled = btnFirst.Enabled = false;
+            else
+                btnBackward.Enabled = btnFirst.Enabled = true;
+
+            if (CurrentPage == PagesCount)
+                btnForward.Enabled = btnLast.Enabled = false;
+
+            else
+                btnForward.Enabled = btnLast.Enabled = true;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void RebindGridForPageChange()
         {
+            //Rebinding the Datagridview with data
+            int datasourcestartIndex = (CurrentPage - 1) * PageRows;
+            Templist = new List<WorkOrderVO>();
+            for (int i = datasourcestartIndex; i < datasourcestartIndex + PageRows; i++)
+            {
+                if (i >= list.Count)
+                    break;
 
-        }
+                Templist.Add(list[i]);
+            }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dataGridView1.DataSource = Templist;
+            dataGridView1.Refresh();
         }
     }
 }

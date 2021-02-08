@@ -32,6 +32,16 @@ namespace POP
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerformance));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
+            this.btnFirst = new System.Windows.Forms.ToolStripButton();
+            this.btnBackward = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnForward = new System.Windows.Forms.ToolStripButton();
+            this.btnLast = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -74,18 +84,9 @@ namespace POP
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnBackward = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.btnForward = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.toolStripPaging.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -93,7 +94,6 @@ namespace POP
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.toolStripPaging.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +122,127 @@ namespace POP
             this.tabPage1.Text = "생산 현황";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // toolStripPaging
+            // 
+            this.toolStripPaging.AutoSize = false;
+            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFirst,
+            this.btnBackward,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.btnForward,
+            this.btnLast});
+            this.toolStripPaging.Location = new System.Drawing.Point(3, 686);
+            this.toolStripPaging.Name = "toolStripPaging";
+            this.toolStripPaging.Size = new System.Drawing.Size(1569, 79);
+            this.toolStripPaging.TabIndex = 27;
+            this.toolStripPaging.Text = "toolStrip1";
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.AutoSize = false;
+            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
+            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(235, 70);
+            this.btnFirst.Text = "toolStripButton1";
+            this.btnFirst.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.AutoSize = false;
+            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
+            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(235, 70);
+            this.btnBackward.Text = "toolStripButton1";
+            this.btnBackward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton1.Text = "1";
+            this.toolStripButton1.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.AutoSize = false;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton2.Text = "2";
+            this.toolStripButton2.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.AutoSize = false;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton3.Text = "3";
+            this.toolStripButton3.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.AutoSize = false;
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton4.Text = "4";
+            this.toolStripButton4.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton5.Text = "5";
+            this.toolStripButton5.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnForward
+            // 
+            this.btnForward.AutoSize = false;
+            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnForward.Image = global::POP.Properties.Resources.Forward;
+            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(235, 70);
+            this.btnForward.Text = "toolStripButton6";
+            this.btnForward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.AutoSize = false;
+            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
+            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(235, 70);
+            this.btnLast.Text = "toolStripButton6";
+            this.btnLast.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeight = 50;
@@ -133,7 +254,6 @@ namespace POP
             this.dataGridView1.Size = new System.Drawing.Size(1569, 762);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
@@ -141,7 +261,7 @@ namespace POP
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1566, 673);
+            this.tabPage2.Size = new System.Drawing.Size(1575, 768);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "불량 현황";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -160,7 +280,7 @@ namespace POP
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1566, 673);
+            this.tabPage3.Size = new System.Drawing.Size(1575, 768);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "투입 현황";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -348,7 +468,6 @@ namespace POP
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(190, 32);
             this.textBox6.TabIndex = 1;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label7
             // 
@@ -576,118 +695,6 @@ namespace POP
             this.panel1.Size = new System.Drawing.Size(112, 292);
             this.panel1.TabIndex = 31;
             // 
-            // toolStripPaging
-            // 
-            this.toolStripPaging.AutoSize = false;
-            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirst,
-            this.btnBackward,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.btnForward,
-            this.btnLast});
-            this.toolStripPaging.Location = new System.Drawing.Point(3, 686);
-            this.toolStripPaging.Name = "toolStripPaging";
-            this.toolStripPaging.Size = new System.Drawing.Size(1569, 79);
-            this.toolStripPaging.TabIndex = 27;
-            this.toolStripPaging.Text = "toolStrip1";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.AutoSize = false;
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(235, 70);
-            this.btnFirst.Text = "toolStripButton1";
-            // 
-            // btnBackward
-            // 
-            this.btnBackward.AutoSize = false;
-            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
-            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(235, 70);
-            this.btnBackward.Text = "toolStripButton1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton1.Text = "1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton2.Text = "2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton3.Text = "3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton4.Text = "4";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton5.Text = "5";
-            // 
-            // btnForward
-            // 
-            this.btnForward.AutoSize = false;
-            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnForward.Image = global::POP.Properties.Resources.Forward;
-            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(235, 70);
-            this.btnForward.Text = "toolStripButton6";
-            // 
-            // btnLast
-            // 
-            this.btnLast.AutoSize = false;
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(235, 70);
-            this.btnLast.Text = "toolStripButton6";
-            // 
             // FrmPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -709,8 +716,11 @@ namespace POP
             this.Controls.Add(this.label8);
             this.Name = "FrmPerformance";
             this.Load += new System.EventHandler(this.FrmInspection_Load);
+            this.Click += new System.EventHandler(this.FrmPerformance_Click);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.toolStripPaging.ResumeLayout(false);
+            this.toolStripPaging.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -720,8 +730,6 @@ namespace POP
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.toolStripPaging.ResumeLayout(false);
-            this.toolStripPaging.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
