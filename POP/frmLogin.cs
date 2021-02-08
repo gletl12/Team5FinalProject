@@ -81,5 +81,10 @@ namespace POP
             }
 
         }
+
+        private void titleBar1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="CustomControl\CustomTabControl.Designer.cs">
       <DependentUpon>CustomTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\GradianPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\GradianPanel.Designer.cs">
+      <DependentUpon>GradianPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -310,6 +316,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Forward.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO_T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
