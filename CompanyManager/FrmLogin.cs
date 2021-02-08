@@ -59,5 +59,12 @@ namespace CompanyManager
                 Loginbtn.PerformClick();
             }
         }
+
+        private void grandianPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            //임시로 값 넣어놓은거
+            txtID.Text = "1";
+            txtPassword.Text = "1234";
+        }
     }
 }
