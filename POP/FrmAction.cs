@@ -30,7 +30,7 @@ namespace POP
         int taskID;
         string pgmID;
 
-        bool logVisible = false;
+        bool logVisible = true;
         string clientName;
         string clientIP;
 
@@ -75,6 +75,8 @@ namespace POP
         }
         private void FrmAction_Load(object sender, EventArgs e)
         {
+
+            button1.Enabled = false;
             try
             {
                 Log.WriteInfo("DB서버 연결");
@@ -160,69 +162,7 @@ namespace POP
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textBox27_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -230,6 +170,20 @@ namespace POP
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        //작업중지
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button3.Enabled = false;
+            timer_Connects.Stop();
+        }
+        //작업다시시작
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button3.Enabled = true;
+            timer_Connects.Start();
         }
     }
 }

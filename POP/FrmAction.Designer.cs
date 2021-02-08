@@ -196,9 +196,10 @@ namespace POP
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 763);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 835);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1405, 165);
+            this.panel2.Size = new System.Drawing.Size(1600, 165);
             this.panel2.TabIndex = 2;
             // 
             // button5
@@ -231,6 +232,7 @@ namespace POP
             this.button3.TabIndex = 3;
             this.button3.Text = "작업중지";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -253,6 +255,7 @@ namespace POP
             this.button1.TabIndex = 3;
             this.button1.Text = "작업시작";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -271,7 +274,6 @@ namespace POP
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(558, 291);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button7
             // 
@@ -600,7 +602,6 @@ namespace POP
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(547, 78);
             this.panel6.TabIndex = 2;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label3
             // 
@@ -771,7 +772,6 @@ namespace POP
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(547, 74);
             this.panel8.TabIndex = 2;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // button6
             // 
@@ -818,7 +818,6 @@ namespace POP
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(547, 79);
             this.panel9.TabIndex = 2;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // progressBar1
             // 
@@ -850,7 +849,6 @@ namespace POP
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(547, 64);
             this.panel10.TabIndex = 2;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // textBox30
             // 
@@ -880,7 +878,7 @@ namespace POP
             // 
             this.lblState.BackColor = System.Drawing.Color.Yellow;
             this.lblState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblState.Location = new System.Drawing.Point(94, 9);
+            this.lblState.Location = new System.Drawing.Point(1322, 338);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(20, 23);
             this.lblState.TabIndex = 8;
@@ -890,7 +888,7 @@ namespace POP
             this.lblIP.AutoSize = true;
             this.lblIP.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblIP.Location = new System.Drawing.Point(163, 9);
+            this.lblIP.Location = new System.Drawing.Point(1391, 338);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(103, 14);
             this.lblIP.TabIndex = 11;
@@ -901,7 +899,7 @@ namespace POP
             this.lblPort.AutoSize = true;
             this.lblPort.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPort.Location = new System.Drawing.Point(309, 9);
+            this.lblPort.Location = new System.Drawing.Point(1537, 338);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(35, 14);
             this.lblPort.TabIndex = 12;
@@ -910,7 +908,7 @@ namespace POP
             // txtReadPLC
             // 
             this.txtReadPLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReadPLC.Location = new System.Drawing.Point(404, 7);
+            this.txtReadPLC.Location = new System.Drawing.Point(1382, 259);
             this.txtReadPLC.Name = "txtReadPLC";
             this.txtReadPLC.Size = new System.Drawing.Size(190, 32);
             this.txtReadPLC.TabIndex = 13;
@@ -920,7 +918,7 @@ namespace POP
             this.lblTitle.BackColor = System.Drawing.Color.DimGray;
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(623, 7);
+            this.lblTitle.Location = new System.Drawing.Point(1455, 170);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(117, 61);
             this.lblTitle.TabIndex = 14;
@@ -931,7 +929,7 @@ namespace POP
             // 
             this.lblVersion.BackColor = System.Drawing.Color.DimGray;
             this.lblVersion.ForeColor = System.Drawing.Color.White;
-            this.lblVersion.Location = new System.Drawing.Point(763, 9);
+            this.lblVersion.Location = new System.Drawing.Point(1345, 127);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(227, 26);
             this.lblVersion.TabIndex = 15;

@@ -86,7 +86,7 @@ namespace POP
             this.panel1.Controls.Add(this.lblState);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Location = new System.Drawing.Point(0, 315);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(613, 45);
             this.panel1.TabIndex = 6;
@@ -98,7 +98,7 @@ namespace POP
             this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblPort.Location = new System.Drawing.Point(566, 17);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(39, 14);
+            this.lblPort.Size = new System.Drawing.Size(35, 14);
             this.lblPort.TabIndex = 11;
             this.lblPort.Text = "9999";
             // 
@@ -109,7 +109,7 @@ namespace POP
             this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblIP.Location = new System.Drawing.Point(369, 17);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(118, 14);
+            this.lblIP.Size = new System.Drawing.Size(103, 14);
             this.lblIP.TabIndex = 10;
             this.lblIP.Text = "999.999.999.999";
             // 
@@ -160,14 +160,14 @@ namespace POP
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(0, 61);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(613, 0);
+            this.listBox1.Size = new System.Drawing.Size(613, 254);
             this.listBox1.TabIndex = 10;
             // 
             // frmPLCTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 106);
+            this.ClientSize = new System.Drawing.Size(613, 360);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.txtReadPLC);

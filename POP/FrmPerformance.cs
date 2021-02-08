@@ -21,7 +21,7 @@ namespace POP
         #region Initialize fields
         private int CurrentPage = 1;
         int PagesCount = 1;
-        int PageRows = 20;
+        int PageRows = 6;
 
         
         

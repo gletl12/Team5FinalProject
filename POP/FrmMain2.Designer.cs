@@ -61,6 +61,8 @@ namespace POP
             // 
             // titleBar1
             // 
+            this.titleBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
             this.titleBar1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.titleBar1.HeaderText = "POP";
@@ -293,6 +295,7 @@ namespace POP
             this.Controls.Add(this.splitter1);
             this.IsMdiContainer = true;
             this.Name = "FrmMain2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain2_Load);
             this.ResumeLayout(false);
 
