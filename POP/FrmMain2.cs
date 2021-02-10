@@ -101,6 +101,7 @@ namespace POP
             lbl6.Visible = false;
             lbl7.Visible = false;
             lbl8.Visible = false;
+
         }
 
         private void button4_Click(object sender, EventArgs e)

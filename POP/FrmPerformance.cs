@@ -23,8 +23,8 @@ namespace POP
         int PagesCount = 1;
         int PageRows = 5;
 
-        
-        
+
+        //
 
         List<WorkOrderVO> list;
         List<WorkOrderVO> Templist;
@@ -70,7 +70,7 @@ namespace POP
                 ctrl.Task_Remark = tasks[i].remark;
 
                 ctrl.IsTaskEnable = false;
-
+                ctrl.ControlMDI = this;
                 panel1.Controls.Add(ctrl);
             }
         }
