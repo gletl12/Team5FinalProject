@@ -90,7 +90,8 @@ namespace POP
             button4.Enabled = false;
             button2.Enabled = false;
 
-         
+            Machine.Service1 ser = new Service1();
+            ser.Total(100);
                 
 
             try
