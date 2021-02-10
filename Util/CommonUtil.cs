@@ -351,6 +351,31 @@ namespace Util
                 frm.Show();
             }
         }
+        public static void OpenCreateFormPOP<T>(bool openMdi = false, Form owner = null) where T : Form, new()
+        {
+          
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(T))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            T frm = new T();
+            if (!openMdi)
+            {
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = owner;
+                frm.Show();
+            }
+        }
 
         public static void AddGridViewDetail<T1, T2>(DataGridView senderGrid, List<object> lists, string[] columnNames, string[] properties, int rowIndex)
         {

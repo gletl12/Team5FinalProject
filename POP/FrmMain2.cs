@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using Util;
 
 namespace POP
 {
@@ -22,9 +23,13 @@ namespace POP
         }
 
         private void FrmMain2_Load(object sender, EventArgs e)
-        {
+        { 
+            FrmPerformance frm = new FrmPerformance();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
 
-            lbl1.Visible = false;
+            lbl1.Visible = true;
             lbl2.Visible = false;            
             lbl3.Visible = false;
             lbl4.Visible = false;
@@ -39,10 +44,11 @@ namespace POP
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            FrmPerformance frm = new FrmPerformance();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            //FrmPerformance frm = new FrmPerformance();
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+            CommonUtil.OpenCreateFormPOP<FrmPerformance>(true, this);
             lbl1.Visible = true;
             lbl2.Visible = false;
             lbl3.Visible = false;
@@ -56,10 +62,11 @@ namespace POP
         private void button3_Click(object sender, EventArgs e)
         {
 
-            FrmAllStatusBoard frm = new FrmAllStatusBoard();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            //FrmAllStatusBoard frm = new FrmAllStatusBoard();
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+            CommonUtil.OpenCreateFormPOP<FrmAllStatusBoard>(true, this);
             lbl1.Visible = false;
             lbl2.Visible = true;
             lbl3.Visible = false;
@@ -77,10 +84,11 @@ namespace POP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmInspection frm = new FrmInspection();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            //FrmInspection frm = new FrmInspection();
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+            CommonUtil.OpenCreateFormPOP<FrmInspection>(true, this);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = true;
@@ -93,6 +101,8 @@ namespace POP
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+            CommonUtil.OpenCreateFormPOP<FrmAction>(true,this);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = false;
@@ -106,6 +116,7 @@ namespace POP
 
         private void button4_Click(object sender, EventArgs e)
         {
+            CommonUtil.OpenCreateFormPOP<FrmAction>(true);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = false;

@@ -43,6 +43,10 @@ namespace POP
         int timer_CONNECT = 1000;
         int timer_KEEP_ALIVE = 1000;
         int timer_READ_PLC = 1000;
+        public FrmAction()
+        {
+
+        }
         public FrmAction(string taskid, string ip, string port)
         {
             InitializeComponent();
