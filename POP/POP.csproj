@@ -262,6 +262,10 @@
       <Project>{ef3f8919-8c06-43da-be2a-6aeac789b627}</Project>
       <Name>DAC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Machine\Machine.csproj">
+      <Project>{6c7ced4e-6e61-4493-8a47-b25ffba7bfd6}</Project>
+      <Name>Machine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{76f4e6aa-7d41-48c6-9a87-0ae14cbc63e4}</Project>
       <Name>Service</Name>

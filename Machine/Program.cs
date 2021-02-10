@@ -11,7 +11,7 @@ using Util;
 
 namespace Machine
 {
-    class Program
+    public class Program
     {
         //private static LoggingUtility _log = new LoggingUtility("Log_Machine", Level.Error, 30);
         //public static LoggingUtility Log { get { return _log; } }
@@ -78,7 +78,7 @@ namespace Machine
                 tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 stream = tc.GetStream();
 
-                timer1 = new Timer(10);
+                timer1 = new Timer(300);
                 timer1.Elapsed += Timer1_Elapsed;
                 timer1.Enabled = true;
                 timer1.AutoReset = true;
@@ -88,8 +88,14 @@ namespace Machine
         int success = 0;
         int fail = 0;
         int process;
-        public int TotalNum { get; set; }
-        int total = 500;
+        int total;
+        
+        public void Total(int total)
+        {
+            this.total = total;
+        }
+        
+        
         private void Timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
@@ -103,7 +109,7 @@ namespace Machine
             {
                 fail += 1;
             }
-            process= ((success + fail)*100)/ total;
+            process = ((success + fail) * 100) / total;
             string msg = $"{success}|{fail}|{process}|";
 
             byte[] buff = Encoding.Default.GetBytes(msg);
@@ -111,12 +117,13 @@ namespace Machine
             //stream.Flush();
             Console.WriteLine(msg);
 
-            if (total <= success+fail)
+            if (total <= success + fail)
             {
                 timer1.Stop();
                 success = fail = 0;
                 process = 0;
             }
+
             //50|2|1
             //string msg = $"{rnd.Next(1, 77)}|{rnd.Next(3, 5)}|{rnd.Next(0, 2)}";
             //byte[] buff = Encoding.Default.GetBytes(msg);
@@ -124,11 +131,14 @@ namespace Machine
             //stream.Write(buff, 0, buff.Length);
             //Console.WriteLine(msg);
             //Log.WriteInfo("데이터전송: " + msg);
+
         }
 
         public void OnStop()
         {
             listener.Stop();
         }
+   
     }
+    
 }

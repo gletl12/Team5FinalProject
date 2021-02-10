@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Net;
 using log4net.Core;
+using Machine;
 
 namespace POP
 {
@@ -89,6 +90,8 @@ namespace POP
             button4.Enabled = false;
             button2.Enabled = false;
 
+         
+                
 
             try
             {
@@ -140,9 +143,6 @@ namespace POP
                 textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
 
                 progressBar1.Value= int.Parse(arrData1[2]);
-
-
-
             }));
         }
 
