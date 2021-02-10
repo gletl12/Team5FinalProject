@@ -47,6 +47,7 @@ namespace POP
             this.lbl7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.customTabControl1 = new POP.CustomTabControl();
             this.SuspendLayout();
             // 
             // splitter1
@@ -271,10 +272,19 @@ namespace POP
             this.lbl2.Size = new System.Drawing.Size(103, 2);
             this.lbl2.TabIndex = 17;
             // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.customTabControl1.Location = new System.Drawing.Point(12, 44);
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.Size = new System.Drawing.Size(755, 25);
+            this.customTabControl1.TabIndex = 19;
+            // 
             // FrmMain2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.customTabControl1);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl4);
@@ -321,5 +331,6 @@ namespace POP
         private System.Windows.Forms.Label lbl7;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label lbl2;
+        private CustomTabControl customTabControl1;
     }
 }

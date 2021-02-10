@@ -358,6 +358,9 @@ namespace Util
             {
                 if (form.GetType() == typeof(T))
                 {
+                    form.StartPosition = FormStartPosition.CenterParent;
+                    form.WindowState = FormWindowState.Maximized;
+                    form.Location = new Point(0, 0);
                     form.Activate();
                     return;
                 }
@@ -368,6 +371,7 @@ namespace Util
             {
                 frm.StartPosition = FormStartPosition.CenterParent;
                 frm.WindowState = FormWindowState.Maximized;
+                frm.Location = new Point(0, 0);
                 frm.ShowDialog();
             }
             else

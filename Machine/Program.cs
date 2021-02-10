@@ -78,25 +78,52 @@ namespace Machine
                 tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 stream = tc.GetStream();
 
-                timer1 = new Timer(3000);
+                timer1 = new Timer(10);
                 timer1.Elapsed += Timer1_Elapsed;
                 timer1.Enabled = true;
                 timer1.AutoReset = true;
                 // await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
-
+        int success = 0;
+        int fail = 0;
+        int process;
+        public int TotalNum { get; set; }
+        int total = 500;
         private void Timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            int Produce = rnd.Next(0, 100);
 
-            //50|2|1
-            string msg = $"{rnd.Next(1, 77)}|{rnd.Next(3, 5)}|{rnd.Next(0, 2)}";
+            if (Produce < 97)
+            {
+                success += 1;
+            }
+            else
+            {
+                fail += 1;
+            }
+            process= ((success + fail)*100)/ total;
+            string msg = $"{success}|{fail}|{process}|";
+
             byte[] buff = Encoding.Default.GetBytes(msg);
-
             stream.Write(buff, 0, buff.Length);
+            //stream.Flush();
             Console.WriteLine(msg);
-            Log.WriteInfo("데이터전송: " + msg);
+
+            if (total <= success+fail)
+            {
+                timer1.Stop();
+                success = fail = 0;
+                process = 0;
+            }
+            //50|2|1
+            //string msg = $"{rnd.Next(1, 77)}|{rnd.Next(3, 5)}|{rnd.Next(0, 2)}";
+            //byte[] buff = Encoding.Default.GetBytes(msg);
+
+            //stream.Write(buff, 0, buff.Length);
+            //Console.WriteLine(msg);
+            //Log.WriteInfo("데이터전송: " + msg);
         }
 
         public void OnStop()

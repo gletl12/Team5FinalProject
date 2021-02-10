@@ -448,7 +448,7 @@ namespace POP
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(239, 64);
             this.textBox39.TabIndex = 1;
-            this.textBox39.Text = "0100";
+            this.textBox39.Text = "0";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox18
@@ -474,7 +474,7 @@ namespace POP
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(239, 64);
             this.textBox17.TabIndex = 1;
-            this.textBox17.Text = "0100";
+            this.textBox17.Text = "0";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox16
@@ -536,7 +536,7 @@ namespace POP
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(239, 64);
             this.textBox27.TabIndex = 1;
-            this.textBox27.Text = "0100";
+            this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox14
@@ -548,7 +548,7 @@ namespace POP
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(239, 64);
             this.textBox14.TabIndex = 1;
-            this.textBox14.Text = "0100";
+            this.textBox14.Text = "0";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel5
@@ -583,7 +583,7 @@ namespace POP
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(258, 118);
             this.textBox21.TabIndex = 1;
-            this.textBox21.Text = "0100";
+            this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
@@ -803,7 +803,7 @@ namespace POP
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(202, 39);
             this.textBox25.TabIndex = 1;
-            this.textBox25.Text = "110 분";
+            this.textBox25.Text = "0 분";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel9
@@ -872,6 +872,10 @@ namespace POP
             this.textBox29.TabIndex = 1;
             this.textBox29.Text = "00 분";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // timer_Connects
+            // 
+            this.timer_Connects.Tick += new System.EventHandler(this.timer_Connects_Tick);
             // 
             // lblState
             // 

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Util;
 
 namespace POP
 {
@@ -61,7 +62,7 @@ namespace POP
             Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
             process_id = pro.Id;
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port);
+            frm = new FrmAction(Task_ID, Task_IP, Task_Port, "test01", "test02", "test03", "test04", 200);
             frm.Show();
             frm.Hide();
 
@@ -70,13 +71,16 @@ namespace POP
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            //CommonUtil.OpenCreateFormPOP<FrmAction>(true, ControlMDI.ParentForm);
+            //FrmAction frm = new FrmAction();
             frm.MdiParent = ControlMDI.ParentForm;
+      
             frm.Dock = DockStyle.Fill;
             frm.Show();
 
-            
-          
-           
+
+
+
         }
 
         private void btnStop_Click(object sender, EventArgs e)

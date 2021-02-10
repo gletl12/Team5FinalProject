@@ -23,14 +23,21 @@ namespace POP
         }
 
         private void FrmMain2_Load(object sender, EventArgs e)
-        { 
+        {
+
+            customTabControl1.InsertTab("메인화면", "FrmPerformance");
+
+
+
+
+
             FrmPerformance frm = new FrmPerformance();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
 
             lbl1.Visible = true;
-            lbl2.Visible = false;            
+            lbl2.Visible = false;
             lbl3.Visible = false;
             lbl4.Visible = false;
             lbl5.Visible = false;

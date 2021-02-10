@@ -25,6 +25,8 @@ namespace POP
         // 폼 로드 이벤트 컨트롤 상태 변경
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            
+
             UpdateControls();
             //titleBar1.HeaderText = "로그인";
             txtID.Text = "6";
