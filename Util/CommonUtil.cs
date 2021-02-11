@@ -426,15 +426,8 @@ namespace Util
         /// <param name="type"></param>
         public static void OpenCreateForm_POP(Form parent, Type type)
         {
-            Size formSize = new Size(1168, 647);
-
-            if (parent.WindowState == FormWindowState.Maximized)
-            {
-                formSize = new Size(1738, 927);
-            }
-
-
-
+            Size formSize = new Size(1738, 927);
+            
             foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == type)

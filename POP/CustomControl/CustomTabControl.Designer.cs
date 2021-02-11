@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomTabControl));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTab = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblSelect = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnMachine = new System.Windows.Forms.Button();
+            this.btnInspection = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.SuspendLayout();
@@ -46,8 +45,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.panel1.Controls.Add(this.pnlTab);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,6 +56,8 @@
             // pnlTab
             // 
             this.pnlTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTab.Controls.Add(this.btnInspection);
+            this.pnlTab.Controls.Add(this.btnMachine);
             this.pnlTab.Controls.Add(this.lblSelect);
             this.pnlTab.Controls.Add(this.btnHome);
             this.pnlTab.Controls.Add(this.label3);
@@ -66,6 +65,28 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.Size = new System.Drawing.Size(409, 25);
             this.pnlTab.TabIndex = 2;
+            // 
+            // lblSelect
+            // 
+            this.lblSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
+            this.lblSelect.Location = new System.Drawing.Point(12, 1);
+            this.lblSelect.Name = "lblSelect";
+            this.lblSelect.Size = new System.Drawing.Size(67, 2);
+            this.lblSelect.TabIndex = 7;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(12, 2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(67, 25);
+            this.btnHome.TabIndex = 6;
+            this.btnHome.Text = "메인화면";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.button_Click);
             // 
             // label3
             // 
@@ -75,30 +96,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(412, 1);
             this.label3.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(436, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(16, 16);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(16, 16);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -118,27 +115,33 @@
             this.label2.Size = new System.Drawing.Size(21, 1);
             this.label2.TabIndex = 4;
             // 
-            // lblSelect
+            // btnMachine
             // 
-            this.lblSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
-            this.lblSelect.Location = new System.Drawing.Point(12, 0);
-            this.lblSelect.Name = "lblSelect";
-            this.lblSelect.Size = new System.Drawing.Size(67, 2);
-            this.lblSelect.TabIndex = 7;
+            this.btnMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.btnMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMachine.Location = new System.Drawing.Point(80, 2);
+            this.btnMachine.Name = "btnMachine";
+            this.btnMachine.Size = new System.Drawing.Size(67, 25);
+            this.btnMachine.TabIndex = 8;
+            this.btnMachine.Text = "설비관리";
+            this.btnMachine.UseVisualStyleBackColor = false;
+            this.btnMachine.Click += new System.EventHandler(this.button_Click);
             // 
-            // btnHome
+            // btnInspection
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(12, 0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(67, 25);
-            this.btnHome.TabIndex = 6;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnInspection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInspection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInspection.Location = new System.Drawing.Point(148, 2);
+            this.btnInspection.Name = "btnInspection";
+            this.btnInspection.Size = new System.Drawing.Size(67, 25);
+            this.btnInspection.TabIndex = 9;
+            this.btnInspection.Text = "검사";
+            this.btnInspection.UseVisualStyleBackColor = false;
+            this.btnInspection.Click += new System.EventHandler(this.button_Click);
             // 
             // CustomTabControl
             // 
@@ -158,12 +161,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlTab;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSelect;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnMachine;
+        private System.Windows.Forms.Button btnInspection;
     }
 }

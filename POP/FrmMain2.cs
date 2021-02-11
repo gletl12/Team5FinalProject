@@ -25,20 +25,23 @@ namespace POP
 
         private void FrmMain2_Load(object sender, EventArgs e)
         {
+            //기본폼 3개 생성
+            string appName = Assembly.GetEntryAssembly().GetName().Name;
 
-            customTabControl1.InsertTab("메인화면", "FrmPerformance");
-            customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
-            customTabControl1.InsertTab("검사", "FrmInspection");
-            customTabControl1.InsertTab("최종조립반", "FrmAction");
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmPerformance"}"));
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmAllStatusBoard"}"));
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmInspection"}"));
+
+
             //customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
 
 
 
 
 
-            FrmPerformance frm = new FrmPerformance();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
+            //FrmPerformance frm = new FrmPerformance();
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
             //frm.Show();
 
             lbl1.Visible = true;

@@ -27,9 +27,14 @@ namespace POP
             tabList = new Dictionary<string, Button>();
 
             //메인으로 나오는 폼, 버튼 딕셔너리에 추가
-            OpenForms.Add("Home", "FrmHome");
-            tabList.Add("Home",btnHome);
+            OpenForms.Add("메인화면", "FrmPerformance");
+            tabList.Add("메인화면", btnHome);
 
+            OpenForms.Add("설비관리", "FrmAllStatusBoard");
+            tabList.Add("설비관리", btnMachine);
+
+            OpenForms.Add("검사", "FrmInspection");
+            tabList.Add("검사", btnInspection);
 
         }
 
@@ -63,10 +68,10 @@ namespace POP
             btn.Text = menuName;
             btn.Tag = formName;
 
-            btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);
+            btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);  //
+            btn.Size = new Size(73, 25); //
 
 
-            btn.Size = new Size(73, 25);
             btn.FlatStyle = FlatStyle.Flat;
             btn.BackColor = Color.FromArgb(216, 220, 227);
             btn.FlatAppearance.BorderColor = Color.FromArgb(154, 161, 169);
