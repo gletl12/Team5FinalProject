@@ -1,4 +1,5 @@
 ﻿using Machine;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,13 +83,22 @@ namespace POP
             Frm.Location = new Point(0, 0);
             Frm.Show();
             Frm.Hide();
+            MachineService service = new MachineService();
+            Runid= service.MachineRun(Task_ID, WorkUserName);
+            if(Runid>0)
+            {
+                
+            }
+            else
+            {
 
+            }
             IsTaskEnable = true;
 
             RouteStart(sender, null);
 
         }
-
+        int Runid;
         private void btnShow_Click(object sender, EventArgs e)
         {
             //Frm.MdiParent = ControlMDI.ParentForm;
@@ -108,6 +118,16 @@ namespace POP
                 {
                     process.Kill();
                 }
+            }
+            MachineService service = new MachineService();
+            bool bFlag = service.MachineEnd(Runid, WorkUserName);
+            if(bFlag)
+            {
+
+            }
+            else
+            {
+
             }
         }
 
