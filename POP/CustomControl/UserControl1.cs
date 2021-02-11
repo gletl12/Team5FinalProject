@@ -24,8 +24,11 @@ namespace POP
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
-
-        public string Order_Num { get { return lblOrderNum.Text; } set { lblOrderNum.Text = value; } }
+        public string Order_Num { get { return lblOrderNum.Text; } set { lblOrderNum.Text = value; } }//지시번호
+        public string Machinname { get; set; }//머신네임
+        public int AllItemNum { get; set; }//총오더량
+        public string WorkUserName { get; set; }//작업자
+        public string WorkItem { get; set; }//작업아이템
 
         int process_id = 0;
 
@@ -62,12 +65,13 @@ namespace POP
             //string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
             string server = ConfigurationManager.AppSettings["MachineEXE"];
             
-            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port} {Order_Num}");
+            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port} {AllItemNum}");
             process_id = pro.Id;
             //Machine.Service1 ser = new Service1();
             //ser.Total(200);
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port, "test01", "test02", "test03", "test04", int.Parse(Order_Num));
+           
+            frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
             frm.Show();
             frm.Hide();
 

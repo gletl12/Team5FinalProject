@@ -12,11 +12,12 @@ namespace POP
 {
     public partial class FrmMain2 : POP.BaseForm
     {
-        public FrmMain2()
+        public FrmMain2(string name)
         {
             InitializeComponent();
+            Name = name;
         }
-
+        public string Name { get; set; }
         private void customTabControl1_Load(object sender, EventArgs e)
         {
 

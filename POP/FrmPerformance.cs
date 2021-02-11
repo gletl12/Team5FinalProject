@@ -157,7 +157,12 @@ namespace POP
                             if (taskCtrl.Task_ID.Equals(tasks[i].taskID))
                             {
                                 taskCtrl.Visible = true;
-                                taskCtrl.Order_Num= dataGridView1[2, rowIndex].Value.ToString();
+
+                                taskCtrl.AllItemNum= Convert.ToInt32(dataGridView1[2, rowIndex].Value);//총오더량
+                                taskCtrl.Machinname = Convert.ToString(dataGridView1[13, rowIndex].Value);
+                                taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
+                                taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
+                                taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
                             }
                         }
                     }

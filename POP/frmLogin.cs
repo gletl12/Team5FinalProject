@@ -76,7 +76,7 @@ namespace POP
             }
             if (txtID.Text == "6")//전체현황판
             {
-                FrmMain2 frm = new FrmMain2();
+                FrmMain2 frm = new FrmMain2("차경훈");
                 frm.Show();
             }
 

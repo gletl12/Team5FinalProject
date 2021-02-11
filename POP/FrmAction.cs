@@ -49,14 +49,14 @@ namespace POP
         {
 
         }
-        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, string OrderNum,string WorkItem, int AllItemNum)
+        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
         {
             InitializeComponent();
-            textBox5.Text = Machinname;
-            textBox21.Text = AllItemNum.ToString();
-            textBox10.Text = OrderNum;
-            textBox11.Text = WorkUserName;
-            textBox9.Text = WorkItem;
+            textBox5.Text = Machinname;//머신네임
+            textBox21.Text = AllItemNum.ToString();//총오더량
+            textBox10.Text = OrderNum;//지시번호
+            textBox11.Text = WorkUserName;//작업자
+            textBox9.Text = WorkItem;//작업물건
             hostIP = ip;
             hostPort = int.Parse(port);
             //taskID = int.Parse(taskid.Replace("PLC_", ""));
