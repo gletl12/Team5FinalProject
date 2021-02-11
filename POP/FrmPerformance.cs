@@ -68,6 +68,7 @@ namespace POP
                 ctrl.Task_IP = tasks[i].hostIP;
                 ctrl.Task_Port = tasks[i].hostPort;
                 ctrl.Task_Remark = tasks[i].remark;
+                
 
                 ctrl.IsTaskEnable = false;
                 ctrl.ControlMDI = this;
@@ -156,6 +157,7 @@ namespace POP
                             if (taskCtrl.Task_ID.Equals(tasks[i].taskID))
                             {
                                 taskCtrl.Visible = true;
+                                taskCtrl.Order_Num= dataGridView1[2, rowIndex].Value.ToString();
                             }
                         }
                     }

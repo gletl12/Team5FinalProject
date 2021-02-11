@@ -33,6 +33,7 @@ namespace Machine
             service.taskID = args[0];
             service.hostIP = args[1];
             service.hostPort = int.Parse(args[2]);
+            service.Total = int.Parse(args[3]);
             service.OnStart();
 
             Console.ReadLine();
@@ -54,6 +55,7 @@ namespace Machine
         public string taskID { get; set; }
         public string hostIP { get; set; }
         public int hostPort { get; set; }
+        public int Total { get; set; }
 
         public void OnStart()
         {
@@ -88,12 +90,12 @@ namespace Machine
         int success = 0;
         int fail = 0;
         int process;
-        int total;
+        //int total;
         
-        public void Total(int total)
-        {
-            this.total = total;
-        }
+        //public void Total(int total)
+        //{
+        //    this.total = total;
+        //}
         
         
         private void Timer1_Elapsed(object sender, ElapsedEventArgs e)
@@ -109,7 +111,7 @@ namespace Machine
             {
                 fail += 1;
             }
-            process = ((success + fail) * 100) / total;
+            process = ((success + fail) * 100) / Total;
             string msg = $"{success}|{fail}|{process}|";
 
             byte[] buff = Encoding.Default.GetBytes(msg);
@@ -117,7 +119,7 @@ namespace Machine
             //stream.Flush();
             Console.WriteLine(msg);
 
-            if (total <= success + fail)
+            if (Total <= success + fail)
             {
                 timer1.Stop();
                 success = fail = 0;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Machine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -23,6 +24,8 @@ namespace POP
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
+
+        public string Order_Num { get { return lblOrderNum.Text; } set { lblOrderNum.Text = value; } }
 
         int process_id = 0;
 
@@ -59,10 +62,12 @@ namespace POP
             //string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
             string server = ConfigurationManager.AppSettings["MachineEXE"];
             
-            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
+            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port} {Order_Num}");
             process_id = pro.Id;
+            //Machine.Service1 ser = new Service1();
+            //ser.Total(200);
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port, "test01", "test02", "test03", "test04", 200);
+            frm = new FrmAction(Task_ID, Task_IP, Task_Port, "test01", "test02", "test03", "test04", int.Parse(Order_Num));
             frm.Show();
             frm.Hide();
 
