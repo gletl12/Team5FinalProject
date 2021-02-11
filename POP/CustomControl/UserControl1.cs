@@ -76,6 +76,7 @@ namespace POP
             //OS"
             Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
             Frm.MdiParent = ControlMDI.ParentForm;
+            Frm.Location = new Point(0, 0);
             Frm.Show();
             Frm.Hide();
             IsTaskEnable = true;
