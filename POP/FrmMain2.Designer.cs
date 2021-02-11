@@ -39,7 +39,7 @@ namespace POP
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1600, 77);
+            this.splitter1.Size = new System.Drawing.Size(1600, 62);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             this.splitter1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitter1_SplitterMoved);
@@ -63,7 +63,7 @@ namespace POP
             this.customTabControl1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.customTabControl1.Location = new System.Drawing.Point(0, 35);
             this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.Size = new System.Drawing.Size(1600, 42);
+            this.customTabControl1.Size = new System.Drawing.Size(1600, 27);
             this.customTabControl1.TabIndex = 19;
             // 
             // FrmMain2
@@ -74,8 +74,8 @@ namespace POP
             this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.splitter1);
             this.IsMdiContainer = true;
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmMain2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain2_Load);
             this.ResumeLayout(false);
 

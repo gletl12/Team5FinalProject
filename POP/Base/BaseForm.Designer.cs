@@ -41,7 +41,6 @@ namespace POP
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "BaseForm";
             this.Text = "BaseForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

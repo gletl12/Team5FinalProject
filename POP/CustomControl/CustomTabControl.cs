@@ -36,6 +36,22 @@ namespace POP
             OpenForms.Add("검사", "FrmInspection");
             tabList.Add("검사", btnInspection);
 
+
+            //OpenForms.Add("최종조립반", "FrmAction");
+            //tabList.Add("최종조립반", button1);
+
+            //OpenForms.Add("Leg_조립반", "FrmAction");
+            //tabList.Add("Leg_조립반", button1);
+
+            //OpenForms.Add("SEAT_가공", "FrmAction");
+            //tabList.Add("SEAT_가공", button1);
+
+            //OpenForms.Add("LEGS_홀 가공", "FrmAction");
+            //tabList.Add("LEGS_홀 가공", button1);
+
+            //OpenForms.Add("외주 작업장", "FrmAction");
+            //tabList.Add("외주 작업장", button1);
+
         }
 
         //새로운 폼 열림
@@ -161,7 +177,7 @@ namespace POP
                 string formName = OpenForms[((Button)sender).Text];
                 if (child.GetType().ToString().Split('.')[1] == formName)
                 {
-                    Util.CommonUtil.OpenCreateForm(ParentForm, child.GetType());
+                    Util.CommonUtil.OpenCreateForm_POP(ParentForm, child.GetType());
                     break;
                 }
             }

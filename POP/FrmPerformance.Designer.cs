@@ -107,7 +107,7 @@ namespace POP
             this.tabControl1.Location = new System.Drawing.Point(14, 302);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1583, 805);
+            this.tabControl1.Size = new System.Drawing.Size(1898, 715);
             this.tabControl1.TabIndex = 28;
             // 
             // tabPage1
@@ -117,7 +117,7 @@ namespace POP
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1575, 768);
+            this.tabPage1.Size = new System.Drawing.Size(1890, 678);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "생산 현황";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@ namespace POP
             this.toolStripButton5,
             this.btnForward,
             this.btnLast});
-            this.toolStripPaging.Location = new System.Drawing.Point(3, 636);
+            this.toolStripPaging.Location = new System.Drawing.Point(3, 546);
             this.toolStripPaging.Name = "toolStripPaging";
-            this.toolStripPaging.Size = new System.Drawing.Size(1569, 129);
+            this.toolStripPaging.Size = new System.Drawing.Size(1884, 129);
             this.toolStripPaging.TabIndex = 27;
             this.toolStripPaging.Text = "toolStrip1";
             // 
@@ -257,7 +257,7 @@ namespace POP
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 95;
-            this.dataGridView1.Size = new System.Drawing.Size(1569, 762);
+            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -267,7 +267,7 @@ namespace POP
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1575, 768);
+            this.tabPage2.Size = new System.Drawing.Size(1575, 666);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "불량 현황";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -279,7 +279,7 @@ namespace POP
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1569, 762);
+            this.dataGridView2.Size = new System.Drawing.Size(1569, 660);
             this.dataGridView2.TabIndex = 27;
             // 
             // tabPage3
@@ -287,7 +287,7 @@ namespace POP
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1575, 768);
+            this.tabPage3.Size = new System.Drawing.Size(1575, 666);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "투입 현황";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@ namespace POP
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1575, 768);
+            this.dataGridView3.Size = new System.Drawing.Size(1575, 666);
             this.dataGridView3.TabIndex = 27;
             // 
             // groupBox2
@@ -319,7 +319,7 @@ namespace POP
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Location = new System.Drawing.Point(14, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 273);
+            this.groupBox2.Size = new System.Drawing.Size(686, 273);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색 조건";
@@ -337,7 +337,7 @@ namespace POP
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(408, 211);
+            this.lblPort.Location = new System.Drawing.Point(535, 212);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(16, 24);
             this.lblPort.TabIndex = 33;
@@ -347,7 +347,7 @@ namespace POP
             // lblIP
             // 
             this.lblIP.AutoSize = true;
-            this.lblIP.Location = new System.Drawing.Point(410, 150);
+            this.lblIP.Location = new System.Drawing.Point(537, 151);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(16, 24);
             this.lblIP.TabIndex = 32;
@@ -357,7 +357,7 @@ namespace POP
             // lblTaskID
             // 
             this.lblTaskID.AutoSize = true;
-            this.lblTaskID.Location = new System.Drawing.Point(408, 143);
+            this.lblTaskID.Location = new System.Drawing.Point(535, 144);
             this.lblTaskID.Name = "lblTaskID";
             this.lblTaskID.Size = new System.Drawing.Size(16, 24);
             this.lblTaskID.TabIndex = 31;
@@ -369,7 +369,7 @@ namespace POP
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(129, 179);
             this.cboMachine.Name = "cboMachine";
-            this.cboMachine.Size = new System.Drawing.Size(158, 32);
+            this.cboMachine.Size = new System.Drawing.Size(306, 32);
             this.cboMachine.TabIndex = 30;
             // 
             // button6
@@ -379,7 +379,7 @@ namespace POP
             this.button6.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(470, 62);
+            this.button6.Location = new System.Drawing.Point(597, 63);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(51, 36);
             this.button6.TabIndex = 7;
@@ -394,7 +394,7 @@ namespace POP
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(314, 175);
+            this.btnSearch.Location = new System.Drawing.Point(441, 176);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(211, 36);
             this.btnSearch.TabIndex = 7;
@@ -405,7 +405,7 @@ namespace POP
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 70);
+            this.label1.Location = new System.Drawing.Point(355, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 24);
             this.label1.TabIndex = 29;
@@ -414,7 +414,7 @@ namespace POP
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(313, 64);
+            this.dateTimePicker2.Location = new System.Drawing.Point(440, 65);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(157, 32);
             this.dateTimePicker2.TabIndex = 28;
@@ -434,7 +434,7 @@ namespace POP
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(126, 64);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(157, 32);
             this.dateTimePicker1.TabIndex = 28;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -463,16 +463,16 @@ namespace POP
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(549, 23);
+            this.groupBox1.Location = new System.Drawing.Point(706, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 273);
+            this.groupBox1.Size = new System.Drawing.Size(789, 273);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "세부 정보";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(419, 180);
+            this.textBox6.Location = new System.Drawing.Point(572, 180);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(190, 32);
             this.textBox6.TabIndex = 1;
@@ -480,7 +480,7 @@ namespace POP
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(317, 180);
+            this.label7.Location = new System.Drawing.Point(470, 180);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 24);
             this.label7.TabIndex = 0;
@@ -488,7 +488,7 @@ namespace POP
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(419, 119);
+            this.textBox5.Location = new System.Drawing.Point(572, 119);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(190, 32);
             this.textBox5.TabIndex = 1;
@@ -496,7 +496,7 @@ namespace POP
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(317, 119);
+            this.label6.Location = new System.Drawing.Point(470, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 0;
@@ -504,7 +504,7 @@ namespace POP
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(419, 57);
+            this.textBox4.Location = new System.Drawing.Point(572, 57);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(190, 32);
             this.textBox4.TabIndex = 1;
@@ -512,7 +512,7 @@ namespace POP
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(317, 57);
+            this.label5.Location = new System.Drawing.Point(470, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 0;
@@ -574,7 +574,7 @@ namespace POP
             this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox11.ForeColor = System.Drawing.Color.Red;
-            this.textBox11.Location = new System.Drawing.Point(1288, 264);
+            this.textBox11.Location = new System.Drawing.Point(1603, 264);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(191, 32);
             this.textBox11.TabIndex = 1;
@@ -590,7 +590,7 @@ namespace POP
             this.textBox10.Enabled = false;
             this.textBox10.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox10.ForeColor = System.Drawing.Color.Lime;
-            this.textBox10.Location = new System.Drawing.Point(1288, 208);
+            this.textBox10.Location = new System.Drawing.Point(1603, 208);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(191, 32);
             this.textBox10.TabIndex = 1;
@@ -602,7 +602,7 @@ namespace POP
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1186, 267);
+            this.label12.Location = new System.Drawing.Point(1501, 267);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 24);
             this.label12.TabIndex = 0;
@@ -616,7 +616,7 @@ namespace POP
             this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox8.Location = new System.Drawing.Point(1288, 85);
+            this.textBox8.Location = new System.Drawing.Point(1603, 85);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(191, 32);
             this.textBox8.TabIndex = 1;
@@ -628,7 +628,7 @@ namespace POP
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1186, 211);
+            this.label11.Location = new System.Drawing.Point(1501, 211);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 24);
             this.label11.TabIndex = 0;
@@ -638,7 +638,7 @@ namespace POP
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1186, 88);
+            this.label9.Location = new System.Drawing.Point(1501, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 24);
             this.label9.TabIndex = 0;
@@ -652,7 +652,7 @@ namespace POP
             this.textBox9.Enabled = false;
             this.textBox9.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox9.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox9.Location = new System.Drawing.Point(1288, 147);
+            this.textBox9.Location = new System.Drawing.Point(1603, 147);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(191, 32);
             this.textBox9.TabIndex = 1;
@@ -664,7 +664,7 @@ namespace POP
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1186, 150);
+            this.label10.Location = new System.Drawing.Point(1501, 150);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 24);
             this.label10.TabIndex = 0;
@@ -678,7 +678,7 @@ namespace POP
             this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(1288, 29);
+            this.textBox7.Location = new System.Drawing.Point(1603, 29);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(191, 32);
             this.textBox7.TabIndex = 1;
@@ -690,7 +690,7 @@ namespace POP
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1186, 32);
+            this.label8.Location = new System.Drawing.Point(1501, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 24);
             this.label8.TabIndex = 0;
@@ -699,7 +699,7 @@ namespace POP
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(1485, 12);
+            this.panel1.Location = new System.Drawing.Point(1800, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 292);
             this.panel1.TabIndex = 31;
@@ -708,7 +708,7 @@ namespace POP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1600, 1102);
+            this.ClientSize = new System.Drawing.Size(1915, 1012);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox2);

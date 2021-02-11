@@ -31,8 +31,10 @@ namespace POP
             
             CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmAllStatusBoard"}"));
             CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmInspection"}"));
+            
             CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmPerformance"}"));
 
+           
             //customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
         }
 

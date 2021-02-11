@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTab = new System.Windows.Forms.Panel();
+            this.btnInspection = new System.Windows.Forms.Button();
+            this.btnMachine = new System.Windows.Forms.Button();
             this.lblSelect = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMachine = new System.Windows.Forms.Button();
-            this.btnInspection = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.SuspendLayout();
@@ -47,10 +47,9 @@
             this.panel1.Controls.Add(this.pnlTab);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 25);
+            this.panel1.Size = new System.Drawing.Size(660, 25);
             this.panel1.TabIndex = 0;
             // 
             // pnlTab
@@ -63,8 +62,36 @@
             this.pnlTab.Controls.Add(this.label3);
             this.pnlTab.Location = new System.Drawing.Point(22, 0);
             this.pnlTab.Name = "pnlTab";
-            this.pnlTab.Size = new System.Drawing.Size(409, 25);
+            this.pnlTab.Size = new System.Drawing.Size(635, 25);
             this.pnlTab.TabIndex = 2;
+            // 
+            // btnInspection
+            // 
+            this.btnInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnInspection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInspection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInspection.Location = new System.Drawing.Point(148, 2);
+            this.btnInspection.Name = "btnInspection";
+            this.btnInspection.Size = new System.Drawing.Size(67, 25);
+            this.btnInspection.TabIndex = 9;
+            this.btnInspection.Text = "검사";
+            this.btnInspection.UseVisualStyleBackColor = false;
+            this.btnInspection.Click += new System.EventHandler(this.button_Click);
+            // 
+            // btnMachine
+            // 
+            this.btnMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
+            this.btnMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
+            this.btnMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMachine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMachine.Location = new System.Drawing.Point(80, 2);
+            this.btnMachine.Name = "btnMachine";
+            this.btnMachine.Size = new System.Drawing.Size(67, 25);
+            this.btnMachine.TabIndex = 8;
+            this.btnMachine.Text = "설비관리";
+            this.btnMachine.UseVisualStyleBackColor = false;
+            this.btnMachine.Click += new System.EventHandler(this.button_Click);
             // 
             // lblSelect
             // 
@@ -94,7 +121,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
             this.label3.Location = new System.Drawing.Point(-3, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(412, 1);
+            this.label3.Size = new System.Drawing.Size(638, 1);
             this.label3.TabIndex = 5;
             // 
             // label1
@@ -103,7 +130,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
             this.label1.Location = new System.Drawing.Point(0, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 1);
+            this.label1.Size = new System.Drawing.Size(228, 1);
             this.label1.TabIndex = 3;
             // 
             // label2
@@ -112,36 +139,8 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
             this.label2.Location = new System.Drawing.Point(429, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 1);
+            this.label2.Size = new System.Drawing.Size(228, 1);
             this.label2.TabIndex = 4;
-            // 
-            // btnMachine
-            // 
-            this.btnMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.btnMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
-            this.btnMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMachine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMachine.Location = new System.Drawing.Point(80, 2);
-            this.btnMachine.Name = "btnMachine";
-            this.btnMachine.Size = new System.Drawing.Size(67, 25);
-            this.btnMachine.TabIndex = 8;
-            this.btnMachine.Text = "설비관리";
-            this.btnMachine.UseVisualStyleBackColor = false;
-            this.btnMachine.Click += new System.EventHandler(this.button_Click);
-            // 
-            // btnInspection
-            // 
-            this.btnInspection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.btnInspection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
-            this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInspection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInspection.Location = new System.Drawing.Point(148, 2);
-            this.btnInspection.Name = "btnInspection";
-            this.btnInspection.Size = new System.Drawing.Size(67, 25);
-            this.btnInspection.TabIndex = 9;
-            this.btnInspection.Text = "검사";
-            this.btnInspection.UseVisualStyleBackColor = false;
-            this.btnInspection.Click += new System.EventHandler(this.button_Click);
             // 
             // CustomTabControl
             // 
@@ -150,7 +149,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "CustomTabControl";
-            this.Size = new System.Drawing.Size(453, 25);
+            this.Size = new System.Drawing.Size(660, 25);
             this.panel1.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
             this.ResumeLayout(false);

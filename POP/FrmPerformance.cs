@@ -39,8 +39,8 @@ namespace POP
         {
             InitializeComponent();
         }
-
         
+
         private void FrmInspection_Load(object sender, EventArgs e)
         {
             GetdgvColumn();

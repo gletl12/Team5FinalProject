@@ -426,7 +426,7 @@ namespace Util
         /// <param name="type"></param>
         public static void OpenCreateForm_POP(Form parent, Type type)
         {
-            Size formSize = new Size(1738, 927);
+            Size formSize = new Size(1915, 1012);
             
             foreach (Form form in Application.OpenForms)
             {
@@ -444,6 +444,7 @@ namespace Util
             frm.Size = formSize;
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }
+
 
 
         public static byte[] ImageToByte(Image img)

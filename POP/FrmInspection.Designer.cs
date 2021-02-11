@@ -63,9 +63,9 @@ namespace POP
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(15, 877);
+            this.button11.Location = new System.Drawing.Point(16, 889);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(474, 121);
+            this.button11.Size = new System.Drawing.Size(619, 121);
             this.button11.TabIndex = 25;
             this.button11.Text = "양식 다운로드";
             this.button11.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@ namespace POP
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1114, 877);
+            this.button12.Location = new System.Drawing.Point(1334, 889);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(474, 121);
+            this.button12.Size = new System.Drawing.Size(569, 121);
             this.button12.TabIndex = 26;
             this.button12.Text = "엑셀 다운로드";
             this.button12.UseVisualStyleBackColor = false;
@@ -92,9 +92,9 @@ namespace POP
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(566, 877);
+            this.button13.Location = new System.Drawing.Point(641, 889);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(474, 121);
+            this.button13.Size = new System.Drawing.Size(687, 121);
             this.button13.TabIndex = 27;
             this.button13.Text = "등록";
             this.button13.UseVisualStyleBackColor = false;
@@ -109,7 +109,7 @@ namespace POP
             this.dataGridView2.Location = new System.Drawing.Point(16, 230);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1572, 641);
+            this.dataGridView2.Size = new System.Drawing.Size(1887, 653);
             this.dataGridView2.TabIndex = 28;
             // 
             // groupBox2
@@ -124,7 +124,7 @@ namespace POP
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Location = new System.Drawing.Point(16, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1466, 140);
+            this.groupBox2.Size = new System.Drawing.Size(1887, 140);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색 조건";
@@ -144,7 +144,7 @@ namespace POP
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(1197, 31);
+            this.btnSearch.Location = new System.Drawing.Point(1615, 25);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(250, 99);
             this.btnSearch.TabIndex = 7;
@@ -196,7 +196,7 @@ namespace POP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.ClientSize = new System.Drawing.Size(1915, 1012);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button11);
@@ -204,7 +204,6 @@ namespace POP
             this.Controls.Add(this.button13);
             this.Controls.Add(this.dataGridView2);
             this.Name = "FrmInspection";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

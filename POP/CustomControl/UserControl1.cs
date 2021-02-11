@@ -16,10 +16,11 @@ namespace POP
 {
     public partial class UserControl1 : UserControl
     {
-        FrmAction frm;
+        //FrmAction frm;
 
         public FrmPerformance ControlMDI { get; set; }
         public FrmAction Frm { get; set; }
+        
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
@@ -62,40 +63,35 @@ namespace POP
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
+            
             string server = ConfigurationManager.AppSettings["MachineEXE"];
             
             Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port} {AllItemNum}");
             process_id = pro.Id;
-            //Machine.Service1 ser = new Service1();
-            //ser.Total(200);
 
-           
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
-            frm.Show();
-            frm.Hide();
-
+            //F_ASSY
+            //H_ASSY_01
+            //MF01
+            //MF02
+            //OS"
+            Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
+            Frm.MdiParent = ControlMDI.ParentForm;
+            Frm.Show();
+            Frm.Hide();
             IsTaskEnable = true;
+
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            //CommonUtil.OpenCreateFormPOP<FrmAction>(true, ControlMDI.ParentForm);
-            //FrmAction frm = new FrmAction();
-            frm.MdiParent = ControlMDI.ParentForm;
-      
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-
-
-
-
+            //Frm.MdiParent = ControlMDI.ParentForm;
+            Frm.Show();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            frm.bExit = true;
-            frm.Close();
+            Frm.bExit = true;
+            Frm.Close();
             IsTaskEnable = false;
 
             foreach (Process process in Process.GetProcesses())

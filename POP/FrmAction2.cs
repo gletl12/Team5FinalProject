@@ -18,12 +18,11 @@ using System.Net;
 using log4net.Core;
 using Machine;
 
+
 namespace POP
 {
-    public partial class FrmAction : POP.BaseForm
+    public partial class FrmAction2 : POP.BaseForm
     {
-        TcpControl client;
-        NetworkStream recvData;
         SqlConnection conn;
 
         string hostIP;
@@ -39,14 +38,17 @@ namespace POP
 
         LoggingUtility _logging;
         public LoggingUtility Log { get { return _logging; } }
-       
+
 
         ThreadPLCTask m_thread;
         int timer_CONNECT = 300;
         int timer_KEEP_ALIVE = 300;
         int timer_READ_PLC = 300;
-        
-        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
+        public FrmAction2()
+        {
+
+        }
+        public FrmAction2(string taskid, string ip, string port, string Machinname, string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
         {
             InitializeComponent();
             textBox5.Text = Machinname;//머신네임
@@ -56,7 +58,7 @@ namespace POP
             textBox9.Text = WorkItem;//작업물건
             hostIP = ip;
             hostPort = int.Parse(port);
-            //taskID = int.Parse(taskid.Replace("PLC_", ""));
+            
             pgmID = taskid;
 
             _logging = new LoggingUtility(pgmID, Level.Debug, 30);
@@ -80,15 +82,15 @@ namespace POP
                 clientIP = locals[1].ToString();
             }
         }
-        private void FrmAction_Load(object sender, EventArgs e)
-        {
 
+        private void FrmAction2_Load(object sender, EventArgs e)
+        {
             button1.Enabled = false;
             button4.Enabled = false;
             button2.Enabled = false;
 
-          
-                
+
+
 
             try
             {
@@ -109,72 +111,13 @@ namespace POP
             }
 
 
-
-        }
-        /// <summary>
-        /// 데이터를 수신받았을때 UI 컨트롤에 데이터 표현
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void M_thread_ReadData(object sender, ReadDataEventArgs args)
-        {
-            string info = args.Data;
-            string[] arrData1 = info.Split('|');
-            Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}%");
-
-            if (logVisible)
-            {
-                //if (listBox1.Items.Count > 50)
-                //    listBox1.Items.Clear();
-
-                //this.Invoke((MethodInvoker)(() => listBox1.Items.Add($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {args.Data}")));
-               // this.Invoke((MethodInvoker)(() => listBox1.SelectedIndex = listBox1.Items.Count - 1));
-            }
-            
-            this.Invoke((MethodInvoker)(() =>      txtReadPLC.Text = args.Data         ));
-            this.Invoke(new Action(() =>
-            {
-                textBox27.Text = arrData1[0];
-                textBox39.Text = arrData1[1];
-                textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
-                textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
-
-                progressBar1.Value= int.Parse(arrData1[2]);
-            }));
         }
 
-
-
-        private void FrmAction_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!bExit)
-            {
-                this.Hide();
-                e.Cancel = true;
-            }
-        }
-
-        private void FrmAction_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //로그 레퍼지토리 삭제
-            Log.RemoveRepository(pgmID);
-
-            //DB접속 종료
-            conn.Close();
-
-            //소켓 종료
-            m_thread.ThreadStop();
-        }
-
-
-
-
-        private void textBox27_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
 
-        //작업중지
         private void button3_Click(object sender, EventArgs e)
         {
             button1.Enabled = true;
@@ -183,27 +126,21 @@ namespace POP
             button2.Enabled = true;
             //timer_Connects.Stop();
         }
-        //작업다시시작
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
             button3.Enabled = true;
             button4.Enabled = false;
             button2.Enabled = false;
-           // timer_Connects.Start();
+            // timer_Connects.Start();
         }
 
-        private void lblVersion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
-        /// <summary>
-        /// 기계와의 연결상태에 따라서 UI 컨트롤에 표시
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void timer_Connects_Tick(object sender, EventArgs e)
         {
             try
@@ -223,15 +160,47 @@ namespace POP
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void FrmAction2_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //로그 레퍼지토리 삭제
+            Log.RemoveRepository(pgmID);
 
+            //DB접속 종료
+            conn.Close();
+
+            //소켓 종료
+            m_thread.ThreadStop();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void FrmAction2_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!bExit)
+            {
+                this.Hide();
+                e.Cancel = true;
+            }
+        }
+        private void M_thread_ReadData(object sender, ReadDataEventArgs args)
+        {
+            string info = args.Data;
+            string[] arrData1 = info.Split('|');
+            Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}%");
 
+            if (logVisible)
+            {
+                
+            }
+
+            this.Invoke((MethodInvoker)(() => txtReadPLC.Text = args.Data));
+            this.Invoke(new Action(() =>
+            {
+                textBox27.Text = arrData1[0];
+                textBox39.Text = arrData1[1];
+                textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
+                textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
+
+                progressBar1.Value = int.Parse(arrData1[2]);
+            }));
         }
     }
-    
 }
