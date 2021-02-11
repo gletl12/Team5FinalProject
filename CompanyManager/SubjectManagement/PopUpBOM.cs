@@ -17,7 +17,9 @@ namespace CompanyManager
         public List<CodeVO> codeAllList { get; set; } //콤보박스 바인딩 데이터
         public EmployeeVO LoginInfo { get; set; }
         public List<BOMVO> InsertList { get; set; } 
-        public BOMVO InsertInfo { get; set; } 
+        public BOMVO InsertInfo { get; set; }
+
+        string[] sort = "FP/SP/CI/RM/SM".Split('/');
 
         public PopUpBOM(bool copy = false)
         {
@@ -64,36 +66,23 @@ namespace CompanyManager
         private void PopUpBOM_Load(object sender, EventArgs e)
         {
             //콤보박스 바인딩 기본값 설정
-            cboParentsubject.DisplayMember = "name";
-            cbosubject.DisplayMember = "name";
-            cbouse.DisplayMember = "name";
-            cboauto.DisplayMember = "name";
-            cboplan.DisplayMember = "name";
-
-            cboParentsubject.ValueMember = "code";
-            cbosubject.ValueMember = "code";
-            cbouse.ValueMember = "code";
-            cboauto.ValueMember = "code";
-            cboplan.ValueMember = "code";
+            SetCbo();
 
             CodeVO co = new CodeVO { code = "", name = "" };
-            CodeVO co2 = new CodeVO { code = "-", name = "-" };
-            List<CodeVO> temp = (from code in codeAllList
-                                 where code.category.Equals("item")
-                                 select code).ToList();
-            temp.Insert(0, co);
-            cbosubject.DataSource = temp.ConvertAll(p => p);
+            CodeVO co2 = new CodeVO { code = "-", name = "-" , category = "-"};
+            List<CodeVO> temp = temp = (from code in codeAllList
+                                        where code.category.Equals("FP") ||
+                                              code.category.Equals("SP") ||
+                                              code.category.Equals("CI")
+                                        select code).ToList();
 
-            temp = (from code in codeAllList
-                    where code.category.Equals("BOM_Item")
-                    select code).ToList();
             temp.Insert(0, co);
             temp.Insert(1, co2);
             cboParentsubject.DataSource = temp.ConvertAll(p => p);
 
             temp = (from code in codeAllList
-                                 where code.category.Equals("USE_FLAG")
-                                 select code).ToList();
+                    where code.category.Equals("USE_FLAG")
+                    select code).ToList();
             temp.Insert(0, co);
             cbouse.DataSource = temp.ConvertAll(p => p);
             cboauto.DataSource = temp.ConvertAll(p => p);
@@ -107,11 +96,11 @@ namespace CompanyManager
             if (InsertInfo != null)
             {
                 cboParentsubject.SelectedIndex = FindSelectedIndex(cboParentsubject, InsertInfo.bom_parent_id);
-                cbosubject.SelectedIndex = FindSelectedIndex(cbosubject, InsertInfo.item_id.Trim().StartsWith("└") ?  InsertInfo.item_id.Trim().Substring(1).Trim() : InsertInfo.item_id.Trim());
+                cbosubject.SelectedIndex = FindSelectedIndex(cbosubject, InsertInfo.item_id.Trim().StartsWith("└") ? InsertInfo.item_id.Trim().Substring(1).Trim() : InsertInfo.item_id.Trim());
                 txtuseqty.Text = InsertInfo.bom_use_qty.ToString();
                 dtpstart.Value = InsertInfo.start_date;
                 dtpend.Value = InsertInfo.end_date;
-                cbouse.SelectedIndex = FindSelectedIndex(cbouse,InsertInfo.bom_use);
+                cbouse.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.bom_use);
                 cboauto.SelectedIndex = FindSelectedIndex(cboauto, InsertInfo.auto_deduction);
                 cboplan.SelectedIndex = FindSelectedIndex(cboplan, InsertInfo.plan_use);
                 txtcomment.Text = InsertInfo.bom_comment;
@@ -123,6 +112,22 @@ namespace CompanyManager
 
 
         }
+
+        private void SetCbo()
+        {
+            cboParentsubject.DisplayMember = "name";
+            cbosubject.DisplayMember = "name";
+            cbouse.DisplayMember = "name";
+            cboauto.DisplayMember = "name";
+            cboplan.DisplayMember = "name";
+
+            cboParentsubject.ValueMember = "code";
+            cbosubject.ValueMember = "code";
+            cbouse.ValueMember = "code";
+            cboauto.ValueMember = "code";
+            cboplan.ValueMember = "code";
+        }
+
         private int FindSelectedIndex(ComboBox cbo, string item)
         {
             //빈값이면 리턴0
@@ -227,6 +232,60 @@ namespace CompanyManager
                 {
                     e.Handled = true;
                 }
+            }
+        }
+
+        private void cboParentsubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<CodeVO> temp = null;
+            cbosubject.DataSource = temp;
+            CodeVO co = new CodeVO { code = "", name = "" };
+            SetCbo();
+            //"FP/SP/CI/RM/SM"
+
+            if (((CodeVO)cboParentsubject.SelectedItem).category == "-")
+            {
+                //제품을 선택했을때
+                temp = temp = (from code in codeAllList
+                               where code.category.Equals(sort[0]) ||
+                                     code.category.Equals(sort[1]) ||
+                                     code.category.Equals(sort[2]) ||
+                                     code.category.Equals(sort[3]) ||
+                                     code.category.Equals(sort[4])
+                               select code).ToList();
+                temp.Insert(0,co);
+                cbosubject.DataSource = temp.ConvertAll(p => p);
+            }
+            else if(((CodeVO)cboParentsubject.SelectedItem).category == sort[0])
+            {
+                //제품을 선택했을때
+                temp = temp = (from code in codeAllList
+                               where code.category.Equals(sort[1]) ||
+                                     code.category.Equals(sort[2]) ||
+                                     code.category.Equals(sort[3]) ||
+                                     code.category.Equals(sort[4])
+                               select code).ToList();
+                temp.Insert(0, co);
+                cbosubject.DataSource = temp.ConvertAll(p => p);
+            }
+            else if (((CodeVO)cboParentsubject.SelectedItem).category == sort[1])
+            {
+                temp = temp = (from code in codeAllList
+                               where code.category.Equals(sort[2]) ||
+                                     code.category.Equals(sort[3]) ||
+                                     code.category.Equals(sort[4])
+                               select code).ToList();
+                temp.Insert(0, co);
+                cbosubject.DataSource = temp.ConvertAll(p => p);
+            }
+            else if (((CodeVO)cboParentsubject.SelectedItem).category == sort[2])
+            {
+                temp = temp = (from code in codeAllList
+                               where code.category.Equals(sort[3]) ||
+                                     code.category.Equals(sort[4])
+                               select code).ToList();
+                temp.Insert(0, co);
+                cbosubject.DataSource = temp.ConvertAll(p => p);
             }
         }
     }

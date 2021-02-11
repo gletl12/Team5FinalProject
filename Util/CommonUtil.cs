@@ -419,6 +419,39 @@ namespace Util
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }
 
+        /// <summary>
+        /// parent 폼 받아서 type형식 폼 mdi로열기
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="type"></param>
+        public static void OpenCreateForm_POP(Form parent, Type type)
+        {
+            Size formSize = new Size(1168, 647);
+
+            if (parent.WindowState == FormWindowState.Maximized)
+            {
+                formSize = new Size(1738, 927);
+            }
+
+
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == type)
+                {
+                    form.Size = formSize;
+                    form.Activate();
+                    return;
+                }
+            }
+            Form frm = ((Form)Activator.CreateInstance(type));
+            frm.MdiParent = parent;
+            frm.Show();
+            frm.Location = new Point(0, 0);
+            frm.Size = formSize;
+            //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
+        }
+
 
         public static byte[] ImageToByte(Image img)
         {

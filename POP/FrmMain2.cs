@@ -27,6 +27,10 @@ namespace POP
         {
 
             customTabControl1.InsertTab("메인화면", "FrmPerformance");
+            customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
+            customTabControl1.InsertTab("검사", "FrmInspection");
+            customTabControl1.InsertTab("최종조립반", "FrmAction");
+            //customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
 
 
 
@@ -35,7 +39,7 @@ namespace POP
             FrmPerformance frm = new FrmPerformance();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
-            frm.Show();
+            //frm.Show();
 
             lbl1.Visible = true;
             lbl2.Visible = false;
@@ -56,7 +60,7 @@ namespace POP
             //frm.MdiParent = this;
             //frm.Dock = DockStyle.Fill;
             //frm.Show();
-            CommonUtil.OpenCreateFormPOP<FrmPerformance>(true, this);
+            //CommonUtil.OpenCreateFormPOP<FrmPerformance>(true, this);
             lbl1.Visible = true;
             lbl2.Visible = false;
             lbl3.Visible = false;
@@ -74,7 +78,7 @@ namespace POP
             //frm.MdiParent = this;
             //frm.Dock = DockStyle.Fill;
             //frm.Show();
-            CommonUtil.OpenCreateFormPOP<FrmAllStatusBoard>(true, this);
+            //CommonUtil.OpenCreateFormPOP<FrmAllStatusBoard>(true, this);
             lbl1.Visible = false;
             lbl2.Visible = true;
             lbl3.Visible = false;
@@ -96,7 +100,7 @@ namespace POP
             //frm.MdiParent = this;
             //frm.Dock = DockStyle.Fill;
             //frm.Show();
-            CommonUtil.OpenCreateFormPOP<FrmInspection>(true, this);
+            //CommonUtil.OpenCreateFormPOP<FrmInspection>(true, this);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = true;
@@ -110,7 +114,7 @@ namespace POP
         private void button2_Click(object sender, EventArgs e)
         {
             
-            CommonUtil.OpenCreateFormPOP<FrmAction>(true,this);
+            //CommonUtil.OpenCreateFormPOP<FrmAction>(true,this);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = false;
@@ -124,7 +128,7 @@ namespace POP
 
         private void button4_Click(object sender, EventArgs e)
         {
-            CommonUtil.OpenCreateFormPOP<FrmAction>(true);
+            //CommonUtil.OpenCreateFormPOP<FrmAction>(true);
             lbl1.Visible = false;
             lbl2.Visible = false;
             lbl3.Visible = false;

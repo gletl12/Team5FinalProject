@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net.Filter;
 using System.Security.Cryptography.X509Certificates;
+using Util;
+using System.Reflection;
 
 namespace POP
 {   
@@ -40,6 +42,14 @@ namespace POP
                 //열리지 않은 폼이면
                 OpenForms.Add(menuName, formName);
                 CreateTab(menuName, formName);
+
+
+                //폼생성
+                string appName = Assembly.GetEntryAssembly().GetName().Name;
+                Type frmType = Type.GetType($"{appName}.{formName}");
+
+                CommonUtil.OpenCreateForm_POP(ParentForm, frmType);
+
             }
             
             ((Button)tabList[menuName]).PerformClick();
