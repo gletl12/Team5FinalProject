@@ -80,6 +80,8 @@ namespace POP
                 clientIP = locals[1].ToString();
             }
         }
+
+
         private void FrmAction_Load(object sender, EventArgs e)
         {
 

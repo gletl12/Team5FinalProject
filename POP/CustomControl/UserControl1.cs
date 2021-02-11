@@ -18,6 +18,8 @@ namespace POP
     {
         //FrmAction frm;
 
+        public event EventHandler RouteStart;
+
         public FrmPerformance ControlMDI { get; set; }
         public FrmAction Frm { get; set; }
         
@@ -74,12 +76,16 @@ namespace POP
             //MF01
             //MF02
             //OS"
+
             Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
             Frm.MdiParent = ControlMDI.ParentForm;
             Frm.Location = new Point(0, 0);
             Frm.Show();
             Frm.Hide();
+
             IsTaskEnable = true;
+
+            RouteStart(sender, null);
 
         }
 
@@ -87,6 +93,7 @@ namespace POP
         {
             //Frm.MdiParent = ControlMDI.ParentForm;
             Frm.Show();
+            Frm.Activate();
         }
 
         private void btnStop_Click(object sender, EventArgs e)

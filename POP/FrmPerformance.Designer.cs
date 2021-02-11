@@ -267,7 +267,7 @@ namespace POP
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1575, 666);
+            this.tabPage2.Size = new System.Drawing.Size(1890, 678);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "불량 현황";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -279,7 +279,7 @@ namespace POP
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1569, 660);
+            this.dataGridView2.Size = new System.Drawing.Size(1884, 672);
             this.dataGridView2.TabIndex = 27;
             // 
             // tabPage3
@@ -287,7 +287,7 @@ namespace POP
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1575, 666);
+            this.tabPage3.Size = new System.Drawing.Size(1890, 678);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "투입 현황";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@ namespace POP
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1575, 666);
+            this.dataGridView3.Size = new System.Drawing.Size(1890, 678);
             this.dataGridView3.TabIndex = 27;
             // 
             // groupBox2
