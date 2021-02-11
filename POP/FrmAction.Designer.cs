@@ -32,7 +32,7 @@ namespace POP
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -97,7 +97,6 @@ namespace POP
             this.lblIP = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.txtReadPLC = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,9 +117,9 @@ namespace POP
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(1302, 38);
+            this.listBox1.Location = new System.Drawing.Point(1130, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 746);
+            this.listBox1.Size = new System.Drawing.Size(458, 746);
             this.listBox1.TabIndex = 1;
             // 
             // panel1
@@ -129,27 +128,28 @@ namespace POP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Location = new System.Drawing.Point(12, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1284, 100);
+            this.panel1.Size = new System.Drawing.Size(1111, 100);
             this.panel1.TabIndex = 2;
             // 
-            // textBox7
+            // lblTitle
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.BackColor = System.Drawing.Color.Gray;
-            this.textBox7.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(876, 36);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(298, 39);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "ASSY/조립공정";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(790, 37);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(297, 37);
+            this.lblTitle.TabIndex = 14;
+            this.lblTitle.Text = "label1";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // textBox6
             // 
@@ -157,7 +157,7 @@ namespace POP
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox6.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(652, 36);
+            this.textBox6.Location = new System.Drawing.Point(566, 36);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(224, 39);
             this.textBox6.TabIndex = 1;
@@ -196,9 +196,10 @@ namespace POP
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 763);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 835);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1405, 165);
+            this.panel2.Size = new System.Drawing.Size(1600, 165);
             this.panel2.TabIndex = 2;
             // 
             // button5
@@ -231,6 +232,7 @@ namespace POP
             this.button3.TabIndex = 3;
             this.button3.Text = "작업중지";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -253,6 +255,7 @@ namespace POP
             this.button1.TabIndex = 3;
             this.button1.Text = "작업시작";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -271,7 +274,6 @@ namespace POP
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(558, 291);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button7
             // 
@@ -447,7 +449,7 @@ namespace POP
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(239, 64);
             this.textBox39.TabIndex = 1;
-            this.textBox39.Text = "0100";
+            this.textBox39.Text = "0";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox18
@@ -473,7 +475,7 @@ namespace POP
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(239, 64);
             this.textBox17.TabIndex = 1;
-            this.textBox17.Text = "0100";
+            this.textBox17.Text = "0";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox16
@@ -535,7 +537,7 @@ namespace POP
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(239, 64);
             this.textBox27.TabIndex = 1;
-            this.textBox27.Text = "0100";
+            this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox14
@@ -547,7 +549,7 @@ namespace POP
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(239, 64);
             this.textBox14.TabIndex = 1;
-            this.textBox14.Text = "0100";
+            this.textBox14.Text = "0";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel5
@@ -582,7 +584,7 @@ namespace POP
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(258, 118);
             this.textBox21.TabIndex = 1;
-            this.textBox21.Text = "0100";
+            this.textBox21.Text = "0";
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
@@ -600,7 +602,6 @@ namespace POP
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(547, 78);
             this.panel6.TabIndex = 2;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label3
             // 
@@ -771,7 +772,6 @@ namespace POP
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(547, 74);
             this.panel8.TabIndex = 2;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // button6
             // 
@@ -804,7 +804,7 @@ namespace POP
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(202, 39);
             this.textBox25.TabIndex = 1;
-            this.textBox25.Text = "110 분";
+            this.textBox25.Text = "0 분";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel9
@@ -818,7 +818,6 @@ namespace POP
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(547, 79);
             this.panel9.TabIndex = 2;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // progressBar1
             // 
@@ -850,7 +849,6 @@ namespace POP
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(547, 64);
             this.panel10.TabIndex = 2;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // textBox30
             // 
@@ -876,11 +874,15 @@ namespace POP
             this.textBox29.Text = "00 분";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // timer_Connects
+            // 
+            this.timer_Connects.Tick += new System.EventHandler(this.timer_Connects_Tick);
+            // 
             // lblState
             // 
             this.lblState.BackColor = System.Drawing.Color.Yellow;
             this.lblState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblState.Location = new System.Drawing.Point(94, 9);
+            this.lblState.Location = new System.Drawing.Point(938, 9);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(20, 23);
             this.lblState.TabIndex = 8;
@@ -890,7 +892,7 @@ namespace POP
             this.lblIP.AutoSize = true;
             this.lblIP.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblIP.Location = new System.Drawing.Point(163, 9);
+            this.lblIP.Location = new System.Drawing.Point(976, 14);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(103, 14);
             this.lblIP.TabIndex = 11;
@@ -901,7 +903,7 @@ namespace POP
             this.lblPort.AutoSize = true;
             this.lblPort.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPort.Location = new System.Drawing.Point(309, 9);
+            this.lblPort.Location = new System.Drawing.Point(1089, 14);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(35, 14);
             this.lblPort.TabIndex = 12;
@@ -910,33 +912,23 @@ namespace POP
             // txtReadPLC
             // 
             this.txtReadPLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReadPLC.Location = new System.Drawing.Point(404, 7);
+            this.txtReadPLC.Location = new System.Drawing.Point(1165, 3);
             this.txtReadPLC.Name = "txtReadPLC";
             this.txtReadPLC.Size = new System.Drawing.Size(190, 32);
             this.txtReadPLC.TabIndex = 13;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(623, 7);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(117, 61);
-            this.lblTitle.TabIndex = 14;
-            this.lblTitle.Text = "label1";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblVersion
             // 
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVersion.BackColor = System.Drawing.Color.DimGray;
             this.lblVersion.ForeColor = System.Drawing.Color.White;
-            this.lblVersion.Location = new System.Drawing.Point(763, 9);
+            this.lblVersion.Location = new System.Drawing.Point(1361, 9);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(227, 26);
             this.lblVersion.TabIndex = 15;
             this.lblVersion.Text = "Version";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
             // FrmAction
             // 
@@ -944,7 +936,6 @@ namespace POP
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1600, 1000);
             this.Controls.Add(this.lblVersion);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtReadPLC);
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblIP);
@@ -1011,7 +1002,6 @@ namespace POP
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox9;

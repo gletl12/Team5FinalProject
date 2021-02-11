@@ -11,7 +11,7 @@ using Util;
 
 namespace Machine
 {
-    class Program
+    public class Program
     {
         //private static LoggingUtility _log = new LoggingUtility("Log_Machine", Level.Error, 30);
         //public static LoggingUtility Log { get { return _log; } }
@@ -33,6 +33,7 @@ namespace Machine
             service.taskID = args[0];
             service.hostIP = args[1];
             service.hostPort = int.Parse(args[2]);
+            service.Total = int.Parse(args[3]);
             service.OnStart();
 
             Console.ReadLine();
@@ -54,6 +55,7 @@ namespace Machine
         public string taskID { get; set; }
         public string hostIP { get; set; }
         public int hostPort { get; set; }
+        public int Total { get; set; }
 
         public void OnStart()
         {
@@ -78,30 +80,67 @@ namespace Machine
                 tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 stream = tc.GetStream();
 
-                timer1 = new Timer(3000);
+                timer1 = new Timer(300);
                 timer1.Elapsed += Timer1_Elapsed;
                 timer1.Enabled = true;
                 timer1.AutoReset = true;
                 // await Task.Factory.StartNew(AsyncTcpProcess, tc);
             }
         }
-
+        int success = 0;
+        int fail = 0;
+        int process;
+        //int total;
+        
+        //public void Total(int total)
+        //{
+        //    this.total = total;
+        //}
+        
+        
         private void Timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            int Produce = rnd.Next(0, 100);
+
+            if (Produce < 97)
+            {
+                success += 1;
+            }
+            else
+            {
+                fail += 1;
+            }
+            process = ((success + fail) * 100) / Total;
+            string msg = $"{success}|{fail}|{process}|";
+
+            byte[] buff = Encoding.Default.GetBytes(msg);
+            stream.Write(buff, 0, buff.Length);
+            //stream.Flush();
+            Console.WriteLine(msg);
+
+            if (Total <= success + fail)
+            {
+                timer1.Stop();
+                success = fail = 0;
+                process = 0;
+            }
 
             //50|2|1
-            string msg = $"{rnd.Next(1, 77)}|{rnd.Next(3, 5)}|{rnd.Next(0, 2)}";
-            byte[] buff = Encoding.Default.GetBytes(msg);
+            //string msg = $"{rnd.Next(1, 77)}|{rnd.Next(3, 5)}|{rnd.Next(0, 2)}";
+            //byte[] buff = Encoding.Default.GetBytes(msg);
 
-            stream.Write(buff, 0, buff.Length);
-            Console.WriteLine(msg);
-            Log.WriteInfo("데이터전송: " + msg);
+            //stream.Write(buff, 0, buff.Length);
+            //Console.WriteLine(msg);
+            //Log.WriteInfo("데이터전송: " + msg);
+
         }
 
         public void OnStop()
         {
             listener.Stop();
         }
+   
     }
+    
 }

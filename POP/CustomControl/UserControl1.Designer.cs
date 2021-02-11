@@ -37,6 +37,7 @@ namespace POP
             this.lblIP = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.lblRemark = new System.Windows.Forms.Label();
+            this.lblOrderNum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLog
@@ -115,10 +116,20 @@ namespace POP
             this.lblRemark.TabIndex = 35;
             this.lblRemark.Text = "label1";
             // 
+            // lblOrderNum
+            // 
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Location = new System.Drawing.Point(21, 119);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(0, 12);
+            this.lblOrderNum.TabIndex = 36;
+            this.lblOrderNum.Visible = false;
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.lblRemark);
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblIP);
@@ -145,5 +156,6 @@ namespace POP
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblRemark;
+        private System.Windows.Forms.Label lblOrderNum;
     }
 }

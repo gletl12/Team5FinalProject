@@ -32,16 +32,16 @@ namespace POP
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskControl));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRemark = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
             this.lblTaskID = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnStop = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnShow = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.chkEnable = new System.Windows.Forms.CheckBox();
+            this.lblRemark = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,17 +74,7 @@ namespace POP
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(737, 60);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblRemark
-            // 
-            this.lblRemark.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRemark.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblRemark.Location = new System.Drawing.Point(289, 1);
-            this.lblRemark.Name = "lblRemark";
-            this.lblRemark.Size = new System.Drawing.Size(175, 58);
-            this.lblRemark.TabIndex = 4;
-            this.lblRemark.Text = "Remark";
-            this.lblRemark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lblPort
             // 
@@ -119,27 +109,6 @@ namespace POP
             this.lblTaskID.Text = "TaskID";
             this.lblTaskID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.Green;
-            this.btnStart.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.ImageIndex = 0;
-            this.btnStart.ImageList = this.imageList1;
-            this.btnStart.Location = new System.Drawing.Point(471, 4);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(52, 52);
-            this.btnStart.TabIndex = 5;
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "start.png");
-            this.imageList1.Images.SetKeyName(1, "stop.png");
-            // 
             // btnStop
             // 
             this.btnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -153,6 +122,13 @@ namespace POP
             this.btnStop.TabIndex = 6;
             this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "start.png");
+            this.imageList1.Images.SetKeyName(1, "stop.png");
             // 
             // btnShow
             // 
@@ -185,6 +161,31 @@ namespace POP
             this.chkEnable.Size = new System.Drawing.Size(15, 26);
             this.chkEnable.TabIndex = 0;
             this.chkEnable.UseVisualStyleBackColor = true;
+            // 
+            // lblRemark
+            // 
+            this.lblRemark.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRemark.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblRemark.Location = new System.Drawing.Point(289, 1);
+            this.lblRemark.Name = "lblRemark";
+            this.lblRemark.Size = new System.Drawing.Size(175, 58);
+            this.lblRemark.TabIndex = 4;
+            this.lblRemark.Text = "Remark";
+            this.lblRemark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnStart
+            // 
+            this.btnStart.BackColor = System.Drawing.Color.Green;
+            this.btnStart.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.ImageIndex = 0;
+            this.btnStart.ImageList = this.imageList1;
+            this.btnStart.Location = new System.Drawing.Point(471, 4);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(52, 52);
+            this.btnStart.TabIndex = 5;
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // TaskControl
             // 
