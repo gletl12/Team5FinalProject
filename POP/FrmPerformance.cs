@@ -12,6 +12,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Configuration;
 using System.Globalization;
+using System.Reflection;
 
 namespace POP
 {
@@ -23,8 +24,34 @@ namespace POP
         int PagesCount = 1;
         int PageRows = 5;
 
-        
-        
+        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, int AllItemNum, string WorkItem, string OrderNum , Form parent)
+        {
+            Size formSize = new Size(1915, 1012);
+
+            //string appName = Assembly.GetEntryAssembly().GetName().Name;
+            //Type type = Type.GetType($"{appName}.FrmAction");
+
+
+            //foreach (Form form in Application.OpenForms)
+            //{
+            //    if (form.GetType() == type)
+            //    {
+            //        form.Size = formSize;
+            //        form.Activate();
+            //        return;
+            //    }
+            //}
+
+            //FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
+
+            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName,  AllItemNum,  WorkItem,  OrderNum);
+            frm.MdiParent = parent;
+            frm.Show();
+            frm.Location = new Point(0, 0);
+            frm.Size = formSize;
+            //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
+        }
+
 
         List<WorkOrderVO> list;
         List<WorkOrderVO> Templist;
@@ -34,13 +61,16 @@ namespace POP
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
 
-        
+
+
+        UserControl1 ctrl;
         public FrmPerformance()
         {
             InitializeComponent();
+           
         }
-
         
+
         private void FrmInspection_Load(object sender, EventArgs e)
         {
             GetdgvColumn();
@@ -58,10 +88,10 @@ namespace POP
         {
             for (int i = 0; i < tasks.Count; i++)
             {
-                UserControl1 ctrl = new UserControl1();
+                ctrl = new UserControl1();
 
                 ctrl.Name = $"taskControl{i}";
-                ctrl.Location = new Point(0,0); 
+                ctrl.Location = new Point(0, 0);
                 ctrl.Size = new Size(300, 200);
 
                 ctrl.Task_ID = tasks[i].taskID;
@@ -69,10 +99,30 @@ namespace POP
                 ctrl.Task_Port = tasks[i].hostPort;
                 ctrl.Task_Remark = tasks[i].remark;
 
-                ctrl.IsTaskEnable = false;
 
+                ctrl.IsTaskEnable = false;
+                ctrl.ControlMDI = this;
+
+                ctrl.RouteStart += Ctrl_RouteStart;
                 panel1.Controls.Add(ctrl);
             }
+        }
+
+        private void Ctrl_RouteStart(object sender, EventArgs e)
+        {
+            // OpenCreateForm_POP(ctrl.Task_ID,);
+
+            //foreach (Control ctrl in MdiParent.Controls)
+            //{
+            //    if (ctrl is CustomTabControl ta)
+            //    {
+
+            //        ta.InsertTab(MdiParent,);
+            //    }
+            //}
+            
+          
+
         }
 
         List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
@@ -156,6 +206,12 @@ namespace POP
                             if (taskCtrl.Task_ID.Equals(tasks[i].taskID))
                             {
                                 taskCtrl.Visible = true;
+
+                                taskCtrl.AllItemNum= Convert.ToInt32(dataGridView1[2, rowIndex].Value);//총오더량
+                                taskCtrl.Machinname = Convert.ToString(dataGridView1[13, rowIndex].Value);
+                                taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
+                                taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
+                                taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
                             }
                         }
                     }

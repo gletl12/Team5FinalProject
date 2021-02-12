@@ -20,7 +20,7 @@ namespace CompanyManager
         {
             InitializeComponent();
             CommonUtil.SetInitGridView(dgvWorkOrder);
-            CommonUtil.AddGridCheckColumn(dgvWorkOrder, "chk");
+            CommonUtil.SetDGVDesign_CheckBox(dgvWorkOrder);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "작업지시번호", "wo_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "계획시작일", "wo_sdate", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "지시일", "ins_date", 80, true, DataGridViewContentAlignment.MiddleCenter);
@@ -30,8 +30,8 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "설비명", "machine_name", 120);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "상태", "wo_state", 60, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "지시수량", "wo_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvWorkOrder, "양품수량", "wo_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvWorkOrder, "취소수량", "wo_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvWorkOrder, "양품수량", "good_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgvWorkOrder, "취소수량", "bad_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvWorkOrder, "완료(예정)일", "wo_edate", 160, true, DataGridViewContentAlignment.MiddleCenter);
 
 

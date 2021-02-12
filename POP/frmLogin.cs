@@ -24,7 +24,7 @@ namespace POP
 
         // 폼 로드 이벤트 컨트롤 상태 변경
         private void frmLogin_Load(object sender, EventArgs e)
-        {
+        {           
             UpdateControls();
             //titleBar1.HeaderText = "로그인";
             txtID.Text = "6";
@@ -76,7 +76,7 @@ namespace POP
             }
             if (txtID.Text == "6")//전체현황판
             {
-                FrmMain2 frm = new FrmMain2();
+                FrmMain2 frm = new FrmMain2("차경훈");
                 frm.Show();
             }
 

@@ -16,7 +16,7 @@ namespace CompanyManager
             InitializeComponent();
             CommonUtil.SetInitGridView(dataGridView2);
             CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridCheckColumn(dataGridView2, "");
+            CommonUtil.SetDGVDesign_CheckBox(dataGridView2);
             CommonUtil.AddGridTextColumn(dataGridView2, "주문번호", "CompanyName", 130,true,DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView2, "품목", "CompanyName", 100);
             CommonUtil.AddGridTextColumn(dataGridView2, "품명", "CompanyName", 120);
@@ -29,7 +29,6 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dataGridView2, "비고", "CompanyName", 130, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dataGridView2, "이동수량", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleRight);
 
-            checkBox1.Location = new Point(dataGridView2.Location.X + 54, dataGridView2.Location.Y + 5);
 
             dataGridView2.Rows.Add(null,"WO2021012501","CHAIR_01","나무 1인용 의자","5 X 12 X 24 inch","2020-02-01", "200","Halb 창고_01","200","제품창고","","");
         }

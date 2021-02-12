@@ -21,15 +21,15 @@ namespace POP
 {
     public partial class frmPLCTask : Form
     {
-        TcpControl client;
-        NetworkStream recvData;
+        
+        
         SqlConnection conn;
 
         string hostIP;
         int hostPort;
-        int taskID;
+        
         string pgmID;
-
+        int taskID;
         bool logVisible = false;
         string clientName;
         string clientIP;

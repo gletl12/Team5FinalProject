@@ -40,21 +40,19 @@ namespace CompanyManager
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cboEmployee = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.dgvPerformance = new System.Windows.Forms.DataGridView();
-            this.btnWOCancel = new System.Windows.Forms.Button();
             this.btnRegPerformance = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.btn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).BeginInit();
@@ -88,6 +86,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(763, 22);
             this.cboMachine.Name = "cboMachine";
@@ -98,13 +97,13 @@ namespace CompanyManager
             // 
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
-            "WO/PO",
-            "아이템ID"});
+            "WO/PO ID",
+            "아이템 ID"});
             this.cboID.Location = new System.Drawing.Point(364, 22);
             this.cboID.Name = "cboID";
             this.cboID.Size = new System.Drawing.Size(66, 22);
             this.cboID.TabIndex = 13;
-            this.cboID.Text = "WO/PO";
+            this.cboID.Text = "WO/PO ID";
             // 
             // label11
             // 
@@ -164,20 +163,21 @@ namespace CompanyManager
             this.txtID.Size = new System.Drawing.Size(185, 21);
             this.txtID.TabIndex = 2;
             // 
-            // button14
+            // btnSearch
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(1027, 61);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 30);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "조회";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(1027, 61);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 30);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel2
             // 
@@ -187,7 +187,7 @@ namespace CompanyManager
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.comboBox6);
+            this.panel2.Controls.Add(this.cboEmployee);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label20);
@@ -204,7 +204,7 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.button14);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 9);
             this.panel2.Name = "panel2";
@@ -220,13 +220,14 @@ namespace CompanyManager
             this.label5.TabIndex = 53;
             this.label5.Text = "* 등록일자";
             // 
-            // comboBox6
+            // cboEmployee
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(436, 51);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(185, 22);
-            this.comboBox6.TabIndex = 52;
+            this.cboEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEmployee.FormattingEnabled = true;
+            this.cboEmployee.Location = new System.Drawing.Point(436, 51);
+            this.cboEmployee.Name = "cboEmployee";
+            this.cboEmployee.Size = new System.Drawing.Size(185, 22);
+            this.cboEmployee.TabIndex = 52;
             // 
             // label3
             // 
@@ -249,6 +250,7 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(87, 51);
             this.cboState.Name = "cboState";
@@ -290,22 +292,6 @@ namespace CompanyManager
             this.dgvPerformance.Size = new System.Drawing.Size(1152, 480);
             this.dgvPerformance.TabIndex = 39;
             // 
-            // btnWOCancel
-            // 
-            this.btnWOCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWOCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnWOCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnWOCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWOCancel.Image = global::CompanyManager.Properties.Resources.Undo_16x16;
-            this.btnWOCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWOCancel.Location = new System.Drawing.Point(944, 129);
-            this.btnWOCancel.Name = "btnWOCancel";
-            this.btnWOCancel.Size = new System.Drawing.Size(76, 23);
-            this.btnWOCancel.TabIndex = 42;
-            this.btnWOCancel.Text = "    WO취소";
-            this.btnWOCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnWOCancel.UseVisualStyleBackColor = false;
-            // 
             // btnRegPerformance
             // 
             this.btnRegPerformance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -314,14 +300,14 @@ namespace CompanyManager
             this.btnRegPerformance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegPerformance.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnRegPerformance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegPerformance.Location = new System.Drawing.Point(860, 129);
+            this.btnRegPerformance.Location = new System.Drawing.Point(1047, 129);
             this.btnRegPerformance.Name = "btnRegPerformance";
             this.btnRegPerformance.Size = new System.Drawing.Size(78, 23);
             this.btnRegPerformance.TabIndex = 41;
             this.btnRegPerformance.Text = "실적등록";
             this.btnRegPerformance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegPerformance.UseVisualStyleBackColor = false;
-            this.btnRegPerformance.Click += new System.EventHandler(this.button2_Click);
+            this.btnRegPerformance.Click += new System.EventHandler(this.btnRegPerformance_Click);
             // 
             // label10
             // 
@@ -346,22 +332,6 @@ namespace CompanyManager
             this.button9.TabIndex = 37;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // btn
-            // 
-            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
-            this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn.Location = new System.Drawing.Point(1026, 129);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(99, 23);
-            this.btn.TabIndex = 38;
-            this.btn.Text = "    WO일괄취소";
-            this.btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn.UseVisualStyleBackColor = false;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -376,11 +346,9 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.btnWOCancel);
             this.Controls.Add(this.btnRegPerformance);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.btn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvPerformance);
             this.Name = "FrmRegPerformance";
@@ -407,17 +375,15 @@ namespace CompanyManager
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cboEmployee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridView dgvPerformance;
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btnWOCancel;
         private System.Windows.Forms.Button btnRegPerformance;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label5;

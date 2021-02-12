@@ -145,20 +145,64 @@ namespace POP
             //STX머신ID/제품ID/생산수량/불량수량ETXSTX머신ID/제품ID/생산수량/불량수량ETX
             //50|2|1   50|2|0   HeartBeat 
 
-            bool bFind = false;
-            int sCnt = 0, eCnt = 0, vLoop = 0;
-            string readData = "";
+            //bool bFind = false;
+            //int sCnt = 0, eCnt = 0, vLoop = 0;
+            //string readData = "";
+
+            //if (client.client.Available > 0)
+            //{
+            //    byte[] rcvTmp = new byte[client.client.Available]; //초기 받는
+
+            //    recvData.Read(rcvTmp, 0, rcvTmp.Length);
+            //    readData = Encoding.Default.GetString(rcvTmp).Replace("","").Replace("","").Trim();
+
+            //    Log.WriteInfo("데이터 수신:" + readData);
+
+            //    //HeartBeat 인 경우는 stopwatch만 재시작하고 빠져나간다.
+            //    if (readData.Contains(STR_HEART_BEAT))
+            //    {
+            //        m_AliveTimer.Restart();
+            //        readData = readData.Replace(STR_HEART_BEAT, "");
+            //    }
+
+            //    readData = readData.Trim();
+            //    if (readData.Length < 1) return;
+
+            //    if (ReadData != null)
+            //    {
+            //        ReadDataEventArgs args = new ReadDataEventArgs();
+            //        args.Data = readData;
+            //        ReadData(null, args);
+            //    }
+
+            //    string[] arrData = readData.Split('|');
+            //    if (arrData.Length == 3)
+            //    {
+            //        using (SqlCommand cmd = new SqlCommand())
+            //        {
+            //            cmd.Connection = conn;
+            //            cmd.CommandText = @"insert into WorkQtyLog(MachineID, ProductID, Qty, BadQty, WorkRegPC, WorkRegIP) values(@MachineID, @ProductID, @Qty, @BadQty, @WorkRegPC, @WorkRegIP)";
+            //            cmd.Parameters.AddWithValue("@MachineID", taskID);
+            //            cmd.Parameters.AddWithValue("@ProductID", arrData[0]);
+            //            cmd.Parameters.AddWithValue("@Qty", int.Parse(arrData[1]));
+            //            cmd.Parameters.AddWithValue("@BadQty", int.Parse(arrData[2]));
+            //            cmd.Parameters.AddWithValue("@WorkRegPC", clientName);
+            //            cmd.Parameters.AddWithValue("@WorkRegIP", clientIP);
+
+            //            cmd.ExecuteNonQuery();
+            //        }
+            //    }
+            //}
+            string readData;
 
             if (client.client.Available > 0)
             {
                 byte[] rcvTmp = new byte[client.client.Available]; //초기 받는
 
                 recvData.Read(rcvTmp, 0, rcvTmp.Length);
-                readData = Encoding.Default.GetString(rcvTmp).Replace("","").Replace("","").Trim();
+                readData = Encoding.Default.GetString(rcvTmp).Replace("", "").Replace("", "").Trim();
 
-                Log.WriteInfo("데이터 수신:" + readData);
 
-                //HeartBeat 인 경우는 stopwatch만 재시작하고 빠져나간다.
                 if (readData.Contains(STR_HEART_BEAT))
                 {
                     m_AliveTimer.Restart();
@@ -176,22 +220,6 @@ namespace POP
                 }
 
                 string[] arrData = readData.Split('|');
-                if (arrData.Length == 3)
-                {
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = conn;
-                        cmd.CommandText = @"insert into WorkQtyLog(MachineID, ProductID, Qty, BadQty, WorkRegPC, WorkRegIP) values(@MachineID, @ProductID, @Qty, @BadQty, @WorkRegPC, @WorkRegIP)";
-                        cmd.Parameters.AddWithValue("@MachineID", taskID);
-                        cmd.Parameters.AddWithValue("@ProductID", arrData[0]);
-                        cmd.Parameters.AddWithValue("@Qty", int.Parse(arrData[1]));
-                        cmd.Parameters.AddWithValue("@BadQty", int.Parse(arrData[2]));
-                        cmd.Parameters.AddWithValue("@WorkRegPC", clientName);
-                        cmd.Parameters.AddWithValue("@WorkRegIP", clientIP);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                }
             }
         }
     }

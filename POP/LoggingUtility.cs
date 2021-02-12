@@ -16,7 +16,7 @@ namespace POP
 {
     public class LoggingUtility
     {
-        private static LoggingUtility _loggingUtility = null;
+        
         private ILog log;
         private RollingFileAppender roller;
         private string logFileName = "service.log";

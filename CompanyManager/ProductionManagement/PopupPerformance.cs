@@ -46,7 +46,6 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dataGridView1, "양품수", "CompanyName", 60);
             CommonUtil.AddGridTextColumn(dataGridView1, "불량수", "CompanyName", 60);
             CommonUtil.AddGridTextColumn(dataGridView1, "작업인원", "CompanyName", 60);
-            checkBox1.Location = new Point(dataGridView1.Location.X + 54, dataGridView1.Location.Y + 5);
 
             dataGridView1.Rows.Add(null, "2020-01-25 13:10:25", "WO2020012301", "CHAIR_01", "나무 2인용 의자", "2020-01-25 09:00:00", "2020-01-25 13:00:00", "100", "0", "4");
         }

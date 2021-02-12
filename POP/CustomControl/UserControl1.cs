@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Machine;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -9,17 +11,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Util;
 
 namespace POP
 {
     public partial class UserControl1 : UserControl
     {
-        FrmAction frm;
+        //FrmAction frm;
+
+        public event EventHandler RouteStart;
+
+        public FrmPerformance ControlMDI { get; set; }
         public FrmAction Frm { get; set; }
+        
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
+        public string Order_Num { get { return lblOrderNum.Text; } set { lblOrderNum.Text = value; } }//지시번호
+        public string Machinname { get; set; }//머신네임
+        public int AllItemNum { get; set; }//총오더량
+        public string WorkUserName { get; set; }//작업자
+        public string WorkItem { get; set; }//작업아이템
 
         int process_id = 0;
 
@@ -53,31 +66,50 @@ namespace POP
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
+            
             string server = ConfigurationManager.AppSettings["MachineEXE"];
             
-            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
+            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port} {AllItemNum}");
             process_id = pro.Id;
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port);
-            frm.Show();
-            frm.Hide();
+            //F_ASSY
+            //H_ASSY_01
+            //MF01
+            //MF02
+            //OS"
 
+            Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
+            Frm.MdiParent = ControlMDI.ParentForm;
+            Frm.Location = new Point(0, 0);
+            Frm.Show();
+            Frm.Hide();
+            MachineService service = new MachineService();
+            Runid= service.MachineRun(Task_ID, WorkUserName);
+            if(Runid>0)
+            {
+                
+            }
+            else
+            {
+
+            }
             IsTaskEnable = true;
-        }
 
+            RouteStart(sender, null);
+
+        }
+        int Runid;
         private void btnShow_Click(object sender, EventArgs e)
         {
-            //Frm.MdiParent = this;
-            //Frm.Dock = DockStyle.Fill;
-            frm.Show();
-           
+            //Frm.MdiParent = ControlMDI.ParentForm;
+            Frm.Show();
+            Frm.Activate();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            frm.bExit = true;
-            frm.Close();
+            Frm.bExit = true;
+            Frm.Close();
             IsTaskEnable = false;
 
             foreach (Process process in Process.GetProcesses())
@@ -86,6 +118,16 @@ namespace POP
                 {
                     process.Kill();
                 }
+            }
+            MachineService service = new MachineService();
+            bool bFlag = service.MachineEnd(Runid, WorkUserName);
+            if(bFlag)
+            {
+
+            }
+            else
+            {
+
             }
         }
 
