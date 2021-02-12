@@ -57,9 +57,11 @@
     <Compile Include="EmployeeVO.cs" />
     <Compile Include="FactoryVO.cs" />
     <Compile Include="InboundVO.cs" />
+    <Compile Include="IOVO.cs" />
     <Compile Include="MachineRunVO.cs" />
     <Compile Include="MachineVO.cs" />
     <Compile Include="MenuVO.cs" />
+    <Compile Include="MoveVO.cs" />
     <Compile Include="PerformanceVO.cs" />
     <Compile Include="PriceVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +69,8 @@
     <Compile Include="SalesOrderVO.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="ShiftVO.cs" />
+    <Compile Include="StockByOrderVO.cs" />
+    <Compile Include="StockVO.cs" />
     <Compile Include="SubjectVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
   </ItemGroup>
