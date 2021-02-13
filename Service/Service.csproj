@@ -67,6 +67,7 @@
     <Compile Include="SalesOrderService.cs" />
     <Compile Include="ServiceHelp.cs" />
     <Compile Include="ShiftService.cs" />
+    <Compile Include="ShipmentService.cs" />
     <Compile Include="StockByOrderService.cs" />
     <Compile Include="StockService.cs" />
     <Compile Include="SubjectService.cs" />

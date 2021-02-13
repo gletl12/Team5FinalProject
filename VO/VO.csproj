@@ -69,6 +69,7 @@
     <Compile Include="SalesOrderVO.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="ShiftVO.cs" />
+    <Compile Include="ShipmentVO.cs" />
     <Compile Include="StockByOrderVO.cs" />
     <Compile Include="StockVO.cs" />
     <Compile Include="SubjectVO.cs" />

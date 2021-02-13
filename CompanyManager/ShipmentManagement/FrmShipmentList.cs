@@ -36,5 +36,10 @@ namespace CompanyManager
             dataGridView2.Rows.Add(null, "WO2021012502", "",  "의자상사",  "의자상사", "CHAIR_01", "나무 1인용 의자", "2021-02-01", "2021-01-28", "150", "150","0");
             
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

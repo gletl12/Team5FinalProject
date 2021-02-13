@@ -72,6 +72,7 @@
     <Compile Include="PurchaseDAC.cs" />
     <Compile Include="SalesOrderDAC.cs" />
     <Compile Include="ShiftDAC.cs" />
+    <Compile Include="ShipmentDAC.cs" />
     <Compile Include="StockByOrderDAC.cs" />
     <Compile Include="StockDAC.cs" />
     <Compile Include="SubjectDAC.cs" />
