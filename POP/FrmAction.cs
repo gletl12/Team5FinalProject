@@ -21,7 +21,7 @@ using Machine;
 namespace POP
 {
     public partial class FrmAction : POP.BaseForm
-    {
+    {//
         TcpControl client;
         NetworkStream recvData;
         SqlConnection conn;
