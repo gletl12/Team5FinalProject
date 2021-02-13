@@ -24,7 +24,7 @@ namespace CompanyManager
             CommonUtil.SetDGVDesign_Num(dgvIO);
             CommonUtil.AddGridTextColumn(dgvIO, "입출고일", "IODate", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvIO, "구분", "Gubun", 60, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvIO, "카테고리", "IOType", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvIO, "카테고리", "IOType", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvIO, "FROM창고", "From", 100);
             CommonUtil.AddGridTextColumn(dgvIO, "창고", "To", 100);
             CommonUtil.AddGridTextColumn(dgvIO, "품목", "item_id", 150);
