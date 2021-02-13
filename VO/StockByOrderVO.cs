@@ -8,6 +8,7 @@ namespace VO
 {
     public class StockByOrderVO
     {
+        public int so_id { get; set; }
         public string company_name { get; set; }
         public string item_id { get; set; }
         public string item_name { get; set; }
@@ -16,7 +17,8 @@ namespace VO
         public DateTime due_date{ get; set; }
         public string From { get; set; }
         public string To { get; set; }
-        public int rqty { get; set; }
+        public int stock { get; set; }
         public string so_comment{ get; set; }
+        public int MoveQty { get; set; }
     }
 }

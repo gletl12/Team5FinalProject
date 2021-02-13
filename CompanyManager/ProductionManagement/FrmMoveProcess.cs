@@ -27,7 +27,6 @@ namespace CompanyManager
         {
             CommonUtil.SetInitGridView(dgvStock);
             CommonUtil.SetDGVDesign_Num(dgvStock);
-            dgvStock.RowHeadersVisible = true;
             CommonUtil.SetDGVDesign_CheckBox(dgvStock);
             CommonUtil.AddGridTextColumn(dgvStock, "작업지시ID", "wo_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvStock, "품목", "item_id", 130);
@@ -54,6 +53,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvMove, "단위", "item_unit", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvMove, "이동일자", "MoveDate", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvMove, "비고", "item_comment", 200);
+            dgvMove.RowHeadersVisible =  dgvStock.RowHeadersVisible = true;
 
 
             List<CodeVO> codes = service.GetCodes();
