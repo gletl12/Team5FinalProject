@@ -22,5 +22,7 @@ namespace VO
         public int Qty { get; set; }
         public int NewQty { get; set; }
         public int SQty { get; set; }
+        public int CQty { get; set; }
+        public DateTime ship_date { get; set; }
     }
 }

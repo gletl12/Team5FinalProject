@@ -27,5 +27,11 @@ namespace Service
             ShipmentDAC dac = new ShipmentDAC();
             return dac.RegShipment(selectedRows,empID);
         }
+
+        public List<ShipmentVO> GetShipmentList(DateTime from, DateTime to)
+        {
+            ShipmentDAC dac = new ShipmentDAC();
+            return dac.GetShipmentList(from, to);
+        }
     }
 }

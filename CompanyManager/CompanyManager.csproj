@@ -660,6 +660,9 @@
     <EmbeddedResource Include="ResourceManagement\PopupPriceExcel.resx">
       <DependentUpon>PopupPriceExcel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentManagement\FrmCompanySalesClose.resx">
+      <DependentUpon>FrmCompanySalesClose.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubjectManagement\PopUpBOM.resx">
       <DependentUpon>PopUpBOM.cs</DependentUpon>
     </EmbeddedResource>

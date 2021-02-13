@@ -44,6 +44,37 @@ namespace DAC
             }
         }
 
+        public List<ShipmentVO> GetShipmentList(object from, object to)
+        {
+            string sql = @"select SO.order_id, SO.so_id,company_name,isnull(W.warehouse_name,company_name) DestinationName,SO.item_id,item_name,SO.due_date,cast(ship_date as date) ship_date,
+                            	   SO.so_o_qty Qty,S.ship_qty SQty,ship_cqty CQty
+                            from TBL_SO_MASTER SO JOIN TBL_DEMAND_PLAN D ON D.so_id = SO.so_id
+                            					  JOIN TBL_COMPANY C ON C.company_id = SO.company_id
+                            					  JOIN TBL_ITEM I ON I.item_id = SO.item_id
+                            					  JOIN TBL_WAREHOUSE W ON SO.warehouse_id = W.warehouse_id
+                            					  JOIN TBL_SHIPMENT S ON S.plan_id = D.plan_id
+                            where ship_date>=@from and ship_date<=@to";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@from", from);
+                    cmd.Parameters.AddWithValue("@to", to);
+
+                    List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(cmd.ExecuteReader());
+
+                    conn.Close();
+                    return list;
+                }
+                catch (Exception err)
+                {
+                    conn.Close();
+                    Log.WriteError("DAC_ShipmentDAC_GetShipmentList() 오류", err);
+                    return new List<ShipmentVO>();
+                }
+            }
+        }
+
         public bool RegShipment(List<ShipmentVO> selectedRows,int empID)
         {
             string sql = @"SP_Shipment";
