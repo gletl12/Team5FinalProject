@@ -16,6 +16,5 @@ namespace VO
         public string up_emp { get; set; }
         public DateTime up_date { get; set; }
 
-
     }
 }

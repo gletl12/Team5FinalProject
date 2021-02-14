@@ -15,11 +15,24 @@ namespace Service
             MGradeDAC dac = new MGradeDAC();
             return dac.GetMGrade();
         }
-        //public List<MachineVO> GetMachine()
-        //{
-        //    MachineDAC dac = new MachineDAC();
-        //    return dac.GetMachine();
-        //}
+        public bool InsertMGrade(MGradeVO vo)
+        {
+            MGradeDAC dac = new MGradeDAC();
+            return dac.InsertMGrade(vo);
+        }
+
+        public bool UpdateMGrade(MGradeVO vo)
+        {
+            MGradeDAC dac = new MGradeDAC();
+            return dac.UpdateMGrade(vo);
+        }
+
+        public bool DeleteMGrade(int machine_grade)
+        {
+            MGradeDAC dac = new MGradeDAC();
+            return dac.DeleteMGrade(machine_grade);
+        }
+    
         //public List<MachineVO> GetMachine()
         //{
         //    MachineDAC dac = new MachineDAC();

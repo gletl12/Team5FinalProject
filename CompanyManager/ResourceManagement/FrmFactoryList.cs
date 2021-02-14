@@ -34,7 +34,7 @@ namespace CompanyManager
             CommonUtil.SetDGVDesign_Num(dgvFactory);
 
             CommonUtil.SetDGVDesign_CheckBox(dgvFactory);
-            CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16, "Edit", 30);
+            CommonUtil.AddGridImageColumn(dgvFactory, Resources.Edit_16x16, "Edit", 40);
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "factory_grade");
             CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "factory_type");
             CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "factory_name", 120);
@@ -42,7 +42,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "factory_comment", 150);
             CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "factory_use");
             CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "up_emp", 120);
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date", 170);
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "up_date", 160);
             CommonUtil.AddGridTextColumn(dgvFactory, "id", "factory_id", 100, false);
 
             dgvFactory.AutoGenerateColumns = false;
@@ -132,13 +132,26 @@ namespace CompanyManager
                 fvo.factory_parent = list[e.RowIndex].factory_parent;
                 fvo.factory_comment = list[e.RowIndex].factory_comment;
                 fvo.factory_use = list[e.RowIndex].factory_use;
+                fvo.codename = list[e.RowIndex].codename;
                 if (e.ColumnIndex == 1)
                 {
-                    PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true);
-                    if (pop.ShowDialog() == DialogResult.OK)
+                    if(list[e.RowIndex].codename == "공장")
                     {
-                        DataRoad();
+                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true);
+                        if (pop.ShowDialog() == DialogResult.OK)
+                        {
+                            DataRoad();
+                        }
                     }
+                    else
+                    {
+                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true, true);
+                        if (pop.ShowDialog() == DialogResult.OK)
+                        {
+                            DataRoad();
+                        }
+                    }
+                    
                 }
             }
         }
@@ -152,14 +165,28 @@ namespace CompanyManager
             }
             if (MessageBox.Show($"정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                FactoryService service = new FactoryService();
-                if (service.DeleteFactory(fvo.factory_id))
+                if (fvo.codename == "공장")
                 {
-                    MessageBox.Show("삭제되었습니다.");
-                    DataRoad();
+                    FactoryService service = new FactoryService();
+                    if (service.DeleteFactory(fvo.factory_id))
+                    {
+                        MessageBox.Show("삭제되었습니다.");
+                        DataRoad();
+                    }
+                    else
+                        MessageBox.Show("삭제에 실패하였습니다.");
                 }
                 else
-                    MessageBox.Show("삭제에 실패하였습니다.");
+                {
+                    FactoryService service = new FactoryService();
+                    if (service.DeleteWareHouse(fvo.factory_id))
+                    {
+                        MessageBox.Show("삭제되었습니다.");
+                        DataRoad();
+                    }
+                    else
+                        MessageBox.Show("삭제에 실패하였습니다.");
+                }
             }
         }
     }

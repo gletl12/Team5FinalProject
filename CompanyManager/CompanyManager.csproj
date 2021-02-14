@@ -870,6 +870,7 @@
     <Content Include="Images\Open2_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\로고 배경투명 완성판.png" />
     <None Include="Resources\2.png" />
     <None Include="Resources\LOGO_T.png" />
     <Content Include="Resources\team5_Logo.png" />

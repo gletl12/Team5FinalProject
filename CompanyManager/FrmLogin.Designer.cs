@@ -31,14 +31,14 @@ namespace CompanyManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panDirectLogin = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.Loginbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panDirectLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,60 @@ namespace CompanyManager
             this.panDirectLogin.Size = new System.Drawing.Size(285, 179);
             this.panDirectLogin.TabIndex = 23;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 82);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 14);
+            this.label4.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 14);
+            this.label3.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 14);
+            this.label2.TabIndex = 99;
+            this.label2.Text = "비밀번호";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "아이디";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPassword.Location = new System.Drawing.Point(77, 57);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(178, 21);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "1234";
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtID.Location = new System.Drawing.Point(77, 19);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(178, 21);
+            this.txtID.TabIndex = 0;
+            this.txtID.Text = "1";
+            // 
             // Loginbtn
             // 
             this.Loginbtn.BackColor = System.Drawing.Color.White;
@@ -90,60 +144,6 @@ namespace CompanyManager
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 14);
-            this.label3.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 14);
-            this.label4.TabIndex = 19;
-            // 
-            // txtID
-            // 
-            this.txtID.BackColor = System.Drawing.SystemColors.Info;
-            this.txtID.Location = new System.Drawing.Point(77, 19);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(178, 21);
-            this.txtID.TabIndex = 0;
-            this.txtID.Text = "1";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
-            this.txtPassword.Location = new System.Drawing.Point(77, 57);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(178, 21);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "1234";
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 99;
-            this.label1.Text = "아이디";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 14);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "비밀번호";
             // 
             // FrmLogin
             // 
