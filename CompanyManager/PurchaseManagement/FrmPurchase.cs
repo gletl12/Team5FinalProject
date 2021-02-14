@@ -56,6 +56,8 @@ namespace CompanyManager
 
         private void FrmPurchase_Load(object sender, EventArgs e)
         {
+            dtpFrom.Value = DateTime.Now;
+            dtpTO.Value = DateTime.Now.AddDays(10);
             List<CodeVO> codes =service.GetAllCodes();
             var companys = (from company in codes where company.category.Equals("COMPANY_CODE") select company).ToList();
             companys.Insert(0, new CodeVO() { code = "", name = "전체" });

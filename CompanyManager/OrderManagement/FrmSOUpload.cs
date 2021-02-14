@@ -60,37 +60,44 @@ namespace CompanyManager
 
         private void btnCommit_Click(object sender, EventArgs e)
         {
-            if (dgvSO.Rows.Count < 1)
+            try
             {
-                MessageBox.Show("파일을 먼저 등록해주십시오.");
-                return;
-            }
-            list.Clear();
-            foreach (DataGridViewRow row in dgvSO.Rows)
-            {
-                SalesOrderVO sales = new SalesOrderVO()
+                if (dgvSO.Rows.Count < 1)
                 {
-                    plan_date = Convert.ToDateTime(row.Cells["planDate"].Value),
-                    order_id = row.Cells["고객 주문번호"].Value.ToString(),
-                    company_id = Convert.ToInt32(row.Cells["업체 ID"].Value),
-                    mkt = row.Cells["MKT"].Value.ToString(),
-                    item_id = row.Cells["품목"].Value.ToString(),
-                    currency = row.Cells["환종"].Value.ToString(),
-                    so_o_qty = Convert.ToInt32(row.Cells["수량"].Value),
-                    due_date = Convert.ToDateTime(row.Cells["납기일"].Value),
-                    so_comment = row.Cells["비고"].Value==null?string.Empty:row.Cells["비고"].Value.ToString(),
-                };
-                list.Add(sales);
+                    MessageBox.Show("파일을 먼저 등록해주십시오.");
+                    return;
+                }
+                list.Clear();
+                foreach (DataGridViewRow row in dgvSO.Rows)
+                {
+                    SalesOrderVO sales = new SalesOrderVO()
+                    {
+                        plan_date = Convert.ToDateTime(row.Cells["planDate"].Value),
+                        order_id = row.Cells["고객 주문번호"].Value.ToString(),
+                        company_id = Convert.ToInt32(row.Cells["업체 ID"].Value),
+                        mkt = row.Cells["MKT"].Value.ToString(),
+                        item_id = row.Cells["품목"].Value.ToString(),
+                        currency = row.Cells["환종"].Value.ToString(),
+                        so_o_qty = Convert.ToInt32(row.Cells["수량"].Value),
+                        due_date = Convert.ToDateTime(row.Cells["납기일"].Value),
+                        so_comment = row.Cells["비고"].Value == null ? string.Empty : row.Cells["비고"].Value.ToString(),
+                    };
+                    list.Add(sales);
+                }
+                SalesOrderService service = new SalesOrderService();
+                bool result = service.CommitSO(list);
+                if (result)
+                {
+                    MessageBox.Show("영업마스터가 생성되었습니다.");
+                    dgvSO.DataSource = null;
+                }
+                else
+                    MessageBox.Show("영업마스터 생성중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오.");
             }
-            SalesOrderService service = new SalesOrderService();
-            bool result = service.CommitSO(list);
-            if (result)
+            catch (Exception err)
             {
-                MessageBox.Show("영업마스터가 생성되었습니다.");
-                dgvSO.DataSource = null;
-            }
-            else
                 MessageBox.Show("영업마스터 생성중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오.");
+            }
         }
     }
 }

@@ -291,6 +291,7 @@ namespace CompanyManager
             this.dgvPerformance.RowTemplate.Height = 23;
             this.dgvPerformance.Size = new System.Drawing.Size(1152, 480);
             this.dgvPerformance.TabIndex = 39;
+            this.dgvPerformance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerformance_CellContentClick);
             // 
             // btnRegPerformance
             // 
