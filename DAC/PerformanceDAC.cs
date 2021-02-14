@@ -109,5 +109,39 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                 }
             }
         }
+
+        public bool PerformanceCommit2(PerformanceVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = @"insert into TBL_PERFORMANCE (wo_id,item_id,ch_id,performance_qty,ins_date,ins_emp)
+                                                             values (@wo_id,@item_id,@ch_id,@performance_qty,@ins_date,@ins_emp)";
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@wo_id", vo.wo_id);
+                    cmd.Parameters.AddWithValue("@item_id", vo.item_id);
+                    cmd.Parameters.AddWithValue("@ch_id", vo.ch_id);
+                    cmd.Parameters.AddWithValue("@performance_qty", vo.performance_qty);
+                    cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ins_emp", vo.ins_emp);
+
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    Dispose();
+
+                    return id>0;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_PerformanceDAC_PerformanceCommit2() 오류", err);
+
+                return false;
+            }
+        }
+
     }
 }

@@ -18,5 +18,7 @@ namespace VO
         public int good_qty{ get; set; }
         public int bad_qty{ get; set; }
         public string bad_comment { get; set; }
+
+        public string emp { get; set; }
     }
 }
