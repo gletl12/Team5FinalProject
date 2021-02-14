@@ -30,23 +30,6 @@ namespace POP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerformance));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnBackward = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.btnForward = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblRemark = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
@@ -84,223 +67,26 @@ namespace POP
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.toolStripPaging.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
+            this.btnFirst = new System.Windows.Forms.ToolStripButton();
+            this.btnBackward = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnForward = new System.Windows.Forms.ToolStripButton();
+            this.btnLast = new System.Windows.Forms.ToolStripButton();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStripPaging.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(14, 302);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1898, 715);
-            this.tabControl1.TabIndex = 28;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.toolStripPaging);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 33);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1890, 678);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "생산 현황";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // toolStripPaging
-            // 
-            this.toolStripPaging.AutoSize = false;
-            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirst,
-            this.btnBackward,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.btnForward,
-            this.btnLast});
-            this.toolStripPaging.Location = new System.Drawing.Point(3, 546);
-            this.toolStripPaging.Name = "toolStripPaging";
-            this.toolStripPaging.Size = new System.Drawing.Size(1884, 129);
-            this.toolStripPaging.TabIndex = 27;
-            this.toolStripPaging.Text = "toolStrip1";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.AutoSize = false;
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
-            this.btnFirst.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(235, 70);
-            this.btnFirst.Text = "toolStripButton1";
-            this.btnFirst.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // btnBackward
-            // 
-            this.btnBackward.AutoSize = false;
-            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
-            this.btnBackward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(235, 70);
-            this.btnBackward.Text = "toolStripButton1";
-            this.btnBackward.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton1.Text = "1";
-            this.toolStripButton1.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton2.Text = "2";
-            this.toolStripButton2.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton3.Text = "3";
-            this.toolStripButton3.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton4.Text = "4";
-            this.toolStripButton4.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton5.Text = "5";
-            this.toolStripButton5.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // btnForward
-            // 
-            this.btnForward.AutoSize = false;
-            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnForward.Image = global::POP.Properties.Resources.Forward;
-            this.btnForward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(235, 70);
-            this.btnForward.Text = "toolStripButton6";
-            this.btnForward.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // btnLast
-            // 
-            this.btnLast.AutoSize = false;
-            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
-            this.btnLast.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(235, 70);
-            this.btnLast.Text = "toolStripButton6";
-            this.btnLast.Click += new System.EventHandler(this.FrmPerformance_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.RowTemplate.Height = 95;
-            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
-            this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1890, 678);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "불량 현황";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1884, 672);
-            this.dataGridView2.TabIndex = 27;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 33);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1890, 678);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "투입 현황";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1890, 678);
-            this.dataGridView3.TabIndex = 27;
             // 
             // groupBox2
             // 
@@ -699,6 +485,169 @@ namespace POP
             this.panel1.Size = new System.Drawing.Size(112, 292);
             this.panel1.TabIndex = 31;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.toolStripPaging);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1890, 678);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "생산 현황";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 50;
+            this.dataGridView1.RowTemplate.Height = 95;
+            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
+            this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // toolStripPaging
+            // 
+            this.toolStripPaging.AutoSize = false;
+            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFirst,
+            this.btnBackward,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.btnForward,
+            this.btnLast});
+            this.toolStripPaging.Location = new System.Drawing.Point(3, 546);
+            this.toolStripPaging.Name = "toolStripPaging";
+            this.toolStripPaging.Size = new System.Drawing.Size(1884, 129);
+            this.toolStripPaging.TabIndex = 27;
+            this.toolStripPaging.Text = "toolStrip1";
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.AutoSize = false;
+            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
+            this.btnFirst.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(235, 70);
+            this.btnFirst.Text = "toolStripButton1";
+            this.btnFirst.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.AutoSize = false;
+            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
+            this.btnBackward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(235, 70);
+            this.btnBackward.Text = "toolStripButton1";
+            this.btnBackward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton1.Text = "1";
+            this.toolStripButton1.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.AutoSize = false;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton2.Text = "2";
+            this.toolStripButton2.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.AutoSize = false;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton3.Text = "3";
+            this.toolStripButton3.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.AutoSize = false;
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton4.Text = "4";
+            this.toolStripButton4.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton5.Text = "5";
+            this.toolStripButton5.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnForward
+            // 
+            this.btnForward.AutoSize = false;
+            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnForward.Image = global::POP.Properties.Resources.Forward;
+            this.btnForward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(235, 70);
+            this.btnForward.Text = "toolStripButton6";
+            this.btnForward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.AutoSize = false;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
+            this.btnLast.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(235, 70);
+            this.btnLast.Text = "toolStripButton6";
+            this.btnLast.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(14, 302);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1898, 715);
+            this.tabControl1.TabIndex = 28;
+            // 
             // FrmPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -721,19 +670,15 @@ namespace POP
             this.Name = "FrmPerformance";
             this.Load += new System.EventHandler(this.FrmInspection_Load);
             this.Click += new System.EventHandler(this.FrmPerformance_Click);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.toolStripPaging.ResumeLayout(false);
-            this.toolStripPaging.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStripPaging.ResumeLayout(false);
+            this.toolStripPaging.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,7 +692,6 @@ namespace POP
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
@@ -772,18 +716,13 @@ namespace POP
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label lblRemark;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Label lblTaskID;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStrip toolStripPaging;
         private System.Windows.Forms.ToolStripButton btnFirst;
         private System.Windows.Forms.ToolStripButton btnBackward;
@@ -794,5 +733,7 @@ namespace POP
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton btnForward;
         private System.Windows.Forms.ToolStripButton btnLast;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

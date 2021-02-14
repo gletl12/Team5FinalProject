@@ -267,5 +267,31 @@ group by B.item_id, item_name ,tacktime, S.shift_stime,S.shift_etime
                 }
             }
         }
+
+        public bool StartWorkOrder(int wo_id,string up_emp)
+        {
+
+            string sql = @"update TBL_WORK_ORDER set wo_state = 'WO003',
+						                             up_emp = @up_emp,
+						                             up_date = @up_date
+                           where wo_id = @wo_id";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@wo_id", wo_id);
+                    cmd.Parameters.AddWithValue("@up_emp", up_emp);
+                    cmd.Parameters.AddWithValue("@up_date", DateTime.Now);
+                 
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_WorkOrderDAC_StartWorkOrder() 오류", err);
+                    return false;
+                }
+            }
+        }
     }
 }

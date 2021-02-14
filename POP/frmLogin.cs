@@ -61,8 +61,8 @@ namespace POP
             }
             if (txtID.Text == "3")//이동
             {
-                FrmMove frm = new FrmMove();
-                frm.Show();
+                //FrmMove frm = new FrmMove();
+                //frm.Show();
             }
             if (txtID.Text == "4")//실적관리
             {

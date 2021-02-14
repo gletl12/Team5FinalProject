@@ -29,7 +29,7 @@ namespace POP
             string appName = Assembly.GetEntryAssembly().GetName().Name;
 
             
-            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmAllStatusBoard"}"));
+            //CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmAllStatusBoard"}"));
             CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmInspection"}"));
             
             CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmPerformance"}"));

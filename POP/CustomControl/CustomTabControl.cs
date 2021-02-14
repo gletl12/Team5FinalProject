@@ -30,8 +30,8 @@ namespace POP
             OpenForms.Add("메인화면", "FrmPerformance");
             tabList.Add("메인화면", btnHome);
 
-            OpenForms.Add("설비관리", "FrmAllStatusBoard");
-            tabList.Add("설비관리", btnMachine);
+            //OpenForms.Add("설비관리", "FrmAllStatusBoard");
+            //tabList.Add("설비관리", btnMachine);
 
             OpenForms.Add("검사", "FrmInspection");
             tabList.Add("검사", btnInspection);
