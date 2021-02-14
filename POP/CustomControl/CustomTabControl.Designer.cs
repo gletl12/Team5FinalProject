@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTab = new System.Windows.Forms.Panel();
             this.btnInspection = new System.Windows.Forms.Button();
-            this.btnMachine = new System.Windows.Forms.Button();
             this.lblSelect = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@
             // 
             this.pnlTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTab.Controls.Add(this.btnInspection);
-            this.pnlTab.Controls.Add(this.btnMachine);
             this.pnlTab.Controls.Add(this.lblSelect);
             this.pnlTab.Controls.Add(this.btnHome);
             this.pnlTab.Controls.Add(this.label3);
@@ -71,27 +69,13 @@
             this.btnInspection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInspection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInspection.Location = new System.Drawing.Point(148, 2);
+            this.btnInspection.Location = new System.Drawing.Point(81, 2);
             this.btnInspection.Name = "btnInspection";
             this.btnInspection.Size = new System.Drawing.Size(67, 25);
             this.btnInspection.TabIndex = 9;
             this.btnInspection.Text = "검사";
             this.btnInspection.UseVisualStyleBackColor = false;
             this.btnInspection.Click += new System.EventHandler(this.button_Click);
-            // 
-            // btnMachine
-            // 
-            this.btnMachine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.btnMachine.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(161)))), ((int)(((byte)(169)))));
-            this.btnMachine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMachine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMachine.Location = new System.Drawing.Point(80, 2);
-            this.btnMachine.Name = "btnMachine";
-            this.btnMachine.Size = new System.Drawing.Size(67, 25);
-            this.btnMachine.TabIndex = 8;
-            this.btnMachine.Text = "설비관리";
-            this.btnMachine.UseVisualStyleBackColor = false;
-            this.btnMachine.Click += new System.EventHandler(this.button_Click);
             // 
             // lblSelect
             // 
@@ -165,7 +149,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSelect;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnMachine;
         private System.Windows.Forms.Button btnInspection;
     }
 }

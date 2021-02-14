@@ -87,7 +87,10 @@ namespace POP
             Runid= service.MachineRun(Task_ID, WorkUserName);
             if(Runid>0)
             {
-                
+                WorkOrderService service1 = new WorkOrderService();
+                service1.StartWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
+                RouteStart(sender, null);
+
             }
             else
             {
@@ -95,7 +98,7 @@ namespace POP
             }
             IsTaskEnable = true;
 
-            RouteStart(sender, null);
+            
 
         }
         int Runid;
