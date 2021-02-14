@@ -133,7 +133,7 @@ namespace DAC
         {
             List<DispendVO> list = new List<DispendVO>();
             string sql = @"select * from VW_MeterialReleaseList
-                        where ins_date>=@from and ins_date<=@to";
+                        where ins_date>=cast(@from as date) and ins_date<=cast(@to as date)";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try
@@ -179,7 +179,7 @@ namespace DAC
         public List<DispendWOVO> GetWorkOrderList(DateTime from, DateTime to)
         {
             string sql = @"select * from VW_DISPENDORDERS
-                           where wo_sdate >= @from and wo_sdate <= @to";
+                           where wo_sdate >= cast(@from as date) and wo_sdate <= cast(@to as date)";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try

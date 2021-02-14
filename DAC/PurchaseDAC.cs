@@ -41,8 +41,8 @@ namespace DAC
             try
             {
                 List<PurchasesListVO> list = new List<PurchasesListVO>();
-                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,due_date,pd_qty,isnull(in_qty,0) in_qty,isnull(in_cqty,0) in_cqty,pd_qty-isnull(in_cqty,0)-isnull(in_qty,0) Cancellable,
-                               	   PD.ins_date,emp_name
+                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,cast(due_date as date) due_date,pd_qty,isnull(in_qty,0) in_qty,isnull(in_cqty,0) in_cqty,pd_qty-isnull(in_cqty,0)-isnull(in_qty,0) Cancellable,
+                               	   cast(PD.ins_date as date) ins_date,emp_name
                                from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                                						    JOIN TBL_COMPANY C ON C.company_id = I.supply_company
                                							LEFT JOIN (select sum(in_qty) in_qty ,prod_id,item_id,sum(in_cqty) in_cqty 
@@ -51,7 +51,7 @@ namespace DAC
                                							LEFT JOIN TBL_Employee E ON E.emp_id = PD.ins_emp
                                							JOIN TBL_COMMON_CODE CD ON CD.code = item_unit
                                							left JOIN TBL_COMMON_CODE CD2 ON CD2.code = purchase_state
-                              where due_date between @Start_DT and @End_DT;";
+                               where cast(due_date as date) >= @Start_DT and cast(due_date as date) <= @End_DT;";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Start_DT", from);

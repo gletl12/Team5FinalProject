@@ -65,6 +65,7 @@ namespace CompanyManager
             states.Insert(0, new CodeVO() { code = "", name = "전체" });
             CommonUtil.BindingComboBox(cboMachine, machines, "code", "name");
             CommonUtil.BindingComboBox(cboState, states, "code", "name");
+            cboDate.SelectedIndex = cboID.SelectedIndex = 0;
         }
 
         private void BindingDGV()
