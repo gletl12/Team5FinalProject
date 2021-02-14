@@ -74,6 +74,7 @@ namespace POP
         private void button1_Click(object sender, EventArgs e)
         {
             ((Form)this.Parent).Close();
+            
         }
     }
 }

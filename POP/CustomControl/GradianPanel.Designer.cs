@@ -1,7 +1,6 @@
-﻿
-namespace POP
+﻿namespace POP
 {
-    partial class FrmMove
+    partial class GrandianPanel
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -21,24 +20,15 @@ namespace POP
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region 구성 요소 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
         /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FrmMove
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1600, 1000);
-            this.Name = "FrmMove";
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion

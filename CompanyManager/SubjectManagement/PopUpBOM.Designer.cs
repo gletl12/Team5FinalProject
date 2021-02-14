@@ -72,7 +72,7 @@ namespace CompanyManager
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(240, 432);
+            this.btnSave.Location = new System.Drawing.Point(228, 432);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 30);
             this.btnSave.TabIndex = 10;
@@ -106,7 +106,7 @@ namespace CompanyManager
             this.btnCancel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(349, 432);
+            this.btnCancel.Location = new System.Drawing.Point(337, 432);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 30);
             this.btnCancel.TabIndex = 9;
@@ -204,6 +204,7 @@ namespace CompanyManager
             this.cboParentsubject.Size = new System.Drawing.Size(169, 22);
             this.cboParentsubject.TabIndex = 122;
             this.cboParentsubject.Tag = "상위품목";
+            this.cboParentsubject.SelectedIndexChanged += new System.EventHandler(this.cboParentsubject_SelectedIndexChanged);
             // 
             // label4
             // 

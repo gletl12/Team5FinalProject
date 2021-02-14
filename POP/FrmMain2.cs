@@ -6,16 +6,18 @@ using System.Drawing;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using Util;
 
 namespace POP
 {
     public partial class FrmMain2 : POP.BaseForm
     {
-        public FrmMain2()
+        public FrmMain2(string name)
         {
             InitializeComponent();
+            Name = name;
         }
-
+        public string Name { get; set; }
         private void customTabControl1_Load(object sender, EventArgs e)
         {
 
@@ -23,39 +25,25 @@ namespace POP
 
         private void FrmMain2_Load(object sender, EventArgs e)
         {
+            //기본폼 3개 생성
+            string appName = Assembly.GetEntryAssembly().GetName().Name;
 
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            button4.Visible = false;
-            lblSelect4.Visible = false;
+            
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmAllStatusBoard"}"));
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmInspection"}"));
+            
+            CommonUtil.OpenCreateForm_POP(this, Type.GetType($"{appName}.{"FrmPerformance"}"));
 
-
+           
+            //customTabControl1.InsertTab("설비관리", "FrmAllStatusBoard");
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            FrmPerformance frm = new FrmPerformance();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            lblSelect1.Visible = true;
-            lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = false;
-        }
+      
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-            FrmAllStatusBoard frm = new FrmAllStatusBoard();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = true;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = false;
+           
         }
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -63,16 +51,8 @@ namespace POP
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmInspection frm = new FrmInspection();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            lblSelect1.Visible = false;
-            lblSelect2.Visible = false;
-            lblSelect3.Visible = false;
-            lblSelect4.Visible = true;
-        }
+     
+
+        
     }
 }

@@ -16,6 +16,18 @@ namespace Service
            MachineDAC dac = new MachineDAC();
            return dac.GetMachine();
        }
+        public int MachineRun(string task_ID, string workUserName)
+        {
+            MachineDAC dac = new MachineDAC();
+            return dac.MachineRun(task_ID, workUserName);
+        }
+        
+        public bool MachineEnd(int runid, string workUserName)
+        {
+            MachineDAC dac = new MachineDAC();
+            return dac.MachineEnd(runid, workUserName);
+        }
+    }
 
         public List<MachinesVO> GetMachine(int mgrade)
         {

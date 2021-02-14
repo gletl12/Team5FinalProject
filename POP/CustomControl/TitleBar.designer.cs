@@ -62,12 +62,13 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = global::POP.Properties.Resources.Delete_16x16;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Image = global::POP.Properties.Resources.Delete_32x32;
-            this.btnCancel.Location = new System.Drawing.Point(1567, 0);
+            this.btnCancel.Location = new System.Drawing.Point(1574, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(33, 33);
+            this.btnCancel.Size = new System.Drawing.Size(20, 20);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);

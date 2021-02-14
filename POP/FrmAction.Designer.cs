@@ -30,28 +30,23 @@ namespace POP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.timer_Connects = new System.Windows.Forms.Timer(this.components);
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.txtReadPLC = new System.Windows.Forms.TextBox();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
@@ -65,766 +60,163 @@ namespace POP
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.timer_Connects = new System.Windows.Forms.Timer(this.components);
-            this.lblState = new System.Windows.Forms.Label();
-            this.lblIP = new System.Windows.Forms.Label();
-            this.lblPort = new System.Windows.Forms.Label();
-            this.txtReadPLC = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblVersion = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // timer_Connects
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(1302, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 746);
-            this.listBox1.TabIndex = 1;
+            this.timer_Connects.Tick += new System.EventHandler(this.timer_Connects_Tick);
             // 
-            // panel1
+            // lblVersion
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Location = new System.Drawing.Point(12, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1284, 100);
-            this.panel1.TabIndex = 2;
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVersion.BackColor = System.Drawing.Color.DimGray;
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(1676, 9);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(227, 26);
+            this.lblVersion.TabIndex = 15;
+            this.lblVersion.Text = "Version";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
-            // textBox7
+            // txtReadPLC
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.BackColor = System.Drawing.Color.Gray;
-            this.textBox7.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(876, 36);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(298, 39);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "ASSY/조립공정";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtReadPLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtReadPLC.Location = new System.Drawing.Point(1480, 3);
+            this.txtReadPLC.Name = "txtReadPLC";
+            this.txtReadPLC.Size = new System.Drawing.Size(190, 32);
+            this.txtReadPLC.TabIndex = 13;
             // 
-            // textBox6
+            // lblPort
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox6.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(652, 36);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(224, 39);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.Text = "설 비";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPort.AutoSize = true;
+            this.lblPort.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblPort.Location = new System.Drawing.Point(1404, 14);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(35, 14);
+            this.lblPort.TabIndex = 12;
+            this.lblPort.Text = "9999";
             // 
-            // textBox5
+            // lblIP
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gray;
-            this.textBox5.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(258, 36);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(299, 39);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.Text = "최종조립반";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIP.AutoSize = true;
+            this.lblIP.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblIP.Location = new System.Drawing.Point(1291, 14);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(103, 14);
+            this.lblIP.TabIndex = 11;
+            this.lblIP.Text = "999.999.999.999";
             // 
-            // textBox4
+            // lblState
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(10, 36);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(246, 39);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.Text = "작업장";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblState.BackColor = System.Drawing.Color.Yellow;
+            this.lblState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblState.Location = new System.Drawing.Point(1253, 9);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(20, 23);
+            this.lblState.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 763);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 847);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1405, 165);
+            this.panel2.Size = new System.Drawing.Size(1915, 165);
             this.panel2.TabIndex = 2;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(884, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(166, 113);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "취소";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(699, 21);
+            this.button4.Location = new System.Drawing.Point(1459, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(166, 113);
+            this.button4.Size = new System.Drawing.Size(333, 131);
             this.button4.TabIndex = 3;
             this.button4.Text = "실적저장";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(502, 21);
+            this.button3.Location = new System.Drawing.Point(981, 21);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 113);
+            this.button3.Size = new System.Drawing.Size(333, 131);
             this.button3.TabIndex = 3;
             this.button3.Text = "작업중지";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(232, 21);
+            this.button2.Location = new System.Drawing.Point(522, 21);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 113);
+            this.button2.Size = new System.Drawing.Size(333, 131);
             this.button2.TabIndex = 3;
             this.button2.Text = "불량등록";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(10, 21);
+            this.button1.Location = new System.Drawing.Point(92, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 113);
+            this.button1.Size = new System.Drawing.Size(333, 131);
             this.button1.TabIndex = 3;
             this.button1.Text = "작업시작";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox12);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Location = new System.Drawing.Point(12, 144);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(558, 291);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(502, 114);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(34, 39);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "*";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "-";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(28, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 39);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "작업품목";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.ForeColor = System.Drawing.Color.Aqua;
-            this.textBox2.Location = new System.Drawing.Point(28, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 39);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "작업자";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.Gray;
-            this.textBox9.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(165, 178);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(371, 39);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.Text = "의자";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox12
-            // 
-            this.textBox12.BackColor = System.Drawing.Color.Gray;
-            this.textBox12.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox12.ForeColor = System.Drawing.Color.White;
-            this.textBox12.Location = new System.Drawing.Point(354, 114);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(148, 39);
-            this.textBox12.TabIndex = 1;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.Gray;
-            this.textBox11.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox11.ForeColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(165, 114);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(166, 39);
-            this.textBox11.TabIndex = 1;
-            this.textBox11.Text = "차경훈";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.Gray;
-            this.textBox10.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox10.ForeColor = System.Drawing.Color.White;
-            this.textBox10.Location = new System.Drawing.Point(165, 38);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(371, 39);
-            this.textBox10.TabIndex = 1;
-            this.textBox10.Text = "WO20031100001";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(28, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 39);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "오더번호";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.textBox20);
-            this.panel4.Controls.Add(this.textBox19);
-            this.panel4.Controls.Add(this.textBox40);
-            this.panel4.Controls.Add(this.textBox39);
-            this.panel4.Controls.Add(this.textBox18);
-            this.panel4.Controls.Add(this.textBox17);
-            this.panel4.Controls.Add(this.textBox16);
-            this.panel4.Controls.Add(this.textBox15);
-            this.panel4.Controls.Add(this.textBox38);
-            this.panel4.Controls.Add(this.textBox13);
-            this.panel4.Controls.Add(this.textBox27);
-            this.panel4.Controls.Add(this.textBox14);
-            this.panel4.Location = new System.Drawing.Point(12, 441);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(558, 376);
-            this.panel4.TabIndex = 2;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox20.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox20.ForeColor = System.Drawing.Color.White;
-            this.textBox20.Location = new System.Drawing.Point(301, 419);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(239, 39);
-            this.textBox20.TabIndex = 1;
-            this.textBox20.Text = "불량 수량";
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox19.BackColor = System.Drawing.Color.Gray;
-            this.textBox19.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox19.ForeColor = System.Drawing.Color.Red;
-            this.textBox19.Location = new System.Drawing.Point(301, 470);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(239, 64);
-            this.textBox19.TabIndex = 1;
-            this.textBox19.Text = "0100";
-            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox40
-            // 
-            this.textBox40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox40.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox40.ForeColor = System.Drawing.Color.Cyan;
-            this.textBox40.Location = new System.Drawing.Point(301, 166);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(239, 39);
-            this.textBox40.TabIndex = 1;
-            this.textBox40.Text = "불량 수량";
-            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox39
-            // 
-            this.textBox39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox39.BackColor = System.Drawing.Color.Gray;
-            this.textBox39.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox39.ForeColor = System.Drawing.Color.Red;
-            this.textBox39.Location = new System.Drawing.Point(301, 217);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(239, 64);
-            this.textBox39.TabIndex = 1;
-            this.textBox39.Text = "0100";
-            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox18.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox18.ForeColor = System.Drawing.Color.Cyan;
-            this.textBox18.Location = new System.Drawing.Point(301, 13);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(239, 39);
-            this.textBox18.TabIndex = 1;
-            this.textBox18.Text = "총 작업량(COUNT)";
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox17.BackColor = System.Drawing.Color.Gray;
-            this.textBox17.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox17.ForeColor = System.Drawing.Color.Black;
-            this.textBox17.Location = new System.Drawing.Point(301, 64);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(239, 64);
-            this.textBox17.TabIndex = 1;
-            this.textBox17.Text = "0100";
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox16.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox16.ForeColor = System.Drawing.Color.White;
-            this.textBox16.Location = new System.Drawing.Point(14, 419);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(239, 39);
-            this.textBox16.TabIndex = 1;
-            this.textBox16.Text = "양품 수량";
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox15.BackColor = System.Drawing.Color.Gray;
-            this.textBox15.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox15.Location = new System.Drawing.Point(14, 470);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(239, 64);
-            this.textBox15.TabIndex = 1;
-            this.textBox15.Text = "0100";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox38
-            // 
-            this.textBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox38.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox38.ForeColor = System.Drawing.Color.Cyan;
-            this.textBox38.Location = new System.Drawing.Point(14, 166);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(239, 39);
-            this.textBox38.TabIndex = 1;
-            this.textBox38.Text = "양품 수량";
-            this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox13
-            // 
-            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox13.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox13.ForeColor = System.Drawing.Color.White;
-            this.textBox13.Location = new System.Drawing.Point(14, 13);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(239, 39);
-            this.textBox13.TabIndex = 1;
-            this.textBox13.Text = "오더 잔량";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox27
-            // 
-            this.textBox27.BackColor = System.Drawing.Color.Gray;
-            this.textBox27.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBox27.Location = new System.Drawing.Point(14, 217);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(239, 64);
-            this.textBox27.TabIndex = 1;
-            this.textBox27.Text = "0100";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox14
-            // 
-            this.textBox14.BackColor = System.Drawing.Color.Gray;
-            this.textBox14.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox14.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox14.Location = new System.Drawing.Point(14, 64);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(239, 64);
-            this.textBox14.TabIndex = 1;
-            this.textBox14.Text = "0100";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.textBox8);
-            this.panel5.Controls.Add(this.textBox21);
-            this.panel5.Location = new System.Drawing.Point(577, 144);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(273, 291);
-            this.panel5.TabIndex = 2;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox8.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(10, 38);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(258, 63);
-            this.textBox8.TabIndex = 1;
-            this.textBox8.Text = "총 오더량";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox21
-            // 
-            this.textBox21.BackColor = System.Drawing.Color.Gray;
-            this.textBox21.Font = new System.Drawing.Font("나눔고딕", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox21.ForeColor = System.Drawing.Color.Lime;
-            this.textBox21.Location = new System.Drawing.Point(10, 130);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(258, 118);
-            this.textBox21.TabIndex = 1;
-            this.textBox21.Text = "0100";
-            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.textBox35);
-            this.panel6.Controls.Add(this.textBox23);
-            this.panel6.Controls.Add(this.textBox37);
-            this.panel6.Controls.Add(this.textBox36);
-            this.panel6.Controls.Add(this.textBox31);
-            this.panel6.Controls.Add(this.textBox24);
-            this.panel6.Location = new System.Drawing.Point(576, 442);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(547, 78);
-            this.panel6.TabIndex = 2;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Gray;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(144, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "오후12:00:00";
-            // 
-            // textBox35
-            // 
-            this.textBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox35.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox35.ForeColor = System.Drawing.Color.White;
-            this.textBox35.Location = new System.Drawing.Point(262, 13);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(119, 39);
-            this.textBox35.TabIndex = 1;
-            this.textBox35.Text = "경과시간";
-            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox23
-            // 
-            this.textBox23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox23.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox23.ForeColor = System.Drawing.Color.White;
-            this.textBox23.Location = new System.Drawing.Point(3, 13);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(133, 39);
-            this.textBox23.TabIndex = 1;
-            this.textBox23.Text = "시작시간";
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox37
-            // 
-            this.textBox37.BackColor = System.Drawing.Color.Gray;
-            this.textBox37.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox37.ForeColor = System.Drawing.Color.White;
-            this.textBox37.Location = new System.Drawing.Point(488, 13);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(49, 39);
-            this.textBox37.TabIndex = 1;
-            this.textBox37.Text = "00";
-            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox36
-            // 
-            this.textBox36.BackColor = System.Drawing.Color.Gray;
-            this.textBox36.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox36.ForeColor = System.Drawing.Color.White;
-            this.textBox36.Location = new System.Drawing.Point(437, 13);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(49, 39);
-            this.textBox36.TabIndex = 1;
-            this.textBox36.Text = "00";
-            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox31
-            // 
-            this.textBox31.BackColor = System.Drawing.Color.Gray;
-            this.textBox31.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox31.ForeColor = System.Drawing.Color.White;
-            this.textBox31.Location = new System.Drawing.Point(386, 13);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(49, 39);
-            this.textBox31.TabIndex = 1;
-            this.textBox31.Text = "00";
-            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox24
-            // 
-            this.textBox24.BackColor = System.Drawing.Color.Gray;
-            this.textBox24.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox24.ForeColor = System.Drawing.Color.White;
-            this.textBox24.Location = new System.Drawing.Point(135, 13);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(121, 39);
-            this.textBox24.TabIndex = 1;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.textBox22);
-            this.panel7.Controls.Add(this.textBox32);
-            this.panel7.Controls.Add(this.textBox34);
-            this.panel7.Controls.Add(this.textBox33);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(856, 144);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(267, 292);
-            this.panel7.TabIndex = 2;
-            // 
-            // textBox22
-            // 
-            this.textBox22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox22.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.textBox22.Location = new System.Drawing.Point(22, 19);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(111, 39);
-            this.textBox22.TabIndex = 1;
-            this.textBox22.Text = "SHIFT";
-            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox32
-            // 
-            this.textBox32.BackColor = System.Drawing.Color.Gray;
-            this.textBox32.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox32.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox32.Location = new System.Drawing.Point(137, 19);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(105, 39);
-            this.textBox32.TabIndex = 1;
-            this.textBox32.Text = "0 : 주간";
-            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox34
-            // 
-            this.textBox34.BackColor = System.Drawing.Color.Gray;
-            this.textBox34.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox34.ForeColor = System.Drawing.Color.White;
-            this.textBox34.Location = new System.Drawing.Point(22, 193);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(220, 39);
-            this.textBox34.TabIndex = 1;
-            this.textBox34.Text = "16:00:00";
-            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox33
-            // 
-            this.textBox33.BackColor = System.Drawing.Color.Gray;
-            this.textBox33.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox33.ForeColor = System.Drawing.Color.White;
-            this.textBox33.Location = new System.Drawing.Point(22, 135);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(220, 39);
-            this.textBox33.TabIndex = 1;
-            this.textBox33.Text = "08:00:00";
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(22, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 134);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "공정 가동 시간";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.button6);
-            this.panel8.Controls.Add(this.textBox26);
-            this.panel8.Controls.Add(this.textBox25);
-            this.panel8.Location = new System.Drawing.Point(577, 556);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(547, 74);
-            this.panel8.TabIndex = 2;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(343, 13);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 39);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "일시 정지";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox26
-            // 
-            this.textBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox26.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox26.ForeColor = System.Drawing.Color.White;
-            this.textBox26.Location = new System.Drawing.Point(3, 13);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(133, 39);
-            this.textBox26.TabIndex = 1;
-            this.textBox26.Text = "작업시간";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox25
-            // 
-            this.textBox25.BackColor = System.Drawing.Color.Gray;
-            this.textBox25.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox25.ForeColor = System.Drawing.Color.White;
-            this.textBox25.Location = new System.Drawing.Point(135, 13);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(202, 39);
-            this.textBox25.TabIndex = 1;
-            this.textBox25.Text = "110 분";
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel9
             // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.progressBar1);
             this.panel9.Controls.Add(this.textBox28);
-            this.panel9.Location = new System.Drawing.Point(577, 638);
+            this.panel9.Location = new System.Drawing.Point(12, 756);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(547, 79);
+            this.panel9.Size = new System.Drawing.Size(1891, 79);
             this.panel9.TabIndex = 2;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(135, 18);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(402, 39);
+            this.progressBar1.Size = new System.Drawing.Size(1746, 39);
             this.progressBar1.TabIndex = 2;
             // 
             // textBox28
@@ -839,161 +231,407 @@ namespace POP
             this.textBox28.Text = "진척률";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel10
+            // panel5
             // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.textBox30);
-            this.panel10.Controls.Add(this.textBox29);
-            this.panel10.Location = new System.Drawing.Point(576, 753);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(547, 64);
-            this.panel10.TabIndex = 2;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.textBox8);
+            this.panel5.Controls.Add(this.textBox21);
+            this.panel5.Location = new System.Drawing.Point(937, 38);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(957, 291);
+            this.panel5.TabIndex = 2;
             // 
-            // textBox30
+            // textBox8
             // 
-            this.textBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox30.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox30.ForeColor = System.Drawing.Color.White;
-            this.textBox30.Location = new System.Drawing.Point(3, 12);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(133, 39);
-            this.textBox30.TabIndex = 1;
-            this.textBox30.Text = "비작업시간";
-            this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox8.Font = new System.Drawing.Font("나눔고딕", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.Location = new System.Drawing.Point(14, 6);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(938, 118);
+            this.textBox8.TabIndex = 1;
+            this.textBox8.Text = "총 오더량";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox29
+            // textBox21
             // 
-            this.textBox29.BackColor = System.Drawing.Color.Gray;
-            this.textBox29.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox29.ForeColor = System.Drawing.Color.White;
-            this.textBox29.Location = new System.Drawing.Point(135, 12);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(367, 39);
-            this.textBox29.TabIndex = 1;
-            this.textBox29.Text = "00 분";
-            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox21.BackColor = System.Drawing.Color.Gray;
+            this.textBox21.Font = new System.Drawing.Font("나눔고딕", 90F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox21.ForeColor = System.Drawing.Color.Lime;
+            this.textBox21.Location = new System.Drawing.Point(14, 134);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(938, 145);
+            this.textBox21.TabIndex = 1;
+            this.textBox21.Text = "0";
+            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblState
+            // panel4
             // 
-            this.lblState.BackColor = System.Drawing.Color.Yellow;
-            this.lblState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblState.Location = new System.Drawing.Point(94, 9);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(20, 23);
-            this.lblState.TabIndex = 8;
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.textBox20);
+            this.panel4.Controls.Add(this.textBox19);
+            this.panel4.Controls.Add(this.textBox40);
+            this.panel4.Controls.Add(this.textBox39);
+            this.panel4.Controls.Add(this.textBox18);
+            this.panel4.Controls.Add(this.textBox17);
+            this.panel4.Controls.Add(this.textBox16);
+            this.panel4.Controls.Add(this.textBox15);
+            this.panel4.Controls.Add(this.textBox38);
+            this.panel4.Controls.Add(this.textBox13);
+            this.panel4.Controls.Add(this.textBox27);
+            this.panel4.Controls.Add(this.textBox14);
+            this.panel4.Location = new System.Drawing.Point(937, 338);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(957, 391);
+            this.panel4.TabIndex = 2;
             // 
-            // lblIP
+            // textBox20
             // 
-            this.lblIP.AutoSize = true;
-            this.lblIP.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblIP.Location = new System.Drawing.Point(163, 9);
-            this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(103, 14);
-            this.lblIP.TabIndex = 11;
-            this.lblIP.Text = "999.999.999.999";
+            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox20.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox20.ForeColor = System.Drawing.Color.White;
+            this.textBox20.Location = new System.Drawing.Point(700, 434);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(239, 39);
+            this.textBox20.TabIndex = 1;
+            this.textBox20.Text = "불량 수량";
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblPort
+            // textBox19
             // 
-            this.lblPort.AutoSize = true;
-            this.lblPort.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPort.Location = new System.Drawing.Point(309, 9);
-            this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(35, 14);
-            this.lblPort.TabIndex = 12;
-            this.lblPort.Text = "9999";
+            this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox19.BackColor = System.Drawing.Color.Gray;
+            this.textBox19.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox19.ForeColor = System.Drawing.Color.Red;
+            this.textBox19.Location = new System.Drawing.Point(700, 485);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(239, 64);
+            this.textBox19.TabIndex = 1;
+            this.textBox19.Text = "0100";
+            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtReadPLC
+            // textBox40
             // 
-            this.txtReadPLC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReadPLC.Location = new System.Drawing.Point(404, 7);
-            this.txtReadPLC.Name = "txtReadPLC";
-            this.txtReadPLC.Size = new System.Drawing.Size(190, 32);
-            this.txtReadPLC.TabIndex = 13;
+            this.textBox40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox40.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox40.ForeColor = System.Drawing.Color.Cyan;
+            this.textBox40.Location = new System.Drawing.Point(563, 198);
+            this.textBox40.Name = "textBox40";
+            this.textBox40.Size = new System.Drawing.Size(376, 91);
+            this.textBox40.TabIndex = 1;
+            this.textBox40.Text = "불량 수량";
+            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblTitle
+            // textBox39
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(623, 7);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(117, 61);
-            this.lblTitle.TabIndex = 14;
-            this.lblTitle.Text = "label1";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textBox39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox39.BackColor = System.Drawing.Color.Gray;
+            this.textBox39.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox39.ForeColor = System.Drawing.Color.Red;
+            this.textBox39.Location = new System.Drawing.Point(563, 295);
+            this.textBox39.Name = "textBox39";
+            this.textBox39.Size = new System.Drawing.Size(376, 91);
+            this.textBox39.TabIndex = 1;
+            this.textBox39.Text = "0";
+            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblVersion
+            // textBox18
             // 
-            this.lblVersion.BackColor = System.Drawing.Color.DimGray;
-            this.lblVersion.ForeColor = System.Drawing.Color.White;
-            this.lblVersion.Location = new System.Drawing.Point(763, 9);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(227, 26);
-            this.lblVersion.TabIndex = 15;
-            this.lblVersion.Text = "Version";
-            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox18.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox18.ForeColor = System.Drawing.Color.Cyan;
+            this.textBox18.Location = new System.Drawing.Point(563, 3);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(376, 91);
+            this.textBox18.TabIndex = 1;
+            this.textBox18.Text = "총 작업량";
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox17.BackColor = System.Drawing.Color.Gray;
+            this.textBox17.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox17.ForeColor = System.Drawing.Color.Black;
+            this.textBox17.Location = new System.Drawing.Point(563, 100);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(376, 91);
+            this.textBox17.TabIndex = 1;
+            this.textBox17.Text = "0";
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox16.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox16.ForeColor = System.Drawing.Color.White;
+            this.textBox16.Location = new System.Drawing.Point(14, 434);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(239, 39);
+            this.textBox16.TabIndex = 1;
+            this.textBox16.Text = "양품 수량";
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox15.BackColor = System.Drawing.Color.Gray;
+            this.textBox15.Font = new System.Drawing.Font("나눔고딕", 36.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox15.Location = new System.Drawing.Point(14, 485);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(239, 64);
+            this.textBox15.TabIndex = 1;
+            this.textBox15.Text = "0100";
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox38
+            // 
+            this.textBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox38.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox38.ForeColor = System.Drawing.Color.Cyan;
+            this.textBox38.Location = new System.Drawing.Point(14, 197);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.Size = new System.Drawing.Size(372, 91);
+            this.textBox38.TabIndex = 1;
+            this.textBox38.Text = "양품 수량";
+            this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox13.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox13.ForeColor = System.Drawing.Color.White;
+            this.textBox13.Location = new System.Drawing.Point(14, 3);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(372, 91);
+            this.textBox13.TabIndex = 1;
+            this.textBox13.Text = "오더 잔량";
+            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox27
+            // 
+            this.textBox27.BackColor = System.Drawing.Color.Gray;
+            this.textBox27.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.textBox27.Location = new System.Drawing.Point(14, 295);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(372, 91);
+            this.textBox27.TabIndex = 1;
+            this.textBox27.Text = "0";
+            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox14
+            // 
+            this.textBox14.BackColor = System.Drawing.Color.Gray;
+            this.textBox14.Font = new System.Drawing.Font("나눔고딕", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox14.ForeColor = System.Drawing.Color.Yellow;
+            this.textBox14.Location = new System.Drawing.Point(14, 100);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(372, 91);
+            this.textBox14.TabIndex = 1;
+            this.textBox14.Text = "0";
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.textBox9);
+            this.panel3.Controls.Add(this.textBox11);
+            this.panel3.Controls.Add(this.textBox10);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Location = new System.Drawing.Point(12, 338);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(919, 391);
+            this.panel3.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(14, 258);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(222, 63);
+            this.textBox3.TabIndex = 1;
+            this.textBox3.Text = "작업품목";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.ForeColor = System.Drawing.Color.Aqua;
+            this.textBox2.Location = new System.Drawing.Point(14, 160);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(222, 63);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "작업자";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.Gray;
+            this.textBox9.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox9.ForeColor = System.Drawing.Color.White;
+            this.textBox9.Location = new System.Drawing.Point(242, 258);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(672, 63);
+            this.textBox9.TabIndex = 1;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox11
+            // 
+            this.textBox11.BackColor = System.Drawing.Color.Gray;
+            this.textBox11.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox11.ForeColor = System.Drawing.Color.White;
+            this.textBox11.Location = new System.Drawing.Point(242, 160);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(672, 63);
+            this.textBox11.TabIndex = 1;
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.Gray;
+            this.textBox10.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox10.ForeColor = System.Drawing.Color.White;
+            this.textBox10.Location = new System.Drawing.Point(242, 65);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(672, 63);
+            this.textBox10.TabIndex = 1;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(15, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(221, 63);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "오더번호";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Location = new System.Drawing.Point(12, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(919, 291);
+            this.panel1.TabIndex = 2;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.Gray;
+            this.textBox7.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox7.ForeColor = System.Drawing.Color.White;
+            this.textBox7.Location = new System.Drawing.Point(258, 160);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(656, 63);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Gray;
+            this.textBox5.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(258, 19);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(656, 63);
+            this.textBox5.TabIndex = 1;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox12
+            // 
+            this.textBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox12.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox12.ForeColor = System.Drawing.Color.White;
+            this.textBox12.Location = new System.Drawing.Point(15, 160);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(222, 63);
+            this.textBox12.TabIndex = 1;
+            this.textBox12.Text = "설비";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(14, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(222, 63);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.Text = "작업장";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.ClientSize = new System.Drawing.Size(1915, 1012);
             this.Controls.Add(this.lblVersion);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtReadPLC);
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblIP);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listBox1);
             this.Name = "FrmAction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAction_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAction_FormClosed);
             this.Load += new System.EventHandler(this.FrmAction_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -1001,21 +639,13 @@ namespace POP
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox20;
@@ -1028,25 +658,7 @@ namespace POP
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.TextBox textBox39;
@@ -1057,7 +669,8 @@ namespace POP
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.TextBox txtReadPLC;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }

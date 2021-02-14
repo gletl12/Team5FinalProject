@@ -165,4 +165,7 @@
         wzAMwzAMwzAM02di4v/1M/YXv6+TRwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="titleBar1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
 </root>

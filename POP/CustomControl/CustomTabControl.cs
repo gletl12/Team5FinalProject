@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net.Filter;
 using System.Security.Cryptography.X509Certificates;
+using Util;
+using System.Reflection;
 
 namespace POP
 {   
@@ -25,9 +27,30 @@ namespace POP
             tabList = new Dictionary<string, Button>();
 
             //메인으로 나오는 폼, 버튼 딕셔너리에 추가
-            OpenForms.Add("Home", "FrmHome");
-            tabList.Add("Home",btnHome);
+            OpenForms.Add("메인화면", "FrmPerformance");
+            tabList.Add("메인화면", btnHome);
 
+            OpenForms.Add("설비관리", "FrmAllStatusBoard");
+            tabList.Add("설비관리", btnMachine);
+
+            OpenForms.Add("검사", "FrmInspection");
+            tabList.Add("검사", btnInspection);
+
+
+            //OpenForms.Add("최종조립반", "FrmAction");
+            //tabList.Add("최종조립반", button1);
+
+            //OpenForms.Add("Leg_조립반", "FrmAction");
+            //tabList.Add("Leg_조립반", button1);
+
+            //OpenForms.Add("SEAT_가공", "FrmAction");
+            //tabList.Add("SEAT_가공", button1);
+
+            //OpenForms.Add("LEGS_홀 가공", "FrmAction");
+            //tabList.Add("LEGS_홀 가공", button1);
+
+            //OpenForms.Add("외주 작업장", "FrmAction");
+            //tabList.Add("외주 작업장", button1);
 
         }
 
@@ -40,6 +63,14 @@ namespace POP
                 //열리지 않은 폼이면
                 OpenForms.Add(menuName, formName);
                 CreateTab(menuName, formName);
+
+
+                //폼생성
+                string appName = Assembly.GetEntryAssembly().GetName().Name;
+                Type frmType = Type.GetType($"{appName}.{formName}");
+
+                CommonUtil.OpenCreateForm_POP(ParentForm, frmType);
+
             }
             
             ((Button)tabList[menuName]).PerformClick();
@@ -53,10 +84,10 @@ namespace POP
             btn.Text = menuName;
             btn.Tag = formName;
 
-            btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);
+            btn.Location = new Point(4 + (74 * (OpenForms.Count - 1)), 2);  //
+            btn.Size = new Size(73, 25); //
 
 
-            btn.Size = new Size(73, 25);
             btn.FlatStyle = FlatStyle.Flat;
             btn.BackColor = Color.FromArgb(216, 220, 227);
             btn.FlatAppearance.BorderColor = Color.FromArgb(154, 161, 169);
@@ -146,7 +177,7 @@ namespace POP
                 string formName = OpenForms[((Button)sender).Text];
                 if (child.GetType().ToString().Split('.')[1] == formName)
                 {
-                    Util.CommonUtil.OpenCreateForm(ParentForm, child.GetType());
+                    Util.CommonUtil.OpenCreateForm_POP(ParentForm, child.GetType());
                     break;
                 }
             }

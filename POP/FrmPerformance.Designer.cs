@@ -32,6 +32,16 @@ namespace POP
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerformance));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
+            this.btnFirst = new System.Windows.Forms.ToolStripButton();
+            this.btnBackward = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnForward = new System.Windows.Forms.ToolStripButton();
+            this.btnLast = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -74,18 +84,9 @@ namespace POP
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripPaging = new System.Windows.Forms.ToolStrip();
-            this.btnFirst = new System.Windows.Forms.ToolStripButton();
-            this.btnBackward = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.btnForward = new System.Windows.Forms.ToolStripButton();
-            this.btnLast = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.toolStripPaging.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -93,7 +94,6 @@ namespace POP
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.toolStripPaging.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,7 +107,7 @@ namespace POP
             this.tabControl1.Location = new System.Drawing.Point(14, 302);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1583, 805);
+            this.tabControl1.Size = new System.Drawing.Size(1898, 715);
             this.tabControl1.TabIndex = 28;
             // 
             // tabPage1
@@ -117,10 +117,137 @@ namespace POP
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1575, 768);
+            this.tabPage1.Size = new System.Drawing.Size(1890, 678);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "생산 현황";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // toolStripPaging
+            // 
+            this.toolStripPaging.AutoSize = false;
+            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFirst,
+            this.btnBackward,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.btnForward,
+            this.btnLast});
+            this.toolStripPaging.Location = new System.Drawing.Point(3, 546);
+            this.toolStripPaging.Name = "toolStripPaging";
+            this.toolStripPaging.Size = new System.Drawing.Size(1884, 129);
+            this.toolStripPaging.TabIndex = 27;
+            this.toolStripPaging.Text = "toolStrip1";
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.AutoSize = false;
+            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
+            this.btnFirst.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(235, 70);
+            this.btnFirst.Text = "toolStripButton1";
+            this.btnFirst.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnBackward
+            // 
+            this.btnBackward.AutoSize = false;
+            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
+            this.btnBackward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(235, 70);
+            this.btnBackward.Text = "toolStripButton1";
+            this.btnBackward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton1.Text = "1";
+            this.toolStripButton1.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.AutoSize = false;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton2.Text = "2";
+            this.toolStripButton2.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.AutoSize = false;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton3.Text = "3";
+            this.toolStripButton3.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.AutoSize = false;
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton4.Text = "4";
+            this.toolStripButton4.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
+            this.toolStripButton5.Text = "5";
+            this.toolStripButton5.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnForward
+            // 
+            this.btnForward.AutoSize = false;
+            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnForward.Image = global::POP.Properties.Resources.Forward;
+            this.btnForward.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(235, 70);
+            this.btnForward.Text = "toolStripButton6";
+            this.btnForward.Click += new System.EventHandler(this.FrmPerformance_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.AutoSize = false;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
+            this.btnLast.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(235, 70);
+            this.btnLast.Text = "toolStripButton6";
+            this.btnLast.Click += new System.EventHandler(this.FrmPerformance_Click);
             // 
             // dataGridView1
             // 
@@ -129,11 +256,10 @@ namespace POP
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.RowTemplate.Height = 70;
-            this.dataGridView1.Size = new System.Drawing.Size(1569, 762);
+            this.dataGridView1.RowTemplate.Height = 95;
+            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
@@ -141,7 +267,7 @@ namespace POP
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1566, 673);
+            this.tabPage2.Size = new System.Drawing.Size(1890, 678);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "불량 현황";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -149,10 +275,11 @@ namespace POP
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1460, 530);
+            this.dataGridView2.Size = new System.Drawing.Size(1884, 672);
             this.dataGridView2.TabIndex = 27;
             // 
             // tabPage3
@@ -160,7 +287,7 @@ namespace POP
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1566, 673);
+            this.tabPage3.Size = new System.Drawing.Size(1890, 678);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "투입 현황";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -168,10 +295,11 @@ namespace POP
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(1460, 536);
+            this.dataGridView3.Size = new System.Drawing.Size(1890, 678);
             this.dataGridView3.TabIndex = 27;
             // 
             // groupBox2
@@ -191,7 +319,7 @@ namespace POP
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Location = new System.Drawing.Point(14, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 273);
+            this.groupBox2.Size = new System.Drawing.Size(686, 273);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색 조건";
@@ -209,7 +337,7 @@ namespace POP
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(408, 211);
+            this.lblPort.Location = new System.Drawing.Point(535, 212);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(16, 24);
             this.lblPort.TabIndex = 33;
@@ -219,7 +347,7 @@ namespace POP
             // lblIP
             // 
             this.lblIP.AutoSize = true;
-            this.lblIP.Location = new System.Drawing.Point(410, 150);
+            this.lblIP.Location = new System.Drawing.Point(537, 151);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(16, 24);
             this.lblIP.TabIndex = 32;
@@ -229,7 +357,7 @@ namespace POP
             // lblTaskID
             // 
             this.lblTaskID.AutoSize = true;
-            this.lblTaskID.Location = new System.Drawing.Point(408, 143);
+            this.lblTaskID.Location = new System.Drawing.Point(535, 144);
             this.lblTaskID.Name = "lblTaskID";
             this.lblTaskID.Size = new System.Drawing.Size(16, 24);
             this.lblTaskID.TabIndex = 31;
@@ -241,7 +369,7 @@ namespace POP
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(129, 179);
             this.cboMachine.Name = "cboMachine";
-            this.cboMachine.Size = new System.Drawing.Size(158, 32);
+            this.cboMachine.Size = new System.Drawing.Size(306, 32);
             this.cboMachine.TabIndex = 30;
             // 
             // button6
@@ -251,7 +379,7 @@ namespace POP
             this.button6.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(470, 62);
+            this.button6.Location = new System.Drawing.Point(597, 63);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(51, 36);
             this.button6.TabIndex = 7;
@@ -266,7 +394,7 @@ namespace POP
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(314, 175);
+            this.btnSearch.Location = new System.Drawing.Point(441, 176);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(211, 36);
             this.btnSearch.TabIndex = 7;
@@ -277,7 +405,7 @@ namespace POP
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 70);
+            this.label1.Location = new System.Drawing.Point(355, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 24);
             this.label1.TabIndex = 29;
@@ -286,7 +414,7 @@ namespace POP
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(313, 64);
+            this.dateTimePicker2.Location = new System.Drawing.Point(440, 65);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(157, 32);
             this.dateTimePicker2.TabIndex = 28;
@@ -306,7 +434,7 @@ namespace POP
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(126, 64);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(157, 32);
             this.dateTimePicker1.TabIndex = 28;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -335,25 +463,24 @@ namespace POP
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(549, 23);
+            this.groupBox1.Location = new System.Drawing.Point(706, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 273);
+            this.groupBox1.Size = new System.Drawing.Size(789, 273);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "세부 정보";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(419, 180);
+            this.textBox6.Location = new System.Drawing.Point(572, 180);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(190, 32);
             this.textBox6.TabIndex = 1;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(317, 180);
+            this.label7.Location = new System.Drawing.Point(470, 180);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 24);
             this.label7.TabIndex = 0;
@@ -361,7 +488,7 @@ namespace POP
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(419, 119);
+            this.textBox5.Location = new System.Drawing.Point(572, 119);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(190, 32);
             this.textBox5.TabIndex = 1;
@@ -369,7 +496,7 @@ namespace POP
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(317, 119);
+            this.label6.Location = new System.Drawing.Point(470, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 0;
@@ -377,7 +504,7 @@ namespace POP
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(419, 57);
+            this.textBox4.Location = new System.Drawing.Point(572, 57);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(190, 32);
             this.textBox4.TabIndex = 1;
@@ -385,7 +512,7 @@ namespace POP
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(317, 57);
+            this.label5.Location = new System.Drawing.Point(470, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 0;
@@ -444,10 +571,9 @@ namespace POP
             this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox11.BackColor = System.Drawing.Color.Gray;
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox11.ForeColor = System.Drawing.Color.Red;
-            this.textBox11.Location = new System.Drawing.Point(1288, 264);
+            this.textBox11.Location = new System.Drawing.Point(1603, 264);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(191, 32);
             this.textBox11.TabIndex = 1;
@@ -460,10 +586,9 @@ namespace POP
             this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox10.BackColor = System.Drawing.Color.Gray;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Enabled = false;
             this.textBox10.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox10.ForeColor = System.Drawing.Color.Lime;
-            this.textBox10.Location = new System.Drawing.Point(1288, 208);
+            this.textBox10.Location = new System.Drawing.Point(1603, 208);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(191, 32);
             this.textBox10.TabIndex = 1;
@@ -475,7 +600,7 @@ namespace POP
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1186, 267);
+            this.label12.Location = new System.Drawing.Point(1501, 267);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 24);
             this.label12.TabIndex = 0;
@@ -486,10 +611,9 @@ namespace POP
             this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox8.BackColor = System.Drawing.Color.Gray;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox8.Location = new System.Drawing.Point(1288, 85);
+            this.textBox8.Location = new System.Drawing.Point(1603, 85);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(191, 32);
             this.textBox8.TabIndex = 1;
@@ -501,7 +625,7 @@ namespace POP
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1186, 211);
+            this.label11.Location = new System.Drawing.Point(1501, 211);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 24);
             this.label11.TabIndex = 0;
@@ -511,7 +635,7 @@ namespace POP
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1186, 88);
+            this.label9.Location = new System.Drawing.Point(1501, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 24);
             this.label9.TabIndex = 0;
@@ -522,10 +646,9 @@ namespace POP
             this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox9.BackColor = System.Drawing.Color.Gray;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Enabled = false;
             this.textBox9.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox9.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox9.Location = new System.Drawing.Point(1288, 147);
+            this.textBox9.Location = new System.Drawing.Point(1603, 147);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(191, 32);
             this.textBox9.TabIndex = 1;
@@ -537,7 +660,7 @@ namespace POP
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1186, 150);
+            this.label10.Location = new System.Drawing.Point(1501, 150);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 24);
             this.label10.TabIndex = 0;
@@ -548,10 +671,9 @@ namespace POP
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.BackColor = System.Drawing.Color.Gray;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(1288, 29);
+            this.textBox7.Location = new System.Drawing.Point(1603, 29);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(191, 32);
             this.textBox7.TabIndex = 1;
@@ -563,7 +685,7 @@ namespace POP
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1186, 32);
+            this.label8.Location = new System.Drawing.Point(1501, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 24);
             this.label8.TabIndex = 0;
@@ -571,128 +693,17 @@ namespace POP
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(1485, 12);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(1800, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 292);
             this.panel1.TabIndex = 31;
-            // 
-            // toolStripPaging
-            // 
-            this.toolStripPaging.AutoSize = false;
-            this.toolStripPaging.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStripPaging.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.toolStripPaging.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripPaging.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirst,
-            this.btnBackward,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.btnForward,
-            this.btnLast});
-            this.toolStripPaging.Location = new System.Drawing.Point(3, 686);
-            this.toolStripPaging.Name = "toolStripPaging";
-            this.toolStripPaging.Size = new System.Drawing.Size(1569, 79);
-            this.toolStripPaging.TabIndex = 27;
-            this.toolStripPaging.Text = "toolStrip1";
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.AutoSize = false;
-            this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFirst.Image = global::POP.Properties.Resources.fastreverse;
-            this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(235, 70);
-            this.btnFirst.Text = "toolStripButton1";
-            // 
-            // btnBackward
-            // 
-            this.btnBackward.AutoSize = false;
-            this.btnBackward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBackward.Image = ((System.Drawing.Image)(resources.GetObject("btnBackward.Image")));
-            this.btnBackward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBackward.Name = "btnBackward";
-            this.btnBackward.Size = new System.Drawing.Size(235, 70);
-            this.btnBackward.Text = "toolStripButton1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton1.Text = "1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton2.Text = "2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton3.Text = "3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton4.Text = "4";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(120, 75);
-            this.toolStripButton5.Text = "5";
-            // 
-            // btnForward
-            // 
-            this.btnForward.AutoSize = false;
-            this.btnForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnForward.Image = global::POP.Properties.Resources.Forward;
-            this.btnForward.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(235, 70);
-            this.btnForward.Text = "toolStripButton6";
-            // 
-            // btnLast
-            // 
-            this.btnLast.AutoSize = false;
-            this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLast.Image = global::POP.Properties.Resources.fastforward;
-            this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(235, 70);
-            this.btnLast.Text = "toolStripButton6";
             // 
             // FrmPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(1600, 1102);
+            this.ClientSize = new System.Drawing.Size(1915, 1012);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox2);
@@ -709,8 +720,11 @@ namespace POP
             this.Controls.Add(this.label8);
             this.Name = "FrmPerformance";
             this.Load += new System.EventHandler(this.FrmInspection_Load);
+            this.Click += new System.EventHandler(this.FrmPerformance_Click);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.toolStripPaging.ResumeLayout(false);
+            this.toolStripPaging.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -720,8 +734,6 @@ namespace POP
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.toolStripPaging.ResumeLayout(false);
-            this.toolStripPaging.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,7 +33,7 @@ namespace CompanyManager
 
         private void TitleBar_Load(object sender, EventArgs e)
         {
-
+            label1.ForeColor = Color.FromArgb( 43, 43, 50);
         }
 
         private void cancelButton1_Leave(object sender, EventArgs e)

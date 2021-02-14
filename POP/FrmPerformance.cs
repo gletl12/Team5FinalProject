@@ -11,67 +11,123 @@ using VO;
 using System.Linq;
 using System.Diagnostics;
 using System.Configuration;
+using System.Globalization;
+using System.Reflection;
 
 namespace POP
 {
     public partial class FrmPerformance : POP.BaseForm
     {
-        FrmAction frm;
+        
         #region Initialize fields
         private int CurrentPage = 1;
         int PagesCount = 1;
-        int PageRows = 20;
+        int PageRows = 5;
 
-        BindingList<Contacts> Baselist = null;
-        BindingList<Contacts> Templist = null;
+        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, int AllItemNum, string WorkItem, string OrderNum , Form parent)
+        {
+            Size formSize = new Size(1915, 1012);
+
+            //string appName = Assembly.GetEntryAssembly().GetName().Name;
+            //Type type = Type.GetType($"{appName}.FrmAction");
+
+
+            //foreach (Form form in Application.OpenForms)
+            //{
+            //    if (form.GetType() == type)
+            //    {
+            //        form.Size = formSize;
+            //        form.Activate();
+            //        return;
+            //    }
+            //}
+
+            //FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
+
+            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName,  AllItemNum,  WorkItem,  OrderNum);
+            frm.MdiParent = parent;
+            frm.Show();
+            frm.Location = new Point(0, 0);
+            frm.Size = formSize;
+            //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
+        }
+
+
+        List<WorkOrderVO> list;
+        List<WorkOrderVO> Templist;
         #endregion
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Task_Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
         public string Task_Remark { get { return lblRemark.Text; } set { lblRemark.Text = value; } }
 
-        int process_id = 0;
+
+
+        UserControl1 ctrl;
         public FrmPerformance()
         {
             InitializeComponent();
+           
         }
-
         
+
         private void FrmInspection_Load(object sender, EventArgs e)
         {
-            
             GetdgvColumn();
             DataLoad();
             ComboBoxBinding();
             Control();
-         
+            PagesCount = Convert.ToInt32(Math.Ceiling(list.Count * 1.0 / PageRows));
 
+            CurrentPage = 1;
+            RefreshPagination();
+            RebindGridForPageChange();
         }
-        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
-        UserControl1 ctrl;
+
         private void Control()
         {
-            
-
             for (int i = 0; i < tasks.Count; i++)
             {
                 ctrl = new UserControl1();
 
                 ctrl.Name = $"taskControl{i}";
-                ctrl.Location = new Point(0,0); //(23,2) (23, 35)
-                ctrl.Size = new Size(112, 292);
+                ctrl.Location = new Point(0, 0);
+                ctrl.Size = new Size(300, 200);
 
                 ctrl.Task_ID = tasks[i].taskID;
                 ctrl.Task_IP = tasks[i].hostIP;
                 ctrl.Task_Port = tasks[i].hostPort;
                 ctrl.Task_Remark = tasks[i].remark;
 
+
                 ctrl.IsTaskEnable = false;
-                ctrl.Visible = false;
+                ctrl.ControlMDI = this;
+
+                ctrl.RouteStart += Ctrl_RouteStart;
                 panel1.Controls.Add(ctrl);
             }
         }
 
+        private void Ctrl_RouteStart(object sender, EventArgs e)
+        {
+            // OpenCreateForm_POP(ctrl.Task_ID,);
+
+            //foreach (Control ctrl in MdiParent.Controls)
+            //{
+            //    if (ctrl is CustomTabControl ta)
+            //    {
+
+            //        ta.InsertTab(MdiParent,);
+            //    }
+            //}
+            
+          
+
+        }
+
+        List<taskItem> tasks = (List<taskItem>)ConfigurationManager.GetSection("taskList");
+        //UserControl1 ctrl;
+       
         private void ComboBoxBinding()
         {
             MachineService service = new MachineService();
@@ -79,7 +135,7 @@ namespace POP
             machine.Insert(0, new MachineVO { machine_name = "전체" });
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
         }
-        List<WorkOrderVO> list;
+        //List<WorkOrderVO> list;
         private void DataLoad()
         {
             WorkOrderService service1 = new WorkOrderService();
@@ -92,10 +148,10 @@ namespace POP
             CommonUtil.SetDGVDesign_Num(dataGridView1);
             dataGridView1.ColumnHeadersHeight = 50;
 
-            CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_id", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "품목 코드", "item_id", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "계획수량", "wo_qty", 350);
-            CommonUtil.AddGridTextColumn(dataGridView1, "작업지시상태", "wo_state", 350);
+            CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목 코드", "item_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "계획수량", "wo_qty", 445);
+            CommonUtil.AddGridTextColumn(dataGridView1, "작업지시상태", "wo_state", 445);
 
             CommonUtil.AddGridTextColumn(dataGridView1, "계획번호", "prod_id", 130, false);
             CommonUtil.AddGridTextColumn(dataGridView1, "번호", "wo_people", 130, false);
@@ -150,34 +206,24 @@ namespace POP
                             if (taskCtrl.Task_ID.Equals(tasks[i].taskID))
                             {
                                 taskCtrl.Visible = true;
+
+                                taskCtrl.AllItemNum= Convert.ToInt32(dataGridView1[2, rowIndex].Value);//총오더량
+                                taskCtrl.Machinname = Convert.ToString(dataGridView1[13, rowIndex].Value);
+                                taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
+                                taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
+                                taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
                             }
                         }
                     }
                 }
 
             }
-           
-
-
-            //    UserControl1 ctrl = new UserControl1();
-
-            //    ctrl.Name = $"taskControl{i}";
-            //    ctrl.Location = new Point(0, 0); //(23,2) (23, 35)
-            //    ctrl.Size = new Size(112, 292);
-
-            //    ctrl.Task_ID = lblTaskID.Text;
-            //    ctrl.Task_IP = lblIP.Text;
-            //    ctrl.Task_Port = lblPort.Text;
-            //    ctrl.Task_Remark = lblRemark.Text;
-
-            //    ctrl.IsTaskEnable = false;
-
-            //    panel1.Controls.Add(ctrl);
-            //    i++;
-
-
-        }
-
+         }
+        /// <summary>
+        /// 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (cboMachine.Text == "전체")
@@ -196,82 +242,118 @@ namespace POP
                 dataGridView1.DataSource = list1;
             }
         }
-
+        /// <summary>
+        /// 오늘날짜
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = DateTime.Now;
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
+     
+       
 
-        }
-        /// <summary>
-        /// 로그보기
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button7_Click(object sender, EventArgs e)
-        {
-            frmLogViewer log = new frmLogViewer();
-            log.OpenFileName = $"Logs\\{Task_ID}.log";
-            log.ShowDialog();
-        }
-        /// <summary>
-        /// 공정가동
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            string server = @"C:\Users\HB\Desktop\파이널팀프\Machine\bin\Debug\Machine.exe";
-            Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
-            process_id = pro.Id;
+       
 
-            frm = new FrmAction(Task_ID, Task_IP, Task_Port);
-            frm.Show();
-            frm.Hide();
-
-           // IsTaskEnable = true;
-        }
-        /// <summary>
-        /// 화면보이기
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button8_Click(object sender, EventArgs e)
+        private void FrmPerformance_Click(object sender, EventArgs e)
         {
-            frm.Show();
-        }
-        /// <summary>
-        /// 설비중지
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button10_Click(object sender, EventArgs e)
-        {
-            frm.bExit = true;
-            frm.Close();
-            //IsTaskEnable = false;
-
-            foreach (Process process in Process.GetProcesses())
+            try
             {
-                if (process.Id.Equals(process_id))
+                ToolStripButton ToolStripButton = ((ToolStripButton)sender);
+
+                //Determining the current page
+                if (ToolStripButton == btnBackward)
+                    CurrentPage--;
+                else if (ToolStripButton == btnForward)
+                    CurrentPage++;
+                else if (ToolStripButton == btnLast)
+                    CurrentPage = PagesCount;
+                else if (ToolStripButton == btnFirst)
+                    CurrentPage = 1;
+                else
+                    CurrentPage = Convert.ToInt32(ToolStripButton.Text, CultureInfo.InvariantCulture);
+
+                if (CurrentPage < 1)
+                    CurrentPage = 1;
+                else if (CurrentPage > PagesCount)
+                    CurrentPage = PagesCount;
+
+                //Rebind the Datagridview with the data.
+                RebindGridForPageChange();
+
+                //Change the pagiantions buttons according to page number
+                RefreshPagination();
+            }
+            catch (Exception) { }
+        }
+        private void RefreshPagination()
+        {
+            ToolStripButton[] items = new ToolStripButton[] { toolStripButton1, toolStripButton2, toolStripButton3, toolStripButton4, toolStripButton5 };
+
+            //pageStartIndex contains the first button number of pagination.
+            int pageStartIndex = 1;
+
+            if (PagesCount > 5 && CurrentPage > 2)
+                pageStartIndex = CurrentPage - 2;
+
+            if (PagesCount > 5 && CurrentPage > PagesCount - 2)
+                pageStartIndex = PagesCount - 4;
+
+            for (int i = pageStartIndex; i < pageStartIndex + 5; i++)
+            {
+                if (i > PagesCount)
                 {
-                    process.Kill();
+                    items[i - pageStartIndex].Visible = false;
+                }
+                else
+                {
+                    //Changing the page numbers
+                    items[i - pageStartIndex].Text = i.ToString(CultureInfo.InvariantCulture);
+
+                    //Setting the Appearance of the page number buttons
+                    if (i == CurrentPage)
+                    {
+                        items[i - pageStartIndex].BackColor = Color.Black;
+                        items[i - pageStartIndex].ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        items[i - pageStartIndex].BackColor = Color.White;
+                        items[i - pageStartIndex].ForeColor = Color.Black;
+                    }
                 }
             }
+
+            //Enabling or Disalbing pagination first, last, previous , next buttons
+            if (CurrentPage == 1)
+                btnBackward.Enabled = btnFirst.Enabled = false;
+            else
+                btnBackward.Enabled = btnFirst.Enabled = true;
+
+            if (CurrentPage == PagesCount)
+                btnForward.Enabled = btnLast.Enabled = false;
+
+            else
+                btnForward.Enabled = btnLast.Enabled = true;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void RebindGridForPageChange()
         {
+            //Rebinding the Datagridview with data
+            int datasourcestartIndex = (CurrentPage - 1) * PageRows;
+            Templist = new List<WorkOrderVO>();
+            for (int i = datasourcestartIndex; i < datasourcestartIndex + PageRows; i++)
+            {
+                if (i >= list.Count)
+                    break;
 
-        }
+                Templist.Add(list[i]);
+            }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dataGridView1.DataSource = Templist;
+            dataGridView1.Refresh();
         }
     }
 }

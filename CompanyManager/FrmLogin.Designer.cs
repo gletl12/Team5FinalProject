@@ -30,17 +30,15 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.panDirectLogin = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.Loginbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panDirectLogin.SuspendLayout();
+            this.txtID = new CompanyManager.CustomControl.PlaceholderTextBox();
+            this.txtPassword = new CompanyManager.CustomControl.PlaceholderTextBox();
+            this.grandianPanel1 = new CompanyManager.GrandianPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grandianPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupTitleBar1
@@ -52,81 +50,13 @@ namespace CompanyManager
             this.popupTitleBar1.Size = new System.Drawing.Size(339, 33);
             this.popupTitleBar1.TabStop = false;
             // 
-            // panDirectLogin
-            // 
-            this.panDirectLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.panDirectLogin.Controls.Add(this.label4);
-            this.panDirectLogin.Controls.Add(this.label3);
-            this.panDirectLogin.Controls.Add(this.label2);
-            this.panDirectLogin.Controls.Add(this.label1);
-            this.panDirectLogin.Controls.Add(this.txtPassword);
-            this.panDirectLogin.Controls.Add(this.txtID);
-            this.panDirectLogin.Controls.Add(this.Loginbtn);
-            this.panDirectLogin.Location = new System.Drawing.Point(24, 173);
-            this.panDirectLogin.Name = "panDirectLogin";
-            this.panDirectLogin.Size = new System.Drawing.Size(285, 179);
-            this.panDirectLogin.TabIndex = 23;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 14);
-            this.label4.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 14);
-            this.label3.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 14);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "비밀번호";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 14);
-            this.label1.TabIndex = 99;
-            this.label1.Text = "아이디";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
-            this.txtPassword.Location = new System.Drawing.Point(77, 57);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(178, 21);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "1234";
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
-            // 
-            // txtID
-            // 
-            this.txtID.BackColor = System.Drawing.SystemColors.Info;
-            this.txtID.Location = new System.Drawing.Point(77, 19);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(178, 21);
-            this.txtID.TabIndex = 0;
-            this.txtID.Text = "1";
-            // 
             // Loginbtn
             // 
-            this.Loginbtn.BackColor = System.Drawing.Color.White;
+            this.Loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
             this.Loginbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Loginbtn.Location = new System.Drawing.Point(12, 115);
+            this.Loginbtn.ForeColor = System.Drawing.Color.White;
+            this.Loginbtn.Location = new System.Drawing.Point(10, 88);
             this.Loginbtn.Name = "Loginbtn";
             this.Loginbtn.Size = new System.Drawing.Size(264, 41);
             this.Loginbtn.TabIndex = 2;
@@ -136,43 +66,93 @@ namespace CompanyManager
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::CompanyManager.Properties.Resources.LOGO_T;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(339, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(285, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtID.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtID.Location = new System.Drawing.Point(10, 18);
+            this.txtID.Name = "txtID";
+            this.txtID.PlaceholderText = "아이디";
+            this.txtID.PlaceholderTextColor = System.Drawing.Color.Silver;
+            this.txtID.Size = new System.Drawing.Size(264, 26);
+            this.txtID.TabIndex = 24;
+            this.txtID.TextColor = System.Drawing.Color.White;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPassword.Location = new System.Drawing.Point(10, 47);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.PlaceholderText = "비밀번호";
+            this.txtPassword.PlaceholderTextColor = System.Drawing.Color.Silver;
+            this.txtPassword.Size = new System.Drawing.Size(264, 26);
+            this.txtPassword.TabIndex = 25;
+            this.txtPassword.TextColor = System.Drawing.Color.White;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
+            // grandianPanel1
+            // 
+            this.grandianPanel1.ColorBotton = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(232)))));
+            this.grandianPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
+            this.grandianPanel1.Controls.Add(this.panel1);
+            this.grandianPanel1.Controls.Add(this.pictureBox1);
+            this.grandianPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grandianPanel1.Location = new System.Drawing.Point(0, 0);
+            this.grandianPanel1.Name = "grandianPanel1";
+            this.grandianPanel1.Size = new System.Drawing.Size(339, 290);
+            this.grandianPanel1.TabIndex = 24;
+            this.grandianPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.grandianPanel1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtID);
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.Loginbtn);
+            this.panel1.Location = new System.Drawing.Point(27, 147);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(285, 131);
+            this.panel1.TabIndex = 27;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(160)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(339, 377);
-            this.Controls.Add(this.panDirectLogin);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(339, 290);
+            this.Controls.Add(this.grandianPanel1);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Controls.SetChildIndex(this.grandianPanel1, 0);
             this.Controls.SetChildIndex(this.popupTitleBar1, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
-            this.Controls.SetChildIndex(this.panDirectLogin, 0);
-            this.panDirectLogin.ResumeLayout(false);
-            this.panDirectLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grandianPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panDirectLogin;
         private System.Windows.Forms.Button Loginbtn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtID;
+        private CustomControl.PlaceholderTextBox txtID;
+        private CustomControl.PlaceholderTextBox txtPassword;
+        private GrandianPanel grandianPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

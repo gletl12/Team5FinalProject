@@ -124,6 +124,7 @@ namespace CompanyManager
             // 
             // cboID
             // 
+            this.cboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
             "작업/생산 ID",
@@ -132,7 +133,6 @@ namespace CompanyManager
             this.cboID.Name = "cboID";
             this.cboID.Size = new System.Drawing.Size(66, 22);
             this.cboID.TabIndex = 13;
-            this.cboID.Text = "작업/생산 ID";
             // 
             // cboDate
             // 

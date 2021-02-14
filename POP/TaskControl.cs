@@ -79,6 +79,7 @@ namespace POP
                 if (process.Id.Equals(process_id))
                 { 
                     process.Kill();
+                    
                 }
             }
         }
@@ -88,6 +89,11 @@ namespace POP
             frmLogViewer log = new frmLogViewer();
             log.OpenFileName = $"Logs\\{Task_ID}.log";
             log.ShowDialog();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

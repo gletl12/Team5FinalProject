@@ -16,11 +16,12 @@ using System.Diagnostics;
 using System.Threading;
 using System.Net;
 using log4net.Core;
+using Machine;
 
 namespace POP
 {
     public partial class FrmAction : POP.BaseForm
-    {
+    {//
         TcpControl client;
         NetworkStream recvData;
         SqlConnection conn;
@@ -30,7 +31,7 @@ namespace POP
         int taskID;
         string pgmID;
 
-        bool logVisible = false;
+        bool logVisible = true;
         string clientName;
         string clientIP;
 
@@ -38,15 +39,21 @@ namespace POP
 
         LoggingUtility _logging;
         public LoggingUtility Log { get { return _logging; } }
+       
 
         ThreadPLCTask m_thread;
-        int timer_CONNECT = 1000;
-        int timer_KEEP_ALIVE = 1000;
-        int timer_READ_PLC = 1000;
-        public FrmAction(string taskid, string ip, string port)
+        int timer_CONNECT = 300;
+        int timer_KEEP_ALIVE = 300;
+        int timer_READ_PLC = 300;
+        
+        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
         {
             InitializeComponent();
-
+            textBox5.Text = Machinname;//머신네임
+            textBox21.Text = AllItemNum.ToString();//총오더량
+            textBox10.Text = OrderNum;//지시번호
+            textBox11.Text = WorkUserName;//작업자
+            textBox9.Text = WorkItem;//작업물건
             hostIP = ip;
             hostPort = int.Parse(port);
             //taskID = int.Parse(taskid.Replace("PLC_", ""));
@@ -60,7 +67,7 @@ namespace POP
 
             lblIP.Text = hostIP;
             lblPort.Text = hostPort.ToString();
-            this.Text = lblTitle.Text = taskid;
+            this.Text = textBox7.Text = taskid;
 
             Assembly assembly = Assembly.GetExecutingAssembly();
             lblVersion.Text = File.GetLastWriteTime(assembly.Location).ToString("yyyy.MM.dd");
@@ -73,8 +80,18 @@ namespace POP
                 clientIP = locals[1].ToString();
             }
         }
+
+
         private void FrmAction_Load(object sender, EventArgs e)
         {
+
+            button1.Enabled = false;
+            button4.Enabled = false;
+            button2.Enabled = false;
+
+          
+                
+
             try
             {
                 Log.WriteInfo("DB서버 연결");
@@ -92,6 +109,9 @@ namespace POP
             {
                 Log.WriteError("DB접속 실패:" + err.Message);
             }
+
+
+
         }
         /// <summary>
         /// 데이터를 수신받았을때 UI 컨트롤에 데이터 표현
@@ -100,41 +120,32 @@ namespace POP
         /// <param name="args"></param>
         private void M_thread_ReadData(object sender, ReadDataEventArgs args)
         {
+            string info = args.Data;
+            string[] arrData1 = info.Split('|');
+            Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}%");
+
             if (logVisible)
             {
-                if (listBox1.Items.Count > 50)
-                    listBox1.Items.Clear();
+                //if (listBox1.Items.Count > 50)
+                //    listBox1.Items.Clear();
 
-                this.Invoke((MethodInvoker)(() => listBox1.Items.Add($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {args.Data}")));
-                this.Invoke((MethodInvoker)(() => listBox1.SelectedIndex = listBox1.Items.Count - 1));
+                //this.Invoke((MethodInvoker)(() => listBox1.Items.Add($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] {args.Data}")));
+               // this.Invoke((MethodInvoker)(() => listBox1.SelectedIndex = listBox1.Items.Count - 1));
             }
+            
+            this.Invoke((MethodInvoker)(() =>      txtReadPLC.Text = args.Data         ));
+            this.Invoke(new Action(() =>
+            {
+                textBox27.Text = arrData1[0];
+                textBox39.Text = arrData1[1];
+                textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
+                textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
 
-            this.Invoke((MethodInvoker)(() => txtReadPLC.Text = args.Data));
+                progressBar1.Value= int.Parse(arrData1[2]);
+            }));
         }
 
-        /// <summary>
-        /// 기계와의 연결상태에 따라서 UI 컨트롤에 표시
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void timer_Connect_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                if (m_thread.Connection)
-                {
-                    //lblState.BackColor = Color.Green;
-                }
-                else
-                {
-                   // lblState.BackColor = Color.Red;
-                }
-            }
-            catch (Exception err)
-            {
-                Debug.WriteLine(err.Message);
-            }
-        }
+
 
         private void FrmAction_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -160,76 +171,69 @@ namespace POP
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textBox27_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
+        //작업중지
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button3.Enabled = false;
+            button4.Enabled = true;
+            button2.Enabled = true;
+            //timer_Connects.Stop();
+        }
+        //작업다시시작
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button3.Enabled = true;
+            button4.Enabled = false;
+            button2.Enabled = false;
+           // timer_Connects.Start();
+        }
+
+        private void lblVersion_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+      
+        /// <summary>
+        /// 기계와의 연결상태에 따라서 UI 컨트롤에 표시
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer_Connects_Tick(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                if (m_thread.Connection)
+                {
+                    lblState.BackColor = Color.Green;
+                }
+                else
+                {
+                    lblState.BackColor = Color.Red;
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
+    
 }

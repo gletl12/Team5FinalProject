@@ -305,7 +305,6 @@ namespace Util
 
                 //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(e.RowBounds.Location.X + 25, 5),Color.Black);
                 //TextRenderer.DrawText(e.Graphics,"No.", e.InheritedRowStyle.Font,new Point(19,5),Color.Black);
-
                 //e.Graphics.DrawString("No.", e.InheritedRowStyle.Font,brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y -20, drawFormat);
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
@@ -343,6 +342,35 @@ namespace Util
             if (!openMdi)
             {
                 frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = owner;
+                frm.Show();
+            }
+        }
+        public static void OpenCreateFormPOP<T>(bool openMdi = false, Form owner = null) where T : Form, new()
+        {
+          
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(T))
+                {
+                    form.StartPosition = FormStartPosition.CenterParent;
+                    form.WindowState = FormWindowState.Maximized;
+                    form.Location = new Point(0, 0);
+                    form.Activate();
+                    return;
+                }
+            }
+
+            T frm = new T();
+            if (!openMdi)
+            {
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Location = new Point(0, 0);
                 frm.ShowDialog();
             }
             else
@@ -389,6 +417,33 @@ namespace Util
             frm.Size = formSize;
             //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
         }
+
+        /// <summary>
+        /// parent 폼 받아서 type형식 폼 mdi로열기
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="type"></param>
+        public static void OpenCreateForm_POP(Form parent, Type type)
+        {
+            Size formSize = new Size(1915, 1012);
+            
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == type)
+                {
+                    form.Size = formSize;
+                    form.Activate();
+                    return;
+                }
+            }
+            Form frm = ((Form)Activator.CreateInstance(type));
+            frm.MdiParent = parent;
+            frm.Show();
+            frm.Location = new Point(0, 0);
+            frm.Size = formSize;
+            //호출 한 뒤 parent폼의 mdichild폼 위치 재설정필요
+        }
+
 
 
         public static byte[] ImageToByte(Image img)

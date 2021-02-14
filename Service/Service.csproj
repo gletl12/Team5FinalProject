@@ -56,8 +56,10 @@
     <Compile Include="EmployeeService.cs" />
     <Compile Include="FactoryService.cs" />
     <Compile Include="InboundService.cs" />
+    <Compile Include="IOService.cs" />
     <Compile Include="MachineService.cs" />
     <Compile Include="MenuService.cs" />
+    <Compile Include="MoveService.cs" />
     <Compile Include="PerformanceService.cs" />
     <Compile Include="MGradeService.cs" />
     <Compile Include="PriceService.cs" />
@@ -66,6 +68,9 @@
     <Compile Include="SalesOrderService.cs" />
     <Compile Include="ServiceHelp.cs" />
     <Compile Include="ShiftService.cs" />
+    <Compile Include="ShipmentService.cs" />
+    <Compile Include="StockByOrderService.cs" />
+    <Compile Include="StockService.cs" />
     <Compile Include="SubjectService.cs" />
     <Compile Include="WorkOrderService.cs" />
   </ItemGroup>
