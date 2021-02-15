@@ -58,5 +58,40 @@ where CH.ins_date>=@from and CH.ins_date<=@to";
             }
 
         }
+
+
+        public int GetChID(CheckVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = @"insert into TBL_CHECK_HISTORY (item_id,ch_qty,good_qty,bad_qty,ins_date,ins_emp)
+                                        values (@item_id,@ch_qty,@good_qty,@bad_qty,@ins_date,@ins_emp);
+                                        select @@IDENTITY; ";
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@item_id", vo.item_id);
+                    cmd.Parameters.AddWithValue("@ch_qty", vo.ch_qty);
+                    cmd.Parameters.AddWithValue("@good_qty", vo.good_qty);
+                    cmd.Parameters.AddWithValue("@bad_qty", vo.bad_qty);
+                    cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ins_emp", vo.emp);
+
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    Dispose();
+
+                    return id;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_CheckDAC_GetChID() 오류", err);
+
+                return -1;
+            }
+        }
     }
 }

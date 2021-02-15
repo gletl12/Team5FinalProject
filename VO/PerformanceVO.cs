@@ -25,5 +25,11 @@ namespace VO
         public int performance_qty { get; set; }
         public string ins_emp { get; set; }
         public string p_state { get; set; }
+
+        public int ch_id { get; set; }
+        public int bad_qty { get; set; }
+
+
+
     }
 }

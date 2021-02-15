@@ -35,6 +35,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvShipment, "품명", "item_name", 120);
             CommonUtil.AddGridTextColumn(dgvShipment, "주문수량", "Qty", 60, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvShipment, "출하수량", "SQty", 60, true, DataGridViewContentAlignment.MiddleRight);
+            
 
         }
 

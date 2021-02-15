@@ -12,6 +12,9 @@ using System.Windows.Forms;
 using Util;
 using VO;
 using System.Linq;
+using System.Diagnostics;
+using System.IO;
+
 namespace CompanyManager
 {
     public partial class FrmItemPrice : CompanyManager.MDIBaseForm
@@ -122,6 +125,24 @@ namespace CompanyManager
         private void btnExport_Click(object sender, EventArgs e)
         {
             CommonExcel.ExportExcel(dgvPrice);
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "양식 다운로드";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy("../../ExcelForm/단가등록양식.xlsx", dlg.FileName + ".xlsx");
+                    Process.Start(dlg.FileName + ".xlsx");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("다운로드중 오류가 발생하였습니다.\r\n 다시 시도하여 주십시오.");
+                }
+            }
         }
     }
 }

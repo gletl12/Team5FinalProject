@@ -17,6 +17,8 @@ using System.Threading;
 using System.Net;
 using log4net.Core;
 using Machine;
+using Service;
+using VO;
 
 namespace POP
 {
@@ -81,13 +83,13 @@ namespace POP
             }
         }
 
-
+        public int process_id { get; set; }
         private void FrmAction_Load(object sender, EventArgs e)
         {
 
             button1.Enabled = false;
             button4.Enabled = false;
-            button2.Enabled = false;
+           
 
           
                 
@@ -141,8 +143,14 @@ namespace POP
                 textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
                 textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
 
-                progressBar1.Value= int.Parse(arrData1[2]);
-            }));
+                progressBar1.Value = int.Parse(arrData1[2]);
+                if(progressBar1.Value == 100)
+                {
+                    button3.PerformClick();
+                }
+
+               
+                }));
         }
 
 
@@ -175,15 +183,23 @@ namespace POP
         {
 
         }
-
+        
         //작업중지
         private void button3_Click(object sender, EventArgs e)
         {
             button1.Enabled = true;
             button3.Enabled = false;
             button4.Enabled = true;
-            button2.Enabled = true;
+            
             //timer_Connects.Stop();
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.Id.Equals(process_id))
+                {
+                    process.Kill();
+
+                }
+            }
         }
         //작업다시시작
         private void button1_Click(object sender, EventArgs e)
@@ -191,8 +207,8 @@ namespace POP
             button1.Enabled = false;
             button3.Enabled = true;
             button4.Enabled = false;
-            button2.Enabled = false;
-           // timer_Connects.Start();
+            
+           
         }
 
         private void lblVersion_Click(object sender, EventArgs e)
@@ -227,6 +243,43 @@ namespace POP
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+
+            //CheckVO check = new CheckVO();
+            //check.item_id = textBox9.Text;
+            //check.ch_qty = int.Parse(textBox21.Text);
+            //check.good_qty = int.Parse(textBox27.Text);
+            //check.bad_qty = int.Parse(textBox39.Text);
+            //check.emp = textBox11.Text;
+
+
+
+            //CheckService service = new CheckService();
+            //int ch_id = service.GetChID(check);
+
+
+
+            PerformanceVO performance = new PerformanceVO();
+            performance.wo_id = int.Parse(textBox10.Text);
+            performance.item_id = textBox9.Text;
+            //performance.ch_id = ch_id;
+            performance.performance_qty = int.Parse(textBox27.Text);
+
+            performance.ins_emp = textBox11.Text;
+
+            PerformanceService service1 = new PerformanceService();
+            bool bFlag = service1.PerformanceCommit2(performance);
+            if (bFlag)
+            {
+                //성공
+
+            }
+            else
+            {
+                //실패
+            }
 
         }
 

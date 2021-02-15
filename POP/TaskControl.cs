@@ -13,7 +13,7 @@ namespace POP
 {
     public partial class TaskControl : UserControl
     {
-        frmPLCTask frm;
+        
 
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
         public string Task_IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
@@ -56,23 +56,23 @@ namespace POP
             Process pro = Process.Start(server, $"{Task_ID} {Task_IP} {Task_Port}");
             process_id = pro.Id;
 
-            frm = new frmPLCTask(Task_ID, Task_IP, Task_Port);
-            frm.Show();
-            frm.Hide();
+            //frm = new frmPLCTask(Task_ID, Task_IP, Task_Port);
+            //frm.Show();
+            //frm.Hide();
 
             IsTaskEnable = true;
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            frm.Show();
+           // frm.Show();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            frm.bExit = true;
-            frm.Close();
-            IsTaskEnable = false;
+            //frm.bExit = true;
+            //frm.Close();
+            //IsTaskEnable = false;
 
             foreach (Process process in Process.GetProcesses())
             {

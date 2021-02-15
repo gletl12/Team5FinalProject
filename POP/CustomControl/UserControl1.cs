@@ -34,6 +34,8 @@ namespace POP
         public string WorkUserName { get; set; }//작업자
         public string WorkItem { get; set; }//작업아이템
 
+        public string WorkState { get; set; }//작업상태
+
         int process_id = 0;
 
         public bool IsTaskEnable
@@ -81,6 +83,7 @@ namespace POP
             Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
             Frm.MdiParent = ControlMDI.ParentForm;
             Frm.Location = new Point(0, 0);
+            Frm.process_id = pro.Id;
             Frm.Show();
             Frm.Hide();
             MachineService service = new MachineService();
@@ -120,13 +123,16 @@ namespace POP
                 if (process.Id.Equals(process_id))
                 {
                     process.Kill();
+
                 }
             }
             MachineService service = new MachineService();
             bool bFlag = service.MachineEnd(Runid, WorkUserName);
             if(bFlag)
             {
-
+                WorkOrderService service1 = new WorkOrderService();
+                service1.EndWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
+                RouteStart(sender, null);
             }
             else
             {
@@ -143,7 +149,16 @@ namespace POP
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
+          
+        }
 
+        private void UserControl1_VisibleChanged(object sender, EventArgs e)
+        {
+
+            if (WorkState == "작업종료")
+            {
+                btnStart.Enabled = false;
+            }
         }
     }
 }
