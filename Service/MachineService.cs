@@ -27,7 +27,6 @@ namespace Service
             MachineDAC dac = new MachineDAC();
             return dac.MachineEnd(runid, workUserName);
         }
-    }
 
         public List<MachinesVO> GetMachine(int mgrade)
         {

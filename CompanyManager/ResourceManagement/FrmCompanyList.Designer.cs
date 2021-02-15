@@ -30,18 +30,16 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboBtype = new System.Windows.Forms.ComboBox();
+            this.cboCompanyType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.txtCName = new System.Windows.Forms.TextBox();
+            this.txtBNum = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,37 +59,42 @@ namespace CompanyManager
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cboBtype);
+            this.panel2.Controls.Add(this.cboCompanyType);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.button14);
+            this.panel2.Controls.Add(this.txtCName);
+            this.panel2.Controls.Add(this.txtBNum);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1152, 65);
             this.panel2.TabIndex = 20;
             // 
-            // comboBox1
+            // cboBtype
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(750, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 22);
-            this.comboBox1.TabIndex = 4;
+            this.cboBtype.FormattingEnabled = true;
+            this.cboBtype.Location = new System.Drawing.Point(524, 36);
+            this.cboBtype.Name = "cboBtype";
+            this.cboBtype.Size = new System.Drawing.Size(155, 22);
+            this.cboBtype.TabIndex = 4;
+            // 
+            // cboCompanyType
+            // 
+            this.cboCompanyType.FormattingEnabled = true;
+            this.cboCompanyType.Location = new System.Drawing.Point(524, 4);
+            this.cboCompanyType.Name = "cboCompanyType";
+            this.cboCompanyType.Size = new System.Drawing.Size(155, 22);
+            this.cboCompanyType.TabIndex = 4;
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(676, 9);
+            this.label11.Location = new System.Drawing.Point(420, 8);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 14);
             this.label11.TabIndex = 3;
@@ -100,7 +103,7 @@ namespace CompanyManager
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 38);
+            this.label12.Location = new System.Drawing.Point(63, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 14);
             this.label12.TabIndex = 3;
@@ -108,9 +111,8 @@ namespace CompanyManager
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(333, 9);
+            this.label13.Location = new System.Drawing.Point(63, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 14);
             this.label13.TabIndex = 3;
@@ -119,22 +121,11 @@ namespace CompanyManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 9);
+            this.label14.Location = new System.Drawing.Point(420, 39);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 14);
+            this.label14.Size = new System.Drawing.Size(39, 14);
             this.label14.TabIndex = 3;
-            this.label14.Text = "* 업체코드";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(685, 25);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 14);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "label2";
+            this.label14.Text = "* 업종";
             // 
             // label16
             // 
@@ -146,55 +137,37 @@ namespace CompanyManager
             this.label16.TabIndex = 1;
             this.label16.Text = "label2";
             // 
-            // textBox7
+            // txtCName
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Location = new System.Drawing.Point(424, 6);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(208, 21);
-            this.textBox7.TabIndex = 2;
+            this.txtCName.Location = new System.Drawing.Point(174, 5);
+            this.txtCName.Name = "txtCName";
+            this.txtCName.Size = new System.Drawing.Size(188, 21);
+            this.txtCName.TabIndex = 2;
             // 
-            // label17
+            // txtBNum
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label17.Location = new System.Drawing.Point(356, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 14);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "label2";
+            this.txtBNum.Location = new System.Drawing.Point(174, 36);
+            this.txtBNum.Name = "txtBNum";
+            this.txtBNum.Size = new System.Drawing.Size(188, 21);
+            this.txtBNum.TabIndex = 2;
             // 
-            // textBox1
+            // btnSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 21);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(130, 6);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(181, 21);
-            this.textBox8.TabIndex = 2;
-            // 
-            // button14
-            // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
-            this.button14.Location = new System.Drawing.Point(1020, 29);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(116, 28);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "조회";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(198)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
+            this.btnSearch.Location = new System.Drawing.Point(1020, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 28);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "조회";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvCompany
             // 
@@ -346,18 +319,16 @@ namespace CompanyManager
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCompanyType;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox txtCName;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvCompany;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBNum;
+        private System.Windows.Forms.ComboBox cboBtype;
     }
 }
