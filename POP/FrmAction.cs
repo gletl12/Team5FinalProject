@@ -186,6 +186,7 @@ namespace POP
             button4.Enabled = true;
             button2.Enabled = true;
             //timer_Connects.Stop();
+
         }
         //작업다시시작
         private void button1_Click(object sender, EventArgs e)

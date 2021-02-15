@@ -126,7 +126,9 @@ namespace POP
             bool bFlag = service.MachineEnd(Runid, WorkUserName);
             if(bFlag)
             {
-
+                WorkOrderService service1 = new WorkOrderService();
+                service1.EndWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
+                RouteStart(sender, null);
             }
             else
             {

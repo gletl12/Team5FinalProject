@@ -70,5 +70,10 @@ namespace Service
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.StartWorkOrder(wo_id, up_emp);
         }
+        public bool EndWorkOrder(int wo_id, string up_emp)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.EndWorkOrder(wo_id, up_emp);
         }
+    }
 }
