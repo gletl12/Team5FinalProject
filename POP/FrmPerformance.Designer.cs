@@ -516,7 +516,7 @@ namespace POP
             this.toolStripPaging.Location = new System.Drawing.Point(3, 546);
             this.toolStripPaging.Name = "toolStripPaging";
             this.toolStripPaging.Size = new System.Drawing.Size(1884, 129);
-            this.toolStripPaging.TabIndex = 27;
+            this.toolStripPaging.TabIndex = 0;
             this.toolStripPaging.Text = "toolStrip1";
             // 
             // btnFirst

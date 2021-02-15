@@ -208,6 +208,12 @@ namespace POP
                                 taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
                                 taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
                                 taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
+
+                                taskCtrl.WorkState= Convert.ToString(dataGridView1[3, rowIndex].Value);//작업상태
+                                
+                                    
+                                
+                                
                             }
                         }
                     }
@@ -215,6 +221,7 @@ namespace POP
 
             }
          }
+        
         /// <summary>
         /// 검색
         /// </summary>

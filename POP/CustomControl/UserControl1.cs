@@ -34,6 +34,8 @@ namespace POP
         public string WorkUserName { get; set; }//작업자
         public string WorkItem { get; set; }//작업아이템
 
+        public string WorkState { get; set; }//작업상태
+
         int process_id = 0;
 
         public bool IsTaskEnable
@@ -147,7 +149,16 @@ namespace POP
 
         private void UserControl1_Load(object sender, EventArgs e)
         {
+          
+        }
 
+        private void UserControl1_VisibleChanged(object sender, EventArgs e)
+        {
+
+            if (WorkState == "작업종료")
+            {
+                btnStart.Enabled = false;
+            }
         }
     }
 }

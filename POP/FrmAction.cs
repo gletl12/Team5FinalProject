@@ -143,8 +143,10 @@ namespace POP
                 textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
                 textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
 
-                progressBar1.Value= int.Parse(arrData1[2]);
-            }));
+                progressBar1.Value = int.Parse(arrData1[2]);
+
+               
+                }));
         }
 
 
@@ -255,25 +257,25 @@ namespace POP
 
 
 
-            PerformanceVO performance = new PerformanceVO();
-            performance.wo_id = int.Parse(textBox10.Text);
-            performance.item_id = textBox9.Text;
-            performance.ch_id = ch_id;
-            performance.performance_qty = int.Parse(textBox27.Text);
+            //PerformanceVO performance = new PerformanceVO();
+            //performance.wo_id = int.Parse(textBox10.Text);
+            //performance.item_id = textBox9.Text;
+            //performance.ch_id = ch_id;
+            //performance.performance_qty = int.Parse(textBox27.Text);
 
-            performance.ins_emp = textBox11.Text;
+            //performance.ins_emp = textBox11.Text;
 
-            PerformanceService service1 = new PerformanceService();
-            bool bFlag= service1.PerformanceCommit2(performance);
-            if (bFlag)
-            {
-                //성공
+            //PerformanceService service1 = new PerformanceService();
+            //bool bFlag= service1.PerformanceCommit2(performance);
+            //if (bFlag)
+            //{
+            //    //성공
 
-            }   
-            else
-            {
-                //실패
-            }
+            //}   
+            //else
+            //{
+            //    //실패
+            //}
 
         }
 
