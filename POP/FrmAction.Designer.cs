@@ -39,6 +39,7 @@ namespace POP
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox28 = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@ namespace POP
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -171,6 +171,18 @@ namespace POP
             this.button3.Text = "작업중지";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(462, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(464, 131);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "작업시작";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel9
             // 
@@ -565,18 +577,6 @@ namespace POP
             this.textBox4.TabIndex = 1;
             this.textBox4.Text = "작업장";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(462, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(464, 131);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "작업시작";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmAction
             // 

@@ -27,8 +27,9 @@ namespace VO
         public string p_state { get; set; }
 
         public int ch_id { get; set; }
-        
+        public int bad_qty { get; set; }
 
-      
+
+
     }
 }

@@ -144,6 +144,10 @@ namespace POP
                 textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
 
                 progressBar1.Value = int.Parse(arrData1[2]);
+                if(progressBar1.Value == 100)
+                {
+                    button3.PerformClick();
+                }
 
                
                 }));
@@ -243,39 +247,39 @@ namespace POP
             button3.Enabled = false;
             button4.Enabled = false;
 
-            CheckVO check = new CheckVO();
-            check.item_id = textBox9.Text;
-            check.ch_qty = int.Parse(textBox21.Text);
-            check.good_qty = int.Parse(textBox27.Text);
-            check.bad_qty = int.Parse(textBox39.Text);
-            check.emp = textBox11.Text;
+            //CheckVO check = new CheckVO();
+            //check.item_id = textBox9.Text;
+            //check.ch_qty = int.Parse(textBox21.Text);
+            //check.good_qty = int.Parse(textBox27.Text);
+            //check.bad_qty = int.Parse(textBox39.Text);
+            //check.emp = textBox11.Text;
 
 
 
-            CheckService service = new CheckService();
-            int ch_id = service.GetChID(check);
+            //CheckService service = new CheckService();
+            //int ch_id = service.GetChID(check);
 
 
 
-            //PerformanceVO performance = new PerformanceVO();
-            //performance.wo_id = int.Parse(textBox10.Text);
-            //performance.item_id = textBox9.Text;
+            PerformanceVO performance = new PerformanceVO();
+            performance.wo_id = int.Parse(textBox10.Text);
+            performance.item_id = textBox9.Text;
             //performance.ch_id = ch_id;
-            //performance.performance_qty = int.Parse(textBox27.Text);
+            performance.performance_qty = int.Parse(textBox27.Text);
 
-            //performance.ins_emp = textBox11.Text;
+            performance.ins_emp = textBox11.Text;
 
-            //PerformanceService service1 = new PerformanceService();
-            //bool bFlag= service1.PerformanceCommit2(performance);
-            //if (bFlag)
-            //{
-            //    //성공
+            PerformanceService service1 = new PerformanceService();
+            bool bFlag = service1.PerformanceCommit2(performance);
+            if (bFlag)
+            {
+                //성공
 
-            //}   
-            //else
-            //{
-            //    //실패
-            //}
+            }
+            else
+            {
+                //실패
+            }
 
         }
 
