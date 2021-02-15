@@ -22,16 +22,17 @@ namespace CompanyManager
 
         private void SetDGV()
         {
-            CommonUtil.SetInitGridView(dataGridView2);
-            CommonUtil.SetDGVDesign_Num(dataGridView2);
-            CommonUtil.AddGridCheckColumn(dataGridView2, "");
-            CommonUtil.AddGridTextColumn(dataGridView2, "plan_id", "plan_id", 80, false, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객사코드", "company_id", 90, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객사명", "company_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "고객주문번호", "order_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView2, "품목", "item_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView2.AutoGenerateColumns = true;
+            CommonUtil.SetInitGridView(dataGridView1);
+            CommonUtil.SetDGVDesign_Num(dataGridView1);
+            CommonUtil.AddGridCheckColumn(dataGridView1, "");
+            CommonUtil.AddGridTextColumn(dataGridView1, "Plan_Id", "plan_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "고객사코드", "company_id", 90, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "고객사명", "company_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "고객주문번호", "order_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "상태", "state", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.AutoGenerateColumns = true;
         }
 
         private void FrmDemandPlan_Load(object sender, EventArgs e)
@@ -64,11 +65,11 @@ namespace CompanyManager
 
             
             
-            dataGridView2.DataSource = null;
-            dataGridView2.Columns.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.Columns.Clear();
             SetDGV();
 
-            dataGridView2.DataSource = temp.AsDataView();
+            dataGridView1.DataSource = temp.AsDataView();
 
            
             
@@ -84,6 +85,55 @@ namespace CompanyManager
 
         private void btnPlan_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null && ((bool)row.Cells[0].Value))
+                {
+                    count++;
+                }
+            }
+
+            if (count > 1)
+            {
+                MessageBox.Show("한개의 항목만 선택해주세요");
+                return;
+            }
+            else if (count == 0)
+            {
+                MessageBox.Show("항목을 선택해주세요");
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null && ((bool)row.Cells[0].Value))
+                {
+                    
+                    Service.PlanService service = new Service.PlanService();
+                    int result = service.AddProductionPlan(Convert.ToInt32(row.Cells[1].Value), ((FrmMain)this.MdiParent).LoginInfo.emp_id);
+                    if (result == -2)
+                    {
+                        MessageBox.Show("이미 생성된 생산계획입니다.");
+                    }
+                    else if (result == -1)
+                    {
+                        MessageBox.Show("납기일에 맞춰 생산계획을 생성할 수 없습니다.");
+                    }
+                    else if (result == -3)
+                    {
+                        MessageBox.Show("생산계획 생성중 오류가 발생하였습니다.");
+                    }
+                    else
+                    {
+                        btnSearch.PerformClick();
+                    }
+
+                }
+            }
+
+            
 
         }
     }
