@@ -83,7 +83,7 @@ namespace POP
             }
         }
 
-
+        public int process_id { get; set; }
         private void FrmAction_Load(object sender, EventArgs e)
         {
 
@@ -177,7 +177,7 @@ namespace POP
         {
 
         }
-
+        
         //작업중지
         private void button3_Click(object sender, EventArgs e)
         {
@@ -186,7 +186,14 @@ namespace POP
             button4.Enabled = true;
             button2.Enabled = true;
             //timer_Connects.Stop();
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.Id.Equals(process_id))
+                {
+                    process.Kill();
 
+                }
+            }
         }
         //작업다시시작
         private void button1_Click(object sender, EventArgs e)

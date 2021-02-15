@@ -81,6 +81,7 @@ namespace POP
             Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
             Frm.MdiParent = ControlMDI.ParentForm;
             Frm.Location = new Point(0, 0);
+            Frm.process_id = pro.Id;
             Frm.Show();
             Frm.Hide();
             MachineService service = new MachineService();
@@ -120,6 +121,7 @@ namespace POP
                 if (process.Id.Equals(process_id))
                 {
                     process.Kill();
+
                 }
             }
             MachineService service = new MachineService();
