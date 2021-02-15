@@ -237,6 +237,9 @@ namespace POP
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
 
             CheckVO check = new CheckVO();
             check.item_id = textBox9.Text;
@@ -253,18 +256,19 @@ namespace POP
 
 
             PerformanceVO performance = new PerformanceVO();
-            performance.wo_id = 1;
-            performance.item_id = "1";
-            performance.ch_id = 1;
-            performance.performance_qty = 1;
-            
-            performance.ins_emp = "1";
+            performance.wo_id = int.Parse(textBox10.Text);
+            performance.item_id = textBox9.Text;
+            performance.ch_id = ch_id;
+            performance.performance_qty = int.Parse(textBox27.Text);
+
+            performance.ins_emp = textBox11.Text;
 
             PerformanceService service1 = new PerformanceService();
             bool bFlag= service1.PerformanceCommit2(performance);
             if (bFlag)
             {
                 //성공
+
             }   
             else
             {

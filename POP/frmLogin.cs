@@ -71,8 +71,8 @@ namespace POP
             }
             if (txtID.Text == "5")//전체현황판
             {
-                FrmAllStatusBoard frm = new FrmAllStatusBoard();
-                frm.Show();
+                //FrmAllStatusBoard frm = new FrmAllStatusBoard();
+                //frm.Show();
             }
             if (txtID.Text == "6")//전체현황판
             {
