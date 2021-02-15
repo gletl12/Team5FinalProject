@@ -89,7 +89,7 @@ namespace POP
 
             button1.Enabled = false;
             button4.Enabled = false;
-            button2.Enabled = false;
+           
 
           
                 
@@ -184,7 +184,7 @@ namespace POP
             button1.Enabled = true;
             button3.Enabled = false;
             button4.Enabled = true;
-            button2.Enabled = true;
+            
             //timer_Connects.Stop();
             foreach (Process process in Process.GetProcesses())
             {
@@ -201,8 +201,8 @@ namespace POP
             button1.Enabled = false;
             button3.Enabled = true;
             button4.Enabled = false;
-            button2.Enabled = false;
-           // timer_Connects.Start();
+            
+           
         }
 
         private void lblVersion_Click(object sender, EventArgs e)
