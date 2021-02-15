@@ -15,9 +15,16 @@ namespace POP
             InitializeComponent();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+  
+
+        private void FrmInspection_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
