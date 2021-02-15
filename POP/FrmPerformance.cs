@@ -110,18 +110,9 @@ namespace POP
 
         private void Ctrl_RouteStart(object sender, EventArgs e)
         {
-            // OpenCreateForm_POP(ctrl.Task_ID,);
+            DataLoad();
 
-            //foreach (Control ctrl in MdiParent.Controls)
-            //{
-            //    if (ctrl is CustomTabControl ta)
-            //    {
 
-            //        ta.InsertTab(MdiParent,);
-            //    }
-            //}
-            
-          
 
         }
 

@@ -15,7 +15,7 @@ namespace DAC
         {
             List<InboundVO> list = new List<InboundVO>();
             string sql = @"select purchase_id,pd_id,cast(PD.ins_date as date) PurchasesDate,PD.prod_id,item_unit,company_name,PD.item_id,item_name,CD.name unit,CD2.name UseCheck,pd_qty,isnull(rqty,0) InQty,
-                           pd_qty-isnull(rqty,0) RQty, due_date
+                           pd_qty-isnull(rqty,0) RQty, cast(due_date as date) due_date,cast(in_warehouse as int)warehouse_id
                            from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                            							   JOIN TBL_COMPANY C ON I.supply_company = C.company_id
                            							   JOIN TBL_COMMON_CODE CD ON CD.code = I.item_unit
@@ -23,7 +23,7 @@ namespace DAC
                            							   LEFT JOIN (select sum(in_rqty)-sum(in_cqty) rqty ,prod_id,item_id
                            							   	          from TBL_INBOUND
                            							   	          group by item_id,prod_id) B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
-                          where purchase_state = 'PUR01' and due_date >=@from and due_date<= @to";
+                          where purchase_state = 'PUR01' and cast(due_date as date)>=cast(@from as date) and cast(due_date as date)<= cast(@to as date)";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try
@@ -217,7 +217,7 @@ group by in_id,PD.purchase_id,PD.ins_date,B.prod_id,PD.pd_id,C.company_name,B.it
 																  where in_state !=0
                            							   	          group by item_id,prod_id) B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
 													   JOIN TBL_INBOUND B2 ON B2.prod_id = PD.prod_id and B2.item_id = PD.item_id and B2.in_state = 0
-                          where purchase_state = 'PUR01'  and due_date >=@from and due_date<= @to";
+                          where purchase_state = 'PUR01'  and cast(due_date as date) >= cast(@from as date) and cast(due_date as date) <= cast(@to as date)";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try

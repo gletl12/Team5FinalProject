@@ -59,7 +59,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvInbound, "발주량", "pd_qty", 60, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvInbound, "입고량", "InQty", 60, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvInbound, "잔량", "RQty", 60, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvInbound, "입고일자", "ins_date", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvInbound, "입고일자", "InboundDate", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
         }
 

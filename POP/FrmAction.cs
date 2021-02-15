@@ -17,6 +17,8 @@ using System.Threading;
 using System.Net;
 using log4net.Core;
 using Machine;
+using Service;
+using VO;
 
 namespace POP
 {
@@ -227,6 +229,39 @@ namespace POP
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            CheckVO check = new CheckVO();
+            check.item_id = textBox9.Text;
+            check.ch_qty = int.Parse(textBox21.Text);
+            check.good_qty = int.Parse(textBox27.Text);
+            check.bad_qty = int.Parse(textBox39.Text);
+            check.emp = textBox11.Text;
+
+
+
+            CheckService service = new CheckService();
+            int ch_id = service.GetChID(check);
+
+
+
+            PerformanceVO performance = new PerformanceVO();
+            performance.wo_id = 1;
+            performance.item_id = "1";
+            performance.ch_id = 1;
+            performance.performance_qty = 1;
+            
+            performance.ins_emp = "1";
+
+            PerformanceService service1 = new PerformanceService();
+            bool bFlag= service1.PerformanceCommit2(performance);
+            if (bFlag)
+            {
+                //성공
+            }   
+            else
+            {
+                //실패
+            }
 
         }
 

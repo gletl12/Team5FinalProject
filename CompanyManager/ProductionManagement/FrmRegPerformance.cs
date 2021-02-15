@@ -111,5 +111,16 @@ namespace CompanyManager
             else
                 MessageBox.Show("실적 등록에 실패하였습니다.\r\n다시 시도하여 주십시오.");
         }
+
+        private void dgvPerformance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            if (dgvPerformance["p_state", e.RowIndex].Value.ToString().Equals("확정"))
+            {
+                MessageBox.Show("이미 확정된 실적입니다.");
+                ((DataGridViewCheckBoxCell)dgvPerformance[0, e.RowIndex]).Value = false;
+            }
+        }
     }
 }

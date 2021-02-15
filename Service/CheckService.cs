@@ -20,6 +20,11 @@ namespace Service
             CheckDAC dac = new CheckDAC();
             return dac.GetCheckList(from,to);
         }
-    }
+        public int GetChID(CheckVO vo)
+        {
+            CheckDAC dac = new CheckDAC();
+            return dac.GetChID(vo);
+        }
+        }
 }
 
