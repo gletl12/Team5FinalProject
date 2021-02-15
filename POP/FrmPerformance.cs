@@ -178,7 +178,12 @@ namespace POP
             textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
             textBox4.Text = dataGridView1[1, rowIndex].Value.ToString();//1
             textBox5.Text = dataGridView1[13, rowIndex].Value.ToString();//13
-            textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//7
+            textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//
+
+            textBox7.Text = dataGridView1[2, rowIndex].Value.ToString();//
+            textBox8.Text = (int.Parse(textBox11.Text) + int.Parse(textBox10.Text)).ToString() ;
+            textBox9.Text= (int.Parse(textBox7.Text) - int.Parse(textBox8.Text)).ToString();
+           
             for (int i = 0; i < tasks.Count; i++)
             {
                 if (tasks[i].taskID == dataGridView1[12, rowIndex].Value.ToString())

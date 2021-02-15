@@ -68,7 +68,6 @@ namespace POP
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStripPaging = new System.Windows.Forms.ToolStrip();
             this.btnFirst = new System.Windows.Forms.ToolStripButton();
             this.btnBackward = new System.Windows.Forms.ToolStripButton();
@@ -79,12 +78,13 @@ namespace POP
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.btnForward = new System.Windows.Forms.ToolStripButton();
             this.btnLast = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStripPaging.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -497,18 +497,6 @@ namespace POP
             this.tabPage1.Text = "생산 현황";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.RowTemplate.Height = 95;
-            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
-            this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // toolStripPaging
             // 
             this.toolStripPaging.AutoSize = false;
@@ -636,6 +624,18 @@ namespace POP
             this.btnLast.Text = "toolStripButton6";
             this.btnLast.Click += new System.EventHandler(this.FrmPerformance_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 50;
+            this.dataGridView1.RowTemplate.Height = 95;
+            this.dataGridView1.Size = new System.Drawing.Size(1884, 672);
+            this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -675,9 +675,9 @@ namespace POP
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStripPaging.ResumeLayout(false);
             this.toolStripPaging.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
