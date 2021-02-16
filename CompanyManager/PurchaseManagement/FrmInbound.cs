@@ -41,7 +41,7 @@ namespace CompanyManager
             CommonUtil.SetInitGridView(dgvInbound);
             CommonUtil.SetDGVDesign_Num(dgvInbound);
             CommonUtil.SetDGVDesign_CheckBox(dgvInbound);
-            dgvWait.RowHeadersVisible = true;
+            dgvInbound.RowHeadersVisible = true;
             CommonUtil.AddGridTextColumn(dgvInbound, "생산번호", "prod_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvInbound, "발주일자", "PurchasesDate", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvInbound, "발주상세번호", "pd_id", 80, true, DataGridViewContentAlignment.MiddleCenter);

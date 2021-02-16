@@ -131,7 +131,7 @@ namespace CompanyManager
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.CustomFormat = "yyyy/MM/dd hh:mm:ss";
+            this.dtpStartDate.CustomFormat = "yyyy/MM/dd HH:mm:ss";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartDate.Location = new System.Drawing.Point(99, 63);
             this.dtpStartDate.Name = "dtpStartDate";

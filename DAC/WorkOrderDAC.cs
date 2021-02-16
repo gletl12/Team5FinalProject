@@ -164,10 +164,8 @@ namespace DAC
         public List<ItemTimeVO> GetAllItems()
         {
             List<ItemTimeVO> list = new List<ItemTimeVO>();
-            string sql = @"select B.item_id, item_name ,tacktime, S.shift_stime,S.shift_etime
+            string sql = @"select B.item_id, item_name ,tacktime, '080000' shift_stime,'230000' shift_etime
                            from TBL_ITEM I JOIN TBL_BOR B ON B.item_id = I.item_id
-			                               JOIN TBL_SHIFT S ON B.machine_id = S.machine_id
-group by B.item_id, item_name ,tacktime, S.shift_stime,S.shift_etime
                            ";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {

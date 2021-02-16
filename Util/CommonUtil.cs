@@ -248,6 +248,8 @@ namespace Util
             dgv.CellClick += RowCheckBox_Click;
             void RowCheckBox_Click(object sender, DataGridViewCellEventArgs e)
             {
+                if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                    return;
                 if (dgv.Columns[e.ColumnIndex].Name.Equals("checkBox") && e.RowIndex >= 0)
                 {
                     DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];

@@ -14,7 +14,7 @@ namespace DAC
         public List<ShipmentVO> GetTargetList(DateTime from, DateTime to)
         {
             string sql = @"select SO.so_id,SO.order_id,due_date, D.plan_id,cast(I.out_warehouse as int) out_warehouse ,SO.company_id, company_name,cast(isnull(SO.warehouse_id,-1) as int) DestinationID,isnull(W.warehouse_name,company_name) DestinationName,SO.item_id,I.
-                            	   item_name,(SO.so_o_qty-SO.so_c_qty) - (isnull(SQty,0)-isnull(CQty,0)) Qty,(isnull(SQty,0)-isnull(CQty,0)) SQty
+                            	   item_name,(SO.so_o_qty-SO.so_c_qty) - (isnull(SQty,0)-isnull(CQty,0)) Qty,(isnull(SQty,0)-isnull(CQty,0)) SQty,RQty
                             from TBL_SO_MASTER SO JOIN TBL_DEMAND_PLAN D ON SO.so_id = D.so_id
                             					  JOIN TBL_COMPANY C ON C.company_id = SO.company_id
                             					  LEFT JOIN TBL_WAREHOUSE W ON SO.warehouse_id = W.warehouse_id
@@ -22,6 +22,8 @@ namespace DAC
                             					  LEFT JOIN (select plan_id,isnull(sum(ship_qty),0) SQty ,isnull(sum(ship_cqty),0) CQty 
                             								 from TBL_SHIPMENT
                             								 group by plan_id) S ON S.plan_id= D.plan_id
+												  JOIN TBL_WAREHOUSE W2 ON W2.warehouse_id = I.out_warehouse
+												  LEFT JOIN (select item_id,sum(in_rqty)RQty,wh_id from TBL_INBOUND group by item_id,wh_id) Q ON Q.item_id = SO.item_id and Q.wh_id = W2.warehouse_id
                             where D.plan_state= 1 and (SO.so_o_qty-SO.so_c_qty) - (isnull(SQty,0)-isnull(CQty,0))>0 and due_date>=@from and due_date<=@to";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
