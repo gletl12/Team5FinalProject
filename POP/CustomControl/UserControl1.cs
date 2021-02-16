@@ -155,10 +155,10 @@ namespace POP
         private void UserControl1_VisibleChanged(object sender, EventArgs e)
         {
 
-            if (WorkState == "작업종료")
-            {
-                btnStart.Enabled = false;
-            }
+            //if (WorkState == "작업종료")
+            //{
+            //    btnStart.Enabled = false;
+            //}
         }
     }
 }

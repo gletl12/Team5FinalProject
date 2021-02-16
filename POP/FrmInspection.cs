@@ -37,7 +37,7 @@ namespace POP
             
 
             CommonUtil.AddGridTextColumn(dataGridView1, "실적번호", "performance_id", 370,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView1, "지시번호", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "지시수량", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "양품수량", "performance_qty", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "ins_emp", 370, true, DataGridViewContentAlignment.MiddleCenter);
@@ -184,5 +184,26 @@ namespace POP
             dataGridView1.Refresh();
         }
         #endregion
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+
+            FrmPOPpopup frm = new FrmPOPpopup();
+            frm.performance_id = Convert.ToInt32(dataGridView1[0, rowIndex].Value);
+            frm.wo_id = Convert.ToInt32(dataGridView1[1, rowIndex].Value);
+            frm.item_id = dataGridView1[2, rowIndex].Value.ToString(); ;
+            frm.performance_qty = Convert.ToInt32(dataGridView1[3, rowIndex].Value);
+            frm.ins_emp = dataGridView1[4, rowIndex].Value.ToString();
+            frm.bad_qty = Convert.ToInt32(dataGridView1[5, rowIndex].Value);
+            frm.wo_sdate = Convert.ToDateTime(dataGridView1[6, rowIndex].Value);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+                DataLoad();
+
+            }
+        }
     }
 }

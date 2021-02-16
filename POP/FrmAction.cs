@@ -273,7 +273,8 @@ namespace POP
             bool bFlag = service1.PerformanceCommit2(performance);
             if (bFlag)
             {
-                //성공
+                //WorkOrderService service2 = new WorkOrderService();
+                //service1.EndWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
 
             }
             else
