@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
@@ -204,6 +205,33 @@ namespace POP
                 DataLoad();
 
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var list1 = (from all in list
+                         where all.wo_sdate >= dateTimePicker1.Value.AddDays(-1) && all.wo_sdate <= dateTimePicker2.Value
+                         select all).ToList();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = list1;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("검색기간의 설정이 잘못되었습니다.");
+                return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataLoad();
+            dateTimePicker2.Value = DateTime.Now.AddMinutes(10);
+            dateTimePicker1.Value = DateTime.Now;
+            
+            
         }
     }
 }
