@@ -46,10 +46,16 @@ namespace Service
             return dac.RegDemandPlan(demandList);
         }
 
-        public List<SalesOrderVO> GetSOList()
+        public List<SOVO> GetSOList()
         {
             SalesOrderDAC dac = new SalesOrderDAC();
             return dac.GetSOList();
+        }
+
+        public bool MaGamProcess(List<SOVO> chklist)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.MaGamProcess(chklist);
         }
     }
 }

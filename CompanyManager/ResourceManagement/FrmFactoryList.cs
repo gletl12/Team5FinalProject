@@ -16,6 +16,7 @@ namespace CompanyManager
     public partial class FrmFactoryList : CompanyManager.MDIBaseForm
     {
         List<FactoryVO> list = new List<FactoryVO>();
+        List<FactoryVO> chklist = new List<FactoryVO>();
         FactoryVO fvo = new FactoryVO();
         public FrmFactoryList()
         {
@@ -69,13 +70,13 @@ namespace CompanyManager
             List<CodeVO> temp = (from code in combobox
                                  where code.category == "FACTORY_GRADE"
                                  select code).ToList();
-            temp.Insert(0, new CodeVO { code = "", name = "" });
+            temp.Insert(0, new CodeVO { code = "", name = "전체" });
             cboFGrade.DataSource = temp;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id);
+            PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo);
             if (pop.ShowDialog() == DialogResult.OK)
             {
                 DataRoad();
@@ -137,7 +138,7 @@ namespace CompanyManager
                 {
                     if(list[e.RowIndex].codename == "공장")
                     {
-                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true);
+                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo, fvo, true);
                         if (pop.ShowDialog() == DialogResult.OK)
                         {
                             DataRoad();
@@ -145,7 +146,7 @@ namespace CompanyManager
                     }
                     else
                     {
-                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, fvo, true, true);
+                        PopFactoryCRUD pop = new PopFactoryCRUD(((FrmMain)this.MdiParent).LoginInfo, fvo, true, true);
                         if (pop.ShowDialog() == DialogResult.OK)
                         {
                             DataRoad();
@@ -158,17 +159,30 @@ namespace CompanyManager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(fvo.factory_grade))
+            for (int i = 0; i < dgvFactory.RowCount; i++)
             {
-                MessageBox.Show("삭제할 데이터를 선택해주세요");
+                if (dgvFactory[0, i].Value != null && (bool)dgvFactory[0, i].Value)
+                {
+                    chklist.Add(list[i]);
+                }
+                else
+                {
+                    var temp = chklist.Find(p => p.factory_id == list[i].factory_id);
+                    chklist.Remove(temp);
+                }
+            }
+
+            if (chklist.Count != 1)
+            {
+                MessageBox.Show("삭제할 데이터를 한개 선택해주세요.");
                 return;
             }
             if (MessageBox.Show($"정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (fvo.codename == "공장")
+                if (chklist[0].codename == "공장")
                 {
                     FactoryService service = new FactoryService();
-                    if (service.DeleteFactory(fvo.factory_id))
+                    if (service.DeleteFactory(chklist[0].factory_id))
                     {
                         MessageBox.Show("삭제되었습니다.");
                         DataRoad();
@@ -179,7 +193,7 @@ namespace CompanyManager
                 else
                 {
                     FactoryService service = new FactoryService();
-                    if (service.DeleteWareHouse(fvo.factory_id))
+                    if (service.DeleteWareHouse(chklist[0].factory_id))
                     {
                         MessageBox.Show("삭제되었습니다.");
                         DataRoad();

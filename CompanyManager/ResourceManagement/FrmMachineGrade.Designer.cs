@@ -35,7 +35,6 @@ namespace CompanyManager
             this.btnMGDelete = new System.Windows.Forms.Button();
             this.dgvMachineGrade = new System.Windows.Forms.DataGridView();
             this.btnMGRegister = new System.Windows.Forms.Button();
-            this.btnMGCopy = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@ namespace CompanyManager
             this.label4 = new System.Windows.Forms.Label();
             this.btnMDelete = new System.Windows.Forms.Button();
             this.dgvMachine = new System.Windows.Forms.DataGridView();
-            this.btnMCopy = new System.Windows.Forms.Button();
             this.btnMRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -86,7 +84,6 @@ namespace CompanyManager
             this.splitContainer1.Panel1.Controls.Add(this.btnMGDelete);
             this.splitContainer1.Panel1.Controls.Add(this.dgvMachineGrade);
             this.splitContainer1.Panel1.Controls.Add(this.btnMGRegister);
-            this.splitContainer1.Panel1.Controls.Add(this.btnMGCopy);
             this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.button10);
@@ -97,7 +94,6 @@ namespace CompanyManager
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnMDelete);
             this.splitContainer1.Panel2.Controls.Add(this.dgvMachine);
-            this.splitContainer1.Panel2.Controls.Add(this.btnMCopy);
             this.splitContainer1.Panel2.Controls.Add(this.btnMRegister);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
@@ -155,7 +151,7 @@ namespace CompanyManager
             this.btnMGRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMGRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnMGRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMGRegister.Location = new System.Drawing.Point(258, 3);
+            this.btnMGRegister.Location = new System.Drawing.Point(321, 3);
             this.btnMGRegister.Name = "btnMGRegister";
             this.btnMGRegister.Size = new System.Drawing.Size(56, 23);
             this.btnMGRegister.TabIndex = 0;
@@ -163,22 +159,6 @@ namespace CompanyManager
             this.btnMGRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMGRegister.UseVisualStyleBackColor = false;
             this.btnMGRegister.Click += new System.EventHandler(this.btnMGRegister_Click);
-            // 
-            // btnMGCopy
-            // 
-            this.btnMGCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMGCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnMGCopy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnMGCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMGCopy.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
-            this.btnMGCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMGCopy.Location = new System.Drawing.Point(320, 3);
-            this.btnMGCopy.Name = "btnMGCopy";
-            this.btnMGCopy.Size = new System.Drawing.Size(57, 23);
-            this.btnMGCopy.TabIndex = 1;
-            this.btnMGCopy.Text = "    복사";
-            this.btnMGCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMGCopy.UseVisualStyleBackColor = false;
             // 
             // button12
             // 
@@ -237,6 +217,8 @@ namespace CompanyManager
             // 
             // pnlMGrade
             // 
+            this.pnlMGrade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.pnlMGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlMGrade.Controls.Add(this.cboUse);
@@ -260,6 +242,7 @@ namespace CompanyManager
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(94, 39);
             this.cboUse.Name = "cboUse";
@@ -427,22 +410,6 @@ namespace CompanyManager
             this.dgvMachine.TabIndex = 19;
             this.dgvMachine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachine_CellClick);
             // 
-            // btnMCopy
-            // 
-            this.btnMCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnMCopy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnMCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMCopy.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
-            this.btnMCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMCopy.Location = new System.Drawing.Point(839, 3);
-            this.btnMCopy.Name = "btnMCopy";
-            this.btnMCopy.Size = new System.Drawing.Size(57, 23);
-            this.btnMCopy.TabIndex = 6;
-            this.btnMCopy.Text = "    복사";
-            this.btnMCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMCopy.UseVisualStyleBackColor = false;
-            // 
             // btnMRegister
             // 
             this.btnMRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -451,7 +418,7 @@ namespace CompanyManager
             this.btnMRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnMRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMRegister.Location = new System.Drawing.Point(777, 3);
+            this.btnMRegister.Location = new System.Drawing.Point(840, 3);
             this.btnMRegister.Name = "btnMRegister";
             this.btnMRegister.Size = new System.Drawing.Size(56, 23);
             this.btnMRegister.TabIndex = 5;
@@ -552,13 +519,11 @@ namespace CompanyManager
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvMachineGrade;
         private System.Windows.Forms.Button btnMGRegister;
-        private System.Windows.Forms.Button btnMGCopy;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvMachine;
-        private System.Windows.Forms.Button btnMCopy;
         private System.Windows.Forms.Button btnMRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;

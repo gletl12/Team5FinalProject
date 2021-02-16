@@ -123,9 +123,9 @@ namespace DAC
             try
             {
                 string sql = @"insert into TBL_MACHINE (machine_id, machine_grade, machine_name, use_warehouse_id, ok_warehouse_id, ng_warehouse_id, 
-                                                        m_os_use, mcachine_comment, machine_use, ins_date, ins_emp, up_date, up_emp)
+                                                        m_os_use, machine_comment, machine_use, ins_emp, up_date, up_emp)
                                values(@machine_id, @machine_grade, @machine_name, @use_warehouse_id, @ok_warehouse_id, @ng_warehouse_id, 
-                                      @m_os_use, @mcachine_comment, @machine_use, @ins_date, @ins_emp, @up_date, @up_emp)";
+                                      @m_os_use, @machine_comment, @machine_use, @ins_emp, @up_date, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@machine_id", mvo.machine_id);
@@ -135,9 +135,8 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@ok_warehouse_id", mvo.ok_warehouse_id);
                     cmd.Parameters.AddWithValue("@ng_warehouse_id", mvo.ng_warehouse_id);
                     cmd.Parameters.AddWithValue("@m_os_use", mvo.m_os_use);
-                    cmd.Parameters.AddWithValue("@mcachine_comment", mvo.machine_comment);
+                    cmd.Parameters.AddWithValue("@machine_comment", mvo.machine_comment);
                     cmd.Parameters.AddWithValue("@machine_use", mvo.machine_use);
-                    cmd.Parameters.AddWithValue("@ins_date", mvo.up_date);
                     cmd.Parameters.AddWithValue("@ins_emp", mvo.up_emp);
                     cmd.Parameters.AddWithValue("@up_date", mvo.up_date);
                     cmd.Parameters.AddWithValue("@up_emp", mvo.up_emp);
