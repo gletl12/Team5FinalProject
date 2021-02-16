@@ -87,7 +87,7 @@ namespace CompanyManager
             treeView1.Nodes.Clear();
 
             Service.MenuService service = new Service.MenuService();
-            menuAllList = service.GetMenus();
+            menuAllList = service.GetMenus(0);
 
             menuAllList.ForEach(p =>
             {

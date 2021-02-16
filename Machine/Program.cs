@@ -1,6 +1,7 @@
 ﻿using log4net.Core;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -102,8 +103,8 @@ namespace Machine
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             int Produce = rnd.Next(0, 100);
-
-            if (Produce < 97)
+            int percent= int.Parse(ConfigurationManager.AppSettings["percent"]);
+            if (Produce < percent)
             {
                 success += 1;
             }
@@ -111,7 +112,7 @@ namespace Machine
             {
                 fail += 1;
             }
-            process = ((success + fail) * 100) / Total;
+            process = ((success) * 100) / Total;
             string msg = $"{success}|{fail}|{process}|";
 
             byte[] buff = Encoding.Default.GetBytes(msg);
@@ -119,7 +120,7 @@ namespace Machine
             //stream.Flush();
             Console.WriteLine(msg);
 
-            if (Total <= success + fail)
+            if (Total <= success)
             {
                 timer1.Stop();
                 success = fail = 0;

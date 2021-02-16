@@ -14,18 +14,19 @@ namespace CompanyManager
     public partial class PopMachineCRUD : CompanyManager.PopupBaseForm
     {
         private bool upflag = false;
-        MachinesVO vo;
-        public PopMachineCRUD(int mgrade, int id)
+        EmployeeVO evo = new EmployeeVO();
+        MachinesVO vo = new MachinesVO();
+        public PopMachineCRUD(int mgrade, EmployeeVO evo)
         {
             InitializeComponent();
-            lblmgrade.Text = mgrade.ToString();
-            txtUpEmp.Text = id.ToString();
+            vo.machine_grade = mgrade;
+            this.evo = evo;
         }
 
-        public PopMachineCRUD(int id, MachinesVO vo)
+        public PopMachineCRUD(EmployeeVO evo, MachinesVO vo)
         {
             InitializeComponent();
-            txtUpEmp.Text = id.ToString();
+            this.evo = evo;
             this.vo = vo;
             upflag = true;
             txtMachineID.ReadOnly = true;
@@ -121,7 +122,7 @@ namespace CompanyManager
         private void PopMachineCRUD_Load(object sender, EventArgs e)
         {
             RoadCombobox();
-
+            txtUpEmp.Text = evo.emp_name;
             if(upflag)
             {
                 txtMachineID.Text = vo.machine_id;
@@ -155,11 +156,20 @@ namespace CompanyManager
                 use_warehouse_id = cboUseWh.SelectedValue.ToString(),
                 ok_warehouse_id = cboOKWh.SelectedValue.ToString(),
                 ng_warehouse_id = cboNGWh.SelectedValue.ToString(),
-                m_os_use = cboOSuse.SelectedValue.ToString(),
                 up_date = DateTime.Now,
-                up_emp = txtUpEmp.Text
+                up_emp = evo.emp_id.ToString()
 
             };
+            if (cboOSuse.SelectedIndex < 1)
+            {
+                cboOSuse.SelectedIndex = FindSelectedIndex(cboOSuse, "미사용");
+                mvo.m_os_use = cboOSuse.SelectedValue.ToString();
+            }
+            else
+            {
+                mvo.m_os_use = cboOSuse.SelectedValue.ToString();
+            }
+
             if (txtComment.Text.Length < 1)
                 mvo.machine_comment = "";
             else

@@ -31,5 +31,11 @@ namespace Service
             DAC.PlanDAC dac = new DAC.PlanDAC();
             return dac.GetPlan_Id();
         }
+
+        public DataTable GetMeterialPlan(DateTime start, DateTime end)
+        {
+            DAC.PlanDAC dac = new DAC.PlanDAC();
+            return dac.GetMeterialPlan(start, end);
+        }
     }
 }

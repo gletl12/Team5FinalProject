@@ -30,7 +30,7 @@ namespace CompanyManager
             GetMachine();
             GetMachineGrade();
             RoadCombobox();
-            txtUpEmp.Text = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString();
+            txtUpEmp.Text = ((FrmMain)this.MdiParent).LoginInfo.emp_name.ToString();
         }
 
         private void GetMachineGrade()
@@ -265,10 +265,15 @@ namespace CompanyManager
 
         private void btnMRegister_Click(object sender, EventArgs e)
         {
-            PopMachineCRUD pop = new PopMachineCRUD(list2[0].machine_grade,((FrmMain)this.MdiParent).LoginInfo.emp_id);
+            if(mgvo.machine_grade < 1)
+            {
+                MessageBox.Show("등록할 설비군을 선택해주세요.");
+                return;
+            }
+            PopMachineCRUD pop = new PopMachineCRUD(mgvo.machine_grade,((FrmMain)this.MdiParent).LoginInfo);
             if(pop.ShowDialog() == DialogResult.OK)
             {
-                MachineRoad(list2[0].machine_grade);
+                MachineRoad(mgvo.machine_grade);
             }
         }
 
@@ -286,7 +291,7 @@ namespace CompanyManager
 
             if(e.ColumnIndex == 0)
             {
-                PopMachineCRUD pop = new PopMachineCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, mvo);
+                PopMachineCRUD pop = new PopMachineCRUD(((FrmMain)this.MdiParent).LoginInfo, mvo);
                 if(pop.ShowDialog() == DialogResult.OK)
                 {
                     MachineRoad(mvo.machine_grade);

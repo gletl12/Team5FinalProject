@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VO;
 
 namespace DAC
@@ -48,7 +45,7 @@ namespace DAC
                 string sql = @"insert into TBL_COMPANY(company_name, company_type, company_ceo, company_bnum, company_btype, company_manager,
                                                        company_email, company_phone, company_faxnum, company_use, company_comment, up_date, up_emp)
                                values(@company_name, @company_type, @company_ceo, @company_bnum, @company_btype, @company_manager,
-                                      @company_email, @company_phone, @company_faxnum, @company_use, @company_comment, @up_date, @up_emp)";
+                                      @company_email, @company_phone, @company_faxnum, @company_use, @company_comment, @ins_emp,@up_date, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@company_name", vo.company_name);
@@ -62,8 +59,9 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@company_faxnum", vo.company_faxnum);
                     cmd.Parameters.AddWithValue("@company_use", vo.company_use);
                     cmd.Parameters.AddWithValue("@company_comment", vo.company_comment);
-                    cmd.Parameters.AddWithValue("@up_date", vo.up_date);
+                    cmd.Parameters.AddWithValue("@ins_emp", vo.up_emp);
                     cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
+                    cmd.Parameters.AddWithValue("@up_date", vo.up_date);
 
                     int iRow = cmd.ExecuteNonQuery();
                     Dispose();

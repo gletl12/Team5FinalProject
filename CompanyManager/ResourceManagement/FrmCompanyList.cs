@@ -106,7 +106,7 @@ namespace CompanyManager
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id);
+            PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo);
             if(pop.ShowDialog() == DialogResult.OK)
             {
                 CompanyRoad();
@@ -133,7 +133,7 @@ namespace CompanyManager
 
                 if (e.ColumnIndex == 0)
                 {
-                    PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, vo);
+                    PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo, vo);
                     if (pop.ShowDialog() == DialogResult.OK)
                     {
                         CompanyRoad();

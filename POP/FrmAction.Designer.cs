@@ -71,6 +71,7 @@ namespace POP
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -440,6 +441,7 @@ namespace POP
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox9);
+            this.panel3.Controls.Add(this.textBox6);
             this.panel3.Controls.Add(this.textBox11);
             this.panel3.Controls.Add(this.textBox10);
             this.panel3.Controls.Add(this.textBox1);
@@ -578,6 +580,18 @@ namespace POP
             this.textBox4.Text = "작업장";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.Gray;
+            this.textBox6.Font = new System.Drawing.Font("나눔고딕", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox6.ForeColor = System.Drawing.Color.White;
+            this.textBox6.Location = new System.Drawing.Point(242, -4);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(672, 63);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.Visible = false;
+            // 
             // FrmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -658,5 +672,6 @@ namespace POP
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

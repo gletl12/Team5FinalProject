@@ -35,6 +35,8 @@ namespace CompanyManager
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbxgrade = new System.Windows.Forms.ListBox();
             this.btnSmallMenu = new System.Windows.Forms.Button();
             this.btnLink = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@ namespace CompanyManager
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbxgrade = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -100,6 +100,32 @@ namespace CompanyManager
             this.tabPage1.Size = new System.Drawing.Size(874, 548);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "메뉴관리";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(799, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "적용";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // lbxgrade
+            // 
+            this.lbxgrade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbxgrade.FormattingEnabled = true;
+            this.lbxgrade.ItemHeight = 14;
+            this.lbxgrade.Location = new System.Drawing.Point(644, 62);
+            this.lbxgrade.Name = "lbxgrade";
+            this.lbxgrade.Size = new System.Drawing.Size(211, 452);
+            this.lbxgrade.TabIndex = 34;
             // 
             // btnSmallMenu
             // 
@@ -304,32 +330,6 @@ namespace CompanyManager
             this.dataGridView1.Size = new System.Drawing.Size(490, 452);
             this.dataGridView1.TabIndex = 30;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(799, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "적용";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lbxgrade
-            // 
-            this.lbxgrade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbxgrade.FormattingEnabled = true;
-            this.lbxgrade.ItemHeight = 14;
-            this.lbxgrade.Location = new System.Drawing.Point(644, 62);
-            this.lbxgrade.Name = "lbxgrade";
-            this.lbxgrade.Size = new System.Drawing.Size(211, 452);
-            this.lbxgrade.TabIndex = 34;
             // 
             // PopupCommon
             // 

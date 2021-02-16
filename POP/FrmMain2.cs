@@ -7,17 +7,20 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace POP
 {
     public partial class FrmMain2 : POP.BaseForm
     {
-        public FrmMain2(string name)
+        public FrmMain2(EmployeeVO vo)
         {
             InitializeComponent();
-            Name = name;
+            Name = vo.emp_name.ToString();
+            emp_id = vo.emp_id.ToString();
         }
         public string Name { get; set; }
+        public string emp_id { get; set; }
         private void customTabControl1_Load(object sender, EventArgs e)
         {
 

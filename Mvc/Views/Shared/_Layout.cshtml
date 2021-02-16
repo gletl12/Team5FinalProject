@@ -114,7 +114,7 @@ desired effect
                         <!-- Notifications Menu -->
                         <li class="dropdown notifications-menu">
                             <!-- Menu toggle button -->
-                          
+                            @Html.Action("Summary", "Cart")
                         </li>
                         <!-- Tasks Menu -->
                         <li class="dropdown tasks-menu">
@@ -251,7 +251,7 @@ desired effect
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                      
+                        @Html.Action("Menu", "Menu")
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -354,9 +354,11 @@ desired effect
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.min.js"></script>
-
+    <!-- ChartJS -->
+    <script src="~/bower_components/Chart.js/Chart.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

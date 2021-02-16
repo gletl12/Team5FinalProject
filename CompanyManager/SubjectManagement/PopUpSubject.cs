@@ -134,7 +134,7 @@ namespace CompanyManager
                 cbograde.SelectedIndex = FindSelectedIndex(cbograde, InsertInfo.Item_grade == null ? "" : InsertInfo.Item_grade);
                 cbomanager.SelectedIndex = FindSelectedIndex(cbomanager, InsertInfo.Item_manager == null ? "" : InsertInfo.Item_manager);
                 cbouse.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
-                cboextinction.SelectedIndex = FindSelectedIndex(cbouse, InsertInfo.Item_use);
+                cboextinction.SelectedIndex = FindSelectedIndex(cboextinction, InsertInfo.Item_use);
                 txtComment.Text = InsertInfo.Item_comment == null ? "" : InsertInfo.Item_comment;
             }
         }
@@ -273,11 +273,6 @@ namespace CompanyManager
             if (cbouse.SelectedIndex == 0)
             {
                 MessageBox.Show("사용유무를 선택해주세요");
-                return;
-            }
-            if (cboextinction.SelectedIndex == 0)
-            {
-                MessageBox.Show("단종유무를 선택해주세요");
                 return;
             }
 

@@ -116,8 +116,8 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = @"insert into TBL_PERFORMANCE (wo_id,item_id,ch_id,performance_qty,ins_date,ins_emp)
-                                                             values (@wo_id,@item_id,@ch_id,@performance_qty,@ins_date,@ins_emp)";
+                    cmd.CommandText = @"insert into TBL_PERFORMANCE (wo_id,item_id,ch_id,performance_qty,ins_date,ins_emp,bad_qty)
+                                                             values (@wo_id,@item_id,@ch_id,@performance_qty,@ins_date,@ins_emp,@bad_qty)";
                     cmd.Connection = conn;
                     cmd.Parameters.AddWithValue("@wo_id", vo.wo_id);
                     cmd.Parameters.AddWithValue("@item_id", vo.item_id);
@@ -125,6 +125,7 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                     cmd.Parameters.AddWithValue("@performance_qty", vo.performance_qty);
                     cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@ins_emp", vo.ins_emp);
+                    cmd.Parameters.AddWithValue("@bad_qty", vo.bad_qty);
 
                     int id = Convert.ToInt32(cmd.ExecuteScalar());
                     Dispose();
@@ -142,12 +143,41 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                 return false;
             }
         }
+        public bool PerformanceCh_idUpdate(int per_id, int ch_id)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = @" update TBL_PERFORMANCE set  ch_id=@ch_id
+                                                            where performance_id=@performance_id;";
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@ch_id", ch_id);
+                    cmd.Parameters.AddWithValue("@performance_id", per_id);
 
+                    int iRowAffect = cmd.ExecuteNonQuery();
+                    Dispose();
+
+                    return iRowAffect > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_PerformanceDAC_PerformanceCh_idUpdate() 오류", err);
+
+                return false;
+            }
+        }
+        
         public List<PerformanceVO> GetPerformance()
         {
 
-            string sql = @"select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,P.ins_emp,(W.wo_qty-performance_qty)as bad_qty
+            string sql = @"    select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,E.emp_name,P.bad_qty
  from TBL_PERFORMANCE  P inner join TBL_WORK_ORDER W on P.wo_id=W.wo_id
+						inner join TBL_Employee E on P.ins_emp=E.emp_id
  where ch_id=0;";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
@@ -166,5 +196,39 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
             }
         }
 
+
+
+        public bool BadQTY(int ch_id,string bad_type,int bad_qty,string ins_emp)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = @"insert into TBL_BAD (ch_id,bad_type,bad_qty,ins_date,ins_emp)
+                                                    values  (@ch_id,@bad_type,@bad_qty,@ins_date,@ins_emp)";
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@ch_id", ch_id);
+                    cmd.Parameters.AddWithValue("@bad_type", bad_type);
+                    cmd.Parameters.AddWithValue("@bad_qty", bad_qty);
+                    cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@ins_emp", ins_emp);
+                    
+
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    Dispose();
+
+                    return id > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_PerformanceDAC_PerformanceCommit2() 오류", err);
+
+                return false;
+            }
+        }
     }
 }

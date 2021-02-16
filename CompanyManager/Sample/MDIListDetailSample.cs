@@ -21,10 +21,10 @@ namespace CompanyManager
         {
             CommonUtil.SetDGVDesign(dataGridView2);
             MenuService service = new MenuService();
-            dataGridView2.DataSource = service.GetMenus();
+            dataGridView2.DataSource = service.GetMenus(0);
 
             CommonUtil.SetDGVDesign(dataGridView1);
-            dataGridView1.DataSource = service.GetMenus();
+            dataGridView1.DataSource = service.GetMenus(0);
         }
 
        

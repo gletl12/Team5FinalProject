@@ -24,7 +24,7 @@ namespace POP
         int PagesCount = 1;
         int PageRows = 5;
 
-        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, int AllItemNum, string WorkItem, string OrderNum , Form parent)
+        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, string WorkUserName_id,int AllItemNum, string WorkItem, string OrderNum , Form parent)
         {
             Size formSize = new Size(1915, 1012);
 
@@ -44,7 +44,7 @@ namespace POP
 
             //FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
 
-            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName,  AllItemNum,  WorkItem,  OrderNum);
+            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName, WorkUserName_id, AllItemNum,  WorkItem,  OrderNum);
             frm.MdiParent = parent;
             frm.Show();
             frm.Location = new Point(0, 0);
@@ -54,6 +54,8 @@ namespace POP
 
 
         List<WorkOrderVO> list;
+        List<WorkOrderVO> list2;
+        List<WorkOrderVO> list3;
         List<WorkOrderVO> Templist;
         #endregion
         public string Task_ID { get { return lblTaskID.Text; } set { lblTaskID.Text = value; } }
@@ -126,16 +128,25 @@ namespace POP
             machine.Insert(0, new MachineVO { machine_name = "전체" });
             CommonUtil.BindingComboBox(cboMachine, machine, "machine_id", "machine_name");
         }
-        //List<WorkOrderVO> list;
+        
         private void DataLoad()
         {
             WorkOrderService service1 = new WorkOrderService();
             list = service1.GetWorkOrder();
             dataGridView1.DataSource = list;
+
+            
+            list2 = service1.GetWorkOrder2();
+            dataGridView2.DataSource = list2;
+
+            
+            list3 = service1.GetWorkOrder3();
+            dataGridView3.DataSource = list3;
         }
 
         private void GetdgvColumn()
         {
+            #region 작업지시
             CommonUtil.SetDGVDesign_Num(dataGridView1);
             dataGridView1.ColumnHeadersHeight = 50;
 
@@ -156,6 +167,51 @@ namespace POP
 
             CommonUtil.AddGridTextColumn(dataGridView1, "번호", "machine_id", 130, false);
             CommonUtil.AddGridTextColumn(dataGridView1, "번호", "machine_name", 130, false);
+            #endregion
+            #region 작업시작
+            CommonUtil.SetDGVDesign_Num(dataGridView2);
+            dataGridView2.ColumnHeadersHeight = 50;
+
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "wo_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView2, "품목 코드", "item_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView2, "계획수량", "wo_qty", 445);
+            CommonUtil.AddGridTextColumn(dataGridView2, "작업지시상태", "wo_state", 445);
+
+            CommonUtil.AddGridTextColumn(dataGridView2, "계획번호", "prod_id", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "wo_people", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "시작시간", "wo_start", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "종료시간", "wo_end", 130, false);
+
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "ins_date", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "ins_emp", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "up_date", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "up_emp", 130, false);
+
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "machine_id", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView2, "번호", "machine_name", 130, false);
+            #endregion
+            #region 작업종료
+            CommonUtil.SetDGVDesign_Num(dataGridView3);
+            dataGridView3.ColumnHeadersHeight = 50;
+
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "wo_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView3, "품목 코드", "item_id", 445);
+            CommonUtil.AddGridTextColumn(dataGridView3, "계획수량", "wo_qty", 445);
+            CommonUtil.AddGridTextColumn(dataGridView3, "작업지시상태", "wo_state", 445);
+
+            CommonUtil.AddGridTextColumn(dataGridView3, "계획번호", "prod_id", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "wo_people", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "시작시간", "wo_start", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "종료시간", "wo_end", 130, false);
+
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "ins_date", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "ins_emp", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "up_date", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "up_emp", 130, false);
+
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "machine_id", 130, false);
+            CommonUtil.AddGridTextColumn(dataGridView3, "번호", "machine_name", 130, false);
+            #endregion
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -175,10 +231,10 @@ namespace POP
 
             textBox1.Text = dataGridView1[0, rowIndex].Value.ToString();
             textBox2.Text = dataGridView1[4, rowIndex].Value.ToString();//4
-            textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
+            //textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
             textBox4.Text = dataGridView1[1, rowIndex].Value.ToString();//1
             textBox5.Text = dataGridView1[13, rowIndex].Value.ToString();//13
-            textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//
+            //textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//
 
             textBox7.Text = dataGridView1[2, rowIndex].Value.ToString();//
             textBox8.Text = (int.Parse(textBox11.Text) + int.Parse(textBox10.Text)).ToString() ;
@@ -206,9 +262,10 @@ namespace POP
                                 taskCtrl.AllItemNum= Convert.ToInt32(dataGridView1[2, rowIndex].Value);//총오더량
                                 taskCtrl.Machinname = Convert.ToString(dataGridView1[13, rowIndex].Value);
                                 taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
+                                taskCtrl.WorkUserName_id = ((FrmMain2)this.MdiParent).emp_id;
                                 taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
                                 taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
-
+                                
                                 taskCtrl.WorkState= Convert.ToString(dataGridView1[3, rowIndex].Value);//작업상태
                                 
                                     
@@ -252,8 +309,9 @@ namespace POP
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
+            dateTimePicker2.Value = DateTime.Now.AddMinutes(10);
             dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now;
+            
         }
 
      
