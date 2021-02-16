@@ -34,5 +34,6 @@ namespace VO
         public int Cancellable { get; set; }
         public DateTime ins_date { get; set; }
         public string emp_name{ get; set; }
+        public int company_id { get; set; }
     }
 }

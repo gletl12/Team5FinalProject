@@ -62,6 +62,7 @@
     <Compile Include="MachineVO.cs" />
     <Compile Include="MenuVO.cs" />
     <Compile Include="MoveVO.cs" />
+    <Compile Include="OrderDraftVO.cs" />
     <Compile Include="PerformanceVO.cs" />
     <Compile Include="MGradeVO.cs" />
     <Compile Include="PriceVO.cs" />

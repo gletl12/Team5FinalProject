@@ -9,6 +9,7 @@ using Util;
 using VO;
 using Service;
 using System.Linq;
+using DevExpress.XtraReports.UI;
 
 namespace CompanyManager
 {
@@ -154,7 +155,36 @@ namespace CompanyManager
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            List<PurchasesListVO> selectedRows = new List<PurchasesListVO>();
+            for (int i = 0; i < dgvPurchases.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dgvPurchases[0, i].Value))
+                {
+                    PurchasesListVO vo = list.Find(elem => elem.pd_id == Convert.ToInt32(dgvPurchases["pd_id", i].Value));
+                    selectedRows.Add(vo);
+                }
+            }
 
+            if (selectedRows.Count > 1)
+            {
+                MessageBox.Show("발주서를 출력할 발주정보를 하나만 선택해 주십시오.");
+                return;
+            }
+
+            (CompanyVO company,DataTable dt) =  service.GetOrderDraftInfo(selectedRows[0]);
+
+            int totPrice = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                totPrice += Convert.ToInt32(row["price"]);
+            }
+            rptPurchases rpt = new rptPurchases(selectedRows[0].purchase_id, totPrice, company);
+            rpt.DataSource = dt;
+
+            using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+            {
+                printTool.ShowPreviewDialog();
+            }
         }
 
         private void dgvPurchases_CellContentClick(object sender, DataGridViewCellEventArgs e)

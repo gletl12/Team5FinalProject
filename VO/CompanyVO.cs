@@ -24,6 +24,7 @@ namespace VO
         public string ins_emp { get; set; }
         public DateTime up_date { get; set; }
         public string up_emp { get; set; }
+        
     }
     public class CompanyCodeVO
     {
