@@ -267,6 +267,7 @@ namespace POP
             performance.item_id = textBox9.Text;
             //performance.ch_id = ch_id;
             performance.performance_qty = int.Parse(textBox27.Text);
+            performance.bad_qty= int.Parse(textBox39.Text);
 
             performance.ins_emp = textBox6.Text;
 

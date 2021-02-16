@@ -28,6 +28,7 @@ namespace POP
         public int performance_qty { get; set; }
         public string ins_emp { get; set; }
         public int bad_qty { get; set; }
+
         public DateTime wo_sdate { get; set; }
         
         private void FrmPOPpopup_Load(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace POP
                 if (bFlag)
                 {
                     PerformanceService service2 = new PerformanceService();
-                    bool bFlag1 = service2.BadQTY(chid, comboBox2.SelectedValue.ToString(), bad_qty, ins_emp);
+                    bool bFlag1 = service2.BadQTY(chid, comboBox2.SelectedValue.ToString(), int.Parse(lblCal.Text), ins_emp);
                     if (bFlag1)
                     {
                         MessageBox.Show("검사실패");
