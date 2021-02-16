@@ -195,7 +195,7 @@ namespace POP
             frm.wo_id = Convert.ToInt32(dataGridView1[1, rowIndex].Value);
             frm.item_id = dataGridView1[2, rowIndex].Value.ToString(); ;
             frm.performance_qty = Convert.ToInt32(dataGridView1[3, rowIndex].Value);
-            frm.ins_emp = dataGridView1[4, rowIndex].Value.ToString();
+            frm.ins_emp = ((FrmMain2)this.MdiParent).emp_id;
             frm.bad_qty = Convert.ToInt32(dataGridView1[5, rowIndex].Value);
             frm.wo_sdate = Convert.ToDateTime(dataGridView1[6, rowIndex].Value);
             if (frm.ShowDialog() == DialogResult.OK)
