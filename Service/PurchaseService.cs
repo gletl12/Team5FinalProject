@@ -52,5 +52,11 @@ namespace Service
             PurchaseDAC dac = new PurchaseDAC();
             return dac.GetAllCodes();
         }
+
+        public (CompanyVO, DataTable) GetOrderDraftInfo(PurchasesListVO purchasesListVO)
+        {
+            PurchaseDAC dac = new PurchaseDAC();
+            return dac.GetOrderDraftInfo(purchasesListVO);
+        }
     }
 }

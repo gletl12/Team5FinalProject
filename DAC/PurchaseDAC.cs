@@ -45,7 +45,7 @@ namespace DAC
 								   case when pd_qty-isnull(in_cqty,0)-isnull(in_qty,0)<0 then 0
 									    else pd_qty-isnull(in_cqty,0)-isnull(in_qty,0)
 								   end Cancellable,
-                               	   cast(PD.ins_date as date) ins_date,emp_name
+                               	   cast(PD.ins_date as date) ins_date,emp_name,company_id
                                from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                                						    JOIN TBL_COMPANY C ON C.company_id = I.supply_company
                                							LEFT JOIN (select sum(in_qty) in_qty ,prod_id,item_id,sum(in_cqty) in_cqty 
@@ -68,6 +68,48 @@ namespace DAC
                 //로그 오류
                 Log.WriteError("DAC_PurchaseDAC_GetPurchasesList() 오류", err);
                 return null;
+            }
+        }
+
+        public (CompanyVO, DataTable) GetOrderDraftInfo(PurchasesListVO purchasesListVO)
+        {
+            List<CompanyVO> company = new List<CompanyVO>();
+            List<OrderDraftVO> list = new List<OrderDraftVO>();
+            DataTable dt = new DataTable();
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                try
+                {
+                    cmd.CommandText = "select company_name,company_ceo,company_email,company_phone from  TBL_COMPANY where company_id = @company_id";
+                    cmd.Parameters.AddWithValue("@company_id", purchasesListVO.company_id);
+                    SqlDataReader CDr =  cmd.ExecuteReader();
+                    company = Helper.DataReaderMapToList<CompanyVO>(CDr);
+                    CDr.Close();
+
+                    cmd.Parameters.Clear();
+
+                    SqlDataAdapter da = new SqlDataAdapter(@"select * from VW_ORDERDRAFT
+                                       where purchase_id = @pid and supply_company = @company", conn);
+                    da.SelectCommand.Parameters.AddWithValue("@pid", purchasesListVO.purchase_id);
+                    da.SelectCommand.Parameters.AddWithValue("@company", purchasesListVO.company_id);
+                    da.Fill(dt);
+                    //da.SelectCommand.CommandText = @"select * from VW_ORDERDRAFT
+                    //                   where purchase_id = @pid and supply_company = @company";
+                    //SqlDataReader PDr = cmd.ExecuteReader();
+                    //list = Helper.DataReaderMapToList<OrderDraftVO>(PDr);
+                    conn.Close();
+                    return (company[0], dt);
+
+
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_PurchaseDAC_GetOrderDraftInfo() 오류", err);
+                    return (null,null);
+                }
+
             }
         }
 
