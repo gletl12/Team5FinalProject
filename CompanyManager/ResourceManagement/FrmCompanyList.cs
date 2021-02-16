@@ -16,6 +16,7 @@ namespace CompanyManager
     public partial class FrmCompanyList : CompanyManager.MDIBaseForm
     {
         List<CompanyVO> list = new List<CompanyVO>();
+        CompanyVO vo = new CompanyVO();
         public FrmCompanyList()
         {
             InitializeComponent();
@@ -89,11 +90,79 @@ namespace CompanyManager
             {
                 CompanyRoad();
             }
-            //else if(txt)
+            else
+            {
+                List<CompanyVO> temp = (from company_id in list
+                                        where company_id.company_name.Contains($"{txtCName.Text}") &&
+                                              (txtBNum.Text.Length < 10 ||
+                                              company_id.company_bnum.Equals(string.Concat($"{txtBNum.Text.Substring(0, 3)}-{txtBNum.Text.Substring(3, 2)}-{txtBNum.Text.Substring(5)}"))) &&
+                                              (cboBtype.SelectedValue.ToString().Length < 1 || company_id.company_btype.Equals(cboBtype.SelectedValue.ToString())) &&
+                                              (cboCompanyType.SelectedValue.ToString().Length < 1 || company_id.company_type.Equals(cboCompanyType.SelectedValue.ToString()))
+                                        select company_id).ToList();
+                dgvCompany.DataSource = temp;
+                dgvCompany.ClearSelection();
+            }
+        }
 
-            List<CompanyVO> temp = (from company_id in list
-                                    where company_id.company_name == $"{txtCName.Text}"
-                                    select company_id).ToList();
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id);
+            if(pop.ShowDialog() == DialogResult.OK)
+            {
+                CompanyRoad();
+            }
+        }
+
+        private void dgvCompany_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                vo.company_name = list[e.RowIndex].company_name;
+                vo.company_type = list[e.RowIndex].company_type;
+                vo.company_use = list[e.RowIndex].company_use;
+                vo.company_ceo = list[e.RowIndex].company_ceo;
+                vo.company_bnum = list[e.RowIndex].company_bnum;
+                vo.company_btype = list[e.RowIndex].company_btype;
+                vo.company_manager = list[e.RowIndex].company_manager;
+                vo.company_email = list[e.RowIndex].company_email;
+                vo.company_phone = list[e.RowIndex].company_phone;
+                vo.company_faxnum = list[e.RowIndex].company_faxnum;
+                vo.company_comment = list[e.RowIndex].company_comment;
+                vo.up_date = DateTime.Now;
+                vo.company_id = list[e.RowIndex].company_id;
+
+                if (e.ColumnIndex == 0)
+                {
+                    PopCompanyCRUD pop = new PopCompanyCRUD(((FrmMain)this.MdiParent).LoginInfo.emp_id, vo);
+                    if (pop.ShowDialog() == DialogResult.OK)
+                    {
+                        CompanyRoad();
+                    }
+                }
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(vo.company_type))
+            {
+                MessageBox.Show("삭제할 업체 데이터를 선택해주세요.");
+                return;
+            }
+
+            if(MessageBox.Show("정말로 삭제하시겠습니까?","경고",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                CompanyService service = new CompanyService();
+                if (service.DeleteCompany(vo.company_id))
+                {
+                    MessageBox.Show("삭제에 성공하였습니다.");
+                    CompanyRoad();
+
+                }
+                else
+                    MessageBox.Show("삭제에 실패하였습니다.");
+            }
         }
     }
 }
