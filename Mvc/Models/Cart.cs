@@ -47,5 +47,10 @@ namespace Mvc.Models
         {
             return lines.Sum<CartLine>(p => p.Product.Price * p.Qty);
         }
+
+        public void Clear()
+        {
+            lines.Clear();
+        }
     }
 }

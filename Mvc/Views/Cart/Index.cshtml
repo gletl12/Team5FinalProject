@@ -35,21 +35,21 @@
                     <tbody>
                         @foreach (var line in Model.Cart.Lines)
                         {
-                        <tr>
-                            <td>@line.Product.Name</td>
-                            <td class="text-right">@line.Product.Price.ToString("c")</td>
-                            <td class="text-center">@line.Qty</td>
-                            <td class="text-right">@((line.Product.Price * line.Qty).ToString("c"))</td>
-                            <td>
-                                @using (Html.BeginForm("RemoveFromCart", "Cart"))
-                                {
-                                @Html.Hidden("ProductID", line.Product.ProductID)
-                                @Html.Hidden("returnUrl", Model.ReturnUrl)
-                                <input type="submit" value="Remove"
-                                       class="btn btn-sm btn-warning" />
-                                }
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@line.Product.Name</td>
+                                <td class="text-right">@line.Product.Price.ToString("c")</td>
+                                <td class="text-center">@line.Qty</td>
+                                <td class="text-right">@((line.Product.Price * line.Qty).ToString("c"))</td>
+                                <td>
+                                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                    {
+                                        @Html.Hidden("ProductID", line.Product.ProductID)
+                                        @Html.Hidden("returnUrl", Model.ReturnUrl)
+                                        <input type="submit" value="Remove"
+                                               class="btn btn-sm btn-warning" />
+                                    }
+                                </td>
+                            </tr>
                         }
                     </tbody>
                     <tfoot>
@@ -62,7 +62,7 @@
             </div>
             <div class="text-center">
                 <a href="@Model.ReturnUrl" class="btn btn-primary">쇼핑 계속하기</a>
-                @Html.ActionLink("결제하기", "CheckOut", null, new {@class= "btn btn-primary" })
+                @Html.ActionLink("결제하기", "CheckOut", null, new { @class = "btn btn-primary" })
             </div>
         </div>
     </section>

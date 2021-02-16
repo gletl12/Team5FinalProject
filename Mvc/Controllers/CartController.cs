@@ -50,6 +50,31 @@ namespace Mvc.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CheckOut(ShipInfo info)
+        {
+            //배송정보까지 정상적으로 입력받은 경우
+            Cart cart = GetCart();
+            if (cart.Lines.Count < 1)
+            {
+                ModelState.AddModelError("", "장바구니가 비었습니다.");
+            }
+            if (ModelState.IsValid)
+            {
+                //장바구니의 내용을 DB에 저장
+                //배송정보를 Order테이블에 저장, 장바구니의 제품ID, 수량을 OrderDetail에 저장
+
+                //주문완료 메일을 발송
+                EmailProcessor email = new EmailProcessor();
+                email.ProcessorOrder(info, cart);
+
+                //장바구니 비워주기
+                cart.Clear();
+            }
+            return View();
+        }
+
         private Cart GetCart()
         {
             Cart cart = (Cart)Session["Cart"];
