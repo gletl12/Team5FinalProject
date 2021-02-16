@@ -184,5 +184,11 @@ namespace POP
             dataGridView1.Refresh();
         }
         #endregion
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmPOPpopup frm = new FrmPOPpopup();
+            frm.Show();
+        }
     }
 }

@@ -289,6 +289,7 @@ namespace POP
             this.dataGridView1.RowTemplate.Height = 95;
             this.dataGridView1.Size = new System.Drawing.Size(1901, 731);
             this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // FrmInspection
             // 
