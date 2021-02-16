@@ -54,5 +54,17 @@ namespace Service
             MenuDAC dac = new MenuDAC();
             return dac.MenuDownOrder(menuName);
         }
+
+        public List<int> GetMenuAccess(string menuName)
+        {
+            MenuDAC dac = new MenuDAC();
+            return dac.GetMenuAccess(menuName);
+        }
+
+        public bool AddMenuAccess(string menuName, List<int> temp)
+        {
+            MenuDAC dac = new MenuDAC();
+            return dac.AddMenuAccess(menuName, temp);
+        }
     }
 }
