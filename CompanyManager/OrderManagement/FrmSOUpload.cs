@@ -78,7 +78,7 @@ namespace CompanyManager
                         order_id = row.Cells["고객 주문번호"].Value.ToString(),
                         company_id = Convert.ToInt32(row.Cells["업체 ID"].Value),
                         mkt = row.Cells["MKT"].Value.ToString(),
-                        item_id = row.Cells["품목"].Value.ToString(),
+                        item_id = row.Cells["품목"].Value.ToString().Equals("내수")?"MKT01":"MKT02",
                         currency = row.Cells["환종"].Value.ToString(),
                         so_o_qty = Convert.ToInt32(row.Cells["수량"].Value),
                         due_date = Convert.ToDateTime(row.Cells["납기일"].Value),

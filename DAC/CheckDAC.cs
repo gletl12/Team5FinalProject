@@ -34,7 +34,7 @@ namespace DAC
 
         public List<CheckVO> GetCheckList(DateTime from, DateTime to)
         {
-            string sql = @"select CH.ch_id,cast(CH.ins_date as date) ins_date,company_name,CH.item_id,I.item_name,CD.name unit,ch_qty,good_qty,bad_qty,bad_comment
+            string sql = @"select CH.ch_id,cast(CH.ins_date as date) ins_date,company_name,CH.item_id,I.item_name,CD.name unit,ch_qty,good_qty,CH.bad_qty,bad_comment
 from TBL_CHECK_HISTORY CH JOIN TBL_ITEM I ON CH.item_id = I.item_id
 						  JOIN TBL_COMPANY C ON C.company_id = I.supply_company
 						  LEFT JOIN TBL_BAD B ON CH.ch_id = B.ch_id

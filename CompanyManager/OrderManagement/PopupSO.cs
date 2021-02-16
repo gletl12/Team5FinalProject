@@ -127,7 +127,7 @@ namespace CompanyManager
                     so_c_qty = txtCQty.Text.Length < 1 ? 0 : Convert.ToInt32(txtCQty.Text),
                     plan_date = DateTime.Now,
                     mkt = cboMkt.SelectedValue.ToString(),
-                    currency = cboCompany.SelectedValue.ToString(),
+                    currency =cboCurrency.SelectedValue.ToString(),
                     so_comment = txtComment.Text,
                 };
                 result = service.InsertSO(so);

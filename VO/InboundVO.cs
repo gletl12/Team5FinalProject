@@ -25,7 +25,7 @@ namespace VO
         public string in_warehouse { get; set; }
         public int warehouse_id { get; set; }
         public DateTime due_date { get; set; }
-        public DateTime ins_date { get=>DateTime.Now;}
+        public DateTime ins_date { get; set; }
         public DateTime InboundDate{ get=> new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);}
         public int in_id { get; set; }
     }
