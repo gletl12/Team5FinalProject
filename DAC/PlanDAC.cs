@@ -38,6 +38,34 @@ namespace DAC
                 return new DataTable();
             }
         }
+
+        public DataTable GetMeterialPlan(DateTime start, DateTime end)
+        {
+            string sql = @"SP_GetMeterialReq_Plan";
+
+            try
+            {
+                using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+                {
+                    da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@start_date", start.ToString("yyyy-MM-dd"));
+                    da.SelectCommand.Parameters.AddWithValue("@end_date", end.ToString("yyyy-MM-dd"));
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    conn.Close();
+                    return dt;
+                }
+            }
+            catch (Exception err)
+            {
+
+                conn.Close();
+                Log.WriteError("DAC_PlanDAC_GetMeterialPlan() 오류", err);
+                return new DataTable();
+            }
+        }
+
         public DataTable GetOutSourcingPlan(int plan_id, DateTime start, DateTime end)
         {
             string sql = @"SP_GetOutsourcing";
