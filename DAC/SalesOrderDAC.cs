@@ -223,5 +223,25 @@ namespace DAC
             }
 
         }
+
+        public List<SalesOrderVO> GetSOList()
+        {
+            string sql = @"select * from VW_GETSO";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("so_state", "마감");
+                    List<SalesOrderVO> list = Helper.DataReaderMapToList<SalesOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_SalesOrderDAC_GetSOList 오류", err);
+                    return null;
+                }
+            }
+        }
     }
 }

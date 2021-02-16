@@ -62,14 +62,14 @@ namespace CompanyManager
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvSO = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox3
@@ -129,28 +129,28 @@ namespace CompanyManager
             // 
             this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(97, 49);
+            this.comboBox5.Location = new System.Drawing.Point(97, 45);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(210, 22);
             this.comboBox5.TabIndex = 70;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(97, 77);
+            this.textBox4.Location = new System.Drawing.Point(97, 75);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(210, 21);
             this.textBox4.TabIndex = 69;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(790, 49);
+            this.textBox3.Location = new System.Drawing.Point(790, 46);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(210, 21);
             this.textBox3.TabIndex = 68;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(409, 49);
+            this.textBox2.Location = new System.Drawing.Point(409, 46);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(210, 21);
             this.textBox2.TabIndex = 67;
@@ -159,7 +159,7 @@ namespace CompanyManager
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(194, 22);
+            this.label21.Location = new System.Drawing.Point(194, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(15, 14);
             this.label21.TabIndex = 66;
@@ -168,7 +168,7 @@ namespace CompanyManager
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(212, 18);
+            this.dateTimePicker3.Location = new System.Drawing.Point(212, 16);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(95, 21);
             this.dateTimePicker3.TabIndex = 65;
@@ -176,7 +176,7 @@ namespace CompanyManager
             // dateTimePicker4
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(97, 18);
+            this.dateTimePicker4.Location = new System.Drawing.Point(97, 16);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(95, 21);
             this.dateTimePicker4.TabIndex = 64;
@@ -194,7 +194,7 @@ namespace CompanyManager
             // 
             this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(790, 21);
+            this.comboBox2.Location = new System.Drawing.Point(790, 15);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(210, 22);
             this.comboBox2.TabIndex = 46;
@@ -203,7 +203,7 @@ namespace CompanyManager
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(409, 22);
+            this.comboBox1.Location = new System.Drawing.Point(409, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 22);
             this.comboBox1.TabIndex = 36;
@@ -222,7 +222,7 @@ namespace CompanyManager
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(701, 80);
+            this.label9.Location = new System.Drawing.Point(700, 79);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 14);
             this.label9.TabIndex = 28;
@@ -243,7 +243,7 @@ namespace CompanyManager
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(360, 80);
+            this.label13.Location = new System.Drawing.Point(365, 79);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 14);
             this.label13.TabIndex = 25;
@@ -263,7 +263,7 @@ namespace CompanyManager
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 80);
+            this.label17.Location = new System.Drawing.Point(20, 79);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(72, 14);
             this.label17.TabIndex = 22;
@@ -283,7 +283,7 @@ namespace CompanyManager
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(701, 52);
+            this.label7.Location = new System.Drawing.Point(700, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 14);
             this.label7.TabIndex = 19;
@@ -304,7 +304,7 @@ namespace CompanyManager
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(360, 52);
+            this.label5.Location = new System.Drawing.Point(365, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 14);
             this.label5.TabIndex = 16;
@@ -325,7 +325,7 @@ namespace CompanyManager
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(701, 26);
+            this.label3.Location = new System.Drawing.Point(700, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 14);
             this.label3.TabIndex = 14;
@@ -346,7 +346,7 @@ namespace CompanyManager
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(360, 25);
+            this.label1.Location = new System.Drawing.Point(365, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 14);
             this.label1.TabIndex = 11;
@@ -388,9 +388,9 @@ namespace CompanyManager
             this.button14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(1006, 88);
+            this.button14.Location = new System.Drawing.Point(1019, 88);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(111, 30);
+            this.button14.Size = new System.Drawing.Size(98, 30);
             this.button14.TabIndex = 7;
             this.button14.Text = "조회";
             this.button14.UseVisualStyleBackColor = false;
@@ -398,7 +398,7 @@ namespace CompanyManager
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 52);
+            this.label12.Location = new System.Drawing.Point(20, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(50, 14);
             this.label12.TabIndex = 3;
@@ -407,7 +407,7 @@ namespace CompanyManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 25);
+            this.label14.Location = new System.Drawing.Point(19, 21);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 14);
             this.label14.TabIndex = 3;
@@ -433,18 +433,18 @@ namespace CompanyManager
             this.label18.TabIndex = 1;
             this.label18.Text = "label18";
             // 
-            // dataGridView2
+            // dgvSO
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 197);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1152, 439);
-            this.dataGridView2.TabIndex = 61;
+            this.dgvSO.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSO.Location = new System.Drawing.Point(8, 197);
+            this.dgvSO.Name = "dgvSO";
+            this.dgvSO.RowTemplate.Height = 23;
+            this.dgvSO.Size = new System.Drawing.Size(1152, 439);
+            this.dgvSO.TabIndex = 61;
             // 
             // button2
             // 
@@ -504,7 +504,7 @@ namespace CompanyManager
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(803, 168);
+            this.checkBox1.Location = new System.Drawing.Point(110, 217);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 64;
@@ -520,11 +520,12 @@ namespace CompanyManager
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvSO);
             this.Name = "FrmSalesClose";
+            this.Load += new System.EventHandler(this.FrmSalesClose_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,7 +563,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvSO;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
