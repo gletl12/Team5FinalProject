@@ -29,6 +29,9 @@ namespace VO
         public int ch_id { get; set; }
         public int bad_qty { get; set; }
 
+        
+            public string emp_name { get; set; }
+
 
 
     }

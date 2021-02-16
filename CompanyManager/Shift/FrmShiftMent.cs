@@ -31,7 +31,8 @@ namespace CompanyManager
 
             DataLoad();
             ComboBoxBinding();
-           
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now.AddDays(10);
         }
 
         private void DataLoad()

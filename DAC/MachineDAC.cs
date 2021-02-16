@@ -24,7 +24,7 @@ namespace DAC
                                         ok_warehouse_id,
                                         ng_warehouse_id,
                                         m_os_use,
-                                        mcachine_comment,
+                                        machine_comment,
                                         machine_use,
                                         ins_date,
                                         ins_emp,
@@ -59,7 +59,7 @@ namespace DAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandText = @"insert into TBL_MACHINE_RUN (machine_id,run_start,ins_date,ins_emp)
-                                        values (@machine_id,@day,@day1,'경훈');
+                                        values (@machine_id,@day,@day1,@ins_emp);
                                         select @@IDENTITY; ";
                     cmd.Connection = conn;
                     cmd.Parameters.AddWithValue("@machine_id", task_ID);

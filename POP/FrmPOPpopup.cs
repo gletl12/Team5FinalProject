@@ -40,7 +40,7 @@ namespace POP
                          select All).ToList();
 
             list1.Insert(0, new CodeVO { name = " " });
-            CommonUtil.BindingComboBoxPart(comboBox2, list1, "name");
+            CommonUtil.BindingComboBox(comboBox2, list1, "code","name");
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -50,6 +50,11 @@ namespace POP
 
         private void button11_Click(object sender, EventArgs e)
         {
+            if(comboBox2.Text.Length<2)
+            {
+                MessageBox.Show("불량사유를 선택하여 주세요");
+                return;
+            }
             CheckVO vo = new CheckVO();
             vo.item_id = item_id;
             vo.ch_qty = wo_id;
@@ -68,6 +73,15 @@ namespace POP
 
                 if (bFlag)
                 {
+                    PerformanceService service2 = new PerformanceService();
+                    bool bFlag1 = service2.BadQTY(chid, comboBox2.SelectedValue.ToString(), bad_qty, ins_emp);
+                    if (bFlag1)
+                    {
+                        MessageBox.Show("검사실패");
+                        return;
+                    }
+
+
                     MessageBox.Show("검사등록");
                     this.DialogResult = DialogResult.OK;
                     this.Close();

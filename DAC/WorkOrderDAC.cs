@@ -31,8 +31,8 @@ namespace DAC
                                     
                     FROM TBL_WORK_ORDER W inner join TBL_BOR B on B.item_id=W.item_id
 						inner join TBL_MACHINE M on M.machine_id=B.machine_id
-                        inner join TBL_COMMON_CODE C on W.wo_state=C.code";
-
+                        inner join TBL_COMMON_CODE C on W.wo_state=C.code
+                        where wo_state = 'WO002'";
             try
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -49,6 +49,84 @@ namespace DAC
                 return new List<WorkOrderVO>();
             }
         }
+        public List<WorkOrderVO> GetWorkOrder2()
+        {
+            string sql = @"SELECT wo_id,
+                                    W.item_id,
+                                    B.machine_id,
+                                    machine_name,
+                                    prod_id,
+                                    wo_qty,
+                                    wo_sdate,
+                                    wo_people,
+                                    wo_start,
+                                    wo_end,
+                                    W.ins_date,
+                                    W.ins_emp,
+                                    W.up_date,
+                                    W.up_emp,
+                                    c.name as wo_state
+                                    
+                    FROM TBL_WORK_ORDER W inner join TBL_BOR B on B.item_id=W.item_id
+						inner join TBL_MACHINE M on M.machine_id=B.machine_id
+                        inner join TBL_COMMON_CODE C on W.wo_state=C.code
+                        where wo_state = 'WO003'";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    List<WorkOrderVO> temp = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return temp;
+                }
+            }
+            catch (Exception err)
+            {
+                conn.Close();
+                Log.WriteError("DAC_WorkOrderDAC_GetWorkOrder() 오류", err);
+                return new List<WorkOrderVO>();
+            }
+        }
+        public List<WorkOrderVO> GetWorkOrder3()
+        {
+            string sql = @"SELECT wo_id,
+                                    W.item_id,
+                                    B.machine_id,
+                                    machine_name,
+                                    prod_id,
+                                    wo_qty,
+                                    wo_sdate,
+                                    wo_people,
+                                    wo_start,
+                                    wo_end,
+                                    W.ins_date,
+                                    W.ins_emp,
+                                    W.up_date,
+                                    W.up_emp,
+                                    c.name as wo_state
+                                    
+                    FROM TBL_WORK_ORDER W inner join TBL_BOR B on B.item_id=W.item_id
+						inner join TBL_MACHINE M on M.machine_id=B.machine_id
+                        inner join TBL_COMMON_CODE C on W.wo_state=C.code
+                        where wo_state = 'WO004'";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    List<WorkOrderVO> temp = Helper.DataReaderMapToList<WorkOrderVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return temp;
+                }
+            }
+            catch (Exception err)
+            {
+                conn.Close();
+                Log.WriteError("DAC_WorkOrderDAC_GetWorkOrder() 오류", err);
+                return new List<WorkOrderVO>();
+            }
+        }
+
+
 
         public DataTable GetUseInfo(int woID)
         {

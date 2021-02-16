@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VO;
 
 namespace POP
 {
@@ -27,7 +29,8 @@ namespace POP
         {           
             UpdateControls();
             //titleBar1.HeaderText = "로그인";
-            txtID.Text = "6";
+            txtID.Text = "123";
+            txtPassWord.Text = "123";
         }
 
         // 직접 입력 버튼 클릭시 발생하는 이벤트 컨트롤 상태 변경, 폼 크기 조정
@@ -49,36 +52,29 @@ namespace POP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtID.Text=="1")//검사
+            if (txtID.Text.Length < 1 || txtPassWord.Text.Length < 1)
             {
-                FrmInspection frm = new FrmInspection();
-                frm.Show();
+                MessageBox.Show("아이디 또는 비밀번호를 확인해주세요.");
+                return;
             }
-            if (txtID.Text == "2")//동작
+            EmployeeService emp = new EmployeeService();
+            (bool result, EmployeeVO employee) = emp.GetLogin(txtID.Text, txtPassWord.Text);
+
+            if (!result)
             {
-                //FrmAction frm = new FrmAction();
-                //frm.Show();
+
+                MessageBox.Show("아이디 또는 비밀번호가 일치하지 않습니다. 다시 확인해 주세요.");
+                return;
             }
-            if (txtID.Text == "3")//이동
+            else
             {
-                //FrmMove frm = new FrmMove();
-                //frm.Show();
+                txtID.Text = "";
+                txtPassWord.Text = "";
+                this.Hide();
+                FrmMain2 main = new FrmMain2(employee);
+                main.Show();
             }
-            if (txtID.Text == "4")//실적관리
-            {
-                FrmPerformance frm = new FrmPerformance();
-                frm.Show();
-            }
-            if (txtID.Text == "5")//전체현황판
-            {
-                //FrmAllStatusBoard frm = new FrmAllStatusBoard();
-                //frm.Show();
-            }
-            if (txtID.Text == "6")//전체현황판
-            {
-                FrmMain2 frm = new FrmMain2("차경훈");
-                frm.Show();
-            }
+         
 
         }
 
