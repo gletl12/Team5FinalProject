@@ -24,7 +24,7 @@ namespace POP
         int PagesCount = 1;
         int PageRows = 5;
 
-        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, int AllItemNum, string WorkItem, string OrderNum , Form parent)
+        private static void OpenCreateForm_POP(string taskid, string ip, string port, string Machinname, string WorkUserName, string WorkUserName_id,int AllItemNum, string WorkItem, string OrderNum , Form parent)
         {
             Size formSize = new Size(1915, 1012);
 
@@ -44,7 +44,7 @@ namespace POP
 
             //FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
 
-            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName,  AllItemNum,  WorkItem,  OrderNum);
+            FrmAction frm = new FrmAction(taskid,ip,  port,  Machinname,  WorkUserName, WorkUserName_id, AllItemNum,  WorkItem,  OrderNum);
             frm.MdiParent = parent;
             frm.Show();
             frm.Location = new Point(0, 0);
@@ -206,9 +206,10 @@ namespace POP
                                 taskCtrl.AllItemNum= Convert.ToInt32(dataGridView1[2, rowIndex].Value);//총오더량
                                 taskCtrl.Machinname = Convert.ToString(dataGridView1[13, rowIndex].Value);
                                 taskCtrl.WorkUserName = ((FrmMain2)this.MdiParent).Name;
+                                taskCtrl.WorkUserName_id = ((FrmMain2)this.MdiParent).emp_id;
                                 taskCtrl.WorkItem = Convert.ToString(dataGridView1[1, rowIndex].Value);
                                 taskCtrl.Order_Num = Convert.ToString(dataGridView1[0, rowIndex].Value); //지시번호
-
+                                
                                 taskCtrl.WorkState= Convert.ToString(dataGridView1[3, rowIndex].Value);//작업상태
                                 
                                     

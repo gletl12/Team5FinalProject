@@ -174,8 +174,9 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
         public List<PerformanceVO> GetPerformance()
         {
 
-            string sql = @"select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,P.ins_emp,(W.wo_qty-performance_qty)as bad_qty
+            string sql = @"  select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,E.emp_name,(W.wo_qty-performance_qty)as bad_qty
  from TBL_PERFORMANCE  P inner join TBL_WORK_ORDER W on P.wo_id=W.wo_id
+						inner join TBL_Employee E on P.ins_emp=E.emp_id
  where ch_id=0;";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {

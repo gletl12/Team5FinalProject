@@ -24,7 +24,7 @@ namespace DAC
                                         ok_warehouse_id,
                                         ng_warehouse_id,
                                         m_os_use,
-                                        mcachine_comment,
+                                        machine_comment,
                                         machine_use,
                                         ins_date,
                                         ins_emp,

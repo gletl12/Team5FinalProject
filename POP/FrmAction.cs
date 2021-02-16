@@ -48,13 +48,14 @@ namespace POP
         int timer_KEEP_ALIVE = 300;
         int timer_READ_PLC = 300;
         
-        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName, int AllItemNum, string WorkItem, string OrderNum)
+        public FrmAction(string taskid, string ip, string port, string Machinname,string WorkUserName,string WorkUserName_id ,int AllItemNum, string WorkItem, string OrderNum)
         {
             InitializeComponent();
             textBox5.Text = Machinname;//머신네임
             textBox21.Text = AllItemNum.ToString();//총오더량
             textBox10.Text = OrderNum;//지시번호
             textBox11.Text = WorkUserName;//작업자
+            textBox6.Text = WorkUserName_id;//작업자id
             textBox9.Text = WorkItem;//작업물건
             hostIP = ip;
             hostPort = int.Parse(port);

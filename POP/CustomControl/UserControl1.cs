@@ -32,6 +32,7 @@ namespace POP
         public string Machinname { get; set; }//머신네임
         public int AllItemNum { get; set; }//총오더량
         public string WorkUserName { get; set; }//작업자
+        public string WorkUserName_id { get; set; }//작업자id
         public string WorkItem { get; set; }//작업아이템
 
         public string WorkState { get; set; }//작업상태
@@ -80,7 +81,7 @@ namespace POP
             //MF02
             //OS"
 
-            Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, AllItemNum, WorkItem, Order_Num);
+            Frm = new FrmAction(Task_ID, Task_IP, Task_Port, Machinname, WorkUserName, WorkUserName_id, AllItemNum, WorkItem, Order_Num);
             Frm.MdiParent = ControlMDI.ParentForm;
             Frm.Location = new Point(0, 0);
             Frm.process_id = pro.Id;
