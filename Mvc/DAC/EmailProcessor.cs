@@ -1,6 +1,7 @@
 ﻿using Mvc.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -57,7 +58,8 @@ namespace Mvc.DAC
                 sb.AppendLine("------------------------------");
                 */
                 //물리적인 전체경로를 적용
-                FileStream fs = new FileStream(@"C:\Users\HB\Desktop\파이널팀프\Mvc\Mail\ThanksMail.html", FileMode.Open, FileAccess.Read);
+                string path = ConfigurationManager.AppSettings["html"];
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
                 StreamReader sr = new StreamReader(fs, Encoding.Default);
                 string tempStr = sr.ReadToEnd();
                 tempStr = tempStr.Replace("$업체명", ship.Name);
