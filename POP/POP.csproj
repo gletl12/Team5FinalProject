@@ -144,6 +144,12 @@
     <Compile Include="CustomControl\MachineControl.Designer.cs">
       <DependentUpon>MachineControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPOPpopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPOPpopup.Designer.cs">
+      <DependentUpon>FrmPOPpopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoggingUtility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\MachineControl.resx">
       <DependentUpon>MachineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPOPpopup.resx">
+      <DependentUpon>FrmPOPpopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -16,6 +16,7 @@ namespace CompanyManager
         int id;
         FactoryVO vo = new FactoryVO();
         bool upflag = false;
+        bool whflag = false;
 
         public PopFactoryCRUD(int id)
         {
@@ -30,6 +31,15 @@ namespace CompanyManager
             upflag = flag;
         }
 
+        public PopFactoryCRUD(int id, FactoryVO vo, bool upflag, bool whflag)
+        {
+            InitializeComponent();
+            this.id = id;
+            this.vo = vo;
+            this.upflag = upflag;
+            this.whflag = whflag;
+        }
+
         private void PopFactoryCRUD_Load(object sender, EventArgs e)
         {
             
@@ -40,19 +50,54 @@ namespace CompanyManager
                 SetUpdateData();           
             }
         }
+        private int FindSelectedIndex(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((FactoryVO)cbo.Items[result]).factory_name == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
+        }
+
+        private int FindSelectedIndex2(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((CodeVO)cbo.Items[result]).name == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
+        }
 
         private void SetUpdateData()
         {
             cboFGrade.SelectedValue = vo.factory_grade;
-            txtFParent.Text = vo.factory_parent;
-            cboFType.SelectedValue = vo.factory_type;
-            txtFName.Text = vo.factory_name;
-            if (vo.factory_use == "U0001")
-            {
-                cboFUse.SelectedValue = "사용";
-            }
+            if (whflag)
+                cboParent.SelectedIndex = FindSelectedIndex(cboParent, vo.factory_parent);
             else
-                cboFUse.SelectedValue = "미사용";
+                txtFParent.Text = vo.factory_parent;
+            cboFType.SelectedIndex = FindSelectedIndex2(cboFType,vo.factory_type);
+            txtFName.Text = vo.factory_name;
+            cboFUse.SelectedIndex = FindSelectedIndex2(cboFUse, vo.factory_use);
             txtComment.Text = vo.factory_comment;
         }
 
@@ -70,7 +115,7 @@ namespace CompanyManager
             cboFGrade.DataSource = temp;
 
             cboFType.DisplayMember = "name";
-            cboFType.ValueMember = "name";
+            cboFType.ValueMember = "code";
             temp = (from code in combobox
                     where code.category == "FACILITY_TYPE"
                     select code).ToList();
@@ -78,77 +123,164 @@ namespace CompanyManager
             cboFType.DataSource = temp;
 
             cboFUse.DisplayMember = "name";
-            cboFUse.ValueMember = "name";
+            cboFUse.ValueMember = "code";
             temp = (from code in combobox
                     where code.category == "USE_FLAG"
                     select code).ToList();
             temp.Insert(0, new CodeVO { code = "", name = "" });
             cboFUse.DataSource = temp;
+
+            FactoryService service1 = new FactoryService();
+            List<FactoryVO> combobox1 = service1.GetFactory();
+
+            cboParent.DisplayMember = "factory_name";
+            cboParent.ValueMember = "factory_id";
+
+            List<FactoryVO> temp1 = (from factory_id in combobox1
+                                     where factory_id.codename == "공장" && factory_id.factory_grade == "공장"
+                                     select factory_id).ToList();
+            temp1.Insert(0, new FactoryVO { factory_name = "", factory_id = 0 });
+            cboParent.DataSource = temp1;
         }
 
         private void btnCRU_Click(object sender, EventArgs e)
         {
-            if(cboFGrade.SelectedIndex < 1 || cboFType.SelectedIndex < 1 || cboFUse.SelectedIndex < 1 || txtFParent.Text.Length < 1 || txtFName.Text.Length < 1)
+            if (cboFGrade.SelectedIndex < 1)
             {
                 MessageBox.Show("필수 입력 정보를 확인해주세요.");
                 return;
             }
-            FactoryVO fvo = new FactoryVO
+            else if (cboFGrade.SelectedIndex == 1)
             {
-                factory_grade = cboFGrade.SelectedValue.ToString(),
-                factory_parent = txtFParent.Text,
-                factory_name = txtFName.Text,
-                up_emp = id,
-                up_date = DateTime.Now,
-                factory_id = vo.factory_id
-            };
-            if (txtComment.Text.Length < 1)
-                fvo.factory_comment = "";
-            else
-                fvo.factory_comment = txtComment.Text;
-
-            if (cboFUse.SelectedValue.ToString() == "사용")
+                if (cboFUse.SelectedIndex < 1 || txtFName.Text.Length < 1)
+                {
+                    MessageBox.Show("필수 입력 정보를 확인해주세요.");
+                    return;
+                }
+            }
+            else if (cboFGrade.SelectedIndex == 2)
             {
-                fvo.factory_use = "U0001";
+                if (cboFUse.SelectedIndex < 1 || txtFParent.Text.Length < 1 || txtFName.Text.Length < 1)
+                {
+                    MessageBox.Show("필수 입력 정보를 확인해주세요.");
+                    return;
+                }
             }
             else
-                fvo.factory_use = "U0002";
-
-            if (cboFType.Enabled)
-                fvo.factory_type = cboFType.SelectedValue.ToString();
-            else
-                fvo.factory_type = "";
-
-
-            if (upflag)
             {
-                FactoryService service = new FactoryService();
-                if(service.UpdateFactory(fvo))
+                if (cboFType.SelectedIndex < 1 || cboFUse.SelectedIndex < 1 || cboParent.SelectedIndex < 1 || txtFName.Text.Length < 1)
                 {
-                    MessageBox.Show("수정에 성공하였습니다.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    MessageBox.Show("필수 입력 정보를 확인해주세요.");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("수정에 실패하였습니다.");
+                    whflag = true;
+                }
+            }
+
+            if (!whflag)
+            {
+                FactoryVO fvo = new FactoryVO
+                {
+                    factory_grade = cboFGrade.SelectedValue.ToString(),
+                    factory_parent = txtFParent.Text,
+                    factory_name = txtFName.Text,
+                    up_emp = id,
+                    up_date = DateTime.Now,
+                    factory_use = cboFUse.SelectedValue.ToString(),
+                    factory_comment = txtComment.Text
+                };
+
+                if (cboFType.Enabled)
+                    fvo.factory_type = cboFType.SelectedValue.ToString();
+                else
+                    fvo.factory_type = "공장";
+
+
+                if (upflag)
+                {
+                    fvo.factory_id = vo.factory_id;
+
+                    FactoryService service = new FactoryService();
+                    if (service.UpdateFactory(fvo))
+                    {
+                        MessageBox.Show("수정에 성공하였습니다.");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정에 실패하였습니다.");
+                    }
+                }
+                else
+                {
+                    FactoryService service = new FactoryService();
+                    if (service.AddFactory(fvo))
+                    {
+                        MessageBox.Show("등록이 성공하였습니다.");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록이 실패하였습니다.");
+                    }
                 }
             }
             else
             {
-                FactoryService service = new FactoryService();
-                if (service.AddFactory(fvo))
+                FactoryVO fvo = new FactoryVO
                 {
-                    MessageBox.Show("등록이 성공하였습니다.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    factory_grade = cboFGrade.SelectedValue.ToString(),
+                    factory_name = txtFName.Text,
+                    up_emp = id,
+                    up_date = DateTime.Now,
+                    factory_id = vo.factory_id,
+                    factory_use = cboFUse.SelectedValue.ToString(),
+                    factory_comment = txtComment.Text
+                };
+
+                if (cboFType.Enabled)
+                {
+                    fvo.factory_type = cboFType.SelectedValue.ToString();
+                }
+
+                if(cboParent.Enabled)
+                {
+                    fvo.factory_parent = cboParent.SelectedValue.ToString();
+                }
+
+                if (upflag)
+                {
+                    FactoryService service = new FactoryService();
+                    if (service.UpdateWarehouse(fvo))
+                    {
+                        MessageBox.Show("수정에 성공하였습니다.");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("수정에 실패하였습니다.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("등록이 실패하였습니다.");
+                    FactoryService service = new FactoryService();
+                    if (service.AddWarehouse(fvo))
+                    {
+                        MessageBox.Show("등록이 성공하였습니다.");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("등록이 실패하였습니다.");
+                    }
                 }
             }
-
     }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -161,11 +293,14 @@ namespace CompanyManager
             if(cboFGrade.SelectedValue.ToString() == "창고")
             {
                 cboFType.Enabled = true;
+                cboParent.Enabled = true;
+                txtFParent.Enabled = false;
             }
             else
             {
-                
+                cboParent.Enabled = false;
                 cboFType.Enabled = false;
+                txtFParent.Enabled = true;
             }
         }
     }

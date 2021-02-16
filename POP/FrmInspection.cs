@@ -24,41 +24,43 @@ namespace POP
       
         private void FrmInspection_Load(object sender, EventArgs e)
         {
-            DataLoad();
             SetGridview();
+            DataLoad();
+           
         }
 
         private void SetGridview()
         {
             CommonUtil.SetDGVDesign_Num(dataGridView1);
             dataGridView1.ColumnHeadersHeight = 50;
-            dataGridView1.AutoGenerateColumns = true;
+            
+            
 
-            CommonUtil.AddGridTextColumn(dataGridView1, "performance_id", "performance_id", 100);
-            CommonUtil.AddGridTextColumn(dataGridView1, "wo_id", "wo_id", 130);
-            CommonUtil.AddGridTextColumn(dataGridView1, "item_id", "item_id", 130);
-            CommonUtil.AddGridTextColumn(dataGridView1, "performance_qty", "performance_qty", 130);
-            CommonUtil.AddGridTextColumn(dataGridView1, "ins_emp", "ins_emp", 130);
-            CommonUtil.AddGridTextColumn(dataGridView1, "bad_qty", "bad_qty", 130);
-            CommonUtil.AddGridTextColumn(dataGridView1, "wo_sdate", "wo_sdate", 130);
+            CommonUtil.AddGridTextColumn(dataGridView1, "실적번호", "performance_id", 370,true,DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "지시번호", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "양품수량", "performance_qty", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "ins_emp", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "bad_qty", "bad_qty", 130,false);
+            CommonUtil.AddGridTextColumn(dataGridView1, "wo_sdate", "wo_sdate", 130,false);
 
-            CommonUtil.AddGridTextColumn(dataGridView1, "machine_id", "machine_id", 445, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "machine_name", "machine_name", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "item_name", "item_name", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "wo_state", "wo_state", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "good_wh", "good_wh", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "bad_wh", "bad_wh", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "wo_qty", "wo_qty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "good_qty", "good_qty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "Rqty", "Rqty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "good_wh", "good_wh", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "bad_wh", "bad_wh", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "wo_qty", "wo_qty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "good_qty", "good_qty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "Rqty", "Rqty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "performance_qty", "performance_qty", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "p_state", "p_state", 130, false);
-            CommonUtil.AddGridTextColumn(dataGridView1, "ch_id", "ch_id", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "machine_id", "machine_id", 445, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "machine_name", "machine_name", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "item_name", "item_name", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "wo_state", "wo_state", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "good_wh", "good_wh", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "bad_wh", "bad_wh", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "wo_qty", "wo_qty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "good_qty", "good_qty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "Rqty", "Rqty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "good_wh", "good_wh", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "bad_wh", "bad_wh", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "wo_qty", "wo_qty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "good_qty", "good_qty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "Rqty", "Rqty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "performance_qty", "performance_qty", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "p_state", "p_state", 130, false);
+            //CommonUtil.AddGridTextColumn(dataGridView1, "ch_id", "ch_id", 130, false);
             
         }
 
@@ -182,5 +184,11 @@ namespace POP
             dataGridView1.Refresh();
         }
         #endregion
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmPOPpopup frm = new FrmPOPpopup();
+            frm.Show();
+        }
     }
 }

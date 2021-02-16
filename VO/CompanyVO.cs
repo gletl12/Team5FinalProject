@@ -14,11 +14,11 @@ namespace VO
         public string company_ceo { get; set; }
         public string company_bnum { get; set; }
         public string company_btype { get; set; }
-        public int company_manager { get; set; }
+        public string company_manager { get; set; }
         public string company_email { get; set; }
         public string company_phone { get; set; }
         public string company_faxnum { get; set; }
-        public bool company_use { get; set; }
+        public string company_use { get; set; }
         public string company_comment { get; set; }
         public DateTime ins_date { get; set; }
         public string ins_emp { get; set; }

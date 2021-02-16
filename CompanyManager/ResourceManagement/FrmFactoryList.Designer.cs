@@ -66,7 +66,7 @@ namespace CompanyManager
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1152, 47);
+            this.panel2.Size = new System.Drawing.Size(1148, 47);
             this.panel2.TabIndex = 29;
             // 
             // cboFGrade
@@ -100,7 +100,7 @@ namespace CompanyManager
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(685, 25);
+            this.label15.Location = new System.Drawing.Point(681, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;
@@ -121,7 +121,7 @@ namespace CompanyManager
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
-            this.btnSearch.Location = new System.Drawing.Point(1022, 9);
+            this.btnSearch.Location = new System.Drawing.Point(1018, 9);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 30);
             this.btnSearch.TabIndex = 0;
@@ -151,7 +151,7 @@ namespace CompanyManager
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.RowHeadersWidth = 50;
             this.dgvFactory.RowTemplate.Height = 23;
-            this.dgvFactory.Size = new System.Drawing.Size(1148, 535);
+            this.dgvFactory.Size = new System.Drawing.Size(1144, 535);
             this.dgvFactory.TabIndex = 28;
             this.dgvFactory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactory_CellClick);
             // 
@@ -163,7 +163,7 @@ namespace CompanyManager
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(810, 74);
+            this.button8.Location = new System.Drawing.Point(806, 74);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(57, 23);
             this.button8.TabIndex = 21;
@@ -188,7 +188,7 @@ namespace CompanyManager
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 74);
+            this.button9.Location = new System.Drawing.Point(1127, 74);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(29, 23);
             this.button9.TabIndex = 23;
@@ -202,7 +202,7 @@ namespace CompanyManager
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1040, 74);
+            this.button10.Location = new System.Drawing.Point(1036, 74);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(86, 23);
             this.button10.TabIndex = 24;
@@ -218,7 +218,7 @@ namespace CompanyManager
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(933, 74);
+            this.button11.Location = new System.Drawing.Point(929, 74);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(102, 23);
             this.button11.TabIndex = 25;
@@ -234,7 +234,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(873, 74);
+            this.button12.Location = new System.Drawing.Point(869, 74);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 26;
@@ -250,7 +250,7 @@ namespace CompanyManager
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(685, 74);
+            this.btnRegister.Location = new System.Drawing.Point(681, 74);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(56, 23);
             this.btnRegister.TabIndex = 27;
@@ -267,7 +267,7 @@ namespace CompanyManager
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(747, 74);
+            this.btnDelete.Location = new System.Drawing.Point(743, 74);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(57, 23);
             this.btnDelete.TabIndex = 30;

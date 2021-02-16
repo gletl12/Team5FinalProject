@@ -83,16 +83,6 @@ namespace CompanyManager.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap _in {
-            get {
-                object obj = ResourceManager.GetObject("_in", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap Add_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Add_16x16", resourceCulture);
@@ -106,16 +96,6 @@ namespace CompanyManager.Properties {
         internal static System.Drawing.Bitmap Add_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Add_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap AddItem_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("AddItem_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,29 +123,9 @@ namespace CompanyManager.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel {
-            get {
-                object obj = ResourceManager.GetObject("Cancel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap Cancel_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap CJCL_Logo {
-            get {
-                object obj = ResourceManager.GetObject("CJCL_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,26 +336,6 @@ namespace CompanyManager.Properties {
         internal static System.Drawing.Bitmap Save_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Save_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap team5_Logo {
-            get {
-                object obj = ResourceManager.GetObject("team5_Logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap team5_Logo_수정 {
-            get {
-                object obj = ResourceManager.GetObject("team5_Logo 수정", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

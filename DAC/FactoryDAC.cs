@@ -15,9 +15,16 @@ namespace DAC
         {
             try
             {
-                string sql = @"select factory_grade, factory_type, factory_name, factory_parent, factory_use, 
-                                      factory_comment, up_date, up_emp, factory_id
-                               from TBL_FACTORY";
+                string sql = @"select * from (select factory_id, factory_grade,factory_type, factory_name, factory_parent, c.name as factory_use, 
+                                                     convert(nvarchar(max),factory_comment) as factory_comment, up_date, up_emp, '공장'as codename
+                                              from TBL_FACTORY f join TBL_COMMON_CODE c on f.factory_use = c.code
+                                              UNION
+                                              select warehouse_id, '창고'as code, c.name as factory_type, warehouse_name, f.factory_name, o.name as factory_use, 
+                                                     convert(nvarchar(max),w.factory_comment) as factory_comment, w.up_date, w.up_emp, '창고'as codename
+                                              from TBL_WAREHOUSE w inner join TBL_FACTORY f on w.factory_id = f.factory_id
+					                                               inner join TBL_COMMON_CODE c on w.warehouse_type = c.code
+                                                                   inner join TBL_COMMON_CODE o on w.factory_use = o.code) as a 		 
+                               order by a.codename";
                 using (SqlCommand cmd = new SqlCommand(sql,conn))
                 {
                     List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(cmd.ExecuteReader());
@@ -37,6 +44,7 @@ namespace DAC
             }
         }
 
+        
         public bool DeleteFactory(int fid)
         {
             try
@@ -172,5 +180,138 @@ namespace DAC
             }
 
         }
+
+        public List<WareHouseVO> GetWarehouse()
+        {
+            try
+            {
+                string sql = @"select warehouse_id, warehouse_type, warehouse_name
+                               from TBL_WAREHOUSE
+                               where factory_use = @factory_use";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@factory_use", "U0001");
+                    List<WareHouseVO> list = Helper.DataReaderMapToList<WareHouseVO>(cmd.ExecuteReader());
+                    Dispose();
+
+                    return list;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("FactoryDAC_GetWarehouse() 오류", err);
+
+                return new List<WareHouseVO>();
+            }
+
+        }
+
+        public bool AddWarehouse(FactoryVO vo)
+        {
+            try
+            {
+                string sql = @"insert into TBL_WAREHOUSE (warehouse_type, warehouse_name, factory_id, factory_use, 
+                                                          factory_comment, ins_emp, up_emp)
+                               values(@warehouse_type, @warehouse_name, @factory_id, @factory_use, 
+                                      @factory_comment, @ins_emp, @up_emp)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@warehouse_type", vo.factory_type);
+                    cmd.Parameters.AddWithValue("@warehouse_name", vo.factory_name);
+                    cmd.Parameters.AddWithValue("@factory_id", vo.factory_parent);
+                    cmd.Parameters.AddWithValue("@factory_use", vo.factory_use);
+                    cmd.Parameters.AddWithValue("@factory_comment", vo.factory_comment);
+                    cmd.Parameters.AddWithValue("@ins_emp", vo.up_emp);
+                    cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
+
+                    int iRows = cmd.ExecuteNonQuery();
+                    Dispose();
+                    if (iRows > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_AddWarehouse() 오류", err);
+
+                return false;
+            }
+        }
+
+        public bool UpdateWarehouse(FactoryVO vo)
+        {
+            try
+            {
+                string sql = @"update TBL_WAREHOUSE set warehouse_type = @warehouse_type, warehouse_name = @warehouse_name, factory_id = @factory_id, 
+                                                      factory_use = @factory_use, factory_comment = @factory_comment, up_date = @up_date, up_emp = @up_emp
+                               where warehouse_id = @warehouse_id";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@warehouse_type", vo.factory_type);
+                    cmd.Parameters.AddWithValue("@warehouse_name", vo.factory_name);
+                    cmd.Parameters.AddWithValue("@factory_id", vo.factory_parent);
+                    cmd.Parameters.AddWithValue("@factory_use", vo.factory_use);
+                    cmd.Parameters.AddWithValue("@factory_comment", vo.factory_comment);
+                    cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
+                    cmd.Parameters.AddWithValue("@up_date", vo.up_date);
+                    cmd.Parameters.AddWithValue("@warehouse_id", vo.factory_id);
+
+                    int iRows = cmd.ExecuteNonQuery();
+                    Dispose();
+                    if (iRows > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_UpdateFactory 오류", err);
+
+                return false;
+            }
+        }
+
+        public bool DeleteWareHouse(int fid)
+        {
+            try
+            {
+                string sql = @"delete from TBL_WAREHOUSE
+                               where warehouse_id = @warehouse_id";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@warehouse_id", fid);
+
+                    int iRows = cmd.ExecuteNonQuery();
+                    Dispose();
+                    if (iRows > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("FactoryDAC_DeleteWareHouse() 오류", err);
+
+                return false;
+            }
+        }
+
+
     }
 }

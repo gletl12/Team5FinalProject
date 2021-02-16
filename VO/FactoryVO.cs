@@ -17,6 +17,21 @@ namespace VO
         public int up_emp { get; set; }
         public DateTime up_date { get; set; }
         public int factory_id { get; set; }
+        public string codename { get; set; }
+        public int warehouse_id { get; set; }
+
+    }
+
+    public class WareHouseVO
+    {
+        public string warehouse_type { get; set; }
+        public string warehouse_name { get; set; }
+        public string factory_use { get; set; }
+        public int up_emp { get; set; }
+        public DateTime up_date { get; set; }
+        public int factory_id { get; set; }
+        public int warehouse_id { get; set; }
+        public string factory_comment { get; set; }
 
     }
 }
