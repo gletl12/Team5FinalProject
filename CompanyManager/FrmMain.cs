@@ -54,7 +54,7 @@ namespace CompanyManager
 
             //메뉴 리스트 가져오기
             MenuService service = new MenuService();
-            menuAllList = service.GetMenus();
+            menuAllList = service.GetMenus(loginInfo.emp_id);
 
             //메뉴 생성
             CreatMenu();

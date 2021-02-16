@@ -20,7 +20,7 @@ namespace CompanyManager
         private void FrmMenuManagement_Load(object sender, EventArgs e)
         {
             Service.MenuService service = new Service.MenuService();
-            menuAllList = service.GetMenus();
+            menuAllList = service.GetMenus(0);
 
             
             menuAllList.ForEach(p =>

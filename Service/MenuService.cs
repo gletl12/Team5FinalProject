@@ -9,10 +9,10 @@ namespace Service
 {
     public class MenuService
     {
-        public List<MenuVO> GetMenus()
+        public List<MenuVO> GetMenus(int emp_id)
         {
             MenuDAC dac = new MenuDAC();
-            return dac.GetMenus();
+            return dac.GetMenus(emp_id);
         }
 
         /// <summary>
