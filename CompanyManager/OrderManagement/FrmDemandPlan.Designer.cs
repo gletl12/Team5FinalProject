@@ -45,13 +45,13 @@ namespace CompanyManager
             this.dtpstart = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.btnPlan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label17
@@ -182,7 +182,7 @@ namespace CompanyManager
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(536, 26);
             this.label20.Name = "label20";
@@ -192,6 +192,7 @@ namespace CompanyManager
             // 
             // dtpend
             // 
+            this.dtpend.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpend.Location = new System.Drawing.Point(553, 22);
             this.dtpend.Name = "dtpend";
@@ -200,6 +201,7 @@ namespace CompanyManager
             // 
             // dtpstart
             // 
+            this.dtpstart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpstart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpstart.Location = new System.Drawing.Point(430, 22);
             this.dtpstart.Name = "dtpstart";
@@ -226,19 +228,19 @@ namespace CompanyManager
             this.label16.TabIndex = 1;
             this.label16.Text = "label2";
             // 
-            // dataGridView2
+            // dataGridView1
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 158);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1152, 480);
-            this.dataGridView2.TabIndex = 19;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 158);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 50;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(1152, 480);
+            this.dataGridView1.TabIndex = 19;
             // 
             // label10
             // 
@@ -305,12 +307,12 @@ namespace CompanyManager
             this.Controls.Add(this.button12);
             this.Controls.Add(this.btnPlan);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "FrmDemandPlan";
             this.Load += new System.EventHandler(this.FrmDemandPlan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,7 +333,7 @@ namespace CompanyManager
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPlan;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dtpend;

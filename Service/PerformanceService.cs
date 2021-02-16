@@ -32,5 +32,10 @@ namespace Service
             PerformanceDAC dac = new PerformanceDAC();
             return dac.PerformanceCommit2(vo);
         }
+        public List<PerformanceVO> GetPerformance()
+        {
+            PerformanceDAC dac = new PerformanceDAC();
+            return dac.GetPerformance();
+        }
         }
 }

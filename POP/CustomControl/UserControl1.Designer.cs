@@ -141,6 +141,7 @@ namespace POP
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(62, 148);
             this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.VisibleChanged += new System.EventHandler(this.UserControl1_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

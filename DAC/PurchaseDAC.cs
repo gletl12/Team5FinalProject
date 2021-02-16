@@ -41,7 +41,10 @@ namespace DAC
             try
             {
                 List<PurchasesListVO> list = new List<PurchasesListVO>();
-                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,cast(due_date as date) due_date,pd_qty,isnull(in_qty,0) in_qty,isnull(in_cqty,0) in_cqty,pd_qty-isnull(in_cqty,0)-isnull(in_qty,0) Cancellable,
+                string sql = @"select purchase_id ,pd_id,company_name,CD2.name purchase_state,PD.item_id,item_name,CD.name unit,cast(due_date as date) due_date,pd_qty,isnull(in_qty,0) in_qty,isnull(in_cqty,0) in_cqty,
+								   case when pd_qty-isnull(in_cqty,0)-isnull(in_qty,0)<0 then 0
+									    else pd_qty-isnull(in_cqty,0)-isnull(in_qty,0)
+								   end Cancellable,
                                	   cast(PD.ins_date as date) ins_date,emp_name
                                from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                                						    JOIN TBL_COMPANY C ON C.company_id = I.supply_company
