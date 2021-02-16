@@ -231,7 +231,6 @@ namespace DAC
             {
                 try
                 {
-                    cmd.Parameters.AddWithValue("so_state", "마감");
                     List<SalesOrderVO> list = Helper.DataReaderMapToList<SalesOrderVO>(cmd.ExecuteReader());
                     conn.Close();
                     return list;
