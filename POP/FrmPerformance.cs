@@ -175,10 +175,10 @@ namespace POP
 
             textBox1.Text = dataGridView1[0, rowIndex].Value.ToString();
             textBox2.Text = dataGridView1[4, rowIndex].Value.ToString();//4
-            textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
+            //textBox3.Text = dataGridView1[6, rowIndex].Value.ToString();//6
             textBox4.Text = dataGridView1[1, rowIndex].Value.ToString();//1
             textBox5.Text = dataGridView1[13, rowIndex].Value.ToString();//13
-            textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//
+            //textBox6.Text = dataGridView1[7, rowIndex].Value.ToString();//
 
             textBox7.Text = dataGridView1[2, rowIndex].Value.ToString();//
             textBox8.Text = (int.Parse(textBox11.Text) + int.Parse(textBox10.Text)).ToString() ;

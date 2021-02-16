@@ -37,5 +37,12 @@ namespace Service
             PerformanceDAC dac = new PerformanceDAC();
             return dac.GetPerformance();
         }
+        public bool PerformanceCh_idUpdate(int per_id, int ch_id)
+        {
+            PerformanceDAC dac = new PerformanceDAC();
+            return dac.PerformanceCh_idUpdate(per_id, ch_id);
         }
+
+
+    }
 }

@@ -20,63 +20,18 @@ namespace POP
             InitializeComponent();
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        public int performance_id { get; set; }
+        public int wo_id { get; set; }
+        public string item_id { get; set; }
+        public int performance_qty { get; set; }
+        public string ins_emp { get; set; }
+        public int bad_qty { get; set; }
+        public DateTime wo_sdate { get; set; }
+        
         private void FrmPOPpopup_Load(object sender, EventArgs e)
         {
+            textBox1.Text = bad_qty.ToString();
             CodeService service = new CodeService();
 
             List<CodeVO> list = service.GetAllCommonCode();
@@ -86,6 +41,48 @@ namespace POP
 
             list1.Insert(0, new CodeVO { name = " " });
             CommonUtil.BindingComboBoxPart(comboBox2, list1, "name");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            CheckVO vo = new CheckVO();
+            vo.item_id = item_id;
+            vo.ch_qty = wo_id;
+            vo.good_qty = performance_qty;
+            vo.bad_qty =int.Parse(textBox1.Text);
+            vo.emp =ins_emp;
+
+            CheckService service = new CheckService();
+
+            int chid= service.GetChID(vo);
+
+            if(chid >0)
+            {
+                PerformanceService service1 = new PerformanceService();
+                bool bFlag = service1.PerformanceCh_idUpdate(performance_id,chid);
+
+                if (bFlag)
+                {
+                    MessageBox.Show("검사등록");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("검사실패");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("검사실패");
+                return;
+            }
         }
     }
 }

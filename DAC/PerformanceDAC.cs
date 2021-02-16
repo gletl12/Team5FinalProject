@@ -142,7 +142,35 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                 return false;
             }
         }
+        public bool PerformanceCh_idUpdate(int per_id, int ch_id)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = @" update TBL_PERFORMANCE set  ch_id=@ch_id
+                                                            where performance_id=@performance_id;";
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@ch_id", per_id);
+                    cmd.Parameters.AddWithValue("@performance_id", ch_id);
 
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    Dispose();
+
+                    return id > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_PerformanceDAC_PerformanceCh_idUpdate() 오류", err);
+
+                return false;
+            }
+        }
+        
         public List<PerformanceVO> GetPerformance()
         {
 
