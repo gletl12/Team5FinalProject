@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
 
 namespace CompanyManager
 {
@@ -15,6 +17,22 @@ namespace CompanyManager
         {
             InitializeComponent();
 
+            
+        }
+
+
+        private void FrmSalesCloseList_Load(object sender, EventArgs e)
+        {
+            GetSOList();
+            checkBox1.Location = new Point(dataGridView2.Location.X + 54, dataGridView2.Location.Y + 5);
+
+            dataGridView2.Rows.Add(null, "10002", "", "의자상사", "의자상사", "CHAIR_01", "나무 1인용 의자", "200", "200", "0", "100", "100,000", "2021-01-30");
+            dataGridView2.Rows.Add(null, "10003", "", "의자상사", "의자상사", "CHAIR_01", "나무 1인용 의자", "300", "300", "0", "100", "100,000", "2021-01-30");
+
+        }
+
+        private void GetSOList()
+        {
             CommonUtil.SetInitGridView(dataGridView2);
             CommonUtil.SetDGVDesign_Num(dataGridView2);
             CommonUtil.AddGridCheckColumn(dataGridView2, "");
@@ -30,13 +48,9 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dataGridView2, "매출확정수량", "CompanyName", 90, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dataGridView2, "매출확정금액", "CompanyName", 90, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dataGridView2, "마감일자", "CompanyName", 80, true, DataGridViewContentAlignment.MiddleCenter);
-
-            checkBox1.Location = new Point(dataGridView2.Location.X + 54, dataGridView2.Location.Y + 5);
-
-            dataGridView2.Rows.Add(null, "10002", "", "의자상사", "의자상사", "CHAIR_01", "나무 1인용 의자", "200", "200", "0", "100", "100,000", "2021-01-30");
-            dataGridView2.Rows.Add(null, "10003", "", "의자상사", "의자상사", "CHAIR_01", "나무 1인용 의자", "300", "300", "0", "100", "100,000", "2021-01-30");
         }
 
+        
 
     }
 }

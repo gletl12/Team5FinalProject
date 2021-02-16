@@ -13,28 +13,28 @@ namespace CompanyManager
 {
     public partial class PopFactoryCRUD : CompanyManager.PopupBaseForm
     {
-        int id;
+        EmployeeVO logininfo = new EmployeeVO();
         FactoryVO vo = new FactoryVO();
         bool upflag = false;
         bool whflag = false;
 
-        public PopFactoryCRUD(int id)
+        public PopFactoryCRUD(EmployeeVO evo)
         {
             InitializeComponent();
-            this.id = id;
+            logininfo = evo;
         }
-        public PopFactoryCRUD(int id, FactoryVO vo, bool flag)
+        public PopFactoryCRUD(EmployeeVO evo, FactoryVO vo, bool flag)
         {
             InitializeComponent();
-            this.id = id;
+            logininfo = evo;
             this.vo = vo;
             upflag = flag;
         }
 
-        public PopFactoryCRUD(int id, FactoryVO vo, bool upflag, bool whflag)
+        public PopFactoryCRUD(EmployeeVO evo, FactoryVO vo, bool upflag, bool whflag)
         {
             InitializeComponent();
-            this.id = id;
+            logininfo = evo;
             this.vo = vo;
             this.upflag = upflag;
             this.whflag = whflag;
@@ -42,8 +42,8 @@ namespace CompanyManager
 
         private void PopFactoryCRUD_Load(object sender, EventArgs e)
         {
-            
-            txtUpEmp.Text = id.ToString();
+            txtUpEmp.Text = logininfo.emp_name;
+
             LoadCombobox();
             if (upflag)
             {
@@ -99,6 +99,7 @@ namespace CompanyManager
             txtFName.Text = vo.factory_name;
             cboFUse.SelectedIndex = FindSelectedIndex2(cboFUse, vo.factory_use);
             txtComment.Text = vo.factory_comment;
+
         }
 
         private void LoadCombobox()
@@ -186,7 +187,7 @@ namespace CompanyManager
                     factory_grade = cboFGrade.SelectedValue.ToString(),
                     factory_parent = txtFParent.Text,
                     factory_name = txtFName.Text,
-                    up_emp = id,
+                    up_emp = logininfo.emp_id,
                     up_date = DateTime.Now,
                     factory_use = cboFUse.SelectedValue.ToString(),
                     factory_comment = txtComment.Text
@@ -235,7 +236,7 @@ namespace CompanyManager
                 {
                     factory_grade = cboFGrade.SelectedValue.ToString(),
                     factory_name = txtFName.Text,
-                    up_emp = id,
+                    up_emp = logininfo.emp_id,
                     up_date = DateTime.Now,
                     factory_id = vo.factory_id,
                     factory_use = cboFUse.SelectedValue.ToString(),
@@ -295,12 +296,16 @@ namespace CompanyManager
                 cboFType.Enabled = true;
                 cboParent.Enabled = true;
                 txtFParent.Enabled = false;
+                txtFParent.Visible = false;
+                cboParent.Visible = true;
             }
             else
             {
                 cboParent.Enabled = false;
                 cboFType.Enabled = false;
                 txtFParent.Enabled = true;
+                txtFParent.Visible = true;
+                cboParent.Visible = false;
             }
         }
     }

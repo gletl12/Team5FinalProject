@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Util;
@@ -37,10 +38,10 @@ namespace POP
             
 
             CommonUtil.AddGridTextColumn(dataGridView1, "실적번호", "performance_id", 370,true,DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView1, "지시번호", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "지시수량", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "양품수량", "performance_qty", 370, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "ins_emp", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "emp_name", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "bad_qty", "bad_qty", 130,false);
             CommonUtil.AddGridTextColumn(dataGridView1, "wo_sdate", "wo_sdate", 130,false);
 
@@ -184,5 +185,53 @@ namespace POP
             dataGridView1.Refresh();
         }
         #endregion
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+
+            FrmPOPpopup frm = new FrmPOPpopup();
+            frm.performance_id = Convert.ToInt32(dataGridView1[0, rowIndex].Value);
+            frm.wo_id = Convert.ToInt32(dataGridView1[1, rowIndex].Value);
+            frm.item_id = dataGridView1[2, rowIndex].Value.ToString(); ;
+            frm.performance_qty = Convert.ToInt32(dataGridView1[3, rowIndex].Value);
+            frm.ins_emp = ((FrmMain2)this.MdiParent).emp_id;
+            frm.bad_qty = Convert.ToInt32(dataGridView1[5, rowIndex].Value);
+            frm.wo_sdate = Convert.ToDateTime(dataGridView1[6, rowIndex].Value);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+                DataLoad();
+
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var list1 = (from all in list
+                         where all.wo_sdate >= dateTimePicker1.Value.AddDays(-1) && all.wo_sdate <= dateTimePicker2.Value
+                         select all).ToList();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = list1;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("검색기간의 설정이 잘못되었습니다.");
+                return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataLoad();
+            dateTimePicker2.Value = DateTime.Now.AddMinutes(10);
+            dateTimePicker1.Value = DateTime.Now;
+            
+            
+        }
     }
 }
