@@ -35,7 +35,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvShipment, "품명", "item_name", 120);
             CommonUtil.AddGridTextColumn(dgvShipment, "주문수량", "Qty", 60, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvShipment, "출하수량", "SQty", 60, true, DataGridViewContentAlignment.MiddleRight);
-            
+
 
         }
 
@@ -124,7 +124,20 @@ namespace CompanyManager
 
         private void dgvShipment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                return;
+            ShipmentVO vo = list.Find(elem => elem.so_id.Equals(Convert.ToInt32(dgvShipment.Rows[e.RowIndex].Cells["so_id"].Value)));
+            int totQty = 0;
+            foreach (DataGridViewRow row in dgvShipment.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value) && row.Cells["item_id"].Value.ToString().Equals(vo.item_id))
+                    totQty += Convert.ToInt32(row.Cells["Qty"].Value);
+            }
+            if (totQty > vo.RQty)
+            {
+                MessageBox.Show("재고가 부족하여 선택할 수 없습니다.");
+                ((DataGridViewCheckBoxCell)dgvShipment[0, e.RowIndex]).Value = false;
+            }
         }
 
         private void btnCommit_Click(object sender, EventArgs e)
@@ -135,22 +148,22 @@ namespace CompanyManager
                 if (Convert.ToBoolean(row.Cells[0].Value))
                     selectedRows.Add(list.Find(elem => elem.so_id.Equals(Convert.ToInt32(row.Cells["so_id"].Value))));
 
-                if (selectedRows.Count < 1)
-                {
-                    MessageBox.Show("출하할 항목을 선택하십시오.");
-                    return;
-                }
-
-                bool result = service.RegShipment(selectedRows,((FrmMain)this.MdiParent).LoginInfo.emp_id);
-
-                if (result)
-                {
-                    MessageBox.Show("등록 성공");
-                    BindingDGV();
-                    return;
-                }
-                MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오.");
             }
+            if (selectedRows.Count < 1)
+            {
+                MessageBox.Show("출하할 항목을 선택하십시오.");
+                return;
+            }
+
+            bool result = service.RegShipment(selectedRows, ((FrmMain)this.MdiParent).LoginInfo.emp_id);
+
+            if (result)
+            {
+                MessageBox.Show("등록 성공");
+                BindingDGV();
+                return;
+            }
+            MessageBox.Show("등록중 오류가 발생하였습니다.\r\n다시 시도하여 주십시오.");
         }
     }
 }

@@ -17,12 +17,12 @@ namespace DAC
             try
             {
                 DataTable dt = new DataTable();
-                string sql = "SP_Purchase";
+                string sql = "SP_GetMeterialReq_Plan";
                 using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
                 {
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@Start_DT", value1);
-                    da.SelectCommand.Parameters.AddWithValue("@End_DT", value2);
+                    da.SelectCommand.Parameters.AddWithValue("@start_date", value1);
+                    da.SelectCommand.Parameters.AddWithValue("@end_date", value2);
 
                     da.Fill(dt);
                     return dt;
@@ -197,24 +197,32 @@ namespace DAC
 
         public List<PurchasesVO> GetPurchasesDemand()
         {
-            string sql = @"
-                           select supply_company,company_name,I.item_id,item_name,P.prod_id,
-                            case isnull(sign(sum(P2.prod_qty)),0)
-                            	when 0 then P.prod_qty*B.bom_use_qty-(isnull(sum(pd_qty),0)  + isnull(sum(in_rqty),0)) + isnull(item_safety_qty,0)
-                            	when 1 then P.prod_qty*B.bom_use_qty-isnull(item_safety_qty,0)
-                            end as p_qty,in_warehouse,warehouse_name,P.start_date DueDate
-							from TBL_PRODUCTION_PLAN P JOIN  TBL_BOM B ON P.item_id = B.bom_parent_id
-													    JOIN TBL_ITEM I ON B.item_id = I.item_id
-													   LEFT JOIN TBL_COMPANY C ON C.company_id = I.supply_company
-													   JOIN TBL_WAREHOUSE W ON W.warehouse_id = I.in_warehouse
-													   LEFT JOIN TBL_PRODUCTION_PLAN P2 ON P2.start_date<P.start_date and P2.item_id = P.item_id
-													   LEFT JOIN TBL_INBOUND N ON N.item_id = I.item_id and I.in_warehouse = N.wh_id
-													   LEFT JOIN (select item_id,pd_qty,due_date,prod_id
-																  from TBL_PURCHASE_DETAIL where purchase_state='PUR01') PD ON PD.item_id = I.item_id and PD.prod_id =P.prod_id
-													   where p.prod_id NOT IN (select prod_id
-																  from TBL_PURCHASE_DETAIL where item_id = I.item_id) and I.item_type ='RM'
-                            group by supply_company,company_name,I.item_id,item_name,P.prod_id,P.prod_qty,bom_use_qty,item_safety_qty,P.prod_qty,in_warehouse,warehouse_name,P.start_date
-                            order by prod_id";
+            string sql = @"DECLARE @items table
+                           (
+                           item_id nvarchar(30),
+                           bom_parent_id nvarchar(30),
+                           item_type nvarchar(30),
+                           bom_use_qty int,
+                           preceding_days int
+                           );
+                           with items as
+                           (select B.item_id,item_type ,bom_parent_id,bom_use_qty,preceding_days
+                            from TBL_BOM B JOIN TBL_ITEM I ON I.item_id = B.item_id
+                           				JOIN TBL_BOR BOR ON BOR.item_id = B.bom_parent_id
+                            union all
+                            select B.item_id,ITEM.item_type,I.bom_parent_id,B.bom_use_qty,BOR.preceding_days
+                            from TBL_BOM B JOIN items I ON I.item_id = B.bom_parent_id
+                           				JOIN TBL_ITEM ITEM ON ITEM.item_id = B.item_id
+                           				JOIN TBL_BOR BOR ON BOR.item_id = B.bom_parent_id)
+                           insert into @items select item_id,bom_parent_id,item_type,bom_use_qty,preceding_days from items where item_type in ('CI','RM','SM');
+                           
+                           select supply_company,company_name,ITEM.item_id,item_name,prod_id,bom_use_qty*prod_qty p_qty,I.in_warehouse,warehouse_name,P.start_date-preceding_days DueDate
+                           from TBL_PRODUCTION_PLAN P JOIN @items ITEM ON ITEM.bom_parent_id = P.item_id
+                           						      JOIN TBL_ITEM I ON I.item_id = ITEM.item_id
+                           						      JOIN TBL_COMPANY C ON I.supply_company = C.company_id
+                           						      JOIN TBL_WAREHOUSE W ON W.warehouse_id = I.in_warehouse
+                            where p.prod_id NOT IN (select prod_id from TBL_PURCHASE_DETAIL where item_id = I.item_id) and I.item_type ='RM'
+                           order by ITEM.item_id";
             List<PurchasesVO> list = new List<PurchasesVO>();
             try
             {

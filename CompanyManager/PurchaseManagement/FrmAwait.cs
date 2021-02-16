@@ -108,7 +108,7 @@ namespace CompanyManager
                         UseCheck = purchasesList[e.RowIndex].UseCheck,
                         pd_qty = purchasesList[e.RowIndex].pd_qty,
                         InQty = Convert.ToInt32(popup.InQty),
-                        RQty = purchasesList[e.RowIndex].pd_qty - Convert.ToInt32(popup.InQty),
+                        RQty = purchasesList[e.RowIndex].pd_qty - Convert.ToInt32(popup.InQty)- purchasesList[e.RowIndex].CQty- purchasesList[e.RowIndex].InQty,
                         warehouse_id = purchasesList[e.RowIndex].warehouse_id,
                         prod_id = purchasesList[e.RowIndex].prod_id
                     };

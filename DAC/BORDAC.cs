@@ -63,7 +63,7 @@ namespace DAC
                     cmd.Parameters.Add("@bor_id", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@item_id", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@bor_route", System.Data.SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@machine_id", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@machine_id", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@priority", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@tacktime", System.Data.SqlDbType.SmallInt);
                     cmd.Parameters.Add("@preceding_days", System.Data.SqlDbType.Int);
@@ -194,7 +194,7 @@ namespace DAC
 
                     cmd.Parameters.Add("@item_id", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@bor_route", System.Data.SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@machine_id", System.Data.SqlDbType.Int);
+                    cmd.Parameters.Add("@machine_id", System.Data.SqlDbType.NVarChar);
                     cmd.Parameters.Add("@priority", System.Data.SqlDbType.Int);
                     cmd.Parameters.Add("@tacktime", System.Data.SqlDbType.SmallInt);
                     cmd.Parameters.Add("@preceding_days", System.Data.SqlDbType.Int);
@@ -212,12 +212,12 @@ namespace DAC
                         cmd.Parameters["@machine_id"].Value = vo.Machine_id; //설비아이디
                         cmd.Parameters["@priority"].Value = vo.Priority; //우선순위
                         cmd.Parameters["@tacktime"].Value = vo.Tacktime; //tacktime
-                        cmd.Parameters["@preceding_days"].Value = vo.preceding_days == 0 ? (object)DBNull.Value : vo.preceding_days; //공정선행일
+                        cmd.Parameters["@preceding_days"].Value = vo.preceding_days == 0 ? (object)DBNull.Value : (vo.preceding_days); //공정선행일
                         cmd.Parameters["@completion_rate"].Value = vo.Completion_rate == 0 ? (object)DBNull.Value : vo.Completion_rate;  //수율
                         cmd.Parameters["@bor_use"].Value = vo.Bor_use; //사용유무
                         cmd.Parameters["@bor_comment"].Value = vo.Bor_comment == "" ? (object)DBNull.Value : vo.Bor_comment; //비고
                         cmd.Parameters["@ins_date"].Value = vo.Ins_date; //등록일
-                        cmd.Parameters["@ins_emp"].Value = vo.Ins_emp; //등록자
+                        cmd.Parameters["@ins_emp"].Value = vo.Ins_emp.ToString(); //등록자
                         
                         result += cmd.ExecuteNonQuery();
                     }

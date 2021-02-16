@@ -46,8 +46,10 @@ namespace CompanyManager
             Util.CommonUtil.AddGridTextColumn(dataGridView1, "pCode", "pcode", 80);
 
 
-
-
+            Service.EmployeeService service = new Service.EmployeeService();
+            clbdept.DataSource = service.GetDept();
+            clbdept.DisplayMember = "dept_name";
+            clbdept.ValueMember = "dept_id";
 
         }
 
@@ -87,7 +89,7 @@ namespace CompanyManager
             treeView1.Nodes.Clear();
 
             Service.MenuService service = new Service.MenuService();
-            menuAllList = service.GetMenus();
+            menuAllList = service.GetMenus(0);
 
             menuAllList.ForEach(p =>
             {
@@ -438,6 +440,26 @@ namespace CompanyManager
             {
                 btnSearch.PerformClick();
             }
+        }
+
+        private void clbdept_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void clbdept_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void clbdept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //clbdept.SetItemChecked(clbdept.SelectedIndex, true);
+
+            //if (clbdept.GetItemChecked(clbdept.SelectedIndex))
+            //    clbdept.SetItemChecked(clbdept.SelectedIndex, true);
+            //else
+            //    clbdept.SetItemChecked(clbdept.SelectedIndex, false);
         }
     }
 }

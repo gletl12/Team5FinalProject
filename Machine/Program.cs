@@ -1,6 +1,7 @@
 ﻿using log4net.Core;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -102,8 +103,8 @@ namespace Machine
         {
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             int Produce = rnd.Next(0, 100);
-
-            if (Produce < 70)
+            int percent= int.Parse(ConfigurationManager.AppSettings["percent"]);
+            if (Produce < percent)
             {
                 success += 1;
             }

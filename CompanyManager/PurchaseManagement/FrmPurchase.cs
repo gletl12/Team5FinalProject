@@ -78,16 +78,18 @@ namespace CompanyManager
             dgvPurchases.RowHeadersVisible = true;
             dgvPurchases.AutoGenerateColumns = true;
             dgvPurchases.DataSource = service.GetDGVInfo(dtpFrom.Value, dtpTO.Value);
-            dgvPurchases.Columns[0].Visible = false;
             dgvPurchases.Columns["item_id"].HeaderText = "품목";
             dgvPurchases.Columns["item_id"].Width = 100;
             dgvPurchases.Columns["item_id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvPurchases.Columns["item_name"].HeaderText = "품명";
             dgvPurchases.Columns["item_name"].Width = 120;
-            dgvPurchases.Columns["name"].HeaderText = "품목유형";
-            dgvPurchases.Columns["name"].Width = 60;
-            dgvPurchases.Columns["Category"].HeaderText = "항목";
-            dgvPurchases.Columns["Category"].Width = 80;
+            dgvPurchases.Columns["item_type"].HeaderText = "품목유형";
+            dgvPurchases.Columns["item_type"].Width = 60;
+            dgvPurchases.Columns["항목"].HeaderText = "항목";
+            dgvPurchases.Columns["항목"].Width = 80;
+            dgvPurchases.Columns["company_name"].Visible = false;
+            dgvPurchases.Columns["warehouse_name"].Visible = false;
+
             for (int i = 5; i < dgvPurchases.Columns.Count; i++)
             {
                 dgvPurchases.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

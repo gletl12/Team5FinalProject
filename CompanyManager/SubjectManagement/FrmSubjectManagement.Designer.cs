@@ -97,7 +97,6 @@ namespace CompanyManager
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel2.Controls.Add(this.btnDownload);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
             this.splitContainer1.SplitterDistance = 130;
             this.splitContainer1.SplitterWidth = 1;
@@ -427,7 +426,7 @@ namespace CompanyManager
             this.dataGridView1.Location = new System.Drawing.Point(10, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 478);
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 481);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 

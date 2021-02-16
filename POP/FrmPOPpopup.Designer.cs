@@ -44,10 +44,10 @@ namespace POP
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.titleBar1 = new POP.TitleBar();
+            this.lblCal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -99,6 +99,7 @@ namespace POP
             this.button13.TabIndex = 8;
             this.button13.Text = "Delete";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button10
             // 
@@ -110,6 +111,7 @@ namespace POP
             this.button10.TabIndex = 9;
             this.button10.Text = "0";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button1_Click);
             // 
             // button9
             // 
@@ -121,6 +123,7 @@ namespace POP
             this.button9.TabIndex = 10;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button1_Click);
             // 
             // button8
             // 
@@ -132,6 +135,7 @@ namespace POP
             this.button8.TabIndex = 11;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button1_Click);
             // 
             // button7
             // 
@@ -143,6 +147,7 @@ namespace POP
             this.button7.TabIndex = 12;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button1_Click);
             // 
             // button6
             // 
@@ -154,6 +159,7 @@ namespace POP
             this.button6.TabIndex = 13;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -165,6 +171,7 @@ namespace POP
             this.button5.TabIndex = 14;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -176,6 +183,7 @@ namespace POP
             this.button4.TabIndex = 15;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -187,6 +195,7 @@ namespace POP
             this.button3.TabIndex = 16;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -198,6 +207,7 @@ namespace POP
             this.button2.TabIndex = 17;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
             // button1
             // 
@@ -209,16 +219,7 @@ namespace POP
             this.button1.TabIndex = 18;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(16, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(469, 118);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
             // 
@@ -250,11 +251,21 @@ namespace POP
             this.titleBar1.Size = new System.Drawing.Size(499, 38);
             this.titleBar1.TabIndex = 21;
             // 
+            // lblCal
+            // 
+            this.lblCal.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 71.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCal.Location = new System.Drawing.Point(22, 108);
+            this.lblCal.Name = "lblCal";
+            this.lblCal.Size = new System.Drawing.Size(463, 114);
+            this.lblCal.TabIndex = 24;
+            this.lblCal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmPOPpopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 760);
+            this.Controls.Add(this.lblCal);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.titleBar1);
@@ -273,7 +284,6 @@ namespace POP
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPOPpopup";
@@ -301,9 +311,9 @@ namespace POP
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private TitleBar titleBar1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCal;
     }
 }

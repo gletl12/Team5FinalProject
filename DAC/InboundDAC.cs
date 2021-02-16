@@ -92,7 +92,7 @@ namespace DAC
 															 group by I.prod_id,I.item_id,I.ins_date,in_qty,in_id,I.in_cqty
 															 ) B ON B.prod_id = PD.prod_id and B.item_id = PD.item_id
 													   JOIN TBL_WAREHOUSE W ON PD.warehouse_id = W.warehouse_id
-where B.ins_date<=@to and B.ins_date>=@from
+where B.ins_date<=cast(@to as date) and B.ins_date>=cast(@from as date)
 order by pd_id,B.ins_date desc
 ";
             using (SqlCommand cmd = new SqlCommand(sql, conn))

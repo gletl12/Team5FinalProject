@@ -21,7 +21,7 @@ namespace CompanyManager
         {
             CommonUtil.SetDGVDesign(dataGridView2);
             MenuService service = new MenuService();
-            dataGridView2.DataSource = service.GetMenus();
+            //dataGridView2.DataSource = service.GetMenus();
         }
 
         private void button13_Click(object sender, EventArgs e)

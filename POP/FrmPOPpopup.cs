@@ -19,19 +19,21 @@ namespace POP
         {
             InitializeComponent();
         }
+        int leftValue = 0, rightValue = 0, result = 0;
+        string preOperator = "+";
 
-        
         public int performance_id { get; set; }
         public int wo_id { get; set; }
         public string item_id { get; set; }
         public int performance_qty { get; set; }
         public string ins_emp { get; set; }
         public int bad_qty { get; set; }
+
         public DateTime wo_sdate { get; set; }
         
         private void FrmPOPpopup_Load(object sender, EventArgs e)
         {
-            textBox1.Text = bad_qty.ToString();
+            lblCal.Text = bad_qty.ToString();
             CodeService service = new CodeService();
 
             List<CodeVO> list = service.GetAllCommonCode();
@@ -48,6 +50,14 @@ namespace POP
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            rightValue = int.Parse(rightValue.ToString() + btn.Text);
+            lblCal.Text = rightValue.ToString();
+        }
+
         private void button11_Click(object sender, EventArgs e)
         {
             if(comboBox2.Text.Length<2)
@@ -59,7 +69,7 @@ namespace POP
             vo.item_id = item_id;
             vo.ch_qty = wo_id;
             vo.good_qty = performance_qty;
-            vo.bad_qty =int.Parse(textBox1.Text);
+            vo.bad_qty =int.Parse(lblCal.Text);
             vo.emp =ins_emp;
 
             CheckService service = new CheckService();
@@ -74,7 +84,7 @@ namespace POP
                 if (bFlag)
                 {
                     PerformanceService service2 = new PerformanceService();
-                    bool bFlag1 = service2.BadQTY(chid, comboBox2.SelectedValue.ToString(), bad_qty, ins_emp);
+                    bool bFlag1 = service2.BadQTY(chid, comboBox2.SelectedValue.ToString(), int.Parse(lblCal.Text), ins_emp);
                     if (bFlag1)
                     {
                         MessageBox.Show("검사실패");
@@ -97,6 +107,13 @@ namespace POP
                 MessageBox.Show("검사실패");
                 return;
             }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            lblCal.Text = "";
+            leftValue = rightValue = result = 0;
+            preOperator = "+";
         }
     }
 }

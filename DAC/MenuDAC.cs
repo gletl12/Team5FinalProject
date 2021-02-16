@@ -16,13 +16,14 @@ namespace DAC
         /// 모든 메뉴 불러오기
         /// </summary>
         /// <returns></returns>
-        public List<MenuVO> GetMenus()
+        public List<MenuVO> GetMenus(int emp_id)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandText = "SP_GetMenu";
+                    cmd.Parameters.AddWithValue("@emp_id", emp_id);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Connection = conn;
                     List<MenuVO> temp = Helper.DataReaderMapToList<MenuVO>(cmd.ExecuteReader());

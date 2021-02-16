@@ -262,5 +262,10 @@ namespace CompanyManager
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = result.ToList();
         }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
