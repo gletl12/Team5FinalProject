@@ -88,11 +88,11 @@ namespace POP
             Frm.Show();
             Frm.Hide();
             MachineService service = new MachineService();
-            Runid= service.MachineRun(Task_ID, WorkUserName);
+            Runid= service.MachineRun(Task_ID, WorkUserName_id);
             if(Runid>0)
             {
                 WorkOrderService service1 = new WorkOrderService();
-                service1.StartWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
+                service1.StartWorkOrder(Convert.ToInt32(Order_Num), WorkUserName_id);
                 RouteStart(sender, null);
 
             }
@@ -128,11 +128,11 @@ namespace POP
                 }
             }
             MachineService service = new MachineService();
-            bool bFlag = service.MachineEnd(Runid, WorkUserName);
+            bool bFlag = service.MachineEnd(Runid, WorkUserName_id);
             if(bFlag)
             {
                 WorkOrderService service1 = new WorkOrderService();
-                service1.EndWorkOrder(Convert.ToInt32(Order_Num), WorkUserName);
+                service1.EndWorkOrder(Convert.ToInt32(Order_Num), WorkUserName_id);
                 RouteStart(sender, null);
             }
             else

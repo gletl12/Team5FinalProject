@@ -50,6 +50,11 @@ namespace POP
 
         private void button11_Click(object sender, EventArgs e)
         {
+            if(comboBox2.Text.Length<2)
+            {
+                MessageBox.Show("불량사유를 선택하여 주세요");
+                return;
+            }
             CheckVO vo = new CheckVO();
             vo.item_id = item_id;
             vo.ch_qty = wo_id;

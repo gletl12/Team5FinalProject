@@ -151,13 +151,13 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                     cmd.CommandText = @" update TBL_PERFORMANCE set  ch_id=@ch_id
                                                             where performance_id=@performance_id;";
                     cmd.Connection = conn;
-                    cmd.Parameters.AddWithValue("@ch_id", per_id);
-                    cmd.Parameters.AddWithValue("@performance_id", ch_id);
+                    cmd.Parameters.AddWithValue("@ch_id", ch_id);
+                    cmd.Parameters.AddWithValue("@performance_id", per_id);
 
-                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    int iRowAffect = cmd.ExecuteNonQuery();
                     Dispose();
 
-                    return id > 0;
+                    return iRowAffect > 0;
                 }
             }
             catch (Exception err)

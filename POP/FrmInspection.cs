@@ -40,7 +40,7 @@ namespace POP
             CommonUtil.AddGridTextColumn(dataGridView1, "지시수량", "wo_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_id", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "양품수량", "performance_qty", 370, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "ins_emp", 370, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "작업자", "emp_name", 370, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "bad_qty", "bad_qty", 130,false);
             CommonUtil.AddGridTextColumn(dataGridView1, "wo_sdate", "wo_sdate", 130,false);
 

@@ -268,7 +268,7 @@ namespace POP
             //performance.ch_id = ch_id;
             performance.performance_qty = int.Parse(textBox27.Text);
 
-            performance.ins_emp = textBox11.Text;
+            performance.ins_emp = textBox6.Text;
 
             PerformanceService service1 = new PerformanceService();
             bool bFlag = service1.PerformanceCommit2(performance);
