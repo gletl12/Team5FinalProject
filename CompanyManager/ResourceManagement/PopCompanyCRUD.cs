@@ -13,18 +13,19 @@ namespace CompanyManager
 {
     public partial class PopCompanyCRUD : CompanyManager.PopupBaseForm
     {
+        EmployeeVO evo;
         bool upflag = false;
         CompanyVO cvo;
-        public PopCompanyCRUD(int id)
+        public PopCompanyCRUD(EmployeeVO vo)
         {
             InitializeComponent();
-            txtUpEmp.Text = id.ToString();
+            evo = vo;
         }
 
-        public PopCompanyCRUD(int id, CompanyVO vo)
+        public PopCompanyCRUD(EmployeeVO evo, CompanyVO vo)
         {
             InitializeComponent();
-            txtUpEmp.Text = id.ToString();
+            this.evo = evo;
             this.cvo = vo;
             upflag = true;
         }
@@ -36,7 +37,7 @@ namespace CompanyManager
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if(txtCName.Text.Length < 1 || cboCType.SelectedIndex < 1 || cboUse.SelectedIndex < 1 )
+            if(txtCName.Text.Length < 1 || cboCType.SelectedIndex < 1 || cboUse.SelectedIndex < 1 || cboCBType.SelectedIndex < 1 || cboEmp.SelectedIndex < 1)
             {
                 MessageBox.Show("필수 입력 정보를 확인해주세요.");
                 return;
@@ -49,14 +50,18 @@ namespace CompanyManager
                 company_use = cboUse.SelectedValue.ToString(),
                 company_ceo = txtCEO.Text,
                 company_btype = cboCBType.SelectedValue.ToString(),
-                company_manager = cboEmp.SelectedValue.ToString(),
+                
                 company_email = txtEmail.Text,
                 company_phone = txtPhone.Text,
                 company_faxnum = txtFNum.Text,
-                up_emp = txtUpEmp.Text,
+                up_emp = evo.emp_id.ToString(),
                 up_date = DateTime.Now,
                 company_comment = txtCComment.Text,
             };
+            if (cboEmp.SelectedValue.ToString() == "0")
+                vo.company_manager = null;
+            else
+                vo.company_manager = cboEmp.SelectedValue.ToString();
 
             if (txtBNum.Text.Length < 10 && txtBNum.Text.Length > 0)
             {
@@ -141,6 +146,7 @@ namespace CompanyManager
         private void PopCompanyCRUD_Load(object sender, EventArgs e)
         {
             RoadCombobox();
+            txtUpEmp.Text = evo.emp_name;
             if(upflag)
             {
                 SetData();

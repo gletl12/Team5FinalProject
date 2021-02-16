@@ -84,16 +84,18 @@ namespace CompanyManager
             // cboParent
             // 
             this.cboParent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboParent.Enabled = false;
             this.cboParent.FormattingEnabled = true;
-            this.cboParent.Location = new System.Drawing.Point(461, 15);
+            this.cboParent.Location = new System.Drawing.Point(371, 15);
             this.cboParent.Name = "cboParent";
-            this.cboParent.Size = new System.Drawing.Size(100, 22);
+            this.cboParent.Size = new System.Drawing.Size(190, 22);
             this.cboParent.TabIndex = 1;
             // 
             // cboFUse
             // 
             this.cboFUse.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFUse.FormattingEnabled = true;
             this.cboFUse.Location = new System.Drawing.Point(79, 69);
             this.cboFUse.Name = "cboFUse";
@@ -103,6 +105,7 @@ namespace CompanyManager
             // cboFType
             // 
             this.cboFType.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFType.FormattingEnabled = true;
             this.cboFType.Location = new System.Drawing.Point(79, 42);
             this.cboFType.Name = "cboFType";
@@ -112,6 +115,7 @@ namespace CompanyManager
             // cboFGrade
             // 
             this.cboFGrade.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFGrade.FormattingEnabled = true;
             this.cboFGrade.Location = new System.Drawing.Point(79, 15);
             this.cboFGrade.Name = "cboFGrade";
@@ -208,7 +212,7 @@ namespace CompanyManager
             this.txtFParent.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtFParent.Location = new System.Drawing.Point(371, 15);
             this.txtFParent.Name = "txtFParent";
-            this.txtFParent.Size = new System.Drawing.Size(84, 21);
+            this.txtFParent.Size = new System.Drawing.Size(190, 21);
             this.txtFParent.TabIndex = 1;
             // 
             // label1

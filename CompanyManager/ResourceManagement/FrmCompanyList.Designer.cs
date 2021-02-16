@@ -41,11 +41,9 @@ namespace CompanyManager
             this.txtBNum = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvCompany = new System.Windows.Forms.DataGridView();
-            this.button8 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -81,7 +79,7 @@ namespace CompanyManager
             this.cboBtype.Location = new System.Drawing.Point(524, 36);
             this.cboBtype.Name = "cboBtype";
             this.cboBtype.Size = new System.Drawing.Size(155, 22);
-            this.cboBtype.TabIndex = 4;
+            this.cboBtype.TabIndex = 3;
             // 
             // cboCompanyType
             // 
@@ -89,7 +87,7 @@ namespace CompanyManager
             this.cboCompanyType.Location = new System.Drawing.Point(524, 4);
             this.cboCompanyType.Name = "cboCompanyType";
             this.cboCompanyType.Size = new System.Drawing.Size(155, 22);
-            this.cboCompanyType.TabIndex = 4;
+            this.cboCompanyType.TabIndex = 1;
             // 
             // label11
             // 
@@ -142,11 +140,12 @@ namespace CompanyManager
             this.txtCName.Location = new System.Drawing.Point(174, 5);
             this.txtCName.Name = "txtCName";
             this.txtCName.Size = new System.Drawing.Size(188, 21);
-            this.txtCName.TabIndex = 2;
+            this.txtCName.TabIndex = 0;
             // 
             // txtBNum
             // 
             this.txtBNum.Location = new System.Drawing.Point(174, 36);
+            this.txtBNum.MaxLength = 10;
             this.txtBNum.Name = "txtBNum";
             this.txtBNum.Size = new System.Drawing.Size(188, 21);
             this.txtBNum.TabIndex = 2;
@@ -184,22 +183,6 @@ namespace CompanyManager
             this.dgvCompany.TabIndex = 19;
             this.dgvCompany.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompany_CellClick);
             // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(917, 89);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "    복사";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -234,26 +217,10 @@ namespace CompanyManager
             this.button10.Location = new System.Drawing.Point(1040, 89);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(86, 23);
-            this.button10.TabIndex = 15;
+            this.button10.TabIndex = 7;
             this.button10.Text = "    Excel등록";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(980, 89);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 17;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
             // 
             // btnRegister
             // 
@@ -263,10 +230,10 @@ namespace CompanyManager
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(792, 89);
+            this.btnRegister.Location = new System.Drawing.Point(915, 89);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(56, 23);
-            this.btnRegister.TabIndex = 18;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "    등록";
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -280,10 +247,10 @@ namespace CompanyManager
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(854, 89);
+            this.btnDelete.Location = new System.Drawing.Point(977, 89);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(57, 23);
-            this.btnDelete.TabIndex = 31;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "    삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -294,11 +261,9 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
-            this.Controls.Add(this.button12);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvCompany);
@@ -313,12 +278,9 @@ namespace CompanyManager
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cboCompanyType;

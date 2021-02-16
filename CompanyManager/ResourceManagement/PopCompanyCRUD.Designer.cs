@@ -31,17 +31,16 @@ namespace CompanyManager
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboCBType = new System.Windows.Forms.ComboBox();
+            this.cboEmp = new System.Windows.Forms.ComboBox();
             this.cboCType = new System.Windows.Forms.ComboBox();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtUpEmp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,7 +54,8 @@ namespace CompanyManager
             this.label1 = new System.Windows.Forms.Label();
             this.btnCencel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.cboEmp = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,19 +69,19 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cboCBType);
             this.panel1.Controls.Add(this.cboEmp);
             this.panel1.Controls.Add(this.cboCType);
             this.panel1.Controls.Add(this.cboUse);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtPhone);
             this.panel1.Controls.Add(this.txtUpEmp);
             this.panel1.Controls.Add(this.label5);
@@ -101,14 +101,25 @@ namespace CompanyManager
             // 
             // cboCBType
             // 
+            this.cboCBType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCBType.FormattingEnabled = true;
             this.cboCBType.Location = new System.Drawing.Point(552, 42);
             this.cboCBType.Name = "cboCBType";
             this.cboCBType.Size = new System.Drawing.Size(110, 22);
             this.cboCBType.TabIndex = 5;
             // 
+            // cboEmp
+            // 
+            this.cboEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEmp.FormattingEnabled = true;
+            this.cboEmp.Location = new System.Drawing.Point(98, 43);
+            this.cboEmp.Name = "cboEmp";
+            this.cboEmp.Size = new System.Drawing.Size(110, 22);
+            this.cboEmp.TabIndex = 1;
+            // 
             // cboCType
             // 
+            this.cboCType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCType.FormattingEnabled = true;
             this.cboCType.Location = new System.Drawing.Point(337, 15);
             this.cboCType.Name = "cboCType";
@@ -117,6 +128,7 @@ namespace CompanyManager
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(552, 15);
             this.cboUse.Name = "cboUse";
@@ -143,21 +155,11 @@ namespace CompanyManager
             this.label13.TabIndex = 3;
             this.label13.Text = "* 팩스";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(16, 73);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 14);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "* 담당자명";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(16, 46);
+            this.label10.Location = new System.Drawing.Point(16, 73);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 14);
             this.label10.TabIndex = 3;
@@ -203,19 +205,10 @@ namespace CompanyManager
             this.label3.TabIndex = 3;
             this.label3.Text = "* 전화번호";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(470, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 14);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "* 업종";
-            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(552, 70);
+            this.txtPhone.MaxLength = 11;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(110, 21);
             this.txtPhone.TabIndex = 8;
@@ -271,7 +264,7 @@ namespace CompanyManager
             // 
             // txtCEO
             // 
-            this.txtCEO.Location = new System.Drawing.Point(98, 43);
+            this.txtCEO.Location = new System.Drawing.Point(98, 70);
             this.txtCEO.Name = "txtCEO";
             this.txtCEO.Size = new System.Drawing.Size(110, 21);
             this.txtCEO.TabIndex = 3;
@@ -335,13 +328,25 @@ namespace CompanyManager
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // cboEmp
+            // label6
             // 
-            this.cboEmp.FormattingEnabled = true;
-            this.cboEmp.Location = new System.Drawing.Point(98, 70);
-            this.cboEmp.Name = "cboEmp";
-            this.cboEmp.Size = new System.Drawing.Size(110, 22);
-            this.cboEmp.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(469, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 14);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "* 업종";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 14);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "* 담당자명";
             // 
             // PopCompanyCRUD
             // 
@@ -367,13 +372,11 @@ namespace CompanyManager
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtUpEmp;
         private System.Windows.Forms.Label label5;
@@ -391,5 +394,7 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox cboCBType;
         private System.Windows.Forms.ComboBox cboCType;
         private System.Windows.Forms.ComboBox cboEmp;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }
