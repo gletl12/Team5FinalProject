@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -115,6 +117,24 @@ namespace CompanyManager
         private void btnExcel_Click(object sender, EventArgs e)
         {
             CommonExcel.ExportExcel(dgvPrice);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "양식 다운로드";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy("../../ExcelForm/단가등록양식.xlsx", dlg.FileName + ".xlsx");
+                    Process.Start(dlg.FileName + ".xlsx");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("다운로드중 오류가 발생하였습니다.\r\n 다시 시도하여 주십시오.");
+                }
+            }
         }
     }
 }

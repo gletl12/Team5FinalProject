@@ -30,6 +30,7 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboParent = new System.Windows.Forms.ComboBox();
             this.cboFUse = new System.Windows.Forms.ComboBox();
             this.cboFType = new System.Windows.Forms.ComboBox();
             this.cboFGrade = new System.Windows.Forms.ComboBox();
@@ -59,6 +60,7 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cboParent);
             this.panel1.Controls.Add(this.cboFUse);
             this.panel1.Controls.Add(this.cboFType);
             this.panel1.Controls.Add(this.cboFGrade);
@@ -78,6 +80,16 @@ namespace CompanyManager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(574, 249);
             this.panel1.TabIndex = 7;
+            // 
+            // cboParent
+            // 
+            this.cboParent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboParent.Enabled = false;
+            this.cboParent.FormattingEnabled = true;
+            this.cboParent.Location = new System.Drawing.Point(461, 15);
+            this.cboParent.Name = "cboParent";
+            this.cboParent.Size = new System.Drawing.Size(100, 22);
+            this.cboParent.TabIndex = 1;
             // 
             // cboFUse
             // 
@@ -172,7 +184,7 @@ namespace CompanyManager
             this.txtComment.Location = new System.Drawing.Point(79, 97);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(464, 139);
+            this.txtComment.Size = new System.Drawing.Size(482, 139);
             this.txtComment.TabIndex = 5;
             // 
             // txtUpEmp
@@ -180,7 +192,7 @@ namespace CompanyManager
             this.txtUpEmp.Location = new System.Drawing.Point(371, 69);
             this.txtUpEmp.Name = "txtUpEmp";
             this.txtUpEmp.ReadOnly = true;
-            this.txtUpEmp.Size = new System.Drawing.Size(172, 21);
+            this.txtUpEmp.Size = new System.Drawing.Size(190, 21);
             this.txtUpEmp.TabIndex = 4;
             // 
             // txtFName
@@ -188,7 +200,7 @@ namespace CompanyManager
             this.txtFName.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtFName.Location = new System.Drawing.Point(371, 42);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(172, 21);
+            this.txtFName.Size = new System.Drawing.Size(190, 21);
             this.txtFName.TabIndex = 3;
             // 
             // txtFParent
@@ -196,7 +208,7 @@ namespace CompanyManager
             this.txtFParent.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtFParent.Location = new System.Drawing.Point(371, 15);
             this.txtFParent.Name = "txtFParent";
-            this.txtFParent.Size = new System.Drawing.Size(172, 21);
+            this.txtFParent.Size = new System.Drawing.Size(84, 21);
             this.txtFParent.TabIndex = 1;
             // 
             // label1
@@ -279,5 +291,6 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox cboFType;
         private System.Windows.Forms.ComboBox cboFGrade;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboParent;
     }
 }

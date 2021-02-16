@@ -54,6 +54,7 @@
     <Compile Include="BORDAC.cs" />
     <Compile Include="CheckDAC.cs" />
     <Compile Include="CodeDAC.cs" />
+    <Compile Include="CompanyDAC.cs" />
     <Compile Include="DemandDAC.cs" />
     <Compile Include="DispendDAC.cs" />
     <Compile Include="EmployeeDAC.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="MenuDAC.cs" />
     <Compile Include="MoveDAC.cs" />
     <Compile Include="PerformanceDAC.cs" />
+    <Compile Include="PlanDAC.cs" />
+    <Compile Include="MGradeDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseDAC.cs" />
     <Compile Include="SalesOrderDAC.cs" />

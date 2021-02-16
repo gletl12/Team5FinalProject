@@ -81,7 +81,7 @@ namespace DAC
             List<InboundVO> list = new List<InboundVO>();
             List<CodeVO> codes = new List<CodeVO>();
             string sql = @"select purchase_id,pd_id,cast(PD.ins_date as date) PurchasesDate,PD.prod_id,item_unit,company_name,PD.item_id,item_name,CD.name unit,CD2.name UseCheck,pd_qty,isnull(in_qty,0) InQty,
-                           pd_qty-isnull(rqty,0) RQty, due_date, B.ins_date,in_id,in_cqty Cqty,warehouse_name in_warehouse
+                           pd_qty-isnull(rqty,0) RQty, cast(due_date as date) due_date, cast(B.ins_date as date) ins_date,in_id,in_cqty Cqty,warehouse_name in_warehouse
                            from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                            							   JOIN TBL_COMPANY C ON I.supply_company = C.company_id
                            							   JOIN TBL_COMMON_CODE CD ON CD.code = I.item_unit
@@ -207,7 +207,7 @@ group by in_id,PD.purchase_id,PD.ins_date,B.prod_id,PD.pd_id,C.company_name,B.it
         {
             List<InboundVO> list = new List<InboundVO>();
             string sql = @"select purchase_id,pd_id,cast(PD.ins_date as date) PurchasesDate,PD.prod_id,item_unit,company_name,PD.item_id,item_name,CD.name unit,CD2.name UseCheck,pd_qty,isnull(rqty,0) InQty,
-                           pd_qty-isnull(rqty,0) RQty, due_date
+                           pd_qty-isnull(rqty,0) RQty, cast(due_date as date) due_date
                            from TBL_PURCHASE_DETAIL PD JOIN TBL_ITEM I ON PD.item_id = I.item_id
                            							   JOIN TBL_COMPANY C ON I.supply_company = C.company_id
                            							   JOIN TBL_COMMON_CODE CD ON CD.code = I.item_unit

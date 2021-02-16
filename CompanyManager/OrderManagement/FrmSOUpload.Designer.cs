@@ -108,6 +108,7 @@ namespace CompanyManager
             this.btnDownload.Text = "    양식 다운로드";
             this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnCommit
             // 

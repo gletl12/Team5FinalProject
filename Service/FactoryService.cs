@@ -36,10 +36,28 @@ namespace Service
         }
 
 
-        //public bool DeleteCommonCode(List<string> codeList)
-        //{
-        //    CodeDAC dac = new CodeDAC();
-        //    return dac.DeleteCommonCode(codeList);
-        //}
+        public List<WareHouseVO> GetWarehouse()
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.GetWarehouse();
+        }
+
+        public bool UpdateWarehouse(FactoryVO fvo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.UpdateWarehouse(fvo);
+        }
+
+        public bool AddWarehouse(FactoryVO fvo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.AddWarehouse(fvo);
+        }
+
+        public bool DeleteWareHouse(int fid)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.DeleteWareHouse(fid);
+        }
     }
 }
