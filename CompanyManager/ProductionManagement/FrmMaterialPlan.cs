@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Util;
+using VO;
+using System.Linq;
 
 namespace CompanyManager
 {
     public partial class FrmMaterialPlan : CompanyManager.MDIBaseForm
     {
+        
         public FrmMaterialPlan()
         {
             InitializeComponent();
@@ -22,15 +25,41 @@ namespace CompanyManager
 
             btnsearch.PerformClick();
 
+
+
+            Service.SubjectService service = new Service.SubjectService();
+
+            cboCompany.DisplayMember = "name";
+            cbowarehouse.DisplayMember = "name";
+
+            List<CodeVO> alllist = service.GetSubjectCode();
+
+            List<CodeVO> temp;
+            CodeVO co = new CodeVO { code = "", name = "" };
+
+            //발주업체, 납품업체
+            temp = (from code in alllist
+                    where code.category.Equals("company")
+                    select code).ToList();
+            temp.Insert(0, co);
+            cboCompany.DataSource = temp.ConvertAll(p=>p);
+
+            temp = (from code in alllist
+                    where code.category.Equals("warehouse")
+                    select code).ToList();
+            temp.Insert(0, co);
+            cbowarehouse.DataSource = temp.ConvertAll(p => p);
+
+
         }
         private void SetDGV()
         {
             CommonUtil.SetInitGridView(dataGridView1);
             CommonUtil.SetDGVDesign_Num(dataGridView1);
             dataGridView1.AutoGenerateColumns = true;
-            CommonUtil.AddGridTextColumn(dataGridView1, "설비", "item_id", 200, true, DataGridViewContentAlignment.MiddleLeft);
-            CommonUtil.AddGridTextColumn(dataGridView1, "공정", "item_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dataGridView1, "품목", "item_type", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목/업체", "item_id", 200, true, DataGridViewContentAlignment.MiddleLeft);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품명", "item_name", 100, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dataGridView1, "품목유형/창고", "item_type", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "품목", "품목", 120, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "항목", "항목", 120, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dataGridView1, "회사", "company_name", 120, false, DataGridViewContentAlignment.MiddleCenter);
@@ -58,7 +87,7 @@ namespace CompanyManager
             //품목정보로 검색
             var temp = from plan in dt.AsEnumerable()
                        where (plan.Field<string>("company_name").ToString().Contains(cboCompany.Text) &&
-                                    plan.Field<string>("항목").ToString().Contains(txtItem.Text) &&
+                                    plan.Field<string>("품목").ToString().Contains(txtItem.Text) &&
                                     plan.Field<string>("warehouse_name").ToString().Contains(cbowarehouse.Text))
                        select plan;
 
