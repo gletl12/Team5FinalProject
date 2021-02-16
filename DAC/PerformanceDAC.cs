@@ -116,8 +116,8 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = @"insert into TBL_PERFORMANCE (wo_id,item_id,ch_id,performance_qty,ins_date,ins_emp)
-                                                             values (@wo_id,@item_id,@ch_id,@performance_qty,@ins_date,@ins_emp)";
+                    cmd.CommandText = @"insert into TBL_PERFORMANCE (wo_id,item_id,ch_id,performance_qty,ins_date,ins_emp,bad_qty)
+                                                             values (@wo_id,@item_id,@ch_id,@performance_qty,@ins_date,@ins_emp,@bad_qty)";
                     cmd.Connection = conn;
                     cmd.Parameters.AddWithValue("@wo_id", vo.wo_id);
                     cmd.Parameters.AddWithValue("@item_id", vo.item_id);
@@ -125,6 +125,7 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
                     cmd.Parameters.AddWithValue("@performance_qty", vo.performance_qty);
                     cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@ins_emp", vo.ins_emp);
+                    cmd.Parameters.AddWithValue("@bad_qty", vo.bad_qty);
 
                     int id = Convert.ToInt32(cmd.ExecuteScalar());
                     Dispose();
@@ -174,7 +175,7 @@ FROM TBL_WORK_ORDER WO JOIN TBL_BOR BOR ON WO.item_id = BOR.item_id
         public List<PerformanceVO> GetPerformance()
         {
 
-            string sql = @"  select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,E.emp_name,(W.wo_qty-performance_qty)as bad_qty
+            string sql = @"    select performance_id,W.wo_qty AS wo_id,P.item_id,performance_qty,P.ins_date as wo_sdate,E.emp_name,P.bad_qty
  from TBL_PERFORMANCE  P inner join TBL_WORK_ORDER W on P.wo_id=W.wo_id
 						inner join TBL_Employee E on P.ins_emp=E.emp_id
  where ch_id=0;";

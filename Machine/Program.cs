@@ -103,7 +103,7 @@ namespace Machine
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             int Produce = rnd.Next(0, 100);
 
-            if (Produce < 98)
+            if (Produce < 60)
             {
                 success += 1;
             }
