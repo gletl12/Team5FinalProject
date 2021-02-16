@@ -142,7 +142,7 @@ namespace POP
                 textBox27.Text = arrData1[0];
                 textBox39.Text = arrData1[1];
                 textBox17.Text = (int.Parse(arrData1[0]) + int.Parse(arrData1[1])).ToString();
-                textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox17.Text)).ToString();
+                textBox14.Text = (int.Parse(textBox21.Text) - int.Parse(textBox27.Text)).ToString();
 
                 progressBar1.Value = int.Parse(arrData1[2]);
                 if(progressBar1.Value == 100)
