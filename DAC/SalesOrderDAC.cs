@@ -247,7 +247,7 @@ namespace DAC
 
         public bool MaGamProcess(List<SOVO> chklist)
         {
-            string sql = @"update TBL_SO_MASTER set so_state = @so_state where so_id = @so_id";
+            string sql = @"update TBL_SO_MASTER set so_state = @so_state, up_date = @up_date, up_emp = @up_emp where so_id = @so_id";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try
@@ -255,9 +255,14 @@ namespace DAC
                     int cnt = 0;
                     cmd.Parameters.AddWithValue("@so_state", "SO003");
                     cmd.Parameters.Add("@so_id", SqlDbType.Int);
+                    cmd.Parameters.Add("@up_date", SqlDbType.DateTime);
+                    cmd.Parameters.Add("@up_emp", SqlDbType.NVarChar);
                     for (int i = 0; i < chklist.Count; i++)
                     {
                         cmd.Parameters["@so_id"].Value = chklist[i].so_id;
+                        cmd.Parameters["@up_date"].Value = chklist[i].up_date;
+                        cmd.Parameters["@up_emp"].Value = chklist[i].up_emp;
+
                         cmd.ExecuteNonQuery();
                         cnt++;
                     }
