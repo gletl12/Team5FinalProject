@@ -69,7 +69,7 @@ namespace CompanyManager
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.RowHeadersWidth = 50;
             this.dgvFactory.RowTemplate.Height = 23;
-            this.dgvFactory.Size = new System.Drawing.Size(1144, 535);
+            this.dgvFactory.Size = new System.Drawing.Size(1130, 495);
             this.dgvFactory.TabIndex = 28;
             this.dgvFactory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactory_CellClick);
             // 
@@ -81,7 +81,7 @@ namespace CompanyManager
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(839, 74);
+            this.btnDelete.Location = new System.Drawing.Point(825, 74);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(57, 23);
             this.btnDelete.TabIndex = 30;
@@ -109,7 +109,7 @@ namespace CompanyManager
             this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelImport.Location = new System.Drawing.Point(1070, 74);
+            this.btnExcelImport.Location = new System.Drawing.Point(1056, 74);
             this.btnExcelImport.Name = "btnExcelImport";
             this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
             this.btnExcelImport.TabIndex = 24;
@@ -126,7 +126,7 @@ namespace CompanyManager
             this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelExport.Location = new System.Drawing.Point(1010, 74);
+            this.btnExcelExport.Location = new System.Drawing.Point(996, 74);
             this.btnExcelExport.Name = "btnExcelExport";
             this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
             this.btnExcelExport.TabIndex = 26;
@@ -143,7 +143,7 @@ namespace CompanyManager
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(777, 74);
+            this.btnRegister.Location = new System.Drawing.Point(763, 74);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(56, 23);
             this.btnRegister.TabIndex = 27;
@@ -166,23 +166,25 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.txtCodeName);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(8, 9);
+            this.panel2.Location = new System.Drawing.Point(12, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1148, 47);
+            this.panel2.Size = new System.Drawing.Size(1130, 47);
             this.panel2.TabIndex = 29;
             // 
             // cboFGrade
             // 
+            this.cboFGrade.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFGrade.FormattingEnabled = true;
-            this.cboFGrade.Location = new System.Drawing.Point(687, 15);
+            this.cboFGrade.Location = new System.Drawing.Point(507, 12);
             this.cboFGrade.Name = "cboFGrade";
-            this.cboFGrade.Size = new System.Drawing.Size(121, 22);
+            this.cboFGrade.Size = new System.Drawing.Size(165, 22);
             this.cboFGrade.TabIndex = 4;
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(596, 19);
+            this.label12.Location = new System.Drawing.Point(416, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(50, 14);
             this.label12.TabIndex = 3;
@@ -191,7 +193,7 @@ namespace CompanyManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(267, 20);
+            this.label14.Location = new System.Drawing.Point(15, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 14);
             this.label14.TabIndex = 3;
@@ -199,10 +201,10 @@ namespace CompanyManager
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(681, 25);
+            this.label15.Location = new System.Drawing.Point(501, 22);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;
@@ -210,7 +212,7 @@ namespace CompanyManager
             // 
             // txtCodeName
             // 
-            this.txtCodeName.Location = new System.Drawing.Point(362, 16);
+            this.txtCodeName.Location = new System.Drawing.Point(110, 13);
             this.txtCodeName.Name = "txtCodeName";
             this.txtCodeName.Size = new System.Drawing.Size(193, 21);
             this.txtCodeName.TabIndex = 2;
@@ -222,13 +224,11 @@ namespace CompanyManager
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::CompanyManager.Properties.Resources.Zoom_16x16;
-            this.btnSearch.Location = new System.Drawing.Point(1018, 9);
+            this.btnSearch.Location = new System.Drawing.Point(986, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 30);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "조회";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -241,7 +241,7 @@ namespace CompanyManager
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(902, 74);
+            this.btnDownload.Location = new System.Drawing.Point(888, 74);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(102, 23);
             this.btnDownload.TabIndex = 31;

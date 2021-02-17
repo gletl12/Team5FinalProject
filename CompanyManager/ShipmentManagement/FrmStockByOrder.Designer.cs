@@ -29,17 +29,14 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.button12 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnMove = new System.Windows.Forms.Button();
+            this.dgvMove = new System.Windows.Forms.DataGridView();
+            this.cboItem = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.cboTo = new System.Windows.Forms.ComboBox();
             this.cboFrom = new System.Windows.Forms.ComboBox();
-            this.cboItem = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -49,65 +46,37 @@ namespace CompanyManager
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dgvMove = new System.Windows.Forms.DataGridView();
-            this.panel2.SuspendLayout();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnMove = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMove)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button12
+            // dgvMove
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1071, 129);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 29;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
+            this.dgvMove.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMove.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMove.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMove.Location = new System.Drawing.Point(12, 142);
+            this.dgvMove.Name = "dgvMove";
+            this.dgvMove.RowHeadersWidth = 50;
+            this.dgvMove.RowTemplate.Height = 23;
+            this.dgvMove.Size = new System.Drawing.Size(1130, 456);
+            this.dgvMove.TabIndex = 19;
+            this.dgvMove.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMove_CellContentClick);
             // 
-            // button9
+            // cboItem
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 129);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 28;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 138);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 14);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "      재고현황";
-            // 
-            // btnMove
-            // 
-            this.btnMove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnMove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMove.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.btnMove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMove.Location = new System.Drawing.Point(987, 129);
-            this.btnMove.Name = "btnMove";
-            this.btnMove.Size = new System.Drawing.Size(78, 23);
-            this.btnMove.TabIndex = 30;
-            this.btnMove.Text = "    이동처리";
-            this.btnMove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMove.UseVisualStyleBackColor = false;
+            this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboItem.FormattingEnabled = true;
+            this.cboItem.Location = new System.Drawing.Point(75, 53);
+            this.cboItem.Name = "cboItem";
+            this.cboItem.Size = new System.Drawing.Size(226, 22);
+            this.cboItem.TabIndex = 4;
             // 
             // panel2
             // 
@@ -132,10 +101,10 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel2.Location = new System.Drawing.Point(8, 9);
+            this.panel2.Location = new System.Drawing.Point(12, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1152, 98);
-            this.panel2.TabIndex = 32;
+            this.panel2.Size = new System.Drawing.Size(1130, 98);
+            this.panel2.TabIndex = 20;
             // 
             // label20
             // 
@@ -167,7 +136,7 @@ namespace CompanyManager
             this.cboTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTo.FormattingEnabled = true;
-            this.cboTo.Location = new System.Drawing.Point(744, 21);
+            this.cboTo.Location = new System.Drawing.Point(722, 21);
             this.cboTo.Name = "cboTo";
             this.cboTo.Size = new System.Drawing.Size(226, 22);
             this.cboTo.TabIndex = 6;
@@ -177,25 +146,16 @@ namespace CompanyManager
             this.cboFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFrom.FormattingEnabled = true;
-            this.cboFrom.Location = new System.Drawing.Point(429, 22);
+            this.cboFrom.Location = new System.Drawing.Point(418, 22);
             this.cboFrom.Name = "cboFrom";
             this.cboFrom.Size = new System.Drawing.Size(226, 22);
             this.cboFrom.TabIndex = 5;
-            // 
-            // cboItem
-            // 
-            this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(75, 53);
-            this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(226, 22);
-            this.cboItem.TabIndex = 4;
             // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(685, 25);
+            this.label11.Location = new System.Drawing.Point(663, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 14);
             this.label11.TabIndex = 3;
@@ -214,7 +174,7 @@ namespace CompanyManager
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(356, 25);
+            this.label13.Location = new System.Drawing.Point(345, 25);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 14);
             this.label13.TabIndex = 3;
@@ -234,7 +194,7 @@ namespace CompanyManager
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(685, 25);
+            this.label15.Location = new System.Drawing.Point(663, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;
@@ -255,7 +215,7 @@ namespace CompanyManager
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label17.Location = new System.Drawing.Point(356, 25);
+            this.label17.Location = new System.Drawing.Point(345, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 14);
             this.label17.TabIndex = 1;
@@ -279,60 +239,99 @@ namespace CompanyManager
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(1027, 61);
+            this.btnSearch.Location = new System.Drawing.Point(1005, 61);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 30);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dgvMove
+            // label10
             // 
-            this.dgvMove.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMove.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMove.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMove.Location = new System.Drawing.Point(8, 158);
-            this.dgvMove.Name = "dgvMove";
-            this.dgvMove.RowHeadersWidth = 50;
-            this.dgvMove.RowTemplate.Height = 23;
-            this.dgvMove.Size = new System.Drawing.Size(1152, 480);
-            this.dgvMove.TabIndex = 31;
+            this.label10.AutoSize = true;
+            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Location = new System.Drawing.Point(12, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 14);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "      재고현황";
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
+            this.button9.Location = new System.Drawing.Point(1113, 113);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(29, 23);
+            this.button9.TabIndex = 14;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // btnMove
+            // 
+            this.btnMove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnMove.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMove.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnMove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMove.Location = new System.Drawing.Point(969, 113);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(78, 23);
+            this.btnMove.TabIndex = 18;
+            this.btnMove.Text = "    이동처리";
+            this.btnMove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMove.UseVisualStyleBackColor = false;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(1053, 113);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(54, 23);
+            this.button12.TabIndex = 17;
+            this.button12.Text = "    엑셀";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // FrmStockByOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnMove);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvMove);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.panel2);
             this.Name = "FrmStockByOrder";
             this.Load += new System.EventHandler(this.FrmStockByOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMove)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMove)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnMove;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.ComboBox cboTo;
-        private System.Windows.Forms.ComboBox cboFrom;
+        private System.Windows.Forms.DataGridView dgvMove;
         private System.Windows.Forms.ComboBox cboItem;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -342,6 +341,10 @@ namespace CompanyManager
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvMove;
+        private System.Windows.Forms.ComboBox cboTo;
+        private System.Windows.Forms.ComboBox cboFrom;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
     }
 }
