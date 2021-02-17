@@ -98,7 +98,6 @@ namespace CompanyManager
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(198, 24);
             this.label20.Name = "label20";
@@ -124,6 +123,7 @@ namespace CompanyManager
             // 
             // cboID
             // 
+            this.cboID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
@@ -166,6 +166,7 @@ namespace CompanyManager
             // 
             // cboState
             // 
+            this.cboState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(770, 22);
@@ -267,6 +268,7 @@ namespace CompanyManager
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(685, 25);
             this.label1.Name = "label1";
@@ -276,6 +278,7 @@ namespace CompanyManager
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.label2.Location = new System.Drawing.Point(685, 22);
