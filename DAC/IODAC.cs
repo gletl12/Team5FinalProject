@@ -14,7 +14,7 @@ namespace DAC
         {
             string sql = @"select cast(IODate as date) IODate,Gubun,IOType,[From],[To],item_id,item_name,item_type,item_unit,item_grade,IOQty from VW_IOList IO
                            where IODate >= cast(@from as date) and IODate <= cast(@to as date)
-                           order by IO.IODate";
+                           order by IO.IODate desc";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 try

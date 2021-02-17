@@ -142,5 +142,10 @@ namespace CompanyManager
             }
 
         }
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvSOEND);
+        }
     }
 }

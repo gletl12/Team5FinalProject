@@ -29,16 +29,15 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnMGDelete = new System.Windows.Forms.Button();
             this.dgvMachineGrade = new System.Windows.Forms.DataGridView();
             this.btnMGRegister = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnExcelImport = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.pnlMGrade = new System.Windows.Forms.Panel();
+            this.cboParent = new System.Windows.Forms.ComboBox();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCencel = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@ namespace CompanyManager
             this.txtMGCode = new System.Windows.Forms.TextBox();
             this.txtMGName = new System.Windows.Forms.TextBox();
             this.txtComment = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMGrade = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,13 +56,9 @@ namespace CompanyManager
             this.dgvMachine = new System.Windows.Forms.DataGridView();
             this.btnMRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.lblMgradeN = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboParent = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnExcelExport = new System.Windows.Forms.Button();
+            this.btnExcelExport1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -83,24 +79,20 @@ namespace CompanyManager
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnExcelExport);
             this.splitContainer1.Panel1.Controls.Add(this.btnMGDelete);
             this.splitContainer1.Panel1.Controls.Add(this.dgvMachineGrade);
             this.splitContainer1.Panel1.Controls.Add(this.btnMGRegister);
-            this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.btnExcelImport);
-            this.splitContainer1.Panel1.Controls.Add(this.button9);
             this.splitContainer1.Panel1.Controls.Add(this.pnlMGrade);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnExcelExport1);
             this.splitContainer1.Panel2.Controls.Add(this.btnMDelete);
             this.splitContainer1.Panel2.Controls.Add(this.dgvMachine);
             this.splitContainer1.Panel2.Controls.Add(this.btnMRegister);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
-            this.splitContainer1.Panel2.Controls.Add(this.button4);
             this.splitContainer1.Size = new System.Drawing.Size(1148, 623);
             this.splitContainer1.SplitterDistance = 253;
             this.splitContainer1.TabIndex = 25;
@@ -113,7 +105,7 @@ namespace CompanyManager
             this.btnMGDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMGDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
             this.btnMGDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMGDelete.Location = new System.Drawing.Point(383, 3);
+            this.btnMGDelete.Location = new System.Drawing.Point(509, 3);
             this.btnMGDelete.Name = "btnMGDelete";
             this.btnMGDelete.Size = new System.Drawing.Size(57, 23);
             this.btnMGDelete.TabIndex = 2;
@@ -128,14 +120,14 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMachineGrade.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMachineGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMachineGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMachineGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMachineGrade.Location = new System.Drawing.Point(3, 29);
             this.dgvMachineGrade.Name = "dgvMachineGrade";
@@ -153,7 +145,7 @@ namespace CompanyManager
             this.btnMGRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMGRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnMGRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMGRegister.Location = new System.Drawing.Point(321, 3);
+            this.btnMGRegister.Location = new System.Drawing.Point(447, 3);
             this.btnMGRegister.Name = "btnMGRegister";
             this.btnMGRegister.Size = new System.Drawing.Size(56, 23);
             this.btnMGRegister.TabIndex = 0;
@@ -172,35 +164,6 @@ namespace CompanyManager
             this.label10.Size = new System.Drawing.Size(58, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      설비군";
-            // 
-            // btnExcelImport
-            // 
-            this.btnExcelImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcelImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnExcelImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelImport.Location = new System.Drawing.Point(506, 3);
-            this.btnExcelImport.Name = "btnExcelImport";
-            this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
-            this.btnExcelImport.TabIndex = 4;
-            this.btnExcelImport.Text = "    Excel등록";
-            this.btnExcelImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcelImport.UseVisualStyleBackColor = false;
-            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(597, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // pnlMGrade
             // 
@@ -228,6 +191,15 @@ namespace CompanyManager
             this.pnlMGrade.Size = new System.Drawing.Size(516, 247);
             this.pnlMGrade.TabIndex = 40;
             this.pnlMGrade.Visible = false;
+            // 
+            // cboParent
+            // 
+            this.cboParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboParent.FormattingEnabled = true;
+            this.cboParent.Location = new System.Drawing.Point(324, 36);
+            this.cboParent.Name = "cboParent";
+            this.cboParent.Size = new System.Drawing.Size(176, 22);
+            this.cboParent.TabIndex = 3;
             // 
             // cboUse
             // 
@@ -330,6 +302,16 @@ namespace CompanyManager
             this.txtComment.Size = new System.Drawing.Size(484, 91);
             this.txtComment.TabIndex = 5;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(247, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 14);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "* 상위시설";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -368,7 +350,7 @@ namespace CompanyManager
             this.btnMDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
             this.btnMDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMDelete.Location = new System.Drawing.Point(902, 3);
+            this.btnMDelete.Location = new System.Drawing.Point(1027, 3);
             this.btnMDelete.Name = "btnMDelete";
             this.btnMDelete.Size = new System.Drawing.Size(57, 23);
             this.btnMDelete.TabIndex = 7;
@@ -383,14 +365,14 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMachine.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMachine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMachine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMachine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMachine.Location = new System.Drawing.Point(3, 29);
             this.dgvMachine.Name = "dgvMachine";
@@ -407,7 +389,7 @@ namespace CompanyManager
             this.btnMRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnMRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMRegister.Location = new System.Drawing.Point(840, 3);
+            this.btnMRegister.Location = new System.Drawing.Point(965, 3);
             this.btnMRegister.Name = "btnMRegister";
             this.btnMRegister.Size = new System.Drawing.Size(56, 23);
             this.btnMRegister.TabIndex = 5;
@@ -427,34 +409,6 @@ namespace CompanyManager
             this.label1.TabIndex = 13;
             this.label1.Text = "      설비";
             // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button5.Location = new System.Drawing.Point(1116, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 23);
-            this.button5.TabIndex = 14;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1025, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "    Excel등록";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // lblMgradeN
             // 
             this.lblMgradeN.AutoSize = true;
@@ -465,56 +419,39 @@ namespace CompanyManager
             this.lblMgradeN.TabIndex = 27;
             this.lblMgradeN.Visible = false;
             // 
-            // label6
+            // btnExcelExport
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(247, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 14);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "* 상위시설";
+            this.btnExcelExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelExport.Location = new System.Drawing.Point(572, 3);
+            this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
+            this.btnExcelExport.TabIndex = 32;
+            this.btnExcelExport.Text = "    엑셀";
+            this.btnExcelExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelExport.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Click += new System.EventHandler(this.btnExcelExport_Click);
             // 
-            // cboParent
+            // btnExcelExport1
             // 
-            this.cboParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboParent.FormattingEnabled = true;
-            this.cboParent.Location = new System.Drawing.Point(324, 36);
-            this.cboParent.Name = "cboParent";
-            this.cboParent.Size = new System.Drawing.Size(176, 22);
-            this.cboParent.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(965, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(54, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "    엑셀";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(446, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnExcelExport1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelExport1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelExport1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelExport1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelExport1.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcelExport1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelExport1.Location = new System.Drawing.Point(1090, 3);
+            this.btnExcelExport1.Name = "btnExcelExport1";
+            this.btnExcelExport1.Size = new System.Drawing.Size(54, 23);
+            this.btnExcelExport1.TabIndex = 32;
+            this.btnExcelExport1.Text = "    엑셀";
+            this.btnExcelExport1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelExport1.UseVisualStyleBackColor = false;
+            this.btnExcelExport1.Click += new System.EventHandler(this.btnExcelExport1_Click);
             // 
             // FrmMachineGrade
             // 
@@ -544,13 +481,9 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dgvMachineGrade;
         private System.Windows.Forms.Button btnMGRegister;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnExcelImport;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvMachine;
         private System.Windows.Forms.Button btnMRegister;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cboUse;
         private System.Windows.Forms.TextBox txtUpEmp;
         private System.Windows.Forms.Label label8;
@@ -570,7 +503,7 @@ namespace CompanyManager
         private System.Windows.Forms.Label lblMgradeN;
         private System.Windows.Forms.ComboBox cboParent;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExcelExport;
+        private System.Windows.Forms.Button btnExcelExport1;
     }
 }

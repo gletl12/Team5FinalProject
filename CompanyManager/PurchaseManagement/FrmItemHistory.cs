@@ -72,7 +72,7 @@ namespace CompanyManager
         
         private void BindingDGV()
         {
-            list = service.GetIOList(dtpFrom.Value, dtpTo.Value);
+            list = service.GetIOList(dtpFrom.Value, dtpTo.Value.AddDays(1));
             dgvIO.DataSource = null;
             dgvIO.DataSource = list;
         }

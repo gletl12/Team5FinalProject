@@ -140,5 +140,10 @@ namespace CompanyManager
             dgvSO.DataSource = sResult;
             
         }
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvSO);
+        }
     }
 }

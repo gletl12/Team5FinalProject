@@ -28,7 +28,7 @@ namespace DAC
                 catch (Exception err)
                 {
                     conn.Close();
-                    Log.WriteError("DAC_StockByOrderDAC_GetMoveList() 오류", err);
+                    Log.WriteError("DAC_StockByOrderDAC_GetMoveList() 오류", err);                                                              
                     return new List<StockByOrderVO>();
                 }
 

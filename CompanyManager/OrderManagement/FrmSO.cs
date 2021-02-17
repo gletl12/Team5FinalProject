@@ -29,7 +29,6 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvSO, "WORK_ORDER_ID", "order_id", 120, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvSO, "업체", "company_id", 60);
             CommonUtil.AddGridTextColumn(dgvSO, "업체명", "company_name", 100);
-            CommonUtil.AddGridTextColumn(dgvSO, "도착지코드", "warehouse_id", 80);
             CommonUtil.AddGridTextColumn(dgvSO, "도착지명", "warehouse_name", 100);
             CommonUtil.AddGridTextColumn(dgvSO, "품목", "item_id", 80);
             CommonUtil.AddGridTextColumn(dgvSO, "품명", "item_name", 120);
