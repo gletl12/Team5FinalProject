@@ -100,6 +100,7 @@
             this.Name = "TitleBar";
             this.Size = new System.Drawing.Size(619, 33);
             this.Load += new System.EventHandler(this.TitleBar_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);

@@ -56,9 +56,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvPrice, "업체명", "company_name", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "품목", "item_id", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "품명", "item_name", 120);
-            CommonUtil.AddGridTextColumn(dgvPrice, "규격", "item_unit", 100);
-            CommonUtil.AddGridTextColumn(dgvPrice, "단위", "item_unit_qty", 80);
-            CommonUtil.AddGridTextColumn(dgvPrice, "Market", "CompanyName", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "단위", "item_unit", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "환종", "price_currency", 60);
             CommonUtil.AddGridTextColumn(dgvPrice, "현재단가", "now", 80);
             CommonUtil.AddGridTextColumn(dgvPrice, "이전단가", "before", 80);

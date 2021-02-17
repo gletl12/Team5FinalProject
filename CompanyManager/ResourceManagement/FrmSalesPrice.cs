@@ -35,19 +35,15 @@ namespace CompanyManager
             CommonUtil.SetDGVDesign_Num(dgvPrice);
             dgvPrice.RowHeadersVisible = true;
             CommonUtil.AddGridImageColumn(dgvPrice, Properties.Resources.Edit_16x16, "Edit", 40);
-            CommonUtil.AddGridTextColumn(dgvPrice, "업체", "company_id", 80);
-            CommonUtil.AddGridTextColumn(dgvPrice, "업체명", "company_name", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "품목", "item_id", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "품명", "item_name", 120);
-            CommonUtil.AddGridTextColumn(dgvPrice, "규격", "item_unit", 100);
-            CommonUtil.AddGridTextColumn(dgvPrice, "단위", "item_unit_qty", 80);
-            CommonUtil.AddGridTextColumn(dgvPrice, "Market", "CompanyName", 80);
+            CommonUtil.AddGridTextColumn(dgvPrice, "단위", "item_unit", 100);
             CommonUtil.AddGridTextColumn(dgvPrice, "환종", "price_currency", 60);
             CommonUtil.AddGridTextColumn(dgvPrice, "현재단가", "now", 80);
             CommonUtil.AddGridTextColumn(dgvPrice, "이전단가", "before", 80);
             CommonUtil.AddGridTextColumn(dgvPrice, "시작일", "price_sdate", 80);
             CommonUtil.AddGridTextColumn(dgvPrice, "종료일", "price_edate", 80);
-            CommonUtil.AddGridTextColumn(dgvPrice, "비고", "price_comment", 120);
+            CommonUtil.AddGridTextColumn(dgvPrice, "비고", "price_comment", 250);
 
             //자재단가 불러오기 , 그리드뷰에 바인딩
             GetPriceList();

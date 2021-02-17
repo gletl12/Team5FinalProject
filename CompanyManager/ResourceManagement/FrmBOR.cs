@@ -7,6 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 using VO;
+using System.IO;
+using System.Diagnostics;
+using Util;
 
 namespace CompanyManager
 {
@@ -261,6 +264,29 @@ namespace CompanyManager
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = result.ToList();
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "양식 다운로드";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy("../../ExcelForm/BOR등록양식.xlsx", dlg.FileName + ".xlsx");
+                    Process.Start(dlg.FileName + ".xlsx");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("다운로드중 오류가 발생하였습니다.\r\n 다시 시도하여 주십시오.");
+                }
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dataGridView1);
         }
     }
 }

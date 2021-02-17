@@ -43,7 +43,6 @@ namespace CompanyManager
             this.btnCopy = new System.Windows.Forms.Button();
             this.btbExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
@@ -177,7 +176,7 @@ namespace CompanyManager
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel.Image = global::CompanyManager.Properties.Resources.trash;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(947, 83);
+            this.btnDel.Location = new System.Drawing.Point(982, 83);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(56, 23);
             this.btnDel.TabIndex = 28;
@@ -194,7 +193,7 @@ namespace CompanyManager
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(1008, 83);
+            this.btnCopy.Location = new System.Drawing.Point(1043, 83);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(57, 23);
             this.btnCopy.TabIndex = 26;
@@ -211,7 +210,7 @@ namespace CompanyManager
             this.btbExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btbExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btbExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btbExcel.Location = new System.Drawing.Point(1070, 83);
+            this.btbExcel.Location = new System.Drawing.Point(1105, 83);
             this.btbExcel.Name = "btbExcel";
             this.btbExcel.Size = new System.Drawing.Size(55, 23);
             this.btbExcel.TabIndex = 27;
@@ -231,18 +230,6 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      SHIFT 관리";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1130, 83);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -251,7 +238,7 @@ namespace CompanyManager
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(886, 83);
+            this.btnAdd.Location = new System.Drawing.Point(921, 83);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 23);
             this.btnAdd.TabIndex = 18;
@@ -268,7 +255,6 @@ namespace CompanyManager
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btbExcel);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvShift);
@@ -284,7 +270,6 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label13;
