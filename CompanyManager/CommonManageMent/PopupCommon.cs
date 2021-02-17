@@ -511,6 +511,8 @@ namespace CompanyManager
             Service.MenuService service = new Service.MenuService();
             if(!service.AddMenuAccess(treeView1.SelectedNode.Text.Trim(), temp))
                 MessageBox.Show("메뉴권한 등록 중 오류가 발생했습니다.");
+            else
+                MessageBox.Show("적용되었습니다.");
         }
     }
 }
