@@ -196,7 +196,7 @@ namespace CompanyManager
                             company_ceo = row["company_ceo"].ToString(),
                             company_bnum = row["company_bnum"].ToString(),
                             company_btype = row["company_btype"].ToString(),
-                            company_manager = row["company_manager"].ToString(),
+                            company_manager = Convert.ToInt32(row["company_manager"].ToString()),
                             company_email = row["company_email"].ToString(),
                             company_phone = row["company_phone"].ToString(),
                             company_faxnum = row["company_faxnum"].ToString(),
