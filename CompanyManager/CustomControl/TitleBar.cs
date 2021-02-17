@@ -92,5 +92,10 @@ namespace CompanyManager
 
             }
         }
+
+        private void TitleBar_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            btnSize.PerformClick();
+        }
     }
 }

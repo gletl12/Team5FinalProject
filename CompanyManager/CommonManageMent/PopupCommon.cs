@@ -97,6 +97,7 @@ namespace CompanyManager
                 if (p.INFO.Trim().StartsWith("▶"))
                 {
                     tn = new TreeNode(p.INFO.Trim().Substring(1));
+                    tn.Tag = "Large";
                     treeView1.Nodes.Add(tn);
                 }
 
@@ -110,6 +111,7 @@ namespace CompanyManager
                         string[] names = T.SortName.Split('>');
                         tnc = new TreeNode(T.INFO.Trim().Substring(1));
                         tnc.Name = names[names.Length - 1];
+                        tnc.Tag = "Small";
                         if (names.Length == 2)
                             tn.Nodes.Add(tnc);
                         else
@@ -156,9 +158,6 @@ namespace CompanyManager
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            lbForm.Enabled = true;
-            btnLink.Enabled = true;
-
             //이전 노드 색상 원래대로
             if (selectedNdoe != null)
             {
@@ -172,6 +171,45 @@ namespace CompanyManager
             e.Node.ForeColor = Color.White;
 
 
+
+            //대메뉴 클릭시
+            if (e.Node.Tag.ToString() == "Large")
+            {
+                clbdept.Enabled = true;
+                btndeptadd.Enabled = true;
+                lbForm.Enabled = false;
+                btnLink.Enabled = false;
+
+                for (int i = 0; i < clbdept.Items.Count; i++)
+                {
+                    clbdept.SetItemChecked(i, false);
+                }
+
+                Service.MenuService service = new Service.MenuService();
+                List<int> dept = service.GetMenuAccess(e.Node.Text.Trim());
+
+
+                for (int i = 0; i < clbdept.Items.Count; i++)
+                {
+                    foreach (int no in dept)
+                    {
+                        if(((DeptVO)clbdept.Items[i]).dept_id == no)
+                        {
+                            clbdept.SetItemChecked(i, true);
+                        }
+                    }
+                    
+                } 
+
+                return;
+            }
+
+            clbdept.Enabled = false;
+            btndeptadd.Enabled = false;
+            lbForm.Enabled = true;
+            btnLink.Enabled = true;
+
+            
             //폼 연결되있으면 리스트박스에서 선택
             MenuVO menu = menuAllList.Find(p => p.SortName.Split('>')[p.SortName.Split('>').Length - 1].Equals(treeView1.SelectedNode.Text.Trim()));
             if (menu == null||menu.FormName == null)
@@ -460,6 +498,21 @@ namespace CompanyManager
             //    clbdept.SetItemChecked(clbdept.SelectedIndex, true);
             //else
             //    clbdept.SetItemChecked(clbdept.SelectedIndex, false);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<int> temp = new System.Collections.Generic.List<int>();
+
+            foreach (DeptVO vo in clbdept.CheckedItems)
+            {
+                temp.Add(vo.dept_id);
+            }
+            Service.MenuService service = new Service.MenuService();
+            if(!service.AddMenuAccess(treeView1.SelectedNode.Text.Trim(), temp))
+                MessageBox.Show("메뉴권한 등록 중 오류가 발생했습니다.");
+            else
+                MessageBox.Show("적용되었습니다.");
         }
     }
 }

@@ -83,6 +83,99 @@ namespace DAC
                 return false;
             }
         }
+
+        //메뉴접근권한정보를 등록한다.
+        public bool AddMenuAccess(string menuName, List<int> deptlist)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+                
+
+
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Transaction = trans;
+                    cmd.Connection = conn;
+                    cmd.CommandText = "delete from TBL_MENU_ACCESS where Menu_id = (select MenuID from Menu where Name = @menuName);";
+                    cmd.Parameters.Add("@menuName", System.Data.SqlDbType.NVarChar);
+                    cmd.Parameters["@menuName"].Value = menuName;
+                    cmd.ExecuteNonQuery();
+
+
+                    cmd.CommandText = "SP_AddMenuAccess";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    
+                    cmd.Parameters.Add("@dept_id",System.Data.SqlDbType.Int);
+                   
+                    
+
+                    
+
+                    int result = 0;
+                    foreach (int deptid in deptlist)
+                    {
+                        cmd.Parameters["@dept_id"].Value = deptid;
+                        result += cmd.ExecuteNonQuery();
+                    }
+
+
+                    trans.Commit();
+                    Dispose();
+
+
+                    return true;
+
+                }
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_AddMenuAccess() 오류", err);
+
+                return false;
+            }
+        }
+
+        public List<int> GetMenuAccess(string menuName)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "select Dept_id from TBL_MENU_ACCESS where Menu_id = (select MenuID from Menu where Name = @menuName)";
+                    cmd.Parameters.AddWithValue("@menuName", menuName);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Connection = conn;
+
+                    List<int> temp = new List<int>();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        temp.Add(Convert.ToInt32(dr[0]));
+                    }
+                    Dispose();
+
+
+
+                    return temp;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("DAC_MenuDAC_GetMenuAccess() 오류", err);
+
+                return new List<int>();
+            }
+        }
+
         public bool MenuDownOrder(string menuName)
         {
             SqlTransaction trans = conn.BeginTransaction();

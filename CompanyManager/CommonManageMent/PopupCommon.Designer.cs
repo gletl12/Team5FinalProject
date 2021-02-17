@@ -31,12 +31,12 @@ namespace CompanyManager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopupCommon));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clbdept = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btndeptadd = new System.Windows.Forms.Button();
             this.btnSmallMenu = new System.Windows.Forms.Button();
             this.btnLink = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@ namespace CompanyManager
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.tabPage1.Controls.Add(this.clbdept);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btndeptadd);
             this.tabPage1.Controls.Add(this.btnSmallMenu);
             this.tabPage1.Controls.Add(this.btnLink);
             this.tabPage1.Controls.Add(this.btnDown);
@@ -103,6 +103,7 @@ namespace CompanyManager
             // 
             // clbdept
             // 
+            this.clbdept.Enabled = false;
             this.clbdept.FormattingEnabled = true;
             this.clbdept.Location = new System.Drawing.Point(663, 62);
             this.clbdept.Name = "clbdept";
@@ -111,20 +112,22 @@ namespace CompanyManager
             this.clbdept.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clbdept_MouseClick);
             this.clbdept.SelectedIndexChanged += new System.EventHandler(this.clbdept_SelectedIndexChanged);
             // 
-            // button1
+            // btndeptadd
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(799, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "적용";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btndeptadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btndeptadd.Enabled = false;
+            this.btndeptadd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btndeptadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndeptadd.Image = global::CompanyManager.Properties.Resources.Apply_16x16;
+            this.btndeptadd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndeptadd.Location = new System.Drawing.Point(799, 31);
+            this.btndeptadd.Name = "btndeptadd";
+            this.btndeptadd.Size = new System.Drawing.Size(56, 23);
+            this.btndeptadd.TabIndex = 35;
+            this.btndeptadd.Text = "적용";
+            this.btndeptadd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btndeptadd.UseVisualStyleBackColor = false;
+            this.btndeptadd.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSmallMenu
             // 
@@ -314,14 +317,14 @@ namespace CompanyManager
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(48, 63);
             this.dataGridView1.Name = "dataGridView1";
@@ -367,7 +370,7 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btndeptadd;
         private System.Windows.Forms.CheckedListBox clbdept;
     }
 }
