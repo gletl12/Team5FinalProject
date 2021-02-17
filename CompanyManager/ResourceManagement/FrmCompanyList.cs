@@ -63,7 +63,7 @@ namespace CompanyManager
             List<CodeVO> temp = (from code in combobox
                                  where code.category == "VENDOR_TYPE"
                                  select code).ToList();
-            temp.Insert(0, new CodeVO { code = "", name = "" });
+            temp.Insert(0, new CodeVO { code = "", name = "전체" });
             cboCompanyType.DataSource = temp;
 
             cboBtype.DisplayMember = "name";
@@ -71,7 +71,7 @@ namespace CompanyManager
             List<CodeVO> temp1 = (from code in combobox
                                  where code.category == "BUSINESS_TYPE"
                                  select code).ToList();
-            temp1.Insert(0, new CodeVO { code = "", name = "" });
+            temp1.Insert(0, new CodeVO { code = "", name = "전체" });
             cboBtype.DataSource = temp1;
         }
 
@@ -96,8 +96,8 @@ namespace CompanyManager
                                         where company_id.company_name.Contains($"{txtCName.Text}") &&
                                               (txtBNum.Text.Length < 10 ||
                                               company_id.company_bnum.Equals(string.Concat($"{txtBNum.Text.Substring(0, 3)}-{txtBNum.Text.Substring(3, 2)}-{txtBNum.Text.Substring(5)}"))) &&
-                                              (cboBtype.SelectedValue.ToString().Length < 1 || company_id.company_btype.Equals(cboBtype.SelectedValue.ToString())) &&
-                                              (cboCompanyType.SelectedValue.ToString().Length < 1 || company_id.company_type.Equals(cboCompanyType.SelectedValue.ToString()))
+                                              (cboBtype.SelectedValue.ToString().Equals("전체") || company_id.company_btype.Equals(cboBtype.SelectedValue.ToString())) &&
+                                              (cboCompanyType.SelectedValue.ToString().Equals("전체") || company_id.company_type.Equals(cboCompanyType.SelectedValue.ToString()))
                                         select company_id).ToList();
                 dgvCompany.DataSource = temp;
                 dgvCompany.ClearSelection();

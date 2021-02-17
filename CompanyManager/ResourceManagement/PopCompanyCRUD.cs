@@ -68,7 +68,7 @@ namespace CompanyManager
                 MessageBox.Show("사업자 등록 번호를 확인해주세요.");
                 return;
             }
-            else
+            else if(txtBNum.Text.Length == 11)
                 vo.company_bnum = string.Concat($"{txtBNum.Text.Substring(0, 3)}-{txtBNum.Text.Substring(3, 2)}-{txtBNum.Text.Substring(5)}");
 
             if (upflag)
@@ -209,7 +209,7 @@ namespace CompanyManager
 
         private void txtBNum_Leave(object sender, EventArgs e)
         {
-            if (txtBNum.Text.Length < 10)
+            if (txtBNum.Text.Length < 10 && txtBNum.Text.Length > 0)
                 MessageBox.Show("사업자등록번호 10자리를 입력해주세요.");
         }
     }

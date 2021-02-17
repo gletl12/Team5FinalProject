@@ -223,7 +223,7 @@ namespace CompanyManager
                            select bom;
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = temp.ToList();
-
+                dataGridView1.Columns["level"].Visible = false;
             }
             else
             {
@@ -235,6 +235,7 @@ namespace CompanyManager
                            select bom;
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = temp.ToList();
+                dataGridView1.Columns["level"].Visible = true;
             }
         }
 

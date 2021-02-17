@@ -18,6 +18,7 @@ namespace DAC
                 string sql = @"select * from (select factory_id, factory_grade,factory_type, factory_name, factory_parent, c.name as factory_use, 
                                                      convert(nvarchar(max),factory_comment) as factory_comment, up_date, up_emp, '공장'as codename
                                               from TBL_FACTORY f join TBL_COMMON_CODE c on f.factory_use = c.code
+
                                               UNION
                                               select warehouse_id, '창고'as code, c.name as factory_type, warehouse_name, f.factory_name, o.name as factory_use, 
                                                      convert(nvarchar(max),w.factory_comment) as factory_comment, w.up_date, w.up_emp, '창고'as codename

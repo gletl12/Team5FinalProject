@@ -94,7 +94,7 @@ namespace CompanyManager
             if (whflag)
                 cboParent.SelectedIndex = FindSelectedIndex(cboParent, vo.factory_parent);
             else
-                txtFParent.Text = vo.factory_parent;
+                cboFParent.SelectedIndex = FindSelectedIndex(cboFParent,vo.factory_parent);
             cboFType.SelectedIndex = FindSelectedIndex2(cboFType,vo.factory_type);
             txtFName.Text = vo.factory_name;
             cboFUse.SelectedIndex = FindSelectedIndex2(cboFUse, vo.factory_use);
@@ -142,6 +142,15 @@ namespace CompanyManager
                                      select factory_id).ToList();
             temp1.Insert(0, new FactoryVO { factory_name = "", factory_id = 0 });
             cboParent.DataSource = temp1;
+
+            cboFParent.DisplayMember = "factory_name";
+            cboFParent.ValueMember = "factory_name";
+
+            List<FactoryVO> temp2 = (from factory_id in combobox1
+                                     where factory_id.codename == "공장" && factory_id.factory_grade == "회사"
+                                     select factory_id).ToList();
+            temp1.Insert(0, new FactoryVO { factory_name = "", factory_id = 0 });
+            cboFParent.DataSource = temp2;
         }
 
         private void btnCRU_Click(object sender, EventArgs e)
@@ -161,7 +170,7 @@ namespace CompanyManager
             }
             else if (cboFGrade.SelectedIndex == 2)
             {
-                if (cboFUse.SelectedIndex < 1 || txtFParent.Text.Length < 1 || txtFName.Text.Length < 1)
+                if (cboFUse.SelectedIndex < 1 || cboFParent.SelectedIndex < 1 || txtFName.Text.Length < 1)
                 {
                     MessageBox.Show("필수 입력 정보를 확인해주세요.");
                     return;
@@ -185,14 +194,18 @@ namespace CompanyManager
                 FactoryVO fvo = new FactoryVO
                 {
                     factory_grade = cboFGrade.SelectedValue.ToString(),
-                    factory_parent = txtFParent.Text,
                     factory_name = txtFName.Text,
                     up_emp = logininfo.emp_id,
                     up_date = DateTime.Now,
                     factory_use = cboFUse.SelectedValue.ToString(),
                     factory_comment = txtComment.Text
                 };
-
+                if (cboFParent.Enabled)
+                {
+                    fvo.factory_parent = cboFParent.SelectedValue.ToString();
+                }
+                else
+                    fvo.factory_parent = "없음";
                 if (cboFType.Enabled)
                     fvo.factory_type = cboFType.SelectedValue.ToString();
                 else
@@ -295,17 +308,26 @@ namespace CompanyManager
             {
                 cboFType.Enabled = true;
                 cboParent.Enabled = true;
-                txtFParent.Enabled = false;
-                txtFParent.Visible = false;
+                cboFParent.Enabled = false;
+                cboFParent.Visible = false;
                 cboParent.Visible = true;
+            }
+            else if(cboFGrade.SelectedValue.ToString() == "공장")
+            {
+                cboParent.Enabled = false;
+                cboFType.Enabled = false;
+                cboFParent.Enabled = true;
+                cboFParent.Visible = true;
+                cboParent.Visible = false;
             }
             else
             {
                 cboParent.Enabled = false;
                 cboFType.Enabled = false;
-                txtFParent.Enabled = true;
-                txtFParent.Visible = true;
+                cboFParent.Enabled = false;
+                cboFParent.Visible = true;
                 cboParent.Visible = false;
+
             }
         }
     }
