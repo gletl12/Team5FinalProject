@@ -31,12 +31,12 @@ namespace Mvc.DAC
 
         public List<OrderStats> GetOrderBestProduct()
         {
-            string sql = @"select sum(Quantity) Qty, Month(OrderDate) MM, ProductName
-                           from orders o inner join [Order Details] od on o.OrderID = od.OrderID
-                           				inner join Products p on od.ProductID = p.ProductID
-                           where orderdate between '1997-01-01' and '1997-12-31'
-                              and od.ProductID in (56,59,60)
-                           group by Month(OrderDate), od.ProductID, ProductName";
+            string sql = @"
+    select sum(SQty) as Qty, Month(CloseDate) MM, item_name as ProductName
+                           from Salescloselist  
+                           where CloseDate between '2022-12-01' and '2024-02-18'
+                              
+                           group by Month(CloseDate), item_name";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {

@@ -11,7 +11,7 @@ namespace Mvc.Controllers
 {
     public class ChartController : Controller
     {
-        // GET: Chart
+       //  GET: Chart
         public ActionResult Index()
         {
             //주문데이터를 조회해서 제일 많이 팔리는 상품3개의 판매정보를 데이터로 바인딩
