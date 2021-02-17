@@ -33,5 +33,11 @@ namespace Service
             CompanyDAC dac = new CompanyDAC();
             return dac.DeleteCompany(company_id);
         }
+
+        public bool ExcelImportCompany(List<CompanyVO> temp)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.ExcelImportCompany(temp);
+        }
     }
 }

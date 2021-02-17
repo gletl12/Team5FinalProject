@@ -59,5 +59,17 @@ namespace Service
             FactoryDAC dac = new FactoryDAC();
             return dac.DeleteWareHouse(fid);
         }
+
+        public bool ExcelImportFactory(List<FactoryVO> temp)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.ExcelImportFactory(temp);
+        }
+
+        public bool ExcelImportWareHouse(List<FactoryVO> temp)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.ExcelImportWareHouse(temp);
+        }
     }
 }

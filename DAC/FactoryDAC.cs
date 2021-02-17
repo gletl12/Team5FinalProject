@@ -44,7 +44,7 @@ namespace DAC
             }
         }
 
-        
+
         public bool DeleteFactory(int fid)
         {
             try
@@ -118,9 +118,9 @@ namespace DAC
             try
             {
                 string sql = @"insert into TBL_FACTORY (factory_grade, factory_type, factory_name, factory_parent, factory_use,
-                                                        factory_comment,  ins_emp,  up_emp)
+                                                        factory_comment,  ins_emp, up_date,  up_emp)
                                values(@factory_grade, @factory_type, @factory_name, @factory_parent, 
-                                      @factory_use, @factory_comment, @ins_emp, @up_emp)";
+                                      @factory_use, @factory_comment, @ins_emp, @up_date, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@factory_grade", vo.factory_grade);
@@ -131,6 +131,7 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@factory_comment", vo.factory_comment);
                     cmd.Parameters.AddWithValue("@ins_emp", vo.up_emp);
                     cmd.Parameters.AddWithValue("@up_emp", vo.up_emp);
+                    cmd.Parameters.AddWithValue("@up_date", vo.up_date);
 
                     int iRows = cmd.ExecuteNonQuery();
                     Dispose();
@@ -311,7 +312,110 @@ namespace DAC
                 return false;
             }
         }
+        public bool ExcelImportFactory(List<FactoryVO> temp)
+        {
+            try
+            {
+                string sql = @"insert into TBL_FACTORY (factory_grade, factory_type, factory_name, factory_parent, factory_use,
+                                                        factory_comment,  ins_emp, up_date,  up_emp)
+                               values(@factory_grade, @factory_type, @factory_name, @factory_parent, 
+                                      @factory_use, @factory_comment, @ins_emp, @up_date, @up_emp)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    int cnt = 0;
+                    cmd.Parameters.Add("@factory_grade", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_type", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_name", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_parent", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_use", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_comment", SqlDbType.Text);
+                    cmd.Parameters.Add("@ins_emp", SqlDbType.Int);
+                    cmd.Parameters.Add("@up_date", SqlDbType.DateTime);
+                    cmd.Parameters.Add("@up_emp", SqlDbType.Int);
 
+                    for (int i = 0; i < temp.Count; i++)
+                    {
+                        cmd.Parameters["@factory_grade"].Value = temp[i].factory_grade;
+                        cmd.Parameters["@factory_type"].Value = temp[i].factory_type;
+                        cmd.Parameters["@factory_name"].Value = temp[i].factory_name;
+                        cmd.Parameters["@factory_parent"].Value = temp[i].factory_parent;
+                        cmd.Parameters["@factory_use"].Value = temp[i].factory_use;
+                        cmd.Parameters["@factory_comment"].Value = temp[i].factory_comment;
+                        cmd.Parameters["@ins_emp"].Value = temp[i].up_emp;
+                        cmd.Parameters["@up_date"].Value = temp[i].up_date;
+                        cmd.Parameters["@up_emp"].Value = temp[i].up_emp;
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+                    
+                    Dispose();
+                    if (cnt == temp.Count)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("FactoryDAC_ExcelImportFactory() 오류", err);
+
+                return false;
+            }
+        }
+        public bool ExcelImportWareHouse(List<FactoryVO> temp)
+        {
+            try
+            {
+                string sql = @"insert into TBL_WAREHOUSE (warehouse_type, warehouse_name, factory_id, factory_use, 
+                                                          factory_comment, ins_emp, up_date, up_emp)
+                               values(@warehouse_type, @warehouse_name, @factory_id, @factory_use, 
+                                      @factory_comment, @ins_emp, @up_date, @up_emp)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    int cnt = 0;
+                    cmd.Parameters.Add("@warehouse_type", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@warehouse_name", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_id", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_use", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@factory_comment", SqlDbType.Text);
+                    cmd.Parameters.Add("@ins_emp", SqlDbType.Int);
+                    cmd.Parameters.Add("@up_date", SqlDbType.DateTime);
+                    cmd.Parameters.Add("@up_emp", SqlDbType.Int);
+
+                    for (int i = 0; i < temp.Count; i++)
+                    {
+                        cmd.Parameters["@warehouse_type"].Value = temp[i].factory_type;
+                        cmd.Parameters["@warehouse_name"].Value = temp[i].factory_name;
+                        cmd.Parameters["@factory_id"].Value = temp[i].factory_parent;
+                        cmd.Parameters["@factory_use"].Value = temp[i].factory_use;
+                        cmd.Parameters["@factory_comment"].Value = temp[i].factory_comment;
+                        cmd.Parameters["@ins_emp"].Value = temp[i].up_emp;
+                        cmd.Parameters["@up_date"].Value = temp[i].up_date;
+                        cmd.Parameters["@up_emp"].Value = temp[i].up_emp;
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+
+                    Dispose();
+                    if (cnt == temp.Count)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("FactoryDAC_ExcelImportWareHouse() 오류", err);
+
+                return false;
+            }
+        }
 
     }
 }

@@ -68,9 +68,9 @@ namespace POP
             }
             else
             {
-                txtID.Text = "";
-                txtPassWord.Text = "";
-                this.Hide();
+                //txtID.Text = "";
+                //txtPassWord.Text = "";
+                //this.Hide();
                 FrmMain2 main = new FrmMain2(employee);
                 main.Show();
             }

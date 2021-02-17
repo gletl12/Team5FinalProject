@@ -125,7 +125,7 @@ namespace CompanyManager
             // 
             this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(771, 16);
+            this.cboCompany.Location = new System.Drawing.Point(771, 18);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(223, 22);
             this.cboCompany.TabIndex = 4;
@@ -134,7 +134,7 @@ namespace CompanyManager
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(365, 17);
+            this.label11.Location = new System.Drawing.Point(364, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 14);
             this.label11.TabIndex = 3;
@@ -144,7 +144,7 @@ namespace CompanyManager
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(713, 19);
+            this.label12.Location = new System.Drawing.Point(713, 21);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 14);
             this.label12.TabIndex = 3;
@@ -162,7 +162,7 @@ namespace CompanyManager
             // txtItem
             // 
             this.txtItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtItem.Location = new System.Drawing.Point(428, 15);
+            this.txtItem.Location = new System.Drawing.Point(427, 19);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(223, 21);
             this.txtItem.TabIndex = 2;
@@ -172,7 +172,7 @@ namespace CompanyManager
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(365, 14);
+            this.label15.Location = new System.Drawing.Point(364, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;
@@ -183,7 +183,7 @@ namespace CompanyManager
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label16.Location = new System.Drawing.Point(712, 16);
+            this.label16.Location = new System.Drawing.Point(712, 18);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 14);
             this.label16.TabIndex = 1;

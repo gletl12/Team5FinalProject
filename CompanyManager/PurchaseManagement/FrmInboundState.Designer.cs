@@ -151,7 +151,6 @@ namespace CompanyManager
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(183, 17);
             this.label1.Name = "label1";
@@ -177,7 +176,6 @@ namespace CompanyManager
             // 
             // txtPurchasesID
             // 
-            this.txtPurchasesID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPurchasesID.Location = new System.Drawing.Point(86, 45);
             this.txtPurchasesID.Name = "txtPurchasesID";
             this.txtPurchasesID.Size = new System.Drawing.Size(210, 21);

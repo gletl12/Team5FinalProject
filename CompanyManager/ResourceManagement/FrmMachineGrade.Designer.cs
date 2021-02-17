@@ -35,9 +35,8 @@ namespace CompanyManager
             this.btnMGDelete = new System.Windows.Forms.Button();
             this.dgvMachineGrade = new System.Windows.Forms.DataGridView();
             this.btnMGRegister = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnExcelImport = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.pnlMGrade = new System.Windows.Forms.Panel();
             this.cboUse = new System.Windows.Forms.ComboBox();
@@ -57,10 +56,13 @@ namespace CompanyManager
             this.dgvMachine = new System.Windows.Forms.DataGridView();
             this.btnMRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.lblMgradeN = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboParent = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,7 +88,7 @@ namespace CompanyManager
             this.splitContainer1.Panel1.Controls.Add(this.btnMGRegister);
             this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.button10);
+            this.splitContainer1.Panel1.Controls.Add(this.btnExcelImport);
             this.splitContainer1.Panel1.Controls.Add(this.button9);
             this.splitContainer1.Panel1.Controls.Add(this.pnlMGrade);
             // 
@@ -160,22 +162,6 @@ namespace CompanyManager
             this.btnMGRegister.UseVisualStyleBackColor = false;
             this.btnMGRegister.Click += new System.EventHandler(this.btnMGRegister_Click);
             // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(446, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -187,21 +173,22 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      설비군";
             // 
-            // button10
+            // btnExcelImport
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(506, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 23);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "    Excel등록";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnExcelImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelImport.Location = new System.Drawing.Point(506, 3);
+            this.btnExcelImport.Name = "btnExcelImport";
+            this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
+            this.btnExcelImport.TabIndex = 4;
+            this.btnExcelImport.Text = "    Excel등록";
+            this.btnExcelImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelImport.UseVisualStyleBackColor = false;
+            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
             // 
             // button9
             // 
@@ -221,6 +208,7 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             this.pnlMGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMGrade.Controls.Add(this.cboParent);
             this.pnlMGrade.Controls.Add(this.cboUse);
             this.pnlMGrade.Controls.Add(this.label5);
             this.pnlMGrade.Controls.Add(this.btnCencel);
@@ -231,6 +219,7 @@ namespace CompanyManager
             this.pnlMGrade.Controls.Add(this.txtMGCode);
             this.pnlMGrade.Controls.Add(this.txtMGName);
             this.pnlMGrade.Controls.Add(this.txtComment);
+            this.pnlMGrade.Controls.Add(this.label6);
             this.pnlMGrade.Controls.Add(this.label3);
             this.pnlMGrade.Controls.Add(this.lblMGrade);
             this.pnlMGrade.Controls.Add(this.label4);
@@ -244,7 +233,7 @@ namespace CompanyManager
             // 
             this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
-            this.cboUse.Location = new System.Drawing.Point(94, 39);
+            this.cboUse.Location = new System.Drawing.Point(94, 36);
             this.cboUse.Name = "cboUse";
             this.cboUse.Size = new System.Drawing.Size(140, 22);
             this.cboUse.TabIndex = 3;
@@ -277,10 +266,10 @@ namespace CompanyManager
             // 
             // txtUpEmp
             // 
-            this.txtUpEmp.Location = new System.Drawing.Point(324, 39);
+            this.txtUpEmp.Location = new System.Drawing.Point(94, 62);
             this.txtUpEmp.Name = "txtUpEmp";
             this.txtUpEmp.ReadOnly = true;
-            this.txtUpEmp.Size = new System.Drawing.Size(176, 21);
+            this.txtUpEmp.Size = new System.Drawing.Size(140, 21);
             this.txtUpEmp.TabIndex = 4;
             // 
             // btnMGCRU
@@ -313,7 +302,7 @@ namespace CompanyManager
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(247, 42);
+            this.label8.Location = new System.Drawing.Point(13, 66);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 14);
             this.label8.TabIndex = 26;
@@ -335,17 +324,17 @@ namespace CompanyManager
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(16, 87);
+            this.txtComment.Location = new System.Drawing.Point(16, 110);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(484, 104);
+            this.txtComment.Size = new System.Drawing.Size(484, 91);
             this.txtComment.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(13, 42);
+            this.label3.Location = new System.Drawing.Point(13, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 14);
             this.label3.TabIndex = 29;
@@ -365,7 +354,7 @@ namespace CompanyManager
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(13, 70);
+            this.label4.Location = new System.Drawing.Point(13, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 14);
             this.label4.TabIndex = 27;
@@ -438,22 +427,6 @@ namespace CompanyManager
             this.label1.TabIndex = 13;
             this.label1.Text = "      설비";
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(965, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(54, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "    엑셀";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -492,6 +465,57 @@ namespace CompanyManager
             this.lblMgradeN.TabIndex = 27;
             this.lblMgradeN.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(247, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 14);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "* 상위시설";
+            // 
+            // cboParent
+            // 
+            this.cboParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboParent.FormattingEnabled = true;
+            this.cboParent.Location = new System.Drawing.Point(324, 36);
+            this.cboParent.Name = "cboParent";
+            this.cboParent.Size = new System.Drawing.Size(176, 22);
+            this.cboParent.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(965, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(54, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "    엑셀";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(446, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(54, 23);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "    엑셀";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button12.UseVisualStyleBackColor = false;
+            // 
             // FrmMachineGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -519,14 +543,12 @@ namespace CompanyManager
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvMachineGrade;
         private System.Windows.Forms.Button btnMGRegister;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnExcelImport;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvMachine;
         private System.Windows.Forms.Button btnMRegister;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cboUse;
@@ -546,5 +568,9 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnMGDelete;
         private System.Windows.Forms.Button btnMDelete;
         private System.Windows.Forms.Label lblMgradeN;
+        private System.Windows.Forms.ComboBox cboParent;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button2;
     }
 }
