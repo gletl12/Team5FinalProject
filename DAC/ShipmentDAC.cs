@@ -53,7 +53,7 @@ namespace DAC
                             from TBL_SO_MASTER SO JOIN TBL_DEMAND_PLAN D ON D.so_id = SO.so_id
                             					  JOIN TBL_COMPANY C ON C.company_id = SO.company_id
                             					  JOIN TBL_ITEM I ON I.item_id = SO.item_id
-                            					  JOIN TBL_WAREHOUSE W ON SO.warehouse_id = W.warehouse_id
+                            					  LEFT JOIN TBL_WAREHOUSE W ON SO.warehouse_id = W.warehouse_id
                             					  JOIN TBL_SHIPMENT S ON S.plan_id = D.plan_id
                             where ship_date>=@from and ship_date<=@to";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
