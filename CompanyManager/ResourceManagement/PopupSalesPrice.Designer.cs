@@ -33,7 +33,6 @@ namespace CompanyManager
             this.cboCurrency = new System.Windows.Forms.ComboBox();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.cboMarket = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBeforePrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@ namespace CompanyManager
             this.label11 = new System.Windows.Forms.Label();
             this.txtNowPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -65,7 +63,7 @@ namespace CompanyManager
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(224, 416);
+            this.btnSave.Location = new System.Drawing.Point(224, 378);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 30);
             this.btnSave.TabIndex = 10;
@@ -100,15 +98,6 @@ namespace CompanyManager
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(192, 21);
             this.dtpStartDate.TabIndex = 9;
-            // 
-            // cboMarket
-            // 
-            this.cboMarket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMarket.FormattingEnabled = true;
-            this.cboMarket.Location = new System.Drawing.Point(99, 152);
-            this.cboMarket.Name = "cboMarket";
-            this.cboMarket.Size = new System.Drawing.Size(192, 22);
-            this.cboMarket.TabIndex = 7;
             // 
             // label8
             // 
@@ -179,7 +168,7 @@ namespace CompanyManager
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(99, 193);
+            this.txtComment.Location = new System.Drawing.Point(99, 154);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(502, 135);
@@ -189,7 +178,7 @@ namespace CompanyManager
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(16, 197);
+            this.label11.Location = new System.Drawing.Point(16, 158);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 14);
             this.label11.TabIndex = 3;
@@ -212,16 +201,6 @@ namespace CompanyManager
             this.label3.TabIndex = 3;
             this.label3.Text = "* 현재단가";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(16, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 14);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "* Market";
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -231,7 +210,7 @@ namespace CompanyManager
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(315, 416);
+            this.button1.Location = new System.Drawing.Point(315, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
             this.button1.TabIndex = 9;
@@ -244,7 +223,6 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.cboCurrency);
             this.panel1.Controls.Add(this.cboItem);
             this.panel1.Controls.Add(this.dtpStartDate);
-            this.panel1.Controls.Add(this.cboMarket);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtBeforePrice);
             this.panel1.Controls.Add(this.label6);
@@ -256,16 +234,15 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtNowPrice);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 350);
+            this.panel1.Size = new System.Drawing.Size(627, 313);
             this.panel1.TabIndex = 8;
             // 
             // PopupSalesPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(628, 458);
+            this.ClientSize = new System.Drawing.Size(628, 420);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -287,7 +264,6 @@ namespace CompanyManager
         private System.Windows.Forms.ComboBox cboCurrency;
         private System.Windows.Forms.ComboBox cboItem;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.ComboBox cboMarket;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBeforePrice;
         private System.Windows.Forms.Label label6;
@@ -299,7 +275,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNowPrice;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
     }

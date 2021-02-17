@@ -21,6 +21,8 @@ namespace CompanyManager
         List<CompanyCodeVO> companys = new List<CompanyCodeVO>();
         List<PriceVO> price = new List<PriceVO>();
         public string ItemID = string.Empty;
+        string companyName, itemName, currency;
+        bool IsEdit = false;
 
         public PopupItemPrice(List<PriceVO> price, List<CompanyCodeVO> company)
         {
@@ -32,16 +34,18 @@ namespace CompanyManager
         public PopupItemPrice(string companyName, string itemName, string currency, decimal before)
         {
             InitializeComponent();
+            cboCompany.Enabled = cboItem.Enabled = cboCurrency.Enabled = txtBeforePrice.Enabled = false;
+            cboCompany.DropDownStyle = cboItem.DropDownStyle = ComboBoxStyle.DropDown;
             cboCompany.Text = companyName;
             cboItem.Text = itemName;
             cboCurrency.Text = currency;
             txtBeforePrice.Text = before.ToString();
-            cboCompany.Enabled = cboItem.Enabled = cboCurrency.Enabled = txtBeforePrice.Enabled = false;
+            IsEdit = true;
         }
 
         private void PopupItemPrice_Load(object sender, EventArgs e)
         {
-            if (ItemID.Length >0)
+            if (ItemID.Length > 0 || IsEdit)
                 return;
             //콤보박스 바인딩
             CommonUtil.BindingComboBox(cboCompany, companys, "company_id", "company_name");
@@ -59,8 +63,10 @@ namespace CompanyManager
 
         private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (IsEdit)
+                return;
             cboItem.DataSource = null;
-            if (ItemID.Length>0)
+            if (ItemID.Length > 0)
                 return;
             if (string.IsNullOrEmpty(cboCompany.Text))
                 return;
@@ -75,7 +81,8 @@ namespace CompanyManager
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ItemID.Length >0)
+
+            if (ItemID.Length > 0 || IsEdit)
                 return;
             decimal before = 0;
             try
@@ -104,13 +111,13 @@ namespace CompanyManager
             PriceVO newPrice = new PriceVO
             {
                 now = Convert.ToDecimal(txtNowPrice.Text),
-                item_id = ItemID.Length < 1 ?cboItem.SelectedValue.ToString():ItemID,
+                item_id = ItemID.Length < 1 ? cboItem.SelectedValue.ToString() : ItemID,
                 price_sdate = dtpStartDate.Value,
                 price_comment = txtComment.Text,
                 price_type = "PT001",
                 price_currency = cboCurrency.Text
             };
-            ApiMessage msg = service.PostApiCallerNone<PriceVO>($"{url}InsUpPrice",newPrice);
+            ApiMessage msg = service.PostApiCallerNone<PriceVO>($"{url}InsUpPrice", newPrice);
 
             MessageBox.Show(msg.ResultMessage);
 
