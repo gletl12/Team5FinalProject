@@ -164,5 +164,81 @@ namespace CompanyManager
                     MessageBox.Show("삭제에 실패하였습니다.");
             }
         }
+
+        private void btnExcelImport_Click(object sender, EventArgs e)
+        {
+            (DataTable, string) data = Util.CommonExcel.ReadExcelData();
+            //제대로된 파일을 읽어 왔고 데이터가 있다면
+            if (!string.IsNullOrEmpty(data.Item2) && data.Item1.Rows.Count > 0)
+            {
+                List<CompanyVO> temp = new List<CompanyVO>();
+
+                foreach (DataRow row in data.Item1.Rows)
+                {
+                    #region 유효성검사
+                    if (string.IsNullOrEmpty(row["company_name"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["company_type"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["company_btype"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["company_manager"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["company_use"].ToString()))
+                        continue;
+                    #endregion
+                    try
+                    {
+                        CompanyVO vo = new CompanyVO
+                        {
+                            company_name = row["company_name"].ToString(),
+                            company_type = row["company_type"].ToString(),
+                            company_ceo = row["company_ceo"].ToString(),
+                            company_bnum = row["company_bnum"].ToString(),
+                            company_btype = row["company_btype"].ToString(),
+                            company_manager = row["company_manager"].ToString(),
+                            company_email = row["company_email"].ToString(),
+                            company_phone = row["company_phone"].ToString(),
+                            company_faxnum = row["company_faxnum"].ToString(),
+                            company_use = row["company_use"].ToString(),
+                            company_comment = row["company_comment"].ToString(),
+                            up_date = DateTime.Now,
+                            up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString()
+                        };
+                            temp.Add(vo);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("엑셀에 등록된 정보를 확인하여주세요");
+                        break;
+                    }
+
+                }
+
+                //정상적으로 읽은 값이 없다면. 리턴
+                if (temp.Count < 1)
+                {
+                    MessageBox.Show("파일을 정상적으로 읽어오지 못했습니다. 내용을 확인해주세요");
+                    return;
+                }
+
+                //값 등록
+
+                Service.CompanyService service = new Service.CompanyService();
+
+                if (service.ExcelImportCompany(temp))
+                {
+                    CompanyRoad();
+                }
+                else
+                {
+                    MessageBox.Show("업체 정보를 등록하지 못했습니다.");
+                }
+
+            }
+            else
+                MessageBox.Show("파일을 읽지 못했습니다.");
+        }
     }
+    
 }

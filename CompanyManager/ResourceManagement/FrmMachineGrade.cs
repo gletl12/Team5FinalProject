@@ -40,6 +40,7 @@ namespace CompanyManager
             CommonUtil.AddGridImageColumn(dgvMachineGrade, Resources.Edit_16x16, "Edit", 30);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "설비군 코드", "mgrade_code");
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "설비군 명", "mgrade_name",90);
+            CommonUtil.AddGridTextColumn(dgvMachineGrade, "상위시설", "mgrade_parent");
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "시설설명", "mgrade_comment", 80);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "사용유무", "mgrade_use",70);
             CommonUtil.AddGridTextColumn(dgvMachineGrade, "수정자", "up_emp", 60);
@@ -84,6 +85,18 @@ namespace CompanyManager
                                  select code).ToList();
             temp.Insert(0, new CodeVO { code = "", name = "" });
             cboUse.DataSource = temp;
+
+            FactoryService service1 = new FactoryService();
+            List<FactoryVO> combobox1 = service1.GetFactory();
+
+            cboParent.DisplayMember = "factory_name";
+            cboParent.ValueMember = "factory_id";
+
+            List<FactoryVO> temp1 = (from factory_id in combobox1
+                                     where factory_id.codename == "공장" && factory_id.factory_grade == "공장"
+                                     select factory_id).ToList();
+            temp1.Insert(0, new FactoryVO { factory_name = "", factory_id = 0 });
+            cboParent.DataSource = temp1;
         }
 
         private void btnMGRegister_Click(object sender, EventArgs e)
@@ -126,6 +139,25 @@ namespace CompanyManager
             return 0;
         }
 
+        private int FindSelectedIndex1(ComboBox cbo, string item)
+        {
+            //빈값이면 리턴0
+            if (item == "")
+            {
+                return 0;
+            }
+
+            int result;
+            for (result = 0; result < cbo.Items.Count; result++)
+            {
+                if (((FactoryVO)cbo.Items[result]).factory_name == item)
+                {
+                    return result;
+                }
+            }
+            return 0;
+        }
+
         private void dgvMachineGrade_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -135,13 +167,14 @@ namespace CompanyManager
                 mgvo.mgrade_name = list[e.RowIndex].mgrade_name;
                 mgvo.mgrade_use = list[e.RowIndex].mgrade_use;
                 mgvo.mgrade_comment = list[e.RowIndex].mgrade_comment;
-
+                mgvo.mgrade_parent = list[e.RowIndex].mgrade_parent;
                 if (e.ColumnIndex == 0)
                 {
                     lblMGrade.Text = mgvo.machine_grade.ToString();
                     txtMGCode.Text = mgvo.mgrade_code;
                     txtMGName.Text = mgvo.mgrade_name;
                     cboUse.SelectedIndex = FindSelectedIndex(cboUse,mgvo.mgrade_use);
+                    cboParent.SelectedIndex = FindSelectedIndex1(cboParent, mgvo.mgrade_parent);
                     txtComment.Text = mgvo.mgrade_comment;
                     upflag = true;
                     pnlMGrade.Visible = true;
@@ -152,7 +185,7 @@ namespace CompanyManager
 
         private void btnMGCRU_Click(object sender, EventArgs e)
         {
-            if (txtMGCode.Text.Length < 1 || txtMGName.Text.Length < 1 || cboUse.SelectedIndex < 1 )
+            if (txtMGCode.Text.Length < 1 || txtMGName.Text.Length < 1 || cboUse.SelectedIndex < 1 || cboParent.SelectedIndex < 1)
             {
                 MessageBox.Show("필수 입력 정보를 확인해주세요.");
                 return;
@@ -163,17 +196,15 @@ namespace CompanyManager
                 mgrade_code = txtMGCode.Text,
                 mgrade_name = txtMGName.Text,
                 mgrade_comment = txtComment.Text,
-                up_emp = txtUpEmp.Text,
+                up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString(),
                 up_date = DateTime.Now,
-                mgrade_use = cboUse.SelectedValue.ToString()
+                mgrade_use = cboUse.SelectedValue.ToString(),
+                mgrade_parent = cboParent.SelectedValue.ToString()
             };
             
 
             if (upflag)
                 vo.machine_grade = Convert.ToInt32(lblMGrade.Text);
-            else
-                vo.machine_grade = dgvMachineGrade.Rows.Count + 1;
-
 
             if (upflag)
             {
@@ -297,6 +328,73 @@ namespace CompanyManager
                     MachineRoad(mvo.machine_grade);
                 }
             }
+        }
+
+        private void btnExcelImport_Click(object sender, EventArgs e)
+        {
+            (DataTable, string) data = Util.CommonExcel.ReadExcelData();
+            //제대로된 파일을 읽어 왔고 데이터가 있다면
+            if (!string.IsNullOrEmpty(data.Item2) && data.Item1.Rows.Count > 0)
+            {
+                List<MGradeVO> temp = new List<MGradeVO>();
+
+                foreach (DataRow row in data.Item1.Rows)
+                {
+                    #region 유효성검사
+                    if (string.IsNullOrEmpty(row["mgrade_name"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["mgrade_code"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["mgrade_use"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["mgrade_parent"].ToString()))
+                        continue;
+                    #endregion
+                    try
+                    {
+                        MGradeVO vo = new MGradeVO
+                        {
+                            mgrade_name = row["factory_grade"].ToString(),
+                            mgrade_code = row["factory_type"].ToString(),
+                            mgrade_use = row["factory_name"].ToString(),
+                            mgrade_parent = row["factory_parent"].ToString(),
+                            mgrade_comment = row["factory_use"].ToString(),
+                            up_date = DateTime.Now,
+                            up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id.ToString()
+                        };
+                        temp.Add(vo);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("엑셀에 등록된 정보를 확인하여주세요");
+                        break;
+                    }
+
+                }
+
+                //정상적으로 읽은 값이 없다면. 리턴
+                if (temp.Count < 1)
+                {
+                    MessageBox.Show("파일을 정상적으로 읽어오지 못했습니다. 내용을 확인해주세요");
+                    return;
+                }
+
+                //값 등록
+
+                Service.MGradeService service = new Service.MGradeService();
+
+                if (service.ExcelImportMGrade(temp))
+                {
+                    MGradeRoad();
+                }
+                else
+                {
+                    MessageBox.Show("공장 창고 정보를 등록하지 못했습니다.");
+                }
+
+            }
+            else
+                MessageBox.Show("파일을 읽지 못하였습니다.");
         }
     }
 }

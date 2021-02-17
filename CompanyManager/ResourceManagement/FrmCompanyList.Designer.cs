@@ -43,7 +43,7 @@ namespace CompanyManager
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnExcelImport = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -206,21 +206,22 @@ namespace CompanyManager
             this.button9.TabIndex = 14;
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnExcelImport
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1040, 89);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 23);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "    Excel등록";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnExcelImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelImport.Location = new System.Drawing.Point(1040, 89);
+            this.btnExcelImport.Name = "btnExcelImport";
+            this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
+            this.btnExcelImport.TabIndex = 7;
+            this.btnExcelImport.Text = "    Excel등록";
+            this.btnExcelImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelImport.UseVisualStyleBackColor = false;
+            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
             // 
             // btnRegister
             // 
@@ -263,7 +264,7 @@ namespace CompanyManager
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btnExcelImport);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvCompany);
@@ -280,7 +281,7 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnExcelImport;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cboCompanyType;

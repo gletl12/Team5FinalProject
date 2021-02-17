@@ -103,6 +103,8 @@ namespace CompanyManager
             // 
             // clbdept
             // 
+            this.clbdept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clbdept.Enabled = false;
             this.clbdept.FormattingEnabled = true;
             this.clbdept.Location = new System.Drawing.Point(663, 62);
@@ -223,8 +225,7 @@ namespace CompanyManager
             // 
             // lbForm
             // 
-            this.lbForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbForm.FormattingEnabled = true;
             this.lbForm.ItemHeight = 14;
             this.lbForm.Location = new System.Drawing.Point(371, 60);

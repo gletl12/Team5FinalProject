@@ -290,6 +290,7 @@ namespace CompanyManager
             this.btndownexcel.Text = "    양식 다운로드";
             this.btndownexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btndownexcel.UseVisualStyleBackColor = false;
+            this.btndownexcel.Click += new System.EventHandler(this.btndownexcel_Click);
             // 
             // btnexcel
             // 
@@ -306,6 +307,7 @@ namespace CompanyManager
             this.btnexcel.Text = "    엑셀";
             this.btnexcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnexcel.UseVisualStyleBackColor = false;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // btnAdd
             // 

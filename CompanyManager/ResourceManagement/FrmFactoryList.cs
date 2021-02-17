@@ -203,5 +203,83 @@ namespace CompanyManager
                 }
             }
         }
+
+        private void btnExcelImport_Click(object sender, EventArgs e)
+        {
+            (DataTable, string) data = Util.CommonExcel.ReadExcelData();
+            //제대로된 파일을 읽어 왔고 데이터가 있다면
+            if (!string.IsNullOrEmpty(data.Item2) && data.Item1.Rows.Count > 0)
+            {
+                List<FactoryVO> temp = new List<FactoryVO>();
+                List<FactoryVO> temp2 = new List<FactoryVO>();
+
+                foreach (DataRow row in data.Item1.Rows)
+                {
+                    #region 유효성검사
+                    if (string.IsNullOrEmpty(row["factory_grade"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["factory_type"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["factory_name"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["factory_parent"].ToString()))
+                        continue;
+                    if (string.IsNullOrEmpty(row["factory_use"].ToString()))
+                        continue;
+                    #endregion
+                    try
+                    {
+                        FactoryVO vo = new FactoryVO
+                        {
+                            factory_grade = row["factory_grade"].ToString(),
+                            factory_type = row["factory_type"].ToString(),
+                            factory_name = row["factory_name"].ToString(),
+                            factory_parent = row["factory_parent"].ToString(),
+                            factory_use = row["factory_use"].ToString(),
+                            factory_comment = row["factory_comment"].ToString(),
+                            up_date = DateTime.Now,
+                            up_emp = ((FrmMain)this.MdiParent).LoginInfo.emp_id
+                        };
+                        if (vo.factory_grade == "창고")
+                        {
+                            temp2.Add(vo);
+                        }
+                        else
+                        {
+                            temp.Add(vo);
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("엑셀에 등록된 정보를 확인하여주세요");
+                        break;
+                    }
+
+                }
+
+                //정상적으로 읽은 값이 없다면. 리턴
+                if (temp.Count < 1)
+                {
+                    MessageBox.Show("파일을 정상적으로 읽어오지 못했습니다. 내용을 확인해주세요");
+                    return;
+                }
+
+                //값 등록
+
+                Service.FactoryService service = new Service.FactoryService();
+
+                if (service.ExcelImportFactory(temp) && service.ExcelImportWareHouse(temp2))
+                {
+                    DataRoad();
+                }
+                else
+                {
+                    MessageBox.Show("공장 창고 정보를 등록하지 못했습니다.");
+                }
+
+            }
+            else
+                MessageBox.Show("파일을 읽지 못하였습니다.");
+        }
     }
 }
