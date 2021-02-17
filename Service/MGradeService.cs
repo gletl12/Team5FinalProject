@@ -32,7 +32,13 @@ namespace Service
             MGradeDAC dac = new MGradeDAC();
             return dac.DeleteMGrade(machine_grade);
         }
-    
+
+        public bool ExcelImportMGrade(List<MGradeVO> temp)
+        {
+            MGradeDAC dac = new MGradeDAC();
+            return dac.ExcelImportMGrade(temp);
+        }
+
         //public List<MachineVO> GetMachine()
         //{
         //    MachineDAC dac = new MachineDAC();

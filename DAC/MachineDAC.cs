@@ -219,10 +219,11 @@ namespace DAC
                                         machine_comment,
                                         c.name as machine_use,
                                         m.up_date,
-                                        m.up_emp
+                                        e.emp_name as up_emp
                                         from TBL_MACHINE m inner join TBL_COMMON_CODE c on m.machine_use = c.code
                                                            inner join TBL_COMMON_CODE o on m.m_os_use = o.code 
                                                            inner join TBL_WAREHOUSE w on m.use_warehouse_id = w.warehouse_id
+                                                           inner join TBL_Employee e on m.up_emp = e.emp_id
                                         where machine_grade = @machine_grade";
                     cmd.Connection = conn;
                     cmd.Parameters.AddWithValue("@machine_grade", mgrade);

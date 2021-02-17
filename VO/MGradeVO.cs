@@ -13,6 +13,7 @@ namespace VO
         public string mgrade_code { get; set; }
         public string mgrade_use { get; set; }
         public string mgrade_comment { get; set; }
+        public string mgrade_parent { get; set; }
         public string up_emp { get; set; }
         public DateTime up_date { get; set; }
 

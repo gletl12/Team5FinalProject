@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using VO;
 
@@ -36,7 +37,6 @@ namespace DAC
             }
         }
 
-        
 
         public bool InsertCompany(CompanyVO vo)
         {
@@ -154,5 +154,69 @@ namespace DAC
                 return false;
             }
         }
+
+        public bool ExcelImportCompany(List<CompanyVO> temp)
+        {
+            try
+            {
+                string sql = @"insert into TBL_COMPANY(company_name, company_type, company_ceo, company_bnum, company_btype, company_manager,
+                                                       company_email, company_phone, company_faxnum, company_use, company_comment, ins_emp, up_date, up_emp)
+                               values(@company_name, @company_type, @company_ceo, @company_bnum, @company_btype, @company_manager,
+                                      @company_email, @company_phone, @company_faxnum, @company_use, @company_comment, @ins_emp,@up_date, @up_emp)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    int cnt = 0;
+                    cmd.Parameters.Add("@company_name", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_type", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_ceo", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_bnum", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_btype", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_manager", SqlDbType.Int);
+                    cmd.Parameters.Add("@company_email", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_phone", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_faxnum", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_use", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@company_comment", SqlDbType.Text);
+                    cmd.Parameters.Add("@ins_emp", SqlDbType.NVarChar);
+                    cmd.Parameters.Add("@up_date", SqlDbType.DateTime);
+                    cmd.Parameters.Add("@up_emp", SqlDbType.NVarChar);
+
+                    for (int i = 0; i < temp.Count; i++)
+                    {
+                        cmd.Parameters["@company_name"].Value = temp[i].company_name;
+                        cmd.Parameters["@company_type"].Value = temp[i].company_type;
+                        cmd.Parameters["@company_ceo"].Value = temp[i].company_ceo;
+                        cmd.Parameters["@company_bnum"].Value = temp[i].company_bnum;
+                        cmd.Parameters["@company_btype"].Value = temp[i].company_btype;
+                        cmd.Parameters["@company_manager"].Value = temp[i].company_manager;
+                        cmd.Parameters["@company_email"].Value = temp[i].company_email;
+                        cmd.Parameters["@company_phone"].Value = temp[i].company_phone;
+                        cmd.Parameters["@company_faxnum"].Value = temp[i].company_faxnum;
+                        cmd.Parameters["@company_use"].Value = temp[i].company_use;
+                        cmd.Parameters["@company_comment"].Value = temp[i].company_comment;
+                        cmd.Parameters["@ins_emp"].Value = temp[i].up_emp;
+                        cmd.Parameters["@up_date"].Value = temp[i].up_date;
+                        cmd.Parameters["@up_emp"].Value = temp[i].up_emp;
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+                    Dispose();
+                    if (cnt == temp.Count)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                Dispose();
+
+                //로그 오류
+                Log.WriteError("CompanyDAC_ExcelImportCompany() 오류", err);
+
+                return false;
+            }
+        }
+
     }
 }
