@@ -10,6 +10,7 @@ using VO;
 using Util;
 using System.IO;
 using System.Diagnostics;
+using System.Net;
 
 namespace CompanyManager
 {
@@ -408,7 +409,9 @@ namespace CompanyManager
             {
                 try
                 {
-                    File.Copy("../../ExcelForm/품목등록양식.xlsx", dlg.FileName + ".xlsx");
+                    WebClient wc = new WebClient();
+                    wc.DownloadFile(@"http://gdfinal.azurewebsites.net/ExcelForm/품목등록양식.xlsx", dlg.FileName + ".xlsx");
+                    //File.Copy("../../ExcelForm/영업마스터양식.xlsx", dlg.FileName+".xlsx");
                     Process.Start(dlg.FileName + ".xlsx");
                 }
                 catch (Exception err)
@@ -416,6 +419,11 @@ namespace CompanyManager
                     MessageBox.Show("다운로드중 오류가 발생하였습니다.\r\n 다시 시도하여 주십시오.");
                 }
             }
+
+
+
+           
+            
         }
     }
 }
