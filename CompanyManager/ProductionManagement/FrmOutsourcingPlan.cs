@@ -66,5 +66,10 @@ namespace CompanyManager
 
             dataGridView1.DataSource = temp.AsDataView();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dataGridView1);
+        }
     }
 }
