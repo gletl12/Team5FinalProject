@@ -43,9 +43,9 @@ namespace DAC
             try
             {
                 string sql = @"insert into TBL_COMPANY(company_name, company_type, company_ceo, company_bnum, company_btype, company_manager,
-                                                       company_email, company_phone, company_faxnum, company_use, company_comment, up_date, up_emp)
+                                                       company_email, company_phone, company_faxnum, company_use, company_comment, ins_emp, up_date, up_emp)
                                values(@company_name, @company_type, @company_ceo, @company_bnum, @company_btype, @company_manager,
-                                      @company_email, @company_phone, @company_faxnum, @company_use, @company_comment, @ins_emp,@up_date, @up_emp)";
+                                      @company_email, @company_phone, @company_faxnum, @company_use, @company_comment, @ins_emp, @up_date, @up_emp)";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@company_name", vo.company_name);
