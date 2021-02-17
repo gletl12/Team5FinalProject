@@ -29,10 +29,10 @@ namespace Service
             return dac.UpdateFactory(vo);
         }
 
-        public bool DeleteFactory(int fid)
+        public bool DeleteFactory(List<FactoryVO> chklist)
         {
             FactoryDAC dac = new FactoryDAC();
-            return dac.DeleteFactory(fid);
+            return dac.DeleteFactory(chklist);
         }
 
 
@@ -54,10 +54,10 @@ namespace Service
             return dac.AddWarehouse(fvo);
         }
 
-        public bool DeleteWareHouse(int fid)
+        public bool DeleteWareHouse(List<FactoryVO> chklist)
         {
             FactoryDAC dac = new FactoryDAC();
-            return dac.DeleteWareHouse(fid);
+            return dac.DeleteWareHouse(chklist);
         }
 
         public bool ExcelImportFactory(List<FactoryVO> temp)

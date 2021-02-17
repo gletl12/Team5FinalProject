@@ -19,7 +19,7 @@ namespace CompanyManager
         List<CodeVO> code;
 
         List<MachineVO> machine;
-        public string emp_name { get; set; }
+        public int emp_id { get; set; }
 
         string openmode="";
         public ShiftVO list { get; set; }
@@ -27,10 +27,10 @@ namespace CompanyManager
         /// 오픈모드 설정
         /// </summary>
         /// <param name="mode"></param>
-        public PopupShift(OpenMode mode,string emp_name)
+        public PopupShift(OpenMode mode,int emp_id)
         {
             InitializeComponent();
-            this.emp_name = emp_name;
+            this.emp_id = emp_id;
             if (mode == OpenMode.Insert)
             {
                 openmode = "Insert";
@@ -130,7 +130,7 @@ namespace CompanyManager
                     return;
                 }
                 ShiftVO emp = new ShiftVO();
-                emp.machine_id = cboMachine.Text;
+                emp.machine_id = cboMachine.SelectedValue.ToString();
                 emp.shift_type = cboShift.Text;
                 emp.shift_stime = txtStime.Text;
                 emp.shift_etime = txtEtime.Text;
@@ -151,7 +151,7 @@ namespace CompanyManager
                 emp.Overtime_Directly_Accident_Time = textBox1.Text;
                 emp.Overtime_Indirect_Accident_Time = textBox17.Text;
                 emp.shift_comment = richTextBox1.Text;
-                emp.ins_emp = emp_name;
+                emp.ins_emp = emp_id;
 
 
                 ShiftService service = new ShiftService();
@@ -175,7 +175,7 @@ namespace CompanyManager
                 }
                 ShiftVO emp = new ShiftVO();
                 emp.shift_id = list.shift_id;
-                emp.machine_id = cboMachine.Text;
+                emp.machine_id = cboMachine.SelectedValue.ToString();
                 emp.shift_type = cboShift.Text;
                 emp.shift_stime = txtStime.Text;
                 emp.shift_etime = txtEtime.Text;
@@ -196,7 +196,7 @@ namespace CompanyManager
                 emp.Overtime_Directly_Accident_Time = textBox1.Text;
                 emp.Overtime_Indirect_Accident_Time = textBox17.Text;
                 emp.shift_comment = richTextBox1.Text;
-                emp.ins_emp = emp_name;
+                emp.ins_emp = emp_id;
 
                 ShiftService service = new ShiftService();
                 bool bFlag = service.Update(emp);
@@ -219,11 +219,13 @@ namespace CompanyManager
         /// <param name="e"></param>
         private void dtpEday_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpSday.Value > dtpEday.Value)
-            {
-                MessageBox.Show("날짜를 다시 입력해주세요");
-                return;
-            }
+            //if (dtpSday.Value == dtpEday.Value)
+            //    return;
+            //if (dtpSday.Value > dtpEday.Value)
+            //{
+            //    MessageBox.Show("날짜를 다시 입력해주세요");
+            //    return;
+            //}
         }
         /// <summary>
         /// 취소버튼

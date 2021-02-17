@@ -60,7 +60,6 @@ namespace DAC
             }
         }
 
-        
 
         public bool RegDemandPlan(List<SalesOrderVO> demandList)
         {
@@ -281,5 +280,61 @@ namespace DAC
                 }
             }
         }
+
+        public List<SOVO> GetSOClose()
+        {
+            string sql = @"select * from VW_SALESCLOSELIST";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    List<SOVO> list = Helper.DataReaderMapToList<SOVO>(cmd.ExecuteReader());
+                    conn.Close();
+                    return list;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_SalesOrderDAC_VW_SALESCLOSELIST() 오류", err);
+                    return null;
+                }
+            }
+        }
+        public bool MaGamCencel(List<SOVO> chklist)
+        {
+            string sql = @"update TBL_SO_MASTER set so_state = @so_state, up_date = @up_date, up_emp = @up_emp where so_id = @so_id";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                try
+                {
+                    int cnt = 0;
+                    cmd.Parameters.AddWithValue("@so_state", "SO005");
+                    cmd.Parameters.Add("@so_id", SqlDbType.Int);
+                    cmd.Parameters.Add("@up_date", SqlDbType.DateTime);
+                    cmd.Parameters.Add("@up_emp", SqlDbType.NVarChar);
+                    for (int i = 0; i < chklist.Count; i++)
+                    {
+                        cmd.Parameters["@so_id"].Value = chklist[i].so_id;
+                        cmd.Parameters["@up_date"].Value = chklist[i].up_date;
+                        cmd.Parameters["@up_emp"].Value = chklist[i].up_emp;
+
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+                    Dispose();
+                    if (chklist.Count == cnt)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                catch (Exception err)
+                {
+                    Log.WriteError("DAC_SalesOrderDAC_MaGamCencel() 오류", err);
+                    return false;
+                }
+            }
+        }
+
     }
 }

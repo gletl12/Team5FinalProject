@@ -76,7 +76,7 @@ namespace DAC
             try
             {
                 string sql = @"update TBL_MACHINE_GRADE set mgrade_name = @mgrade_name, mgrade_code = @mgrade_code, mgrade_use = @mgrade_use, 
-                                                            mgrade_comment = @mgrade_comment, mgrade_parent = @mgrade_parent, up_emp = @up_emp
+                                                            mgrade_comment = @mgrade_comment, mgrade_parent = @mgrade_parent, up_emp = @up_emp,
                                                             up_date = @up_date
                                where machine_grade = @machine_grade";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

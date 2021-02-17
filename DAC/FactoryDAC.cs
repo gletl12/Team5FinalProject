@@ -46,19 +46,27 @@ namespace DAC
         }
 
 
-        public bool DeleteFactory(int fid)
+        public bool DeleteFactory(List<FactoryVO> chklist)
         {
             try
             {
+                int cnt = 0;
                 string sql = @"delete from TBL_FACTORY
                                where factory_id = @factory_id";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@factory_id", fid);
+                    cmd.Parameters.Add("@factory_id", SqlDbType.Int);
 
-                    int iRows = cmd.ExecuteNonQuery();
+                    for (int i = 0; i < chklist.Count; i++)
+                    {
+                        cmd.Parameters["@factory_id"].Value = chklist[i].factory_id;
+
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
+
                     Dispose();
-                    if (iRows > 0)
+                    if (cnt == chklist.Count)
                         return true;
                     else
                         return false;
@@ -285,19 +293,26 @@ namespace DAC
             }
         }
 
-        public bool DeleteWareHouse(int fid)
+        public bool DeleteWareHouse(List<FactoryVO> chklist)
         {
             try
             {
+                int cnt = 0;
                 string sql = @"delete from TBL_WAREHOUSE
                                where warehouse_id = @warehouse_id";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@warehouse_id", fid);
+                    cmd.Parameters.Add("@warehouse_id", SqlDbType.Int);
 
-                    int iRows = cmd.ExecuteNonQuery();
+                    for (int i = 0; i < chklist.Count; i++)
+                    {
+                        cmd.Parameters["@warehouse_id"].Value = chklist[i].factory_id;
+
+                        cmd.ExecuteNonQuery();
+                        cnt++;
+                    }
                     Dispose();
-                    if (iRows > 0)
+                    if (cnt == chklist.Count)
                         return true;
                     else
                         return false;

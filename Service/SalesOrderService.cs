@@ -57,5 +57,17 @@ namespace Service
             SalesOrderDAC dac = new SalesOrderDAC();
             return dac.MaGamProcess(chklist);
         }
+
+        public List<SOVO> GetSOClose()
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.GetSOClose();
+        }
+
+        public bool MaGamCencel(List<SOVO> chklist)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            return dac.MaGamCencel(chklist);
+        }
     }
 }

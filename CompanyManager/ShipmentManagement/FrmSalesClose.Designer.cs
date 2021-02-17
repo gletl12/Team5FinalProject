@@ -35,8 +35,8 @@ namespace CompanyManager
             this.txtSO_id = new System.Windows.Forms.TextBox();
             this.txtitem = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,10 +56,8 @@ namespace CompanyManager
             this.label18 = new System.Windows.Forms.Label();
             this.dgvSO = new System.Windows.Forms.DataGridView();
             this.btnMaGam = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnExcelExport = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +68,7 @@ namespace CompanyManager
             this.cboMKT.Location = new System.Drawing.Point(110, 49);
             this.cboMKT.Name = "cboMKT";
             this.cboMKT.Size = new System.Drawing.Size(210, 22);
-            this.cboMKT.TabIndex = 9;
+            this.cboMKT.TabIndex = 4;
             // 
             // panel2
             // 
@@ -84,8 +82,8 @@ namespace CompanyManager
             this.panel2.Controls.Add(this.txtitem);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.cboMKT);
-            this.panel2.Controls.Add(this.dateTimePicker3);
-            this.panel2.Controls.Add(this.dateTimePicker4);
+            this.panel2.Controls.Add(this.dtpEnd);
+            this.panel2.Controls.Add(this.dtpfrom);
             this.panel2.Controls.Add(this.cboCompany);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.label9);
@@ -116,7 +114,7 @@ namespace CompanyManager
             this.cboDestination.Location = new System.Drawing.Point(794, 16);
             this.cboDestination.Name = "cboDestination";
             this.cboDestination.Size = new System.Drawing.Size(210, 22);
-            this.cboDestination.TabIndex = 4;
+            this.cboDestination.TabIndex = 3;
             // 
             // txtSO_id
             // 
@@ -143,21 +141,21 @@ namespace CompanyManager
             this.label21.TabIndex = 66;
             this.label21.Text = "~";
             // 
-            // dateTimePicker3
+            // dtpEnd
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(225, 16);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker3.TabIndex = 1;
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(225, 16);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(95, 21);
+            this.dtpEnd.TabIndex = 1;
             // 
-            // dateTimePicker4
+            // dtpfrom
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(110, 16);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(95, 21);
-            this.dateTimePicker4.TabIndex = 0;
+            this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfrom.Location = new System.Drawing.Point(110, 16);
+            this.dtpfrom.Name = "dtpfrom";
+            this.dtpfrom.Size = new System.Drawing.Size(95, 21);
+            this.dtpfrom.TabIndex = 0;
             // 
             // cboCompany
             // 
@@ -166,7 +164,7 @@ namespace CompanyManager
             this.cboCompany.Location = new System.Drawing.Point(457, 15);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(210, 22);
-            this.cboCompany.TabIndex = 3;
+            this.cboCompany.TabIndex = 2;
             // 
             // label25
             // 
@@ -293,7 +291,7 @@ namespace CompanyManager
             this.btnSearch.Location = new System.Drawing.Point(1049, 50);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(98, 30);
-            this.btnSearch.TabIndex = 10;
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -358,42 +356,31 @@ namespace CompanyManager
             this.btnMaGam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaGam.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnMaGam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaGam.Location = new System.Drawing.Point(990, 112);
+            this.btnMaGam.Location = new System.Drawing.Point(1024, 112);
             this.btnMaGam.Name = "btnMaGam";
             this.btnMaGam.Size = new System.Drawing.Size(76, 23);
-            this.btnMaGam.TabIndex = 11;
+            this.btnMaGam.TabIndex = 8;
             this.btnMaGam.Text = "마감처리";
             this.btnMaGam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMaGam.UseVisualStyleBackColor = false;
             this.btnMaGam.Click += new System.EventHandler(this.btnMaGam_Click);
             // 
-            // button9
+            // btnExcelExport
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 112);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 59;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1072, 112);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 60;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelExport.Location = new System.Drawing.Point(1106, 112);
+            this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
+            this.btnExcelExport.TabIndex = 9;
+            this.btnExcelExport.Text = "    엑셀";
+            this.btnExcelExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelExport.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Click += new System.EventHandler(this.btnExcelExport_Click);
             // 
             // label10
             // 
@@ -406,24 +393,12 @@ namespace CompanyManager
             this.label10.TabIndex = 58;
             this.label10.Text = "      고객주문";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(119, 159);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 64;
-            this.checkBox1.TabStop = false;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // FrmSalesClose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnMaGam);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.btnExcelExport);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvSO);
@@ -440,8 +415,7 @@ namespace CompanyManager
         #endregion
 
         private System.Windows.Forms.Button btnMaGam;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnExcelExport;
         private System.Windows.Forms.ComboBox cboMKT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
@@ -467,8 +441,7 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox txtSO_id;
         private System.Windows.Forms.TextBox txtitem;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpfrom;
     }
 }

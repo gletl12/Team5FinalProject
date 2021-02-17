@@ -101,6 +101,7 @@ namespace CompanyManager
             // 
             // cboOSuse
             // 
+            this.cboOSuse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOSuse.FormattingEnabled = true;
             this.cboOSuse.Location = new System.Drawing.Point(93, 68);
             this.cboOSuse.Name = "cboOSuse";
@@ -109,6 +110,7 @@ namespace CompanyManager
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(491, 13);
             this.cboUse.Name = "cboUse";
@@ -117,6 +119,7 @@ namespace CompanyManager
             // 
             // cboNGWh
             // 
+            this.cboNGWh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNGWh.FormattingEnabled = true;
             this.cboNGWh.Location = new System.Drawing.Point(491, 41);
             this.cboNGWh.Name = "cboNGWh";
@@ -125,6 +128,7 @@ namespace CompanyManager
             // 
             // cboOKWh
             // 
+            this.cboOKWh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOKWh.FormattingEnabled = true;
             this.cboOKWh.Location = new System.Drawing.Point(291, 40);
             this.cboOKWh.Name = "cboOKWh";
@@ -133,6 +137,7 @@ namespace CompanyManager
             // 
             // cboUseWh
             // 
+            this.cboUseWh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseWh.FormattingEnabled = true;
             this.cboUseWh.Location = new System.Drawing.Point(93, 40);
             this.cboUseWh.Name = "cboUseWh";

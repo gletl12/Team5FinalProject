@@ -35,7 +35,7 @@ namespace CompanyManager
         /// <param name="e"></param>
         private void button13_Click(object sender, EventArgs e)
         {
-            PopupShift popup = new PopupShift(OpenMode.Insert, ((FrmMain)this.MdiParent).LoginInfo.emp_name);
+            PopupShift popup = new PopupShift(OpenMode.Insert, ((FrmMain)this.MdiParent).LoginInfo.emp_id);
            
             if (popup.ShowDialog() == DialogResult.OK)
             {
@@ -261,7 +261,7 @@ namespace CompanyManager
             // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
             // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
             // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
-            PopupShift popup = new PopupShift(OpenMode.Copy, ((FrmMain)this.MdiParent).LoginInfo.emp_name);
+            PopupShift popup = new PopupShift(OpenMode.Copy, ((FrmMain)this.MdiParent).LoginInfo.emp_id);
             popup.list = vo;
             if (popup.ShowDialog() == DialogResult.OK)
             {
@@ -361,7 +361,7 @@ namespace CompanyManager
                 // vo.Indirect_Accident_WorkTime = dgvShift[19, rowIndex].Value.ToString();
                 // vo.Overtime_Directly_Accident_Time = dgvShift[20, rowIndex].Value.ToString();
                 // vo.Overtime_Indirect_Accident_Time = dgvShift[21, rowIndex].Value.ToString();
-                PopupShift popup = new PopupShift(OpenMode.Update, ((FrmMain)this.MdiParent).LoginInfo.emp_name);
+                PopupShift popup = new PopupShift(OpenMode.Update, ((FrmMain)this.MdiParent).LoginInfo.emp_id);
                 popup.list = vo;
                 
                 if (popup.ShowDialog() == DialogResult.OK)

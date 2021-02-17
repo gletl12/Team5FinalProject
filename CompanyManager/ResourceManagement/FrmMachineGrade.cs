@@ -101,11 +101,13 @@ namespace CompanyManager
 
         private void btnMGRegister_Click(object sender, EventArgs e)
         {
+            btnCencel.PerformClick();
             pnlMGrade.Visible = true;
         }
 
         private void btnCencel_Click(object sender, EventArgs e)
         {
+            upflag = false;
             txtMGCode.Text = txtMGName.Text = txtComment.Text = lblMGrade.Text = "";
             cboUse.SelectedIndex = 0;
             pnlMGrade.Visible = false;
@@ -243,7 +245,11 @@ namespace CompanyManager
                 MessageBox.Show("삭제할 설비군을 선택해주세요.");
                 return;
             }
-
+            if(list2.Count > 0 )
+            {
+                MessageBox.Show("해당 설비군에 속한 설비가 존재하여 삭제할 수 없습니다.");
+                return;
+            }
             if(MessageBox.Show("정말로 삭제하시겠습니까?","경고",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MGradeService service = new MGradeService();
@@ -395,6 +401,21 @@ namespace CompanyManager
             }
             else
                 MessageBox.Show("파일을 읽지 못하였습니다.");
+        }
+
+        private void btnExcelExport1_Click(object sender, EventArgs e)
+        {
+            if(list2.Count < 1)
+            {
+                MessageBox.Show("Excel Export할 데이터가 없습니다.");
+                return;
+            }
+            CommonExcel.ExportExcel(dgvMachine);
+        }
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvMachineGrade);
         }
     }
 }

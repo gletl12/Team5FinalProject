@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -17,6 +19,7 @@ namespace CompanyManager
     {
         List<FactoryVO> list = new List<FactoryVO>();
         List<FactoryVO> chklist = new List<FactoryVO>();
+        List<FactoryVO> chklist2 = new List<FactoryVO>();
         FactoryVO fvo = new FactoryVO();
         public FrmFactoryList()
         {
@@ -163,44 +166,37 @@ namespace CompanyManager
             {
                 if (dgvFactory[0, i].Value != null && (bool)dgvFactory[0, i].Value)
                 {
-                    chklist.Add(list[i]);
+                    if (list[i].factory_grade == "창고")
+                        chklist2.Add(list[i]);
+                    else
+                        chklist.Add(list[i]);
                 }
-                else
-                {
-                    var temp = chklist.Find(p => p.factory_id == list[i].factory_id);
-                    chklist.Remove(temp);
-                }
+                //else
+                //{
+                //    var temp = chklist.Find(p => p.factory_id == list[i].factory_id );
+                //    chklist.Remove(temp);
+                //}
             }
 
-            if (chklist.Count != 1)
+            if (chklist.Count < 1 && chklist2.Count < 1)
             {
-                MessageBox.Show("삭제할 데이터를 한개 선택해주세요.");
+                MessageBox.Show("삭제할 데이터를 선택해주세요.");
                 return;
             }
             if (MessageBox.Show($"정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (chklist[0].codename == "공장")
+
+                FactoryService service = new FactoryService();
+                if (service.DeleteFactory(chklist) && service.DeleteWareHouse(chklist2))
                 {
-                    FactoryService service = new FactoryService();
-                    if (service.DeleteFactory(chklist[0].factory_id))
-                    {
-                        MessageBox.Show("삭제되었습니다.");
-                        DataRoad();
-                    }
-                    else
-                        MessageBox.Show("삭제에 실패하였습니다.");
+                    MessageBox.Show("삭제되었습니다.");
+                    chklist.Clear();
+                    chklist2.Clear();
+                    DataRoad();
                 }
                 else
-                {
-                    FactoryService service = new FactoryService();
-                    if (service.DeleteWareHouse(chklist[0].factory_id))
-                    {
-                        MessageBox.Show("삭제되었습니다.");
-                        DataRoad();
-                    }
-                    else
-                        MessageBox.Show("삭제에 실패하였습니다.");
-                }
+                    MessageBox.Show("삭제에 실패하였습니다.");
+
             }
         }
 
@@ -278,8 +274,29 @@ namespace CompanyManager
                 }
 
             }
-            else
-                MessageBox.Show("파일을 읽지 못하였습니다.");
+        }
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dgvFactory);
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "양식 다운로드";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy("../../ExcelForm/공장창고등록양식.xlsx", dlg.FileName + ".xlsx");
+                    Process.Start(dlg.FileName + ".xlsx");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("다운로드중 오류가 발생하였습니다.\r\n 다시 시도하여 주십시오.");
+                }
+            }
         }
     }
 }
