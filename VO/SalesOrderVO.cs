@@ -55,5 +55,11 @@ namespace VO
         public DateTime up_date { get; set; }
         public string up_emp { get; set; }
 
+        public int SQty { get; set; }
+        public int SalesPrice { get; set; }
+        public DateTime CloseDate { get; set; }
+        public string destination { get; set; }
+        public int plan_id { get; set; }
+
     }
 }

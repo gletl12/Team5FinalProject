@@ -149,7 +149,7 @@ namespace CompanyManager
             List<FactoryVO> temp2 = (from factory_id in combobox1
                                      where factory_id.codename == "공장" && factory_id.factory_grade == "회사"
                                      select factory_id).ToList();
-            temp1.Insert(0, new FactoryVO { factory_name = "", factory_id = 0 });
+            temp2.Insert(0, new FactoryVO { factory_name = ""});
             cboFParent.DataSource = temp2;
         }
 

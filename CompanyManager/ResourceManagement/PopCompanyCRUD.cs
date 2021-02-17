@@ -50,7 +50,7 @@ namespace CompanyManager
                 company_use = cboUse.SelectedValue.ToString(),
                 company_ceo = txtCEO.Text,
                 company_btype = cboCBType.SelectedValue.ToString(),
-                
+                company_manager = cboEmp.SelectedValue.ToString(),
                 company_email = txtEmail.Text,
                 company_phone = txtPhone.Text,
                 company_faxnum = txtFNum.Text,
@@ -58,17 +58,13 @@ namespace CompanyManager
                 up_date = DateTime.Now,
                 company_comment = txtCComment.Text,
             };
-            if (cboEmp.SelectedValue.ToString() == "0")
-                vo.company_manager = null;
-            else
-                vo.company_manager = cboEmp.SelectedValue.ToString();
 
             if (txtBNum.Text.Length < 10 && txtBNum.Text.Length > 0)
             {
                 MessageBox.Show("사업자 등록 번호를 확인해주세요.");
                 return;
             }
-            else if(txtBNum.Text.Length == 11)
+            else if(txtBNum.Text.Length == 10)
                 vo.company_bnum = string.Concat($"{txtBNum.Text.Substring(0, 3)}-{txtBNum.Text.Substring(3, 2)}-{txtBNum.Text.Substring(5)}");
 
             if (upflag)
@@ -166,7 +162,11 @@ namespace CompanyManager
             txtFNum.Text = cvo.company_faxnum;
             txtCComment.Text = cvo.company_comment;
 
-            txtBNum.Text = string.Concat(cvo.company_bnum.Substring(0, 3), cvo.company_bnum.Substring(4, 2), cvo.company_bnum.Substring(7, 5));
+            if (cvo.company_bnum == null)
+                txtBNum.Text = "";
+            else
+                txtBNum.Text = string.Concat(cvo.company_bnum.Substring(0, 3), cvo.company_bnum.Substring(4, 2), cvo.company_bnum.Substring(7, 5));
+
         }
 
         private int FindSelectedIndex(ComboBox cbo, string item)

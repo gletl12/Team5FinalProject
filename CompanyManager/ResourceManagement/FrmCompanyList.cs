@@ -46,7 +46,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvCompany, "사용유무", "company_use");
             CommonUtil.AddGridTextColumn(dgvCompany, "업체정보", "company_comment");
             CommonUtil.AddGridTextColumn(dgvCompany, "수정자", "up_emp");
-            CommonUtil.AddGridTextColumn(dgvCompany, "수정시간", "up_date");
+            CommonUtil.AddGridTextColumn(dgvCompany, "수정시간", "up_date", 160);
 
             dgvCompany.AutoGenerateColumns = false;
             dgvCompany.AllowUserToAddRows = false;

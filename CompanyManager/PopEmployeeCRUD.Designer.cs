@@ -30,10 +30,14 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpEmp = new System.Windows.Forms.DateTimePicker();
+            this.cboDept = new System.Windows.Forms.ComboBox();
             this.txtUp_Emp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblIDchk = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmpName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,11 +45,7 @@ namespace CompanyManager
             this.emp_id = new System.Windows.Forms.Label();
             this.btnCencel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.cboDept = new System.Windows.Forms.ComboBox();
-            this.dtpEmp = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbldept_id = new System.Windows.Forms.Label();
-            this.lblIDchk = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,24 @@ namespace CompanyManager
             this.panel1.Size = new System.Drawing.Size(479, 147);
             this.panel1.TabIndex = 7;
             // 
+            // dtpEmp
+            // 
+            this.dtpEmp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEmp.Location = new System.Drawing.Point(90, 108);
+            this.dtpEmp.Name = "dtpEmp";
+            this.dtpEmp.Size = new System.Drawing.Size(104, 21);
+            this.dtpEmp.TabIndex = 4;
+            // 
+            // cboDept
+            // 
+            this.cboDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDept.FormattingEnabled = true;
+            this.cboDept.Location = new System.Drawing.Point(300, 64);
+            this.cboDept.Name = "cboDept";
+            this.cboDept.Size = new System.Drawing.Size(154, 22);
+            this.cboDept.TabIndex = 3;
+            this.cboDept.SelectedIndexChanged += new System.EventHandler(this.cboDept_SelectedIndexChanged);
+            // 
             // txtUp_Emp
             // 
             this.txtUp_Emp.Location = new System.Drawing.Point(300, 108);
@@ -96,6 +114,15 @@ namespace CompanyManager
             this.label5.TabIndex = 3;
             this.label5.Text = "* 부서";
             // 
+            // lblIDchk
+            // 
+            this.lblIDchk.AutoSize = true;
+            this.lblIDchk.ForeColor = System.Drawing.Color.White;
+            this.lblIDchk.Location = new System.Drawing.Point(87, 43);
+            this.lblIDchk.Name = "lblIDchk";
+            this.lblIDchk.Size = new System.Drawing.Size(0, 14);
+            this.lblIDchk.TabIndex = 3;
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(301, 20);
@@ -112,6 +139,16 @@ namespace CompanyManager
             this.label4.Size = new System.Drawing.Size(61, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "* 비밀번호";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(217, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 14);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "* 수정자";
             // 
             // label10
             // 
@@ -191,33 +228,6 @@ namespace CompanyManager
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // cboDept
-            // 
-            this.cboDept.FormattingEnabled = true;
-            this.cboDept.Location = new System.Drawing.Point(300, 64);
-            this.cboDept.Name = "cboDept";
-            this.cboDept.Size = new System.Drawing.Size(154, 22);
-            this.cboDept.TabIndex = 3;
-            this.cboDept.SelectedIndexChanged += new System.EventHandler(this.cboDept_SelectedIndexChanged);
-            // 
-            // dtpEmp
-            // 
-            this.dtpEmp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEmp.Location = new System.Drawing.Point(90, 108);
-            this.dtpEmp.Name = "dtpEmp";
-            this.dtpEmp.Size = new System.Drawing.Size(104, 21);
-            this.dtpEmp.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(217, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "* 수정자";
-            // 
             // lbldept_id
             // 
             this.lbldept_id.AutoSize = true;
@@ -226,15 +236,6 @@ namespace CompanyManager
             this.lbldept_id.Name = "lbldept_id";
             this.lbldept_id.Size = new System.Drawing.Size(0, 14);
             this.lbldept_id.TabIndex = 3;
-            // 
-            // lblIDchk
-            // 
-            this.lblIDchk.AutoSize = true;
-            this.lblIDchk.ForeColor = System.Drawing.Color.White;
-            this.lblIDchk.Location = new System.Drawing.Point(87, 43);
-            this.lblIDchk.Name = "lblIDchk";
-            this.lblIDchk.Size = new System.Drawing.Size(0, 14);
-            this.lblIDchk.TabIndex = 3;
             // 
             // PopEmployeeCRUD
             // 

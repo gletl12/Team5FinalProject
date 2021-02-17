@@ -169,14 +169,14 @@ namespace CompanyManager
                     else
                         chklist.Add(list[i]);
                 }
-                else
-                {
-                    var temp = chklist.Find(p => p.factory_id == list[i].factory_id);
-                    chklist.Remove(temp);
-                }
+                //else
+                //{
+                //    var temp = chklist.Find(p => p.factory_id == list[i].factory_id );
+                //    chklist.Remove(temp);
+                //}
             }
 
-            if (chklist.Count < 1)
+            if (chklist.Count < 1 && chklist2.Count < 1)
             {
                 MessageBox.Show("삭제할 데이터를 선택해주세요.");
                 return;

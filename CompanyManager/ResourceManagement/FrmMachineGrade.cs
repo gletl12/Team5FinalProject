@@ -101,11 +101,13 @@ namespace CompanyManager
 
         private void btnMGRegister_Click(object sender, EventArgs e)
         {
+            btnCencel.PerformClick();
             pnlMGrade.Visible = true;
         }
 
         private void btnCencel_Click(object sender, EventArgs e)
         {
+            upflag = false;
             txtMGCode.Text = txtMGName.Text = txtComment.Text = lblMGrade.Text = "";
             cboUse.SelectedIndex = 0;
             pnlMGrade.Visible = false;

@@ -51,7 +51,7 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@company_name", vo.company_name);
                     cmd.Parameters.AddWithValue("@company_type", vo.company_type);
                     cmd.Parameters.AddWithValue("@company_ceo", vo.company_ceo);
-                    cmd.Parameters.AddWithValue("@company_bnum", vo.company_bnum);
+                    cmd.Parameters.AddWithValue("@company_bnum", (vo.company_bnum == null) ? DBNull.Value : (object)vo.company_bnum);
                     cmd.Parameters.AddWithValue("@company_btype", vo.company_btype);
                     cmd.Parameters.AddWithValue("@company_manager", vo.company_manager);
                     cmd.Parameters.AddWithValue("@company_email", vo.company_email);
@@ -96,7 +96,7 @@ namespace DAC
                     cmd.Parameters.AddWithValue("@company_name", vo.company_name);
                     cmd.Parameters.AddWithValue("@company_type", vo.company_type);
                     cmd.Parameters.AddWithValue("@company_ceo", vo.company_ceo);
-                    cmd.Parameters.AddWithValue("@company_bnum", vo.company_bnum);
+                    cmd.Parameters.AddWithValue("@company_bnum", (vo.company_bnum == null) ? DBNull.Value : (object)vo.company_bnum);
                     cmd.Parameters.AddWithValue("@company_btype", vo.company_btype);
                     cmd.Parameters.AddWithValue("@company_manager", vo.company_manager);
                     cmd.Parameters.AddWithValue("@company_email", vo.company_email);

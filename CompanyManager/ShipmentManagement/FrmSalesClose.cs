@@ -27,7 +27,7 @@ namespace CompanyManager
         {
             CommonUtil.SetInitGridView(dgvSO);
             CommonUtil.SetDGVDesign_Num(dgvSO);
-            CommonUtil.AddGridCheckColumn(dgvSO, "");
+            CommonUtil.SetDGVDesign_CheckBox(dgvSO);
             CommonUtil.AddGridTextColumn(dgvSO, "SO ID", "so_id", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvSO, "PO ID", "po_id", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvSO, "고객사", "company_name", 120);
@@ -42,7 +42,6 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvSO, "매출확정금액", "s_cf_price", 90, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvSO, "마감일자", "due_date", 80, true, DataGridViewContentAlignment.MiddleCenter);
 
-            checkBox1.Location = new Point(dgvSO.Location.X + 54, dgvSO.Location.Y + 5);
             SOListRoad();
         }
 
@@ -131,20 +130,15 @@ namespace CompanyManager
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var sResult = (from so_id in list
-                            where (cboCompany.SelectedValue.ToString().Equals("전체") || so_id.company_name.Equals(cboCompany.SelectedValue.ToString())) &&
+                            where (dtpfrom.Value < so_id.due_date && dtpEnd.Value >= so_id.due_date) &&
+                                  (cboCompany.SelectedValue.ToString().Equals("전체") || so_id.company_name.Equals(cboCompany.SelectedValue.ToString())) &&
                                   (cboDestination.SelectedValue.ToString().Equals("전체") || so_id.company_name.Equals(cboDestination.SelectedValue.ToString())) &&
                                   (cboMKT.SelectedValue.ToString().Equals("전체") || so_id.mkt.Equals(cboMKT.SelectedValue.ToString())) &&
-                                  (so_id.item_name.Contains(txtitem.Text) || so_id.item_id.Contains(txtSO_id.Text)) && so_id.so_id.ToString().Contains(txtSO_id.Text)
+                                  (so_id.item_name.Contains(txtitem.Text) || so_id.item_id.Contains(txtitem.Text)) && so_id.so_id.ToString().Contains(txtSO_id.Text)
                             select so_id).ToList();
             dgvSO.DataSource = null;
             dgvSO.DataSource = sResult;
-            //from company_id in list
-            //where company_id.company_name.Contains($"{txtCName.Text}") &&
-            //      (txtBNum.Text.Length < 10 ||
-            //      company_id.company_bnum.Equals(string.Concat($"{txtBNum.Text.Substring(0, 3)}-{txtBNum.Text.Substring(3, 2)}-{txtBNum.Text.Substring(5)}"))) &&
-            //      (cboBtype.SelectedValue.ToString().Length < 1 || company_id.company_btype.Equals(cboBtype.SelectedValue.ToString())) &&
-            //      (cboCompanyType.SelectedValue.ToString().Length < 1 || company_id.company_type.Equals(cboCompanyType.SelectedValue.ToString()))
-            //select company_id
+            
         }
     }
 }

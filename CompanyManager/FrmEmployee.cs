@@ -90,7 +90,7 @@ namespace CompanyManager
             CommonUtil.AddGridTextColumn(dgvEmployee, "부서명", "dept_name", 70);
             CommonUtil.AddGridTextColumn(dgvEmployee, "입사일", "hire_date");
             CommonUtil.AddGridTextColumn(dgvEmployee, "수정자", "up_emp", 80);
-            CommonUtil.AddGridTextColumn(dgvEmployee, "수정시간", "up_date", 148);
+            CommonUtil.AddGridTextColumn(dgvEmployee, "수정시간", "up_date", 147);
 
             dgvEmployee.AutoGenerateColumns = false;
             dgvEmployee.AllowUserToAddRows = false;
@@ -174,7 +174,7 @@ namespace CompanyManager
                 return;
             }
 
-            if(MessageBox.Show($"{evo.dept_name}을 정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show($"{evo.emp_name}을 정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EmployeeService service = new EmployeeService();
                 if(service.DeleteEmployee(evo.emp_id))
