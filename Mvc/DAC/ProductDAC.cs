@@ -54,7 +54,7 @@ namespace Mvc.DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "select count(*) from Products where Category = isnull(@category, Category) ";
+                cmd.CommandText = "select count(*) from Products1 where Category = isnull(@category, Category) ";
 
                 cmd.Parameters.AddWithValue("@category",
                     (string.IsNullOrEmpty(category)) ? DBNull.Value : (object)category);
@@ -78,7 +78,7 @@ namespace Mvc.DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "select distinct category from Products order by Category ";
+                cmd.CommandText = "select distinct category from Products1 order by Category ";
 
                 List<string> list = new List<string>();
 
@@ -98,7 +98,7 @@ namespace Mvc.DAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "select ProductID, Name, Price, Description, Category from Products where ProductID = @productID ";
+                cmd.CommandText = "select ProductID, Name, Price, Description, Category from Products1 where ProductID = @productID ";
                 cmd.Parameters.AddWithValue("@productID", productID);
 
                 conn.Open();

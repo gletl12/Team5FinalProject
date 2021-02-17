@@ -89,24 +89,24 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                     cmd.Parameters.AddWithValue("@shift_sdate", item.shift_sdate);
                     cmd.Parameters.AddWithValue("@shift_edate", item.shift_edate);
                     cmd.Parameters.AddWithValue("@shift_use", item.shift_use);
-                    cmd.Parameters.AddWithValue("@shift_comment", item.shift_comment);
+                    cmd.Parameters.AddWithValue("@shift_comment", (item.shift_comment == "") ? DBNull.Value : (object)item.shift_comment);
 
                     cmd.Parameters.AddWithValue("@ins_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@ins_emp", item.ins_emp);
                    
 
-                    cmd.Parameters.AddWithValue("@Directly_Input_Person", item.Directly_Input_Person);
-                    cmd.Parameters.AddWithValue("@Indirect_Input_Person", item.Indirect_Input_Person);
-                    cmd.Parameters.AddWithValue("@Nomal_Direct_WorkTime", item.Nomal_Direct_WorkTime);
-                    cmd.Parameters.AddWithValue("@Nomal_indirect_WorkTime", item.Nomal_indirect_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_WorkTime", item.Overtime_Directly_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_WorkTime", item.Overtime_Indirect_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_Input_Person", item.Overtime_Directly_Input_Person);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Input_Person", item.Overtime_Indirect_Input_Person);
-                    cmd.Parameters.AddWithValue("@Directly_Accident_WorkTime", item.Directly_Accident_WorkTime);
-                    cmd.Parameters.AddWithValue("@Indirect_Accident_WorkTime", item.Indirect_Accident_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_Accident_Time", item.Overtime_Directly_Accident_Time);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Accident_Time", item.Overtime_Indirect_Accident_Time);
+                    cmd.Parameters.AddWithValue("@Directly_Input_Person", (item.Directly_Input_Person=="")?DBNull.Value:(object)item.Directly_Input_Person);
+                    cmd.Parameters.AddWithValue("@Indirect_Input_Person", (item.Indirect_Input_Person == "") ? DBNull.Value : (object)item.Indirect_Input_Person);
+                    cmd.Parameters.AddWithValue("@Nomal_Direct_WorkTime", (item.Nomal_Direct_WorkTime == "") ? DBNull.Value : (object)item.Nomal_Direct_WorkTime);
+                    cmd.Parameters.AddWithValue("@Nomal_indirect_WorkTime", (item.Nomal_indirect_WorkTime == "") ? DBNull.Value : (object)item.Nomal_indirect_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_WorkTime", (item.Overtime_Directly_WorkTime == "") ? DBNull.Value : (object)item.Overtime_Directly_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_WorkTime", (item.Overtime_Indirect_WorkTime == "") ? DBNull.Value : (object)item.Overtime_Indirect_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_Input_Person", (item.Overtime_Directly_Input_Person == "") ? DBNull.Value : (object)item.Overtime_Directly_Input_Person);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Input_Person", (item.Overtime_Indirect_Input_Person == "") ? DBNull.Value : (object)item.Overtime_Indirect_Input_Person);
+                    cmd.Parameters.AddWithValue("@Directly_Accident_WorkTime", (item.Directly_Accident_WorkTime == "") ? DBNull.Value : (object)item.Directly_Accident_WorkTime);
+                    cmd.Parameters.AddWithValue("@Indirect_Accident_WorkTime", (item.Indirect_Accident_WorkTime == "") ? DBNull.Value : (object)item.Indirect_Accident_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_Accident_Time", (item.Overtime_Directly_Accident_Time == "") ? DBNull.Value : (object)item.Overtime_Directly_Accident_Time);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Accident_Time", (item.Overtime_Indirect_Accident_Time == "") ? DBNull.Value : (object)item.Overtime_Indirect_Accident_Time);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
                     conn.Close();
@@ -195,23 +195,26 @@ values (@machine_id,@shift_type,@shift_stime,@shift_etime,@shift_sdate,@shift_ed
                     cmd.Parameters.AddWithValue("@shift_sdate", item.shift_sdate);
                     cmd.Parameters.AddWithValue("@shift_edate", item.shift_edate);
                     cmd.Parameters.AddWithValue("@shift_use", item.shift_use);
-                    cmd.Parameters.AddWithValue("@shift_comment", item.shift_comment);
+                    cmd.Parameters.AddWithValue("@shift_comment", (item.shift_comment=="") ? DBNull.Value : (object)item.shift_comment);
 
                     cmd.Parameters.AddWithValue("@up_date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@up_emp", item.up_emp);
+                    cmd.Parameters.AddWithValue("@up_emp", item.ins_emp);
 
-                    cmd.Parameters.AddWithValue("@Directly_Input_Person", item.Directly_Input_Person);
-                    cmd.Parameters.AddWithValue("@Indirect_Input_Person", item.Indirect_Input_Person);
-                    cmd.Parameters.AddWithValue("@Nomal_Direct_WorkTime", item.Nomal_Direct_WorkTime);
-                    cmd.Parameters.AddWithValue("@Nomal_indirect_WorkTime", item.Nomal_indirect_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_WorkTime", item.Overtime_Directly_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_WorkTime", item.Overtime_Indirect_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_Input_Person", item.Overtime_Directly_Input_Person);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Input_Person", item.Overtime_Indirect_Input_Person);
-                    cmd.Parameters.AddWithValue("@Directly_Accident_WorkTime", item.Directly_Accident_WorkTime);
-                    cmd.Parameters.AddWithValue("@Indirect_Accident_WorkTime", item.Indirect_Accident_WorkTime);
-                    cmd.Parameters.AddWithValue("@Overtime_Directly_Accident_Time", item.Overtime_Directly_Accident_Time);
-                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Accident_Time", item.Overtime_Indirect_Accident_Time);
+              
+
+                    cmd.Parameters.AddWithValue("@Directly_Input_Person", (item.Directly_Input_Person == "") ? DBNull.Value : (object)item.Directly_Input_Person);
+                    cmd.Parameters.AddWithValue("@Indirect_Input_Person", (item.Indirect_Input_Person == "") ? DBNull.Value : (object)item.Indirect_Input_Person);
+                    cmd.Parameters.AddWithValue("@Nomal_Direct_WorkTime", (item.Nomal_Direct_WorkTime == "") ? DBNull.Value : (object)item.Nomal_Direct_WorkTime);
+                    cmd.Parameters.AddWithValue("@Nomal_indirect_WorkTime", (item.Nomal_indirect_WorkTime == "") ? DBNull.Value : (object)item.Nomal_indirect_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_WorkTime", (item.Overtime_Directly_WorkTime == "") ? DBNull.Value : (object)item.Overtime_Directly_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_WorkTime", (item.Overtime_Indirect_WorkTime == "") ? DBNull.Value : (object)item.Overtime_Indirect_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_Input_Person", (item.Overtime_Directly_Input_Person == "") ? DBNull.Value : (object)item.Overtime_Directly_Input_Person);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Input_Person", (item.Overtime_Indirect_Input_Person == "") ? DBNull.Value : (object)item.Overtime_Indirect_Input_Person);
+                    cmd.Parameters.AddWithValue("@Directly_Accident_WorkTime", (item.Directly_Accident_WorkTime == "") ? DBNull.Value : (object)item.Directly_Accident_WorkTime);
+                    cmd.Parameters.AddWithValue("@Indirect_Accident_WorkTime", (item.Indirect_Accident_WorkTime == "") ? DBNull.Value : (object)item.Indirect_Accident_WorkTime);
+                    cmd.Parameters.AddWithValue("@Overtime_Directly_Accident_Time", (item.Overtime_Directly_Accident_Time == "") ? DBNull.Value : (object)item.Overtime_Directly_Accident_Time);
+                    cmd.Parameters.AddWithValue("@Overtime_Indirect_Accident_Time", (item.Overtime_Indirect_Accident_Time == "") ? DBNull.Value : (object)item.Overtime_Indirect_Accident_Time);
+
 
                     int iRowAffect = cmd.ExecuteNonQuery();
                     conn.Close();

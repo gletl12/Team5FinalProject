@@ -20,7 +20,7 @@ namespace VO
      public string shift_use                                  {get; set;}
      public string shift_comment                              {get; set;}
      public DateTime ins_date                                 {get; set;}
-     public string ins_emp                                    {get; set;}
+     public int ins_emp                                    {get; set;}
      public DateTime up_date                                  {get; set;}
      public string up_emp                                     {get; set;}
      public string Directly_Input_Person                         {get; set;}
