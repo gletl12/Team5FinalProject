@@ -142,13 +142,14 @@ namespace CompanyManager.CustomControl
                     if (btn.Location.X == temploc.X - 74 )
                     {
                         btn.PerformClick();
+                        return;
                     }
                 }
             }
             
 
             //홈버튼 복귀
-            //btnHome.PerformClick();
+            btnHome.PerformClick();
 
         }
 
