@@ -43,10 +43,10 @@ namespace CompanyManager
             this.txtComment = new System.Windows.Forms.TextBox();
             this.txtUpEmp = new System.Windows.Forms.TextBox();
             this.txtFName = new System.Windows.Forms.TextBox();
-            this.txtFParent = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCRU = new System.Windows.Forms.Button();
+            this.cboFParent = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@ namespace CompanyManager
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cboFParent);
             this.panel1.Controls.Add(this.cboParent);
             this.panel1.Controls.Add(this.cboFUse);
             this.panel1.Controls.Add(this.cboFType);
@@ -73,7 +74,6 @@ namespace CompanyManager
             this.panel1.Controls.Add(this.txtComment);
             this.panel1.Controls.Add(this.txtUpEmp);
             this.panel1.Controls.Add(this.txtFName);
-            this.panel1.Controls.Add(this.txtFParent);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 33);
@@ -207,14 +207,6 @@ namespace CompanyManager
             this.txtFName.Size = new System.Drawing.Size(190, 21);
             this.txtFName.TabIndex = 3;
             // 
-            // txtFParent
-            // 
-            this.txtFParent.BackColor = System.Drawing.Color.NavajoWhite;
-            this.txtFParent.Location = new System.Drawing.Point(371, 15);
-            this.txtFParent.Name = "txtFParent";
-            this.txtFParent.Size = new System.Drawing.Size(190, 21);
-            this.txtFParent.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -257,6 +249,17 @@ namespace CompanyManager
             this.btnCRU.UseVisualStyleBackColor = false;
             this.btnCRU.Click += new System.EventHandler(this.btnCRU_Click);
             // 
+            // cboFParent
+            // 
+            this.cboFParent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.cboFParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFParent.Enabled = false;
+            this.cboFParent.FormattingEnabled = true;
+            this.cboFParent.Location = new System.Drawing.Point(371, 15);
+            this.cboFParent.Name = "cboFParent";
+            this.cboFParent.Size = new System.Drawing.Size(190, 22);
+            this.cboFParent.TabIndex = 6;
+            // 
             // PopFactoryCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -290,11 +293,11 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.TextBox txtUpEmp;
         private System.Windows.Forms.TextBox txtFName;
-        private System.Windows.Forms.TextBox txtFParent;
         private System.Windows.Forms.ComboBox cboFUse;
         private System.Windows.Forms.ComboBox cboFType;
         private System.Windows.Forms.ComboBox cboFGrade;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboParent;
+        private System.Windows.Forms.ComboBox cboFParent;
     }
 }
