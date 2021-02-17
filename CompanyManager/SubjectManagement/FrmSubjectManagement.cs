@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 using VO;
+using Util;
 
 namespace CompanyManager
 {
@@ -390,6 +391,11 @@ namespace CompanyManager
             ////수정할 값 가져ㅑ와서 수정
             //pop.ShowDialog();
 
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            CommonExcel.ExportExcel(dataGridView1);
         }
     }
 }
