@@ -26,7 +26,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("단가 목록을 불러오는중 오류 발생" + err.Message);
+                    //Log.WriteError("단가 목록을 불러오는중 오류 발생" + err.Message);
                     return null;
                 }
             }
@@ -47,7 +47,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("업체 목록을 불러오는중 오류 발생" + err.Message);
+                    //Log.WriteError("업체 목록을 불러오는중 오류 발생" + err.Message);
                     return null;
                 }
             }
@@ -76,7 +76,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("신규 단가 정보를 저장하는중 오류 발생" + err.Message);
+                   // Log.WriteError("신규 단가 정보를 저장하는중 오류 발생" + err.Message);
                     return false;
                 }
             }
@@ -117,7 +117,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("단가 정보를 저장하는중 오류 발생" + err.Message);
+                    //Log.WriteError("단가 정보를 저장하는중 오류 발생" + err.Message);
                     trans.Rollback();
                     cmd.Connection.Close();
                     return false;
@@ -140,7 +140,7 @@ namespace API.DAC
                 }
                 catch (Exception err)
                 {
-                    Log.WriteError("상품 목록을 불러오는중 오류 발생" + err.Message);
+                    //Log.WriteError("상품 목록을 불러오는중 오류 발생" + err.Message);
                     return null;
                 }
             }

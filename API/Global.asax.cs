@@ -12,7 +12,7 @@ namespace API
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-
+            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             log4net.Config.XmlConfigurator.Configure();
         }
     }

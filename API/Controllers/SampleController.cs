@@ -19,11 +19,11 @@ namespace API.Controllers
     public class SampleController : ApiController
     {
         //로그 선언
-        ILog log = log4net.LogManager.GetLogger(typeof(SampleController));
+        //ILog log = log4net.LogManager.GetLogger(typeof(SampleController));
 
         private void WriteLog()
         {
-            log.Debug("로그 작성");
+            //log.Debug("로그 작성");
         }
 
 
