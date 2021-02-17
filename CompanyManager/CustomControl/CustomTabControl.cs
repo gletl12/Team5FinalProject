@@ -90,12 +90,16 @@ namespace CompanyManager.CustomControl
         //텝/폼 종료버튼
         private void btnClose_Click(object sender, EventArgs e)
         {
+            
+            Point temploc = new Point(0,0);
             string menuName = ((Button)sender).Tag.ToString();
             foreach (Control item in pnlTab.Controls)
             {
                 //해당 텝버튼 할당해제
                 if (item.Text.ToString() == menuName)
                 {
+                    temploc = item.Location;
+
                     item.Dispose();
                     break;
                 }
@@ -125,14 +129,26 @@ namespace CompanyManager.CustomControl
                     item.Location = new Point(item.Location.X-74,item.Location.Y);
                 }
             }
+
+
             //x버튼 할당 해제
+            
             ((Button)sender).Dispose();
 
+            foreach (Control ctrl in (pnlTab.Controls))
+            {
+                if (ctrl is Button btn)
+                {
+                    if (btn.Location.X == temploc.X - 74 )
+                    {
+                        btn.PerformClick();
+                    }
+                }
+            }
             
 
-
             //홈버튼 복귀
-            btnHome.PerformClick();
+            //btnHome.PerformClick();
 
         }
 
