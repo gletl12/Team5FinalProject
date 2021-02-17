@@ -60,7 +60,6 @@ namespace CompanyManager
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(172, 24);
             this.label20.Name = "label20";
@@ -86,6 +85,7 @@ namespace CompanyManager
             // 
             // cboMachine
             // 
+            this.cboMachine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
             this.cboMachine.Location = new System.Drawing.Point(763, 22);
@@ -95,6 +95,7 @@ namespace CompanyManager
             // 
             // cboID
             // 
+            this.cboID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboID.FormattingEnabled = true;
             this.cboID.Items.AddRange(new object[] {
             "WO/PO ID",
@@ -222,6 +223,7 @@ namespace CompanyManager
             // 
             // cboEmployee
             // 
+            this.cboEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEmployee.FormattingEnabled = true;
             this.cboEmployee.Location = new System.Drawing.Point(436, 51);
@@ -231,6 +233,7 @@ namespace CompanyManager
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(358, 54);
             this.label3.Name = "label3";
@@ -240,6 +243,7 @@ namespace CompanyManager
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.label4.Location = new System.Drawing.Point(358, 51);

@@ -59,8 +59,10 @@ namespace CompanyManager
             // 
             // popupTitleBar1
             // 
+            this.popupTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.popupTitleBar1.HeaderText = "S/O";
-            this.popupTitleBar1.Size = new System.Drawing.Size(615, 33);
+            this.popupTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.popupTitleBar1.Size = new System.Drawing.Size(616, 33);
             // 
             // label6
             // 

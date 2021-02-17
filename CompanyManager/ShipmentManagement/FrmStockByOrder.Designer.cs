@@ -108,7 +108,6 @@ namespace CompanyManager
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(180, 24);
             this.label20.Name = "label20";
@@ -134,6 +133,7 @@ namespace CompanyManager
             // 
             // cboTo
             // 
+            this.cboTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTo.FormattingEnabled = true;
             this.cboTo.Location = new System.Drawing.Point(744, 21);
@@ -143,6 +143,7 @@ namespace CompanyManager
             // 
             // cboFrom
             // 
+            this.cboFrom.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFrom.FormattingEnabled = true;
             this.cboFrom.Location = new System.Drawing.Point(429, 22);

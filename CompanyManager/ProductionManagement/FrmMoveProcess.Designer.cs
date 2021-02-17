@@ -90,6 +90,7 @@ namespace CompanyManager
             // 
             // cboItemType
             // 
+            this.cboItemType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboItemType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemType.FormattingEnabled = true;
             this.cboItemType.Location = new System.Drawing.Point(423, 22);
@@ -123,7 +124,7 @@ namespace CompanyManager
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(685, 25);
+            this.label11.Location = new System.Drawing.Point(701, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 14);
             this.label11.TabIndex = 3;
@@ -160,7 +161,7 @@ namespace CompanyManager
             // txtItem
             // 
             this.txtItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtItem.Location = new System.Drawing.Point(741, 22);
+            this.txtItem.Location = new System.Drawing.Point(757, 22);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(197, 21);
             this.txtItem.TabIndex = 2;
@@ -170,7 +171,7 @@ namespace CompanyManager
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(685, 25);
+            this.label15.Location = new System.Drawing.Point(701, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 1;

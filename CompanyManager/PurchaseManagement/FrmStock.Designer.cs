@@ -148,6 +148,7 @@ namespace CompanyManager
             // 
             // cboItemType
             // 
+            this.cboItemType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboItemType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemType.FormattingEnabled = true;
             this.cboItemType.Location = new System.Drawing.Point(752, 21);
