@@ -56,7 +56,7 @@ namespace CompanyManager
             this.label18 = new System.Windows.Forms.Label();
             this.dgvSO = new System.Windows.Forms.DataGridView();
             this.btnMaGam = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnExcelExport = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSO)).BeginInit();
@@ -365,21 +365,22 @@ namespace CompanyManager
             this.btnMaGam.UseVisualStyleBackColor = false;
             this.btnMaGam.Click += new System.EventHandler(this.btnMaGam_Click);
             // 
-            // button12
+            // btnExcelExport
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1106, 112);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelExport.Location = new System.Drawing.Point(1106, 112);
+            this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
+            this.btnExcelExport.TabIndex = 9;
+            this.btnExcelExport.Text = "    엑셀";
+            this.btnExcelExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelExport.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Click += new System.EventHandler(this.btnExcelExport_Click);
             // 
             // label10
             // 
@@ -397,7 +398,7 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.btnMaGam);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.btnExcelExport);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvSO);
@@ -414,7 +415,7 @@ namespace CompanyManager
         #endregion
 
         private System.Windows.Forms.Button btnMaGam;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnExcelExport;
         private System.Windows.Forms.ComboBox cboMKT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;

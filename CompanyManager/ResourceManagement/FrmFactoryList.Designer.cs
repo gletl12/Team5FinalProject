@@ -30,6 +30,13 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFactoryList));
+            this.dgvFactory = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnExcelImport = new System.Windows.Forms.Button();
+            this.btnExcelExport = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboFGrade = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -37,15 +44,113 @@ namespace CompanyManager
             this.label15 = new System.Windows.Forms.Label();
             this.txtCodeName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dgvFactory = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnExcelImport = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
+            this.btnDownload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvFactory
+            // 
+            this.dgvFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFactory.Location = new System.Drawing.Point(12, 103);
+            this.dgvFactory.Name = "dgvFactory";
+            this.dgvFactory.RowHeadersWidth = 50;
+            this.dgvFactory.RowTemplate.Height = 23;
+            this.dgvFactory.Size = new System.Drawing.Size(1144, 535);
+            this.dgvFactory.TabIndex = 28;
+            this.dgvFactory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactory_CellClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(839, 74);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(57, 23);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.Text = "    삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label10.Location = new System.Drawing.Point(12, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 14);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "      공장관리";
+            // 
+            // btnExcelImport
+            // 
+            this.btnExcelImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
+            this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelImport.Location = new System.Drawing.Point(1070, 74);
+            this.btnExcelImport.Name = "btnExcelImport";
+            this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
+            this.btnExcelImport.TabIndex = 24;
+            this.btnExcelImport.Text = "    Excel등록";
+            this.btnExcelImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelImport.UseVisualStyleBackColor = false;
+            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
+            // 
+            // btnExcelExport
+            // 
+            this.btnExcelExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnExcelExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
+            this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelExport.Location = new System.Drawing.Point(1010, 74);
+            this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
+            this.btnExcelExport.TabIndex = 26;
+            this.btnExcelExport.Text = "    엑셀";
+            this.btnExcelExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcelExport.UseVisualStyleBackColor = false;
+            this.btnExcelExport.Click += new System.EventHandler(this.btnExcelExport_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
+            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegister.Location = new System.Drawing.Point(777, 74);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(56, 23);
+            this.btnRegister.TabIndex = 27;
+            this.btnRegister.Text = "    등록";
+            this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // panel2
             // 
@@ -128,124 +233,40 @@ namespace CompanyManager
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dgvFactory
+            // btnDownload
             // 
-            this.dgvFactory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFactory.Location = new System.Drawing.Point(12, 103);
-            this.dgvFactory.Name = "dgvFactory";
-            this.dgvFactory.RowHeadersWidth = 50;
-            this.dgvFactory.RowTemplate.Height = 23;
-            this.dgvFactory.Size = new System.Drawing.Size(1144, 535);
-            this.dgvFactory.TabIndex = 28;
-            this.dgvFactory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactory_CellClick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 14);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "      공장관리";
-            // 
-            // btnExcelImport
-            // 
-            this.btnExcelImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcelImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnExcelImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnExcelImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelImport.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
-            this.btnExcelImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelImport.Location = new System.Drawing.Point(1070, 74);
-            this.btnExcelImport.Name = "btnExcelImport";
-            this.btnExcelImport.Size = new System.Drawing.Size(86, 23);
-            this.btnExcelImport.TabIndex = 24;
-            this.btnExcelImport.Text = "    Excel등록";
-            this.btnExcelImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcelImport.UseVisualStyleBackColor = false;
-            this.btnExcelImport.Click += new System.EventHandler(this.btnExcelImport_Click);
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1010, 74);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(54, 23);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "    엑셀";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Image = global::CompanyManager.Properties.Resources.pencil_16;
-            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(885, 74);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(56, 23);
-            this.btnRegister.TabIndex = 27;
-            this.btnRegister.Text = "    등록";
-            this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Image = global::CompanyManager.Properties.Resources.Cancel_16x16;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(947, 74);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(57, 23);
-            this.btnDelete.TabIndex = 30;
-            this.btnDelete.Text = "    삭제";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
+            this.btnDownload.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
+            this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDownload.Location = new System.Drawing.Point(902, 74);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(102, 23);
+            this.btnDownload.TabIndex = 31;
+            this.btnDownload.Text = "    양식 다운로드";
+            this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // FrmFactoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
+            this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.dgvFactory);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcelImport);
-            this.Controls.Add(this.button12);
+            this.Controls.Add(this.btnExcelExport);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.panel2);
             this.Name = "FrmFactoryList";
             this.Load += new System.EventHandler(this.FrmFactoryList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +275,7 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnExcelImport;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnExcelExport;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cboFGrade;
@@ -265,5 +286,6 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvFactory;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDownload;
     }
 }
