@@ -23,7 +23,7 @@ namespace CompanyManager
 
             CommonUtil.SetInitGridView(dgvPurchases);
             CommonUtil.SetDGVDesign_Num(dgvPurchases);
-            CommonUtil.SetDGVDesign_CheckBox(dgvPurchases);
+            CommonUtil.AddGridCheckColumn(dgvPurchases, "chk");
             dgvPurchases.RowHeadersVisible = true;
             CommonUtil.AddGridTextColumn(dgvPurchases, "발주번호", "purchase_id", 60, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvPurchases, "업체명", "company_name", 120);
@@ -43,9 +43,9 @@ namespace CompanyManager
 
         private void FrmPurchaseList_Load(object sender, EventArgs e)
         {
-            dtpFrom.Value = new DateTime(2020, 01, 01);
+            dtpFrom.Value = DateTime.Now;
             //dtpFrom.Value = DateTime.Now;
-            dtpTo.Value = dtpFrom.Value.AddDays(7);
+            dtpTo.Value = dtpFrom.Value.AddMonths(1);
             GetPurchasesList();
 
             List<CodeVO> codes = service.GetAllCodes();
@@ -139,16 +139,18 @@ namespace CompanyManager
             PopupDueDate popup = new PopupDueDate();
             popup.StartPosition = FormStartPosition.CenterParent;
             if (popup.ShowDialog() == DialogResult.OK)
+            {
                 result = service.UpdateDueDate(selectedRows[0], popup.DueDate);
-            if (result)
-            {
-                MessageBox.Show("납기일자 변경 성공");
-                btnSearch.PerformClick();
-            }
-            else
-            {
-                MessageBox.Show("납기일자를 변경하는중 오류가 발생하였습니다\r\n다시 시도하여 주십시오");
-                return;
+                if (result)
+                {
+                    MessageBox.Show("납기일자 변경 성공");
+                    btnSearch.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("납기일자를 변경하는중 오류가 발생하였습니다\r\n다시 시도하여 주십시오");
+                    return;
+                }
             }
                 
         }

@@ -74,7 +74,7 @@ namespace CompanyManager
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 0)
                 return;
-            PriceVO price = priceList.Find((elem) => elem.item_id.Equals(dgvPrice.Rows[e.RowIndex].Cells[3].Value.ToString()) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
+            PriceVO price = priceList.Find((elem) => elem.item_id.Equals(dgvPrice.Rows[e.RowIndex].Cells[1].Value.ToString()) && elem.price_edate.Equals(new DateTime(9999, 01, 01)));
             //priceList[e.RowIndex];
             PopupSalesPrice popup = new PopupSalesPrice(price.company_name, price.item_name, price.price_currency, price.now);
             popup.StartPosition = FormStartPosition.CenterParent;
