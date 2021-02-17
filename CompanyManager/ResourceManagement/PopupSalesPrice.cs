@@ -31,11 +31,9 @@ namespace CompanyManager
         public PopupSalesPrice(string companyName, string itemName, string currency, decimal before)
         {
             InitializeComponent();
-            cboCompany.Text = companyName;
             cboItem.Text = itemName;
             cboCurrency.Text = currency;
             txtBeforePrice.Text = before.ToString();
-            cboCompany.Enabled = cboItem.Enabled = cboCurrency.Enabled = txtBeforePrice.Enabled = false;
         }
 
         private void PopupSalesPrice_Load(object sender, EventArgs e)
@@ -43,14 +41,13 @@ namespace CompanyManager
             if (ItemID.Length >0)
                 return;
             //콤보박스 바인딩
-            CommonUtil.BindingComboBox(cboCompany, companys, "company_id", "company_name");
             ApiMessage<List<ItemCodeVO>> item = service.GetApiCaller<List<ItemCodeVO>>($"{url}itemList");
             items = item.Data;
-
             CodeService code = new CodeService();
             string[] categorys = { "currency" };
             Dictionary<string, List<CodeVO>> codeList = code.GetCommonCode(categorys);
             CommonUtil.BindingComboBox(cboCurrency, codeList["currency"], "code", "name");
+            CommonUtil.BindingComboBox(cboItem  , item.Data, "item_id", "item_name");
         }
 
 
@@ -58,19 +55,7 @@ namespace CompanyManager
 
         private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboItem.DataSource = null;
-            if (ItemID.Length > 0)
-                return;
-            if (string.IsNullOrEmpty(cboCompany.Text))
-                return;
-            var cItem = (from item
-                         in items
-                         where item.supply_company.Equals(cboCompany.SelectedValue)
-                         select item).ToList();
-            if (cItem.Count < 1)
-                return;
-            
-            CommonUtil.BindingComboBox(cboItem, cItem, "item_id", "item_name");
+
         }
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
