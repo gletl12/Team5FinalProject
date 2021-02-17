@@ -17,6 +17,7 @@ namespace CompanyManager
     {
         List<FactoryVO> list = new List<FactoryVO>();
         List<FactoryVO> chklist = new List<FactoryVO>();
+        List<FactoryVO> chklist2 = new List<FactoryVO>();
         FactoryVO fvo = new FactoryVO();
         public FrmFactoryList()
         {
@@ -163,7 +164,10 @@ namespace CompanyManager
             {
                 if (dgvFactory[0, i].Value != null && (bool)dgvFactory[0, i].Value)
                 {
-                    chklist.Add(list[i]);
+                    if (list[i].factory_grade == "창고")
+                        chklist2.Add(list[i]);
+                    else
+                        chklist.Add(list[i]);
                 }
                 else
                 {
@@ -172,35 +176,25 @@ namespace CompanyManager
                 }
             }
 
-            if (chklist.Count != 1)
+            if (chklist.Count < 1)
             {
-                MessageBox.Show("삭제할 데이터를 한개 선택해주세요.");
+                MessageBox.Show("삭제할 데이터를 선택해주세요.");
                 return;
             }
             if (MessageBox.Show($"정말로 삭제하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (chklist[0].codename == "공장")
+
+                FactoryService service = new FactoryService();
+                if (service.DeleteFactory(chklist) && service.DeleteWareHouse(chklist2))
                 {
-                    FactoryService service = new FactoryService();
-                    if (service.DeleteFactory(chklist[0].factory_id))
-                    {
-                        MessageBox.Show("삭제되었습니다.");
-                        DataRoad();
-                    }
-                    else
-                        MessageBox.Show("삭제에 실패하였습니다.");
+                    MessageBox.Show("삭제되었습니다.");
+                    chklist.Clear();
+                    chklist2.Clear();
+                    DataRoad();
                 }
                 else
-                {
-                    FactoryService service = new FactoryService();
-                    if (service.DeleteWareHouse(chklist[0].factory_id))
-                    {
-                        MessageBox.Show("삭제되었습니다.");
-                        DataRoad();
-                    }
-                    else
-                        MessageBox.Show("삭제에 실패하였습니다.");
-                }
+                    MessageBox.Show("삭제에 실패하였습니다.");
+
             }
         }
 
