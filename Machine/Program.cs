@@ -75,13 +75,15 @@ namespace Machine
 
         private async void AsyncEchoServer()
         {
+            int time = int.Parse(ConfigurationManager.AppSettings["time"]);
+            
             listener.Start();
             while (true)
             {
                 tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 stream = tc.GetStream();
 
-                timer1 = new Timer(300);
+                timer1 = new Timer(time);
                 timer1.Elapsed += Timer1_Elapsed;
                 timer1.Enabled = true;
                 timer1.AutoReset = true;
