@@ -50,7 +50,6 @@ namespace CompanyManager
             this.btnSearch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnRegWO = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCommit = new System.Windows.Forms.Button();
@@ -298,7 +297,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1071, 129);
+            this.btnExcel.Location = new System.Drawing.Point(1106, 129);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 24;
@@ -306,18 +305,6 @@ namespace CompanyManager
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 129);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 23;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // btnRegWO
             // 
@@ -327,7 +314,7 @@ namespace CompanyManager
             this.btnRegWO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegWO.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnRegWO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegWO.Location = new System.Drawing.Point(976, 129);
+            this.btnRegWO.Location = new System.Drawing.Point(1011, 129);
             this.btnRegWO.Name = "btnRegWO";
             this.btnRegWO.Size = new System.Drawing.Size(89, 23);
             this.btnRegWO.TabIndex = 32;
@@ -344,7 +331,7 @@ namespace CompanyManager
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::CompanyManager.Properties.Resources.trash;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(848, 129);
+            this.btnDelete.Location = new System.Drawing.Point(883, 129);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(122, 23);
             this.btnDelete.TabIndex = 34;
@@ -361,7 +348,7 @@ namespace CompanyManager
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommit.Location = new System.Drawing.Point(741, 129);
+            this.btnCommit.Location = new System.Drawing.Point(776, 129);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(101, 23);
             this.btnCommit.TabIndex = 35;
@@ -379,7 +366,6 @@ namespace CompanyManager
             this.Controls.Add(this.btnRegWO);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.dgvWorkOrder);
             this.Controls.Add(this.panel2);
             this.Name = "FrmNewWorkOrder";
@@ -395,7 +381,6 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvWorkOrder;
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Panel panel2;

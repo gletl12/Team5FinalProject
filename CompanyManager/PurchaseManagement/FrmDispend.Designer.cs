@@ -58,7 +58,6 @@ namespace CompanyManager
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvDispend = new System.Windows.Forms.DataGridView();
             this.btnOutbound = new System.Windows.Forms.Button();
             this.btxExcel = new System.Windows.Forms.Button();
@@ -85,7 +84,6 @@ namespace CompanyManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dgvDispend);
             this.splitContainer1.Panel2.Controls.Add(this.btnOutbound);
             this.splitContainer1.Panel2.Controls.Add(this.btxExcel);
@@ -413,18 +411,6 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      원자재불출";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // dgvDispend
             // 
             this.dgvDispend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -447,7 +433,7 @@ namespace CompanyManager
             this.btnOutbound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOutbound.Image = global::CompanyManager.Properties.Resources.FullShoppingCart_16x16;
             this.btnOutbound.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutbound.Location = new System.Drawing.Point(1005, 3);
+            this.btnOutbound.Location = new System.Drawing.Point(1040, 3);
             this.btnOutbound.Name = "btnOutbound";
             this.btnOutbound.Size = new System.Drawing.Size(56, 23);
             this.btnOutbound.TabIndex = 18;
@@ -464,7 +450,7 @@ namespace CompanyManager
             this.btxExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btxExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btxExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btxExcel.Location = new System.Drawing.Point(1067, 3);
+            this.btxExcel.Location = new System.Drawing.Point(1102, 3);
             this.btxExcel.Name = "btxExcel";
             this.btxExcel.Size = new System.Drawing.Size(54, 23);
             this.btxExcel.TabIndex = 17;
@@ -518,7 +504,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvDispend;
         private System.Windows.Forms.Button btnOutbound;
         private System.Windows.Forms.Button btxExcel;
