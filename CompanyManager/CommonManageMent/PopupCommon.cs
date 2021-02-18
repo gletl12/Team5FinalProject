@@ -458,7 +458,7 @@ namespace CompanyManager
         //공통코드 검색 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            txtSearch.Text = "";
+           
 
             //모든컬럼에 or로 검색
             var result = from code in codeAllList
@@ -470,6 +470,8 @@ namespace CompanyManager
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = result.ToList();
+
+            txtSearch.Text = "";
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)

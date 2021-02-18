@@ -150,9 +150,9 @@ namespace CompanyManager
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (btnDown.Text == "ᐱ")
+            if (btnDown.Text == "V")
             {
-                btnDown.Text = "V";
+                btnDown.Text = "ᐱ";
                 int size = this.Size.Height;
                 btnDown.Location = new Point(btnDown.Location.X, 71);
                 btnSearch.Location = new Point(btnSearch.Location.X, 71);
@@ -165,7 +165,10 @@ namespace CompanyManager
             }
             else
             {
-                btnDown.Text = "ᐱ";
+                btnDown.Text = "V";
+
+                cboUse.SelectedIndex = 0;
+                cboSubjectType.SelectedIndex = 0;
 
                 btnDown.Location = new Point(btnDown.Location.X, 38);
                 btnSearch.Location = new Point(btnSearch.Location.X, 38);
