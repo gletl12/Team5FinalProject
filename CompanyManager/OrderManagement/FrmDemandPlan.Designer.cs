@@ -47,7 +47,6 @@ namespace CompanyManager
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.btnPlan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -235,11 +234,11 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 145);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1152, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(1152, 493);
             this.dataGridView1.TabIndex = 19;
             // 
             // label10
@@ -247,23 +246,11 @@ namespace CompanyManager
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 138);
+            this.label10.Location = new System.Drawing.Point(12, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      수요계획";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 129);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
@@ -273,7 +260,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1071, 129);
+            this.button12.Location = new System.Drawing.Point(1106, 116);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 17;
@@ -290,7 +277,7 @@ namespace CompanyManager
             this.btnPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlan.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlan.Location = new System.Drawing.Point(961, 129);
+            this.btnPlan.Location = new System.Drawing.Point(996, 116);
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(104, 23);
             this.btnPlan.TabIndex = 18;
@@ -304,7 +291,6 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.btnPlan);
             this.Controls.Add(this.panel2);
@@ -324,7 +310,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label12;

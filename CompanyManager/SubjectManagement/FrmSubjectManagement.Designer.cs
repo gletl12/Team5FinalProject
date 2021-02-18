@@ -29,7 +29,7 @@ namespace CompanyManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtManager = new System.Windows.Forms.TextBox();
@@ -61,7 +61,6 @@ namespace CompanyManager
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCopy = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnSet = new System.Windows.Forms.Button();
             this.btnExcelInsert = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
@@ -92,7 +91,6 @@ namespace CompanyManager
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Panel2.Controls.Add(this.btnCopy);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.btnSet);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcelInsert);
             this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel2.Controls.Add(this.btnDownload);
@@ -347,7 +345,7 @@ namespace CompanyManager
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(28, 28);
             this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "V";
+            this.btnDown.Text = "ᐱ";
             this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
@@ -414,19 +412,19 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 472);
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 475);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -438,7 +436,7 @@ namespace CompanyManager
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(806, 3);
+            this.btnCopy.Location = new System.Drawing.Point(840, 3);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(57, 23);
             this.btnCopy.TabIndex = 12;
@@ -458,18 +456,6 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      품목정보";
             // 
-            // btnSet
-            // 
-            this.btnSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSet.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.btnSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSet.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.btnSet.Location = new System.Drawing.Point(1127, 3);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(29, 23);
-            this.btnSet.TabIndex = 14;
-            this.btnSet.UseVisualStyleBackColor = true;
-            // 
             // btnExcelInsert
             // 
             this.btnExcelInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -478,7 +464,7 @@ namespace CompanyManager
             this.btnExcelInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelInsert.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.btnExcelInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelInsert.Location = new System.Drawing.Point(1036, 3);
+            this.btnExcelInsert.Location = new System.Drawing.Point(1070, 3);
             this.btnExcelInsert.Name = "btnExcelInsert";
             this.btnExcelInsert.Size = new System.Drawing.Size(86, 23);
             this.btnExcelInsert.TabIndex = 15;
@@ -495,7 +481,7 @@ namespace CompanyManager
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(744, 3);
+            this.btnAdd.Location = new System.Drawing.Point(778, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 23);
             this.btnAdd.TabIndex = 18;
@@ -512,7 +498,7 @@ namespace CompanyManager
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(929, 3);
+            this.btnDownload.Location = new System.Drawing.Point(963, 3);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(102, 23);
             this.btnDownload.TabIndex = 16;
@@ -529,7 +515,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(869, 3);
+            this.btnExcel.Location = new System.Drawing.Point(903, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 17;
@@ -583,7 +569,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Button btnExcelInsert;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDownload;

@@ -46,7 +46,6 @@ namespace CompanyManager
             this.label16 = new System.Windows.Forms.Label();
             this.btnCopy = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnexceladd = new System.Windows.Forms.Button();
             this.btndownexcel = new System.Windows.Forms.Button();
             this.btnexcel = new System.Windows.Forms.Button();
@@ -226,7 +225,7 @@ namespace CompanyManager
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Image = global::CompanyManager.Properties.Resources.Copy_16x16;
             this.btnCopy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCopy.Location = new System.Drawing.Point(810, 118);
+            this.btnCopy.Location = new System.Drawing.Point(844, 118);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(57, 23);
             this.btnCopy.TabIndex = 12;
@@ -246,18 +245,6 @@ namespace CompanyManager
             this.label10.Text = "BOM";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 118);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // btnexceladd
             // 
             this.btnexceladd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -266,7 +253,7 @@ namespace CompanyManager
             this.btnexceladd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexceladd.Image = global::CompanyManager.Properties.Resources.Previous_16x16;
             this.btnexceladd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexceladd.Location = new System.Drawing.Point(1040, 118);
+            this.btnexceladd.Location = new System.Drawing.Point(1074, 118);
             this.btnexceladd.Name = "btnexceladd";
             this.btnexceladd.Size = new System.Drawing.Size(86, 23);
             this.btnexceladd.TabIndex = 15;
@@ -283,7 +270,7 @@ namespace CompanyManager
             this.btndownexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndownexcel.Image = global::CompanyManager.Properties.Resources.Next_16x16;
             this.btndownexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btndownexcel.Location = new System.Drawing.Point(933, 118);
+            this.btndownexcel.Location = new System.Drawing.Point(967, 118);
             this.btndownexcel.Name = "btndownexcel";
             this.btndownexcel.Size = new System.Drawing.Size(102, 23);
             this.btndownexcel.TabIndex = 16;
@@ -300,7 +287,7 @@ namespace CompanyManager
             this.btnexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexcel.Location = new System.Drawing.Point(873, 118);
+            this.btnexcel.Location = new System.Drawing.Point(907, 118);
             this.btnexcel.Name = "btnexcel";
             this.btnexcel.Size = new System.Drawing.Size(54, 23);
             this.btnexcel.TabIndex = 17;
@@ -317,7 +304,7 @@ namespace CompanyManager
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(748, 118);
+            this.btnAdd.Location = new System.Drawing.Point(782, 118);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 23);
             this.btnAdd.TabIndex = 18;
@@ -356,7 +343,6 @@ namespace CompanyManager
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnexceladd);
             this.Controls.Add(this.btndownexcel);
             this.Controls.Add(this.btnexcel);
@@ -379,7 +365,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnexceladd;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btndownexcel;
