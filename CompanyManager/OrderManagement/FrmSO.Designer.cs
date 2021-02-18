@@ -55,7 +55,6 @@ namespace CompanyManager
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewSO = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvSO = new System.Windows.Forms.DataGridView();
             this.btnDemandPlan = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -83,7 +82,6 @@ namespace CompanyManager
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnNewSO);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dgvSO);
             this.splitContainer1.Panel2.Controls.Add(this.btnDemandPlan);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
@@ -353,7 +351,7 @@ namespace CompanyManager
             this.btnNewSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewSO.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnNewSO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewSO.Location = new System.Drawing.Point(1004, 3);
+            this.btnNewSO.Location = new System.Drawing.Point(1039, 3);
             this.btnNewSO.Name = "btnNewSO";
             this.btnNewSO.Size = new System.Drawing.Size(57, 23);
             this.btnNewSO.TabIndex = 12;
@@ -372,18 +370,6 @@ namespace CompanyManager
             this.label10.Size = new System.Drawing.Size(80, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      영업마스터";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // dgvSO
             // 
@@ -407,7 +393,7 @@ namespace CompanyManager
             this.btnDemandPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDemandPlan.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnDemandPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDemandPlan.Location = new System.Drawing.Point(896, 3);
+            this.btnDemandPlan.Location = new System.Drawing.Point(931, 3);
             this.btnDemandPlan.Name = "btnDemandPlan";
             this.btnDemandPlan.Size = new System.Drawing.Size(102, 23);
             this.btnDemandPlan.TabIndex = 18;
@@ -424,7 +410,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1067, 3);
+            this.btnExcel.Location = new System.Drawing.Point(1102, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 17;
@@ -459,7 +445,6 @@ namespace CompanyManager
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewSO;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvSO;
         private System.Windows.Forms.Button btnDemandPlan;
         private System.Windows.Forms.Button btnExcel;

@@ -52,7 +52,6 @@ namespace CompanyManager
             this.dgvPerformance = new System.Windows.Forms.DataGridView();
             this.btnRegPerformance = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerformance)).BeginInit();
@@ -305,7 +304,7 @@ namespace CompanyManager
             this.btnRegPerformance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegPerformance.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.btnRegPerformance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegPerformance.Location = new System.Drawing.Point(1047, 129);
+            this.btnRegPerformance.Location = new System.Drawing.Point(1082, 129);
             this.btnRegPerformance.Name = "btnRegPerformance";
             this.btnRegPerformance.Size = new System.Drawing.Size(78, 23);
             this.btnRegPerformance.TabIndex = 41;
@@ -325,18 +324,6 @@ namespace CompanyManager
             this.label10.TabIndex = 36;
             this.label10.Text = "      작업실적등록";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 129);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 37;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -353,7 +340,6 @@ namespace CompanyManager
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnRegPerformance);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvPerformance);
             this.Name = "FrmRegPerformance";
@@ -368,7 +354,6 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;

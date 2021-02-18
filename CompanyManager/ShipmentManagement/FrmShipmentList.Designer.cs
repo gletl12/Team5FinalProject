@@ -51,7 +51,6 @@ namespace CompanyManager
             this.label18 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvShipment = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -76,7 +75,6 @@ namespace CompanyManager
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dgvShipment);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
@@ -310,7 +308,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1068, 3);
+            this.btnExcel.Location = new System.Drawing.Point(1102, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 66;
@@ -318,18 +316,6 @@ namespace CompanyManager
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 65;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // dgvShipment
             // 
@@ -369,7 +355,6 @@ namespace CompanyManager
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvShipment;
         private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label20;

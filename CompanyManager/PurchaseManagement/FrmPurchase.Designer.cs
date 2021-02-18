@@ -53,7 +53,6 @@ namespace CompanyManager
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvPurchases = new System.Windows.Forms.DataGridView();
             this.button13 = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -80,7 +79,6 @@ namespace CompanyManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dgvPurchases);
             this.splitContainer1.Panel2.Controls.Add(this.button13);
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
@@ -346,18 +344,6 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      정규발주";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 9);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // dgvPurchases
             // 
             this.dgvPurchases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -385,7 +371,7 @@ namespace CompanyManager
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Image = global::CompanyManager.Properties.Resources.pencil_16;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(1005, 9);
+            this.button13.Location = new System.Drawing.Point(1040, 9);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(56, 23);
             this.button13.TabIndex = 18;
@@ -402,7 +388,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1067, 9);
+            this.btnExcel.Location = new System.Drawing.Point(1102, 9);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 17;
@@ -449,7 +435,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DataGridView dgvPurchases;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnExcel;
