@@ -14,6 +14,7 @@ using VO;
 using System.Linq;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 
 namespace CompanyManager
 {
@@ -133,7 +134,8 @@ namespace CompanyManager
             {
                 try
                 {
-                    File.Copy("../../ExcelForm/단가등록양식.xlsx", dlg.FileName + ".xlsx");
+                    WebClient wc = new WebClient();
+                    wc.DownloadFile(@"http://gdfinal.azurewebsites.net/ExcelForm/단가등록양식.xlsx", dlg.FileName + ".xlsx");
                     Process.Start(dlg.FileName + ".xlsx");
                 }
                 catch (Exception err)
