@@ -248,16 +248,16 @@ namespace DAC
                            preceding_days int
                            );
                            with items as
-                           (select B.item_id,item_type ,bom_parent_id,bom_use_qty,preceding_days
+                           (
+						    select B.item_id,item_type ,bom_parent_id,bom_use_qty,preceding_days
                             from TBL_BOM B JOIN TBL_ITEM I ON I.item_id = B.item_id
-                           				JOIN TBL_BOR BOR ON BOR.item_id = B.bom_parent_id
+                           				   JOIN TBL_BOR BOR ON BOR.item_id = B.bom_parent_id
                             union all
-                            select B.item_id,ITEM.item_type,I.bom_parent_id,B.bom_use_qty,BOR.preceding_days
+                            select B.item_id,ITEM.item_type,I.bom_parent_id,B.bom_use_qty*I.bom_use_qty,BOR.preceding_days
                             from TBL_BOM B JOIN items I ON I.item_id = B.bom_parent_id
                            				JOIN TBL_ITEM ITEM ON ITEM.item_id = B.item_id
                            				JOIN TBL_BOR BOR ON BOR.item_id = B.bom_parent_id)
                            insert into @items select item_id,bom_parent_id,item_type,bom_use_qty,preceding_days from items where item_type in ('CI','RM','SM');
-                           
                            select supply_company,company_name,ITEM.item_id,item_name,prod_id,bom_use_qty*prod_qty p_qty,I.in_warehouse,warehouse_name,P.start_date-preceding_days DueDate
                            from TBL_PRODUCTION_PLAN P JOIN @items ITEM ON ITEM.bom_parent_id = P.item_id
                            						      JOIN TBL_ITEM I ON I.item_id = ITEM.item_id

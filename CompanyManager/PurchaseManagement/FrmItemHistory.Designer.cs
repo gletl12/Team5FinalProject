@@ -31,7 +31,6 @@ namespace CompanyManager
         {
             this.button12 = new System.Windows.Forms.Button();
             this.dgvIO = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.cboWarehouse = new System.Windows.Forms.ComboBox();
@@ -72,7 +71,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1070, 3);
+            this.button12.Location = new System.Drawing.Point(1102, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 17;
@@ -92,18 +91,6 @@ namespace CompanyManager
             this.dgvIO.RowTemplate.Height = 23;
             this.dgvIO.Size = new System.Drawing.Size(1146, 503);
             this.dgvIO.TabIndex = 19;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1130, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -376,7 +363,6 @@ namespace CompanyManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.dgvIO);
             this.splitContainer1.Panel2.Controls.Add(this.button12);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 647);
@@ -406,7 +392,6 @@ namespace CompanyManager
 
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.DataGridView dgvIO;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Label label1;

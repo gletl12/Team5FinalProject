@@ -30,11 +30,9 @@ namespace CompanyManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvCompany = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPurchases = new System.Windows.Forms.Button();
             this.dgvItem = new System.Windows.Forms.DataGridView();
@@ -58,7 +56,6 @@ namespace CompanyManager
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dgvCompany);
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -66,19 +63,6 @@ namespace CompanyManager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 409);
             this.panel1.TabIndex = 49;
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(286, 13);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 26;
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -113,7 +97,6 @@ namespace CompanyManager
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnPurchases);
             this.panel3.Controls.Add(this.dgvItem);
@@ -122,19 +105,6 @@ namespace CompanyManager
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(633, 409);
             this.panel3.TabIndex = 50;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button3.Location = new System.Drawing.Point(599, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 23);
-            this.button3.TabIndex = 29;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -155,7 +125,7 @@ namespace CompanyManager
             this.btnPurchases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchases.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPurchases.Location = new System.Drawing.Point(539, 13);
+            this.btnPurchases.Location = new System.Drawing.Point(574, 13);
             this.btnPurchases.Name = "btnPurchases";
             this.btnPurchases.Size = new System.Drawing.Size(54, 23);
             this.btnPurchases.TabIndex = 27;
@@ -226,7 +196,5 @@ namespace CompanyManager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPurchases;
         private System.Windows.Forms.DataGridView dgvItem;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button3;
     }
 }

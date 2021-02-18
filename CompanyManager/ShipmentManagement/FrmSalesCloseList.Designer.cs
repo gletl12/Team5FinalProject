@@ -71,7 +71,7 @@ namespace CompanyManager
             this.btnSOCloseCencel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSOCloseCencel.Image = global::CompanyManager.Properties.Resources.Undo_16x16;
             this.btnSOCloseCencel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSOCloseCencel.Location = new System.Drawing.Point(1024, 116);
+            this.btnSOCloseCencel.Location = new System.Drawing.Point(1002, 108);
             this.btnSOCloseCencel.Name = "btnSOCloseCencel";
             this.btnSOCloseCencel.Size = new System.Drawing.Size(76, 23);
             this.btnSOCloseCencel.TabIndex = 9;
@@ -88,7 +88,7 @@ namespace CompanyManager
             this.btnExcelExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelExport.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcelExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelExport.Location = new System.Drawing.Point(1106, 116);
+            this.btnExcelExport.Location = new System.Drawing.Point(1084, 108);
             this.btnExcelExport.Name = "btnExcelExport";
             this.btnExcelExport.Size = new System.Drawing.Size(54, 23);
             this.btnExcelExport.TabIndex = 9;
@@ -101,14 +101,14 @@ namespace CompanyManager
             // 
             this.cboMKT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMKT.FormattingEnabled = true;
-            this.cboMKT.Location = new System.Drawing.Point(772, 57);
+            this.cboMKT.Location = new System.Drawing.Point(726, 56);
             this.cboMKT.Name = "cboMKT";
             this.cboMKT.Size = new System.Drawing.Size(227, 22);
             this.cboMKT.TabIndex = 6;
             // 
             // txtitem
             // 
-            this.txtitem.Location = new System.Drawing.Point(120, 57);
+            this.txtitem.Location = new System.Drawing.Point(96, 56);
             this.txtitem.Name = "txtitem";
             this.txtitem.Size = new System.Drawing.Size(204, 21);
             this.txtitem.TabIndex = 4;
@@ -116,7 +116,7 @@ namespace CompanyManager
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(216, 19);
+            this.label20.Location = new System.Drawing.Point(192, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(15, 14);
             this.label20.TabIndex = 51;
@@ -125,7 +125,7 @@ namespace CompanyManager
             // dtpto
             // 
             this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpto.Location = new System.Drawing.Point(233, 15);
+            this.dtpto.Location = new System.Drawing.Point(209, 14);
             this.dtpto.Name = "dtpto";
             this.dtpto.Size = new System.Drawing.Size(91, 21);
             this.dtpto.TabIndex = 1;
@@ -135,7 +135,7 @@ namespace CompanyManager
             this.label10.AutoSize = true;
             this.label10.Image = global::CompanyManager.Properties.Resources.AlignJustify_16x16;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 125);
+            this.label10.Location = new System.Drawing.Point(5, 120);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 14);
             this.label10.TabIndex = 58;
@@ -176,13 +176,13 @@ namespace CompanyManager
             this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel2.Location = new System.Drawing.Point(8, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1152, 92);
+            this.panel2.Size = new System.Drawing.Size(1130, 92);
             this.panel2.TabIndex = 62;
             // 
             // dtpfrom
             // 
             this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpfrom.Location = new System.Drawing.Point(120, 15);
+            this.dtpfrom.Location = new System.Drawing.Point(96, 14);
             this.dtpfrom.Name = "dtpfrom";
             this.dtpfrom.Size = new System.Drawing.Size(92, 21);
             this.dtpfrom.TabIndex = 0;
@@ -191,7 +191,7 @@ namespace CompanyManager
             // 
             this.cboDestination.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDestination.FormattingEnabled = true;
-            this.cboDestination.Location = new System.Drawing.Point(772, 17);
+            this.cboDestination.Location = new System.Drawing.Point(726, 16);
             this.cboDestination.Name = "cboDestination";
             this.cboDestination.Size = new System.Drawing.Size(227, 22);
             this.cboDestination.TabIndex = 3;
@@ -199,7 +199,7 @@ namespace CompanyManager
             // txtSO_id
             // 
             this.txtSO_id.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSO_id.Location = new System.Drawing.Point(451, 57);
+            this.txtSO_id.Location = new System.Drawing.Point(416, 56);
             this.txtSO_id.Name = "txtSO_id";
             this.txtSO_id.Size = new System.Drawing.Size(227, 21);
             this.txtSO_id.TabIndex = 5;
@@ -208,7 +208,7 @@ namespace CompanyManager
             // 
             this.cboCompany.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(451, 17);
+            this.cboCompany.Location = new System.Drawing.Point(416, 16);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(227, 22);
             this.cboCompany.TabIndex = 2;
@@ -227,7 +227,7 @@ namespace CompanyManager
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(705, 60);
+            this.label9.Location = new System.Drawing.Point(659, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 14);
             this.label9.TabIndex = 28;
@@ -238,7 +238,7 @@ namespace CompanyManager
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label11.Location = new System.Drawing.Point(705, 77);
+            this.label11.Location = new System.Drawing.Point(683, 77);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 14);
             this.label11.TabIndex = 27;
@@ -249,7 +249,7 @@ namespace CompanyManager
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label15.Location = new System.Drawing.Point(362, 77);
+            this.label15.Location = new System.Drawing.Point(351, 77);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 14);
             this.label15.TabIndex = 24;
@@ -270,7 +270,7 @@ namespace CompanyManager
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label8.Location = new System.Drawing.Point(705, 49);
+            this.label8.Location = new System.Drawing.Point(659, 48);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 14);
             this.label8.TabIndex = 18;
@@ -280,7 +280,7 @@ namespace CompanyManager
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(362, 60);
+            this.label5.Location = new System.Drawing.Point(327, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 14);
             this.label5.TabIndex = 16;
@@ -291,7 +291,7 @@ namespace CompanyManager
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label6.Location = new System.Drawing.Point(362, 49);
+            this.label6.Location = new System.Drawing.Point(327, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 14);
             this.label6.TabIndex = 15;
@@ -301,7 +301,7 @@ namespace CompanyManager
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(705, 20);
+            this.label3.Location = new System.Drawing.Point(659, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 14);
             this.label3.TabIndex = 14;
@@ -312,7 +312,7 @@ namespace CompanyManager
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label4.Location = new System.Drawing.Point(706, 26);
+            this.label4.Location = new System.Drawing.Point(660, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 14);
             this.label4.TabIndex = 12;
@@ -322,7 +322,7 @@ namespace CompanyManager
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(362, 20);
+            this.label1.Location = new System.Drawing.Point(327, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 11;
@@ -333,7 +333,7 @@ namespace CompanyManager
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label2.Location = new System.Drawing.Point(364, 25);
+            this.label2.Location = new System.Drawing.Point(329, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 14);
             this.label2.TabIndex = 9;
@@ -347,7 +347,7 @@ namespace CompanyManager
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(1031, 51);
+            this.btnSearch.Location = new System.Drawing.Point(993, 50);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 30);
             this.btnSearch.TabIndex = 7;
@@ -358,7 +358,7 @@ namespace CompanyManager
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(51, 60);
+            this.label12.Location = new System.Drawing.Point(27, 59);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 14);
             this.label12.TabIndex = 3;
@@ -367,7 +367,7 @@ namespace CompanyManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(51, 20);
+            this.label14.Location = new System.Drawing.Point(27, 19);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 14);
             this.label14.TabIndex = 3;
@@ -377,7 +377,7 @@ namespace CompanyManager
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label16.Location = new System.Drawing.Point(19, 49);
+            this.label16.Location = new System.Drawing.Point(3, 48);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(48, 14);
             this.label16.TabIndex = 1;
@@ -387,7 +387,7 @@ namespace CompanyManager
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.label18.Location = new System.Drawing.Point(20, 25);
+            this.label18.Location = new System.Drawing.Point(4, 24);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(48, 14);
             this.label18.TabIndex = 1;
@@ -400,10 +400,10 @@ namespace CompanyManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSOEND.BackgroundColor = System.Drawing.Color.White;
             this.dgvSOEND.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSOEND.Location = new System.Drawing.Point(8, 142);
+            this.dgvSOEND.Location = new System.Drawing.Point(8, 137);
             this.dgvSOEND.Name = "dgvSOEND";
             this.dgvSOEND.RowTemplate.Height = 23;
-            this.dgvSOEND.Size = new System.Drawing.Size(1152, 494);
+            this.dgvSOEND.Size = new System.Drawing.Size(1130, 461);
             this.dgvSOEND.TabIndex = 61;
             // 
             // FrmSalesCloseList

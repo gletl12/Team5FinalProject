@@ -42,7 +42,6 @@ namespace CompanyManager
             this.label16 = new System.Windows.Forms.Label();
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
@@ -201,18 +200,6 @@ namespace CompanyManager
             this.label10.TabIndex = 13;
             this.label10.Text = "      자재재고현황";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1131, 82);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -221,7 +208,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1071, 82);
+            this.btnExcel.Location = new System.Drawing.Point(1106, 82);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 17;
@@ -246,7 +233,6 @@ namespace CompanyManager
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvStock);
@@ -266,7 +252,6 @@ namespace CompanyManager
         private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Label label12;

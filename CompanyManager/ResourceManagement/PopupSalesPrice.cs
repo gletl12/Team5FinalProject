@@ -20,7 +20,7 @@ namespace CompanyManager
         List<CompanyCodeVO> companys = new List<CompanyCodeVO>();
         List<PriceVO> price = new List<PriceVO>();
         public string ItemID = string.Empty;
-
+        bool IsEdit = false;
         public PopupSalesPrice(List<PriceVO> price, List<CompanyCodeVO> company)
         {
             InitializeComponent();
@@ -31,14 +31,17 @@ namespace CompanyManager
         public PopupSalesPrice(string companyName, string itemName, string currency, decimal before)
         {
             InitializeComponent();
+            cboCurrency.DropDownStyle = cboItem.DropDownStyle = ComboBoxStyle.DropDown;
+            cboCurrency.Enabled = cboItem.Enabled = false;
             cboItem.Text = itemName;
             cboCurrency.Text = currency;
             txtBeforePrice.Text = before.ToString();
+            IsEdit = true;
         }
 
         private void PopupSalesPrice_Load(object sender, EventArgs e)
         {
-            if (ItemID.Length >0)
+            if (ItemID.Length >0||IsEdit)
                 return;
             //콤보박스 바인딩
             ApiMessage<List<ItemCodeVO>> item = service.GetApiCaller<List<ItemCodeVO>>($"{url}itemList");
@@ -60,7 +63,7 @@ namespace CompanyManager
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ItemID.Length > 0)
+            if (ItemID.Length > 0||IsEdit)
                 return;
             decimal before = 0;
             try

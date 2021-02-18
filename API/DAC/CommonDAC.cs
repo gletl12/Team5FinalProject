@@ -12,8 +12,8 @@ namespace API.DAC
 {
     public class CommonDAC :  IDisposable
     {
-        private static LoggingUtility _log = new LoggingUtility("Log_API", Level.Error, 30);
-        public static LoggingUtility Log { get { return _log; } }
+        //private static LoggingUtility _log = new LoggingUtility("Log_API", Level.Error, 30);
+        //public static LoggingUtility Log { get { return _log; } }
 
         //ConnectionString 전역으로 생성 암호화 한번만 할 수 있게
         static string strConn;

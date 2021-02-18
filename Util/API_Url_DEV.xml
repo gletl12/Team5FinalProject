@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <settings>
-    <add key="ApiAddress"><![CDATA[https://localhost:44384]]></add>
+    <add key="ApiAddress"><![CDATA[http://gdfinal.azurewebsites.net/]]></add>
   </settings>
 </configuration>

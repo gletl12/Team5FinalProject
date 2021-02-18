@@ -45,7 +45,7 @@
   <ItemGroup>
     <Reference Include="EncrytLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DAC\EncrytLibrary.dll</HintPath>
+      <HintPath>.\EncrytLibrary.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
@@ -87,6 +87,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EncrytLibrary.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -105,7 +108,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExcelForm\BOM등록양식.xlsx" />
+    <Content Include="ExcelForm\BOR등록양식.xlsx" />
+    <Content Include="ExcelForm\공장창고등록양식.xlsx" />
+    <Content Include="ExcelForm\단가등록양식.xlsx" />
+    <Content Include="ExcelForm\업체등록양식.xlsx" />
+    <Content Include="ExcelForm\영업마스터양식.xlsx" />
+    <Content Include="ExcelForm\품목등록양식.xlsx" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\GDFinal - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\GDFinal - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\GDFinal - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

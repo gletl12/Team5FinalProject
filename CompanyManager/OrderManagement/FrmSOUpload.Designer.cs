@@ -32,7 +32,6 @@ namespace CompanyManager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSOUpload));
             this.dgvSO = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnCommit = new System.Windows.Forms.Button();
@@ -64,18 +63,6 @@ namespace CompanyManager
             this.label10.TabIndex = 21;
             this.label10.Text = "      영업마스터업로드(PO)";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(1130, 14);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 22;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // btnUpload
             // 
             this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -84,7 +71,7 @@ namespace CompanyManager
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Image = ((System.Drawing.Image)(resources.GetObject("btnUpload.Image")));
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpload.Location = new System.Drawing.Point(1039, 14);
+            this.btnUpload.Location = new System.Drawing.Point(1073, 14);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(86, 23);
             this.btnUpload.TabIndex = 23;
@@ -101,7 +88,7 @@ namespace CompanyManager
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(932, 14);
+            this.btnDownload.Location = new System.Drawing.Point(966, 14);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(102, 23);
             this.btnDownload.TabIndex = 24;
@@ -118,7 +105,7 @@ namespace CompanyManager
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
             this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommit.Location = new System.Drawing.Point(814, 14);
+            this.btnCommit.Location = new System.Drawing.Point(848, 14);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(112, 23);
             this.btnCommit.TabIndex = 26;
@@ -132,7 +119,6 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnCommit);
@@ -147,7 +133,6 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.Button btnCommit;
