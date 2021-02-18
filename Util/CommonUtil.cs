@@ -162,7 +162,7 @@ namespace Util
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+            //dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
             dgv.AllowUserToAddRows = false;
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgv.SelectionChanged += Dgv_SelectionChanged;
@@ -194,7 +194,7 @@ namespace Util
             dgv.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230);   // 로우 해더 색설정     
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 230, 230); //홀수 행 색
             //dgv.DefaultCellStyle.BackColor = Color.FromArgb(248, 241, 233);//Color.FromArgb(248, 241, 233); // 전체 행 색
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
+            //dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(145, 224, 244); // 선택 로우 색
 
             dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
             dgv.AllowUserToAddRows = false;
@@ -206,7 +206,7 @@ namespace Util
 
         private static void Dgv_SelectionChanged(object sender, EventArgs e)
         {
-            ((DataGridView)sender).ClearSelection();
+            //((DataGridView)sender).ClearSelection();
         }
 
         public static void SetDGVDesign_CheckBox(DataGridView dgv)
