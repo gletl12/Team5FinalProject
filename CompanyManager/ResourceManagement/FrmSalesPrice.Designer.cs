@@ -31,7 +31,6 @@ namespace CompanyManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSalesPrice));
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.btnRegPrice = new System.Windows.Forms.Button();
@@ -63,18 +62,6 @@ namespace CompanyManager
             this.label10.TabIndex = 22;
             this.label10.Text = "      영업단가관리";
             // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(1131, 95);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 23;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // btnImport
             // 
             this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -83,7 +70,7 @@ namespace CompanyManager
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.Image")));
             this.btnImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImport.Location = new System.Drawing.Point(1040, 95);
+            this.btnImport.Location = new System.Drawing.Point(1074, 95);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(86, 23);
             this.btnImport.TabIndex = 24;
@@ -100,7 +87,7 @@ namespace CompanyManager
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(933, 95);
+            this.button11.Location = new System.Drawing.Point(967, 95);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(102, 23);
             this.button11.TabIndex = 25;
@@ -117,7 +104,7 @@ namespace CompanyManager
             this.btnRegPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnRegPrice.Image")));
             this.btnRegPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegPrice.Location = new System.Drawing.Point(811, 95);
+            this.btnRegPrice.Location = new System.Drawing.Point(845, 95);
             this.btnRegPrice.Name = "btnRegPrice";
             this.btnRegPrice.Size = new System.Drawing.Size(56, 23);
             this.btnRegPrice.TabIndex = 27;
@@ -259,7 +246,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(873, 95);
+            this.button12.Location = new System.Drawing.Point(907, 95);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 26;
@@ -288,7 +275,6 @@ namespace CompanyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 647);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.btnRegPrice);
@@ -307,7 +293,6 @@ namespace CompanyManager
 
         #endregion
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btnRegPrice;

@@ -49,11 +49,9 @@ namespace CompanyManager
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button12 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvInbound = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewInbound = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -267,14 +265,12 @@ namespace CompanyManager
             this.splitContainer1.Panel1.Controls.Add(this.dgvPurchases);
             this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.button9);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInbound);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.btnNewInbound);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Size = new System.Drawing.Size(1148, 522);
             this.splitContainer1.SplitterDistance = 228;
             this.splitContainer1.TabIndex = 25;
@@ -287,7 +283,7 @@ namespace CompanyManager
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(1056, 3);
+            this.button12.Location = new System.Drawing.Point(1090, 3);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(54, 23);
             this.button12.TabIndex = 17;
@@ -306,18 +302,6 @@ namespace CompanyManager
             this.label10.Size = new System.Drawing.Size(102, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      입고대기리스트";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1116, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // dgvInbound
             // 
@@ -352,7 +336,7 @@ namespace CompanyManager
             this.btnNewInbound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewInbound.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnNewInbound.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewInbound.Location = new System.Drawing.Point(1013, 3);
+            this.btnNewInbound.Location = new System.Drawing.Point(1047, 3);
             this.btnNewInbound.Name = "btnNewInbound";
             this.btnNewInbound.Size = new System.Drawing.Size(97, 23);
             this.btnNewInbound.TabIndex = 17;
@@ -360,18 +344,6 @@ namespace CompanyManager
             this.btnNewInbound.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNewInbound.UseVisualStyleBackColor = false;
             this.btnNewInbound.Click += new System.EventHandler(this.btnNewInbound_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button5.Location = new System.Drawing.Point(1116, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 23);
-            this.button5.TabIndex = 14;
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // FrmAwait
             // 
@@ -414,12 +386,10 @@ namespace CompanyManager
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewInbound;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dgvPurchases;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvInbound;
     }

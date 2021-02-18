@@ -40,7 +40,6 @@ namespace CompanyManager
             this.dgvCheck = new System.Windows.Forms.DataGridView();
             this.btnExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -156,7 +155,7 @@ namespace CompanyManager
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(1067, 91);
+            this.btnExcel.Location = new System.Drawing.Point(1102, 91);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(54, 23);
             this.btnExcel.TabIndex = 17;
@@ -175,18 +174,6 @@ namespace CompanyManager
             this.label10.Size = new System.Drawing.Size(91, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      수입검사현황";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1127, 91);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -256,7 +243,6 @@ namespace CompanyManager
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button9);
             this.Name = "FrmCheck";
             this.Load += new System.EventHandler(this.FrmCheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
@@ -270,7 +256,6 @@ namespace CompanyManager
         #endregion
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;

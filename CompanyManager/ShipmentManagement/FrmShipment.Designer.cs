@@ -57,7 +57,6 @@ namespace CompanyManager
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnCommit = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btxExcel = new System.Windows.Forms.Button();
             this.dgvShipment = new System.Windows.Forms.DataGridView();
@@ -84,7 +83,6 @@ namespace CompanyManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnCommit);
-            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.btxExcel);
             this.splitContainer1.Panel2.Controls.Add(this.dgvShipment);
@@ -392,7 +390,7 @@ namespace CompanyManager
             this.btnCommit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommit.Image = global::CompanyManager.Properties.Resources.Edit_16x16;
             this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommit.Location = new System.Drawing.Point(992, 3);
+            this.btnCommit.Location = new System.Drawing.Point(1026, 3);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Size = new System.Drawing.Size(76, 23);
             this.btnCommit.TabIndex = 56;
@@ -400,18 +398,6 @@ namespace CompanyManager
             this.btnCommit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCommit.UseVisualStyleBackColor = false;
             this.btnCommit.Click += new System.EventHandler(this.btnCommit_Click);
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1133, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 53;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -432,7 +418,7 @@ namespace CompanyManager
             this.btxExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btxExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btxExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btxExcel.Location = new System.Drawing.Point(1074, 3);
+            this.btxExcel.Location = new System.Drawing.Point(1108, 3);
             this.btxExcel.Name = "btxExcel";
             this.btxExcel.Size = new System.Drawing.Size(54, 23);
             this.btxExcel.TabIndex = 54;
@@ -504,7 +490,6 @@ namespace CompanyManager
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnCommit;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btxExcel;
         private System.Windows.Forms.DataGridView dgvShipment;

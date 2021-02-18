@@ -49,12 +49,10 @@ namespace CompanyManager
             this.dgvWorkOrder = new System.Windows.Forms.DataGridView();
             this.btnWorkOrderExcel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.dgvDispend = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDispendExcel = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -252,7 +250,6 @@ namespace CompanyManager
             this.splitContainer1.Panel1.Controls.Add(this.dgvWorkOrder);
             this.splitContainer1.Panel1.Controls.Add(this.btnWorkOrderExcel);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
-            this.splitContainer1.Panel1.Controls.Add(this.button9);
             // 
             // splitContainer1.Panel2
             // 
@@ -260,7 +257,6 @@ namespace CompanyManager
             this.splitContainer1.Panel2.Controls.Add(this.btnSave);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.btnDispendExcel);
-            this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1148, 522);
             this.splitContainer1.SplitterDistance = 228;
@@ -288,7 +284,7 @@ namespace CompanyManager
             this.btnWorkOrderExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkOrderExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnWorkOrderExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWorkOrderExcel.Location = new System.Drawing.Point(1057, 3);
+            this.btnWorkOrderExcel.Location = new System.Drawing.Point(1090, 3);
             this.btnWorkOrderExcel.Name = "btnWorkOrderExcel";
             this.btnWorkOrderExcel.Size = new System.Drawing.Size(54, 23);
             this.btnWorkOrderExcel.TabIndex = 17;
@@ -307,18 +303,6 @@ namespace CompanyManager
             this.label10.Size = new System.Drawing.Size(94, 14);
             this.label10.TabIndex = 13;
             this.label10.Text = "      작업지시 조회";
-            // 
-            // button9
-            // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button9.Location = new System.Drawing.Point(1116, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(29, 23);
-            this.button9.TabIndex = 14;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // dgvDispend
             // 
@@ -341,7 +325,7 @@ namespace CompanyManager
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Image = global::CompanyManager.Properties.Resources.Save_16x16;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(993, 3);
+            this.btnSave.Location = new System.Drawing.Point(1027, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(57, 23);
             this.btnSave.TabIndex = 12;
@@ -369,7 +353,7 @@ namespace CompanyManager
             this.btnDispendExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDispendExcel.Image = global::CompanyManager.Properties.Resources.New_16x16;
             this.btnDispendExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDispendExcel.Location = new System.Drawing.Point(1056, 3);
+            this.btnDispendExcel.Location = new System.Drawing.Point(1090, 3);
             this.btnDispendExcel.Name = "btnDispendExcel";
             this.btnDispendExcel.Size = new System.Drawing.Size(54, 23);
             this.btnDispendExcel.TabIndex = 17;
@@ -377,18 +361,6 @@ namespace CompanyManager
             this.btnDispendExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDispendExcel.UseVisualStyleBackColor = false;
             this.btnDispendExcel.Click += new System.EventHandler(this.btnDispendExcel_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::CompanyManager.Properties.Resources.gear_option;
-            this.button5.Location = new System.Drawing.Point(1116, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 23);
-            this.button5.TabIndex = 14;
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // FrmRelease
             // 
@@ -431,11 +403,9 @@ namespace CompanyManager
         private System.Windows.Forms.DataGridView dgvWorkOrder;
         private System.Windows.Forms.Button btnWorkOrderExcel;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDispendExcel;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
