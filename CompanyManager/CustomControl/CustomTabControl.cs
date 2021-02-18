@@ -156,8 +156,9 @@ namespace CompanyManager.CustomControl
         //텝버튼 클릭시 해당 버튼 화면 활성화
         private void button_Click(object sender, EventArgs e)
         {
+            selectedButton = ((Button)sender);
             //열린폼이면
-            
+
             foreach (Form child in ParentForm.MdiChildren)
             {
                 string formName = OpenForms[((Button)sender).Text];
@@ -191,7 +192,38 @@ namespace CompanyManager.CustomControl
             lblSelect.BringToFront();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Point temploc = selectedButton.Location;
 
+            foreach (Control ctrl in (pnlTab.Controls))
+            {
+                if (ctrl is Button btn)
+                {
+                    if (btn.Location.X == temploc.X - 74)
+                    {
+                        btn.PerformClick();
+                        return;
+                    }
+                }
+            }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Point temploc = selectedButton.Location;
+
+            foreach (Control ctrl in (pnlTab.Controls))
+            {
+                if (ctrl is Button btn)
+                {
+                    if (btn.Location.X == temploc.X + 74)
+                    {
+                        btn.PerformClick();
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
