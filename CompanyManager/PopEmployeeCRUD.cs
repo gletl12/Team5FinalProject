@@ -81,7 +81,7 @@ namespace CompanyManager
                 emp_password = txtPassword.Text,
                 emp_name = txtEmpName.Text,
                 dept_no = lbldept_id.Text,
-                hire_date = dtpEmp.Value.ToString(),
+                hire_date = dtpEmp.Value,
                 up_emp = txtUp_Emp.Text,
                 up_date = DateTime.Now
             };
